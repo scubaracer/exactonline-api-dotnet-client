@@ -72,3 +72,22 @@ After successful insertion, the document ID can be retrieved as:
 
 <i>document.ID</i>
 
+<h4>5.	Retrieve Data Using Exact Client </h4>
+
+To retrieve the entity based on ID you can use the “GetEntity” function. E-g: Retrieve document by ID: 
+```
+client.For<Document>().GetEntity(documentID);
+```
+
+To retrieve specific fields of the entity based on filter use “select” and “where” functions. E-g: Retrieve document with specific fields for subject “User Acceptance Test Document”
+```
+var fields = new[] { "ID, Subject, Type, Category" };
+var documents = client.For<Document>().Select(fields).Top(5).Where("Subject+eq+'User Acceptance Test Document'").Get();
+```
+If  “Select(fields)” is not specified you will get an exception. You always need to specify which fields you need, to limit the data traffic.
+Paging: For paging use “Skip” and “Top” functions
+```
+var documents = client.For<Document>().Select(fields).Skip(2).Top(5).Where("Subject+eq+'User Acceptance Test Document'").Get();
+```
+
+
