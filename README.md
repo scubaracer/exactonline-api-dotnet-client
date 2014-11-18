@@ -13,3 +13,15 @@ We have built this open-source client SDK so that you, as part of our community,
 The Exact Online Client SDK provides a rich application framework and simplifies the interconnection with the Exact Online RESTful API. The Exact Online API can help you to quickly integrate with Exact Online and build innovative apps within the .NET environment. This document describes how to get started using the Exact Online Client SDK. 
 
 The sample code in this document is in C#
+
+<h4>1.	Reference Libraries</h4>
+
+Include following references in your web project:
+-ExactOnline.Client.Models.dll
+-ExactOnline.Client.Sdk
+
+Add following namespaces in your code file:
+```
+using ExactOnline.Client.Models;
+using ExactOnline.Client.Sdk;
+```
