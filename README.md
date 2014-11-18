@@ -60,7 +60,7 @@ Document document = new Document
 			Type = 55, //Miscellaneous
 			DocumentDate = DateTime.Now.Date
 		   };
-		   ```
+```
 
 Use the ExactOnlineClient instance to insert the record:
 ```
@@ -69,6 +69,6 @@ bool created = client.For<Document>().Insert(ref document);
 
 “Insert” method takes entity object as reference and returns “true” if the insertion is successful.
 After successful insertion, the document ID can be retrieved as:
-```
-<i>document.ID</i>```
+
+<i>document.ID</i>
 
