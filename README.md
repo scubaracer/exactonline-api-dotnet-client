@@ -91,7 +91,7 @@ var documents = client.For<Document>().Select(fields).Skip(2).Top(5)
 .Where("Subject+eq+'User Acceptance Test Document'").Get();
 ```
 
-<h4>6.	Update Record Using Exact Client</4>
+<h4>6.	Update Record Using Exact Client</h4>
 
 Update the fields in the entity object and pass this object to “Update” function of the ExactOnlineClient instance, which will return “true” if update is successful.
 ```
@@ -100,4 +100,16 @@ document.DocumentDate = DateTime.Now.Date;
 var updated = client.For<Document>().Update(document);
 ```
 
+<h4>7.	Delete Record</4>
+To delete a record you need to provide the entity object to the “Delete” method of the ExactOnlineClient instance, which will return “true” if the operation is successful.
+```
+var deleted = client.For<Document>().Delete(document);
+```
 
+<h4>8.	Exceptions</h4>
+<b>Exception		Description</b>
+UnauthorizedException	When access token is null or invalid while making a request
+BadRequestException	When composed request is not in a correct format
+ForbiddenException	When some specific operation is not allowed to be performed.
+NotFoundException	When trying to retrieve a record which does not exist in the database.
+InternalServerError	For unknown internal server errors.
