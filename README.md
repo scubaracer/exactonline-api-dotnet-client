@@ -31,7 +31,7 @@ We have added an ExactOnline.Client.OAuth module, which takes care of the authen
 
 <h4>3.	Initializing Exact Client </h4>
 
-ExactOnline Client only supports the OAuth authentication for the API calls. To know more about OAuth please refer to Getting started - OAuth. To initialize the ExactOnlineClient object you need to provide the “apiEndPoint” & “AccessTokenDelegate”:
+ExactOnline Client only supports the OAuth authentication for the API calls. To know more about OAuth please refer to <a href="https://developers.exactonline.com/#OAuth Authentication.html">Getting started - OAuth</a>. To initialize the ExactOnlineClient object you need to provide the “apiEndPoint” & “AccessTokenDelegate”:
 ```
 ExactOnlineClient client = new ExactOnlineClient (apiEndPoint, AccessTokenDelegate);
 ```
@@ -113,5 +113,5 @@ var deleted = client.For<Document>().Delete(document);
 <tr><td>BadRequestException</td>	<td>When composed request is not in a correct format</td></tr>
 <tr><td>ForbiddenException</td>	<td>When some specific operation is not allowed to be performed.</td></tr>
 <tr><td>NotFoundException</td>	<td>When trying to retrieve a record which does not exist in the database.</td></tr>
-<tr><td>InternalServerError</td>	<td>For unknown internal server errors.</td></tr>
+<tr><td>InternalServerError</td>	<td>Please find the validation errors in the error message.</td></tr>
 </table>
