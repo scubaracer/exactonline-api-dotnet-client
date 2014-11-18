@@ -25,3 +25,8 @@ Add following namespaces in your code file:
 using ExactOnline.Client.Models;
 using ExactOnline.Client.Sdk;
 ```
+
+<h4>OAuth</h4>
+We have added an ExactOnline.Client.OAuth module, which takes care of the authentication. In this way you can easily execute the integration tests and user acceptance tests. When you want to use this you need to fill in your own client ID, client secret and callback url in the ExactOnline.Client.Sdk.TestContext in the TestObjectsCreator class. Of course you also can use your own OAuth implementation. 
+
+<h4>3.	Initializing Exact Client </h4>
