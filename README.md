@@ -100,16 +100,18 @@ document.DocumentDate = DateTime.Now.Date;
 var updated = client.For<Document>().Update(document);
 ```
 
-<h4>7.	Delete Record</4>
+<h4>7.	Delete Record</h4>
 To delete a record you need to provide the entity object to the “Delete” method of the ExactOnlineClient instance, which will return “true” if the operation is successful.
 ```
 var deleted = client.For<Document>().Delete(document);
 ```
 
 <h4>8.	Exceptions</h4>
-<b>Exception		Description</b>
-UnauthorizedException	When access token is null or invalid while making a request
-BadRequestException	When composed request is not in a correct format
-ForbiddenException	When some specific operation is not allowed to be performed.
-NotFoundException	When trying to retrieve a record which does not exist in the database.
-InternalServerError	For unknown internal server errors.
+<table>
+<tr><td><b>Exception</b></td>		<td><b>Description</b></td></tr>
+<tr><td>UnauthorizedException</td>	<td>When access token is null or invalid while making a request</td></tr>
+<tr><td>BadRequestException</td>	<td>When composed request is not in a correct format</td></tr>
+<tr><td>ForbiddenException</td>	<td>When some specific operation is not allowed to be performed.</td></tr>
+<tr><td>NotFoundException</td>	<td>When trying to retrieve a record which does not exist in the database.</td></tr>
+<tr><td>InternalServerError</td>	<td>For unknown internal server errors.</td></tr>
+</table>
