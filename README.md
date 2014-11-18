@@ -26,7 +26,25 @@ using ExactOnline.Client.Models;
 using ExactOnline.Client.Sdk;
 ```
 
-<h4>OAuth</h4>
+<h4>2.  OAuth</h4>
 We have added an ExactOnline.Client.OAuth module, which takes care of the authentication. In this way you can easily execute the integration tests and user acceptance tests. When you want to use this you need to fill in your own client ID, client secret and callback url in the ExactOnline.Client.Sdk.TestContext in the TestObjectsCreator class. Of course you also can use your own OAuth implementation. 
 
 <h4>3.	Initializing Exact Client </h4>
+
+ExactOnline Client only supports the OAuth authentication for the API calls. To know more about OAuth please refer to Getting started - OAuth. To initialize the ExactOnlineClient object you need to provide the “apiEndPoint” & “AccessTokenDelegate”:
+```
+ExactOnlineClient client = new ExactOnlineClient (apiEndPoint, AccessTokenDelegate);
+```
+
+For multiple administrations you can also specify the division
+
+```
+ExactOnlineClient client = 
+        new ExactOnlineClient (apiEndPoint, division, AccessTokenDelegate);
+```
+
+<u>apiEndPoint:</u> Exact Online URL for your country. For Netherlands: “https://start.exactonline.nl”
+
+<u>AccessTokenDelegate:</u> Delegate that will be responsible to retrieve and refresh the OAuth access token. For OAuth implementation please refer to Example OAuth.
+
+<h4>4.  </h4>
