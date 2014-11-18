@@ -87,7 +87,17 @@ var documents = client.For<Document>().Select(fields).Top(5).Where("Subject+eq+'
 If  “Select(fields)” is not specified you will get an exception. You always need to specify which fields you need, to limit the data traffic.
 Paging: For paging use “Skip” and “Top” functions
 ```
-var documents = client.For<Document>().Select(fields).Skip(2).Top(5).Where("Subject+eq+'User Acceptance Test Document'").Get();
+var documents = client.For<Document>().Select(fields).Skip(2).Top(5)
+.Where("Subject+eq+'User Acceptance Test Document'").Get();
+```
+
+<h4>6.	Update Record Using Exact Client</4>
+
+Update the fields in the entity object and pass this object to “Update” function of the ExactOnlineClient instance, which will return “true” if update is successful.
+```
+document.Subject = "User Acceptance Test Document Updated";
+document.DocumentDate = DateTime.Now.Date;
+var updated = client.For<Document>().Update(document);
 ```
 
 
