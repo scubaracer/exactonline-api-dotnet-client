@@ -17,8 +17,8 @@ The sample code in this document is in C#
 <h4>1.	Reference Libraries</h4>
 
 Include following references in your web project:
--ExactOnline.Client.Models.dll
--ExactOnline.Client.Sdk
+- ExactOnline.Client.Models.dll
+- ExactOnline.Client.Sdk
 
 Add following namespaces in your code file:
 ```
