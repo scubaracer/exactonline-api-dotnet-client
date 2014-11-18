@@ -45,7 +45,7 @@ ExactOnlineClient client =
 
 <u>apiEndPoint:</u> Exact Online URL for your country. For Netherlands: “https://start.exactonline.nl”
 
-<u>AccessTokenDelegate:</u> Delegate that will be responsible to retrieve and refresh the OAuth access token. For OAuth implementation please refer to Example OAuth.
+<u>AccessTokenDelegate:</u> Delegate that will be responsible to retrieve and refresh the OAuth access token. For OAuth implementation please refer to <a href="https://developers.exactonline.com/#Example OAuth.html">Example OAuth.</a>
 
 <h4>4.	Insert Record Using ExactOnline Client </h4>
 To insert a record using the ExactOnlineClient instance for a specific entity, you first need to initialize the object for that entity and provide all the required values.
