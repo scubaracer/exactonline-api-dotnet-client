@@ -47,4 +47,28 @@ ExactOnlineClient client =
 
 <u>AccessTokenDelegate:</u> Delegate that will be responsible to retrieve and refresh the OAuth access token. For OAuth implementation please refer to Example OAuth.
 
-<h4>4.  </h4>
+<h4>4.	Insert Record Using ExactOnline Client </h4>
+To insert a record using the ExactOnlineClient instance for a specific entity, you first need to initialize the object for that entity and provide all the required values.
+
+E-g: To insert a new “Document” record, first create a new object for “Document”:
+```
+Document document = new Document
+		   {
+			Subject = "User Acceptance Test Document",
+			Body = "User Acceptance Test Document",
+			Category = GetCategoryId (client),
+			Type = 55, //Miscellaneous
+			DocumentDate = DateTime.Now.Date
+		   };
+		   ```
+
+Use the ExactOnlineClient instance to insert the record:
+```
+bool created = client.For<Document>().Insert(ref document);
+```
+
+“Insert” method takes entity object as reference and returns “true” if the insertion is successful.
+After successful insertion, the document ID can be retrieved as:
+```
+<i>document.ID</i>```
+
