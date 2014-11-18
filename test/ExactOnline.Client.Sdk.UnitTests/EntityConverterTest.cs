@@ -213,7 +213,7 @@ namespace ExactOnline.Client.Sdk.UnitTests
 			Assert.AreEqual(false, (Boolean)glaccountObject.Matching);
 			Assert.AreEqual("12/02/2013 13:44:27", (string)glaccountObject.Modified);
 			Assert.AreEqual("10091f1b-4661-4854-9fd0-cf5f5f668cbd", (string)glaccountObject.Modifier);
-			Assert.AreEqual("Aschwin Brandt", (string)glaccountObject.ModifierFullName);
+			Assert.AreEqual("Edward Jackson", (string)glaccountObject.ModifierFullName);
 			Assert.AreEqual(null, (string)glaccountObject.PrivateGLAccount);
 			Assert.AreEqual("0", (string)glaccountObject.PrivatePercentage);
 			Assert.AreEqual(null, (string)glaccountObject.ReportingCode);
