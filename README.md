@@ -1,6 +1,8 @@
 ![Logo](https://apps.exactonline.com/content/css/images/exact-logo-red.png)
 
-[![exactonline MyGet Build Status](https://www.myget.org/BuildSource/Badge/exactonline?identifier=81df57d1-d68c-4875-995a-479eab8c0f4e)](https://www.nuget.org/packages/ExactOnline.Client.Sdk)
+**Status**
+
+Release (NuGet): [![exactonline MyGet Build Status](https://www.myget.org/BuildSource/Badge/exactonline?identifier=81df57d1-d68c-4875-995a-479eab8c0f4e)](https://www.nuget.org/packages/ExactOnline.Client.Sdk)
 
 C# client SDK for the Exact Online RESTFul API
 ===============
