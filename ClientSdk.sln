@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Client.OAuth", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Client.Sdk.UnitTests", "test\ExactOnline.Client.Sdk.UnitTests\ExactOnline.Client.Sdk.UnitTests.csproj", "{866362D4-39CA-4FAA-99C0-2BE23530E881}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{55C110CA-01CB-4CC0-A32F-E81C34441DFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Client.Authentication.Owin", "src\ExactOnline.Client.Authentication.Owin\ExactOnline.Client.Authentication.Owin.csproj", "{BA1DCC73-F2BD-425A-9B76-930B2C067C66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWeb", "samples\SampleWeb\SampleWeb.csproj", "{A1EE2899-0F18-4C0C-B56D-BF8EA454E9FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Browser|Any CPU = Browser|Any CPU
@@ -44,11 +50,24 @@ Global
 		{866362D4-39CA-4FAA-99C0-2BE23530E881}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{866362D4-39CA-4FAA-99C0-2BE23530E881}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{866362D4-39CA-4FAA-99C0-2BE23530E881}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA1DCC73-F2BD-425A-9B76-930B2C067C66}.Browser|Any CPU.ActiveCfg = Release|Any CPU
+		{BA1DCC73-F2BD-425A-9B76-930B2C067C66}.Browser|Any CPU.Build.0 = Release|Any CPU
+		{BA1DCC73-F2BD-425A-9B76-930B2C067C66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA1DCC73-F2BD-425A-9B76-930B2C067C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA1DCC73-F2BD-425A-9B76-930B2C067C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA1DCC73-F2BD-425A-9B76-930B2C067C66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1EE2899-0F18-4C0C-B56D-BF8EA454E9FE}.Browser|Any CPU.ActiveCfg = Release|Any CPU
+		{A1EE2899-0F18-4C0C-B56D-BF8EA454E9FE}.Browser|Any CPU.Build.0 = Release|Any CPU
+		{A1EE2899-0F18-4C0C-B56D-BF8EA454E9FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1EE2899-0F18-4C0C-B56D-BF8EA454E9FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1EE2899-0F18-4C0C-B56D-BF8EA454E9FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1EE2899-0F18-4C0C-B56D-BF8EA454E9FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{866362D4-39CA-4FAA-99C0-2BE23530E881} = {3F1610DB-DF11-43C3-B024-427B17186896}
+		{A1EE2899-0F18-4C0C-B56D-BF8EA454E9FE} = {55C110CA-01CB-4CC0-A32F-E81C34441DFB}
 	EndGlobalSection
 EndGlobal

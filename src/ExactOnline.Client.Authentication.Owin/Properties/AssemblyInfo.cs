@@ -4,8 +4,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ExactOnline.Client.Sdk")]
-[assembly: AssemblyDescription("Exact Online Client SDK")]
+[assembly: AssemblyTitle("ExactOnline.Client.Authentication.Owin")]
+[assembly: AssemblyDescription("OWIN Authentication for Exact Online")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Exact")]
 [assembly: AssemblyProduct("Exact Online Client SDK")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9764069e-44b9-44b6-a2ff-c3fd22d3ca35")]
+[assembly: Guid("a9ab4064-2072-4f86-bd7a-93b7a7f6ab37")]
 
 // Version information for an assembly consists of the following four values:
 //
