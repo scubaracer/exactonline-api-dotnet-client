@@ -136,6 +136,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 					case "StockPosition": conn = new ApiConnection(_connector, _apiEndpoint + "StockPosition - Function Details"); break;
 					case "TaxDocument": conn = new ApiConnection(_connector, _apiEndpoint + "read/financial/Returns"); break;
 					case "TimeTransaction": conn = new ApiConnection(_connector, _apiEndpoint + "project/TimeTransactions"); break;
+					case "Transaction": conn = new ApiConnection(_connector, _apiEndpoint + "financialtransaction/Transactions"); break;
 					case "Unit": conn = new ApiConnection(_connector, _apiEndpoint + "logistics/Units"); break;
 					case "User": conn = new ApiConnection(_connector, _apiEndpoint + "users/Users"); break;
 					case "UserRole": conn = new ApiConnection(_connector, _apiEndpoint + "users/UserRoles"); break;
