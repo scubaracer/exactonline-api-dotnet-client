@@ -67,7 +67,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 			// Add POST data to the request
 			if (!string.IsNullOrEmpty(postdata))
 			{
-				var bytes = Encoding.GetEncoding("iso-8859-1").GetBytes(postdata);
+				var bytes = Encoding.GetEncoding("utf-8").GetBytes(postdata);
 				request.ContentLength = bytes.Length;
 
 				using (var writeStream = request.GetRequestStream())
@@ -97,7 +97,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 
 			if (!string.IsNullOrEmpty(putData))
 			{
-				var bytes = Encoding.GetEncoding("iso-8859-1").GetBytes(putData);
+				var bytes = Encoding.GetEncoding("utf-8").GetBytes(putData);
 				request.ContentLength = bytes.Length;
 
 				using (var writeStream = request.GetRequestStream())
