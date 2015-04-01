@@ -113,7 +113,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 			{
 				// Create correct endpoint
 				string endpoint = EndPoint;
-				if(keyName.Equals("ID")) endpoint += "(guid'" + guid + "')";
+				if(keyName.Contains("ID")) endpoint += "(guid'" + guid + "')";
 				else endpoint += "(" + guid + ")";
 
 				string response = _conn.DoPutRequest(endpoint, data);
