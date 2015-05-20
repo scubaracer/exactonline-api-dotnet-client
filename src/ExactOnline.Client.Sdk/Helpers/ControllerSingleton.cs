@@ -125,6 +125,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 					case "PriceList": conn = new ApiConnection(_connector, _apiEndpoint + "sales/PriceLists"); break;
 					case "PrintedSalesInvoice": conn = new ApiConnection(_connector, _apiEndpoint + "salesinvoice/PrintedSalesInvoices"); break;
 					case "ProductionArea": conn = new ApiConnection(_connector, _apiEndpoint + "manufacturing/ProductionAreas"); break;
+					case "Project": conn = new ApiConnection(_connector, _apiEndpoint + "project/Projects"); break;
 					case "SalesEntry": conn = new ApiConnection(_connector, _apiEndpoint + "salesentry/SalesEntries"); break;
 					case "SalesEntryLine": conn = new ApiConnection(_connector, _apiEndpoint + "salesentry/SalesEntryLines"); break;
 					case "SalesInvoice": conn = new ApiConnection(_connector, _apiEndpoint + "salesinvoice/SalesInvoices"); break;
