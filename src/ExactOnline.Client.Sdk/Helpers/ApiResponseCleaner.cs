@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Script.Serialization;
 using ExactOnline.Client.Sdk.Exceptions;
+using Newtonsoft.Json;
 
 namespace ExactOnline.Client.Sdk.Helpers
 {
@@ -83,7 +84,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 					}
 					else
 					{
-						json += "\"" + entry.Value.ToString().Replace("\"", "\\" + "\"") + "\"";
+						json += JsonConvert.ToString(entry.Value.ToString());
 					}
 					json += ",";
 				}

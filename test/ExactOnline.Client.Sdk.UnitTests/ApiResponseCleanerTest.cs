@@ -57,6 +57,15 @@ namespace ExactOnline.Client.Sdk.UnitTests
 		}
 
 		[TestCategory("Unit Test")]
+		[TestMethod]
+		public void ApiResponseCleaner_FetchJsonObject_WithEscapeCharacter_Succeeds()
+		{
+			var json = ApiResponseCleaner.GetJsonObject(JsonFileReader.GetJsonFromFile("APIResponse_Json_Object_RemarksWithEscapeCharacter.txt"));
+			
+			Assert.IsTrue(json.Contains("\"\\\\escape test\""));
+		}
+
+		[TestCategory("Unit Test")]
 		[TestMethod, ExpectedException(typeof(ArgumentException))]
 		public void ApiResponseCleaner_FetchJsonObject_WithoutDKeyValuePair_Fails()
 		{
