@@ -71,7 +71,6 @@
     <Content Include="Json\APIResponse_Json_Array_WithEmptyLinkedEntities.txt" />
     <Content Include="Json\APIResponse_Json_Array_WithoutDTag.txt" />
     <Content Include="Json\APIResponse_Json_Array_WithoutResultsTag.txt" />
-    <Content Include="Json\APIResponse_Json_Object_RemarksWithEscapeCharacter.txt" />
     <Content Include="Json\APIResponse_Json_Object.txt" />
     <Content Include="Json\APIResponse_Json_Object_WithoutD.txt" />
     <Content Include="Json\Expected_Json_Object_ComplexEntity_WithEmptyLinkedEntities.txt" />

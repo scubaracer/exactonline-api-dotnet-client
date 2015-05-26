@@ -60,9 +60,12 @@ namespace ExactOnline.Client.Sdk.UnitTests
 		[TestMethod]
 		public void ApiResponseCleaner_FetchJsonObject_WithEscapeCharacter_Succeeds()
 		{
-			var json = ApiResponseCleaner.GetJsonObject(JsonFileReader.GetJsonFromFile("APIResponse_Json_Object_RemarksWithEscapeCharacter.txt"));
-			
-			Assert.IsTrue(json.Contains("\"\\\\escape test\""));
+			const string sampleJsonResponse = @"{ ""d"": { ""Remarks"": ""\\escape test"" }}";			
+
+			var cleanedJson = ApiResponseCleaner.GetJsonObject(sampleJsonResponse);
+
+			const string expectedCleanedJson = @"{""Remarks"":""\\escape test""}";
+			Assert.AreEqual(expectedCleanedJson, cleanedJson);
 		}
 
 		[TestCategory("Unit Test")]
