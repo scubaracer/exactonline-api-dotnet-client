@@ -57,6 +57,18 @@ namespace ExactOnline.Client.Sdk.UnitTests
 		}
 
 		[TestCategory("Unit Test")]
+		[TestMethod]
+		public void ApiResponseCleaner_FetchJsonObject_WithEscapeCharacter_Succeeds()
+		{
+			const string sampleJsonResponse = @"{ ""d"": { ""Remarks"": ""\\escape test"" }}";			
+
+			var cleanedJson = ApiResponseCleaner.GetJsonObject(sampleJsonResponse);
+
+			const string expectedCleanedJson = @"{""Remarks"":""\\escape test""}";
+			Assert.AreEqual(expectedCleanedJson, cleanedJson);
+		}
+
+		[TestCategory("Unit Test")]
 		[TestMethod, ExpectedException(typeof(ArgumentException))]
 		public void ApiResponseCleaner_FetchJsonObject_WithoutDKeyValuePair_Fails()
 		{
