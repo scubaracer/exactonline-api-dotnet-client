@@ -6,50 +6,25 @@ using ExactOnline.Client.Sdk.Interfaces;
 namespace ExactOnline.Client.Sdk.Helpers
 {
 	/// <summary>
-	/// Manages instances of controllers to ensure that only one instance of a specific controller exists
+	/// Manages instances of controllers
 	/// </summary>
-	public class ControllerSingleton
+	public class ControllerList
 	{
-		static ControllerSingleton _instance;
+		private readonly IApiConnector _connector;
+		private readonly string _apiEndpoint;
+		private readonly Hashtable _controllers;
 
-		private IApiConnector _connector;
-		private string _apiEndpoint;
-		private Hashtable _controllers;
-
-		/// <summary>
-		/// Returns an instance of ControllerSingleton
-		/// </summary>
-		public static ControllerSingleton GetInstance(IApiConnector connector, string apiEndpoint)
+		public ControllerList(IApiConnector connector, string apiEndpoint)
 		{
-			if (_instance == null)
-			{
-				_instance = new ControllerSingleton
-				{
-					_apiEndpoint = apiEndpoint,
-					_connector = connector,
-					_controllers = new Hashtable()
-				};
-			}
-			return _instance;
-		}
-
-		/// <summary>
-		/// Returns an instance of ControllerSingleton. This method expects that the ControllerSingleton is already set.
-		/// </summary>
-		/// <returns></returns>
-		public static ControllerSingleton GetInstance()
-		{
-			if (_instance != null)
-			{
-				return _instance;
-			}
-			throw new Exception("Instance is not yet set. Use GetInstance(ApiConnector, ApiEndPoint");
+			_apiEndpoint = apiEndpoint;
+			_connector = connector;
+			_controllers = new Hashtable();
 		}
 
 		/// <summary>
 		/// Gets the name of the generic type
 		/// </summary>
-		private string GetTypename<T>()
+		private static string GetTypename<T>()
 		{
 			// Get entity name from type
 			var entity = typeof(T).ToString();
@@ -63,7 +38,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// </summary>
 		public IEntityManager GetEntityManager(Type type)
 		{
-			var method = typeof(ControllerSingleton).GetMethod("GetController");
+			var method = typeof(ControllerList).GetMethod("GetController");
 			var genericMethod = method.MakeGenericMethod(new[] { type });
 			var controller = (IEntityManager)genericMethod.Invoke(this, null);
 			return controller;
@@ -76,7 +51,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 		{
 			var typename = GetTypename<T>();
 			var returncontroller = (Controller<T>)_controllers[typename];
-			
+
 			// If not exists: create
 			if (returncontroller == null)
 			{
@@ -156,17 +131,9 @@ namespace ExactOnline.Client.Sdk.Helpers
 				};
 				_controllers.Add(typename, returncontroller);
 			}
-			
+
 			return returncontroller;
 		}
 
-		/// <summary>
-		/// Deletes instance of ControllerSingleton
-		/// </summary>
-		public static void Clean()
-		{
-			_instance = null;
-		}
-	
 	}
 }

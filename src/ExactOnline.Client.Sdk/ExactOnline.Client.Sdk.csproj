@@ -48,7 +48,7 @@
     <Compile Include="Helpers\ApiConnection.cs" />
     <Compile Include="Helpers\ApiConnector.cs" />
     <Compile Include="Helpers\ApiResponseCleaner.cs" />
-    <Compile Include="Helpers\ControllerSingleton.cs" />
+    <Compile Include="Helpers\ControllerList.cs" />
     <Compile Include="Helpers\ExactOnlineJsonConverter.cs" />
     <Compile Include="Controllers\ExactOnlineClient.cs" />
     <Compile Include="Helpers\EntityConverter.cs" />
