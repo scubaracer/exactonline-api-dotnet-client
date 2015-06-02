@@ -8,8 +8,7 @@ namespace ConsoleApplication
 		private readonly string _clientId;
 		private readonly string _clientSecret;
 		private readonly Uri _callbackUrl;
-
-		private readonly static UserAuthorization Authorization = new UserAuthorization();
+		private readonly UserAuthorization _authorization;
 
 		public string EndPoint
 		{
@@ -24,13 +23,14 @@ namespace ConsoleApplication
 			_clientId = clientId;
 			_clientSecret = clientSecret;
 			_callbackUrl = callbackUrl;
+			_authorization = new UserAuthorization();
 		}
 
 		public string GetAccessToken()
 		{
-			UserAuthorizations.Authorize(Authorization, EndPoint, _clientId, _clientSecret, _callbackUrl);
+			UserAuthorizations.Authorize(_authorization, EndPoint, _clientId, _clientSecret, _callbackUrl);
 
-			return Authorization.AccessToken;
+			return _authorization.AccessToken;
 		}
 
 	}

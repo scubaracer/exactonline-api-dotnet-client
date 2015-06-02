@@ -127,12 +127,11 @@ namespace ExactOnline.Client.Sdk.UnitTests
 		{
 			// Test if controller registrates linked entities
 			IApiConnector conn = new ApiConnectorControllerMock();
-			ControllerSingleton.Clean();
-			ControllerSingleton cs = ControllerSingleton.GetInstance(conn, string.Empty);
+			var controllerList = new ControllerList(conn, string.Empty);
 
-			var salesinvoicecontroller = (Controller<SalesInvoice>)cs.GetController<SalesInvoice>();
-			var invoicelines = (Controller<SalesInvoiceLine>)cs.GetController<SalesInvoiceLine>();
-			salesinvoicecontroller.GetManagerForEntity = cs.GetEntityManager;
+			var salesinvoicecontroller = (Controller<SalesInvoice>)controllerList.GetController<SalesInvoice>();
+			var invoicelines = (Controller<SalesInvoiceLine>)controllerList.GetController<SalesInvoiceLine>();
+			salesinvoicecontroller.GetManagerForEntity = controllerList.GetEntityManager;
 
 			// Verify if sales invoice lines are registrated entities
 			var invoice = salesinvoicecontroller.Get("")[0];

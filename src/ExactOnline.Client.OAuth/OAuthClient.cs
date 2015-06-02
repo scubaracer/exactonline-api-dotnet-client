@@ -48,14 +48,9 @@ namespace ExactOnline.Client.OAuth
 			if (authorization.AccessToken == null || refreshFailed)
 			{
 				using (var loginDialog = new LoginForm(_redirectUri))
-				{
-					Uri url = RequestUserAuthorization(authorization);
-
-					var urlBuilder = new UriBuilder(url) {Query = url.Query.Substring(1)};
-					loginDialog.AuthorizationUri = urlBuilder.Uri;
-
+				{					
+					loginDialog.AuthorizationUri = GetAuthorizationUri(authorization);
 					loginDialog.ShowDialog();
-
 					ProcessUserAuthorization(loginDialog.AuthorizationUri, authorization);
 				}
 			}
@@ -78,6 +73,18 @@ namespace ExactOnline.Client.OAuth
 				return (timeToExpire.Minutes < 1);
 			}
 			return false;
+		}
+
+		private Uri GetAuthorizationUri(IAuthorizationState authorization)
+		{
+			var baseUri = RequestUserAuthorization(authorization);
+
+			var authorizationUriBuilder = new UriBuilder(baseUri)
+			{
+				Query = baseUri.Query.Substring(1) + "&force_login=1"
+			};
+
+			return authorizationUriBuilder.Uri;
 		}
 
 		#endregion

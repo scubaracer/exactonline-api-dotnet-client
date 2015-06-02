@@ -121,16 +121,6 @@ namespace ExactOnline.Client.Sdk.Helpers
 
 		private EntityController GetEntityController(object entity)
 		{
-			//// Get associated controller of linked entity
-			//ControllerSingleton instance = ControllerSingleton.GetInstance();
-			//MethodInfo method = instance.GetType().GetMethod("GetController");
-			//MethodInfo genericMethod = method.MakeGenericMethod(new Type[] { entity.GetType() });
-			//IEntityManager entityManager = (IEntityManager)genericMethod.Invoke(instance, null);
-
-			//// Get the EntityController associated with the entity
-			//var entityIdentifier = entityManager.GetIdentifierValue(entity);
-			//var emanager = entityManager.GetEntityController(entityIdentifier);
-
 			var emanager = _entityControllerDelegate(entity);
 			return emanager;
 		}

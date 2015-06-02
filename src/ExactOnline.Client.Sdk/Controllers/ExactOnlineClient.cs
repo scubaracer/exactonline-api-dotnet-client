@@ -13,7 +13,7 @@ namespace ExactOnline.Client.Sdk.Controllers
 	{
 		private readonly ApiConnector _apiConnector;
 		private readonly string _exactOnlineApiUrl;		// https://start.exactonline.nl/api/v1
-		private readonly ControllerSingleton _controllers;
+		private readonly ControllerList _controllers;
 
 		#region Constructors
 
@@ -35,7 +35,7 @@ namespace ExactOnline.Client.Sdk.Controllers
 			int currentDivision = (division > 0) ? division : GetDivision();
 			string serviceRoot = _exactOnlineApiUrl + currentDivision + "/";
 
-			_controllers = ControllerSingleton.GetInstance(_apiConnector, serviceRoot);
+			_controllers = new ControllerList(_apiConnector, serviceRoot);
 		}
 
 		/// <summary>

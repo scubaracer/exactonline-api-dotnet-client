@@ -17,12 +17,11 @@ namespace ExactOnline.Client.Sdk.UnitTests
 		[TestCategory("Unit Test")]
 		public void EntityController_Update_WithNewLinkedEntity_Succeeds()
 		{
-			ControllerSingleton.Clean();
 			var controllerMock = new ApiConnectionEntityControllerMock();
 			var apiConnectorMock = new ApiConnectorMock();
-			ControllerSingleton instance = ControllerSingleton.GetInstance(apiConnectorMock, "https://start.exactonline.nl/api/v1/");
+			var controllerList = new ControllerList(apiConnectorMock, "https://start.exactonline.nl/api/v1/");
 
-			var controller = (Controller<SalesInvoice>)instance.GetController<SalesInvoice>();
+			var controller = (Controller<SalesInvoice>)controllerList.GetController<SalesInvoice>();
 			var invoice = new SalesInvoice {Description = "New Description"};
 			var entityController = new EntityController(invoice, "ID", invoice.InvoiceID.ToString(), controllerMock, controller.GetEntityController);
 
@@ -42,16 +41,15 @@ namespace ExactOnline.Client.Sdk.UnitTests
 		[TestCategory("Unit Test")]
 		public void EntityController_Update_WithExistingLinkedEntity_Succeeds()
 		{
-			ControllerSingleton.Clean();
 			var controllerMock = new ApiConnectionEntityControllerMock();
 			var connector = new ApiConnectorMock();
-			ControllerSingleton instance = ControllerSingleton.GetInstance(connector, "https://start.exactonline.nl/api/v1/");
+			var controllerList = new ControllerList(connector, "https://start.exactonline.nl/api/v1/");
 
 			var invoice = new SalesInvoice {Description = "New Description"};
 			var line = new SalesInvoiceLine {Description = "InvoiceLine"};
-			invoice.SalesInvoiceLines = new List<SalesInvoiceLine> { line }; 
+			invoice.SalesInvoiceLines = new List<SalesInvoiceLine> { line };
 
-			var controller = (Controller<SalesInvoice>)instance.GetController<SalesInvoice>();
+			var controller = (Controller<SalesInvoice>)controllerList.GetController<SalesInvoice>();
 			var entityController = new EntityController(invoice, "ID", invoice.InvoiceID.ToString(), controllerMock, controller.GetEntityController);
 			Assert.IsTrue(controller.AddEntityToManagedEntitiesCollection(invoice));
 
@@ -68,16 +66,15 @@ namespace ExactOnline.Client.Sdk.UnitTests
 		[TestCategory("Unit Test")]
 		public void EntityController_Update_WithNoFieldsAltered_Succeeds()
 		{
-			ControllerSingleton.Clean();
 			var controllerMock = new ApiConnectionEntityControllerMock();
 			var connector = new ApiConnectorMock();
-			var instance = ControllerSingleton.GetInstance(connector, "https://start.exactonline.nl/api/v1/");
+			var controllerList = new ControllerList(connector, "https://start.exactonline.nl/api/v1/");
 
 			var invoice = new SalesInvoice {Description = "New Description"};
 			var line = new SalesInvoiceLine {Description = "Invoice Line"};
 			invoice.SalesInvoiceLines = new List<SalesInvoiceLine> { line }; 
 
-			var controller = (Controller<SalesInvoice>)instance.GetController<SalesInvoice>();
+			var controller = (Controller<SalesInvoice>)controllerList.GetController<SalesInvoice>();
 			var entityController = new EntityController(invoice, "ID", invoice.InvoiceID.ToString(), controllerMock, controller.GetEntityController);
 			var returnValue = controller.AddEntityToManagedEntitiesCollection(invoice);
 
@@ -93,16 +90,15 @@ namespace ExactOnline.Client.Sdk.UnitTests
 		[TestCategory("Unit Test")]
 		public void EntityController_Update_WithOnlyLinkedEntityFieldsAltered_Succeeds()
 		{
-			ControllerSingleton.Clean();
 			var controllerMock = new ApiConnectionEntityControllerMock();
 			var connector = new ApiConnectorMock();
-			ControllerSingleton instance = ControllerSingleton.GetInstance(connector, "https://start.exactonline.nl/api/v1/");
+			var controllerList = new ControllerList(connector, "https://start.exactonline.nl/api/v1/");
 
 			var invoice = new SalesInvoice {Description = "New Description"};
 			var line = new SalesInvoiceLine {Description = "InvoiceLine"};
 			invoice.SalesInvoiceLines = new List<SalesInvoiceLine> { line };
 
-			var controller = (Controller<SalesInvoice>)instance.GetController<SalesInvoice>();
+			var controller = (Controller<SalesInvoice>)controllerList.GetController<SalesInvoice>();
 			var ec = new EntityController(invoice, "ID", invoice.InvoiceID.ToString(), controllerMock, controller.GetEntityController);
 			Assert.IsTrue(controller.AddEntityToManagedEntitiesCollection(invoice));
 
