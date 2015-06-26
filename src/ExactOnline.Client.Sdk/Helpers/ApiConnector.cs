@@ -194,66 +194,55 @@ namespace ExactOnline.Client.Sdk.Helpers
 					}
 				}
 			}
-			catch (Exception e)
+            catch (WebException ex)
 			{
-				// Check if of WebException Type
-				if (e.GetType() == typeof(WebException))
+				var statusCode = (((HttpWebResponse)ex.Response).StatusCode);
+
+				Debug.WriteLine(ex.Message);
+
+				switch (statusCode)
 				{
-					var exception = (WebException)e;
-					var errorMessage = new StreamReader(exception.Response.GetResponseStream()).ReadToEnd();
-					var statusCode = (((HttpWebResponse)exception.Response).StatusCode);
+					case HttpStatusCode.BadRequest:
+                        throw new BadRequestException(ex.Message, ex); // 400
 
-					Debug.WriteLine(errorMessage);
+					case HttpStatusCode.Unauthorized: //401
+                        throw new UnauthorizedException(ex.Message, ex); // 401
 
-					Exception throwException = exception;
-					switch (statusCode)
-					{
-						case HttpStatusCode.BadRequest:
-							throwException = new BadRequestException(e.Message); // 400
-							break;
+					case HttpStatusCode.Forbidden:
+                        throw new ForbiddenException(ex.Message, ex); // 403
 
-						case HttpStatusCode.Unauthorized: //401
+					case HttpStatusCode.NotFound:
+                        throw new NotFoundException(ex.Message, ex); // 404
 
-							throwException = new UnauthorizedException(); // 401
-							break;
+					case HttpStatusCode.InternalServerError: // 500
+                        throw new InternalServerErrorException(GetInternalServerErrorMessage(ex), ex);
 
-						case HttpStatusCode.Forbidden:
-							throwException = new ForbiddenException(); // 403
-							break;
-
-						case HttpStatusCode.NotFound:
-							throwException = new NotFoundException(); // 404
-							break;
-
-						case HttpStatusCode.InternalServerError: // 500
-							string exceptionmessage;
-
-							try
-							{
-								var deserializedObject = JsonConvert.DeserializeObject<dynamic>(errorMessage);
-								exceptionmessage = deserializedObject["error"]["message"]["value"];
-							}
-							catch (Exception)
-							{
-								exceptionmessage = "Unknown error";
-							}
-							throwException = new InternalServerErrorException(exceptionmessage);
-							break;
-
-						case HttpStatusCode.MethodNotAllowed: // 405
-							throwException = new BadRequestException();
-							break;
-					}
-
-					throw throwException;
-
+					case HttpStatusCode.MethodNotAllowed: // 405
+						throw new BadRequestException(ex.Message, ex);
 				}
+
+				throw;
 			}
 
 			Debug.WriteLine(responseValue);
 
 			return responseValue;
 		}
+
+        private static string GetInternalServerErrorMessage(WebException ex)
+        {
+            var errorMessage = new StreamReader(ex.Response.GetResponseStream()).ReadToEnd();
+
+            try
+            {
+                var deserializedObject = JsonConvert.DeserializeObject<dynamic>(errorMessage);
+                return deserializedObject["error"]["message"]["value"];
+            }
+            catch
+            {
+                return ex.Message;
+            }
+        }
 
 		#endregion
 
