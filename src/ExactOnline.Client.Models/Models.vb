@@ -281,6 +281,64 @@ Public Class ActivityLog
 	Public Property [DatabaseName] As String
 End Class
 
+<SupportedActionsSDK(True, True, True, True)>
+<DataServiceKey("ID")>
+Public Class Address
+    Public Property [Account] As Guid?
+    Public Property [AccountIsSupplier] As Boolean?
+    Public Property [AccountName] As String
+    Public Property [AddressLine1] As String
+    Public Property [AddressLine2] As String
+    Public Property [AddressLine3] As String
+    Public Property [City] As String
+    Public Property [Contact] As Guid?
+    Public Property [ContactName] As String
+    Public Property [Country] As String
+    Public Property [CountryName] As String
+    Public Property [Created] As DateTime?
+    Public Property [Creator] As Guid?
+    Public Property [CreatorFullName] As String
+    Public Property [Division] As Int32?
+    Public Property [Fax] As String
+    Public Property [FreeBoolField_01] As Boolean?
+    Public Property [FreeBoolField_02] As Boolean?
+    Public Property [FreeBoolField_03] As Boolean?
+    Public Property [FreeBoolField_04] As Boolean?
+    Public Property [FreeBoolField_05] As Boolean?
+    Public Property [FreeDateField_01] As DateTime?
+    Public Property [FreeDateField_02] As DateTime?
+    Public Property [FreeDateField_03] As DateTime?
+    Public Property [FreeDateField_04] As DateTime?
+    Public Property [FreeDateField_05] As DateTime?
+    Public Property [FreeNumberField_01] As Double?
+    Public Property [FreeNumberField_02] As Double?
+    Public Property [FreeNumberField_03] As Double?
+    Public Property [FreeNumberField_04] As Double?
+    Public Property [FreeNumberField_05] As Double?
+    Public Property [FreeTextField_01] As String
+    Public Property [FreeTextField_02] As String
+    Public Property [FreeTextField_03] As String
+    Public Property [FreeTextField_04] As String
+    Public Property [FreeTextField_05] As String
+    Public Property [ID] As Guid
+    Public Property [Mailbox] As String
+    Public Property [Main] As Boolean?
+    Public Property [Modified] As DateTime?
+    Public Property [Modifier] As Guid?
+    Public Property [ModifierFullName] As String
+    Public Property [NicNumber] As String
+    Public Property [Notes] As String
+    Public Property [Phone] As String
+    Public Property [PhoneExtension] As String
+    Public Property [Postcode] As String
+    Public Property [State] As String
+    Public Property [StateDescription] As String
+    Public Property [Type] As Int16?
+    Public Property [Warehouse] As Guid?
+    Public Property [WarehouseCode] As String
+    Public Property [WarehouseDescription] As String
+End Class
+
 <DataServiceKey("AccountId")>
 Public Class AgingAmounts
 	Public Property [AccountId] As Guid
