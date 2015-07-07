@@ -61,7 +61,8 @@ namespace ExactOnline.Client.Sdk.Helpers
 				{
 					case "Me": conn = new ApiConnection(_connector, _apiEndpoint + "system/Me"); break;
 					case "Account": conn = new ApiConnection(_connector, _apiEndpoint + "crm/Accounts"); break;
-					case "AccountClass": conn = new ApiConnection(_connector, _apiEndpoint + "crm/AccountClasses"); break;
+                    case "AccountClass": conn = new ApiConnection(_connector, _apiEndpoint + "crm/AccountClasses"); break;
+                    case "Address": conn = new ApiConnection(_connector, _apiEndpoint + "crm/Addresses"); break;
 					case "AgingOverview": conn = new ApiConnection(_connector, _apiEndpoint + "read/financial/AgingOverview"); break;
 					case "Asset": conn = new ApiConnection(_connector, _apiEndpoint + "assets/Assets"); break;
 					case "BankAccount": conn = new ApiConnection(_connector, _apiEndpoint + "crm/BankAccounts"); break;
