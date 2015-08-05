@@ -3869,6 +3869,7 @@ Public Class SalesItemPrice
 End Class
 
 <DataServiceKey("OrderID")>
+<SupportedActionsSDK(True, True, True, True)>
 Public Class SalesOrder
 	Public Property [AmountDC] As Double?
 	Public Property [AmountFC] As Double?
@@ -3921,6 +3922,7 @@ Public Class SalesOrder
 End Class
 
 <DataServiceKey("ID")>
+<SupportedActionsSDK(True, True, True, True)>
 Public Class SalesOrderLine
 	Public Property [AmountDC] As Double?
 	Public Property [AmountFC] As Double?
