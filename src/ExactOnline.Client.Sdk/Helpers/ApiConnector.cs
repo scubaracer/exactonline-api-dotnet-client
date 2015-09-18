@@ -2,7 +2,10 @@
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
+using System.Threading.Tasks;
 using ExactOnline.Client.Sdk.Delegates;
 using ExactOnline.Client.Sdk.Enums;
 using ExactOnline.Client.Sdk.Exceptions;
@@ -166,7 +169,6 @@ namespace ExactOnline.Client.Sdk.Helpers
 			request.ContentType = "application/json";
 			request.Accept = "application/json";
 			request.Headers.Add("Authorization", "Bearer " + _accessTokenDelegate());
-			request.Headers.Add("Prefer", "return=representation");
 
 			Debug.WriteLine(request.Method);
 			Debug.WriteLine(url);
@@ -192,7 +194,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 					}
 				}
 			}
-			catch (WebException ex)
+            catch (WebException ex)
 			{
 				var statusCode = (((HttpWebResponse)ex.Response).StatusCode);
 
@@ -201,19 +203,19 @@ namespace ExactOnline.Client.Sdk.Helpers
 				switch (statusCode)
 				{
 					case HttpStatusCode.BadRequest:
-						throw new BadRequestException(ex.Message, ex); // 400
+                        throw new BadRequestException(ex.Message, ex); // 400
 
 					case HttpStatusCode.Unauthorized: //401
-						throw new UnauthorizedException(ex.Message, ex); // 401
+                        throw new UnauthorizedException(ex.Message, ex); // 401
 
 					case HttpStatusCode.Forbidden:
-						throw new ForbiddenException(ex.Message, ex); // 403
+                        throw new ForbiddenException(ex.Message, ex); // 403
 
 					case HttpStatusCode.NotFound:
-						throw new NotFoundException(ex.Message, ex); // 404
+                        throw new NotFoundException(ex.Message, ex); // 404
 
 					case HttpStatusCode.InternalServerError: // 500
-						throw new InternalServerErrorException(GetInternalServerErrorMessage(ex), ex);
+                        throw new InternalServerErrorException(GetInternalServerErrorMessage(ex), ex);
 
 					case HttpStatusCode.MethodNotAllowed: // 405
 						throw new BadRequestException(ex.Message, ex);
@@ -227,20 +229,20 @@ namespace ExactOnline.Client.Sdk.Helpers
 			return responseValue;
 		}
 
-		private static string GetInternalServerErrorMessage(WebException ex)
-		{
-			var errorMessage = new StreamReader(ex.Response.GetResponseStream()).ReadToEnd();
+        private static string GetInternalServerErrorMessage(WebException ex)
+        {
+            var errorMessage = new StreamReader(ex.Response.GetResponseStream()).ReadToEnd();
 
-			try
-			{
-				var deserializedObject = JsonConvert.DeserializeObject<dynamic>(errorMessage);
-				return deserializedObject["error"]["message"]["value"];
-			}
-			catch
-			{
-				return ex.Message;
-			}
-		}
+            try
+            {
+                var deserializedObject = JsonConvert.DeserializeObject<dynamic>(errorMessage);
+                return deserializedObject["error"]["message"]["value"];
+            }
+            catch
+            {
+                return ex.Message;
+            }
+        }
 
 		#endregion
 

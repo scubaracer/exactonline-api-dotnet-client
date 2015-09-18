@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using ExactOnline.Client.Models;
 using ExactOnline.Client.Sdk.Delegates;
 using ExactOnline.Client.Sdk.Helpers;
@@ -154,6 +155,9 @@ namespace ExactOnline.Client.Sdk.Controllers
 				{
 					throw new Exception("This entity already exists");
 				}
+
+				// Get entity with linked entities (API Response for creating does not return the linked entities)
+				entity = GetEntity(GetIdentifierValue(entity), _expandfield);
 			}
 			return created;
 		}
