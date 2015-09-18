@@ -1,4 +1,4 @@
-' Last generated on 2015-08-28 17:05:00 +02:00
+' Last generated on 2015-09-18 13:09:10 +02:00
 
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
@@ -416,6 +416,99 @@ Public Class AccountClassificationName
 	Public Property [SequenceNumber] As Int32
 End Class
 
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("ID")>
+Public Class ActiveEmployment
+	'''<![CDATA[The average number of contract days that an employee works per week]]>
+	Public Property [AverageDaysPerWeek] As Double?
+	'''<![CDATA[The average number of contract hours that an employee works per week]]>
+	Public Property [AverageHoursPerWeek] As Double?
+	'''<![CDATA[Employment contract ID]]>
+	Public Property [Contract] As Guid?
+	'''<![CDATA[Document ID of the employment contract]]>
+	Public Property [ContractDocument] As Guid?
+	'''<![CDATA[End date of employment contract]]>
+	Public Property [ContractEndDate] As DateTime?
+	'''<![CDATA[Employment probation end date]]>
+	Public Property [ContractProbationEndDate] As DateTime?
+	'''<![CDATA[Employment probation period]]>
+	Public Property [ContractProbationPeriod] As Int32?
+	'''<![CDATA[Start date of employment contract]]>
+	Public Property [ContractStartDate] As DateTime?
+	'''<![CDATA[Type of employment contract. 1 - Definite, 2 - Indefinite, 3 - External]]>
+	Public Property [ContractType] As Int32?
+	'''<![CDATA[Description of employment contract type]]>
+	Public Property [ContractTypeDescription] As String
+	'''<![CDATA[Creation date]]>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Department of employee]]>
+	Public Property [Department] As Guid?
+	'''<![CDATA[Department code of employee]]>
+	Public Property [DepartmentCode] As String
+	'''<![CDATA[Description of department]]>
+	Public Property [DepartmentDescription] As String
+	'''<![CDATA[Division code]]>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Employee ID]]>
+	Public Property [Employee] As Guid?
+	'''<![CDATA[Numeric number of Employee]]>
+	Public Property [EmployeeHID] As Int32?
+	'''<![CDATA[Name of employee]]>
+	Public Property [EmployeeFullName] As String
+	'''<![CDATA[Organization of employment]]>
+	Public Property [EmploymentOrganization] As Guid?
+	'''<![CDATA[End date of employment]]>
+	Public Property [EndDate] As DateTime?
+	'''<![CDATA[Numeric ID of the employment]]>
+	Public Property [HID] As Int32?
+	'''<![CDATA[Hourly wage]]>
+	Public Property [HourlyWage] As Double?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Internal rate for time & billing or professional service user]]>
+	Public Property [InternalRate] As Double?
+	'''<![CDATA[Job title of employee]]>
+	Public Property [Jobtitle] As Guid?
+	'''<![CDATA[Description of job title]]>
+	Public Property [JobtitleDescription] As String
+	'''<![CDATA[Last modified date]]>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[ID of employment ended]]>
+	Public Property [ReasonEnd] As Int32?
+	'''<![CDATA[Reason of end of employment]]>
+	Public Property [ReasonEndDescription] As String
+	'''<![CDATA[Reason of ended flexible employment]]>
+	Public Property [ReasonEndFlex] As Int32?
+	'''<![CDATA[Other reason for end of employment]]>
+	Public Property [ReasonEndFlexDescription] As String
+	'''<![CDATA[Employment salary]]>
+	Public Property [Salary] As Guid?
+	'''<![CDATA[Work schedule]]>
+	Public Property [Schedule] As Guid?
+	'''<![CDATA[Work schedule code]]>
+	Public Property [ScheduleCode] As String
+	'''<![CDATA[Description of work schedule]]>
+	Public Property [ScheduleDescription] As String
+	'''<![CDATA[Number of work hours per week.]]>
+	Public Property [ScheduleHours] As Double?
+	'''<![CDATA[Number of days of work per week]]>
+	Public Property [ScheduleDays] As Double?
+	'''<![CDATA[Average hours per week in a schedule.]]>
+	Public Property [ScheduleAverageHours] As Double?
+	'''<![CDATA[Start date of employment]]>
+	Public Property [StartDate] As DateTime?
+	'''<![CDATA[Start date of the employee in the organization. This field is used to count the years in service.]]>
+	Public Property [StartDateOrganization] As DateTime?
+End Class
+
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
 Public Class Address
@@ -792,6 +885,8 @@ Public Class Bank
 	Public Property [BICCode] As String
 	'''<![CDATA[The country in which the bank is based]]>
 	Public Property [Country] As String
+	'''<![CDATA[Creation date]]>
+	Public Property [Created] As DateTime?
 	'''<![CDATA[The extended description of the bank]]>
 	Public Property [Description] As String
 	'''<![CDATA[The account format used by the bank]]>
@@ -800,6 +895,9 @@ Public Class Bank
 	Public Property [HomePageAddress] As String
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
 	'''<![CDATA[The status of the bank. A = Active, P = Passive]]>
 	Public Property [Status] As String
 End Class
@@ -1309,15 +1407,21 @@ Public Class Contact
 	'''<![CDATA[Creation date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Created] As DateTime?
-	'''<![CDATA[User ID of creator]]>
+	'''<![CDATA[User ID of the creator]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
 	'''<![CDATA[Last modified date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modified] As DateTime?
 	'''<![CDATA[User ID of modifier]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
 	'''<![CDATA[Indicates if this is the main contact of the linked account]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [IsMainContact] As Boolean?
@@ -1589,10 +1693,45 @@ Public Class Currency
 	Public Property [AmountPrecision] As Double
 	'''<![CDATA[Primary key]]>
 	Public Property [Code] As String
+	'''<![CDATA[Creation date]]>
+	Public Property [Created] As DateTime?
 	'''<![CDATA[Description of the currency]]>
 	Public Property [Description] As String
+	'''<![CDATA[Last modified date]]>
+	Public Property [Modified] As DateTime?
 	'''<![CDATA[Price precision]]>
 	Public Property [PricePrecision] As Double
+End Class
+
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("ID")>
+Public Class Department
+	'''<![CDATA[Department Code]]>
+	Public Property [Code] As String
+	'''<![CDATA[Cost center Code]]>
+	Public Property [Costcenter] As String
+	'''<![CDATA[Cost center description]]>
+	Public Property [CostcenterDescription] As String
+	'''<![CDATA[Creation date]]>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Department description]]>
+	Public Property [Description] As String
+	'''<![CDATA[Division code]]>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Last modified date]]>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Explanation or extra information can be stored in the notes]]>
+	Public Property [Notes] As String
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -1711,6 +1850,9 @@ Public Class Division
 	'''<![CDATA[User ID of creator]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
 	'''<![CDATA[Default currency]]>
 	Public Property [Currency] As String
 	'''<![CDATA[Description of Currency]]>
@@ -1730,6 +1872,9 @@ Public Class Division
 	'''<![CDATA[User ID of modifier]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
 	'''<![CDATA[Siret Number of the division (France)]]>
 	Public Property [SiretNumber] As String
 	'''<![CDATA[Date on which the division becomes active]]>
@@ -1780,6 +1925,14 @@ Public Class Document
 	Public Property [Division] As Int32
 	'''<![CDATA[Entry date of the incoming document]]>
 	Public Property [DocumentDate] As DateTime?
+	'''<![CDATA[The Id of document folder]]>
+	Public Property [DocumentFolder] As Guid?
+	'''<![CDATA[The Code of document folder]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [DocumentFolderCode] As String
+	'''<![CDATA[The Decsription of document folder]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [DocumentFolderDescription] As String
 	'''<![CDATA[Url to view the document]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [DocumentViewUrl] As String
@@ -1842,19 +1995,61 @@ End Class
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
 Public Class DocumentCategory
+	'''<![CDATA[Creation date]]>
+	Public Property [Created] As DateTime?
 	'''<![CDATA[Document category description]]>
 	Public Property [Description] As String
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
+	'''<![CDATA[Last modified date]]>
+	Public Property [Modified] As DateTime?
+End Class
+
+<SupportedActionsSDK(True, True, True, True)>
+<DataServiceKey("ID")>
+Public Class DocumentFolder
+	'''<![CDATA[Document folder code]]>
+	Public Property [Code] As String
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Document folder description]]>
+	Public Property [Description] As String
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Document folder parent folder ID]]>
+	Public Property [ParentFolder] As Guid?
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
 Public Class DocumentType
+	'''<![CDATA[Creation date]]>
+	Public Property [Created] As DateTime?
 	'''<![CDATA[Document type description]]>
 	Public Property [Description] As String
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Int32
+	'''<![CDATA[Last modified date]]>
+	Public Property [Modified] As DateTime?
 	'''<![CDATA[ID of the document type category]]>
 	Public Property [TypeCategory] As Int32?
 	'''<![CDATA[Indicates if documents of this type can be created]]>
@@ -1870,10 +2065,14 @@ End Class
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
 Public Class DocumentTypeCategory
+	'''<![CDATA[Creation date]]>
+	Public Property [Created] As DateTime?
 	'''<![CDATA[Document category type description]]>
 	Public Property [Description] As String
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Int32
+	'''<![CDATA[Last modified date]]>
+	Public Property [Modified] As DateTime?
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
@@ -2004,6 +2203,248 @@ Public Class Employee
 	Public Property [Title] As String
 End Class
 
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("ID")>
+Public Class Employment
+	'''<![CDATA[Creation date]]>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Division code]]>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Employee ID]]>
+	Public Property [Employee] As Guid?
+	'''<![CDATA[Numeric number of Employee]]>
+	Public Property [EmployeeHID] As Int32?
+	'''<![CDATA[Name of employee]]>
+	Public Property [EmployeeFullName] As String
+	'''<![CDATA[End date of employment]]>
+	Public Property [EndDate] As DateTime?
+	'''<![CDATA[Numeric ID of the employment]]>
+	Public Property [HID] As Int32?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Last modified date]]>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[ID of employment ended]]>
+	Public Property [ReasonEnd] As Int32?
+	'''<![CDATA[Reason of end of employment]]>
+	Public Property [ReasonEndDescription] As String
+	'''<![CDATA[Reason of ended flexible employment]]>
+	Public Property [ReasonEndFlex] As Int32?
+	'''<![CDATA[Other reason for end of employment]]>
+	Public Property [ReasonEndFlexDescription] As String
+	'''<![CDATA[Start date of employment]]>
+	Public Property [StartDate] As DateTime?
+	'''<![CDATA[Start date of the employee in the organization. This field is used to count the years in service.]]>
+	Public Property [StartDateOrganization] As DateTime?
+End Class
+
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("ID")>
+Public Class EmploymentContract
+	'''<![CDATA[Flexible employment contract phase]]>
+	Public Property [ContractFlexPhase] As Int32?
+	'''<![CDATA[Flexible employment contract phase description.]]>
+	Public Property [ContractFlexPhaseDescription] As String
+	'''<![CDATA[Creation date]]>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Division code]]>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Document ID of the employment contract]]>
+	Public Property [Document] As Guid?
+	'''<![CDATA[ID of employee]]>
+	Public Property [Employee] As Guid?
+	'''<![CDATA[Numeric ID of the employee]]>
+	Public Property [EmployeeHID] As Int32?
+	'''<![CDATA[Name of employee]]>
+	Public Property [EmployeeFullName] As String
+	'''<![CDATA[Type of employee. 1 - Employee, 2 - Contractor, 3 - Temporary, 4 - Student, 5 - Flexworker]]>
+	Public Property [EmployeeType] As Int32?
+	'''<![CDATA[Employee type description]]>
+	Public Property [EmployeeTypeDescription] As String
+	'''<![CDATA[Employment ID]]>
+	Public Property [Employment] As Guid?
+	'''<![CDATA[Numeric ID of the employment]]>
+	Public Property [EmploymentHID] As Int32?
+	'''<![CDATA[End date of employment contract]]>
+	Public Property [EndDate] As DateTime?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Last modified date]]>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Notes of employment contract]]>
+	Public Property [Notes] As String
+	'''<![CDATA[Employment probation end date]]>
+	Public Property [ProbationEndDate] As DateTime?
+	'''<![CDATA[Employment probation period]]>
+	Public Property [ProbationPeriod] As Int32?
+	'''<![CDATA[Employment contract reason code. 1 - New employment, 2 - Employment change, 3 - New legal employer, 4 - Acquisition 5 - Previous contract expired, 6 - Other]]>
+	Public Property [ReasonContract] As Int32?
+	'''<![CDATA[Employment contract reason description]]>
+	Public Property [ReasonContractDescription] As String
+	'''<![CDATA[Sequence number]]>
+	Public Property [Sequence] As Int32?
+	'''<![CDATA[Start date of employment contract]]>
+	Public Property [StartDate] As DateTime?
+	'''<![CDATA[Type of employment contract. 1 - Definite, 2 - Indefinite, 3 - External]]>
+	Public Property [Type] As Int32?
+	'''<![CDATA[Description of employment contract type]]>
+	Public Property [TypeDescription] As String
+End Class
+
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("ID")>
+Public Class EmploymentContractFlexPhase
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Int32
+	'''<![CDATA[Flexible employment contract phase description]]>
+	Public Property [Description] As String
+End Class
+
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("ID")>
+Public Class EmploymentEndReason
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Int32
+	'''<![CDATA[Employment end reason description]]>
+	Public Property [Description] As String
+End Class
+
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("ID")>
+Public Class EmploymentOrganization
+	'''<![CDATA[Cost center code]]>
+	Public Property [CostCenter] As String
+	'''<![CDATA[Description of cost center]]>
+	Public Property [CostCenterDescription] As String
+	'''<![CDATA[Cost unit code]]>
+	Public Property [CostUnit] As String
+	'''<![CDATA[Description of cost unit]]>
+	Public Property [CostUnitDescription] As String
+	'''<![CDATA[Creation date]]>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[ID of department]]>
+	Public Property [Department] As Guid?
+	'''<![CDATA[Department code]]>
+	Public Property [DepartmentCode] As String
+	'''<![CDATA[Department description for organization]]>
+	Public Property [DepartmentDescription] As String
+	'''<![CDATA[Division code]]>
+	Public Property [Division] As Int32?
+	'''<![CDATA[ID of employee]]>
+	Public Property [Employee] As Guid?
+	'''<![CDATA[Numeric ID of the employee]]>
+	Public Property [EmployeeHID] As Int32?
+	'''<![CDATA[Name of employee]]>
+	Public Property [EmployeeFullName] As String
+	'''<![CDATA[Employement ID]]>
+	Public Property [Employment] As Guid?
+	'''<![CDATA[Numeric ID of the employment]]>
+	Public Property [EmploymentHID] As Int32?
+	'''<![CDATA[Organization end date]]>
+	Public Property [EndDate] As DateTime?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[ID of job title]]>
+	Public Property [JobTitle] As Guid?
+	'''<![CDATA[Job title code]]>
+	Public Property [JobTitleCode] As String
+	'''<![CDATA[Job title description]]>
+	Public Property [JobTitleDescription] As String
+	'''<![CDATA[Last modified date]]>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Explanation or extra information can be stored in the notes]]>
+	Public Property [Notes] As String
+	'''<![CDATA[Organization start date]]>
+	Public Property [StartDate] As DateTime?
+End Class
+
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("ID")>
+Public Class EmploymentSalary
+	'''<![CDATA[The average number of contract days that an employee works per week]]>
+	Public Property [AverageDaysPerWeek] As Double?
+	'''<![CDATA[The average number of contract hours that an employee works per week]]>
+	Public Property [AverageHoursPerWeek] As Double?
+	'''<![CDATA[Creation date]]>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Division code]]>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Employee ID]]>
+	Public Property [Employee] As Guid?
+	'''<![CDATA[Employee number]]>
+	Public Property [EmployeeHID] As Int32?
+	'''<![CDATA[Name of employee]]>
+	Public Property [EmployeeFullName] As String
+	'''<![CDATA[Employment]]>
+	Public Property [Employment] As Guid?
+	'''<![CDATA[Employment number]]>
+	Public Property [EmploymentHID] As Int32?
+	'''<![CDATA[Salary type of employment. 1 - Periodical (fixed), 2 - Per hour (variable)]]>
+	Public Property [EmploymentSalaryType] As Int32?
+	'''<![CDATA[Salary type description]]>
+	Public Property [EmploymentSalaryTypeDescription] As String
+	'''<![CDATA[Salary record end date]]>
+	Public Property [EndDate] As DateTime?
+	'''<![CDATA[Salary when working fulltime]]>
+	Public Property [FulltimeAmount] As Double?
+	'''<![CDATA[Hourly wage]]>
+	Public Property [HourlyWage] As Double?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Internal rate for time & billing or professional service user]]>
+	Public Property [InternalRate] As Double?
+	'''<![CDATA[Employee job level in context of a wage scale]]>
+	Public Property [JobLevel] As Int32?
+	'''<![CDATA[Last modified date]]>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Salary when working parttime]]>
+	Public Property [ParttimeAmount] As Double?
+	'''<![CDATA[Contract hours / Fulltime contract hours]]>
+	Public Property [ParttimeFactor] As Double?
+	'''<![CDATA[Employee wage scale]]>
+	Public Property [Scale] As String
+	'''<![CDATA[Employment schedule]]>
+	Public Property [Schedule] As Guid?
+	'''<![CDATA[Employment schedule code]]>
+	Public Property [ScheduleCode] As String
+	'''<![CDATA[Description of employment schedule]]>
+	Public Property [ScheduleDescription] As String
+	'''<![CDATA[Salary record start date]]>
+	Public Property [StartDate] As DateTime?
+End Class
+
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
 Public Class ExchangeRate
@@ -2086,6 +2527,9 @@ End Class
 <SupportedActionsSDK(True, True, False, False)>
 <DataServiceKey("EntryID")>
 Public Class GeneralJournalEntry
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
 	'''<![CDATA[Currency code]]>
 	Public Property [Currency] As String
 	'''<![CDATA[Division code]]>
@@ -2108,6 +2552,9 @@ Public Class GeneralJournalEntry
 	'''<![CDATA[Description of Journal]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [JournalDescription] As String
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
 	'''<![CDATA[Indicates that amounts are reversed]]>
 	Public Property [Reversal] As Boolean?
 	'''<![CDATA[Status: 5 = Rejected, 20 = Open, 50 = Processed]]>
@@ -2453,6 +2900,85 @@ End Class
 
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
+Public Class InvolvedUser
+	'''<![CDATA[ID of the account the user is involved with]]>
+	Public Property [Account] As Guid?
+	'''<![CDATA[Code of the account]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [AccountCode] As String
+	'''<![CDATA[Name of the account]]>
+	Public Property [AccountName] As String
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[ID of the user role]]>
+	Public Property [InvolvedUserRole] As Guid?
+	'''<![CDATA[Description of the user role]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [InvolvedUserRoleDescription] As String
+	'''<![CDATA[ID of the involved user]]>
+	Public Property [User] As Guid?
+	'''<![CDATA[Name of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [UserFullName] As String
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+End Class
+
+<SupportedActionsSDK(True, True, True, True)>
+<DataServiceKey("ID")>
+Public Class InvolvedUserRole
+	'''<![CDATA[Code of the involved user role]]>
+	Public Property [Code] As String
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Description of role]]>
+	Public Property [Description] As String
+	'''<![CDATA[Description term code of role]]>
+	Public Property [DescriptionTermID] As Int32?
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+End Class
+
+<SupportedActionsSDK(True, True, True, True)>
+<DataServiceKey("ID")>
 Public Class Item
 	'''<![CDATA[Used with Serial number feature. Indicates if the item can have a serial number]]>
 	Public Property [IsSerialNumberItem] As Boolean?
@@ -2786,6 +3312,122 @@ End Class
 
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
+Public Class ItemWarehouse
+	'''<![CDATA[Creation date]]>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[This is a default storage location]]>
+	Public Property [DefaultStorageLocation] As Guid?
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Item ID]]>
+	Public Property [Item] As Guid?
+	'''<![CDATA[Description of item]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemDescription] As String
+	'''<![CDATA[Indicates if fractions (for example 0.35) are allowed for quantities of this item]]>
+	Public Property [ItemIsFractionAllowedItem] As Boolean?
+	'''<![CDATA[The standard unit code of this item]]>
+	Public Property [ItemUnit] As String
+	'''<![CDATA[Description of item's unit]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemUnitDescription] As String
+	'''<![CDATA[Maximum number of stock could enter warehouse]]>
+	Public Property [MaximumStock] As Double?
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Reorder point when stock depletes]]>
+	Public Property [ReorderPoint] As Double?
+	'''<![CDATA[Safety stock]]>
+	Public Property [SafetyStock] As Double?
+	'''<![CDATA[Warehouse ID]]>
+	Public Property [Warehouse] As Guid?
+	'''<![CDATA[Description of warehouse]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [WarehouseDescription] As String
+End Class
+
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("ID")>
+Public Class JobGroup
+	'''<![CDATA[Job group code]]>
+	Public Property [Code] As String
+	'''<![CDATA[Creation date]]>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Job group description]]>
+	Public Property [Description] As String
+	'''<![CDATA[Division code]]>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Last modified date]]>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Explanation or extra information can be stored in the notes]]>
+	Public Property [Notes] As String
+End Class
+
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("ID")>
+Public Class JobTitle
+	'''<![CDATA[Job title code]]>
+	Public Property [Code] As String
+	'''<![CDATA[Creation date]]>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Job title description]]>
+	Public Property [Description] As String
+	'''<![CDATA[Division code]]>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Reference job code]]>
+	Public Property [JobCode] As String
+	'''<![CDATA[Group this job title belongs to]]>
+	Public Property [JobGroup] As Guid?
+	'''<![CDATA[Job group code]]>
+	Public Property [JobGroupCode] As String
+	'''<![CDATA[Job group description]]>
+	Public Property [JobGroupDescription] As String
+	'''<![CDATA[Job title represents job level from]]>
+	Public Property [JobLevelFrom] As Int32?
+	'''<![CDATA[Job title represents job level to]]>
+	Public Property [JobLevelTo] As Int32?
+	'''<![CDATA[Last modified date]]>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Explanation or extra information can be stored in the notes]]>
+	Public Property [Notes] As String
+End Class
+
+<SupportedActionsSDK(True, True, True, True)>
+<DataServiceKey("ID")>
 Public Class Journal
 	'''<![CDATA[Indicates if the journal allows variable currency]]>
 	Public Property [AllowVariableCurrency] As Boolean?
@@ -2895,6 +3537,15 @@ End Class
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
 Public Class Layout
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
 	'''<![CDATA[Division code]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Division] As Int32?
@@ -2902,6 +3553,15 @@ Public Class Layout
 	Public Property [ID] As Guid
 	'''<![CDATA[Layout name]]>
 	Public Property [Subject] As String
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
 	'''<![CDATA[Type: 1=Layout, 2=E-mail text layout, 3=Word template]]>
 	Public Property [Type] As Int16?
 End Class
@@ -3297,12 +3957,18 @@ Public Class Opportunity
 	'''<![CDATA[User ID of creator]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
 	'''<![CDATA[Last modified date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modified] As DateTime?
 	'''<![CDATA[User ID of modifier]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
 	'''<![CDATA[Currency code]]>
 	Public Property [Currency] As String
 	'''<![CDATA[Division code]]>
@@ -3410,15 +4076,21 @@ Public Class OpportunityContact
 	'''<![CDATA[Creation date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Created] As DateTime?
-	'''<![CDATA[User ID of creator]]>
+	'''<![CDATA[User ID of the creator]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
 	'''<![CDATA[Last modified date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modified] As DateTime?
 	'''<![CDATA[User ID of modifier]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
 	'''<![CDATA[Indicates if this is the main contact of the linked account]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [IsMainContact] As Boolean?
@@ -3843,6 +4515,20 @@ Public Class Project
 	Public Property [AccountName] As String
 	'''<![CDATA[Contact person of Account]]>
 	Public Property [AccountContact] As Guid?
+	'''<![CDATA[Is additional invoice is allowed for project]]>
+	Public Property [AllowAdditionalInvoicing] As Boolean?
+	'''<![CDATA[Budget type]]>
+	Public Property [BudgetType] As Int16?
+	'''<![CDATA[Budget type description]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [BudgetTypeDescription] As String
+	'''<![CDATA[Block rebilling]]>
+	Public Property [BlockRebilling] As Boolean?
+	'''<![CDATA[Block time and cost entries]]>
+	Public Property [BlockEntry] As Boolean?
+	'''<![CDATA[Collection of budgeted hours]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [BudgetedHoursPerHourType] As IEnumerable(Of ProjectHourBudget)
 	'''<![CDATA[Used only for PSA to link a project classification to the project]]>
 	Public Property [Classification] As Guid?
 	'''<![CDATA[Description of Classification]]>
@@ -3897,6 +4583,15 @@ Public Class Project
 	Public Property [ModifierFullName] As String
 	'''<![CDATA[For additional information about projects]]>
 	Public Property [Notes] As String
+	'''<![CDATA[Collection of employee restrictions]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ProjectRestrictionEmployees] As IEnumerable(Of ProjectRestrictionEmployee)
+	'''<![CDATA[Collection of item restrictions]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ProjectRestrictionItems] As IEnumerable(Of ProjectRestrictionItem)
+	'''<![CDATA[Collection of rebilling restrictions]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ProjectRestrictionRebillings] As IEnumerable(Of ProjectRestrictionRebilling)
 	'''<![CDATA[Budgeted time. Total number of hours estimated for the fixed price project]]>
 	Public Property [SalesTimeQuantity] As Double?
 	'''<![CDATA[Start date of a project. In combination with the end date the status is determined]]>
@@ -3925,6 +4620,199 @@ Public Class Project
 	Public Property [BudgetedCosts] As Double?
 	'''<![CDATA[Budgeted amount of revenue in default currency]]>
 	Public Property [BudgetedRevenue] As Double?
+	'''<![CDATA[Using billing milestones]]>
+	Public Property [UseBillingMilestones] As Boolean?
+End Class
+
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("ID")>
+Public Class ProjectBudgetType
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Int16
+	'''<![CDATA[Description]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Description] As String
+End Class
+
+<SupportedActionsSDK(True, True, True, True)>
+<DataServiceKey("ID")>
+Public Class ProjectHourBudget
+	'''<![CDATA[Number of hours]]>
+	Public Property [Budget] As Double?
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Division number]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Hour type of budget]]>
+	Public Property [Item] As Guid?
+	'''<![CDATA[Code of hour type]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemCode] As String
+	'''<![CDATA[Description of hour type]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemDescription] As String
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Reference to project]]>
+	Public Property [Project] As Guid
+	'''<![CDATA[Code of project]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ProjectCode] As String
+	'''<![CDATA[Description of project]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ProjectDescription] As String
+End Class
+
+<SupportedActionsSDK(True, True, True, True)>
+<DataServiceKey("ID")>
+Public Class ProjectRestrictionEmployee
+	'''<![CDATA[Employee linked to the restriction]]>
+	Public Property [Employee] As Guid?
+	'''<![CDATA[Name of employee]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [EmployeeFullName] As String
+	'''<![CDATA[Readable ID of the employee]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [EmployeeHID] As Int32?
+	'''<![CDATA[Date created]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[Creator user ID]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Creator name]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Date modified]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[Modifier user ID]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Modifier name]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Project linked to the restriction]]>
+	Public Property [Project] As Guid?
+	'''<![CDATA[Project code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ProjectCode] As String
+	'''<![CDATA[Project description]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ProjectDescription] As String
+End Class
+
+<SupportedActionsSDK(True, True, True, True)>
+<DataServiceKey("ID")>
+Public Class ProjectRestrictionItem
+	'''<![CDATA[Item linked to the restriction]]>
+	Public Property [Item] As Guid?
+	'''<![CDATA[Item code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemCode] As String
+	'''<![CDATA[Description of the item]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemDescription] As String
+	'''<![CDATA[Indicates if the item is a time unit item]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemIsTime] As Byte?
+	'''<![CDATA[Date created]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[Creator user ID]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Creator name]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Date modified]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[Modifier user ID]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Modifier name]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Project linked to the restriction]]>
+	Public Property [Project] As Guid?
+	'''<![CDATA[Project code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ProjectCode] As String
+	'''<![CDATA[Project description]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ProjectDescription] As String
+End Class
+
+<SupportedActionsSDK(True, True, True, True)>
+<DataServiceKey("ID")>
+Public Class ProjectRestrictionRebilling
+	'''<![CDATA[Cost type reference]]>
+	Public Property [CostTypeRebill] As Guid?
+	'''<![CDATA[Cost type code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CostTypeRebillCode] As String
+	'''<![CDATA[Cost type description]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CostTypeRebillDescription] As String
+	'''<![CDATA[Date created]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[Creator user ID]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Creator name]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Date modified]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[Modifier user ID]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Modifier name]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Project linked to the restriction]]>
+	Public Property [Project] As Guid?
+	'''<![CDATA[Project code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ProjectCode] As String
+	'''<![CDATA[Project description]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ProjectDescription] As String
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -4300,6 +5188,368 @@ Public Class ReportingBalance
 	Public Property [Type] As Int32?
 	'''<![CDATA[Status: 20 = Open, 50 = Processed. To get 'after entry' results, both Open and Processed amounts have to be included. This is by default, so it requires no extra filtering.]]>
 	Public Property [Status] As Int32?
+End Class
+
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("ID")>
+Public Class Request
+	'''<![CDATA[Reference to Account]]>
+	Public Property [Account] As Guid?
+	'''<![CDATA[Code of Account]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [AccountCode] As String
+	'''<![CDATA[Country of Account]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [AccountCountry] As String
+	'''<![CDATA[Name of Account]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [AccountName] As String
+	'''<![CDATA[Status of Account]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [AccountStatus] As String
+	'''<![CDATA[Type of Account]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [AccountType] As String
+	'''<![CDATA[Amount in default currency]]>
+	Public Property [Amount] As Double?
+	'''<![CDATA[Actual amount in default currency]]>
+	Public Property [AmountActual] As Double?
+	'''<![CDATA[Amount in foreign currency]]>
+	Public Property [AmountFC] As Double?
+	'''<![CDATA[Actual amount in foreign currency]]>
+	Public Property [AmountFCActual] As Double?
+	'''<![CDATA[Date of appoval]]>
+	Public Property [Approved] As DateTime?
+	'''<![CDATA[User ID of the approver of this request]]>
+	Public Property [Approver] As Guid?
+	'''<![CDATA[Name of Approver]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ApproverFullName] As String
+	'''<![CDATA[Indicates if this is a buildup request]]>
+	Public Property [Buildup] As Boolean?
+	'''<![CDATA[Reference to campaign]]>
+	Public Property [Campaign] As Guid?
+	'''<![CDATA[Description of Campaign]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CampaignDescription] As String
+	'''<![CDATA[Reference to contact person]]>
+	Public Property [Contact] As Guid?
+	'''<![CDATA[Name of Contact]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ContactFullName] As String
+	'''<![CDATA[Readable ID of Contact]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ContactHID] As Int32?
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Currency]]>
+	Public Property [Currency] As String
+	'''<![CDATA[Actual currency]]>
+	Public Property [CurrencyActual] As String
+	'''<![CDATA[Description of Currency]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CurrencyDescription] As String
+	'''<![CDATA[Description of actual currency]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CurrencyDescriptionActual] As String
+	'''<![CDATA[Number of days]]>
+	Public Property [Days] As Double?
+	'''<![CDATA[Actual number of days]]>
+	Public Property [DaysActual] As Double?
+	'''<![CDATA[Description]]>
+	Public Property [Description] As String
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Reference to document]]>
+	Public Property [Document] As Guid?
+	'''<![CDATA[Date that document is created]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [DocumentCreated] As DateTime?
+	'''<![CDATA[Name of DocumentCreator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [DocumentCreatorFullName] As String
+	'''<![CDATA[Readable ID of document]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [DocumentHID] As Int32?
+	'''<![CDATA[Subject of document]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [DocumentSubject] As String
+	'''<![CDATA[Reference to employee]]>
+	Public Property [Employee] As Guid?
+	'''<![CDATA[Name of employee]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [EmployeeFullName] As String
+	'''<![CDATA[Readable ID of employee]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [EmployeeHID] As Int32?
+	'''<![CDATA[End date]]>
+	Public Property [EndDate] As DateTime?
+	'''<![CDATA[Actual end date]]>
+	Public Property [EndDateActual] As DateTime?
+	Public Property [ErrorLogID] As Int32?
+	'''<![CDATA[Reference to financial entry]]>
+	Public Property [FinancialEntry] As Guid?
+	'''<![CDATA[Entry date of financial entry]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [FinancialEntryDate] As DateTime?
+	'''<![CDATA[Description of financial entry]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [FinancialEntryDescription] As String
+	'''<![CDATA[Number of financial entry]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [FinancialEntryNumber] As Int32?
+	'''<![CDATA[Description of type of financial entry]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [FinancialEntryTypeDescription] As String
+	'''<![CDATA[Free boolean field 1]]>
+	Public Property [FreeBoolField_01] As Boolean?
+	'''<![CDATA[Free boolean field 2]]>
+	Public Property [FreeBoolField_02] As Boolean?
+	'''<![CDATA[Free boolean field 3]]>
+	Public Property [FreeBoolField_03] As Boolean?
+	'''<![CDATA[Free boolean field 4]]>
+	Public Property [FreeBoolField_04] As Boolean?
+	'''<![CDATA[Free boolean field 5]]>
+	Public Property [FreeBoolField_05] As Boolean?
+	'''<![CDATA[Free date field 1]]>
+	Public Property [FreeDateField_01] As DateTime?
+	'''<![CDATA[Free date field 2]]>
+	Public Property [FreeDateField_02] As DateTime?
+	'''<![CDATA[Free date field 3]]>
+	Public Property [FreeDateField_03] As DateTime?
+	'''<![CDATA[Free date field 4]]>
+	Public Property [FreeDateField_04] As DateTime?
+	'''<![CDATA[Free date field 5]]>
+	Public Property [FreeDateField_05] As DateTime?
+	'''<![CDATA[Free guid field 1]]>
+	Public Property [FreeGuidField_01] As Guid?
+	'''<![CDATA[Free guid field 2]]>
+	Public Property [FreeGuidField_02] As Guid?
+	'''<![CDATA[Free guid field 3]]>
+	Public Property [FreeGuidField_03] As Guid?
+	'''<![CDATA[Free guid field 4]]>
+	Public Property [FreeGuidField_04] As Guid?
+	'''<![CDATA[Free guid field 5]]>
+	Public Property [FreeGuidField_05] As Guid?
+	'''<![CDATA[Free guid field 6]]>
+	Public Property [FreeGuidField_06] As Guid?
+	'''<![CDATA[Free guid field 7]]>
+	Public Property [FreeGuidField_07] As Guid?
+	'''<![CDATA[Free guid field 8]]>
+	Public Property [FreeGuidField_08] As Guid?
+	'''<![CDATA[Free guid field 9]]>
+	Public Property [FreeGuidField_09] As Guid?
+	'''<![CDATA[Free guid field 10]]>
+	Public Property [FreeGuidField_10] As Guid?
+	'''<![CDATA[Free integer field 1]]>
+	Public Property [FreeIntField_01] As Int32?
+	'''<![CDATA[Free integer field 2]]>
+	Public Property [FreeIntField_02] As Int32?
+	'''<![CDATA[Free integer field 3]]>
+	Public Property [FreeIntField_03] As Int32?
+	'''<![CDATA[Free integer field 4]]>
+	Public Property [FreeIntField_04] As Int32?
+	'''<![CDATA[Free integer field 5]]>
+	Public Property [FreeIntField_05] As Int32?
+	'''<![CDATA[Free numeric field 1]]>
+	Public Property [FreeNumberField_01] As Double?
+	'''<![CDATA[Free numeric field 2]]>
+	Public Property [FreeNumberField_02] As Double?
+	'''<![CDATA[Free numeric field 3]]>
+	Public Property [FreeNumberField_03] As Double?
+	'''<![CDATA[Free numeric field 4]]>
+	Public Property [FreeNumberField_04] As Double?
+	'''<![CDATA[Free numeric field 5]]>
+	Public Property [FreeNumberField_05] As Double?
+	'''<![CDATA[Free text field 1]]>
+	Public Property [FreeTextField_01] As String
+	'''<![CDATA[Free text field 2]]>
+	Public Property [FreeTextField_02] As String
+	'''<![CDATA[Free text field 3]]>
+	Public Property [FreeTextField_03] As String
+	'''<![CDATA[Free text field 4]]>
+	Public Property [FreeTextField_04] As String
+	'''<![CDATA[Free text field 5]]>
+	Public Property [FreeTextField_05] As String
+	'''<![CDATA[Free text field 6]]>
+	Public Property [FreeTextField_06] As String
+	'''<![CDATA[Free text field 7]]>
+	Public Property [FreeTextField_07] As String
+	'''<![CDATA[Free text field 8]]>
+	Public Property [FreeTextField_08] As String
+	'''<![CDATA[Free text field 9]]>
+	Public Property [FreeTextField_09] As String
+	'''<![CDATA[Free text field 10]]>
+	Public Property [FreeTextField_10] As String
+	'''<![CDATA[Free text field 11]]>
+	Public Property [FreeTextField_11] As String
+	'''<![CDATA[Free text field 12]]>
+	Public Property [FreeTextField_12] As String
+	'''<![CDATA[Free text field 13]]>
+	Public Property [FreeTextField_13] As String
+	'''<![CDATA[Free text field 14]]>
+	Public Property [FreeTextField_14] As String
+	'''<![CDATA[Free text field 15]]>
+	Public Property [FreeTextField_15] As String
+	'''<![CDATA[Reference to help file]]>
+	Public Property [HelpFile] As Guid?
+	'''<![CDATA[Description of HelpFile]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [HelpFileDescription] As String
+	'''<![CDATA[Reference to help item]]>
+	Public Property [HelpItem] As Guid?
+	'''<![CDATA[Readable ID]]>
+	Public Property [HID] As Int32?
+	'''<![CDATA[Number of hours]]>
+	Public Property [Hours] As Double?
+	'''<![CDATA[Number actual of hours]]>
+	Public Property [HoursActual] As Double?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Indicates that it is in workflow]]>
+	Public Property [InWorkflow] As Boolean?
+	'''<![CDATA[Indicates that it is read]]>
+	Public Property [IsRead] As Boolean?
+	'''<![CDATA[Reference to Item 1]]>
+	Public Property [Item_1] As Guid?
+	'''<![CDATA[Reference to Item 2]]>
+	Public Property [Item_2] As Guid?
+	'''<![CDATA[Code of item 1]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemCode_1] As String
+	'''<![CDATA[Code of item 2]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemCode_2] As String
+	'''<![CDATA[Description of item 1]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemDescription_1] As String
+	'''<![CDATA[Description of item 2]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemDescription_2] As String
+	'''<![CDATA[Reference to Item group 1]]>
+	Public Property [ItemGroup_1] As Guid?
+	'''<![CDATA[Reference to Item group 2]]>
+	Public Property [ItemGroup_2] As Guid?
+	'''<![CDATA[Reference to Item number 1]]>
+	Public Property [ItemNumberID_1] As Guid?
+	'''<![CDATA[Reference to Item number 2]]>
+	Public Property [ItemNumberID_2] As Guid?
+	'''<![CDATA[Reference to lead]]>
+	Public Property [Lead] As Guid?
+	'''<![CDATA[Name of Lead]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [LeadName] As String
+	'''<![CDATA[Location]]>
+	Public Property [Location] As String
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Multiple entry columns]]]>
+	Public Property [MultipleEntryCols] As String
+	'''<![CDATA[Reference to [MultipleEntryID]]]>
+	Public Property [MultipleEntryID] As Guid?
+	'''<![CDATA[Reference to Opportunity]]>
+	Public Property [Opportunity] As Guid?
+	'''<![CDATA[Description of Opportunity]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [OpportunityDescription] As String
+	'''<![CDATA[Reference to PayrollComponent]]>
+	Public Property [PayrollComponent] As Guid?
+	'''<![CDATA[Description of PayrollComponent]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [PayrollComponentDescription] As String
+	'''<![CDATA[Payroll period]]>
+	Public Property [PayrollPeriod] As Int32?
+	'''<![CDATA[Payroll year]]>
+	Public Property [PayrollYear] As Int32?
+	'''<![CDATA[Reference to Person]]>
+	Public Property [Person] As Guid?
+	'''<![CDATA[Name of Person]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [PersonFullName] As String
+	'''<![CDATA[Priority]]>
+	Public Property [Priority] As Int32?
+	'''<![CDATA[Date that request is processed]]>
+	Public Property [Processed] As DateTime?
+	'''<![CDATA[Reference to the user that should process or has processed this request]]>
+	Public Property [Processor] As Guid?
+	'''<![CDATA[Name of Processor]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ProcessorFullName] As String
+	'''<![CDATA[Reference to project]]>
+	Public Property [Project] As Guid?
+	'''<![CDATA[Description of Project]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ProjectDescription] As String
+	'''<![CDATA[Quantity 1]]>
+	Public Property [Quantity_1] As Double?
+	'''<![CDATA[Quantity 2]]>
+	Public Property [Quantity_2] As Double?
+	'''<![CDATA[Actual quantity 1]]>
+	Public Property [QuantityActual_1] As Double?
+	'''<![CDATA[Actual quantity 2]]>
+	Public Property [QuantityActual_2] As Double?
+	'''<![CDATA[Date that request is realized]]>
+	Public Property [Realized] As DateTime?
+	'''<![CDATA[Reference to the user that should realized or has realized this request]]>
+	Public Property [Realizer] As Guid?
+	'''<![CDATA[Name of Realizer]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [RealizerFullName] As String
+	'''<![CDATA[Reminder]]>
+	Public Property [Reminder] As Int16?
+	'''<![CDATA[Comments]]>
+	Public Property [RequestComments] As String
+	'''<![CDATA[Resubmit status]]>
+	Public Property [ResubmitStatus] As Int16?
+	'''<![CDATA[Security level]]>
+	Public Property [SecurityLevel] As Int32?
+	'''<![CDATA[Start date]]>
+	Public Property [StartDate] As DateTime?
+	'''<![CDATA[Actual start date]]>
+	Public Property [StartDateActual] As DateTime?
+	'''<![CDATA[Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed]]>
+	Public Property [Status] As Int16?
+	'''<![CDATA[Date the status has been changed]]>
+	Public Property [StatusChanged] As DateTime?
+	'''<![CDATA[Task sub type]]>
+	Public Property [TaskSubType] As Int32
+	'''<![CDATA[Reference to Request Types]]>
+	Public Property [Type] As Guid?
+	'''<![CDATA[Readable ID of Request Type]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [TypeHID] As Int32?
+	'''<![CDATA[Description of Type]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [TypeDescription] As String
+	'''<![CDATA[Name of User]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [UserFullName] As String
+	'''<![CDATA[Readable ID of User]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [UserHID] As Int32?
+	'''<![CDATA[Reference to User]]>
+	Public Property [UserID] As Guid?
+	'''<![CDATA[Workflow comments]]>
+	Public Property [WorkflowComments] As String
+	'''<![CDATA[Reference to XBRLDocument]]>
+	Public Property [XBRLDocument] As Guid?
+	'''<![CDATA[Your reference]]>
+	Public Property [YourRef] As String
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -4840,6 +6090,8 @@ Public Class SalesOrder
 	'''<![CDATA[Description of PaymentCondition]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [PaymentConditionDescription] As String
+	'''<![CDATA[Payment reference for sales order]]>
+	Public Property [PaymentReference] As String
 	'''<![CDATA[Extra remarks]]>
 	Public Property [Remarks] As String
 	'''<![CDATA[Sales representative]]>
@@ -4979,6 +6231,59 @@ Public Class SalesOrderLine
 	Public Property [VATCodeDescription] As String
 	'''<![CDATA[The vat percentage of the VAT code. This is the percentage at the moment the sales order is created. It's also used for the default calculation of VAT amounts and VAT base amounts]]>
 	Public Property [VATPercentage] As Double?
+End Class
+
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("ID")>
+Public Class Schedule
+	'''<![CDATA[Indicates if the schedule is active. 0 = Inactive, 1 = Active]]>
+	Public Property [Active] As Byte?
+	'''<![CDATA[Average hours per week in a schedule]]>
+	Public Property [AverageHours] As Double?
+	'''<![CDATA[Schedule code]]>
+	Public Property [Code] As String
+	'''<![CDATA[Creation date]]>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[ID of creator]]>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of the creator]]>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Average days per week in the schedule]]>
+	Public Property [Days] As Double?
+	'''<![CDATA[Description of the schedule]]>
+	Public Property [Description] As String
+	'''<![CDATA[Division code]]>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Employment ID for schedule]]>
+	Public Property [Employment] As Guid?
+	'''<![CDATA[Employment number]]>
+	Public Property [EmploymentHID] As Int32?
+	'''<![CDATA[End date of the schedule]]>
+	Public Property [EndDate] As DateTime?
+	'''<![CDATA[Number of hours per week in a CLA for which the schedule is built]]>
+	Public Property [Hours] As Double?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Number of hours which are built up each week for later leave]]>
+	Public Property [LeaveHoursCompensation] As Double?
+	'''<![CDATA[Indication if the schedule is a main schedule for a CLA. 1 = Yes, 0 = No]]>
+	Public Property [Main] As Byte?
+	'''<![CDATA[Last modified date]]>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[ID of modifier]]>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of the modifier]]>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Part-time factor for payroll calculation. Value between 0 and 1]]>
+	Public Property [PaymentParttimeFactor] As Double?
+	'''<![CDATA[Type of schedule. 1 = Hours and average days, 2 = Hours and specific days, 3 = Hours per day, 4 = Time frames per day]]>
+	Public Property [ScheduleType] As Int32?
+	'''<![CDATA[Description of the schedule type]]>
+	Public Property [ScheduleTypeDescription] As String
+	'''<![CDATA[Week in the schedule which is used to start with. By default the number will be 1.]]>
+	Public Property [StartDate] As DateTime?
+	'''<![CDATA[Week to start the schedule from for an employee]]>
+	Public Property [StartWeek] As Int32?
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -5228,10 +6533,54 @@ Public Class ShopOrderRoutingStepPlan
 	Public Property [StatusDescription] As String
 	'''<![CDATA[Subcontracted lead days]]>
 	Public Property [SubcontractedLeadDays] As Int32?
+	'''<![CDATA[Collection of TimeTransactions]]>
+	Public Property [TimeTransactions] As IEnumerable(Of ManufacturingTimeTransaction)
 	'''<![CDATA[Total cost of the routing line]]>
 	Public Property [TotalCostDC] As Double?
 	'''<![CDATA[Reference to Workcenters]]>
 	Public Property [Workcenter] As Guid?
+End Class
+
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("ID")>
+Public Class StorageLocation
+	'''<![CDATA[Code of the storage location]]>
+	Public Property [Code] As String
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Description of the storage location]]>
+	Public Property [Description] As String
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Indicates if this is the main storage location. There's always exactly one main storage location per warehouse]]>
+	Public Property [Main] As Byte?
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Warehouse ID]]>
+	Public Property [Warehouse] As Guid?
+	'''<![CDATA[Warehouse Code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [WarehouseCode] As String
+	'''<![CDATA[Description of warehouse]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [WarehouseDescription] As String
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -5460,11 +6809,29 @@ Public Class SubscriptionRestrictionEmployee
 	'''<![CDATA[Readable ID of employee]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [EmployeeHID] As Int32?
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
 	'''<![CDATA[Division code]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Division] As Int32
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
 	'''<![CDATA[Reference to subscription]]>
 	Public Property [Subscription] As Guid
 	'''<![CDATA[Number of subscription]]>
@@ -5486,11 +6853,29 @@ Public Class SubscriptionRestrictionItem
 	'''<![CDATA[Description of item]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ItemDescription] As String
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
 	'''<![CDATA[Division code]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Division] As Int32
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
 	'''<![CDATA[Reference to subscription]]>
 	Public Property [Subscription] As Guid
 	'''<![CDATA[Number of subscription]]>
@@ -5506,6 +6891,15 @@ End Class
 Public Class SubscriptionType
 	'''<![CDATA[Code]]>
 	Public Property [Code] As String
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
 	'''<![CDATA[Description]]>
 	Public Property [Description] As String
 	'''<![CDATA[Division code]]>
@@ -5513,11 +6907,28 @@ Public Class SubscriptionType
 	Public Property [Division] As Int32
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
 Public Class TaxComponentRate
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	Public Property [CreatorFullName] As String
 	'''<![CDATA[Division]]>
 	Public Property [Division] As Int32
 	'''<![CDATA[The date untill the rate for this component is valid]]>
@@ -5527,6 +6938,15 @@ Public Class TaxComponentRate
 	Public Property [ID] As Guid
 	'''<![CDATA[The sequence in which the tax rates are ordered]]>
 	Public Property [LineNumber] As Int32
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
 	'''<![CDATA[Rate]]>
 	Public Property [Rate] As Double
 	'''<![CDATA[The date from which the rate is active]]>
@@ -5574,9 +6994,44 @@ End Class
 
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
+Public Class TaxEmploymentEndFlexCode
+	'''<![CDATA[Code of flexible employment contract phase]]>
+	Public Property [Code] As String
+	'''<![CDATA[Creation date]]>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Description of flexible employment contract phase]]>
+	Public Property [Description] As String
+	'''<![CDATA[End date of flexible employment contract]]>
+	Public Property [EndDate] As DateTime?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Last modified date]]>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Start date of flexible employment contract phase]]>
+	Public Property [StartDate] As DateTime?
+End Class
+
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("ID")>
 Public Class TaxSchedule
 	'''<![CDATA[Tax schedule code]]>
 	Public Property [Code] As String
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	Public Property [CreatorFullName] As String
 	'''<![CDATA[Tax schedule description]]>
 	Public Property [Description] As String
 	'''<![CDATA[Division]]>
@@ -5585,6 +7040,15 @@ Public Class TaxSchedule
 	Public Property [ID] As Guid
 	'''<![CDATA[Indicates if the tax schedule is blocked, 0 = not blocked, 1 = blocked]]>
 	Public Property [IsBlocked] As Byte
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
 	'''<![CDATA[Notes for the tax schedule]]>
 	Public Property [Notes] As String
 	'''<![CDATA[The type of tax schedule, 10=Single, 20=Combined]]>
@@ -5598,6 +7062,14 @@ Public Class TaxScheduleComponent
 	Public Property [Account] As Guid?
 	'''<![CDATA[Tax schedule code]]>
 	Public Property [Code] As String
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	Public Property [CreatorFullName] As String
 	'''<![CDATA[Tax schedule description]]>
 	Public Property [Description] As String
 	'''<![CDATA[Division]]>
@@ -5608,6 +7080,15 @@ Public Class TaxScheduleComponent
 	Public Property [ID] As Guid
 	'''<![CDATA[The sequence in which the tax components are ordered]]>
 	Public Property [LineNumber] As Int32
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
 	'''<![CDATA[Notes]]>
 	Public Property [Notes] As String
 	'''<![CDATA[Id of the tax component]]>
@@ -5743,6 +7224,64 @@ End Class
 
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
+Public Class TimedTimeTransaction
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
+	'''<![CDATA[ID of employee]]>
+	Public Property [Employee] As Guid?
+	'''<![CDATA[Time that operation was stopped]]>
+	Public Property [EndTime] As DateTime?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Is the operation finished?]]>
+	Public Property [IsOperationFinished] As Byte?
+	'''<![CDATA[Adjustable labor hours]]>
+	Public Property [LaborHours] As Double?
+	'''<![CDATA[Adjustable machine hours]]>
+	Public Property [MachineHours] As Double?
+	'''<![CDATA[Modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Notes - viewable in data collection]]>
+	Public Property [Notes] As String
+	'''<![CDATA[Quantity of make item produced within time period]]>
+	Public Property [ProducedQuantity] As Double?
+	'''<![CDATA[Shop order routing step where work occurred]]>
+	Public Property [ShopOrderRoutingStepPlan] As Guid?
+	'''<![CDATA[Description of the routing step plan]]>
+	Public Property [ShopOrderRoutingStepPlanDescription] As String
+	'''<![CDATA[Source of the timed time transaction]]>
+	Public Property [Source] As Int16?
+	'''<![CDATA[Time that operation was started]]>
+	Public Property [StartTime] As DateTime?
+	'''<![CDATA[Status of the timed time transaction]]>
+	Public Property [Status] As Int16?
+	'''<![CDATA[Type of the timed time transaction: Setup = 10, Run = 20]]>
+	Public Property [Type] As Int16?
+	'''<![CDATA[Work center where work occurred]]>
+	Public Property [Workcenter] As Guid?
+	'''<![CDATA[Description of the work center]]>
+	Public Property [WorkcenterDescription] As String
+End Class
+
+<SupportedActionsSDK(True, True, True, True)>
+<DataServiceKey("ID")>
 Public Class TimeTransaction
 	'''<![CDATA[Amount in foreign currency]]>
 	Public Property [Amount] As Double?
@@ -5858,6 +7397,9 @@ End Class
 Public Class Transaction
 	'''<![CDATA[Closing balance in foreign currency]]>
 	Public Property [ClosingBalanceFC] As Double?
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
 	'''<![CDATA[Date]]>
 	Public Property [Date] As DateTime?
 	'''<![CDATA[Description]]>
@@ -5878,6 +7420,9 @@ Public Class Transaction
 	'''<![CDATA[Description of Journal]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [JournalDescription] As String
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
 	'''<![CDATA[Opening balance in foreign currency]]>
 	Public Property [OpeningBalanceFC] As Double?
 	'''<![CDATA[Code of PaymentCondition]]>
@@ -6081,6 +7626,15 @@ Public Class User
 	Public Property [BirthDate] As DateTime?
 	'''<![CDATA[Birth name]]>
 	Public Property [BirthName] As String
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
 	'''<![CDATA[Customer the user belongs to]]>
 	Public Property [Customer] As Guid
 	'''<![CDATA[Name of Customer]]>
@@ -6108,6 +7662,15 @@ Public Class User
 	Public Property [MiddleName] As String
 	'''<![CDATA[Mobile phone]]>
 	Public Property [Mobile] As String
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
 	'''<![CDATA[Nationality]]>
 	Public Property [Nationality] As String
 	'''<![CDATA[Remarks]]>
@@ -6138,6 +7701,15 @@ End Class
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
 Public Class UserRole
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
 	'''<![CDATA[The user that is linked to the role]]>
@@ -6152,6 +7724,15 @@ Public Class UserRole
 	Public Property [StartDate] As DateTime
 	'''<![CDATA[Indicates the date and time when te role becomes inactive for the user]]>
 	Public Property [EndDate] As DateTime?
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
