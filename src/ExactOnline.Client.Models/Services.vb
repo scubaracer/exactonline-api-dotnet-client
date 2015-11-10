@@ -1,4 +1,4 @@
-' Last generated on 2015-09-18 13:09:15 +02:00
+' Last generated on 2015-11-10 09:58:14 +01:00
 
 Public Class Services
 	Public Services As Dictionary(Of String, String) = New Dictionary(Of String, String)
@@ -69,6 +69,8 @@ Public Class Services
 		Services.Add("MailMessageAttachment", "Mailbox/MailMessageAttachments")
 		Services.Add("ManufacturingTimeTransaction", "Manufacturing/TimeTransactions")
 		Services.Add("OpeningBalanceAfterEntry", "OpeningBalance/CurrentYear/AfterEntry")
+		Services.Add("OpeningBalancePreviousYearAfterEntry", "OpeningBalance/PreviousYear/AfterEntry")
+		Services.Add("OpeningBalancePreviousYearProcessed", "OpeningBalance/PreviousYear/Processed")
 		Services.Add("OpeningBalanceProcessed", "OpeningBalance/CurrentYear/Processed")
 		Services.Add("Operation", "Manufacturing/Operations")
 		Services.Add("OperationResource", "Manufacturing/OperationResources")
@@ -89,13 +91,13 @@ Public Class Services
 		Services.Add("ProjectRestrictionEmployee", "Project/ProjectRestrictionEmployees")
 		Services.Add("ProjectRestrictionItem", "Project/ProjectRestrictionItems")
 		Services.Add("ProjectRestrictionRebilling", "Project/ProjectRestrictionRebillings")
+		Services.Add("ProjectTerm", "Project/InvoiceTerms")
 		Services.Add("PurchaseEntry", "PurchaseEntry/PurchaseEntries")
 		Services.Add("PurchaseEntryLine", "PurchaseEntry/PurchaseEntryLines")
 		Services.Add("Receivable", "Read/Financial/ReceivablesList")
 		Services.Add("RecentCosts", "Read/Project/RecentCosts")
 		Services.Add("RecentHours", "Read/Project/RecentHours")
 		Services.Add("ReportingBalance", "Financial/ReportingBalance")
-		Services.Add("Request", "Read/Workflow/Requests")
 		Services.Add("SalesEntry", "SalesEntry/SalesEntries")
 		Services.Add("SalesEntryLine", "SalesEntry/SalesEntryLines")
 		Services.Add("SalesInvoice", "SalesInvoice/SalesInvoices")
@@ -129,7 +131,6 @@ Public Class Services
 		Services.Add("TimeAndBillingRecentActivitiesAndExpenses", "Read/Project/TimeAndBillingEntryRecentActivitiesAndExpenses")
 		Services.Add("TimeAndBillingRecentHourCostType", "Read/Project/TimeAndBillingEntryRecentHourCostTypes")
 		Services.Add("TimeAndBillingRecentProject", "Read/Project/TimeAndBillingEntryRecentProjects")
-		Services.Add("TimedTimeTransaction", "Manufacturing/TimedTimeTransactions")
 		Services.Add("TimeTransaction", "Project/TimeTransactions")
 		Services.Add("Transaction", "FinancialTransaction/Transactions")
 		Services.Add("TransactionLine", "FinancialTransaction/TransactionLines")
