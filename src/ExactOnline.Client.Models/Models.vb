@@ -1,4 +1,4 @@
-' Last generated on 2015-09-18 13:09:10 +02:00
+' Last generated on 2015-11-10 09:58:01 +01:00
 
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
@@ -190,6 +190,8 @@ Public Class Account
 	Public Property [Latitude] As Double?
 	'''<![CDATA[Reference to Lead source of an account]]>
 	Public Property [LeadSource] As Guid?
+	'''<![CDATA[Bytes of the logo image]]>
+	Public Property [Logo] As Byte()
 	'''<![CDATA[The file name (without path, but with extension) of the image]]>
 	Public Property [LogoFileName] As String
 	'''<![CDATA[Thumbnail url of the logo]]>
@@ -198,8 +200,6 @@ Public Class Account
 	'''<![CDATA[Url to retrieve the logo]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [LogoUrl] As String
-	'''<![CDATA[Bytes of the logo image]]>
-	Public Property [Logo] As Byte()
 	'''<![CDATA[Longitude (used by Google maps)]]>
 	Public Property [Longitude] As Double?
 	'''<![CDATA[Reference to main contact person]]>
@@ -248,10 +248,10 @@ Public Class Account
 	'''<![CDATA[Description of PurchaseVATCode]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [PurchaseVATCodeDescription] As String
-	'''<![CDATA[Remarks]]>
-	Public Property [Remarks] As String
 	'''<![CDATA[Define the relation that should be taken in the official document of the rewarding fiscal fiches Belcotax]]>
 	Public Property [RecepientOfCommissions] As Boolean?
+	'''<![CDATA[Remarks]]>
+	Public Property [Remarks] As String
 	'''<![CDATA[ID of the reseller account. Conditions: the target account must have the property IsReseller turned on]]>
 	Public Property [Reseller] As Guid?
 	'''<![CDATA[Code of Reseller]]>
@@ -265,6 +265,14 @@ Public Class Account
 	'''<![CDATA[Description of SalesCurrency]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [SalesCurrencyDescription] As String
+	'''<![CDATA[Default tax schedule when creating sales orders or sales invoices]]>
+	Public Property [SalesTaxSchedule] As Guid?
+	'''<![CDATA[Code of the tax schedule]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [SalesTaxScheduleCode] As String
+	'''<![CDATA[Description of the tax schedule]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [SalesTaxScheduleDescription] As String
 	'''<![CDATA[Default VAT code for a sales entry]]>
 	Public Property [SalesVATCode] As String
 	'''<![CDATA[Description of SalesVATCode]]>
@@ -294,14 +302,6 @@ Public Class Account
 	'''<![CDATA[Obsolete]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [StatusSince] As DateTime?
-	'''<![CDATA[Default tax schedule when creating sales orders or sales invoices]]>
-	Public Property [SalesTaxSchedule] As Guid?
-	'''<![CDATA[Code of the tax schedule]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [SalesTaxScheduleCode] As String
-	'''<![CDATA[Description of the tax schedule]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [SalesTaxScheduleDescription] As String
 	'''<![CDATA[Account type: Values: A = Relation, D = Division]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Type] As String
@@ -455,10 +455,10 @@ Public Class ActiveEmployment
 	Public Property [Division] As Int32?
 	'''<![CDATA[Employee ID]]>
 	Public Property [Employee] As Guid?
-	'''<![CDATA[Numeric number of Employee]]>
-	Public Property [EmployeeHID] As Int32?
 	'''<![CDATA[Name of employee]]>
 	Public Property [EmployeeFullName] As String
+	'''<![CDATA[Numeric number of Employee]]>
+	Public Property [EmployeeHID] As Int32?
 	'''<![CDATA[Organization of employment]]>
 	Public Property [EmploymentOrganization] As Guid?
 	'''<![CDATA[End date of employment]]>
@@ -493,16 +493,16 @@ Public Class ActiveEmployment
 	Public Property [Salary] As Guid?
 	'''<![CDATA[Work schedule]]>
 	Public Property [Schedule] As Guid?
+	'''<![CDATA[Average hours per week in a schedule.]]>
+	Public Property [ScheduleAverageHours] As Double?
 	'''<![CDATA[Work schedule code]]>
 	Public Property [ScheduleCode] As String
+	'''<![CDATA[Number of days of work per week]]>
+	Public Property [ScheduleDays] As Double?
 	'''<![CDATA[Description of work schedule]]>
 	Public Property [ScheduleDescription] As String
 	'''<![CDATA[Number of work hours per week.]]>
 	Public Property [ScheduleHours] As Double?
-	'''<![CDATA[Number of days of work per week]]>
-	Public Property [ScheduleDays] As Double?
-	'''<![CDATA[Average hours per week in a schedule.]]>
-	Public Property [ScheduleAverageHours] As Double?
 	'''<![CDATA[Start date of employment]]>
 	Public Property [StartDate] As DateTime?
 	'''<![CDATA[Start date of the employee in the organization. This field is used to count the years in service.]]>
@@ -641,94 +641,94 @@ Public Class AddressState
 	Public Property [Country] As String
 	'''<![CDATA[Description of state prefixed with the code]]>
 	Public Property [DisplayValue] As String
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
 	'''<![CDATA[Latitude]]>
 	Public Property [Latitude] As Double?
 	'''<![CDATA[Longitude]]>
 	Public Property [Longitude] As Double?
-	'''<![CDATA[Primary key]]>
-	Public Property [ID] As Guid
-	'''<![CDATA[State code]]>
-	Public Property [State] As String
 	'''<![CDATA[State name]]>
 	Public Property [Name] As String
+	'''<![CDATA[State code]]>
+	Public Property [State] As String
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("AccountId")>
 Public Class AgingAmountsPayable
-	'''<![CDATA[Primary key]]>
-	Public Property [AccountId] As Guid
 	'''<![CDATA[Code of Account]]>
 	Public Property [AccountCode] As String
+	'''<![CDATA[Primary key]]>
+	Public Property [AccountId] As Guid
 	'''<![CDATA[Name of Account]]>
 	Public Property [AccountName] As String
-	'''<![CDATA[Total amount of all age groups]]>
-	Public Property [TotalAmount] As Double
 	'''<![CDATA[Age group 1]]>
 	Public Property [AgeGroup1] As Int32
-	'''<![CDATA[Description of AgeGroup1]]>
-	Public Property [AgeGroup1Description] As String
 	'''<![CDATA[Amount of age group 1]]>
 	Public Property [AgeGroup1Amount] As Double
+	'''<![CDATA[Description of AgeGroup1]]>
+	Public Property [AgeGroup1Description] As String
 	'''<![CDATA[Age group 2]]>
 	Public Property [AgeGroup2] As Int32
-	'''<![CDATA[Description of AgeGroup2]]>
-	Public Property [AgeGroup2Description] As String
 	'''<![CDATA[Amount of age group 2]]>
 	Public Property [AgeGroup2Amount] As Double
+	'''<![CDATA[Description of AgeGroup2]]>
+	Public Property [AgeGroup2Description] As String
 	'''<![CDATA[Age group 3]]>
 	Public Property [AgeGroup3] As Int32
-	'''<![CDATA[Description of AgeGroup3]]>
-	Public Property [AgeGroup3Description] As String
 	'''<![CDATA[Amount of age group 3]]>
 	Public Property [AgeGroup3Amount] As Double
+	'''<![CDATA[Description of AgeGroup3]]>
+	Public Property [AgeGroup3Description] As String
 	'''<![CDATA[Age group 4]]>
 	Public Property [AgeGroup4] As Int32
-	'''<![CDATA[Description of AgeGroup4]]>
-	Public Property [AgeGroup4Description] As String
 	'''<![CDATA[Amount of age group 4]]>
 	Public Property [AgeGroup4Amount] As Double
+	'''<![CDATA[Description of AgeGroup4]]>
+	Public Property [AgeGroup4Description] As String
 	'''<![CDATA[Code of Currency]]>
 	Public Property [CurrencyCode] As String
+	'''<![CDATA[Total amount of all age groups]]>
+	Public Property [TotalAmount] As Double
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("AccountId")>
 Public Class AgingAmountsReceivable
-	'''<![CDATA[Primary key]]>
-	Public Property [AccountId] As Guid
 	'''<![CDATA[Code of Account]]>
 	Public Property [AccountCode] As String
+	'''<![CDATA[Primary key]]>
+	Public Property [AccountId] As Guid
 	'''<![CDATA[Name of Account]]>
 	Public Property [AccountName] As String
-	'''<![CDATA[Total amount of all age groups]]>
-	Public Property [TotalAmount] As Double
 	'''<![CDATA[Age group 1]]>
 	Public Property [AgeGroup1] As Int32
-	'''<![CDATA[Description of AgeGroup1]]>
-	Public Property [AgeGroup1Description] As String
 	'''<![CDATA[Amount of age group 1]]>
 	Public Property [AgeGroup1Amount] As Double
+	'''<![CDATA[Description of AgeGroup1]]>
+	Public Property [AgeGroup1Description] As String
 	'''<![CDATA[Age group 2]]>
 	Public Property [AgeGroup2] As Int32
-	'''<![CDATA[Description of AgeGroup2]]>
-	Public Property [AgeGroup2Description] As String
 	'''<![CDATA[Amount of age group 2]]>
 	Public Property [AgeGroup2Amount] As Double
+	'''<![CDATA[Description of AgeGroup2]]>
+	Public Property [AgeGroup2Description] As String
 	'''<![CDATA[Age group 3]]>
 	Public Property [AgeGroup3] As Int32
-	'''<![CDATA[Description of AgeGroup3]]>
-	Public Property [AgeGroup3Description] As String
 	'''<![CDATA[Amount of age group 3]]>
 	Public Property [AgeGroup3Amount] As Double
+	'''<![CDATA[Description of AgeGroup3]]>
+	Public Property [AgeGroup3Description] As String
 	'''<![CDATA[Age group 4]]>
 	Public Property [AgeGroup4] As Int32
-	'''<![CDATA[Description of AgeGroup4]]>
-	Public Property [AgeGroup4Description] As String
 	'''<![CDATA[Amount of age group 4]]>
 	Public Property [AgeGroup4Amount] As Double
+	'''<![CDATA[Description of AgeGroup4]]>
+	Public Property [AgeGroup4Description] As String
 	'''<![CDATA[Code of Currency]]>
 	Public Property [CurrencyCode] As String
+	'''<![CDATA[Total amount of all age groups]]>
+	Public Property [TotalAmount] As Double
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
@@ -738,10 +738,10 @@ Public Class AgingOverview
 	Public Property [AgeGroup] As Int32
 	'''<![CDATA[Description of AgeGroup]]>
 	Public Property [AgeGroupDescription] As String
-	'''<![CDATA[Amount receivable]]>
-	Public Property [AmountReceivable] As Double
 	'''<![CDATA[Amount payable]]>
 	Public Property [AmountPayable] As Double
+	'''<![CDATA[Amount receivable]]>
+	Public Property [AmountReceivable] As Double
 	'''<![CDATA[Code of Currency]]>
 	Public Property [CurrencyCode] As String
 End Class
@@ -969,6 +969,8 @@ End Class
 <SupportedActionsSDK(True, True, False, False)>
 <DataServiceKey("EntryID")>
 Public Class BankEntry
+	'''<![CDATA[Collection of lines]]>
+	Public Property [BankEntryLines] As IEnumerable(Of BankEntryLine)
 	'''<![CDATA[Reference to document with bank statement]]>
 	Public Property [BankStatementDocument] As Guid?
 	'''<![CDATA[Document number of document with bank statement]]>
@@ -977,8 +979,6 @@ Public Class BankEntry
 	'''<![CDATA[Subject of document with bank statement]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [BankStatementDocumentSubject] As String
-	'''<![CDATA[Collection of lines]]>
-	Public Property [BankEntryLines] As IEnumerable(Of BankEntryLine)
 	'''<![CDATA[Closing balance in foreign currency]]>
 	Public Property [ClosingBalanceFC] As Double?
 	'''<![CDATA[Creation date]]>
@@ -1363,93 +1363,22 @@ End Class
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
 Public Class Contact
-	'''<![CDATA[Primary key]]>
-	Public Property [ID] As Guid
-	'''<![CDATA[Reference to the personal information of this contact such as name, gender, address etc.]]>
-	Public Property [Person] As Guid?
 	'''<![CDATA[The account to which the contact belongs]]>
 	Public Property [Account] As Guid?
-	'''<![CDATA[Name of the account]]>
-	Public Property [AccountName] As String
-	'''<![CDATA[Code of the account]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Code] As String
-	'''<![CDATA[Division code]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Division] As Int32?
-	'''<![CDATA[Reference to the main contact of the account]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [AccountMainContact] As Guid?
 	'''<![CDATA[Indicates if account is a customer]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AccountIsCustomer] As Boolean
 	'''<![CDATA[Indicates if account is a supplier]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AccountIsSupplier] As Boolean?
-	'''<![CDATA[Start date]]>
-	Public Property [StartDate] As DateTime?
-	'''<![CDATA[End date]]>
-	Public Property [EndDate] As DateTime?
-	'''<![CDATA[Phone of the contact]]>
-	Public Property [BusinessPhone] As String
-	'''<![CDATA[Phone extension of the contact]]>
-	Public Property [BusinessPhoneExtension] As String
-	'''<![CDATA[Mobile of the contact]]>
-	Public Property [BusinessMobile] As String
-	'''<![CDATA[Email address of the contact]]>
-	Public Property [BusinessEmail] As String
-	'''<![CDATA[Fax of the contact]]>
-	Public Property [BusinessFax] As String
-	'''<![CDATA[Indicates whether contacts are excluded from the marketing list]]>
-	Public Property [IsMailingExcluded] As Boolean?
-	'''<![CDATA[The user should be able to do a full text search on these notes to gather contacts for a marketing campaign]]>
-	Public Property [MarketingNotes] As String
-	'''<![CDATA[Creation date]]>
+	'''<![CDATA[Reference to the main contact of the account]]>
 	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Created] As DateTime?
-	'''<![CDATA[User ID of the creator]]>
+	Public Property [AccountMainContact] As Guid?
+	'''<![CDATA[Name of the account]]>
+	Public Property [AccountName] As String
+	'''<![CDATA[Second address line]]>
 	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Creator] As Guid?
-	'''<![CDATA[Name of the creator]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [CreatorFullName] As String
-	'''<![CDATA[Last modified date]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Modified] As DateTime?
-	'''<![CDATA[User ID of modifier]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Modifier] As Guid?
-	'''<![CDATA[Name of the last modifier]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ModifierFullName] As String
-	'''<![CDATA[Indicates if this is the main contact of the linked account]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [IsMainContact] As Boolean?
-	'''<![CDATA[Last name. Provide at least first name or last name to create a new contact]]>
-	Public Property [LastName] As String
-	'''<![CDATA[Full name (First name Middle name Last name)]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [FullName] As String
-	'''<![CDATA[First name. Provide at least first name or last name to create a new contact]]>
-	Public Property [FirstName] As String
-	'''<![CDATA[Middle name]]>
-	Public Property [MiddleName] As String
-	'''<![CDATA[Middle birth name]]>
-	Public Property [BirthNamePrefix] As String
-	'''<![CDATA[Last birth name]]>
-	Public Property [BirthName] As String
-	'''<![CDATA[Middlename of partner]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [PartnerNamePrefix] As String
-	'''<![CDATA[Last name of partner]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [PartnerName] As String
-	'''<![CDATA[Initials]]>
-	Public Property [Initials] As String
-	'''<![CDATA[Title]]>
-	Public Property [Title] As String
-	'''<![CDATA[Gender]]>
-	Public Property [Gender] As String
+	Public Property [AddressLine2] As String
 	'''<![CDATA[Street name of the address]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AddressStreet] As String
@@ -1459,59 +1388,130 @@ Public Class Contact
 	'''<![CDATA[Street number suffix of the address]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AddressStreetNumberSuffix] As String
-	'''<![CDATA[Second address line]]>
+	'''<![CDATA[Indicates if it is allowed to send e-mails]]>
 	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [AddressLine2] As String
+	Public Property [AllowMailing] As Int32?
+	'''<![CDATA[Birth date]]>
+	Public Property [BirthDate] As DateTime?
+	'''<![CDATA[Last birth name]]>
+	Public Property [BirthName] As String
+	'''<![CDATA[Middle birth name]]>
+	Public Property [BirthNamePrefix] As String
+	'''<![CDATA[Birth place]]>
+	Public Property [BirthPlace] As String
+	'''<![CDATA[Email address of the contact]]>
+	Public Property [BusinessEmail] As String
+	'''<![CDATA[Fax of the contact]]>
+	Public Property [BusinessFax] As String
+	'''<![CDATA[Mobile of the contact]]>
+	Public Property [BusinessMobile] As String
+	'''<![CDATA[Phone of the contact]]>
+	Public Property [BusinessPhone] As String
+	'''<![CDATA[Phone extension of the contact]]>
+	Public Property [BusinessPhoneExtension] As String
 	'''<![CDATA[City]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [City] As String
-	'''<![CDATA[State]]>
+	'''<![CDATA[Code of the account]]>
 	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [State] As String
-	'''<![CDATA[Postcode]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Postcode] As String
+	Public Property [Code] As String
 	'''<![CDATA[Country code]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Country] As String
-	'''<![CDATA[Language code]]>
-	Public Property [Language] As String
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
 	'''<![CDATA[Email address of the contact]]>
 	Public Property [Email] As String
+	'''<![CDATA[End date]]>
+	Public Property [EndDate] As DateTime?
+	'''<![CDATA[First name. Provide at least first name or last name to create a new contact]]>
+	Public Property [FirstName] As String
+	'''<![CDATA[Full name (First name Middle name Last name)]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [FullName] As String
+	'''<![CDATA[Gender]]>
+	Public Property [Gender] As String
 	'''<![CDATA[Contact ID]]>
 	Public Property [HID] As Int32?
-	'''<![CDATA[Picture]]>
-	Public Property [Picture] As Byte()
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Initials]]>
+	Public Property [Initials] As String
+	'''<![CDATA[Indicates whether contacts are excluded from the marketing list]]>
+	Public Property [IsMailingExcluded] As Boolean?
+	'''<![CDATA[Indicates if this is the main contact of the linked account]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [IsMainContact] As Boolean?
+	'''<![CDATA[Jobtitle of the contact]]>
+	Public Property [JobTitleDescription] As String
+	'''<![CDATA[Language code]]>
+	Public Property [Language] As String
+	'''<![CDATA[Last name. Provide at least first name or last name to create a new contact]]>
+	Public Property [LastName] As String
+	'''<![CDATA[The user should be able to do a full text search on these notes to gather contacts for a marketing campaign]]>
+	Public Property [MarketingNotes] As String
+	'''<![CDATA[Middle name]]>
+	Public Property [MiddleName] As String
+	'''<![CDATA[Business phone of the contact]]>
+	Public Property [Mobile] As String
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Nationality]]>
+	Public Property [Nationality] As String
+	'''<![CDATA[Extra remarks]]>
+	Public Property [Notes] As String
+	'''<![CDATA[Last name of partner]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [PartnerName] As String
+	'''<![CDATA[Middlename of partner]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [PartnerNamePrefix] As String
+	'''<![CDATA[Reference to the personal information of this contact such as name, gender, address etc.]]>
+	Public Property [Person] As Guid?
 	'''<![CDATA[Phone of the contact]]>
 	Public Property [Phone] As String
 	'''<![CDATA[Phone extension of the contact]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [PhoneExtension] As String
-	'''<![CDATA[Business phone of the contact]]>
-	Public Property [Mobile] As String
-	'''<![CDATA[Social security number]]>
-	Public Property [SocialSecurityNumber] As String
-	'''<![CDATA[Jobtitle of the contact]]>
-	Public Property [JobTitleDescription] As String
-	'''<![CDATA[Birth date]]>
-	Public Property [BirthDate] As DateTime?
-	'''<![CDATA[Birth place]]>
-	Public Property [BirthPlace] As String
-	'''<![CDATA[Nationality]]>
-	Public Property [Nationality] As String
-	'''<![CDATA[Extra remarks]]>
-	Public Property [Notes] As String
+	'''<![CDATA[Picture]]>
+	Public Property [Picture] As Byte()
 	'''<![CDATA[Filename of the picture]]>
 	Public Property [PictureName] As String
-	'''<![CDATA[Url to retrieve the picture]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [PictureUrl] As String
 	'''<![CDATA[Url to retrieve the picture thumbnail]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [PictureThumbnailUrl] As String
-	'''<![CDATA[Indicates if it is allowed to send e-mails]]>
+	'''<![CDATA[Url to retrieve the picture]]>
 	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [AllowMailing] As Int32?
+	Public Property [PictureUrl] As String
+	'''<![CDATA[Postcode]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Postcode] As String
+	'''<![CDATA[Social security number]]>
+	Public Property [SocialSecurityNumber] As String
+	'''<![CDATA[Start date]]>
+	Public Property [StartDate] As DateTime?
+	'''<![CDATA[State]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [State] As String
+	'''<![CDATA[Title]]>
+	Public Property [Title] As String
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -1556,6 +1556,8 @@ Public Class CostTransaction
 	'''<![CDATA[Name of Account]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AccountName] As String
+	'''<![CDATA[Amount in foreign currency]]>
+	Public Property [Amount] As Double?
 	'''<![CDATA[Amount of the transaction in foreign currency]]>
 	Public Property [AmountFC] As Double?
 	'''<![CDATA[Attachment linked to the transaction (not mandatory)]]>
@@ -1611,6 +1613,8 @@ Public Class CostTransaction
 	Public Property [ModifierFullName] As String
 	'''<![CDATA[Notes linked to the transaction (not mandatory)]]>
 	Public Property [Notes] As String
+	'''<![CDATA[Price in foreign currency]]>
+	Public Property [Price] As Double?
 	'''<![CDATA[PriceFC (AmountFC = Quantity * PriceFC)]]>
 	Public Property [PriceFC] As Double?
 	'''<![CDATA[Project linked to the transaction]]>
@@ -1648,10 +1652,6 @@ Public Class CostTransaction
 	'''<![CDATA[Type of the transaction]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Type] As Int16?
-	'''<![CDATA[Amount in foreign currency]]>
-	Public Property [Amount] As Double?
-	'''<![CDATA[Price in foreign currency]]>
-	Public Property [Price] As Double?
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -1910,6 +1910,11 @@ Public Class Document
 	Public Property [Category] As Guid?
 	'''<![CDATA[Description of Category]]>
 	Public Property [CategoryDescription] As String
+	'''<![CDATA[ID of the related contact of this document]]>
+	Public Property [Contact] As Guid?
+	'''<![CDATA[Contact full name]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ContactFullName] As String
 	'''<![CDATA[Creation date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Created] As DateTime?
@@ -1956,6 +1961,12 @@ Public Class Document
 	'''<![CDATA[Name of modifier]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ModifierFullName] As String
+	'''<![CDATA[The opportunity linked to the document]]>
+	Public Property [Opportunity] As Guid?
+	'''<![CDATA['Our reference' of the transaction that belongs to this document]]>
+	Public Property [SalesInvoiceNumber] As Int32?
+	'''<![CDATA[Number of the sales order]]>
+	Public Property [SalesOrderNumber] As Int32?
 	'''<![CDATA[Number of the shop order]]>
 	Public Property [ShopOrderNumber] As Int32?
 	'''<![CDATA[Subject of this document]]>
@@ -1965,31 +1976,25 @@ Public Class Document
 	'''<![CDATA[Description of Type]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [TypeDescription] As String
-	'''<![CDATA[The opportunity linked to the document]]>
-	Public Property [Opportunity] As Guid?
-	'''<![CDATA['Our reference' of the transaction that belongs to this document]]>
-	Public Property [SalesInvoiceNumber] As Int32?
-	'''<![CDATA[Number of the sales order]]>
-	Public Property [SalesOrderNumber] As Int32?
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
 Public Class DocumentAttachment
-	'''<![CDATA[Primary key]]>
-	Public Property [ID] As Guid
 	'''<![CDATA[Contains the attachment]]>
 	Public Property [Attachment] As Byte()
+	'''<![CDATA[Reference to the Document]]>
+	Public Property [Document] As Guid
 	'''<![CDATA[Filename of the attachment]]>
 	Public Property [FileName] As String
 	'''<![CDATA[File size of the attachment]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [FileSize] As Double
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
 	'''<![CDATA[Url of the attachment]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Url] As String
-	'''<![CDATA[Reference to the Document]]>
-	Public Property [Document] As Guid
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
@@ -2046,20 +2051,20 @@ Public Class DocumentType
 	Public Property [Created] As DateTime?
 	'''<![CDATA[Document type description]]>
 	Public Property [Description] As String
+	'''<![CDATA[Indicates if documents of this type can be created]]>
+	Public Property [DocumentIsCreatable] As Boolean
+	'''<![CDATA[Indicates if documents of this type can be deleted]]>
+	Public Property [DocumentIsDeletable] As Boolean
+	'''<![CDATA[Indicates if documents of this type can be updated]]>
+	Public Property [DocumentIsUpdatable] As Boolean
+	'''<![CDATA[Indicates if documents of this type can be retrieved]]>
+	Public Property [DocumentIsViewable] As Boolean
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Int32
 	'''<![CDATA[Last modified date]]>
 	Public Property [Modified] As DateTime?
 	'''<![CDATA[ID of the document type category]]>
 	Public Property [TypeCategory] As Int32?
-	'''<![CDATA[Indicates if documents of this type can be created]]>
-	Public Property [DocumentIsCreatable] As Boolean
-	'''<![CDATA[Indicates if documents of this type can be updated]]>
-	Public Property [DocumentIsUpdatable] As Boolean
-	'''<![CDATA[Indicates if documents of this type can be deleted]]>
-	Public Property [DocumentIsDeletable] As Boolean
-	'''<![CDATA[Indicates if documents of this type can be retrieved]]>
-	Public Property [DocumentIsViewable] As Boolean
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
@@ -2144,6 +2149,8 @@ Public Class Employee
 	Public Property [ID] As Guid
 	'''<![CDATA[Initials]]>
 	Public Property [Initials] As String
+	'''<![CDATA[IsActive]]>
+	Public Property [IsActive] As Boolean
 	'''<![CDATA[Language code]]>
 	Public Property [Language] As String
 	'''<![CDATA[Last name]]>
@@ -2195,10 +2202,10 @@ Public Class Employee
 	Public Property [PrivateEmail] As String
 	'''<![CDATA[Social security number]]>
 	Public Property [SocialSecurityNumber] As String
-	'''<![CDATA[State]]>
-	Public Property [State] As String
 	'''<![CDATA[Start date of the employee]]>
 	Public Property [StartDate] As DateTime?
+	'''<![CDATA[State]]>
+	Public Property [State] As String
 	'''<![CDATA[Title]]>
 	Public Property [Title] As String
 End Class
@@ -2216,10 +2223,10 @@ Public Class Employment
 	Public Property [Division] As Int32?
 	'''<![CDATA[Employee ID]]>
 	Public Property [Employee] As Guid?
-	'''<![CDATA[Numeric number of Employee]]>
-	Public Property [EmployeeHID] As Int32?
 	'''<![CDATA[Name of employee]]>
 	Public Property [EmployeeFullName] As String
+	'''<![CDATA[Numeric number of Employee]]>
+	Public Property [EmployeeHID] As Int32?
 	'''<![CDATA[End date of employment]]>
 	Public Property [EndDate] As DateTime?
 	'''<![CDATA[Numeric ID of the employment]]>
@@ -2265,10 +2272,10 @@ Public Class EmploymentContract
 	Public Property [Document] As Guid?
 	'''<![CDATA[ID of employee]]>
 	Public Property [Employee] As Guid?
-	'''<![CDATA[Numeric ID of the employee]]>
-	Public Property [EmployeeHID] As Int32?
 	'''<![CDATA[Name of employee]]>
 	Public Property [EmployeeFullName] As String
+	'''<![CDATA[Numeric ID of the employee]]>
+	Public Property [EmployeeHID] As Int32?
 	'''<![CDATA[Type of employee. 1 - Employee, 2 - Contractor, 3 - Temporary, 4 - Student, 5 - Flexworker]]>
 	Public Property [EmployeeType] As Int32?
 	'''<![CDATA[Employee type description]]>
@@ -2310,19 +2317,19 @@ End Class
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
 Public Class EmploymentContractFlexPhase
-	'''<![CDATA[Primary key]]>
-	Public Property [ID] As Int32
 	'''<![CDATA[Flexible employment contract phase description]]>
 	Public Property [Description] As String
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Int32
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
 Public Class EmploymentEndReason
-	'''<![CDATA[Primary key]]>
-	Public Property [ID] As Int32
 	'''<![CDATA[Employment end reason description]]>
 	Public Property [Description] As String
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Int32
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
@@ -2352,10 +2359,10 @@ Public Class EmploymentOrganization
 	Public Property [Division] As Int32?
 	'''<![CDATA[ID of employee]]>
 	Public Property [Employee] As Guid?
-	'''<![CDATA[Numeric ID of the employee]]>
-	Public Property [EmployeeHID] As Int32?
 	'''<![CDATA[Name of employee]]>
 	Public Property [EmployeeFullName] As String
+	'''<![CDATA[Numeric ID of the employee]]>
+	Public Property [EmployeeHID] As Int32?
 	'''<![CDATA[Employement ID]]>
 	Public Property [Employment] As Guid?
 	'''<![CDATA[Numeric ID of the employment]]>
@@ -2399,10 +2406,10 @@ Public Class EmploymentSalary
 	Public Property [Division] As Int32?
 	'''<![CDATA[Employee ID]]>
 	Public Property [Employee] As Guid?
-	'''<![CDATA[Employee number]]>
-	Public Property [EmployeeHID] As Int32?
 	'''<![CDATA[Name of employee]]>
 	Public Property [EmployeeFullName] As String
+	'''<![CDATA[Employee number]]>
+	Public Property [EmployeeHID] As Int32?
 	'''<![CDATA[Employment]]>
 	Public Property [Employment] As Guid?
 	'''<![CDATA[Employment number]]>
@@ -2883,19 +2890,19 @@ End Class
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
 Public Class GLTransactionType
-	Public Property [ID] As Int32
 	Public Property [Description] As String
 	Public Property [DescriptionSuffix] As String
+	Public Property [ID] As Int32
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ItemId")>
 Public Class HourCostType
-	'''<![CDATA[Primary key]]>
-	Public Property [ItemId] As Guid
 	'''<![CDATA[Description of Item]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ItemDescription] As String
+	'''<![CDATA[Primary key]]>
+	Public Property [ItemId] As Guid
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -2927,11 +2934,6 @@ Public Class InvolvedUser
 	'''<![CDATA[Description of the user role]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [InvolvedUserRoleDescription] As String
-	'''<![CDATA[ID of the involved user]]>
-	Public Property [User] As Guid?
-	'''<![CDATA[Name of creator]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [UserFullName] As String
 	'''<![CDATA[Last modified date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modified] As DateTime?
@@ -2941,6 +2943,11 @@ Public Class InvolvedUser
 	'''<![CDATA[Name of modifier]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ModifierFullName] As String
+	'''<![CDATA[ID of the involved user]]>
+	Public Property [User] As Guid?
+	'''<![CDATA[Name of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [UserFullName] As String
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -2980,10 +2987,6 @@ End Class
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
 Public Class Item
-	'''<![CDATA[Used with Serial number feature. Indicates if the item can have a serial number]]>
-	Public Property [IsSerialNumberItem] As Boolean?
-	'''<![CDATA[Used with Batch number feature. Indicates if the item can have a batch number]]>
-	Public Property [IsBatchNumberItem] As Byte
 	'''<![CDATA[Item class code referring to ItemClasses with ClassID 1]]>
 	Public Property [Class_01] As String
 	'''<![CDATA[Item class code referring to ItemClasses with ClassID 2]]>
@@ -3007,12 +3010,12 @@ Public Class Item
 	'''<![CDATA[Creation date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Created] As DateTime?
-	'''<![CDATA[Name of creator]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [CreatorFullName] As String
 	'''<![CDATA[User ID of creator]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
 	'''<![CDATA[Description of the item]]>
 	Public Property [Description] As String
 	'''<![CDATA[Division code]]>
@@ -3078,34 +3081,36 @@ Public Class Item
 	Public Property [FreeTextField_09] As String
 	'''<![CDATA[Free text field 10]]>
 	Public Property [FreeTextField_10] As String
+	'''<![CDATA[GL account the cost entries will be booked on. This overrules the GL account from the item group. If the license contains 'Intuit integration' this property overrides the value in Settings, not the item group]]>
+	Public Property [GLCosts] As Guid?
 	'''<![CDATA[Code of GL account for costs]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [GLCostsCode] As String
 	'''<![CDATA[Description of GLCosts]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [GLCostsDescription] As String
-	'''<![CDATA[GL account the cost entries will be booked on. This overrules the GL account from the item group. If the license contains 'Intuit integration' this property overrides the value in Settings, not the item group]]>
-	Public Property [GLCosts] As Guid?
+	'''<![CDATA[GL account the revenue will be booked on. This overrules the GL account from the item group. If the license contains 'Intuit integration' this property overrides the value in Settings, not the item group]]>
+	Public Property [GLRevenue] As Guid?
 	'''<![CDATA[Code of GLRevenue]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [GLRevenueCode] As String
 	'''<![CDATA[Description of GLRevenue]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [GLRevenueDescription] As String
-	'''<![CDATA[GL account the revenue will be booked on. This overrules the GL account from the item group. If the license contains 'Intuit integration' this property overrides the value in Settings, not the item group]]>
-	Public Property [GLRevenue] As Guid?
+	'''<![CDATA[GL account the stock entries will be booked on. This overrules the GL account from the item group. If the license contains 'Intuit integration' this property overrides the value in Settings, not the item group]]>
+	Public Property [GLStock] As Guid?
 	'''<![CDATA[Code of GL account for stock]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [GLStockCode] As String
 	'''<![CDATA[Description of GLStock]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [GLStockDescription] As String
-	'''<![CDATA[GL account the stock entries will be booked on. This overrules the GL account from the item group. If the license contains 'Intuit integration' this property overrides the value in Settings, not the item group]]>
-	Public Property [GLStock] As Guid?
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
 	'''<![CDATA[Indicates if batches are used for this item]]>
 	Public Property [IsBatchItem] As Byte
+	'''<![CDATA[Used with Batch number feature. Indicates if the item can have a batch number]]>
+	Public Property [IsBatchNumberItem] As Byte
 	'''<![CDATA[Indicates if fractions (for example 0.35) are allowed for quantities of this item]]>
 	Public Property [IsFractionAllowedItem] As Boolean?
 	'''<![CDATA[Indicates that an Item is produced to Inventory, not purchased]]>
@@ -3124,6 +3129,8 @@ Public Class Item
 	Public Property [IsSalesItem] As Boolean?
 	'''<![CDATA[Indicates that serial numbers are used for this item]]>
 	Public Property [IsSerialItem] As Boolean?
+	'''<![CDATA[Used with Serial number feature. Indicates if the item can have a serial number]]>
+	Public Property [IsSerialNumberItem] As Boolean?
 	'''<![CDATA[Indicates if the user is interested in the stock quantities of the item. Thus to show on stock positions. It's NOT determining whether a financial entry should be created for stock transactions, because that's based on the fact whether the ItemGroups.GLStock is of type Inventory]]>
 	Public Property [IsStockItem] As Boolean?
 	'''<![CDATA[Indicates if the item is provided by an outside supplier]]>
@@ -3132,30 +3139,30 @@ Public Class Item
 	Public Property [IsTime] As Byte
 	'''<![CDATA[Indicates if the item can be exported to a web shop]]>
 	Public Property [IsWebshopItem] As Byte
+	'''<![CDATA[GUID of Item group of the item]]>
+	Public Property [ItemGroup] As Guid?
 	'''<![CDATA[Code of ItemGroup]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ItemGroupCode] As String
 	'''<![CDATA[Description of ItemGroup]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ItemGroupDescription] As String
-	'''<![CDATA[GUID of Item group of the item]]>
-	Public Property [ItemGroup] As Guid?
 	'''<![CDATA[Last modified date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modified] As DateTime?
-	'''<![CDATA[Name of modifier]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ModifierFullName] As String
 	'''<![CDATA[User ID of modifier]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
 	'''<![CDATA[Notes]]>
 	Public Property [Notes] As String
+	'''<![CDATA[Code of SalesVat]]>
+	Public Property [SalesVatCode] As String
 	'''<![CDATA[Description of SalesVatCode]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [SalesVatCodeDescription] As String
-	'''<![CDATA[Code of SalesVat]]>
-	Public Property [SalesVatCode] As String
 	'''<![CDATA[Search code of the item]]>
 	Public Property [SearchCode] As String
 	'''<![CDATA[Security level (0 - 100)]]>
@@ -3343,12 +3350,12 @@ Public Class ItemWarehouse
 	'''<![CDATA[Last modified date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modified] As DateTime?
-	'''<![CDATA[Name of modifier]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ModifierFullName] As String
 	'''<![CDATA[User ID of modifier]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
 	'''<![CDATA[Reorder point when stock depletes]]>
 	Public Property [ReorderPoint] As Double?
 	'''<![CDATA[Safety stock]]>
@@ -3437,8 +3444,33 @@ Public Class Journal
 	Public Property [AllowVAT] As Boolean?
 	'''<![CDATA[Indicates if the journal automatically saves the entries when the amount is in balance with the entry lines]]>
 	Public Property [AutoSave] As Boolean?
+	'''<![CDATA[Reference to bank account]]>
+	Public Property [Bank] As Guid?
+	'''<![CDATA[BIC code of the bank where the bank account is held]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [BankAccountBICCode] As String
+	'''<![CDATA[Country of bank account]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [BankAccountCountry] As String
+	'''<![CDATA[Description of BankAccount]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [BankAccountDescription] As String
+	'''<![CDATA[IBAN of the bank account]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [BankAccountIBAN] As String
 	'''<![CDATA[Reference to the Bank Account linked to the Journal]]>
 	Public Property [BankAccountID] As Guid?
+	'''<![CDATA[Bank account number. Is mandatory for Journals that have Type = Bank]]>
+	Public Property [BankAccountIncludingMask] As String
+	'''<![CDATA[Obsolete. Whether or not use SEPA for the bank account]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [BankAccountUseSEPA] As Boolean?
+	'''<![CDATA[Obsolete. Whether or not use SEPA direct debit for the bank account]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [BankAccountUseSepaDirectDebit] As Boolean?
+	'''<![CDATA[Name of bank account]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [BankName] As String
 	'''<![CDATA[Primary key]]>
 	Public Property [Code] As String
 	'''<![CDATA[Creation date]]>
@@ -3482,44 +3514,15 @@ Public Class Journal
 	'''<![CDATA[Name of modifier]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ModifierFullName] As String
-	'''<![CDATA[Type of Journal. The following values are supported: 10 (Cash) 12 (Bank) 20 (Sales) 21 (Return invoice) 22 (Purchase) 23 (Received return invoice) 90 (General journal)]]>
-	Public Property [Type] As Int32?
 	'''<![CDATA[General ledger account for payment in transit]]>
 	Public Property [PaymentInTransitAccount] As Guid?
-	'''<![CDATA[Reference to bank account]]>
-	Public Property [Bank] As Guid?
-	'''<![CDATA[Name of bank account]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [BankName] As String
-	'''<![CDATA[Country of bank account]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [BankAccountCountry] As String
-	'''<![CDATA[BIC code of the bank where the bank account is held]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [BankAccountBICCode] As String
-	'''<![CDATA[Bank account number. Is mandatory for Journals that have Type = Bank]]>
-	Public Property [BankAccountIncludingMask] As String
-	'''<![CDATA[Description of BankAccount]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [BankAccountDescription] As String
-	'''<![CDATA[IBAN of the bank account]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [BankAccountIBAN] As String
-	'''<![CDATA[Obsolete. Whether or not use SEPA for the bank account]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [BankAccountUseSEPA] As Boolean?
-	'''<![CDATA[Obsolete. Whether or not use SEPA direct debit for the bank account]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [BankAccountUseSepaDirectDebit] As Boolean?
+	'''<![CDATA[Type of Journal. The following values are supported: 10 (Cash) 12 (Bank) 20 (Sales) 21 (Return invoice) 22 (Purchase) 23 (Received return invoice) 90 (General journal)]]>
+	Public Property [Type] As Int32?
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("Year,Period,Journal")>
 Public Class JournalStatus
-	'''<![CDATA[Financial year]]>
-	Public Property [Year] As Int32
-	'''<![CDATA[Financial period]]>
-	Public Property [Period] As Int32
 	'''<![CDATA[Reference to Journal]]>
 	Public Property [Journal] As String
 	'''<![CDATA[Description of Journal]]>
@@ -3528,10 +3531,14 @@ Public Class JournalStatus
 	Public Property [JournalType] As Int32
 	'''<![CDATA[Description of JournalType]]>
 	Public Property [JournalTypeDescription] As String
+	'''<![CDATA[Financial period]]>
+	Public Property [Period] As Int32
 	'''<![CDATA[Journal status for this year and period 0=open, 1=closed]]>
 	Public Property [Status] As Int32
 	'''<![CDATA[Description of Status]]>
 	Public Property [StatusDescription] As String
+	'''<![CDATA[Financial year]]>
+	Public Property [Year] As Int32
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
@@ -3551,8 +3558,6 @@ Public Class Layout
 	Public Property [Division] As Int32?
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
-	'''<![CDATA[Layout name]]>
-	Public Property [Subject] As String
 	'''<![CDATA[Last modified date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modified] As DateTime?
@@ -3562,6 +3567,8 @@ Public Class Layout
 	'''<![CDATA[Name of the last modifier]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ModifierFullName] As String
+	'''<![CDATA[Layout name]]>
+	Public Property [Subject] As String
 	'''<![CDATA[Type: 1=Layout, 2=E-mail text layout, 3=Word template]]>
 	Public Property [Type] As Int16?
 End Class
@@ -3616,9 +3623,9 @@ End Class
 <SupportedActionsSDK(True, True, False, False)>
 <DataServiceKey("ID")>
 Public Class MailMessage
-	'''<![CDATA[Bank to/from which the mail message is sent/received. This is used for mail messages of type Bank only. It has an attachment containing the bank file]]>
+	'''<![CDATA[Bank to/from which the mail message is sent/received. This is used for mail messages of type Bank only. It has an attachment containing the bank file. When used for a mail message of type bank, the value is reserved for internal use and will then be ignored.]]>
 	Public Property [Bank] As Guid?
-	'''<![CDATA[Bank account for which the mail message is sent. This is used for mail messages of type Bank only. It has an attachment containing the bank export file]]>
+	'''<![CDATA[Bank account for which the mail message is sent. This is used for mail messages of type Bank only. It has an attachment containing the bank export file. When used for a mail message of type bank, the value is reserved for internal use and will then be ignored.]]>
 	Public Property [BankAccount] As String
 	'''<![CDATA[Creation date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
@@ -3629,7 +3636,7 @@ Public Class MailMessage
 	'''<![CDATA[Name of creator]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [CreatorFullName] As String
-	'''<![CDATA[Administration from which the mail message is sent. This is used for mail messages of type Bank only]]>
+	'''<![CDATA[Administration from which the mail message is sent. This is used for mail messages of type Bank only. When used for a mail message of type bank, the value is reserved for internal use and will then be ignored.]]>
 	Public Property [ForDivision] As Int32?
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
@@ -3732,31 +3739,6 @@ End Class
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
 Public Class ManufacturingTimeTransaction
-	'''<![CDATA[Primary key]]>
-	Public Property [ID] As Guid
-	'''<![CDATA[Division code]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Division] As Int32?
-	'''<![CDATA[Employee linked to the transaction]]>
-	Public Property [Employee] As Guid?
-	'''<![CDATA[Date]]>
-	Public Property [Date] As DateTime?
-	'''<![CDATA[Status of the transaction: Draft = 1, Submitted = 10]]>
-	Public Property [Status] As Int16?
-	'''<![CDATA[Machine hours]]>
-	Public Property [Hours] As Double?
-	'''<![CDATA[Quantity]]>
-	Public Property [Quantity] As Double?
-	'''<![CDATA[Shop order linked to the transaction]]>
-	Public Property [ShopOrder] As Guid?
-	'''<![CDATA[Routing step linked to the transaction]]>
-	Public Property [RoutingStepPlan] As Guid?
-	'''<![CDATA[Workcenter linked to the transaction]]>
-	Public Property [WorkCenter] As Guid?
-	'''<![CDATA[Labor Hours on the operation]]>
-	Public Property [LaborHours] As Double?
-	'''<![CDATA[Percentage of the operation that is complete]]>
-	Public Property [PercentComplete] As Double?
 	'''<![CDATA[Manufacturing time type: Setup = 10, Run = 20]]>
 	Public Property [Activity] As Int16?
 	'''<![CDATA[Creation date]]>
@@ -3768,6 +3750,21 @@ Public Class ManufacturingTimeTransaction
 	'''<![CDATA[Name of creator]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [CreatorFullName] As String
+	'''<![CDATA[Date]]>
+	Public Property [Date] As DateTime?
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Employee linked to the transaction]]>
+	Public Property [Employee] As Guid?
+	'''<![CDATA[Machine hours]]>
+	Public Property [Hours] As Double?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Is the operation finished?]]>
+	Public Property [IsOperationFinished] As Byte?
+	'''<![CDATA[Labor Hours on the operation]]>
+	Public Property [LaborHours] As Double?
 	'''<![CDATA[Last modified date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modified] As DateTime?
@@ -3779,6 +3776,20 @@ Public Class ManufacturingTimeTransaction
 	Public Property [ModifierFullName] As String
 	'''<![CDATA[Notes linked to the time transaction]]>
 	Public Property [Notes] As String
+	'''<![CDATA[Percentage of the operation that is complete]]>
+	Public Property [PercentComplete] As Double?
+	'''<![CDATA[Quantity]]>
+	Public Property [Quantity] As Double?
+	'''<![CDATA[Routing step linked to the transaction]]>
+	Public Property [RoutingStepPlan] As Guid?
+	'''<![CDATA[Shop order linked to the transaction]]>
+	Public Property [ShopOrder] As Guid?
+	'''<![CDATA[Status of the transaction: Draft = 1, Submitted = 10]]>
+	Public Property [Status] As Int16?
+	'''<![CDATA[Timed time transaction linked to the transaction]]>
+	Public Property [TimedTimeTransaction] As Guid?
+	'''<![CDATA[Workcenter linked to the transaction]]>
+	Public Property [WorkCenter] As Guid?
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
@@ -3802,7 +3813,45 @@ End Class
 
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("Division,ReportingYear,GLAccount")>
+Public Class OpeningBalancePreviousYearAfterEntry
+	'''<![CDATA[The opening balance amount of the G/L account.]]>
+	Public Property [Amount] As Double?
+	'''<![CDATA[Indicates whether the G/L account is a debit or credit account. D = Debit, C = Credit.]]>
+	Public Property [BalanceSide] As String
+	'''<![CDATA[Division code.]]>
+	Public Property [Division] As Int32
+	'''<![CDATA[The balance sheet account.]]>
+	Public Property [GLAccount] As Guid
+	'''<![CDATA[The code of the G/L account.]]>
+	Public Property [GLAccountCode] As String
+	'''<![CDATA[The description of the G/L account.]]>
+	Public Property [GLAccountDescription] As String
+	'''<![CDATA[The reporting year of the opening balance.]]>
+	Public Property [ReportingYear] As Int32
+End Class
+
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("Division,ReportingYear,GLAccount")>
 Public Class OpeningBalanceProcessed
+	'''<![CDATA[The opening balance amount of the G/L account.]]>
+	Public Property [Amount] As Double?
+	'''<![CDATA[Indicates whether the G/L account is a debit or credit account. D = Debit, C = Credit.]]>
+	Public Property [BalanceSide] As String
+	'''<![CDATA[Division code.]]>
+	Public Property [Division] As Int32
+	'''<![CDATA[The balance sheet account.]]>
+	Public Property [GLAccount] As Guid
+	'''<![CDATA[The code of the G/L account.]]>
+	Public Property [GLAccountCode] As String
+	'''<![CDATA[The description of the G/L account.]]>
+	Public Property [GLAccountDescription] As String
+	'''<![CDATA[The reporting year of the opening balance.]]>
+	Public Property [ReportingYear] As Int32
+End Class
+
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("Division,ReportingYear,GLAccount")>
+Public Class OpeningBalancePreviousYearProcessed
 	'''<![CDATA[The opening balance amount of the G/L account.]]>
 	Public Property [Amount] As Double?
 	'''<![CDATA[Indicates whether the G/L account is a debit or credit account. D = Debit, C = Credit.]]>
@@ -3931,24 +3980,25 @@ End Class
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
 Public Class Opportunity
-	'''<![CDATA[Primary key]]>
-	Public Property [ID] As Guid
 	'''<![CDATA[Lead to which the opportunity applies]]>
 	Public Property [Account] As Guid?
-	'''<![CDATA[Name of Account]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [AccountName] As String
 	'''<![CDATA[Code of Account]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AccountCode] As String
+	'''<![CDATA[Name of Account]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [AccountName] As String
 	'''<![CDATA[Indicates the date before/on the NextAction is supposed to be done]]>
 	Public Property [ActionDate] As DateTime?
-	'''<![CDATA[Indicates what follow up action is to be undertaken to move the opportunity towards a deal. Is used in combination with ActionDate]]>
-	Public Property [NextAction] As String
-	'''<![CDATA[Amount in foreign currency]]>
-	Public Property [AmountFC] As Double?
 	'''<![CDATA[Amount in default currency. AmountDC = AmountFC * RateFC]]>
 	Public Property [AmountDC] As Double?
+	'''<![CDATA[Amount in foreign currency]]>
+	Public Property [AmountFC] As Double?
+	'''<![CDATA[Reference to the campaign opportunity is related to]]>
+	Public Property [Campaign] As Guid?
+	'''<![CDATA[Description of Campaign]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CampaignDescription] As String
 	'''<![CDATA[The date when the opportunity is expected to be closed]]>
 	Public Property [CloseDate] As DateTime?
 	'''<![CDATA[Creation date]]>
@@ -3960,6 +4010,18 @@ Public Class Opportunity
 	'''<![CDATA[Name of the creator]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [CreatorFullName] As String
+	'''<![CDATA[Currency code]]>
+	Public Property [Currency] As String
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[The source of the lead/opportunity]]>
+	Public Property [LeadSource] As Guid?
+	'''<![CDATA[Description of LeadSource]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [LeadSourceDescription] As String
 	'''<![CDATA[Last modified date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modified] As DateTime?
@@ -3969,13 +4031,10 @@ Public Class Opportunity
 	'''<![CDATA[Name of the last modifier]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ModifierFullName] As String
-	'''<![CDATA[Currency code]]>
-	Public Property [Currency] As String
-	'''<![CDATA[Division code]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Division] As Int32?
 	'''<![CDATA[Name of the opportunity]]>
 	Public Property [Name] As String
+	'''<![CDATA[Indicates what follow up action is to be undertaken to move the opportunity towards a deal. Is used in combination with ActionDate]]>
+	Public Property [NextAction] As String
 	'''<![CDATA[Notes of the opportunity]]>
 	Public Property [Notes] As String
 	'''<![CDATA[The stage of the opportunity. This is a list defined by the user]]>
@@ -3986,25 +4045,13 @@ Public Class Opportunity
 	'''<![CDATA[Status: 1=Open, 2=Closed won, 3=Closed lost]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [OpportunityStatus] As Int32?
-	'''<![CDATA[The chance that the opportunity will be closed and won. The default for the probability depends on the default from the opportunity stage]]>
-	Public Property [Probability] As Double?
 	'''<![CDATA[The resource who owns the opportunity and is responsible to close the opportunity (either won or lost)]]>
 	Public Property [Owner] As Guid?
 	'''<![CDATA[Name of Owner]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [OwnerFullName] As String
-	'''<![CDATA[Exchange rate from original to division currency]]>
-	Public Property [RateFC] As Double?
-	'''<![CDATA[Reference to Sales type]]>
-	Public Property [SalesType] As Guid?
-	'''<![CDATA[Description of SalesType]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [SalesTypeDescription] As String
-	'''<![CDATA[Indicates the reason why the opportunity was lost.]]>
-	Public Property [ReasonCode] As Guid?
-	'''<![CDATA[Description of ReasonCode]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ReasonCodeDescription] As String
+	'''<![CDATA[The chance that the opportunity will be closed and won. The default for the probability depends on the default from the opportunity stage]]>
+	Public Property [Probability] As Double?
 	'''<![CDATA[Reference to project]]>
 	Public Property [Project] As Guid?
 	'''<![CDATA[Code of Project]]>
@@ -4013,112 +4060,39 @@ Public Class Opportunity
 	'''<![CDATA[Description of Project]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ProjectDescription] As String
-	'''<![CDATA[Reference to the campaign opportunity is related to]]>
-	Public Property [Campaign] As Guid?
-	'''<![CDATA[Description of Campaign]]>
+	'''<![CDATA[Exchange rate from original to division currency]]>
+	Public Property [RateFC] As Double?
+	'''<![CDATA[Indicates the reason why the opportunity was lost.]]>
+	Public Property [ReasonCode] As Guid?
+	'''<![CDATA[Description of ReasonCode]]>
 	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [CampaignDescription] As String
-	'''<![CDATA[The source of the lead/opportunity]]>
-	Public Property [LeadSource] As Guid?
-	'''<![CDATA[Description of LeadSource]]>
+	Public Property [ReasonCodeDescription] As String
+	'''<![CDATA[Reference to Sales type]]>
+	Public Property [SalesType] As Guid?
+	'''<![CDATA[Description of SalesType]]>
 	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [LeadSourceDescription] As String
+	Public Property [SalesTypeDescription] As String
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
 Public Class OpportunityContact
-	'''<![CDATA[Opportunity that is linked to the contact person]]>
-	Public Property [Opportunity] As Guid?
-	'''<![CDATA[Contact person that is linked to the opportunity]]>
-	Public Property [Contact] As Guid?
-	'''<![CDATA[Primary key]]>
-	Public Property [ID] As Guid
-	'''<![CDATA[Reference to the personal information of this contact such as name, gender, address etc.]]>
-	Public Property [Person] As Guid?
 	'''<![CDATA[The account to which the contact belongs]]>
 	Public Property [Account] As Guid?
-	'''<![CDATA[Name of the account]]>
-	Public Property [AccountName] As String
-	'''<![CDATA[Code of the account]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Code] As String
-	'''<![CDATA[Division code]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Division] As Int32?
-	'''<![CDATA[Reference to the main contact of the account]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [AccountMainContact] As Guid?
 	'''<![CDATA[Indicates if account is a customer]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AccountIsCustomer] As Boolean
 	'''<![CDATA[Indicates if account is a supplier]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AccountIsSupplier] As Boolean?
-	'''<![CDATA[Start date]]>
-	Public Property [StartDate] As DateTime?
-	'''<![CDATA[End date]]>
-	Public Property [EndDate] As DateTime?
-	'''<![CDATA[Phone of the contact]]>
-	Public Property [BusinessPhone] As String
-	'''<![CDATA[Phone extension of the contact]]>
-	Public Property [BusinessPhoneExtension] As String
-	'''<![CDATA[Mobile of the contact]]>
-	Public Property [BusinessMobile] As String
-	'''<![CDATA[Email address of the contact]]>
-	Public Property [BusinessEmail] As String
-	'''<![CDATA[Fax of the contact]]>
-	Public Property [BusinessFax] As String
-	'''<![CDATA[Indicates whether contacts are excluded from the marketing list]]>
-	Public Property [IsMailingExcluded] As Boolean?
-	'''<![CDATA[The user should be able to do a full text search on these notes to gather contacts for a marketing campaign]]>
-	Public Property [MarketingNotes] As String
-	'''<![CDATA[Creation date]]>
+	'''<![CDATA[Reference to the main contact of the account]]>
 	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Created] As DateTime?
-	'''<![CDATA[User ID of the creator]]>
+	Public Property [AccountMainContact] As Guid?
+	'''<![CDATA[Name of the account]]>
+	Public Property [AccountName] As String
+	'''<![CDATA[Second address line]]>
 	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Creator] As Guid?
-	'''<![CDATA[Name of the creator]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [CreatorFullName] As String
-	'''<![CDATA[Last modified date]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Modified] As DateTime?
-	'''<![CDATA[User ID of modifier]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Modifier] As Guid?
-	'''<![CDATA[Name of the last modifier]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ModifierFullName] As String
-	'''<![CDATA[Indicates if this is the main contact of the linked account]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [IsMainContact] As Boolean?
-	'''<![CDATA[Last name. Provide at least first name or last name to create a new contact]]>
-	Public Property [LastName] As String
-	'''<![CDATA[Full name (First name Middle name Last name)]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [FullName] As String
-	'''<![CDATA[First name. Provide at least first name or last name to create a new contact]]>
-	Public Property [FirstName] As String
-	'''<![CDATA[Middle name]]>
-	Public Property [MiddleName] As String
-	'''<![CDATA[Middle birth name]]>
-	Public Property [BirthNamePrefix] As String
-	'''<![CDATA[Last birth name]]>
-	Public Property [BirthName] As String
-	'''<![CDATA[Middlename of partner]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [PartnerNamePrefix] As String
-	'''<![CDATA[Last name of partner]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [PartnerName] As String
-	'''<![CDATA[Initials]]>
-	Public Property [Initials] As String
-	'''<![CDATA[Title]]>
-	Public Property [Title] As String
-	'''<![CDATA[Gender]]>
-	Public Property [Gender] As String
+	Public Property [AddressLine2] As String
 	'''<![CDATA[Street name of the address]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AddressStreet] As String
@@ -4128,59 +4102,134 @@ Public Class OpportunityContact
 	'''<![CDATA[Street number suffix of the address]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AddressStreetNumberSuffix] As String
-	'''<![CDATA[Second address line]]>
+	'''<![CDATA[Indicates if it is allowed to send e-mails]]>
 	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [AddressLine2] As String
+	Public Property [AllowMailing] As Int32?
+	'''<![CDATA[Birth date]]>
+	Public Property [BirthDate] As DateTime?
+	'''<![CDATA[Last birth name]]>
+	Public Property [BirthName] As String
+	'''<![CDATA[Middle birth name]]>
+	Public Property [BirthNamePrefix] As String
+	'''<![CDATA[Birth place]]>
+	Public Property [BirthPlace] As String
+	'''<![CDATA[Email address of the contact]]>
+	Public Property [BusinessEmail] As String
+	'''<![CDATA[Fax of the contact]]>
+	Public Property [BusinessFax] As String
+	'''<![CDATA[Mobile of the contact]]>
+	Public Property [BusinessMobile] As String
+	'''<![CDATA[Phone of the contact]]>
+	Public Property [BusinessPhone] As String
+	'''<![CDATA[Phone extension of the contact]]>
+	Public Property [BusinessPhoneExtension] As String
 	'''<![CDATA[City]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [City] As String
-	'''<![CDATA[State]]>
+	'''<![CDATA[Code of the account]]>
 	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [State] As String
-	'''<![CDATA[Postcode]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Postcode] As String
+	Public Property [Code] As String
+	'''<![CDATA[Contact person that is linked to the opportunity]]>
+	Public Property [Contact] As Guid?
 	'''<![CDATA[Country code]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Country] As String
-	'''<![CDATA[Language code]]>
-	Public Property [Language] As String
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
 	'''<![CDATA[Email address of the contact]]>
 	Public Property [Email] As String
+	'''<![CDATA[End date]]>
+	Public Property [EndDate] As DateTime?
+	'''<![CDATA[First name. Provide at least first name or last name to create a new contact]]>
+	Public Property [FirstName] As String
+	'''<![CDATA[Full name (First name Middle name Last name)]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [FullName] As String
+	'''<![CDATA[Gender]]>
+	Public Property [Gender] As String
 	'''<![CDATA[Contact ID]]>
 	Public Property [HID] As Int32?
-	'''<![CDATA[Picture]]>
-	Public Property [Picture] As Byte()
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Initials]]>
+	Public Property [Initials] As String
+	'''<![CDATA[Indicates whether contacts are excluded from the marketing list]]>
+	Public Property [IsMailingExcluded] As Boolean?
+	'''<![CDATA[Indicates if this is the main contact of the linked account]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [IsMainContact] As Boolean?
+	'''<![CDATA[Jobtitle of the contact]]>
+	Public Property [JobTitleDescription] As String
+	'''<![CDATA[Language code]]>
+	Public Property [Language] As String
+	'''<![CDATA[Last name. Provide at least first name or last name to create a new contact]]>
+	Public Property [LastName] As String
+	'''<![CDATA[The user should be able to do a full text search on these notes to gather contacts for a marketing campaign]]>
+	Public Property [MarketingNotes] As String
+	'''<![CDATA[Middle name]]>
+	Public Property [MiddleName] As String
+	'''<![CDATA[Business phone of the contact]]>
+	Public Property [Mobile] As String
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Nationality]]>
+	Public Property [Nationality] As String
+	'''<![CDATA[Extra remarks]]>
+	Public Property [Notes] As String
+	'''<![CDATA[Opportunity that is linked to the contact person]]>
+	Public Property [Opportunity] As Guid?
+	'''<![CDATA[Last name of partner]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [PartnerName] As String
+	'''<![CDATA[Middlename of partner]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [PartnerNamePrefix] As String
+	'''<![CDATA[Reference to the personal information of this contact such as name, gender, address etc.]]>
+	Public Property [Person] As Guid?
 	'''<![CDATA[Phone of the contact]]>
 	Public Property [Phone] As String
 	'''<![CDATA[Phone extension of the contact]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [PhoneExtension] As String
-	'''<![CDATA[Business phone of the contact]]>
-	Public Property [Mobile] As String
-	'''<![CDATA[Social security number]]>
-	Public Property [SocialSecurityNumber] As String
-	'''<![CDATA[Jobtitle of the contact]]>
-	Public Property [JobTitleDescription] As String
-	'''<![CDATA[Birth date]]>
-	Public Property [BirthDate] As DateTime?
-	'''<![CDATA[Birth place]]>
-	Public Property [BirthPlace] As String
-	'''<![CDATA[Nationality]]>
-	Public Property [Nationality] As String
-	'''<![CDATA[Extra remarks]]>
-	Public Property [Notes] As String
+	'''<![CDATA[Picture]]>
+	Public Property [Picture] As Byte()
 	'''<![CDATA[Filename of the picture]]>
 	Public Property [PictureName] As String
-	'''<![CDATA[Url to retrieve the picture]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [PictureUrl] As String
 	'''<![CDATA[Url to retrieve the picture thumbnail]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [PictureThumbnailUrl] As String
-	'''<![CDATA[Indicates if it is allowed to send e-mails]]>
+	'''<![CDATA[Url to retrieve the picture]]>
 	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [AllowMailing] As Int32?
+	Public Property [PictureUrl] As String
+	'''<![CDATA[Postcode]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Postcode] As String
+	'''<![CDATA[Social security number]]>
+	Public Property [SocialSecurityNumber] As String
+	'''<![CDATA[Start date]]>
+	Public Property [StartDate] As DateTime?
+	'''<![CDATA[State]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [State] As String
+	'''<![CDATA[Title]]>
+	Public Property [Title] As String
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
@@ -4188,55 +4237,59 @@ End Class
 Public Class OutstandingInvoiceOverview
 	'''<![CDATA[Primary key]]>
 	Public Property [CurrencyCode] As String
-	'''<![CDATA[Number of invoices to be received]]>
-	Public Property [OutstandingReceivableInvoiceCount] As Double
-	'''<![CDATA[Total invoice amount to be received]]>
-	Public Property [OutstandingReceivableInvoiceAmount] As Double
-	'''<![CDATA[Number of receivable invoices that are overdue]]>
-	Public Property [OverdueReceivableInvoiceCount] As Double
-	'''<![CDATA[Total receivable invoice amount that is overdue]]>
-	Public Property [OverdueReceivableInvoiceAmount] As Double
-	'''<![CDATA[Number of invoices to be paid]]>
-	Public Property [OutstandingPayableInvoiceCount] As Double
 	'''<![CDATA[Total invoice amount to be paid]]>
 	Public Property [OutstandingPayableInvoiceAmount] As Double
-	'''<![CDATA[Number of payable invoices that are overdue]]>
-	Public Property [OverduePayableInvoiceCount] As Double
+	'''<![CDATA[Number of invoices to be paid]]>
+	Public Property [OutstandingPayableInvoiceCount] As Double
+	'''<![CDATA[Total invoice amount to be received]]>
+	Public Property [OutstandingReceivableInvoiceAmount] As Double
+	'''<![CDATA[Number of invoices to be received]]>
+	Public Property [OutstandingReceivableInvoiceCount] As Double
 	'''<![CDATA[Total payable invoice amount that is overdue]]>
 	Public Property [OverduePayableInvoiceAmount] As Double
+	'''<![CDATA[Number of payable invoices that are overdue]]>
+	Public Property [OverduePayableInvoiceCount] As Double
+	'''<![CDATA[Total receivable invoice amount that is overdue]]>
+	Public Property [OverdueReceivableInvoiceAmount] As Double
+	'''<![CDATA[Number of receivable invoices that are overdue]]>
+	Public Property [OverdueReceivableInvoiceCount] As Double
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("HID")>
 Public Class Payable
-	'''<![CDATA[Primary key, human readable ID]]>
-	Public Property [HID] As Int64
-	'''<![CDATA[Obsolete]]>
-	Public Property [Id] As Guid
-	'''<![CDATA[Invoice number]]>
-	Public Property [InvoiceNumber] As Int32
-	'''<![CDATA[Invoice date]]>
-	Public Property [InvoiceDate] As DateTime
-	'''<![CDATA[Entry number]]>
-	Public Property [EntryNumber] As Int32
+	'''<![CDATA[Code of Account]]>
+	Public Property [AccountCode] As String
+	'''<![CDATA[Reference to the account]]>
+	Public Property [AccountId] As Guid
+	'''<![CDATA[Name of Account]]>
+	Public Property [AccountName] As String
+	'''<![CDATA[Amount]]>
+	Public Property [Amount] As Double
+	'''<![CDATA[Amount in transit]]>
+	Public Property [AmountInTransit] As Double
+	'''<![CDATA[Code of Currency]]>
+	Public Property [CurrencyCode] As String
 	'''<![CDATA[Description]]>
 	Public Property [Description] As String
 	'''<![CDATA[Date the invoice should be paid]]>
 	Public Property [DueDate] As DateTime
-	'''<![CDATA[Amount]]>
-	Public Property [Amount] As Double
-	'''<![CDATA[Code of Currency]]>
-	Public Property [CurrencyCode] As String
-	'''<![CDATA[Reference to the account]]>
-	Public Property [AccountId] As Guid
-	'''<![CDATA[Code of Account]]>
-	Public Property [AccountCode] As String
-	'''<![CDATA[Name of Account]]>
-	Public Property [AccountName] As String
+	'''<![CDATA[Entry number]]>
+	Public Property [EntryNumber] As Int32
+	'''<![CDATA[Primary key, human readable ID]]>
+	Public Property [HID] As Int64
+	'''<![CDATA[Obsolete]]>
+	Public Property [Id] As Guid
+	'''<![CDATA[Invoice date]]>
+	Public Property [InvoiceDate] As DateTime
+	'''<![CDATA[Invoice number]]>
+	Public Property [InvoiceNumber] As Int32
 	'''<![CDATA[Code of Journal]]>
 	Public Property [JournalCode] As String
 	'''<![CDATA[Description of Journal]]>
 	Public Property [JournalDescription] As String
+	'''<![CDATA[Your reference]]>
+	Public Property [YourRef] As String
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
@@ -4300,12 +4353,12 @@ End Class
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("Year,Period")>
 Public Class PeriodRevenue
-	'''<![CDATA[Reporting year]]>
-	Public Property [Year] As Int32
-	'''<![CDATA[Reporting period]]>
-	Public Property [Period] As Int32
 	'''<![CDATA[Total amount in default currency]]>
 	Public Property [Amount] As Double
+	'''<![CDATA[Reporting period]]>
+	Public Property [Period] As Int32
+	'''<![CDATA[Reporting year]]>
+	Public Property [Year] As Int32
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
@@ -4352,18 +4405,8 @@ End Class
 <SupportedActionsSDK(True, False, False, False)>
 <DataServiceKey("InvoiceID")>
 Public Class PrintedSalesInvoice
-	'''<![CDATA[Primary key, Reference to EntryID of SalesInvoice]]>
-	Public Property [InvoiceID] As Guid
 	'''<![CDATA[Division code]]>
 	Public Property [Division] As Int32?
-	'''<![CDATA[Extra text that can be added to the printed document and email]]>
-	Public Property [ExtraText] As String
-	'''<![CDATA[Date of the invoice]]>
-	Public Property [InvoiceDate] As DateTime?
-	'''<![CDATA[Reporting period]]>
-	Public Property [ReportingPeriod] As Int32?
-	'''<![CDATA[Reporting year]]>
-	Public Property [ReportingYear] As Int32?
 	'''<![CDATA[Contains the id of the document that was created]]>
 	Public Property [Document] As Guid?
 	'''<![CDATA[Contains the error message if an error occurred during the creation of the document]]>
@@ -4378,12 +4421,22 @@ Public Class PrintedSalesInvoice
 	Public Property [EmailCreationSuccess] As String
 	'''<![CDATA[Based on this layout the email text is produced]]>
 	Public Property [EmailLayout] As Guid?
-	'''<![CDATA[The postbox from where the message is sent]]>
-	Public Property [PostboxSender] As Guid?
+	'''<![CDATA[Extra text that can be added to the printed document and email]]>
+	Public Property [ExtraText] As String
+	'''<![CDATA[Date of the invoice]]>
+	Public Property [InvoiceDate] As DateTime?
+	'''<![CDATA[Primary key, Reference to EntryID of SalesInvoice]]>
+	Public Property [InvoiceID] As Guid
 	'''<![CDATA[Contains the error message if an error occurred during the sending of a postbox message]]>
 	Public Property [PostboxMessageCreationError] As String
 	'''<![CDATA[Contains information if a postbox message was succesfully sent]]>
 	Public Property [PostboxMessageCreationSuccess] As String
+	'''<![CDATA[The postbox from where the message is sent]]>
+	Public Property [PostboxSender] As Guid?
+	'''<![CDATA[Reporting period]]>
+	Public Property [ReportingPeriod] As Int32?
+	'''<![CDATA[Reporting year]]>
+	Public Property [ReportingYear] As Int32?
 	'''<![CDATA[Set to True if an email containing the invoice should be sent to the invoice customer]]>
 	Public Property [SendEmailToCustomer] As Boolean?
 	'''<![CDATA[Set to True if a postbox message containing the invoice should be sent to the invoice customer]]>
@@ -4395,12 +4448,8 @@ End Class
 <SupportedActionsSDK(True, False, False, False)>
 <DataServiceKey("OrderId")>
 Public Class PrintedSalesOrder
-	'''<![CDATA[Primary key, Reference to OrderID of SalesOrder]]>
-	Public Property [OrderId] As Guid
 	'''<![CDATA[Division code]]>
 	Public Property [Division] As Int32?
-	'''<![CDATA[Extra text that can be added to the printed document and email]]>
-	Public Property [ExtraText] As String
 	'''<![CDATA[Contains the id of the document that was created]]>
 	Public Property [Document] As Guid?
 	'''<![CDATA[Contains the error message if an error occurred during the creation of the document]]>
@@ -4415,6 +4464,10 @@ Public Class PrintedSalesOrder
 	Public Property [EmailCreationSuccess] As String
 	'''<![CDATA[Based on this layout the email text is produced]]>
 	Public Property [EmailLayout] As Guid?
+	'''<![CDATA[Extra text that can be added to the printed document and email]]>
+	Public Property [ExtraText] As String
+	'''<![CDATA[Primary key, Reference to OrderID of SalesOrder]]>
+	Public Property [OrderId] As Guid
 	'''<![CDATA[Set to True if an email containing the sales order should be sent to the customer]]>
 	Public Property [SendEmailToCustomer] As Boolean?
 End Class
@@ -4468,38 +4521,38 @@ End Class
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("CurrentYear")>
 Public Class ProfitLossOverview
-	'''<![CDATA[Primary key, Current year]]>
-	Public Property [CurrentYear] As Int32
-	'''<![CDATA[Previous year]]>
-	Public Property [PreviousYear] As Int32
-	'''<![CDATA[Current period]]>
-	Public Property [CurrentPeriod] As Int32
-	'''<![CDATA[Period in previous year]]>
-	Public Property [PreviousYearPeriod] As Int32
-	'''<![CDATA[Currency code]]>
-	Public Property [CurrencyCode] As String
-	Public Property [ResultCurrentYear] As Double
-	Public Property [ResultPreviousYear] As Double
-	'''<![CDATA[Revenue in current year]]>
-	Public Property [RevenueCurrentYear] As Double
-	'''<![CDATA[Revenue in previous year]]>
-	Public Property [RevenuePreviousYear] As Double
+	'''<![CDATA[Costs in current period]]>
+	Public Property [CostsCurrentPeriod] As Double
 	'''<![CDATA[Costs in current year]]>
 	Public Property [CostsCurrentYear] As Double
 	'''<![CDATA[Costs in previous year]]>
 	Public Property [CostsPreviousYear] As Double
+	'''<![CDATA[Costs in period of previous year]]>
+	Public Property [CostsPreviousYearPeriod] As Double
+	'''<![CDATA[Currency code]]>
+	Public Property [CurrencyCode] As String
+	'''<![CDATA[Current period]]>
+	Public Property [CurrentPeriod] As Int32
+	'''<![CDATA[Primary key, Current year]]>
+	Public Property [CurrentYear] As Int32
+	'''<![CDATA[Previous year]]>
+	Public Property [PreviousYear] As Int32
+	'''<![CDATA[Period in previous year]]>
+	Public Property [PreviousYearPeriod] As Int32
 	'''<![CDATA[Results of current period]]>
 	Public Property [ResultCurrentPeriod] As Double
+	Public Property [ResultCurrentYear] As Double
+	Public Property [ResultPreviousYear] As Double
 	'''<![CDATA[Results of period in previous year]]>
 	Public Property [ResultPreviousYearPeriod] As Double
 	'''<![CDATA[Revenue in current period]]>
 	Public Property [RevenueCurrentPeriod] As Double
+	'''<![CDATA[Revenue in current year]]>
+	Public Property [RevenueCurrentYear] As Double
+	'''<![CDATA[Revenue in previous year]]>
+	Public Property [RevenuePreviousYear] As Double
 	'''<![CDATA[Revenue in period of previous year]]>
 	Public Property [RevenuePreviousYearPeriod] As Double
-	'''<![CDATA[Costs in current period]]>
-	Public Property [CostsCurrentPeriod] As Double
-	'''<![CDATA[Costs in period of previous year]]>
-	Public Property [CostsPreviousYearPeriod] As Double
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -4510,25 +4563,31 @@ Public Class Project
 	'''<![CDATA[Code of Account]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AccountCode] As String
+	'''<![CDATA[Contact person of Account]]>
+	Public Property [AccountContact] As Guid?
 	'''<![CDATA[Name of Account]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AccountName] As String
-	'''<![CDATA[Contact person of Account]]>
-	Public Property [AccountContact] As Guid?
 	'''<![CDATA[Is additional invoice is allowed for project]]>
 	Public Property [AllowAdditionalInvoicing] As Boolean?
+	'''<![CDATA[Block time and cost entries]]>
+	Public Property [BlockEntry] As Boolean?
+	'''<![CDATA[Block rebilling]]>
+	Public Property [BlockRebilling] As Boolean?
+	'''<![CDATA[Budgeted amount of sales in default currency]]>
+	Public Property [BudgetedAmount] As Double?
+	'''<![CDATA[Budgeted amount of costs in default currency]]>
+	Public Property [BudgetedCosts] As Double?
+	'''<![CDATA[Collection of budgeted hours]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [BudgetedHoursPerHourType] As IEnumerable(Of ProjectHourBudget)
+	'''<![CDATA[Budgeted amount of revenue in default currency]]>
+	Public Property [BudgetedRevenue] As Double?
 	'''<![CDATA[Budget type]]>
 	Public Property [BudgetType] As Int16?
 	'''<![CDATA[Budget type description]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [BudgetTypeDescription] As String
-	'''<![CDATA[Block rebilling]]>
-	Public Property [BlockRebilling] As Boolean?
-	'''<![CDATA[Block time and cost entries]]>
-	Public Property [BlockEntry] As Boolean?
-	'''<![CDATA[Collection of budgeted hours]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [BudgetedHoursPerHourType] As IEnumerable(Of ProjectHourBudget)
 	'''<![CDATA[Used only for PSA to link a project classification to the project]]>
 	Public Property [Classification] As Guid?
 	'''<![CDATA[Description of Classification]]>
@@ -4567,11 +4626,19 @@ Public Class Project
 	Public Property [FixedPriceItemDescription] As String
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
+	'''<![CDATA[Is invoice as quoted]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [InvoiceAsQuoted] As Boolean
+	'''<![CDATA[Collection of invoice terms]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [InvoiceTerms] As IEnumerable(Of ProjectTerm)
 	'''<![CDATA[Responsible person for this project]]>
 	Public Property [Manager] As Guid?
 	'''<![CDATA[Name of Manager]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ManagerFullname] As String
+	'''<![CDATA[Purchase markup percentage]]>
+	Public Property [MarkupPercentage] As Double?
 	'''<![CDATA[Last modified date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modified] As DateTime?
@@ -4583,6 +4650,16 @@ Public Class Project
 	Public Property [ModifierFullName] As String
 	'''<![CDATA[For additional information about projects]]>
 	Public Property [Notes] As String
+	'''<![CDATA[Used only for PSA. This item is used for prepaid invoicing. If left empty, the functionality relies on a setting]]>
+	Public Property [PrepaidItem] As Guid?
+	'''<![CDATA[Description of PrepaidItem]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [PrepaidItemDescription] As String
+	'''<![CDATA[Reference to ProjectPrepaidTypes]]>
+	Public Property [PrepaidType] As Int16?
+	'''<![CDATA[Description of PrepaidType]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [PrepaidTypeDescription] As String
 	'''<![CDATA[Collection of employee restrictions]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ProjectRestrictionEmployees] As IEnumerable(Of ProjectRestrictionEmployee)
@@ -4594,6 +4671,9 @@ Public Class Project
 	Public Property [ProjectRestrictionRebillings] As IEnumerable(Of ProjectRestrictionRebilling)
 	'''<![CDATA[Budgeted time. Total number of hours estimated for the fixed price project]]>
 	Public Property [SalesTimeQuantity] As Double?
+	'''<![CDATA[Source quotation]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [SourceQuotation] As Guid?
 	'''<![CDATA[Start date of a project. In combination with the end date the status is determined]]>
 	Public Property [StartDate] As DateTime?
 	Public Property [TimeQuantityToAlert] As Double?
@@ -4602,24 +4682,6 @@ Public Class Project
 	'''<![CDATA[Description of Type]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [TypeDescription] As String
-	'''<![CDATA[Budgeted amount of sales in default currency]]>
-	Public Property [BudgetedAmount] As Double?
-	'''<![CDATA[Reference to ProjectPrepaidTypes]]>
-	Public Property [PrepaidType] As Int16?
-	'''<![CDATA[Description of PrepaidType]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [PrepaidTypeDescription] As String
-	'''<![CDATA[Used only for PSA. This item is used for prepaid invoicing. If left empty, the functionality relies on a setting]]>
-	Public Property [PrepaidItem] As Guid?
-	'''<![CDATA[Description of PrepaidItem]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [PrepaidItemDescription] As String
-	'''<![CDATA[Purchase markup percentage]]>
-	Public Property [MarkupPercentage] As Double?
-	'''<![CDATA[Budgeted amount of costs in default currency]]>
-	Public Property [BudgetedCosts] As Double?
-	'''<![CDATA[Budgeted amount of revenue in default currency]]>
-	Public Property [BudgetedRevenue] As Double?
 	'''<![CDATA[Using billing milestones]]>
 	Public Property [UseBillingMilestones] As Boolean?
 End Class
@@ -4627,11 +4689,11 @@ End Class
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
 Public Class ProjectBudgetType
-	'''<![CDATA[Primary key]]>
-	Public Property [ID] As Int16
 	'''<![CDATA[Description]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Description] As String
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Int16
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -4683,14 +4745,6 @@ End Class
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
 Public Class ProjectRestrictionEmployee
-	'''<![CDATA[Employee linked to the restriction]]>
-	Public Property [Employee] As Guid?
-	'''<![CDATA[Name of employee]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [EmployeeFullName] As String
-	'''<![CDATA[Readable ID of the employee]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [EmployeeHID] As Int32?
 	'''<![CDATA[Date created]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Created] As DateTime?
@@ -4703,6 +4757,14 @@ Public Class ProjectRestrictionEmployee
 	'''<![CDATA[Division code]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Division] As Int32?
+	'''<![CDATA[Employee linked to the restriction]]>
+	Public Property [Employee] As Guid?
+	'''<![CDATA[Name of employee]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [EmployeeFullName] As String
+	'''<![CDATA[Readable ID of the employee]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [EmployeeHID] As Int32?
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
 	'''<![CDATA[Date modified]]>
@@ -4727,17 +4789,6 @@ End Class
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
 Public Class ProjectRestrictionItem
-	'''<![CDATA[Item linked to the restriction]]>
-	Public Property [Item] As Guid?
-	'''<![CDATA[Item code]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ItemCode] As String
-	'''<![CDATA[Description of the item]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ItemDescription] As String
-	'''<![CDATA[Indicates if the item is a time unit item]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ItemIsTime] As Byte?
 	'''<![CDATA[Date created]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Created] As DateTime?
@@ -4752,6 +4803,17 @@ Public Class ProjectRestrictionItem
 	Public Property [Division] As Int32?
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
+	'''<![CDATA[Item linked to the restriction]]>
+	Public Property [Item] As Guid?
+	'''<![CDATA[Item code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemCode] As String
+	'''<![CDATA[Description of the item]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemDescription] As String
+	'''<![CDATA[Indicates if the item is a time unit item]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemIsTime] As Byte?
 	'''<![CDATA[Date modified]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modified] As DateTime?
@@ -4816,6 +4878,61 @@ Public Class ProjectRestrictionRebilling
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
+<DataServiceKey("ID")>
+Public Class ProjectTerm
+	'''<![CDATA[Amount in foreign currency]]>
+	Public Property [Amount] As Double?
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[WBS's deliverable linked to invoice term]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Deliverable] As String
+	'''<![CDATA[Description of invoice term]]>
+	Public Property [Description] As String
+	'''<![CDATA[Division number]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Invoice date]]>
+	Public Property [InvoiceDate] As DateTime?
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Notes]]>
+	Public Property [Notes] As String
+	'''<![CDATA[Percentage of amount per project's budgeted amount]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Percentage] As Double?
+	'''<![CDATA[Reference to project]]>
+	Public Property [Project] As Guid?
+	'''<![CDATA[Description of project]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ProjectDescription] As String
+	'''<![CDATA[Reference to VATCode]]>
+	Public Property [VATCode] As String
+	'''<![CDATA[Description of VATCode]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [VATCodeDescription] As String
+	'''<![CDATA[VATCode percentage]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [VATPercentage] As Double?
+End Class
+
+<SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("EntryID")>
 Public Class PurchaseEntry
 	'''<![CDATA[Amount in default currency]]>
@@ -4837,11 +4954,6 @@ Public Class PurchaseEntry
 	Public Property [CreatorFullName] As String
 	'''<![CDATA[Currency code]]>
 	Public Property [Currency] As String
-	'''<![CDATA[Reference to supplier (account)]]>
-	Public Property [Supplier] As Guid?
-	'''<![CDATA[Name of supplier]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [SupplierName] As String
 	'''<![CDATA[Description]]>
 	Public Property [Description] As String
 	'''<![CDATA[Division code]]>
@@ -4891,12 +5003,14 @@ Public Class PurchaseEntry
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [PaymentConditionDescription] As String
 	Public Property [ProcessNumber] As Int32?
+	'''<![CDATA[Collection of lines]]>
+	Public Property [PurchaseEntryLines] As IEnumerable(Of PurchaseEntryLine)
 	'''<![CDATA[Currency exchange rate]]>
 	Public Property [Rate] As Double?
-	'''<![CDATA[Reporting year]]>
-	Public Property [ReportingYear] As Int16?
 	'''<![CDATA[Reporting period]]>
 	Public Property [ReportingPeriod] As Int16?
+	'''<![CDATA[Reporting year]]>
+	Public Property [ReportingYear] As Int16?
 	'''<![CDATA[Indicates that amounts are reversed]]>
 	Public Property [Reversal] As Boolean?
 	'''<![CDATA[Status: 5 = Rejected, 20 = Open, 50 = Processed]]>
@@ -4905,6 +5019,11 @@ Public Class PurchaseEntry
 	'''<![CDATA[Description of Status]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [StatusDescription] As String
+	'''<![CDATA[Reference to supplier (account)]]>
+	Public Property [Supplier] As Guid?
+	'''<![CDATA[Name of supplier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [SupplierName] As String
 	'''<![CDATA[Type: 30 = Purchase entry, 31 = Purchase credit note]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Type] As Int32?
@@ -4918,8 +5037,6 @@ Public Class PurchaseEntry
 	Public Property [VATAmountFC] As Double?
 	'''<![CDATA[Your reference]]>
 	Public Property [YourRef] As String
-	'''<![CDATA[Collection of lines]]>
-	Public Property [PurchaseEntryLines] As IEnumerable(Of PurchaseEntryLine)
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -4950,6 +5067,8 @@ Public Class PurchaseEntryLine
 	'''<![CDATA[Division code]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Division] As Int32?
+	'''<![CDATA[Reference to header of the purchase entry]]>
+	Public Property [EntryID] As Guid
 	'''<![CDATA[General ledger account]]>
 	Public Property [GLAccount] As Guid?
 	'''<![CDATA[Code of GLAccount]]>
@@ -4960,8 +5079,6 @@ Public Class PurchaseEntryLine
 	Public Property [GLAccountDescription] As String
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
-	'''<![CDATA[Reference to header of the purchase entry]]>
-	Public Property [EntryID] As Guid
 	'''<![CDATA[Line number]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [LineNumber] As Int32?
@@ -5011,142 +5128,146 @@ End Class
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("HID")>
 Public Class Receivable
-	'''<![CDATA[Primary key, human readable ID]]>
-	Public Property [HID] As Int64
-	'''<![CDATA[Obsolete]]>
-	Public Property [Id] As Guid
-	'''<![CDATA[Invoice number]]>
-	Public Property [InvoiceNumber] As Int32
-	'''<![CDATA[Invoice date]]>
-	Public Property [InvoiceDate] As DateTime
-	'''<![CDATA[Entry number]]>
-	Public Property [EntryNumber] As Int32
+	'''<![CDATA[Code of Account]]>
+	Public Property [AccountCode] As String
+	'''<![CDATA[Reference to the account]]>
+	Public Property [AccountId] As Guid
+	'''<![CDATA[Name of Account]]>
+	Public Property [AccountName] As String
+	'''<![CDATA[Amount]]>
+	Public Property [Amount] As Double
+	'''<![CDATA[Amount in transit]]>
+	Public Property [AmountInTransit] As Double
+	'''<![CDATA[Code of Currency]]>
+	Public Property [CurrencyCode] As String
 	'''<![CDATA[Description]]>
 	Public Property [Description] As String
 	'''<![CDATA[Date the invoice should be paid]]>
 	Public Property [DueDate] As DateTime
-	'''<![CDATA[Amount]]>
-	Public Property [Amount] As Double
-	'''<![CDATA[Code of Currency]]>
-	Public Property [CurrencyCode] As String
-	'''<![CDATA[Reference to the account]]>
-	Public Property [AccountId] As Guid
-	'''<![CDATA[Code of Account]]>
-	Public Property [AccountCode] As String
-	'''<![CDATA[Name of Account]]>
-	Public Property [AccountName] As String
+	'''<![CDATA[Entry number]]>
+	Public Property [EntryNumber] As Int32
+	'''<![CDATA[Primary key, human readable ID]]>
+	Public Property [HID] As Int64
+	'''<![CDATA[Obsolete]]>
+	Public Property [Id] As Guid
+	'''<![CDATA[Invoice date]]>
+	Public Property [InvoiceDate] As DateTime
+	'''<![CDATA[Invoice number]]>
+	Public Property [InvoiceNumber] As Int32
 	'''<![CDATA[Code of Journal]]>
 	Public Property [JournalCode] As String
 	'''<![CDATA[Description of Journal]]>
 	Public Property [JournalDescription] As String
+	'''<![CDATA[Your reference]]>
+	Public Property [YourRef] As String
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("Id")>
 Public Class RecentCosts
-	'''<![CDATA[Primary key]]>
-	Public Property [Id] As Int32
-	'''<![CDATA[Date]]>
-	Public Property [Date] As DateTime
-	'''<![CDATA[Week number]]>
-	Public Property [WeekNumber] As Int32
-	'''<![CDATA[Reference to Account]]>
-	Public Property [AccountId] As Guid?
 	'''<![CDATA[Code of Account]]>
 	Public Property [AccountCode] As String
+	'''<![CDATA[Reference to Account]]>
+	Public Property [AccountId] As Guid?
 	'''<![CDATA[Name of Account]]>
 	Public Property [AccountName] As String
-	'''<![CDATA[Reference to Project]]>
-	Public Property [ProjectId] As Guid?
-	'''<![CDATA[Code of Project]]>
-	Public Property [ProjectCode] As String
-	'''<![CDATA[Description of Project]]>
-	Public Property [ProjectDescription] As String
-	'''<![CDATA[Reference to Item]]>
-	Public Property [ItemId] As Guid?
-	'''<![CDATA[Code of Item]]>
-	Public Property [ItemCode] As String
-	'''<![CDATA[Description of Item]]>
-	Public Property [ItemDescription] As String
-	'''<![CDATA[Quantity draft]]>
-	Public Property [QuantityDraft] As Double
-	'''<![CDATA[Quantity submitted]]>
-	Public Property [QuantitySubmitted] As Double
-	'''<![CDATA[Quantity approved]]>
-	Public Property [QuantityApproved] As Double
-	'''<![CDATA[Quantity rejected]]>
-	Public Property [QuantityRejected] As Double
-	'''<![CDATA[Amount draft]]>
-	Public Property [AmountDraft] As Double
-	'''<![CDATA[Amount submitted]]>
-	Public Property [AmountSubmitted] As Double
 	'''<![CDATA[Amount approved]]>
 	Public Property [AmountApproved] As Double
+	'''<![CDATA[Amount draft]]>
+	Public Property [AmountDraft] As Double
 	'''<![CDATA[Amount rejected]]>
 	Public Property [AmountRejected] As Double
+	'''<![CDATA[Amount submitted]]>
+	Public Property [AmountSubmitted] As Double
 	'''<![CDATA[Code of Currency]]>
 	Public Property [CurrencyCode] As String
+	'''<![CDATA[Date]]>
+	Public Property [Date] As DateTime
 	'''<![CDATA[Entry ID]]>
 	Public Property [EntryId] As Guid?
-	'''<![CDATA[Remarks]]>
-	Public Property [Notes] As String
 	'''<![CDATA[Reference to Expense]]>
 	Public Property [Expense] As Guid?
 	'''<![CDATA[Description of Expense]]>
 	Public Property [ExpenseDescription] As String
+	'''<![CDATA[Primary key]]>
+	Public Property [Id] As Int32
+	'''<![CDATA[Code of Item]]>
+	Public Property [ItemCode] As String
+	'''<![CDATA[Description of Item]]>
+	Public Property [ItemDescription] As String
+	'''<![CDATA[Reference to Item]]>
+	Public Property [ItemId] As Guid?
+	'''<![CDATA[Remarks]]>
+	Public Property [Notes] As String
+	'''<![CDATA[Code of Project]]>
+	Public Property [ProjectCode] As String
+	'''<![CDATA[Description of Project]]>
+	Public Property [ProjectDescription] As String
+	'''<![CDATA[Reference to Project]]>
+	Public Property [ProjectId] As Guid?
+	'''<![CDATA[Quantity approved]]>
+	Public Property [QuantityApproved] As Double
+	'''<![CDATA[Quantity draft]]>
+	Public Property [QuantityDraft] As Double
+	'''<![CDATA[Quantity rejected]]>
+	Public Property [QuantityRejected] As Double
+	'''<![CDATA[Quantity submitted]]>
+	Public Property [QuantitySubmitted] As Double
+	'''<![CDATA[Week number]]>
+	Public Property [WeekNumber] As Int32
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("Id")>
 Public Class RecentHours
-	'''<![CDATA[Primary key]]>
-	Public Property [Id] As Int32
-	'''<![CDATA[Date]]>
-	Public Property [Date] As DateTime
-	'''<![CDATA[Week number]]>
-	Public Property [WeekNumber] As Int32
-	'''<![CDATA[Reference to Account]]>
-	Public Property [AccountId] As Guid?
 	'''<![CDATA[Code of Account]]>
 	Public Property [AccountCode] As String
+	'''<![CDATA[Reference to Account]]>
+	Public Property [AccountId] As Guid?
 	'''<![CDATA[Name of Account]]>
 	Public Property [AccountName] As String
-	'''<![CDATA[Reference to Project]]>
-	Public Property [ProjectId] As Guid?
-	'''<![CDATA[Code of Project]]>
-	Public Property [ProjectCode] As String
-	'''<![CDATA[Description of Project]]>
-	Public Property [ProjectDescription] As String
-	'''<![CDATA[Reference to Item]]>
-	Public Property [ItemId] As Guid?
-	'''<![CDATA[Code of Item]]>
-	Public Property [ItemCode] As String
-	'''<![CDATA[Description of Item]]>
-	Public Property [ItemDescription] As String
-	'''<![CDATA[Hours draft]]>
-	Public Property [HoursDraft] As Double
-	'''<![CDATA[Hours submitted]]>
-	Public Property [HoursSubmitted] As Double
-	'''<![CDATA[Hours approved]]>
-	Public Property [HoursApproved] As Double
-	'''<![CDATA[Hours rejected]]>
-	Public Property [HoursRejected] As Double
-	'''<![CDATA[Billable hours draft]]>
-	Public Property [HoursDraftBillable] As Double
-	'''<![CDATA[Billable hours submitted]]>
-	Public Property [HoursSubmittedBillable] As Double
-	'''<![CDATA[Billable hours approved]]>
-	Public Property [HoursApprovedBillable] As Double
-	'''<![CDATA[Billable hours rejected]]>
-	Public Property [HoursRejectedBillable] As Double
-	'''<![CDATA[Entry ID]]>
-	Public Property [EntryId] As Guid?
-	'''<![CDATA[Remarks]]>
-	Public Property [Notes] As String
 	'''<![CDATA[Reference to Activity]]>
 	Public Property [Activity] As Guid?
 	'''<![CDATA[Description of Activity]]>
 	Public Property [ActivityDescription] As String
+	'''<![CDATA[Date]]>
+	Public Property [Date] As DateTime
+	'''<![CDATA[Entry ID]]>
+	Public Property [EntryId] As Guid?
+	'''<![CDATA[Hours approved]]>
+	Public Property [HoursApproved] As Double
+	'''<![CDATA[Billable hours approved]]>
+	Public Property [HoursApprovedBillable] As Double
+	'''<![CDATA[Hours draft]]>
+	Public Property [HoursDraft] As Double
+	'''<![CDATA[Billable hours draft]]>
+	Public Property [HoursDraftBillable] As Double
+	'''<![CDATA[Hours rejected]]>
+	Public Property [HoursRejected] As Double
+	'''<![CDATA[Billable hours rejected]]>
+	Public Property [HoursRejectedBillable] As Double
+	'''<![CDATA[Hours submitted]]>
+	Public Property [HoursSubmitted] As Double
+	'''<![CDATA[Billable hours submitted]]>
+	Public Property [HoursSubmittedBillable] As Double
+	'''<![CDATA[Primary key]]>
+	Public Property [Id] As Int32
+	'''<![CDATA[Code of Item]]>
+	Public Property [ItemCode] As String
+	'''<![CDATA[Description of Item]]>
+	Public Property [ItemDescription] As String
+	'''<![CDATA[Reference to Item]]>
+	Public Property [ItemId] As Guid?
+	'''<![CDATA[Remarks]]>
+	Public Property [Notes] As String
+	'''<![CDATA[Code of Project]]>
+	Public Property [ProjectCode] As String
+	'''<![CDATA[Description of Project]]>
+	Public Property [ProjectDescription] As String
+	'''<![CDATA[Reference to Project]]>
+	Public Property [ProjectId] As Guid?
+	'''<![CDATA[Week number]]>
+	Public Property [WeekNumber] As Int32
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
@@ -5184,372 +5305,10 @@ Public Class ReportingBalance
 	Public Property [ReportingPeriod] As Int32?
 	'''<![CDATA[The reporting year of the transactions in the grouping.]]>
 	Public Property [ReportingYear] As Int32?
-	'''<![CDATA[The type of the transactions in the grouping.]]>
-	Public Property [Type] As Int32?
 	'''<![CDATA[Status: 20 = Open, 50 = Processed. To get 'after entry' results, both Open and Processed amounts have to be included. This is by default, so it requires no extra filtering.]]>
 	Public Property [Status] As Int32?
-End Class
-
-<SupportedActionsSDK(False, True, False, False)>
-<DataServiceKey("ID")>
-Public Class Request
-	'''<![CDATA[Reference to Account]]>
-	Public Property [Account] As Guid?
-	'''<![CDATA[Code of Account]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [AccountCode] As String
-	'''<![CDATA[Country of Account]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [AccountCountry] As String
-	'''<![CDATA[Name of Account]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [AccountName] As String
-	'''<![CDATA[Status of Account]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [AccountStatus] As String
-	'''<![CDATA[Type of Account]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [AccountType] As String
-	'''<![CDATA[Amount in default currency]]>
-	Public Property [Amount] As Double?
-	'''<![CDATA[Actual amount in default currency]]>
-	Public Property [AmountActual] As Double?
-	'''<![CDATA[Amount in foreign currency]]>
-	Public Property [AmountFC] As Double?
-	'''<![CDATA[Actual amount in foreign currency]]>
-	Public Property [AmountFCActual] As Double?
-	'''<![CDATA[Date of appoval]]>
-	Public Property [Approved] As DateTime?
-	'''<![CDATA[User ID of the approver of this request]]>
-	Public Property [Approver] As Guid?
-	'''<![CDATA[Name of Approver]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ApproverFullName] As String
-	'''<![CDATA[Indicates if this is a buildup request]]>
-	Public Property [Buildup] As Boolean?
-	'''<![CDATA[Reference to campaign]]>
-	Public Property [Campaign] As Guid?
-	'''<![CDATA[Description of Campaign]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [CampaignDescription] As String
-	'''<![CDATA[Reference to contact person]]>
-	Public Property [Contact] As Guid?
-	'''<![CDATA[Name of Contact]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ContactFullName] As String
-	'''<![CDATA[Readable ID of Contact]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ContactHID] As Int32?
-	'''<![CDATA[Creation date]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Created] As DateTime?
-	'''<![CDATA[User ID of creator]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Creator] As Guid?
-	'''<![CDATA[Name of creator]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [CreatorFullName] As String
-	'''<![CDATA[Currency]]>
-	Public Property [Currency] As String
-	'''<![CDATA[Actual currency]]>
-	Public Property [CurrencyActual] As String
-	'''<![CDATA[Description of Currency]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [CurrencyDescription] As String
-	'''<![CDATA[Description of actual currency]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [CurrencyDescriptionActual] As String
-	'''<![CDATA[Number of days]]>
-	Public Property [Days] As Double?
-	'''<![CDATA[Actual number of days]]>
-	Public Property [DaysActual] As Double?
-	'''<![CDATA[Description]]>
-	Public Property [Description] As String
-	'''<![CDATA[Division code]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Division] As Int32?
-	'''<![CDATA[Reference to document]]>
-	Public Property [Document] As Guid?
-	'''<![CDATA[Date that document is created]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [DocumentCreated] As DateTime?
-	'''<![CDATA[Name of DocumentCreator]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [DocumentCreatorFullName] As String
-	'''<![CDATA[Readable ID of document]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [DocumentHID] As Int32?
-	'''<![CDATA[Subject of document]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [DocumentSubject] As String
-	'''<![CDATA[Reference to employee]]>
-	Public Property [Employee] As Guid?
-	'''<![CDATA[Name of employee]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [EmployeeFullName] As String
-	'''<![CDATA[Readable ID of employee]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [EmployeeHID] As Int32?
-	'''<![CDATA[End date]]>
-	Public Property [EndDate] As DateTime?
-	'''<![CDATA[Actual end date]]>
-	Public Property [EndDateActual] As DateTime?
-	Public Property [ErrorLogID] As Int32?
-	'''<![CDATA[Reference to financial entry]]>
-	Public Property [FinancialEntry] As Guid?
-	'''<![CDATA[Entry date of financial entry]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [FinancialEntryDate] As DateTime?
-	'''<![CDATA[Description of financial entry]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [FinancialEntryDescription] As String
-	'''<![CDATA[Number of financial entry]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [FinancialEntryNumber] As Int32?
-	'''<![CDATA[Description of type of financial entry]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [FinancialEntryTypeDescription] As String
-	'''<![CDATA[Free boolean field 1]]>
-	Public Property [FreeBoolField_01] As Boolean?
-	'''<![CDATA[Free boolean field 2]]>
-	Public Property [FreeBoolField_02] As Boolean?
-	'''<![CDATA[Free boolean field 3]]>
-	Public Property [FreeBoolField_03] As Boolean?
-	'''<![CDATA[Free boolean field 4]]>
-	Public Property [FreeBoolField_04] As Boolean?
-	'''<![CDATA[Free boolean field 5]]>
-	Public Property [FreeBoolField_05] As Boolean?
-	'''<![CDATA[Free date field 1]]>
-	Public Property [FreeDateField_01] As DateTime?
-	'''<![CDATA[Free date field 2]]>
-	Public Property [FreeDateField_02] As DateTime?
-	'''<![CDATA[Free date field 3]]>
-	Public Property [FreeDateField_03] As DateTime?
-	'''<![CDATA[Free date field 4]]>
-	Public Property [FreeDateField_04] As DateTime?
-	'''<![CDATA[Free date field 5]]>
-	Public Property [FreeDateField_05] As DateTime?
-	'''<![CDATA[Free guid field 1]]>
-	Public Property [FreeGuidField_01] As Guid?
-	'''<![CDATA[Free guid field 2]]>
-	Public Property [FreeGuidField_02] As Guid?
-	'''<![CDATA[Free guid field 3]]>
-	Public Property [FreeGuidField_03] As Guid?
-	'''<![CDATA[Free guid field 4]]>
-	Public Property [FreeGuidField_04] As Guid?
-	'''<![CDATA[Free guid field 5]]>
-	Public Property [FreeGuidField_05] As Guid?
-	'''<![CDATA[Free guid field 6]]>
-	Public Property [FreeGuidField_06] As Guid?
-	'''<![CDATA[Free guid field 7]]>
-	Public Property [FreeGuidField_07] As Guid?
-	'''<![CDATA[Free guid field 8]]>
-	Public Property [FreeGuidField_08] As Guid?
-	'''<![CDATA[Free guid field 9]]>
-	Public Property [FreeGuidField_09] As Guid?
-	'''<![CDATA[Free guid field 10]]>
-	Public Property [FreeGuidField_10] As Guid?
-	'''<![CDATA[Free integer field 1]]>
-	Public Property [FreeIntField_01] As Int32?
-	'''<![CDATA[Free integer field 2]]>
-	Public Property [FreeIntField_02] As Int32?
-	'''<![CDATA[Free integer field 3]]>
-	Public Property [FreeIntField_03] As Int32?
-	'''<![CDATA[Free integer field 4]]>
-	Public Property [FreeIntField_04] As Int32?
-	'''<![CDATA[Free integer field 5]]>
-	Public Property [FreeIntField_05] As Int32?
-	'''<![CDATA[Free numeric field 1]]>
-	Public Property [FreeNumberField_01] As Double?
-	'''<![CDATA[Free numeric field 2]]>
-	Public Property [FreeNumberField_02] As Double?
-	'''<![CDATA[Free numeric field 3]]>
-	Public Property [FreeNumberField_03] As Double?
-	'''<![CDATA[Free numeric field 4]]>
-	Public Property [FreeNumberField_04] As Double?
-	'''<![CDATA[Free numeric field 5]]>
-	Public Property [FreeNumberField_05] As Double?
-	'''<![CDATA[Free text field 1]]>
-	Public Property [FreeTextField_01] As String
-	'''<![CDATA[Free text field 2]]>
-	Public Property [FreeTextField_02] As String
-	'''<![CDATA[Free text field 3]]>
-	Public Property [FreeTextField_03] As String
-	'''<![CDATA[Free text field 4]]>
-	Public Property [FreeTextField_04] As String
-	'''<![CDATA[Free text field 5]]>
-	Public Property [FreeTextField_05] As String
-	'''<![CDATA[Free text field 6]]>
-	Public Property [FreeTextField_06] As String
-	'''<![CDATA[Free text field 7]]>
-	Public Property [FreeTextField_07] As String
-	'''<![CDATA[Free text field 8]]>
-	Public Property [FreeTextField_08] As String
-	'''<![CDATA[Free text field 9]]>
-	Public Property [FreeTextField_09] As String
-	'''<![CDATA[Free text field 10]]>
-	Public Property [FreeTextField_10] As String
-	'''<![CDATA[Free text field 11]]>
-	Public Property [FreeTextField_11] As String
-	'''<![CDATA[Free text field 12]]>
-	Public Property [FreeTextField_12] As String
-	'''<![CDATA[Free text field 13]]>
-	Public Property [FreeTextField_13] As String
-	'''<![CDATA[Free text field 14]]>
-	Public Property [FreeTextField_14] As String
-	'''<![CDATA[Free text field 15]]>
-	Public Property [FreeTextField_15] As String
-	'''<![CDATA[Reference to help file]]>
-	Public Property [HelpFile] As Guid?
-	'''<![CDATA[Description of HelpFile]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [HelpFileDescription] As String
-	'''<![CDATA[Reference to help item]]>
-	Public Property [HelpItem] As Guid?
-	'''<![CDATA[Readable ID]]>
-	Public Property [HID] As Int32?
-	'''<![CDATA[Number of hours]]>
-	Public Property [Hours] As Double?
-	'''<![CDATA[Number actual of hours]]>
-	Public Property [HoursActual] As Double?
-	'''<![CDATA[Primary key]]>
-	Public Property [ID] As Guid
-	'''<![CDATA[Indicates that it is in workflow]]>
-	Public Property [InWorkflow] As Boolean?
-	'''<![CDATA[Indicates that it is read]]>
-	Public Property [IsRead] As Boolean?
-	'''<![CDATA[Reference to Item 1]]>
-	Public Property [Item_1] As Guid?
-	'''<![CDATA[Reference to Item 2]]>
-	Public Property [Item_2] As Guid?
-	'''<![CDATA[Code of item 1]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ItemCode_1] As String
-	'''<![CDATA[Code of item 2]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ItemCode_2] As String
-	'''<![CDATA[Description of item 1]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ItemDescription_1] As String
-	'''<![CDATA[Description of item 2]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ItemDescription_2] As String
-	'''<![CDATA[Reference to Item group 1]]>
-	Public Property [ItemGroup_1] As Guid?
-	'''<![CDATA[Reference to Item group 2]]>
-	Public Property [ItemGroup_2] As Guid?
-	'''<![CDATA[Reference to Item number 1]]>
-	Public Property [ItemNumberID_1] As Guid?
-	'''<![CDATA[Reference to Item number 2]]>
-	Public Property [ItemNumberID_2] As Guid?
-	'''<![CDATA[Reference to lead]]>
-	Public Property [Lead] As Guid?
-	'''<![CDATA[Name of Lead]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [LeadName] As String
-	'''<![CDATA[Location]]>
-	Public Property [Location] As String
-	'''<![CDATA[Last modified date]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Modified] As DateTime?
-	'''<![CDATA[User ID of modifier]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Modifier] As Guid?
-	'''<![CDATA[Name of modifier]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ModifierFullName] As String
-	'''<![CDATA[Multiple entry columns]]]>
-	Public Property [MultipleEntryCols] As String
-	'''<![CDATA[Reference to [MultipleEntryID]]]>
-	Public Property [MultipleEntryID] As Guid?
-	'''<![CDATA[Reference to Opportunity]]>
-	Public Property [Opportunity] As Guid?
-	'''<![CDATA[Description of Opportunity]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [OpportunityDescription] As String
-	'''<![CDATA[Reference to PayrollComponent]]>
-	Public Property [PayrollComponent] As Guid?
-	'''<![CDATA[Description of PayrollComponent]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [PayrollComponentDescription] As String
-	'''<![CDATA[Payroll period]]>
-	Public Property [PayrollPeriod] As Int32?
-	'''<![CDATA[Payroll year]]>
-	Public Property [PayrollYear] As Int32?
-	'''<![CDATA[Reference to Person]]>
-	Public Property [Person] As Guid?
-	'''<![CDATA[Name of Person]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [PersonFullName] As String
-	'''<![CDATA[Priority]]>
-	Public Property [Priority] As Int32?
-	'''<![CDATA[Date that request is processed]]>
-	Public Property [Processed] As DateTime?
-	'''<![CDATA[Reference to the user that should process or has processed this request]]>
-	Public Property [Processor] As Guid?
-	'''<![CDATA[Name of Processor]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ProcessorFullName] As String
-	'''<![CDATA[Reference to project]]>
-	Public Property [Project] As Guid?
-	'''<![CDATA[Description of Project]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ProjectDescription] As String
-	'''<![CDATA[Quantity 1]]>
-	Public Property [Quantity_1] As Double?
-	'''<![CDATA[Quantity 2]]>
-	Public Property [Quantity_2] As Double?
-	'''<![CDATA[Actual quantity 1]]>
-	Public Property [QuantityActual_1] As Double?
-	'''<![CDATA[Actual quantity 2]]>
-	Public Property [QuantityActual_2] As Double?
-	'''<![CDATA[Date that request is realized]]>
-	Public Property [Realized] As DateTime?
-	'''<![CDATA[Reference to the user that should realized or has realized this request]]>
-	Public Property [Realizer] As Guid?
-	'''<![CDATA[Name of Realizer]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [RealizerFullName] As String
-	'''<![CDATA[Reminder]]>
-	Public Property [Reminder] As Int16?
-	'''<![CDATA[Comments]]>
-	Public Property [RequestComments] As String
-	'''<![CDATA[Resubmit status]]>
-	Public Property [ResubmitStatus] As Int16?
-	'''<![CDATA[Security level]]>
-	Public Property [SecurityLevel] As Int32?
-	'''<![CDATA[Start date]]>
-	Public Property [StartDate] As DateTime?
-	'''<![CDATA[Actual start date]]>
-	Public Property [StartDateActual] As DateTime?
-	'''<![CDATA[Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed]]>
-	Public Property [Status] As Int16?
-	'''<![CDATA[Date the status has been changed]]>
-	Public Property [StatusChanged] As DateTime?
-	'''<![CDATA[Task sub type]]>
-	Public Property [TaskSubType] As Int32
-	'''<![CDATA[Reference to Request Types]]>
-	Public Property [Type] As Guid?
-	'''<![CDATA[Readable ID of Request Type]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [TypeHID] As Int32?
-	'''<![CDATA[Description of Type]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [TypeDescription] As String
-	'''<![CDATA[Name of User]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [UserFullName] As String
-	'''<![CDATA[Readable ID of User]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [UserHID] As Int32?
-	'''<![CDATA[Reference to User]]>
-	Public Property [UserID] As Guid?
-	'''<![CDATA[Workflow comments]]>
-	Public Property [WorkflowComments] As String
-	'''<![CDATA[Reference to XBRLDocument]]>
-	Public Property [XBRLDocument] As Guid?
-	'''<![CDATA[Your reference]]>
-	Public Property [YourRef] As String
+	'''<![CDATA[The type of the transactions in the grouping.]]>
+	Public Property [Type] As Int32?
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -5634,12 +5393,14 @@ Public Class SalesEntry
 	Public Property [ProcessNumber] As Int32?
 	'''<![CDATA[Foreign currency rate]]>
 	Public Property [Rate] As Double?
-	'''<![CDATA[The financial year to which the entry belongs. The financial year should exist in the period date table]]>
-	Public Property [ReportingYear] As Int16?
 	'''<![CDATA[The period of the transaction lines. The period should exist in the period date table]]>
 	Public Property [ReportingPeriod] As Int16?
+	'''<![CDATA[The financial year to which the entry belongs. The financial year should exist in the period date table]]>
+	Public Property [ReportingYear] As Int16?
 	'''<![CDATA[Indicates if amounts are reversed]]>
 	Public Property [Reversal] As Boolean?
+	'''<![CDATA[Collection of lines]]>
+	Public Property [SalesEntryLines] As IEnumerable(Of SalesEntryLine)
 	'''<![CDATA[Status: 5 = Rejected, 20 = Open, 50 = Processed]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Status] As Int16?
@@ -5659,8 +5420,6 @@ Public Class SalesEntry
 	Public Property [VATAmountFC] As Double?
 	'''<![CDATA[The invoice number of the customer]]>
 	Public Property [YourRef] As String
-	'''<![CDATA[Collection of lines]]>
-	Public Property [SalesEntryLines] As IEnumerable(Of SalesEntryLine)
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -5691,6 +5450,8 @@ Public Class SalesEntryLine
 	'''<![CDATA[Division code]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Division] As Int32?
+	'''<![CDATA[The unique ID of the entry. Via this ID all transaction lines of a single entry can be retrieved]]>
+	Public Property [EntryID] As Guid
 	'''<![CDATA[The GL Account of the invoice line. This field is generated based on the revenue account of the item (or the related item group). G/L Account is also used to determine whether the costcenter / costunit is mandatory]]>
 	Public Property [GLAccount] As Guid?
 	'''<![CDATA[Code of GLAccount]]>
@@ -5701,8 +5462,6 @@ Public Class SalesEntryLine
 	Public Property [GLAccountDescription] As String
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
-	'''<![CDATA[The unique ID of the entry. Via this ID all transaction lines of a single entry can be retrieved]]>
-	Public Property [EntryID] As Guid
 	'''<![CDATA[Indicates the sequence of the lines within one entry]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [LineNumber] As Int32?
@@ -5751,12 +5510,12 @@ End Class
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("InvoiceID")>
 Public Class SalesInvoice
-	'''<![CDATA[For the header this is the sum of all lines, including VAT]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [AmountFC] As Double?
 	'''<![CDATA[For the header lines (LineNumber = 0) of an entry this is the SUM(AmountDC) of all lines]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AmountDC] As Double?
+	'''<![CDATA[For the header this is the sum of all lines, including VAT]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [AmountFC] As Double?
 	'''<![CDATA[Creation date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Created] As DateTime?
@@ -5787,6 +5546,9 @@ Public Class SalesInvoice
 	Public Property [InvoiceDate] As DateTime?
 	'''<![CDATA[Primary key]]>
 	Public Property [InvoiceID] As Guid
+	'''<![CDATA[Assigned at entry or at printing depending on setting. The number assigned is based on the freenumbers as defined for the Journal. When printing the field InvoiceNumber is copied to the fields EntryNumber and InvoiceNumber of the sales entry]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [InvoiceNumber] As Int32?
 	'''<![CDATA[Reference to the Customer who will receive the invoice]]>
 	Public Property [InvoiceTo] As Guid?
 	'''<![CDATA[Reference to the Contact person of the customer who will receive the invoice]]>
@@ -5797,9 +5559,6 @@ Public Class SalesInvoice
 	'''<![CDATA[Name of the customer who will receive the invoice]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [InvoiceToName] As String
-	'''<![CDATA[Assigned at entry or at printing depending on setting. The number assigned is based on the freenumbers as defined for the Journal. When printing the field InvoiceNumber is copied to the fields EntryNumber and InvoiceNumber of the sales entry]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [InvoiceNumber] As Int32?
 	'''<![CDATA[The journal code. Every invoice should be linked to a sales journal]]>
 	Public Property [Journal] As String
 	'''<![CDATA[Description of Journal]]>
@@ -5837,11 +5596,18 @@ Public Class SalesInvoice
 	Public Property [PaymentReference] As String
 	'''<![CDATA[Extra remarks]]>
 	Public Property [Remarks] As String
+	'''<![CDATA[Collection of lines]]>
+	Public Property [SalesInvoiceLines] As IEnumerable(Of SalesInvoiceLine)
 	'''<![CDATA[Sales representative]]>
 	Public Property [Salesperson] As Guid?
 	'''<![CDATA[Name of sales representative]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [SalespersonFullName] As String
+	'''<![CDATA[Starter Sales invoice status (for starter functionality)]]>
+	Public Property [StarterSalesInvoiceStatus] As Int16?
+	'''<![CDATA[Description of StarterSalesInvoiceStatus]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [StarterSalesInvoiceStatusDescription] As String
 	'''<![CDATA[The status of the entry. 10 = draft. During the creation of an invoice draft records occur in the draft modus if during an invoice a new page with lines is triggered. If the user leaves the invoice in an abnormal way the draft invoices can be recovered. Draft invoices are not included in financial reports, balances etc. 20 = open. Open invoices can be changed. New invoices get the status open by default. 50 = processed. Processed invoices can't be changed anymore. Processing is done via printing. Processed invoices can't be reopened]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Status] As Int16?
@@ -5861,31 +5627,24 @@ Public Class SalesInvoice
 	'''<![CDATA[Description of the type]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [TypeDescription] As String
-	'''<![CDATA[Total VAT amount in foreign currency]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [VATAmountFC] As Double?
 	'''<![CDATA[Total VAT amount in default currency]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [VATAmountDC] As Double?
+	'''<![CDATA[Total VAT amount in foreign currency]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [VATAmountFC] As Double?
 	'''<![CDATA[The invoice number of the customer]]>
 	Public Property [YourRef] As String
-	'''<![CDATA[Collection of lines]]>
-	Public Property [SalesInvoiceLines] As IEnumerable(Of SalesInvoiceLine)
-	'''<![CDATA[Starter Sales invoice status (for starter functionality)]]>
-	Public Property [StarterSalesInvoiceStatus] As Int16?
-	'''<![CDATA[Description of StarterSalesInvoiceStatus]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [StarterSalesInvoiceStatusDescription] As String
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
 Public Class SalesInvoiceLine
-	'''<![CDATA[For normal lines it's the amount excluding VAT]]>
-	Public Property [AmountFC] As Double?
 	'''<![CDATA[Amount in default currency. For almost all lines this can be calculated like: AmountDC = AmountFC * RateFC]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AmountDC] As Double?
+	'''<![CDATA[For normal lines it's the amount excluding VAT]]>
+	Public Property [AmountFC] As Double?
 	'''<![CDATA[Reference to Cost center]]>
 	Public Property [CostCenter] As String
 	'''<![CDATA[Description of CostCenter]]>
@@ -5921,13 +5680,14 @@ Public Class SalesInvoiceLine
 	Public Property [InvoiceID] As Guid
 	'''<![CDATA[Reference to the item that is sold in this sales invoice line]]>
 	Public Property [Item] As Guid?
-	'''<![CDATA[Description of Item]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ItemDescription] As String
 	'''<![CDATA[Item code]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ItemCode] As String
+	'''<![CDATA[Description of Item]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemDescription] As String
 	'''<![CDATA[Indicates the sequence of the lines within one invoice]]>
+	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [LineNumber] As Int32?
 	'''<![CDATA[Net price of the sales invoice line]]>
 	Public Property [NetPrice] As Double?
@@ -5945,20 +5705,25 @@ Public Class SalesInvoiceLine
 	Public Property [ProjectDescription] As String
 	'''<![CDATA[The number of items sold in default units. The quantity shown in the entry screen is Quantity * UnitFactor]]>
 	Public Property [Quantity] As Double?
+	'''<![CDATA[Identifies the sales order this invoice line is based on]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [SalesOrder] As Guid?
+	'''<![CDATA[Identifies the sales order line this sales invoice line is based on]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [SalesOrderLine] As Guid?
+	'''<![CDATA[Then line number of the sales order line on which this invoice line is based on]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [SalesOrderLineNumber] As Int32?
+	'''<![CDATA[The order number of the sales order on which this invoice line is based on]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [SalesOrderNumber] As Int32?
 	'''<![CDATA[StartTime is used to store the first date of a period. StartTime is used in combination with EndTime]]>
 	Public Property [StartTime] As DateTime?
-	'''<![CDATA[When generating invoices from subscriptions, this field records the link between invoice lines and subscription lines]]>
+	'''<![CDATA[Obsolete. When generating invoices from subscriptions, this field records the link between invoice lines and subscription lines]]>
 	Public Property [Subscription] As Guid?
 	'''<![CDATA[Description of Subscription]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [SubscriptionDescription] As String
-	'''<![CDATA[Code of Unit]]>
-	Public Property [UnitCode] As String
-	'''<![CDATA[Description of Unit]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [UnitDescription] As String
-	'''<![CDATA[Price per unit]]>
-	Public Property [UnitPrice] As Double?
 	'''<![CDATA[Tax schedule linked]]>
 	Public Property [TaxSchedule] As Guid?
 	'''<![CDATA[Code of the tax schedule]]>
@@ -5967,10 +5732,17 @@ Public Class SalesInvoiceLine
 	'''<![CDATA[Description of the tax schedule]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [TaxScheduleDescription] As String
-	'''<![CDATA[VAT amount in foreign currency]]>
-	Public Property [VATAmountFC] As Double?
+	'''<![CDATA[Code of Unit]]>
+	Public Property [UnitCode] As String
+	'''<![CDATA[Description of Unit]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [UnitDescription] As String
+	'''<![CDATA[Price per unit]]>
+	Public Property [UnitPrice] As Double?
 	'''<![CDATA[VAT amount in default currency]]>
 	Public Property [VATAmountDC] As Double?
+	'''<![CDATA[VAT amount in foreign currency]]>
+	Public Property [VATAmountFC] As Double?
 	'''<![CDATA[The VAT code that is used when the invoice is registered]]>
 	Public Property [VATCode] As String
 	'''<![CDATA[Description of VATCode]]>
@@ -6094,6 +5866,8 @@ Public Class SalesOrder
 	Public Property [PaymentReference] As String
 	'''<![CDATA[Extra remarks]]>
 	Public Property [Remarks] As String
+	'''<![CDATA[Collection of lines]]>
+	Public Property [SalesOrderLines] As IEnumerable(Of SalesOrderLine)
 	'''<![CDATA[Sales representative]]>
 	Public Property [Salesperson] As Guid?
 	'''<![CDATA[Name of sales representative]]>
@@ -6117,18 +5891,16 @@ Public Class SalesOrder
 	'''<![CDATA[Description of the tax schedule]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [TaxScheduleDescription] As String
-	'''<![CDATA[Warehouse]]>
-	Public Property [WarehouseID] As Guid?
 	'''<![CDATA[Code of Warehouse]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [WarehouseCode] As String
 	'''<![CDATA[Description of Warehouse]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [WarehouseDescription] As String
+	'''<![CDATA[Warehouse]]>
+	Public Property [WarehouseID] As Guid?
 	'''<![CDATA[The reference number of the customer]]>
 	Public Property [YourRef] As String
-	'''<![CDATA[Collection of lines]]>
-	Public Property [SalesOrderLines] As IEnumerable(Of SalesOrderLine)
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -6160,16 +5932,14 @@ Public Class SalesOrderLine
 	Public Property [Division] As Int32?
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
-	'''<![CDATA[The OrderID identifies the sales order. All the lines of a sales order have the same OrderID]]>
-	Public Property [OrderID] As Guid
 	'''<![CDATA[Reference to the item that is sold in this sales order line]]>
 	Public Property [Item] As Guid?
-	'''<![CDATA[Description of Item]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ItemDescription] As String
 	'''<![CDATA[Code of Item]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ItemCode] As String
+	'''<![CDATA[Description of Item]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemDescription] As String
 	'''<![CDATA[Item Version]]>
 	Public Property [ItemVersion] As Guid?
 	'''<![CDATA[Description of Item Version]]>
@@ -6182,6 +5952,8 @@ Public Class SalesOrderLine
 	Public Property [NetPrice] As Double?
 	'''<![CDATA[Extra notes]]>
 	Public Property [Notes] As String
+	'''<![CDATA[The OrderID identifies the sales order. All the lines of a sales order have the same OrderID]]>
+	Public Property [OrderID] As Guid
 	'''<![CDATA[Number of sales order]]>
 	Public Property [OrderNumber] As Int32?
 	'''<![CDATA[Price list]]>
@@ -6624,14 +6396,14 @@ Public Class Subscription
 	Public Property [InvoicedTo] As DateTime?
 	'''<![CDATA[Reference to invoice account]]>
 	Public Property [InvoiceTo] As Guid?
-	'''<![CDATA[Name of invoice account]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [InvoiceToName] As String
 	'''<![CDATA[Reference to contact person of invoice account]]>
 	Public Property [InvoiceToContactPerson] As Guid?
 	'''<![CDATA[Name of contact person of invoice account]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [InvoiceToContactPersonFullName] As String
+	'''<![CDATA[Name of invoice account]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [InvoiceToName] As String
 	'''<![CDATA[Invoicing start date]]>
 	Public Property [InvoicingStartDate] As DateTime?
 	'''<![CDATA[Last modified date]]>
@@ -6643,20 +6415,20 @@ Public Class Subscription
 	'''<![CDATA[Name of modifier]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ModifierFullName] As String
+	'''<![CDATA[Remarks]]>
+	Public Property [Notes] As String
+	'''<![CDATA[Number]]>
+	Public Property [Number] As Int32
 	'''<![CDATA[Reference to order account]]>
 	Public Property [OrderedBy] As Guid?
-	'''<![CDATA[Name of order account]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [OrderedByName] As String
 	'''<![CDATA[Reference of contact person of order account]]>
 	Public Property [OrderedByContactPerson] As Guid?
 	'''<![CDATA[Name of contact person of order account]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [OrderedByContactPersonFullName] As String
-	'''<![CDATA[Remarks]]>
-	Public Property [Notes] As String
-	'''<![CDATA[Number]]>
-	Public Property [Number] As Int32
+	'''<![CDATA[Name of order account]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [OrderedByName] As String
 	'''<![CDATA[Payment condition]]>
 	Public Property [PaymentCondition] As String
 	'''<![CDATA[Description of PaymentCondition]]>
@@ -6674,14 +6446,6 @@ Public Class Subscription
 	Public Property [ReasonCancelledDescription] As String
 	'''<![CDATA[Start date]]>
 	Public Property [StartDate] As DateTime
-	'''<![CDATA[Reference to subscription type]]>
-	Public Property [SubscriptionType] As Guid
-	'''<![CDATA[Code of SubscriptionType]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [SubscriptionTypeCode] As String
-	'''<![CDATA[Description of SubscriptionType]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [SubscriptionTypeDescription] As String
 	'''<![CDATA[Collection of subscription lines]]>
 	Public Property [SubscriptionLines] As IEnumerable(Of SubscriptionLine)
 	'''<![CDATA[Collection of restriction employees]]>
@@ -6690,16 +6454,24 @@ Public Class Subscription
 	'''<![CDATA[Collection of restriction items]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [SubscriptionRestrictionItems] As IEnumerable(Of SubscriptionRestrictionItem)
+	'''<![CDATA[Reference to subscription type]]>
+	Public Property [SubscriptionType] As Guid
+	'''<![CDATA[Code of SubscriptionType]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [SubscriptionTypeCode] As String
+	'''<![CDATA[Description of SubscriptionType]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [SubscriptionTypeDescription] As String
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
 Public Class SubscriptionChargeType
-	'''<![CDATA[Primary key]]>
-	Public Property [ID] As Int16
 	'''<![CDATA[Description]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Description] As String
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Int16
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -6785,8 +6557,6 @@ Public Class SubscriptionReasonCode
 	Public Property [Division] As Int32
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
-	'''<![CDATA[Remarks]]>
-	Public Property [Notes] As String
 	'''<![CDATA[Last modified date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modified] As DateTime
@@ -6796,11 +6566,25 @@ Public Class SubscriptionReasonCode
 	'''<![CDATA[Name of modifier]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ModifierFullName] As String
+	'''<![CDATA[Remarks]]>
+	Public Property [Notes] As String
 End Class
 
 <SupportedActionsSDK(True, True, False, True)>
 <DataServiceKey("ID")>
 Public Class SubscriptionRestrictionEmployee
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of the creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32
 	'''<![CDATA[Employee linked to the restriction]]>
 	Public Property [Employee] As Guid?
 	'''<![CDATA[Name of employee]]>
@@ -6809,6 +6593,30 @@ Public Class SubscriptionRestrictionEmployee
 	'''<![CDATA[Readable ID of employee]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [EmployeeHID] As Int32?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of the last modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Reference to subscription]]>
+	Public Property [Subscription] As Guid
+	'''<![CDATA[Description of subscription]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [SubscriptionDescription] As String
+	'''<![CDATA[Number of subscription]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [SubscriptionNumber] As Int32
+End Class
+
+<SupportedActionsSDK(True, True, False, True)>
+<DataServiceKey("ID")>
+Public Class SubscriptionRestrictionItem
 	'''<![CDATA[Creation date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Created] As DateTime?
@@ -6823,28 +6631,6 @@ Public Class SubscriptionRestrictionEmployee
 	Public Property [Division] As Int32
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
-	'''<![CDATA[Last modified date]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Modified] As DateTime?
-	'''<![CDATA[User ID of the last modifier]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Modifier] As Guid?
-	'''<![CDATA[Name of the last modifier]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ModifierFullName] As String
-	'''<![CDATA[Reference to subscription]]>
-	Public Property [Subscription] As Guid
-	'''<![CDATA[Number of subscription]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [SubscriptionNumber] As Int32
-	'''<![CDATA[Description of subscription]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [SubscriptionDescription] As String
-End Class
-
-<SupportedActionsSDK(True, True, False, True)>
-<DataServiceKey("ID")>
-Public Class SubscriptionRestrictionItem
 	'''<![CDATA[Item linked to the restriction]]>
 	Public Property [Item] As Guid?
 	'''<![CDATA[Code of item]]>
@@ -6853,20 +6639,6 @@ Public Class SubscriptionRestrictionItem
 	'''<![CDATA[Description of item]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ItemDescription] As String
-	'''<![CDATA[Creation date]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Created] As DateTime?
-	'''<![CDATA[User ID of the creator]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Creator] As Guid?
-	'''<![CDATA[Name of the creator]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [CreatorFullName] As String
-	'''<![CDATA[Division code]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Division] As Int32
-	'''<![CDATA[Primary key]]>
-	Public Property [ID] As Guid
 	'''<![CDATA[Last modified date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modified] As DateTime?
@@ -6878,12 +6650,12 @@ Public Class SubscriptionRestrictionItem
 	Public Property [ModifierFullName] As String
 	'''<![CDATA[Reference to subscription]]>
 	Public Property [Subscription] As Guid
-	'''<![CDATA[Number of subscription]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [SubscriptionNumber] As Int32
 	'''<![CDATA[Description of subscription]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [SubscriptionDescription] As String
+	'''<![CDATA[Number of subscription]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [SubscriptionNumber] As Int32
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
@@ -6958,38 +6730,38 @@ End Class
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("DocumentID")>
 Public Class TaxDocument
-	'''<![CDATA[Primary key, document ID]]>
-	Public Property [DocumentID] As Guid
+	'''<![CDATA[Amount in foreign currency]]>
+	Public Property [Amount] As Double?
 	'''<![CDATA[Creation date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Created] As DateTime
-	'''<![CDATA[Reference to request]]>
-	Public Property [Request] As Guid?
-	'''<![CDATA[Status]]>
-	Public Property [Status] As Int32
-	'''<![CDATA[Amount in foreign currency]]>
-	Public Property [Amount] As Double?
 	'''<![CDATA[Currency]]>
 	Public Property [Currency] As String
 	'''<![CDATA[Description]]>
 	Public Property [Description] As String
-	'''<![CDATA[Year]]>
-	Public Property [Year] As Int32
-	'''<![CDATA[Type]]>
-	Public Property [Type] As Int32
-	'''<![CDATA[Payroll declaration type]]>
-	Public Property [PayrollDeclarationType] As String
+	'''<![CDATA[Primary key, document ID]]>
+	Public Property [DocumentID] As Guid
+	'''<![CDATA[Url to view the document]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [DocumentViewUrl] As String
+	'''<![CDATA[Due date]]>
+	Public Property [DueDate] As DateTime?
 	'''<![CDATA[Frequency]]>
 	Public Property [Frequency] As String
+	'''<![CDATA[Payroll declaration type]]>
+	Public Property [PayrollDeclarationType] As String
 	'''<![CDATA[Period]]>
 	Public Property [Period] As Int32
 	'''<![CDATA[Description of Period]]>
 	Public Property [PeriodDescription] As String
-	'''<![CDATA[Due date]]>
-	Public Property [DueDate] As DateTime?
-	'''<![CDATA[Url to view the document]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [DocumentViewUrl] As String
+	'''<![CDATA[Reference to request]]>
+	Public Property [Request] As Guid?
+	'''<![CDATA[Status]]>
+	Public Property [Status] As Int32
+	'''<![CDATA[Type]]>
+	Public Property [Type] As Int32
+	'''<![CDATA[Year]]>
+	Public Property [Year] As Int32
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
@@ -7093,10 +6865,10 @@ Public Class TaxScheduleComponent
 	Public Property [Notes] As String
 	'''<![CDATA[Id of the tax component]]>
 	Public Property [TaxComponent] As Guid
-	'''<![CDATA[Tax schedule to which the tax component is linked]]>
-	Public Property [TaxSchedule] As Guid
 	'''<![CDATA[Collection of Rates for this tax component]]>
 	Public Property [TaxComponentRates] As IEnumerable(Of TaxComponentRate)
+	'''<![CDATA[Tax schedule to which the tax component is linked]]>
+	Public Property [TaxSchedule] As Guid
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
@@ -7120,10 +6892,10 @@ End Class
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
 Public Class TimeAndBillingActivitiesAndExpenses
-	'''<![CDATA[Primary key]]>
-	Public Property [ID] As Guid
 	'''<![CDATA[Description]]>
 	Public Property [Description] As String
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
 	'''<![CDATA[Description of Parent]]>
 	Public Property [ParentDescription] As String
 End Class
@@ -7131,45 +6903,45 @@ End Class
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
 Public Class TimeAndBillingItemDetails
-	'''<![CDATA[Primary key]]>
-	Public Property [ID] As Guid
 	'''<![CDATA[Item code]]>
 	Public Property [Code] As String
 	'''<![CDATA[Description of the item code]]>
 	Public Property [Description] As String
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Indicates if fractions are allowed for quantities of this item]]>
+	Public Property [IsFractionAllowedItem] As Boolean
 	'''<![CDATA[Indicates if the item can be sold]]>
 	Public Property [IsSalesItem] As Boolean
 	'''<![CDATA[Sales currency code]]>
 	Public Property [SalesCurrency] As String
 	'''<![CDATA[Sales price]]>
 	Public Property [SalesPrice] As Double
-	'''<![CDATA[Indicates if fractions are allowed for quantities of this item]]>
-	Public Property [IsFractionAllowedItem] As Boolean
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ProjectId")>
 Public Class TimeAndBillingProject
-	'''<![CDATA[Primary key]]>
-	Public Property [ProjectId] As Guid
 	'''<![CDATA[Code]]>
 	Public Property [ProjectCode] As String
 	'''<![CDATA[Description]]>
 	Public Property [ProjectDescription] As String
+	'''<![CDATA[Primary key]]>
+	Public Property [ProjectId] As Guid
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
 Public Class TimeAndBillingProjectDetails
-	'''<![CDATA[Primary key]]>
-	Public Property [ID] As Guid
+	'''<![CDATA[The account for this project]]>
+	Public Property [Account] As Guid?
+	Public Property [AccountName] As String
 	'''<![CDATA[Code of project]]>
 	Public Property [Code] As String
 	'''<![CDATA[Description of the project]]>
 	Public Property [Description] As String
-	'''<![CDATA[The account for this project]]>
-	Public Property [Account] As Guid?
-	Public Property [AccountName] As String
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
 	'''<![CDATA[Reference to ProjectTypes]]>
 	Public Property [Type] As Int32
 End Class
@@ -7188,105 +6960,43 @@ End Class
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
 Public Class TimeAndBillingRecentActivitiesAndExpenses
-	'''<![CDATA[Primary key]]>
-	Public Property [ID] As Guid
-	'''<![CDATA[Description]]>
-	Public Property [Description] As String
-	'''<![CDATA[Description of Parent]]>
-	Public Property [ParentDescription] As String
 	'''<![CDATA[Date last used]]>
 	Public Property [DateLastUsed] As DateTime
+	'''<![CDATA[Description]]>
+	Public Property [Description] As String
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Description of Parent]]>
+	Public Property [ParentDescription] As String
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ItemId")>
 Public Class TimeAndBillingRecentHourCostType
-	'''<![CDATA[Primary key]]>
-	Public Property [ItemId] As Guid
-	'''<![CDATA[Description of item]]>
-	Public Property [ItemDescription] As String
 	'''<![CDATA[Date last used]]>
 	Public Property [DateLastUsed] As DateTime
+	'''<![CDATA[Description of item]]>
+	Public Property [ItemDescription] As String
+	'''<![CDATA[Primary key]]>
+	Public Property [ItemId] As Guid
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ProjectId")>
 Public Class TimeAndBillingRecentProject
-	'''<![CDATA[Primary key]]>
-	Public Property [ProjectId] As Guid
+	'''<![CDATA[Date last used]]>
+	Public Property [DateLastUsed] As DateTime
 	'''<![CDATA[Code of project]]>
 	Public Property [ProjectCode] As String
 	'''<![CDATA[Description of project]]>
 	Public Property [ProjectDescription] As String
-	'''<![CDATA[Date last used]]>
-	Public Property [DateLastUsed] As DateTime
-End Class
-
-<SupportedActionsSDK(True, True, True, True)>
-<DataServiceKey("ID")>
-Public Class TimedTimeTransaction
-	'''<![CDATA[Creation date]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Created] As DateTime?
-	'''<![CDATA[User ID of creator]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Creator] As Guid?
-	'''<![CDATA[Name of creator]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [CreatorFullName] As String
-	'''<![CDATA[Division code]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Division] As Int32?
-	'''<![CDATA[ID of employee]]>
-	Public Property [Employee] As Guid?
-	'''<![CDATA[Time that operation was stopped]]>
-	Public Property [EndTime] As DateTime?
 	'''<![CDATA[Primary key]]>
-	Public Property [ID] As Guid
-	'''<![CDATA[Is the operation finished?]]>
-	Public Property [IsOperationFinished] As Byte?
-	'''<![CDATA[Adjustable labor hours]]>
-	Public Property [LaborHours] As Double?
-	'''<![CDATA[Adjustable machine hours]]>
-	Public Property [MachineHours] As Double?
-	'''<![CDATA[Modified date]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Modified] As DateTime?
-	'''<![CDATA[User ID of modifier]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Modifier] As Guid?
-	'''<![CDATA[Name of modifier]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ModifierFullName] As String
-	'''<![CDATA[Notes - viewable in data collection]]>
-	Public Property [Notes] As String
-	'''<![CDATA[Quantity of make item produced within time period]]>
-	Public Property [ProducedQuantity] As Double?
-	'''<![CDATA[Shop order routing step where work occurred]]>
-	Public Property [ShopOrderRoutingStepPlan] As Guid?
-	'''<![CDATA[Description of the routing step plan]]>
-	Public Property [ShopOrderRoutingStepPlanDescription] As String
-	'''<![CDATA[Source of the timed time transaction]]>
-	Public Property [Source] As Int16?
-	'''<![CDATA[Time that operation was started]]>
-	Public Property [StartTime] As DateTime?
-	'''<![CDATA[Status of the timed time transaction]]>
-	Public Property [Status] As Int16?
-	'''<![CDATA[Type of the timed time transaction: Setup = 10, Run = 20]]>
-	Public Property [Type] As Int16?
-	'''<![CDATA[Work center where work occurred]]>
-	Public Property [Workcenter] As Guid?
-	'''<![CDATA[Description of the work center]]>
-	Public Property [WorkcenterDescription] As String
+	Public Property [ProjectId] As Guid
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
 Public Class TimeTransaction
-	'''<![CDATA[Amount in foreign currency]]>
-	Public Property [Amount] As Double?
-	'''<![CDATA[Price in foreign currency]]>
-	Public Property [Price] As Double?
 	'''<![CDATA[Account linked to the transaction]]>
 	Public Property [Account] As Guid?
 	'''<![CDATA[Name of Account]]>
@@ -7297,6 +7007,8 @@ Public Class TimeTransaction
 	'''<![CDATA[Description of ProjectWBS]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ActivityDescription] As String
+	'''<![CDATA[Amount in foreign currency]]>
+	Public Property [Amount] As Double?
 	'''<![CDATA[Amount in foreign currency of the transaction]]>
 	Public Property [AmountFC] As Double?
 	'''<![CDATA[Attachment linked to the transaction]]>
@@ -7351,6 +7063,8 @@ Public Class TimeTransaction
 	Public Property [ModifierFullName] As String
 	'''<![CDATA[Notes linked to the transaction]]>
 	Public Property [Notes] As String
+	'''<![CDATA[Price in foreign currency]]>
+	Public Property [Price] As Double?
 	'''<![CDATA[PriceFC (AmountFC = Quantity * PriceFC)]]>
 	Public Property [PriceFC] As Double?
 	'''<![CDATA[Project linked to the transaction]]>
@@ -7459,10 +7173,10 @@ Public Class TransactionLine
 	Public Property [AmountDC] As Double?
 	'''<![CDATA[Amount in foreign currency]]>
 	Public Property [AmountFC] As Double?
-	'''<![CDATA[Vat amount in foreign currency]]>
-	Public Property [AmountVATFC] As Double?
 	'''<![CDATA[Vat base amount in foreign currency]]>
 	Public Property [AmountVATBaseFC] As Double?
+	'''<![CDATA[Vat amount in foreign currency]]>
+	Public Property [AmountVATFC] As Double?
 	'''<![CDATA[Reference to asset]]>
 	Public Property [Asset] As Guid?
 	'''<![CDATA[Code of Asset]]>
@@ -7691,11 +7405,11 @@ Public Class User
 	Public Property [UserID] As Guid
 	'''<![CDATA[Login name of the user]]>
 	Public Property [UserName] As String
-	'''<![CDATA[Obsolete]]>
-	Public Property [UserTypesList] As String
 	'''<![CDATA[Collection of user roles]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [UserRoles] As IEnumerable(Of UserRole)
+	'''<![CDATA[Obsolete]]>
+	Public Property [UserTypesList] As String
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
@@ -7710,20 +7424,12 @@ Public Class UserRole
 	'''<![CDATA[Name of the creator]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [CreatorFullName] As String
-	'''<![CDATA[Primary key]]>
-	Public Property [ID] As Guid
-	'''<![CDATA[The user that is linked to the role]]>
-	Public Property [UserID] As Guid?
 	'''<![CDATA[Description]]>
 	Public Property [Description] As String
-	'''<![CDATA[The role that the user is linked to]]>
-	Public Property [Role] As Int32
-	'''<![CDATA[Rolelevel sets the level on which a role for a user is active. This can be: 1 = Database, 2 = Customer, 3 = Division, 100 = Transferred to accountant]]>
-	Public Property [RoleLevel] As Int32
-	'''<![CDATA[Indicates the date when the role becomes active for the user]]>
-	Public Property [StartDate] As DateTime
 	'''<![CDATA[Indicates the date and time when te role becomes inactive for the user]]>
 	Public Property [EndDate] As DateTime?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
 	'''<![CDATA[Last modified date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modified] As DateTime?
@@ -7733,6 +7439,14 @@ Public Class UserRole
 	'''<![CDATA[Name of the last modifier]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ModifierFullName] As String
+	'''<![CDATA[The role that the user is linked to]]>
+	Public Property [Role] As Int32
+	'''<![CDATA[Rolelevel sets the level on which a role for a user is active. This can be: 1 = Database, 2 = Customer, 3 = Division, 100 = Transferred to accountant]]>
+	Public Property [RoleLevel] As Int32
+	'''<![CDATA[Indicates the date when the role becomes active for the user]]>
+	Public Property [StartDate] As DateTime
+	'''<![CDATA[The user that is linked to the role]]>
+	Public Property [UserID] As Guid?
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -7854,6 +7568,8 @@ Public Class VatPercentage
 	'''<![CDATA[Division code]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Division] As Int32?
+	'''<![CDATA[End date of the date range during which this percentage is valid]]>
+	Public Property [EndDate] As DateTime?
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
 	'''<![CDATA[Line number]]>
@@ -7871,8 +7587,6 @@ Public Class VatPercentage
 	Public Property [Percentage] As Double?
 	'''<![CDATA[Start date of the date range during which this percentage is valid]]>
 	Public Property [StartDate] As DateTime?
-	'''<![CDATA[End date of the date range during which this percentage is valid]]>
-	Public Property [EndDate] As DateTime?
 	'''<![CDATA[VAT code]]>
 	Public Property [VATCodeID] As Guid
 End Class
