@@ -3261,60 +3261,60 @@ Public Class ItemGroup
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
-<DataServiceKey("ItemId")>
+<DataServiceKey("ID")>
 Public Class ItemVersion
-	'''<![CDATA[Batch Quantity of Item Version]]>
-	Public Property [BatchQuantity] As Double?
-	'''<![CDATA[Calculated Cost Price of Item Version]]>
-	Public Property [CalculatedCostPrice] As Double?
-	'''<![CDATA[Creation date]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Created] As DateTime?
-	'''<![CDATA[User ID of creator]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Creator] As Guid?
-	'''<![CDATA[Name of creator]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [CreatorFullName] As String
-	'''<![CDATA[Description of the item version]]>
-	Public Property [Description] As String
-	'''<![CDATA[Division code]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Division] As Int32?
-	'''<![CDATA[Primary key]]>
-	Public Property [ID] As Guid
-	'''<![CDATA[Indicates if this is the default item version that will be assigned when a item is selected]]>
-	Public Property [IsDefault] As Byte
-	'''<![CDATA[Reference to Items table]]>
-	Public Property [Item] As Guid
-	'''<![CDATA[Description of Item]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ItemDescription] As String
-	'''<![CDATA[Lead time of Item version]]>
-	Public Property [LeadTime] As Int32?
-	'''<![CDATA[Last modified date]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Modified] As DateTime?
-	'''<![CDATA[User ID of modifier]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [Modifier] As Guid?
-	'''<![CDATA[Name of modifier]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [ModifierFullName] As String
-	'''<![CDATA[Line notes]]>
-	Public Property [Notes] As String
-	'''<![CDATA[Statuses of Item version: 10-Engineering change pending, 20-Engineering change approved, 30-Active & 40-Historic]]>
-	Public Property [Status] As Int16?
-	'''<![CDATA[Description of Status]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [StatusDescription] As String
-	'''<![CDATA[Type of Item version: 10-Sales bill of material, 20-Manufacturing recipe]]>
-	Public Property [Type] As Int16?
-	'''<![CDATA[Description of Type]]>
-	<SDKFieldType(FieldType.ReadOnly)>
-	Public Property [TypeDescription] As String
-	'''<![CDATA[Version Number]]>
-	Public Property [VersionNumber] As Int32?
+    '''<![CDATA[Batch Quantity of Item Version]]>
+    Public Property [BatchQuantity] As Double?
+    '''<![CDATA[Calculated Cost Price of Item Version]]>
+    Public Property [CalculatedCostPrice] As Double?
+    '''<![CDATA[Creation date]]>
+    <SDKFieldType(FieldType.ReadOnly)>
+    Public Property [Created] As DateTime?
+    '''<![CDATA[User ID of creator]]>
+    <SDKFieldType(FieldType.ReadOnly)>
+    Public Property [Creator] As Guid?
+    '''<![CDATA[Name of creator]]>
+    <SDKFieldType(FieldType.ReadOnly)>
+    Public Property [CreatorFullName] As String
+    '''<![CDATA[Description of the item version]]>
+    Public Property [Description] As String
+    '''<![CDATA[Division code]]>
+    <SDKFieldType(FieldType.ReadOnly)>
+    Public Property [Division] As Int32?
+    '''<![CDATA[Primary key]]>
+    Public Property [ID] As Guid
+    '''<![CDATA[Indicates if this is the default item version that will be assigned when a item is selected]]>
+    Public Property [IsDefault] As Byte
+    '''<![CDATA[Reference to Items table]]>
+    Public Property [Item] As Guid
+    '''<![CDATA[Description of Item]]>
+    <SDKFieldType(FieldType.ReadOnly)>
+    Public Property [ItemDescription] As String
+    '''<![CDATA[Lead time of Item version]]>
+    Public Property [LeadTime] As Int32?
+    '''<![CDATA[Last modified date]]>
+    <SDKFieldType(FieldType.ReadOnly)>
+    Public Property [Modified] As DateTime?
+    '''<![CDATA[User ID of modifier]]>
+    <SDKFieldType(FieldType.ReadOnly)>
+    Public Property [Modifier] As Guid?
+    '''<![CDATA[Name of modifier]]>
+    <SDKFieldType(FieldType.ReadOnly)>
+    Public Property [ModifierFullName] As String
+    '''<![CDATA[Line notes]]>
+    Public Property [Notes] As String
+    '''<![CDATA[Statuses of Item version: 10-Engineering change pending, 20-Engineering change approved, 30-Active & 40-Historic]]>
+    Public Property [Status] As Int16?
+    '''<![CDATA[Description of Status]]>
+    <SDKFieldType(FieldType.ReadOnly)>
+    Public Property [StatusDescription] As String
+    '''<![CDATA[Type of Item version: 10-Sales bill of material, 20-Manufacturing recipe]]>
+    Public Property [Type] As Int16?
+    '''<![CDATA[Description of Type]]>
+    <SDKFieldType(FieldType.ReadOnly)>
+    Public Property [TypeDescription] As String
+    '''<![CDATA[Version Number]]>
+    Public Property [VersionNumber] As Int32?
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
