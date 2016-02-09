@@ -1,4 +1,4 @@
-' Last generated on 2015-11-10 09:58:01 +01:00
+' Last generated on 2016-02-04 11:26:52 +01:00
 
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
@@ -102,6 +102,10 @@ Public Class Account
 	'''<![CDATA[Obsolete]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [CustomerSince] As DateTime?
+	'''<![CDATA[DATEV creditor code for Germany legislation]]>
+	Public Property [DatevCreditorCode] As String
+	'''<![CDATA[DATEV debtor code for Germany legislation]]>
+	Public Property [DatevDebtorCode] As String
 	'''<![CDATA[Default discount percentage for purchase. This is stored as a fraction. ie 5.5% is stored as .055]]>
 	Public Property [DiscountPurchase] As Double?
 	'''<![CDATA[Default discount percentage for sales. This is stored as a fraction. ie 5.5% is stored as .055]]>
@@ -119,6 +123,8 @@ Public Class Account
 	Public Property [Email] As String
 	'''<![CDATA[Determines in combination with the start date if the account is active. If the current date is > end date the account is inactive]]>
 	Public Property [EndDate] As DateTime?
+	'''<![CDATA[RegistrationDate]]>
+	Public Property [EstablishedDate] As DateTime?
 	'''<![CDATA[Fax number]]>
 	Public Property [Fax] As String
 	'''<![CDATA[Default (corporate) GL offset account for purchase (cost)]]>
@@ -131,6 +137,8 @@ Public Class Account
 	Public Property [GLAR] As Guid?
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
+	'''<![CDATA[Suppressed warning message when there is duplication on the DATEV code]]>
+	Public Property [IgnoreDatevWarningMessage] As Boolean
 	'''<![CDATA[Intrastat Area]]>
 	Public Property [IntraStatArea] As String
 	'''<![CDATA[Intrastat delivery method]]>
@@ -218,6 +226,8 @@ Public Class Account
 	'''<![CDATA[Obsolete]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Parent] As Guid?
+	'''<![CDATA[Indicates the loan repayment plan for UK legislation]]>
+	Public Property [PayAsYouEarn] As String
 	'''<![CDATA[Code of default payment condition for purchase]]>
 	Public Property [PaymentConditionPurchase] As String
 	'''<![CDATA[Description of PaymentConditionPurchase]]>
@@ -260,6 +270,8 @@ Public Class Account
 	'''<![CDATA[Name of Reseller]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ResellerName] As String
+	'''<![CDATA[Fiscal number for NL legislation]]>
+	Public Property [RSIN] As String
 	'''<![CDATA[Currency of Sales used for Time & Billing]]>
 	Public Property [SalesCurrency] As String
 	'''<![CDATA[Description of SalesCurrency]]>
@@ -302,9 +314,13 @@ Public Class Account
 	'''<![CDATA[Obsolete]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [StatusSince] As DateTime?
+	'''<![CDATA[Trade name can be registered and shown with the client (for all legislations)]]>
+	Public Property [TradeName] As String
 	'''<![CDATA[Account type: Values: A = Relation, D = Division]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Type] As String
+	'''<![CDATA[Unique taxpayer reference for UK legislation]]>
+	Public Property [UniqueTaxpayerReference] As String
 	'''<![CDATA[Indicates the VAT status of an account to be able to identify the relation that should be selected in the VAT debtor listing in Belgium]]>
 	Public Property [VATLiability] As String
 	'''<![CDATA[The number under which the account is known at the Value Added Tax collection agency]]>
@@ -414,6 +430,35 @@ Public Class AccountClassificationName
 	Public Property [ModifierFullName] As String
 	'''<![CDATA[Sequence number]]>
 	Public Property [SequenceNumber] As Int32
+End Class
+
+<SupportedActionsSDK(True, True, True, True)>
+<DataServiceKey("ID")>
+Public Class AccountInvolvedAccount
+	'''<![CDATA[ID of account]]>
+	Public Property [Account] As Guid?
+	'''<![CDATA[Name of account]]>
+	Public Property [AccountName] As String
+	'''<![CDATA[Creation date]]>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Division code]]>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[ID of involved account]]>
+	Public Property [InvolvedAccount] As Guid?
+	'''<![CDATA[Last modified date]]>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Use to record details of important information]]>
+	Public Property [Notes] As String
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
@@ -818,9 +863,9 @@ Public Class Asset
 	'''<![CDATA[Name of InvestmentAccount]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [InvestmentAccountName] As String
-	'''<![CDATA[Investment amount in division currency]]>
+	'''<![CDATA[Investment amount in the default currency of the company]]>
 	Public Property [InvestmentAmountDC] As Double?
-	'''<![CDATA[Investment value of the asset.  Currently the field is filled with the PurchasePriceLocal. Can be status 'Not used' after sources have been cleaned]]>
+	'''<![CDATA[Investment value of the asset. Currently the field is filled with the PurchasePriceLocal. Can be status 'Not used' after sources have been cleaned]]>
 	Public Property [InvestmentAmountFC] As Double?
 	'''<![CDATA[Indicates the currency of the investment amount]]>
 	Public Property [InvestmentCurrency] As String
@@ -979,7 +1024,7 @@ Public Class BankEntry
 	'''<![CDATA[Subject of document with bank statement]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [BankStatementDocumentSubject] As String
-	'''<![CDATA[Closing balance in foreign currency]]>
+	'''<![CDATA[Closing balance in the currency of the transaction]]>
 	Public Property [ClosingBalanceFC] As Double?
 	'''<![CDATA[Creation date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
@@ -1006,7 +1051,7 @@ Public Class BankEntry
 	'''<![CDATA[Last modified date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modified] As DateTime?
-	'''<![CDATA[Opening balance in foreign currency]]>
+	'''<![CDATA[Opening balance in the currency of the transaction]]>
 	Public Property [OpeningBalanceFC] As Double?
 	'''<![CDATA[Status: 5 = Rejected, 20 = Open, 50 = Processed]]>
 	<SDKFieldType(FieldType.ReadOnly)>
@@ -1027,12 +1072,12 @@ Public Class BankEntryLine
 	'''<![CDATA[Name of Account]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AccountName] As String
-	'''<![CDATA[Amount in default currency]]>
+	'''<![CDATA[Amount in the default currency of the company]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AmountDC] As Double?
-	'''<![CDATA[Amount in foreign currency]]>
+	'''<![CDATA[Amount in the currency of the transaction]]>
 	Public Property [AmountFC] As Double?
-	'''<![CDATA[Vat amount in foreign currency]]>
+	'''<![CDATA[Vat amount in the currency of the transaction]]>
 	Public Property [AmountVATFC] As Double?
 	'''<![CDATA[Reference to an asset]]>
 	Public Property [Asset] As Guid?
@@ -1134,8 +1179,55 @@ End Class
 
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
+Public Class BatchNumber
+	'''<![CDATA[Available quantity of this batch number]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [AvailableQuantity] As Double?
+	'''<![CDATA[Human readable batch number]]>
+	Public Property [BatchNumber] As String
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Expiry date of effective period for batch number]]>
+	Public Property [ExpiryDate] As DateTime?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Blocking state]]>
+	Public Property [IsBlocked] As Byte?
+	'''<![CDATA[Item]]>
+	Public Property [Item] As Guid?
+	'''<![CDATA[Item code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemCode] As String
+	'''<![CDATA[Description of item]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemDescription] As String
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Remarks]]>
+	Public Property [Remarks] As String
+End Class
+
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("ID")>
 Public Class Budget
-	'''<![CDATA[Budget amount (always in default currency)]]>
+	'''<![CDATA[Budget amount (always in the default currency of the company)]]>
 	Public Property [AmountDC] As Double?
 	'''<![CDATA[Budget scenario]]>
 	Public Property [BudgetScenario] As Guid?
@@ -1207,7 +1299,7 @@ End Class
 Public Class CashEntry
 	'''<![CDATA[Collection of lines]]>
 	Public Property [CashEntryLines] As IEnumerable(Of CashEntryLine)
-	'''<![CDATA[Closing balance in foreign currency]]>
+	'''<![CDATA[Closing balance in the currency of the transaction]]>
 	Public Property [ClosingBalanceFC] As Double?
 	'''<![CDATA[Creation date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
@@ -1234,7 +1326,7 @@ Public Class CashEntry
 	'''<![CDATA[Last modified date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modified] As DateTime?
-	'''<![CDATA[Opening balance in foreign currency]]>
+	'''<![CDATA[Opening balance in the currency of the transaction]]>
 	Public Property [OpeningBalanceFC] As Double?
 	'''<![CDATA[Status: 5 = Rejected, 20 = Open, 50 = Processed]]>
 	<SDKFieldType(FieldType.ReadOnly)>
@@ -1255,12 +1347,12 @@ Public Class CashEntryLine
 	'''<![CDATA[Name of Account]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AccountName] As String
-	'''<![CDATA[Amount in default currency]]>
+	'''<![CDATA[Amount in the default currency of the company]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AmountDC] As Double?
-	'''<![CDATA[Amount in foreign currency]]>
+	'''<![CDATA[Amount in the currency of the transaction]]>
 	Public Property [AmountFC] As Double?
-	'''<![CDATA[Vat amount in foreign currency]]>
+	'''<![CDATA[Vat amount in the currency of the transaction]]>
 	Public Property [AmountVATFC] As Double?
 	'''<![CDATA[Reference to an asset]]>
 	Public Property [Asset] As Guid?
@@ -1445,6 +1537,12 @@ Public Class Contact
 	Public Property [HID] As Int32?
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
+	'''<![CDATA[Identification date]]>
+	Public Property [IdentificationDate] As DateTime?
+	'''<![CDATA[Reference to the identification document of the contact]]>
+	Public Property [IdentificationDocument] As Guid?
+	'''<![CDATA[Reference to the user responsible for identification]]>
+	Public Property [IdentificationUser] As Guid?
 	'''<![CDATA[Initials]]>
 	Public Property [Initials] As String
 	'''<![CDATA[Indicates whether contacts are excluded from the marketing list]]>
@@ -1556,9 +1654,9 @@ Public Class CostTransaction
 	'''<![CDATA[Name of Account]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AccountName] As String
-	'''<![CDATA[Amount in foreign currency]]>
+	'''<![CDATA[Amount in the currency of the transaction]]>
 	Public Property [Amount] As Double?
-	'''<![CDATA[Amount of the transaction in foreign currency]]>
+	'''<![CDATA[Amount of the transaction in the currency of the transaction]]>
 	Public Property [AmountFC] As Double?
 	'''<![CDATA[Attachment linked to the transaction (not mandatory)]]>
 	Public Property [Attachment] As Guid?
@@ -1613,7 +1711,7 @@ Public Class CostTransaction
 	Public Property [ModifierFullName] As String
 	'''<![CDATA[Notes linked to the transaction (not mandatory)]]>
 	Public Property [Notes] As String
-	'''<![CDATA[Price in foreign currency]]>
+	'''<![CDATA[Price in the currency of the transaction]]>
 	Public Property [Price] As Double?
 	'''<![CDATA[PriceFC (AmountFC = Quantity * PriceFC)]]>
 	Public Property [PriceFC] As Double?
@@ -1853,7 +1951,7 @@ Public Class Division
 	'''<![CDATA[Name of the creator]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [CreatorFullName] As String
-	'''<![CDATA[Default currency]]>
+	'''<![CDATA[Default currency of the division]]>
 	Public Property [Currency] As String
 	'''<![CDATA[Description of Currency]]>
 	<SDKFieldType(FieldType.ReadOnly)>
@@ -1902,7 +2000,7 @@ Public Class Document
 	'''<![CDATA[Name of Account]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AccountName] As String
-	'''<![CDATA[Amount in foreign currency]]>
+	'''<![CDATA[Amount in the currency of the transaction]]>
 	Public Property [AmountFC] As Double?
 	'''<![CDATA[Body of this document]]>
 	Public Property [Body] As String
@@ -2589,15 +2687,15 @@ Public Class GeneralJournalEntryLine
 	'''<![CDATA[Name of Account]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AccountName] As String
-	'''<![CDATA[Amount in default currency, If an 'Including' VAT code is used this amount includes the VAT amount.]]>
+	'''<![CDATA[Amount in the default currency of the company, If an 'Including' VAT code is used this amount includes the VAT amount.]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AmountDC] As Double?
-	'''<![CDATA[Amount in foreign currency. If an 'Including' VAT code is used this amount includes the VAT amount.]]>
+	'''<![CDATA[Amount in the currency of the transaction. If an 'Including' VAT code is used this amount includes the VAT amount.]]>
 	Public Property [AmountFC] As Double?
-	'''<![CDATA[Vat amount in default currency.]]>
+	'''<![CDATA[Vat amount in the default currency of the company.]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AmountVATDC] As Double?
-	'''<![CDATA[Vat amount in foreign currency. If you want to set this in a POST you have to specify VATCode as well.]]>
+	'''<![CDATA[Vat amount in the currency of the transaction. If you want to set this in a POST you have to specify VATCode as well.]]>
 	Public Property [AmountVATFC] As Double?
 	'''<![CDATA[Reference to asset]]>
 	Public Property [Asset] As Guid?
@@ -2683,10 +2781,10 @@ Public Class GeneralJournalEntryLine
 	Public Property [ProjectDescription] As String
 	'''<![CDATA[Quantity]]>
 	Public Property [Quantity] As Double?
-	'''<![CDATA[VAT base amount in default currency]]>
+	'''<![CDATA[VAT base amount in the default currency of the company]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [VATBaseAmountDC] As Double?
-	'''<![CDATA[VAT base amount in foreign currency]]>
+	'''<![CDATA[VAT base amount in the currency of the transaction]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [VATBaseAmountFC] As Double?
 	'''<![CDATA[VATCode can only be used if the general journal has VAT enabled. VAT Lines will be automatically created if the VATCode is specified when creating a new general journal entry.]]>
@@ -2895,6 +2993,163 @@ Public Class GLTransactionType
 	Public Property [ID] As Int32
 End Class
 
+<SupportedActionsSDK(True, True, True, False)>
+<DataServiceKey("EntryID")>
+Public Class GoodsDelivery
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Reference to account for delivery]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [DeliveryAccount] As Guid?
+	'''<![CDATA[Delivery account code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [DeliveryAccountCode] As String
+	'''<![CDATA[Account name]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [DeliveryAccountName] As String
+	'''<![CDATA[Reference to shipping address]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [DeliveryAddress] As Guid?
+	'''<![CDATA[Reference to contact for delivery]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [DeliveryContact] As Guid?
+	'''<![CDATA[Name of the contact person of the customer who will receive delivered goods]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [DeliveryContactPersonFullName] As String
+	'''<![CDATA[Date of goods delivery]]>
+	Public Property [DeliveryDate] As DateTime?
+	'''<![CDATA[Delivery number]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [DeliveryNumber] As Int32?
+	'''<![CDATA[Header description]]>
+	Public Property [Description] As String
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Document that is manually linked to the sales order delivery]]>
+	Public Property [Document] As Guid?
+	'''<![CDATA[Document Subject]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [DocumentSubject] As String
+	'''<![CDATA[Primary key]]>
+	Public Property [EntryID] As Guid
+	'''<![CDATA[Entry number]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [EntryNumber] As Int32?
+	'''<![CDATA[Collection of lines]]>
+	Public Property [GoodsDeliveryLines] As IEnumerable(Of GoodsDeliveryLine)
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Remarks]]>
+	Public Property [Remarks] As String
+	'''<![CDATA[Reference to shipping method]]>
+	Public Property [ShippingMethod] As Guid?
+	'''<![CDATA[Code of shipping method]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ShippingMethodCode] As String
+	'''<![CDATA[Description of shipping method]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ShippingMethodDescription] As String
+	'''<![CDATA[Reference to header tracking number]]>
+	Public Property [TrackingNumber] As String
+	'''<![CDATA[Warehouse]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Warehouse] As Guid?
+	'''<![CDATA[Code of Warehouse]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [WarehouseCode] As String
+	'''<![CDATA[Description of Warehouse]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [WarehouseDescription] As String
+End Class
+
+<SupportedActionsSDK(True, True, True, False)>
+<DataServiceKey("ID")>
+Public Class GoodsDeliveryLine
+	'''<![CDATA[Collection of batch numbers]]>
+	Public Property [BatchNumbers] As IEnumerable(Of StockBatchNumber)
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Date of goods delivery]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [DeliveryDate] As DateTime?
+	'''<![CDATA[Description of sales order delivery]]>
+	Public Property [Description] As String
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
+	'''<![CDATA[The EntryID identifies the goods delivery. All the lines of a goods delivery have the same EntryID]]>
+	Public Property [EntryID] As Guid?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Reference to item]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Item] As Guid?
+	'''<![CDATA[Item code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemCode] As String
+	'''<![CDATA[Description of item]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemDescription] As String
+	'''<![CDATA[Line number]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [LineNumber] As Int32?
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Notes]]>
+	Public Property [Notes] As String
+	'''<![CDATA[Quantity delivered]]>
+	Public Property [QuantityDelivered] As Double?
+	'''<![CDATA[Quantity ordered]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [QuantityOrdered] As Double?
+	'''<![CDATA[Reference to sales order]]>
+	Public Property [SalesOrderLineID] As Guid?
+	'''<![CDATA[Sales order line number]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [SalesOrderLineNumber] As Int32?
+	'''<![CDATA[Sales order number]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [SalesOrderNumber] As Int32?
+	'''<![CDATA[Collection of serial numbers]]>
+	Public Property [SerialNumbers] As IEnumerable(Of StockSerialNumber)
+	'''<![CDATA[Reference to storage location for warehouse]]>
+	Public Property [StorageLocation] As Guid?
+	'''<![CDATA[Reference to tracking number]]>
+	Public Property [TrackingNumber] As String
+	'''<![CDATA[Code of item unit]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Unitcode] As String
+End Class
+
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ItemId")>
 Public Class HourCostType
@@ -2903,6 +3158,38 @@ Public Class HourCostType
 	Public Property [ItemDescription] As String
 	'''<![CDATA[Primary key]]>
 	Public Property [ItemId] As Guid
+End Class
+
+<SupportedActionsSDK(True, False, False, False)>
+<DataServiceKey("ID")>
+Public Class InvoiceSalesOrders
+	'''<![CDATA[Invoice creation mode- 0: Per customer 1: Per sales order]]>
+	Public Property [CreateMode] As Int32?
+	'''<![CDATA[Stock entries entry number.]]>
+	Public Property [DeliveryNumber] As Int32?
+	'''<![CDATA[Stock entries entry end date.]]>
+	Public Property [EndDate] As DateTime?
+	'''<![CDATA[Errors in the process.]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Errors] As String
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Invoice quantity processing mode- 0:By quantity delivered 1:By quantity ordered.]]>
+	Public Property [InvoiceMode] As Int32?
+	'''<![CDATA[Code of Journal]]>
+	Public Property [JournalCode] As String
+	'''<![CDATA[Number of invoices successfully created.]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [NumberOfCreatedInvoices] As Int32?
+	'''<![CDATA[Number of invoices failed to create.]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [NumberOfFailedInvoices] As Int32?
+	'''<![CDATA[Collection of Sales order IDs.]]>
+	Public Property [SalesOrderIDs] As IEnumerable(Of SalesOrderID)
+	'''<![CDATA[Stock entries entry start date.]]>
+	Public Property [StartDate] As DateTime?
+	'''<![CDATA[Possibility to override the InvoiceDate during creation of sales invoice from sales orders. Works only for Intuit.]]>
+	Public Property [UserInvoiceDate] As DateTime?
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -3156,8 +3443,13 @@ Public Class Item
 	'''<![CDATA[Name of modifier]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ModifierFullName] As String
+	'''<![CDATA[Net weight for international goods shipments]]>
+	Public Property [NetWeight] As Double?
 	'''<![CDATA[Notes]]>
 	Public Property [Notes] As String
+	'''<![CDATA[File name of picture]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [PictureName] As String
 	'''<![CDATA[Code of SalesVat]]>
 	Public Property [SalesVatCode] As String
 	'''<![CDATA[Description of SalesVatCode]]>
@@ -3174,6 +3466,9 @@ Public Class Item
 	'''<![CDATA[Description of Unit]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [UnitDescription] As String
+	'''<![CDATA[Type of unit: A=Area, L=Length, O=Other, T=Time, V=Volume, W=Weight]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [UnitType] As String
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
@@ -3263,58 +3558,58 @@ End Class
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("ID")>
 Public Class ItemVersion
-    '''<![CDATA[Batch Quantity of Item Version]]>
-    Public Property [BatchQuantity] As Double?
-    '''<![CDATA[Calculated Cost Price of Item Version]]>
-    Public Property [CalculatedCostPrice] As Double?
-    '''<![CDATA[Creation date]]>
-    <SDKFieldType(FieldType.ReadOnly)>
-    Public Property [Created] As DateTime?
-    '''<![CDATA[User ID of creator]]>
-    <SDKFieldType(FieldType.ReadOnly)>
-    Public Property [Creator] As Guid?
-    '''<![CDATA[Name of creator]]>
-    <SDKFieldType(FieldType.ReadOnly)>
-    Public Property [CreatorFullName] As String
-    '''<![CDATA[Description of the item version]]>
-    Public Property [Description] As String
-    '''<![CDATA[Division code]]>
-    <SDKFieldType(FieldType.ReadOnly)>
-    Public Property [Division] As Int32?
-    '''<![CDATA[Primary key]]>
-    Public Property [ID] As Guid
-    '''<![CDATA[Indicates if this is the default item version that will be assigned when a item is selected]]>
-    Public Property [IsDefault] As Byte
-    '''<![CDATA[Reference to Items table]]>
-    Public Property [Item] As Guid
-    '''<![CDATA[Description of Item]]>
-    <SDKFieldType(FieldType.ReadOnly)>
-    Public Property [ItemDescription] As String
-    '''<![CDATA[Lead time of Item version]]>
-    Public Property [LeadTime] As Int32?
-    '''<![CDATA[Last modified date]]>
-    <SDKFieldType(FieldType.ReadOnly)>
-    Public Property [Modified] As DateTime?
-    '''<![CDATA[User ID of modifier]]>
-    <SDKFieldType(FieldType.ReadOnly)>
-    Public Property [Modifier] As Guid?
-    '''<![CDATA[Name of modifier]]>
-    <SDKFieldType(FieldType.ReadOnly)>
-    Public Property [ModifierFullName] As String
-    '''<![CDATA[Line notes]]>
-    Public Property [Notes] As String
-    '''<![CDATA[Statuses of Item version: 10-Engineering change pending, 20-Engineering change approved, 30-Active & 40-Historic]]>
-    Public Property [Status] As Int16?
-    '''<![CDATA[Description of Status]]>
-    <SDKFieldType(FieldType.ReadOnly)>
-    Public Property [StatusDescription] As String
-    '''<![CDATA[Type of Item version: 10-Sales bill of material, 20-Manufacturing recipe]]>
-    Public Property [Type] As Int16?
-    '''<![CDATA[Description of Type]]>
-    <SDKFieldType(FieldType.ReadOnly)>
-    Public Property [TypeDescription] As String
-    '''<![CDATA[Version Number]]>
-    Public Property [VersionNumber] As Int32?
+	'''<![CDATA[Batch Quantity of Item Version]]>
+	Public Property [BatchQuantity] As Double?
+	'''<![CDATA[Calculated Cost Price of Item Version]]>
+	Public Property [CalculatedCostPrice] As Double?
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Description of the item version]]>
+	Public Property [Description] As String
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Indicates if this is the default item version that will be assigned when a item is selected]]>
+	Public Property [IsDefault] As Byte
+	'''<![CDATA[Reference to Items table]]>
+	Public Property [Item] As Guid
+	'''<![CDATA[Description of Item]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemDescription] As String
+	'''<![CDATA[Lead time of Item version]]>
+	Public Property [LeadTime] As Int32?
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Line notes]]>
+	Public Property [Notes] As String
+	'''<![CDATA[Statuses of Item version: 10-Engineering change pending, 20-Engineering change approved, 30-Active & 40-Historic]]>
+	Public Property [Status] As Int16?
+	'''<![CDATA[Description of Status]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [StatusDescription] As String
+	'''<![CDATA[Type of Item version: 10-Sales bill of material, 20-Manufacturing recipe]]>
+	Public Property [Type] As Int16?
+	'''<![CDATA[Description of Type]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [TypeDescription] As String
+	'''<![CDATA[Version Number]]>
+	Public Property [VersionNumber] As Int32?
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -3990,9 +4285,9 @@ Public Class Opportunity
 	Public Property [AccountName] As String
 	'''<![CDATA[Indicates the date before/on the NextAction is supposed to be done]]>
 	Public Property [ActionDate] As DateTime?
-	'''<![CDATA[Amount in default currency. AmountDC = AmountFC * RateFC]]>
+	'''<![CDATA[Amount in the default currency of the company. AmountDC = AmountFC * RateFC]]>
 	Public Property [AmountDC] As Double?
-	'''<![CDATA[Amount in foreign currency]]>
+	'''<![CDATA[Amount in the currency of the transaction]]>
 	Public Property [AmountFC] As Double?
 	'''<![CDATA[Reference to the campaign opportunity is related to]]>
 	Public Property [Campaign] As Guid?
@@ -4161,6 +4456,12 @@ Public Class OpportunityContact
 	Public Property [HID] As Int32?
 	'''<![CDATA[Primary key]]>
 	Public Property [ID] As Guid
+	'''<![CDATA[Identification date]]>
+	Public Property [IdentificationDate] As DateTime?
+	'''<![CDATA[Reference to the identification document of the contact]]>
+	Public Property [IdentificationDocument] As Guid?
+	'''<![CDATA[Reference to the user responsible for identification]]>
+	Public Property [IdentificationUser] As Guid?
 	'''<![CDATA[Initials]]>
 	Public Property [Initials] As String
 	'''<![CDATA[Indicates whether contacts are excluded from the marketing list]]>
@@ -4353,7 +4654,7 @@ End Class
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("Year,Period")>
 Public Class PeriodRevenue
-	'''<![CDATA[Total amount in default currency]]>
+	'''<![CDATA[Total amount in the default currency of the company]]>
 	Public Property [Amount] As Double
 	'''<![CDATA[Reporting period]]>
 	Public Property [Period] As Int32
@@ -4439,6 +4740,8 @@ Public Class PrintedSalesInvoice
 	Public Property [ReportingYear] As Int32?
 	'''<![CDATA[Set to True if an email containing the invoice should be sent to the invoice customer]]>
 	Public Property [SendEmailToCustomer] As Boolean?
+	'''<![CDATA[Email address from which the email will be sent. If not specified, the company email address will be used.]]>
+	Public Property [SenderEmailAddress] As String
 	'''<![CDATA[Set to True if a postbox message containing the invoice should be sent to the invoice customer]]>
 	Public Property [SendInvoiceToCustomerPostbox] As Boolean?
 	'''<![CDATA[Set to True if the output preference should be taken from the account. It will be either Paper, Email, Digital postbox. This option overrules both SendEmailToCustomer and SendInvoiceToCustomerPostbox.]]>
@@ -4470,6 +4773,8 @@ Public Class PrintedSalesOrder
 	Public Property [OrderId] As Guid
 	'''<![CDATA[Set to True if an email containing the sales order should be sent to the customer]]>
 	Public Property [SendEmailToCustomer] As Boolean?
+	'''<![CDATA[Email address from which the email will be sent. If not specified, the company email address will be used.]]>
+	Public Property [SenderEmailAddress] As String
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -4574,14 +4879,14 @@ Public Class Project
 	Public Property [BlockEntry] As Boolean?
 	'''<![CDATA[Block rebilling]]>
 	Public Property [BlockRebilling] As Boolean?
-	'''<![CDATA[Budgeted amount of sales in default currency]]>
+	'''<![CDATA[Budgeted amount of sales in the default currency of the company]]>
 	Public Property [BudgetedAmount] As Double?
-	'''<![CDATA[Budgeted amount of costs in default currency]]>
+	'''<![CDATA[Budgeted amount of costs in the default currency of the company]]>
 	Public Property [BudgetedCosts] As Double?
 	'''<![CDATA[Collection of budgeted hours]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [BudgetedHoursPerHourType] As IEnumerable(Of ProjectHourBudget)
-	'''<![CDATA[Budgeted amount of revenue in default currency]]>
+	'''<![CDATA[Budgeted amount of revenue in the default currency of the company]]>
 	Public Property [BudgetedRevenue] As Double?
 	'''<![CDATA[Budget type]]>
 	Public Property [BudgetType] As Int16?
@@ -4880,7 +5185,7 @@ End Class
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
 Public Class ProjectTerm
-	'''<![CDATA[Amount in foreign currency]]>
+	'''<![CDATA[Amount in the currency of the transaction]]>
 	Public Property [Amount] As Double?
 	'''<![CDATA[Creation date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
@@ -4935,10 +5240,10 @@ End Class
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("EntryID")>
 Public Class PurchaseEntry
-	'''<![CDATA[Amount in default currency]]>
+	'''<![CDATA[Amount in the default currency of the company]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AmountDC] As Double?
-	'''<![CDATA[Amount in foreign currency]]>
+	'''<![CDATA[Amount in the currency of the transaction]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AmountFC] As Double?
 	'''<![CDATA[Batch number]]>
@@ -5030,10 +5335,10 @@ Public Class PurchaseEntry
 	'''<![CDATA[Description of Type]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [TypeDescription] As String
-	'''<![CDATA[Vat Amount in default currency]]>
+	'''<![CDATA[Vat Amount in the default currency of the company]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [VATAmountDC] As Double?
-	'''<![CDATA[Vat Amount in foreign currency]]>
+	'''<![CDATA[Vat Amount in the currency of the transaction]]>
 	Public Property [VATAmountFC] As Double?
 	'''<![CDATA[Your reference]]>
 	Public Property [YourRef] As String
@@ -5042,10 +5347,10 @@ End Class
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
 Public Class PurchaseEntryLine
-	'''<![CDATA[Amount in default currency]]>
+	'''<![CDATA[Amount in the default currency of the company]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AmountDC] As Double?
-	'''<![CDATA[Amount in foreign currency]]>
+	'''<![CDATA[Amount in the currency of the transaction]]>
 	Public Property [AmountFC] As Double?
 	'''<![CDATA[Reference to asset]]>
 	Public Property [Asset] As Guid?
@@ -5106,15 +5411,15 @@ Public Class PurchaseEntryLine
 	'''<![CDATA[Type: 30 = Purchase entry, 31 = Purchase credit note]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Type] As Int32?
-	'''<![CDATA[VAT amount in default currency]]>
+	'''<![CDATA[VAT amount in the default currency of the company]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [VATAmountDC] As Double?
-	'''<![CDATA[VAT amount in foreign currency. Use this property to specify a VAT amount that differs from the VAT amount that is automatically calculated.]]>
+	'''<![CDATA[VAT amount in the currency of the transaction. Use this property to specify a VAT amount that differs from the VAT amount that is automatically calculated.]]>
 	Public Property [VATAmountFC] As Double?
-	'''<![CDATA[VAT base amount in default currency]]>
+	'''<![CDATA[VAT base amount in the default currency of the company]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [VATBaseAmountDC] As Double?
-	'''<![CDATA[VAT base amount in foreign currency]]>
+	'''<![CDATA[VAT base amount in the currency of the transaction]]>
 	Public Property [VATBaseAmountFC] As Double?
 	'''<![CDATA[VAT code]]>
 	Public Property [VATCode] As String
@@ -5314,10 +5619,10 @@ End Class
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("EntryID")>
 Public Class SalesEntry
-	'''<![CDATA[Amount in default currency. For the header lines (LineNumber = 0) of an entry this is the SUM(AmountDC) of all lines]]>
+	'''<![CDATA[Amount in the default currency of the company. For the header lines (LineNumber = 0) of an entry this is the SUM(AmountDC) of all lines]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AmountDC] As Double?
-	'''<![CDATA[Amount in foreign currency. For the header this is the sum of all lines, including VAT]]>
+	'''<![CDATA[Amount in the currency of the transaction. For the header this is the sum of all lines, including VAT]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AmountFC] As Double?
 	'''<![CDATA[The number of the batch of entries. Normally a batch consists of multiple entries. Batchnumbers are filled for invoices created by: - Fixed entries - Prolongation (only available with module hosting)]]>
@@ -5413,10 +5718,10 @@ Public Class SalesEntry
 	'''<![CDATA[Description of Type]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [TypeDescription] As String
-	'''<![CDATA[Vat amount in default currency]]>
+	'''<![CDATA[Vat amount in the default currency of the company]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [VATAmountDC] As Double?
-	'''<![CDATA[Vat amount in foreign currency]]>
+	'''<![CDATA[Vat amount in the currency of the transaction]]>
 	Public Property [VATAmountFC] As Double?
 	'''<![CDATA[The invoice number of the customer]]>
 	Public Property [YourRef] As String
@@ -5425,7 +5730,7 @@ End Class
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
 Public Class SalesEntryLine
-	'''<![CDATA[Amount in default currency. For almost all lines this can be calculated like: AmountDC = AmountFC * RateFC.]]>
+	'''<![CDATA[Amount in the default currency of the company. For almost all lines this can be calculated like: AmountDC = AmountFC * RateFC.]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AmountDC] As Double?
 	'''<![CDATA[For normal lines it's the amount excluding VAT]]>
@@ -5489,12 +5794,12 @@ Public Class SalesEntryLine
 	'''<![CDATA[Type: 20 = Sales entry, 21 = Sales credit note]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Type] As Int32?
-	'''<![CDATA[VAT amount in default currency]]>
+	'''<![CDATA[VAT amount in the default currency of the company]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [VATAmountDC] As Double?
-	'''<![CDATA[VAT amount in foreign currency. Use this property to specify a VAT amount that differs from the VAT amount that is automatically calculated.]]>
+	'''<![CDATA[VAT amount in the currency of the transaction. Use this property to specify a VAT amount that differs from the VAT amount that is automatically calculated.]]>
 	Public Property [VATAmountFC] As Double?
-	'''<![CDATA[The VAT base amount in default currency. This is calculated based on the VATBaseAmountFC]]>
+	'''<![CDATA[The VAT base amount in the default currency of the company. This is calculated based on the VATBaseAmountFC]]>
 	Public Property [VATBaseAmountDC] As Double?
 	'''<![CDATA[The VAT base amount in invoice currency. This is calculated with the use of VAT codes. It's an internal value]]>
 	Public Property [VATBaseAmountFC] As Double?
@@ -5543,6 +5848,7 @@ Public Class SalesInvoice
 	'''<![CDATA[The due date for payments. This date is calculated based on the EntryDate and the Paymentcondition]]>
 	Public Property [DueDate] As DateTime?
 	'''<![CDATA[Official date for the invoice. When the invoice is entered it's equal to the field 'EntryDate'. During the printing process the invoice date can be entered]]>
+	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [InvoiceDate] As DateTime?
 	'''<![CDATA[Primary key]]>
 	Public Property [InvoiceID] As Guid
@@ -5627,10 +5933,10 @@ Public Class SalesInvoice
 	'''<![CDATA[Description of the type]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [TypeDescription] As String
-	'''<![CDATA[Total VAT amount in default currency]]>
+	'''<![CDATA[Total VAT amount in the default currency of the company]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [VATAmountDC] As Double?
-	'''<![CDATA[Total VAT amount in foreign currency]]>
+	'''<![CDATA[Total VAT amount in the currency of the transaction]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [VATAmountFC] As Double?
 	'''<![CDATA[The invoice number of the customer]]>
@@ -5640,7 +5946,7 @@ End Class
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
 Public Class SalesInvoiceLine
-	'''<![CDATA[Amount in default currency. For almost all lines this can be calculated like: AmountDC = AmountFC * RateFC]]>
+	'''<![CDATA[Amount in the default currency of the company. For almost all lines this can be calculated like: AmountDC = AmountFC * RateFC]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AmountDC] As Double?
 	'''<![CDATA[For normal lines it's the amount excluding VAT]]>
@@ -5739,9 +6045,9 @@ Public Class SalesInvoiceLine
 	Public Property [UnitDescription] As String
 	'''<![CDATA[Price per unit]]>
 	Public Property [UnitPrice] As Double?
-	'''<![CDATA[VAT amount in default currency]]>
+	'''<![CDATA[VAT amount in the default currency of the company]]>
 	Public Property [VATAmountDC] As Double?
-	'''<![CDATA[VAT amount in foreign currency]]>
+	'''<![CDATA[VAT amount in the currency of the transaction]]>
 	Public Property [VATAmountFC] As Double?
 	'''<![CDATA[The VAT code that is used when the invoice is registered]]>
 	Public Property [VATCode] As String
@@ -5755,10 +6061,10 @@ End Class
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("OrderID")>
 Public Class SalesOrder
-	'''<![CDATA[Amount in default currency]]>
+	'''<![CDATA[Amount in the default currency of the company]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AmountDC] As Double?
-	'''<![CDATA[Amount in foreign currency]]>
+	'''<![CDATA[Amount in the currency of the transaction]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AmountFC] As Double?
 	'''<![CDATA[Shows if this sales order is approved]]>
@@ -5903,19 +6209,28 @@ Public Class SalesOrder
 	Public Property [YourRef] As String
 End Class
 
+<SupportedActionsSDK(True, False, False, False)>
+<DataServiceKey("ID")>
+Public Class SalesOrderID
+	Public Property [ID] As Guid
+End Class
+
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
 Public Class SalesOrderLine
-	'''<![CDATA[Amount in default currency]]>
+	'''<![CDATA[Amount in the default currency of the company]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AmountDC] As Double?
-	'''<![CDATA[Amount in foreign currency]]>
+	'''<![CDATA[Amount in the currency of the transaction]]>
 	Public Property [AmountFC] As Double?
 	'''<![CDATA[Reference to Cost center]]>
 	Public Property [CostCenter] As String
 	'''<![CDATA[Description of CostCenter]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [CostCenterDescription] As String
+	'''<![CDATA[Item cost price]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CostPriceFC] As Double?
 	'''<![CDATA[Reference to Cost unit]]>
 	Public Property [CostUnit] As String
 	'''<![CDATA[Description of CostUnit]]>
@@ -5948,6 +6263,8 @@ Public Class SalesOrderLine
 	'''<![CDATA[Line number]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [LineNumber] As Int32?
+	'''<![CDATA[Sales margin of the sales order line]]>
+	Public Property [Margin] As Double?
 	'''<![CDATA[Net price of the sales order line]]>
 	Public Property [NetPrice] As Double?
 	'''<![CDATA[Extra notes]]>
@@ -5990,11 +6307,11 @@ Public Class SalesOrderLine
 	'''<![CDATA[Description of Unit]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [UnitDescription] As String
-	'''<![CDATA[Price per unit in foreign currency]]>
+	'''<![CDATA[Price per unit in the currency of the transaction]]>
 	Public Property [UnitPrice] As Double?
 	'''<![CDATA[Indicates if drop shipment is used (delivery directly to customer, invoice to wholesaler)]]>
 	Public Property [UseDropShipment] As Byte
-	'''<![CDATA[VAT amount in foreign currency]]>
+	'''<![CDATA[VAT amount in the currency of the transaction]]>
 	Public Property [VATAmount] As Double?
 	'''<![CDATA[VAT code]]>
 	Public Property [VATCode] As String
@@ -6056,6 +6373,55 @@ Public Class Schedule
 	Public Property [StartDate] As DateTime?
 	'''<![CDATA[Week to start the schedule from for an employee]]>
 	Public Property [StartWeek] As Int32?
+End Class
+
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("ID")>
+Public Class SerialNumber
+	'''<![CDATA[Availability of this serial number]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Available] As Byte?
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
+	'''<![CDATA[End date of effective period for serial number]]>
+	Public Property [EndDate] As DateTime?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Blocking state]]>
+	Public Property [IsBlocked] As Byte?
+	'''<![CDATA[Item]]>
+	Public Property [Item] As Guid?
+	'''<![CDATA[Item code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemCode] As String
+	'''<![CDATA[Description of item]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemDescription] As String
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Remarks]]>
+	Public Property [Remarks] As String
+	'''<![CDATA[Human readable serial number]]>
+	Public Property [SerialNumber] As String
+	'''<![CDATA[Start date of effective period for serial number]]>
+	Public Property [StartDate] As DateTime?
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -6181,6 +6547,9 @@ Public Class ShopOrderMaterialPlan
 	Public Property [ID] As Guid
 	'''<![CDATA[Reference to Items table]]>
 	Public Property [Item] As Guid?
+	'''<![CDATA[Item Code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemCode] As String
 	'''<![CDATA[Description of Item]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ItemDescription] As String
@@ -6197,7 +6566,7 @@ Public Class ShopOrderMaterialPlan
 	Public Property [ModifierFullName] As String
 	'''<![CDATA[Line notes]]>
 	Public Property [Notes] As String
-	'''<![CDATA[Planned amount in foreign currency]]>
+	'''<![CDATA[Planned amount in the currency of the transaction]]>
 	Public Property [PlannedAmountFC] As Double?
 	'''<![CDATA[Date that the material is required.]]>
 	Public Property [PlannedDate] As DateTime?
@@ -6214,6 +6583,11 @@ Public Class ShopOrderMaterialPlan
 	'''<![CDATA[Description of Status]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [StatusDescription] As String
+	'''<![CDATA[Type]]>
+	Public Property [Type] As Int16?
+	'''<![CDATA[Unit]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Unit] As String
 End Class
 
 <SupportedActionsSDK(True, True, True, True)>
@@ -6221,6 +6595,12 @@ End Class
 Public Class ShopOrderRoutingStepPlan
 	'''<![CDATA[Reference to Account providing the Outsourced item]]>
 	Public Property [Account] As Guid?
+	'''<![CDATA[Account name]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [AccountName] As String
+	'''<![CDATA[Account number]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [AccountNumber] As String
 	'''<![CDATA[Attended Percentage]]>
 	Public Property [AttendedPercentage] As Double?
 	'''<![CDATA[Indicates if this is a backflush step]]>
@@ -6258,8 +6638,13 @@ Public Class ShopOrderRoutingStepPlan
 	'''<![CDATA[Name of modifier]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ModifierFullName] As String
+	'''<![CDATA[Notes]]>
+	Public Property [Notes] As String
 	'''<![CDATA[Reference to Operations]]>
 	Public Property [Operation] As Guid?
+	'''<![CDATA[Code of the routing step operation]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [OperationCode] As String
 	'''<![CDATA[Description of the operation step]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [OperationDescription] As String
@@ -6279,7 +6664,7 @@ Public Class ShopOrderRoutingStepPlan
 	Public Property [PurchaseUnit] As String
 	'''<![CDATA[Purchase Unit Factor]]>
 	Public Property [PurchaseUnitFactor] As Double?
-	'''<![CDATA[Purchase Unit Price in foreign currency]]>
+	'''<![CDATA[Purchase Unit Price in the currency of the transaction]]>
 	Public Property [PurchaseUnitPriceFC] As Double?
 	'''<![CDATA[Purchase unit quantity of the plan]]>
 	Public Property [PurchaseUnitQuantity] As Double?
@@ -6311,6 +6696,159 @@ Public Class ShopOrderRoutingStepPlan
 	Public Property [TotalCostDC] As Double?
 	'''<![CDATA[Reference to Workcenters]]>
 	Public Property [Workcenter] As Guid?
+	'''<![CDATA[Workcenter code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [WorkcenterCode] As String
+	'''<![CDATA[Workcenter description]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [WorkcenterDescription] As String
+End Class
+
+<SupportedActionsSDK(True, True, True, True)>
+<DataServiceKey("ID")>
+Public Class SolutionLink
+	'''<![CDATA[ID of account to which solution is linked]]>
+	Public Property [Account] As Guid
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime
+	'''<![CDATA[User ID of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Accountant main division]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32
+	'''<![CDATA[If type is external predefined, represents ID of PracticeManagementExternalSolutions (mandatory for External solution)]]>
+	Public Property [ExternalSolutionCode] As Int32?
+	'''<![CDATA[Customer URl in external solution, like solution.com/id123 (mandatory for External and ExternalOther solution)]]>
+	Public Property [ExternalSolutionUrl] As String
+	'''<![CDATA[Primary key]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ID] As Guid
+	'''<![CDATA[Division code of linked internal solution (mandatory for Internal solution)]]>
+	Public Property [InternalSolutionDivision] As Int32?
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of the solution link]]>
+	Public Property [Name] As String
+	'''<![CDATA[Name of the custom external solution (mandatory for ExternalOther solution)]]>
+	Public Property [OtherExternalSolutionName] As String
+	'''<![CDATA[Type of solution: 0 - Internal(EOL), 1 - External(Wellknown solution), 2 - ExternalOther]]>
+	Public Property [SolutionType] As Int32
+	'''<![CDATA[Link status: 0 - Active, 1 - Inactive, 2 -Archived]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Status] As Int32
+End Class
+
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("ID")>
+Public Class StockBatchNumber
+	'''<![CDATA[Human readable batch number]]>
+	Public Property [BatchNumber] As String
+	'''<![CDATA[Batch number ID]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [BatchNumberID] As Guid?
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
+	'''<![CDATA[End date of effective period for batch number]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [EndDate] As DateTime?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Blocking state]]>
+	Public Property [IsBlocked] As Byte?
+	'''<![CDATA[Item]]>
+	Public Property [Item] As Guid?
+	'''<![CDATA[Item code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemCode] As String
+	'''<![CDATA[Description of item]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemDescription] As String
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Quantity of batch number]]>
+	Public Property [Quantity] As Double?
+	'''<![CDATA[Remarks]]>
+	Public Property [Remarks] As String
+	'''<![CDATA[ID of stock count entry]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [StockCountLine] As Guid?
+	Public Property [StockTransactionID] As Guid?
+End Class
+
+<SupportedActionsSDK(False, True, False, False)>
+<DataServiceKey("ID")>
+Public Class StockSerialNumber
+	'''<![CDATA[Creation date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Created] As DateTime?
+	'''<![CDATA[User ID of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Creator] As Guid?
+	'''<![CDATA[Name of creator]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [CreatorFullName] As String
+	'''<![CDATA[Division code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Division] As Int32?
+	'''<![CDATA[End date of effective period for serial number]]>
+	Public Property [EndDate] As DateTime?
+	'''<![CDATA[Primary key]]>
+	Public Property [ID] As Guid
+	'''<![CDATA[Blocking state]]>
+	Public Property [IsBlocked] As Byte?
+	'''<![CDATA[Item]]>
+	Public Property [Item] As Guid?
+	'''<![CDATA[Item code]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemCode] As String
+	'''<![CDATA[Description of item]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ItemDescription] As String
+	'''<![CDATA[Last modified date]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modified] As DateTime?
+	'''<![CDATA[User ID of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [Modifier] As Guid?
+	'''<![CDATA[Name of modifier]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [ModifierFullName] As String
+	'''<![CDATA[Remarks]]>
+	Public Property [Remarks] As String
+	'''<![CDATA[Human readable serial number]]>
+	Public Property [SerialNumber] As String
+	'''<![CDATA[Serial number ID]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [SerialNumberID] As Guid?
+	'''<![CDATA[Start date of effective period for serial number]]>
+	Public Property [StartDate] As DateTime?
+	'''<![CDATA[ID of stock count entry]]>
+	<SDKFieldType(FieldType.ReadOnly)>
+	Public Property [StockCountLine] As Guid?
+	Public Property [StockTransactionID] As Guid?
 End Class
 
 <SupportedActionsSDK(False, True, False, False)>
@@ -6392,6 +6930,8 @@ Public Class Subscription
 	Public Property [EndDate] As DateTime?
 	'''<![CDATA[Primary key]]>
 	Public Property [EntryID] As Guid
+	'''<![CDATA[Invoice Day]]>
+	Public Property [InvoiceDay] As Byte?
 	'''<![CDATA[Invoice date]]>
 	Public Property [InvoicedTo] As DateTime?
 	'''<![CDATA[Reference to invoice account]]>
@@ -6477,9 +7017,9 @@ End Class
 <SupportedActionsSDK(True, True, True, True)>
 <DataServiceKey("ID")>
 Public Class SubscriptionLine
-	'''<![CDATA[Amount in default currency]]>
+	'''<![CDATA[Amount in the default currency of the company]]>
 	Public Property [AmountDC] As Double
-	'''<![CDATA[Amount in foreign currency]]>
+	'''<![CDATA[Amount in the currency of the transaction]]>
 	Public Property [AmountFC] As Double
 	'''<![CDATA[Cost center]]>
 	Public Property [Costcenter] As String
@@ -6510,7 +7050,7 @@ Public Class SubscriptionLine
 	'''<![CDATA[Description of LineType]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [LineTypeDescription] As String
-	'''<![CDATA[Net price in foreign currency]]>
+	'''<![CDATA[Net price in the currency of the transaction]]>
 	Public Property [NetPrice] As Double
 	'''<![CDATA[Remarks]]>
 	Public Property [Notes] As String
@@ -6523,9 +7063,9 @@ Public Class SubscriptionLine
 	'''<![CDATA[Description of Unit]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [UnitDescription] As String
-	'''<![CDATA[Unit price in foreign currency (price * unit factor)]]>
+	'''<![CDATA[Unit price in the currency of the transaction (price * unit factor)]]>
 	Public Property [UnitPrice] As Double
-	'''<![CDATA[Vat Amount in foreign currency]]>
+	'''<![CDATA[Vat Amount in the currency of the transaction]]>
 	Public Property [VATAmountFC] As Double?
 	'''<![CDATA[VATCode]]>
 	Public Property [VATCode] As String
@@ -6730,7 +7270,7 @@ End Class
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("DocumentID")>
 Public Class TaxDocument
-	'''<![CDATA[Amount in foreign currency]]>
+	'''<![CDATA[Amount in the currency of the transaction]]>
 	Public Property [Amount] As Double?
 	'''<![CDATA[Creation date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
@@ -7007,9 +7547,9 @@ Public Class TimeTransaction
 	'''<![CDATA[Description of ProjectWBS]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [ActivityDescription] As String
-	'''<![CDATA[Amount in foreign currency]]>
+	'''<![CDATA[Amount in the currency of the transaction]]>
 	Public Property [Amount] As Double?
-	'''<![CDATA[Amount in foreign currency of the transaction]]>
+	'''<![CDATA[Amount in the currency of the transaction of the transaction]]>
 	Public Property [AmountFC] As Double?
 	'''<![CDATA[Attachment linked to the transaction]]>
 	Public Property [Attachment] As Guid?
@@ -7063,7 +7603,7 @@ Public Class TimeTransaction
 	Public Property [ModifierFullName] As String
 	'''<![CDATA[Notes linked to the transaction]]>
 	Public Property [Notes] As String
-	'''<![CDATA[Price in foreign currency]]>
+	'''<![CDATA[Price in the currency of the transaction]]>
 	Public Property [Price] As Double?
 	'''<![CDATA[PriceFC (AmountFC = Quantity * PriceFC)]]>
 	Public Property [PriceFC] As Double?
@@ -7109,7 +7649,7 @@ End Class
 <SupportedActionsSDK(False, True, False, False)>
 <DataServiceKey("EntryID")>
 Public Class Transaction
-	'''<![CDATA[Closing balance in foreign currency]]>
+	'''<![CDATA[Closing balance in the currency of the transaction]]>
 	Public Property [ClosingBalanceFC] As Double?
 	'''<![CDATA[Creation date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
@@ -7137,7 +7677,7 @@ Public Class Transaction
 	'''<![CDATA[Last modified date]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Modified] As DateTime?
-	'''<![CDATA[Opening balance in foreign currency]]>
+	'''<![CDATA[Opening balance in the currency of the transaction]]>
 	Public Property [OpeningBalanceFC] As Double?
 	'''<![CDATA[Code of PaymentCondition]]>
 	Public Property [PaymentConditionCode] As String
@@ -7169,13 +7709,13 @@ Public Class TransactionLine
 	'''<![CDATA[Name of the Account]]>
 	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [AccountName] As String
-	'''<![CDATA[Amount in default currency]]>
+	'''<![CDATA[Amount in the default currency of the company]]>
 	Public Property [AmountDC] As Double?
-	'''<![CDATA[Amount in foreign currency]]>
+	'''<![CDATA[Amount in the currency of the transaction]]>
 	Public Property [AmountFC] As Double?
-	'''<![CDATA[Vat base amount in foreign currency]]>
+	'''<![CDATA[Vat base amount in the currency of the transaction]]>
 	Public Property [AmountVATBaseFC] As Double?
-	'''<![CDATA[Vat amount in foreign currency]]>
+	'''<![CDATA[Vat amount in the currency of the transaction]]>
 	Public Property [AmountVATFC] As Double?
 	'''<![CDATA[Reference to asset]]>
 	Public Property [Asset] As Guid?
@@ -7587,6 +8127,8 @@ Public Class VatPercentage
 	Public Property [Percentage] As Double?
 	'''<![CDATA[Start date of the date range during which this percentage is valid]]>
 	Public Property [StartDate] As DateTime?
+	'''<![CDATA[0 = Normal, 1 = Extra duty]]>
+	Public Property [Type] As Int16
 	'''<![CDATA[VAT code]]>
 	Public Property [VATCodeID] As Guid
 End Class
