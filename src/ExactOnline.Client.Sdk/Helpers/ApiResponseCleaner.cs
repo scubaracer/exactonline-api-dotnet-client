@@ -38,6 +38,9 @@ namespace ExactOnline.Client.Sdk.Helpers
 		{
 			var serializer = new JavaScriptSerializer();
 			serializer.RegisterConverters(new JavaScriptConverter[] { new JssDateTimeConverter() });
+			
+			var oldCulture = Thread.CurrentThread.CurrentCulture;
+			Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
 			try
 			{
 				ArrayList results;
@@ -57,6 +60,10 @@ namespace ExactOnline.Client.Sdk.Helpers
 			catch (Exception e)
 			{
 				throw new IncorrectJsonException(e.Message);
+			}
+			finally
+			{
+				Thread.CurrentThread.CurrentCulture = oldCulture;
 			}
 
 		}
