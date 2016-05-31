@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web.Script.Serialization;
 using ExactOnline.Client.Sdk.Exceptions;
 using Newtonsoft.Json;
+using System.Globalization;
+using System.Threading;
 
 namespace ExactOnline.Client.Sdk.Helpers
 {
