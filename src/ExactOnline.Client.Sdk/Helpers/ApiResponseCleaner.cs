@@ -26,10 +26,20 @@ namespace ExactOnline.Client.Sdk.Helpers
 		{
 			var serializer = new JavaScriptSerializer();
 			serializer.RegisterConverters(new JavaScriptConverter[] { new JssDateTimeConverter() });
-			var dict = (Dictionary<string, object>)serializer.Deserialize<object>(response);
+			var oldCulture = Thread.CurrentThread.CurrentCulture;
+            		Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 
-			var d = (Dictionary<string, object>)dict["d"];
-			string output = GetJsonFromDictionary(d);
+		    	string output;
+		    	try
+		    	{
+		        	var dict = (Dictionary<string, object>)serializer.Deserialize<object>(response);
+		        	var d = (Dictionary<string, object>)dict["d"];
+		        	output = GetJsonFromDictionary(d);
+		    	}
+		    	finally
+		    	{
+                		Thread.CurrentThread.CurrentCulture = oldCulture;
+		    	}
 			return output;
 		}
 
@@ -42,7 +52,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 			serializer.RegisterConverters(new JavaScriptConverter[] { new JssDateTimeConverter() });
 			
 			var oldCulture = Thread.CurrentThread.CurrentCulture;
-			Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+			Thread.CurrentThread.CurrentCulture =CultureInfo.InvariantCulture;
 			try
 			{
 				ArrayList results;
