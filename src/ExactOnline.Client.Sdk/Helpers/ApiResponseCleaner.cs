@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web.Script.Serialization;
 using ExactOnline.Client.Sdk.Exceptions;
 using Newtonsoft.Json;
+using System.Globalization;
+using System.Threading;
 
 namespace ExactOnline.Client.Sdk.Helpers
 {
@@ -24,10 +26,20 @@ namespace ExactOnline.Client.Sdk.Helpers
 		{
 			var serializer = new JavaScriptSerializer();
 			serializer.RegisterConverters(new JavaScriptConverter[] { new JssDateTimeConverter() });
-			var dict = (Dictionary<string, object>)serializer.Deserialize<object>(response);
+			var oldCulture = Thread.CurrentThread.CurrentCulture;
+            		Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 
-			var d = (Dictionary<string, object>)dict["d"];
-			string output = GetJsonFromDictionary(d);
+		    	string output;
+		    	try
+		    	{
+		        	var dict = (Dictionary<string, object>)serializer.Deserialize<object>(response);
+		        	var d = (Dictionary<string, object>)dict["d"];
+		        	output = GetJsonFromDictionary(d);
+		    	}
+		    	finally
+		    	{
+                		Thread.CurrentThread.CurrentCulture = oldCulture;
+		    	}
 			return output;
 		}
 
@@ -38,6 +50,9 @@ namespace ExactOnline.Client.Sdk.Helpers
 		{
 			var serializer = new JavaScriptSerializer();
 			serializer.RegisterConverters(new JavaScriptConverter[] { new JssDateTimeConverter() });
+			
+			var oldCulture = Thread.CurrentThread.CurrentCulture;
+			Thread.CurrentThread.CurrentCulture =CultureInfo.InvariantCulture;
 			try
 			{
 				ArrayList results;
@@ -57,6 +72,10 @@ namespace ExactOnline.Client.Sdk.Helpers
 			catch (Exception e)
 			{
 				throw new IncorrectJsonException(e.Message);
+			}
+			finally
+			{
+				Thread.CurrentThread.CurrentCulture = oldCulture;
 			}
 
 		}
