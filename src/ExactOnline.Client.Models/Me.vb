@@ -1,6 +1,9 @@
 <DataServiceKey("UserID")>
 Public Class [Me]
 	Public Property CurrentDivision As Integer
+	Public Property DivisionCustomer As Guid
+	Public Property DivisionCustomerCode As String
+	Public Property DivisionCustomerName As String
 	Public Property FullName As String
 	Public Property PictureUrl As String
 	Public Property ThumbnailPicture As Byte()
