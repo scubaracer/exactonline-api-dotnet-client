@@ -14,6 +14,7 @@ namespace ExactOnline.Client.Sdk.Controllers
 		private readonly ApiConnector _apiConnector;
 		private readonly string _exactOnlineApiUrl;		// https://start.exactonline.nl/api/v1
 		private readonly ControllerList _controllers;
+		private int _division;
 
 		#region Constructors
 
@@ -32,8 +33,8 @@ namespace ExactOnline.Client.Sdk.Controllers
 			if (!exactOnlineUrl.EndsWith("/")) exactOnlineUrl += "/";
 			_exactOnlineApiUrl = exactOnlineUrl + "api/v1/";
 
-			int currentDivision = (division > 0) ? division : GetDivision();
-			string serviceRoot = _exactOnlineApiUrl + currentDivision + "/";
+			_division = (division > 0) ? division : GetDivision();
+			string serviceRoot = _exactOnlineApiUrl + _division + "/";
 
 			_controllers = new ControllerList(_apiConnector, serviceRoot);
 		}
@@ -72,11 +73,18 @@ namespace ExactOnline.Client.Sdk.Controllers
 		/// <returns>Division number</returns>
 		public int GetDivision()
 		{
+			if (_division > 0)
+			{
+				return _division;
+			}
+
 			var currentMe = CurrentMe();
 			if (currentMe != null)
 			{
-				return currentMe.CurrentDivision;
+				_division = currentMe.CurrentDivision;
+				return _division;
 			}
+
 			throw new Exception("Cannot get division. Please specify division explicitly via the constructor.");
 		}
 
@@ -90,6 +98,5 @@ namespace ExactOnline.Client.Sdk.Controllers
 		}
 
 		#endregion
-
 	}
 }
