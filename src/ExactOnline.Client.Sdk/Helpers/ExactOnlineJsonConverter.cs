@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using ExactOnline.Client.Models;
+﻿using ExactOnline.Client.Models;
 using ExactOnline.Client.Sdk.Controllers;
 using ExactOnline.Client.Sdk.Delegates;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 
 namespace ExactOnline.Client.Sdk.Helpers
 {
 	public class ExactOnlineJsonConverter : JsonConverter
 	{
-		private readonly GetEntityController _entityControllerDelegate; 
+		private readonly GetEntityController _entityControllerDelegate;
 		private readonly Boolean _createUpdateJson;
 		private readonly object _originalEntity;
 
@@ -47,7 +47,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// <returns>True if the entity can be converted</returns>
 		public override bool CanConvert(Type objectType)
 		{
-			return (objectType.ToString().Contains("ExactOnline.Client.Models"));			
+			return (objectType.ToString().Contains("ExactOnline.Client.Models"));
 		}
 
 		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
@@ -76,7 +76,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 			foreach (SDKFieldType field in attributes)
 			{
 				if (
-						(field.TypeOfField == FieldType.ReadOnly) 
+						(field.TypeOfField == FieldType.ReadOnly)
 					)
 				{
 					returnValue = false;
@@ -128,7 +128,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 		private JsonConverter[] GetCorrectConverters(object entity)
 		{
 			// Get correct converter
-			var converter = new ExactOnlineJsonConverter();
+			ExactOnlineJsonConverter converter;
 			if (_createUpdateJson)
 			{
 				var emanager = GetEntityController(entity);
@@ -137,9 +137,18 @@ namespace ExactOnline.Client.Sdk.Helpers
 					// Entity is an existing entity. Create JsonConverter for updating an existing entity
 					converter = new ExactOnlineJsonConverter(emanager.OriginalEntity, _entityControllerDelegate);
 				}
+				else
+				{
+					// Entity is a new entity. Create JsonConverter for sending only changed fields
+					var emptyEntity = Activator.CreateInstance(entity.GetType());
+					converter = new ExactOnlineJsonConverter(emptyEntity, _entityControllerDelegate);
+				}
 			}
-			
-			//converter.SkipReferenceField = true;
+			else
+			{
+				converter = new ExactOnlineJsonConverter();
+			}
+
 			var converters = new[] { (JsonConverter)converter };
 			return converters;
 		}
@@ -182,8 +191,8 @@ namespace ExactOnline.Client.Sdk.Helpers
 			{
 				var updatedfields = GetUpdatedFields(writeableFields, value); // If Json for update: Get only updated fields
 				writeableFields = (from f in writeableFields
-						   join up in updatedfields on f.Name equals up.Name
-						   select f).ToArray();
+								   join up in updatedfields on f.Name equals up.Name
+								   select f).ToArray();
 
 			}
 			return writeableFields;
@@ -202,7 +211,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
 		{
 			var writeableFields = GetWriteableFields(value, _createUpdateJson);
-			var guidsToSkip = writeableFields.Where(x => x.GetValue(value) is Guid 
+			var guidsToSkip = writeableFields.Where(x => x.GetValue(value) is Guid
 									&& (Guid)x.GetValue(value) == Guid.Empty).ToArray();
 
 			// Remove the fields to skip from the writeable fields
