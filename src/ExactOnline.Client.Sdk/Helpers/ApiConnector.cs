@@ -1,16 +1,13 @@
-﻿using System;
-using System.Diagnostics;
-using System.IO;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-using ExactOnline.Client.Sdk.Delegates;
+﻿using ExactOnline.Client.Sdk.Delegates;
 using ExactOnline.Client.Sdk.Enums;
 using ExactOnline.Client.Sdk.Exceptions;
 using ExactOnline.Client.Sdk.Interfaces;
 using Newtonsoft.Json;
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Net;
+using System.Text;
 
 namespace ExactOnline.Client.Sdk.Helpers
 {
@@ -49,6 +46,9 @@ namespace ExactOnline.Client.Sdk.Helpers
 
 			var request = CreateRequest(endpoint, oDataQuery, RequestTypeEnum.GET);
 
+			Debug.Write("GET ");
+			Debug.WriteLine(request.RequestUri);
+
 			return GetResponse(request);
 		}
 
@@ -80,6 +80,10 @@ namespace ExactOnline.Client.Sdk.Helpers
 				throw new BadRequestException(); // Post request needs data
 			}
 
+			Debug.Write("POST ");
+			Debug.WriteLine(request.RequestUri);
+			Debug.WriteLine(postdata);
+
 			return GetResponse(request);
 		}
 
@@ -110,6 +114,11 @@ namespace ExactOnline.Client.Sdk.Helpers
 				// Post request needs data
 				throw new BadRequestException();
 			}
+
+			Debug.Write("PUT ");
+			Debug.WriteLine(request.RequestUri);
+			Debug.WriteLine(putData);
+
 			return GetResponse(request);
 		}
 
@@ -123,6 +132,9 @@ namespace ExactOnline.Client.Sdk.Helpers
 			if (string.IsNullOrEmpty(endpoint)) throw new ArgumentException("Cannot perform request with empty endpoint");
 
 			var request = CreateRequest(endpoint, null, RequestTypeEnum.DELETE);
+
+			Debug.Write("DELETE ");
+			Debug.WriteLine(request.RequestUri);
 
 			return GetResponse(request);
 		}
@@ -143,13 +155,13 @@ namespace ExactOnline.Client.Sdk.Helpers
 
 		public int GetCurrentDivision(string website)
 		{
-			var url = website + "/api/v1/current/Me" ;
+			var url = website + "/api/v1/current/Me";
 			const string oDataQuery = "$select=CurrentDivision";
-			
+
 			var request = CreateRequest(url, oDataQuery, RequestTypeEnum.GET);
 			var response = GetResponse(request);
 			var jsonObject = JsonConvert.DeserializeObject<dynamic>(response);
-			
+
 			return (int)jsonObject.d["results"][0]["CurrentDivision"].Value;
 		}
 
@@ -170,9 +182,6 @@ namespace ExactOnline.Client.Sdk.Helpers
 			request.Accept = "application/json";
 			request.Headers.Add("Authorization", "Bearer " + _accessTokenDelegate());
 
-			Debug.WriteLine(request.Method);
-			Debug.WriteLine(url);
-
 			return request;
 		}
 
@@ -180,6 +189,8 @@ namespace ExactOnline.Client.Sdk.Helpers
 		{
 			// Grab the response
 			var responseValue = string.Empty;
+
+			Debug.WriteLine("RESPONSE");
 
 			// Get response. If this fails: Throw the correct Exception (for testability)
 			try
@@ -194,55 +205,42 @@ namespace ExactOnline.Client.Sdk.Helpers
 					}
 				}
 			}
-            catch (WebException ex)
+			catch (WebException ex)
 			{
 				var statusCode = (((HttpWebResponse)ex.Response).StatusCode);
-
 				Debug.WriteLine(ex.Message);
+
+				var messageFromServer = new StreamReader(ex.Response.GetResponseStream()).ReadToEnd();
+				Debug.WriteLine(messageFromServer);
+				Debug.WriteLine("");
 
 				switch (statusCode)
 				{
-					case HttpStatusCode.BadRequest:
-                        throw new BadRequestException(ex.Message, ex); // 400
-
-					case HttpStatusCode.Unauthorized: //401
-                        throw new UnauthorizedException(ex.Message, ex); // 401
-
-					case HttpStatusCode.Forbidden:
-                        throw new ForbiddenException(ex.Message, ex); // 403
-
-					case HttpStatusCode.NotFound:
-                        throw new NotFoundException(ex.Message, ex); // 404
-
-					case HttpStatusCode.InternalServerError: // 500
-                        throw new InternalServerErrorException(GetInternalServerErrorMessage(ex), ex);
-
+					case HttpStatusCode.BadRequest: // 400
 					case HttpStatusCode.MethodNotAllowed: // 405
 						throw new BadRequestException(ex.Message, ex);
+
+					case HttpStatusCode.Unauthorized: //401
+						throw new UnauthorizedException(ex.Message, ex); // 401
+
+					case HttpStatusCode.Forbidden:
+						throw new ForbiddenException(ex.Message, ex); // 403
+
+					case HttpStatusCode.NotFound:
+						throw new NotFoundException(ex.Message, ex); // 404
+
+					case HttpStatusCode.InternalServerError: // 500
+						throw new InternalServerErrorException(messageFromServer, ex);
 				}
 
 				throw;
 			}
 
 			Debug.WriteLine(responseValue);
+			Debug.WriteLine("");
 
 			return responseValue;
 		}
-
-        private static string GetInternalServerErrorMessage(WebException ex)
-        {
-            var errorMessage = new StreamReader(ex.Response.GetResponseStream()).ReadToEnd();
-
-            try
-            {
-                var deserializedObject = JsonConvert.DeserializeObject<dynamic>(errorMessage);
-                return deserializedObject["error"]["message"]["value"];
-            }
-            catch
-            {
-                return ex.Message;
-            }
-        }
 
 		#endregion
 
