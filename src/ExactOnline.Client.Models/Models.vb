@@ -2021,7 +2021,6 @@ Public Class DirectDebitMandate
 	'''<![CDATA[Payment type. 0 = one-off payment, 1 = recurrent payment, 2 = AdHoc (UK only)]]>
 	Public Property [PaymentType] As Int16?
 	'''<![CDATA[Reference]]>
-	<SDKFieldType(FieldType.ReadOnly)>
 	Public Property [Reference] As String
 	'''<![CDATA[Signature date]]>
 	Public Property [SignatureDate] As DateTime?
