@@ -164,12 +164,13 @@ namespace ExactOnline.Client.Sdk.Helpers
 		}
 
 		/// <summary>
-		/// Counts the number of resources/entities
+        /// Counts the number of resources/entities, including parameters
 		/// </summary>
+        /// <param name="parameters">Parameters</param>
 		/// <returns></returns>
-		public int Count()
+        public int Count(string parameters)
 		{
-			string response = _conn.DoCleanRequest(EndPoint + "/$count");
+            string response = _conn.DoCleanRequest(EndPoint + "/$count", parameters);
 			return int.Parse(response);
 		}
 	}

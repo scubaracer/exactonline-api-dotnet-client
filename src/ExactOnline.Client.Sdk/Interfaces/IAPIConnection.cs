@@ -5,7 +5,7 @@ namespace ExactOnline.Client.Sdk.Interfaces
 	public interface IApiConnection
 	{
 		string Get(string parameters);
-		
+
 		string GetEntity(string keyname, string guid, string parameters);
 
 		string Post(string data);
@@ -14,7 +14,7 @@ namespace ExactOnline.Client.Sdk.Interfaces
 
 		Boolean Delete(string keyName, string guid);
 
-		int Count();
+		int Count(string parameters);
 
 	}
 }
