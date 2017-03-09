@@ -147,6 +147,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 		public string DoCleanRequest(string uri) // Build for doing $count function
 		{
 			var request = (HttpWebRequest)WebRequest.Create(uri);
+			request.ServicePoint.Expect100Continue = false;
 			request.Method = RequestTypeEnum.GET.ToString();
 			request.ContentType = "application/json";
 			request.Headers.Add("Authorization", "Bearer " + _accessTokenDelegate());
@@ -177,6 +178,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 			}
 
 			var request = (HttpWebRequest)WebRequest.Create(url);
+			request.ServicePoint.Expect100Continue = false;
 			request.Method = method.ToString();
 			request.ContentType = "application/json";
 			if (!string.IsNullOrEmpty(acceptContentType))
