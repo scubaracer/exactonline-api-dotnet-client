@@ -1,8 +1,8 @@
-﻿using System;
-using ExactOnline.Client.Models;
+﻿using ExactOnline.Client.Models.CRM;
 using ExactOnline.Client.Sdk.Controllers;
 using ExactOnline.Client.Sdk.TestContext;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace ExactOnline.Client.Sdk.UserAcceptanceTests.UserLevel
 {
@@ -17,8 +17,8 @@ namespace ExactOnline.Client.Sdk.UserAcceptanceTests.UserLevel
 
 			// Create new account
 			var client = new ExactOnlineClient(toc.EndPoint, toc.GetOAuthAuthenticationToken);
-			var newAccount = new Account {Name = "Test account"};
-			
+			var newAccount = new Account { Name = "Test account" };
+
 			if (client.For<Account>().Insert(ref newAccount))
 			{
 				// Try to delete account

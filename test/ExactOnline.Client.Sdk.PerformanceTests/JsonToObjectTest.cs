@@ -1,4 +1,5 @@
-﻿using ExactOnline.Client.Models;
+﻿using ExactOnline.Client.Models.CRM;
+using ExactOnline.Client.Models.SalesInvoice;
 using ExactOnline.Client.Sdk.Helpers;
 using ExactOnline.Client.Sdk.PerformanceTests.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

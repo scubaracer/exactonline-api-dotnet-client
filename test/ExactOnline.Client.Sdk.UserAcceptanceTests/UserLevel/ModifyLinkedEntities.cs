@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using ExactOnline.Client.Models;
+﻿using ExactOnline.Client.Models.CRM;
+using ExactOnline.Client.Models.Logistics;
+using ExactOnline.Client.Models.SalesInvoice;
 using ExactOnline.Client.Sdk.Controllers;
 using ExactOnline.Client.Sdk.TestContext;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ExactOnline.Client.Sdk.UserAcceptanceTests.UserLevel
 {
@@ -56,11 +58,11 @@ namespace ExactOnline.Client.Sdk.UserAcceptanceTests.UserLevel
 
 			// add line
 			var invoiceline = new SalesInvoiceLine
-				{
-					Description = "New Sales Invoice Line",
-					InvoiceID = salesinvoice.InvoiceID,
-					Item = item.ID
-				};
+			{
+				Description = "New Sales Invoice Line",
+				InvoiceID = salesinvoice.InvoiceID,
+				Item = item.ID
+			};
 			Assert.IsTrue(client.For<SalesInvoiceLine>().Insert(ref invoiceline));
 		}
 

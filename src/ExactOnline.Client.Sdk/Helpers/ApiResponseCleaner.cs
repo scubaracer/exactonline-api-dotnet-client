@@ -27,19 +27,19 @@ namespace ExactOnline.Client.Sdk.Helpers
 			var serializer = new JavaScriptSerializer();
 			serializer.RegisterConverters(new JavaScriptConverter[] { new JssDateTimeConverter() });
 			var oldCulture = Thread.CurrentThread.CurrentCulture;
-            		Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+					Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 
-		    	string output;
-		    	try
-		    	{
-		        	var dict = (Dictionary<string, object>)serializer.Deserialize<object>(response);
-		        	var d = (Dictionary<string, object>)dict["d"];
-		        	output = GetJsonFromDictionary(d);
-		    	}
-		    	finally
-		    	{
-                		Thread.CurrentThread.CurrentCulture = oldCulture;
-		    	}
+				string output;
+				try
+				{
+					var dict = (Dictionary<string, object>)serializer.Deserialize<object>(response);
+					var d = (Dictionary<string, object>)dict["d"];
+					output = GetJsonFromDictionary(d);
+				}
+				finally
+				{
+						Thread.CurrentThread.CurrentCulture = oldCulture;
+				}
 			return output;
 		}
 

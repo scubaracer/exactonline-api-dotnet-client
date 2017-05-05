@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using ExactOnline.Client.Models;
+﻿using ExactOnline.Client.Models.SalesInvoice;
 using ExactOnline.Client.Sdk.Controllers;
 using ExactOnline.Client.Sdk.TestContext;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ExactOnline.Client.Sdk.UserAcceptanceTests.UserLevel
 {
