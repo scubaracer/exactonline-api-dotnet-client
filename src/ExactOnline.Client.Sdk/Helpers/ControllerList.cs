@@ -17,7 +17,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 		private readonly IApiConnector _connector;
 		private readonly string _baseUrl;
 		private readonly Hashtable _controllers;
-		private Dictionary<string, string> _services;
+		private readonly Dictionary<string, string> _services;
 
 		public ControllerList(IApiConnector connector, string baseUrl)
 		{
@@ -43,7 +43,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// </summary>
 		public IController<T> GetController<T>() where T : class
 		{
-			var typename = typeof(T).Name;
+			var typename = typeof(T).FullName;
 			var returncontroller = (Controller<T>)_controllers[typename];
 
 			// If not exists: create
@@ -51,7 +51,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 			{
 				ApiConnection conn;
 
-				if (typename == "Me")
+				if (typename == typeof(Models.Current.Me).FullName)
 				{
 					conn = new ApiConnection(_connector, _baseUrl + "system/Me");
 				}
@@ -61,7 +61,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 				}
 				else
 				{
-					throw new Exception("Specified entity is not known in Exact Online. Please check the reference documentation");
+					throw new InvalidOperationException("Specified entity is not known in Exact Online. Please check the reference documentation");
 				}
 
 				returncontroller = new Controller<T>(conn)

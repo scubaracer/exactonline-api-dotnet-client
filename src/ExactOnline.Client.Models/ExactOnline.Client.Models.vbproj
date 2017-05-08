@@ -59,12 +59,28 @@
     <Import Include="System.Collections.Generic" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accountancy.vb" />
+    <Compile Include="Activities.vb" />
+    <Compile Include="Assets.vb" />
     <Compile Include="Attributes\DataServiceKey.vb" />
     <Compile Include="Attributes\FieldType.vb" />
     <Compile Include="Attributes\SupportedActionsSDK.vb" />
     <Compile Include="Attributes\SDKFieldType.vb" />
-    <Compile Include="Me.vb" />
-    <Compile Include="Models.vb" />
+    <Compile Include="Budget.vb" />
+    <Compile Include="Bulk.vb" />
+    <Compile Include="Cashflow.vb" />
+    <Compile Include="CRM.vb" />
+    <Compile Include="Current.vb" />
+    <Compile Include="Documents.vb" />
+    <Compile Include="Financial.vb" />
+    <Compile Include="FinancialTransaction.vb" />
+    <Compile Include="General.vb" />
+    <Compile Include="GeneralJournalEntry.vb" />
+    <Compile Include="HRM.vb" />
+    <Compile Include="Inventory.vb" />
+    <Compile Include="Logistics.vb" />
+    <Compile Include="Mailbox.vb" />
+    <Compile Include="Manufacturing.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -80,7 +96,21 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="OpeningBalance.vb" />
+    <Compile Include="Payroll.vb" />
+    <Compile Include="Project.vb" />
+    <Compile Include="PurchaseEntry.vb" />
+    <Compile Include="PurchaseOrder.vb" />
+    <Compile Include="Sales.vb" />
+    <Compile Include="SalesEntry.vb" />
+    <Compile Include="SalesInvoice.vb" />
+    <Compile Include="SalesOrder.vb" />
     <Compile Include="Services.vb" />
+    <Compile Include="Subscription.vb" />
+    <Compile Include="System.vb" />
+    <Compile Include="Users.vb" />
+    <Compile Include="VAT.vb" />
+    <Compile Include="Workflow.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

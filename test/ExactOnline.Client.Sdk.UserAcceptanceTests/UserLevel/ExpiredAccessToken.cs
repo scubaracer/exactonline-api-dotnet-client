@@ -1,4 +1,4 @@
-﻿using ExactOnline.Client.Models;
+﻿using ExactOnline.Client.Models.CRM;
 using ExactOnline.Client.Sdk.Controllers;
 using ExactOnline.Client.Sdk.TestContext;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -19,7 +19,7 @@ namespace ExactOnline.Client.Sdk.UserAcceptanceTests.UserLevel
 
 			System.Threading.Thread.Sleep(600000); //Sleep for 10 minutes, then the token is expired
 
-			var accounts = client.For<Account>().Select("ID").Get(); 
+			var accounts = client.For<Account>().Select("ID").Get();
 			Assert.IsTrue(accounts.Count > 0);
 		}
 	}

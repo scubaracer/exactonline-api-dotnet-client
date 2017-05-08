@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using ExactOnline.Client.Models;
+using ExactOnline.Client.Models.CRM;
 using ExactOnline.Client.Sdk.Controllers;
 using ExactOnline.Client.Sdk.Interfaces;
 using ExactOnline.Client.Sdk.PerformanceTests.Helpers;
@@ -63,7 +63,7 @@ namespace ExactOnline.Client.Sdk.PerformanceTests
 		{
 			var client = new ExactOnlineClient(_toc.EndPoint, _toc.GetOAuthAuthenticationToken);
 			var account = client.For<Account>().Select("ID").Where("Name+eq+'43905139517985179437'").Get().FirstOrDefault();
-		
+
 			var originalprocesstime = TimeSpan.FromSeconds(13.0);
 			var currentprocesstime = TestTimer.Time(() => DoDeleteRequest(account));
 			Assert.IsTrue(currentprocesstime < originalprocesstime);
