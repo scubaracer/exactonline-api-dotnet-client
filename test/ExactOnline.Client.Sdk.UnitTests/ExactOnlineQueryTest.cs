@@ -1,4 +1,4 @@
-﻿using ExactOnline.Client.Models;
+﻿using ExactOnline.Client.Models.CRM;
 using ExactOnline.Client.Sdk.Controllers;
 using ExactOnline.Client.Sdk.Helpers;
 using ExactOnline.Client.Sdk.UnitTests.MockObjects;
@@ -179,7 +179,7 @@ namespace ExactOnline.Client.Sdk.UnitTests
 		[TestCategory("Unit Test")]
 		public void ExactOnlineQuery_MultipleSelect_Succeeds()
 		{
-			var query = new ExactOnlineQuery<Account>(_controllerMock).Select(new[] {"Description", "Name"});
+			var query = new ExactOnlineQuery<Account>(_controllerMock).Select(new[] { "Description", "Name" });
 			var list = query.Get();
 
 			const string expected = "$select=Description,Name";

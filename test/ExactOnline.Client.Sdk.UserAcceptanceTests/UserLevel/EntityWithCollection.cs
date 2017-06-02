@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using ExactOnline.Client.Models;
+﻿using ExactOnline.Client.Models.CRM;
+using ExactOnline.Client.Models.Logistics;
+using ExactOnline.Client.Models.SalesInvoice;
 using ExactOnline.Client.Sdk.Controllers;
 using ExactOnline.Client.Sdk.TestContext;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ExactOnline.Client.Sdk.UserAcceptanceTests.UserLevel
 {
@@ -21,22 +23,22 @@ namespace ExactOnline.Client.Sdk.UserAcceptanceTests.UserLevel
 			var itemId = GetItemId(client);
 
 			var newInvoice = new SalesInvoice
-				{
-					Currency = "EUR",
-					OrderDate = new DateTime(2012, 10, 26),
-					InvoiceTo = customerId,
-					Journal = "70",
-					OrderedBy = customerId,
-					Description = "New invoice for Entity With Collection"
-				};
+			{
+				Currency = "EUR",
+				OrderDate = new DateTime(2012, 10, 26),
+				InvoiceTo = customerId,
+				Journal = "70",
+				OrderedBy = customerId,
+				Description = "New invoice for Entity With Collection"
+			};
 
 			var newInvoiceLine = new SalesInvoiceLine
-				{
-					Description = "New invoice line for Entity With Collection",
-					Item = itemId
-				};
+			{
+				Description = "New invoice line for Entity With Collection",
+				Item = itemId
+			};
 
-			var invoicelines = new List<SalesInvoiceLine> {newInvoiceLine};
+			var invoicelines = new List<SalesInvoiceLine> { newInvoiceLine };
 			newInvoice.SalesInvoiceLines = invoicelines;
 
 			// Add SalesInvoice to Database

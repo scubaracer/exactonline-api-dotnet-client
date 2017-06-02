@@ -1,4 +1,5 @@
-﻿using ExactOnline.Client.Models;
+﻿using ExactOnline.Client.Models.CRM;
+using ExactOnline.Client.Models.SalesInvoice;
 using ExactOnline.Client.Sdk.Controllers;
 using ExactOnline.Client.Sdk.Delegates;
 using ExactOnline.Client.Sdk.Exceptions;
@@ -71,7 +72,7 @@ namespace ExactOnline.Client.Sdk.UnitTests
 			var dateTimeEpoc = new DateTime(1970, 1, 1, 0, 0, 0, 0);
 
 			#region Client Object and Json
-			
+
 			var simpleEntity = new SimpleEntity()
 			{
 				Code = "123",
@@ -80,7 +81,7 @@ namespace ExactOnline.Client.Sdk.UnitTests
 				StartDate = dateTimeEpoc.AddMilliseconds(1387188617287),
 				EndDate = null,
 				Boolean = true,
-				NullableBoolean = null,				
+				NullableBoolean = null,
 				Integer = 5,
 				NullableInteger = null
 			};
@@ -90,7 +91,7 @@ namespace ExactOnline.Client.Sdk.UnitTests
 
 			var converter = new EntityConverter();
 			string result = converter.ConvertObjectToJson(simpleEntity, null);
-			
+
 			Assert.AreEqual(expected, result);
 		}
 
@@ -98,7 +99,7 @@ namespace ExactOnline.Client.Sdk.UnitTests
 		[TestCategory("Unit Test")]
 		public void EntityConverter_ConvertObjectToJson_ForAlteredFields_Succeeds()
 		{
-			var account = new Account{ Name = "New Account"};
+			var account = new Account { Name = "New Account" };
 			var entityConverter = new EntityConverter();
 			const string expected = "{\"Name\":\"New Account\"}";
 
@@ -167,7 +168,7 @@ namespace ExactOnline.Client.Sdk.UnitTests
 		[TestMethod]
 		public void EntityConverter_ConvertDynamicObjectToJson_WithCorrectDynamicObject_Succeeds()
 		{
-			dynamic account = new {code = "123", description = "Test"};
+			dynamic account = new { code = "123", description = "Test" };
 			const string jsonValue = @"{""code"":""123"",""description"":""Test""}";
 
 			string json = _entityConverter.ConvertDynamicObjectToJson(account);
@@ -296,15 +297,15 @@ namespace ExactOnline.Client.Sdk.UnitTests
 		public void EntityConverter_ConvertLinkedEntityJsonToObject_Succeeds()
 		{
 			string json = ApiResponseCleaner.GetJsonObject(JsonFileReader.GetJsonFromFile("Response_Json_Object_SalesInvoice.txt"));
-			
+
 			var converter = new EntityConverter();
 			var invoice = converter.ConvertJsonToObject<SalesInvoice>(json);
 			var lines = (List<SalesInvoiceLine>)invoice.SalesInvoiceLines;
-			
+
 			Assert.IsNotNull(invoice);
 			Assert.IsTrue(lines.Count > 0);
 		}
-		#endregion 
+		#endregion
 
 		#region Linked Entities To Json
 		[TestCategory("Unit Test")]
@@ -313,20 +314,20 @@ namespace ExactOnline.Client.Sdk.UnitTests
 		{
 			// Create Object
 			var newInvoice = new ComplexEntity
-				{
-					Currency = "EUR",
-					OrderDate = new DateTime(2012, 10, 26),
-					InvoiceTo = new Guid("3734121e-1544-4b77-9ae2-7203e9bd6046"),
-					Journal = "50",
-					OrderedBy = new Guid("3734121e-1544-4b77-9ae2-7203e9bd6046"),
-					Description = "NewInvoiceForEntityWithCollection"
-				};
+			{
+				Currency = "EUR",
+				OrderDate = new DateTime(2012, 10, 26),
+				InvoiceTo = new Guid("3734121e-1544-4b77-9ae2-7203e9bd6046"),
+				Journal = "50",
+				OrderedBy = new Guid("3734121e-1544-4b77-9ae2-7203e9bd6046"),
+				Description = "NewInvoiceForEntityWithCollection"
+			};
 
 			var newInvoiceLine = new ComplexEntityLine
-				{
-					Description = "NewInvoiceForEntityWithCollection",
-					Item = new Guid("4f68481a-7a2c-4fbc-a3a0-0c494df3fa0d")
-				};
+			{
+				Description = "NewInvoiceForEntityWithCollection",
+				Item = new Guid("4f68481a-7a2c-4fbc-a3a0-0c494df3fa0d")
+			};
 
 			var invoicelines = new List<ComplexEntityLine> { newInvoiceLine };
 			newInvoice.Lines = invoicelines;
@@ -340,9 +341,9 @@ namespace ExactOnline.Client.Sdk.UnitTests
 		private static EntityController GetEntityController(object o)
 		{
 			// Create Object
-			var newInvoice = new SalesInvoice {InvoiceID = new Guid("4f68481a-7a2c-4fbc-a3a0-0c494df3fa0d")};
-			var newInvoiceLine = new SalesInvoiceLine {Description = "NewInvoiceForEntityWithCollection"};
-			newInvoice.SalesInvoiceLines = new List<SalesInvoiceLine> { newInvoiceLine }; 
+			var newInvoice = new SalesInvoice { InvoiceID = new Guid("4f68481a-7a2c-4fbc-a3a0-0c494df3fa0d") };
+			var newInvoiceLine = new SalesInvoiceLine { Description = "NewInvoiceForEntityWithCollection" };
+			newInvoice.SalesInvoiceLines = new List<SalesInvoiceLine> { newInvoiceLine };
 
 			var entityController = new EntityController(newInvoice, "ID", "4f68481a-7a2c-4fbc-a3a0-0c494df3fa0d", new MockObjects.ApiConnectionMock(), null);
 			return entityController;
@@ -353,8 +354,8 @@ namespace ExactOnline.Client.Sdk.UnitTests
 		public void EntityConverter_ConvertExistingLinkedObjectToJson_Succeeds()
 		{
 			// Create Object
-			var newInvoice = new SalesInvoice {InvoiceID = new Guid("4f68481a-7a2c-4fbc-a3a0-0c494df3fa0d")};
-			var newInvoiceLine = new SalesInvoiceLine {Description = "NewInvoiceForEntityWithCollection"};
+			var newInvoice = new SalesInvoice { InvoiceID = new Guid("4f68481a-7a2c-4fbc-a3a0-0c494df3fa0d") };
+			var newInvoiceLine = new SalesInvoiceLine { Description = "NewInvoiceForEntityWithCollection" };
 			newInvoice.SalesInvoiceLines = new List<SalesInvoiceLine> { newInvoiceLine };
 
 			//ControllerSingleton.GetInstance(new MockObjects.MAPIConnector_Controller(), "www.dummy.com/");
@@ -377,14 +378,14 @@ namespace ExactOnline.Client.Sdk.UnitTests
 		{
 			// Create Object
 			var newInvoice = new ComplexEntity
-				{
-					Currency = "EUR",
-					OrderDate = new DateTime(2012, 10, 26),
-					InvoiceTo = new Guid("3734121e-1544-4b77-9ae2-7203e9bd6046"),
-					Journal = "50",
-					OrderedBy = new Guid("3734121e-1544-4b77-9ae2-7203e9bd6046"),
-					Description = "NewInvoiceForEntityWithCollection"
-				};
+			{
+				Currency = "EUR",
+				OrderDate = new DateTime(2012, 10, 26),
+				InvoiceTo = new Guid("3734121e-1544-4b77-9ae2-7203e9bd6046"),
+				Journal = "50",
+				OrderedBy = new Guid("3734121e-1544-4b77-9ae2-7203e9bd6046"),
+				Description = "NewInvoiceForEntityWithCollection"
+			};
 
 			var entityConverter = new EntityConverter();
 			string json = entityConverter.ConvertObjectToJson(newInvoice, null);
@@ -402,7 +403,7 @@ namespace ExactOnline.Client.Sdk.UnitTests
 			string json = JsonFileReader.GetJsonFromFile("Response_Json_Array_Account_Long.txt");
 			var accounts = entityConverter.ConvertJsonArrayToObjectList<Account>(json);
 		}
-		#endregion 
+		#endregion
 
 	}
 
@@ -416,7 +417,7 @@ namespace ExactOnline.Client.Sdk.UnitTests
 		public bool Boolean { get; set; }
 		public bool? NullableBoolean { get; set; }
 		public int Integer { get; set; }
-		public int? NullableInteger { get; set; }		
+		public int? NullableInteger { get; set; }
 	}
 
 	public class ComplexEntity
@@ -427,7 +428,7 @@ namespace ExactOnline.Client.Sdk.UnitTests
 		public string Journal { get; set; }
 		public DateTime? OrderDate { get; set; }
 		public Guid? OrderedBy { get; set; }
-		
+
 		public IEnumerable<ComplexEntityLine> Lines { get; set; }
 	}
 

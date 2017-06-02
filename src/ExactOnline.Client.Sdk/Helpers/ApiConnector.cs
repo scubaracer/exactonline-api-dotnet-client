@@ -147,6 +147,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 		public string DoCleanRequest(string uri) // Build for doing $count function
 		{
 			var request = (HttpWebRequest)WebRequest.Create(uri);
+			request.ServicePoint.Expect100Continue = false;
 			request.Method = RequestTypeEnum.GET.ToString();
 			request.ContentType = "application/json";
 			request.Headers.Add("Authorization", "Bearer " + _accessTokenDelegate());
@@ -169,7 +170,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 
 		#region Private methods
 
-		private HttpWebRequest CreateRequest(string url, string oDataQuery, RequestTypeEnum method)
+		private HttpWebRequest CreateRequest(string url, string oDataQuery, RequestTypeEnum method, string acceptContentType = "application/json")
 		{
 			if (!string.IsNullOrEmpty(oDataQuery))
 			{
@@ -177,9 +178,13 @@ namespace ExactOnline.Client.Sdk.Helpers
 			}
 
 			var request = (HttpWebRequest)WebRequest.Create(url);
+			request.ServicePoint.Expect100Continue = false;
 			request.Method = method.ToString();
 			request.ContentType = "application/json";
-			request.Accept = "application/json";
+			if (!string.IsNullOrEmpty(acceptContentType))
+			{
+				request.Accept = acceptContentType;
+			}
 			request.Headers.Add("Authorization", "Bearer " + _accessTokenDelegate());
 
 			return request;
@@ -242,6 +247,24 @@ namespace ExactOnline.Client.Sdk.Helpers
 			return responseValue;
 		}
 
+
+		/// <summary>
+		/// Request without 'Accept' Header, including parameters
+		/// </summary>
+		/// <param name="uri"></param>
+		/// <param name="oDataQuery"></param>
+		/// <returns></returns>
+		public string DoCleanRequest(string uri, string oDataQuery)
+		{
+			if (string.IsNullOrEmpty(uri)) throw new ArgumentException("Cannot perform request with empty endpoint");
+
+			var request = CreateRequest(uri, oDataQuery, RequestTypeEnum.GET, null);
+
+			Debug.WriteLine("GET ");
+			Debug.WriteLine(request.RequestUri);
+
+			return GetResponse(request);
+		}
 		#endregion
 
 	}

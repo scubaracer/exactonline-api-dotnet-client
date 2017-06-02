@@ -1,9 +1,9 @@
-﻿using System;
-using System.Linq;
-using ExactOnline.Client.Models;
+﻿using ExactOnline.Client.Models.CRM;
 using ExactOnline.Client.Sdk.Controllers;
 using ExactOnline.Client.Sdk.TestContext;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Linq;
 
 namespace ExactOnline.Client.Sdk.UserAcceptanceTests.UserLevel
 {

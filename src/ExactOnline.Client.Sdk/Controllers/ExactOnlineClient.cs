@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using ExactOnline.Client.Models;
+using ExactOnline.Client.Models.Current;
 using ExactOnline.Client.Sdk.Delegates;
 using ExactOnline.Client.Sdk.Helpers;
 
@@ -12,7 +12,10 @@ namespace ExactOnline.Client.Sdk.Controllers
 	public class ExactOnlineClient
 	{
 		private readonly ApiConnector _apiConnector;
-		private readonly string _exactOnlineApiUrl;     // https://start.exactonline.nl/api/v1
+
+		// https://start.exactonline.nl/api/v1
+		private readonly string _exactOnlineApiUrl;
+
 		private readonly ControllerList _controllers;
 		private int _division;
 

@@ -1,4 +1,6 @@
-﻿using ExactOnline.Client.Models;
+﻿using ExactOnline.Client.Models.CRM;
+using ExactOnline.Client.Models.Financial;
+using ExactOnline.Client.Models.SalesInvoice;
 using ExactOnline.Client.Sdk.Controllers;
 using ExactOnline.Client.Sdk.Helpers;
 using ExactOnline.Client.Sdk.Interfaces;
@@ -47,8 +49,8 @@ namespace ExactOnline.Client.Sdk.UnitTests
 		public void Controller_GetIdentifierValueForCompoundKey_Fails()
 		{
 			// JournalStatus has a compound key
-			var journalStatusController = new Controller<JournalStatus>(_mockConnection);
-			var journalStatus = new JournalStatus();
+			var journalStatusController = new Controller<JournalStatusList>(_mockConnection);
+			var journalStatus = new JournalStatusList();
 			var exceptionThrown = false;
 			var exceptionMessage = "";
 

@@ -1,4 +1,5 @@
-﻿using ExactOnline.Client.Models;
+﻿using ExactOnline.Client.Models.CRM;
+using ExactOnline.Client.Models.Financial;
 using ExactOnline.Client.Sdk.Controllers;
 using ExactOnline.Client.Sdk.Exceptions;
 using ExactOnline.Client.Sdk.TestContext;
@@ -106,7 +107,7 @@ namespace ExactOnline.Client.Sdk.IntegrationTests
 				.Select(new[] { "Code" })
 				.Get();
 
-			Assert.IsTrue(accounts.Count> 1);
+			Assert.IsTrue(accounts.Count > 1);
 		}
 
 		[TestMethod, ExpectedException(typeof(BadRequestException))]
