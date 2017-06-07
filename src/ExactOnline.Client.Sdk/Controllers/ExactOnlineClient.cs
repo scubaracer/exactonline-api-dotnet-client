@@ -63,7 +63,7 @@ namespace ExactOnline.Client.Sdk.Controllers
 		public Me CurrentMe()
 		{
 			var conn = new ApiConnection(_apiConnector, _exactOnlineApiUrl + "current/Me");
-			string response = conn.Get("$select=*");
+			string response = conn.Get("$select=CurrentDivision");
 			response = ApiResponseCleaner.GetJsonArray(response);
 			var converter = new EntityConverter();
 			var currentMe = converter.ConvertJsonArrayToObjectList<Me>(response);
