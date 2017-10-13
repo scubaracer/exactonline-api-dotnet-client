@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
 using ExactOnline.Client.Sdk.Interfaces;
+using System.Linq.Expressions;
+using ExactOnline.Client.Sdk.Enums;
 
 namespace ExactOnline.Client.Sdk.Helpers
 {
@@ -17,7 +17,6 @@ namespace ExactOnline.Client.Sdk.Helpers
 		private string _expand;
 		private string _top;
 		private string _orderby;
-
 		private string _where;
 
 		/// <summary>
@@ -31,7 +30,24 @@ namespace ExactOnline.Client.Sdk.Helpers
 		}
 
 		/// <summary>
-		/// Creates a 'where' clause to the query
+        /// Creates a 'where' clause for the query
+        /// </summary>
+        public ExactOnlineQuery<T> Where<TProperty>(Expression<Func<T, TProperty>> property, TProperty value, OperatorEnum @operator = OperatorEnum.eq)
+        {
+            string _value = value?.ToString();
+
+            if (value is string)
+                _value = $"'{value}'";
+            else if (value is Guid)
+                _value = $"guid'{value}'";
+            else if (value is DateTime)
+                _value = $"datetime'{value:s}'";
+
+            return Where($"{GetPropertyName(property)}+{@operator}+{_value}");
+        }
+
+        /// <summary>
+        /// Creates a 'where' clause for the query
 		/// </summary>
 		public ExactOnlineQuery<T> Where(string filter)
 		{
@@ -41,7 +57,15 @@ namespace ExactOnline.Client.Sdk.Helpers
 		}
 
 		/// <summary>
-		/// Creates an 'and' clause to the query. This method can't be called before a where clause is set.
+        /// Appends an 'and' clause to the query. This method can't be called before a where clause is set.
+        /// </summary>
+        public ExactOnlineQuery<T> And<TProperty>(Expression<Func<T, TProperty>> property, TProperty value, OperatorEnum @operator = OperatorEnum.eq)
+        {
+            return And($"{GetPropertyName(property)}+{@operator}+'{value}'");
+        }
+
+        /// <summary>
+        /// Appends an 'and' clause to the query. This method can't be called before a where clause is set.
 		/// </summary>
 		public ExactOnlineQuery<T> And(string and)
 		{
@@ -111,11 +135,11 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// <summary>
 		/// Specify the fields to get from the API
 		/// </summary>
-		/// <param name="field">Name of the field</param>
+        /// <param name="property">The property to select</param>
 		/// <returns></returns>
-		public ExactOnlineQuery<T> Select(string field)
+        public ExactOnlineQuery<T> Select<TProperty>(Expression<Func<T, TProperty>> property)
 		{
-			return Select(new[] { field });
+            return Select(fields: GetPropertyName(property));
 		}
 
 		/// <summary>
@@ -123,13 +147,16 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// </summary>
 		/// <param name="fields">Name of fields</param>
 		/// <returns></returns>
-		public ExactOnlineQuery<T> Select(string[] fields)
+		public ExactOnlineQuery<T> Select(params string[] fields)
 		{
-			if (fields.Length > 0)
+			if (fields != null && fields.Length > 0)
 			{
-				string select = fields.Aggregate("$select=", (current, item) => current + (item + ","));
-				select = select.Remove(select.Length - 1);
-				_select = select;
+                string select = String.Join(",", fields);
+
+                if (String.IsNullOrEmpty(_select))
+                    _select = "$select=" + select;
+                else
+                    _select += ',' + select;
 			}
 			return this;
 		}
@@ -161,9 +188,9 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// </summary>
 		/// <param name="orderby"></param>
 		/// <returns></returns>
-		public ExactOnlineQuery<T> OrderBy(string orderby)
+        public ExactOnlineQuery<T> OrderBy<TProperty>(Expression<Func<T, TProperty>> orderby)
 		{
-			return OrderBy(new[] { orderby });
+            return OrderBy(GetPropertyName(orderby));
 		}
 
 		/// <summary>
@@ -171,12 +198,17 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// </summary>
 		/// <param name="orderby"></param>
 		/// <returns></returns>
-		public ExactOnlineQuery<T> OrderBy(string[] orderby)
+		public ExactOnlineQuery<T> OrderBy(params string[] orderby)
 		{
-			string orderbyclause = @orderby.Aggregate("", (current, item) => current + (item + ","));
-			orderbyclause = orderbyclause.Remove(orderbyclause.Length - 1);
+            if (orderby != null && orderby.Length > 0)
+		{
+                string orderbyclause = String.Join(",", orderby);
 
-			_orderby = string.Format("$orderby={0}", orderbyclause);
+                if (String.IsNullOrEmpty(_orderby))
+                    _orderby = "$orderby=" + orderbyclause;
+                else
+                    _orderby += ',' + orderbyclause;
+            }
 			return this;
 		}
 
@@ -264,5 +296,24 @@ namespace ExactOnline.Client.Sdk.Helpers
 			if (entity == null) throw new ArgumentException("Insert entity: Entity cannot be null");
 			return _controller.Create(ref entity);
 		}
+
+        /// <summary>
+        /// Returns the name for the given property expression.
+        /// </summary>
+        string GetPropertyName<TProperty>(Expression<Func<T, TProperty>> expression)
+        {
+            if (expression == null) throw new ArgumentException("Get Property Name: Expression cannot be null");
+            var me = expression.Body as MemberExpression;
+            if (me == null)
+            {
+                var ue = expression.Body as UnaryExpression;
+                if (ue != null)
+                    me = ue.Operand as MemberExpression;
+                
+            }
+            if (me == null)
+                throw new InvalidOperationException("Get Property Name: Invalid expression '" + expression.ToString() + "'");
+            return me.Member.Name;
+        }
 	}
 }

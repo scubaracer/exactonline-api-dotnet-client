@@ -2,6 +2,7 @@
 using ExactOnline.Client.Sdk.Enums;
 using ExactOnline.Client.Sdk.Exceptions;
 using ExactOnline.Client.Sdk.Interfaces;
+using ExactOnline.Client.Sdk.Models;
 using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
@@ -215,27 +216,31 @@ namespace ExactOnline.Client.Sdk.Helpers
 				var statusCode = (((HttpWebResponse)ex.Response).StatusCode);
 				Debug.WriteLine(ex.Message);
 
-				var messageFromServer = new StreamReader(ex.Response.GetResponseStream()).ReadToEnd();
-				Debug.WriteLine(messageFromServer);
+				var messageFromServerJSON = new StreamReader(ex.Response.GetResponseStream()).ReadToEnd();
+                Debug.WriteLine(messageFromServerJSON);
 				Debug.WriteLine("");
+
+                var messageFromServer = JsonConvert.DeserializeObject<ServerMessage>(messageFromServerJSON);
+
+                var errorMessage = messageFromServer?.Error?.Message?.Value ?? ex.Message;
 
 				switch (statusCode)
 				{
 					case HttpStatusCode.BadRequest: // 400
 					case HttpStatusCode.MethodNotAllowed: // 405
-						throw new BadRequestException(ex.Message, ex);
+						throw new BadRequestException(errorMessage, ex);
 
 					case HttpStatusCode.Unauthorized: //401
-						throw new UnauthorizedException(ex.Message, ex); // 401
+						throw new UnauthorizedException(errorMessage, ex); // 401
 
 					case HttpStatusCode.Forbidden:
-						throw new ForbiddenException(ex.Message, ex); // 403
+						throw new ForbiddenException(errorMessage, ex); // 403
 
 					case HttpStatusCode.NotFound:
-						throw new NotFoundException(ex.Message, ex); // 404
+						throw new NotFoundException(errorMessage, ex); // 404
 
 					case HttpStatusCode.InternalServerError: // 500
-						throw new InternalServerErrorException(messageFromServer, ex);
+						throw new InternalServerErrorException(errorMessage, ex);
 				}
 
 				throw;
