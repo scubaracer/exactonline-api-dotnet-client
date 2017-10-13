@@ -29,12 +29,12 @@ namespace ExactOnline.Client.Sdk.Helpers
 			_controller = controller;
 		}
 
-		/// <summary>
+        /// <summary>
         /// Creates a 'where' clause for the query
         /// </summary>
         public ExactOnlineQuery<T> Where<TProperty>(Expression<Func<T, TProperty>> property, TProperty value, OperatorEnum @operator = OperatorEnum.eq)
         {
-            return Where($"{GetPropertyName(property)}+{@operator}+{ToODataFormat(value)}");
+            return Where($"{TransformExpressionToODataFormat(property)}+{@operator}+{ToODataParameter(value)}");
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace ExactOnline.Client.Sdk.Helpers
         /// </summary>
         public ExactOnlineQuery<T> And<TProperty>(Expression<Func<T, TProperty>> property, TProperty value, OperatorEnum @operator = OperatorEnum.eq)
         {
-            return And($"{GetPropertyName(property)}+{@operator}+{ToODataFormat(value)}");
+            return And($"{TransformExpressionToODataFormat(property)}+{@operator}+{ToODataParameter(value)}");
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// <returns></returns>
         public ExactOnlineQuery<T> Select<TProperty>(Expression<Func<T, TProperty>> property)
 		{
-            return Select(fields: GetPropertyName(property));
+            return Select(fields: TransformExpressionToODataFormat(property));
 		}
 
 		/// <summary>
@@ -181,7 +181,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// <returns></returns>
         public ExactOnlineQuery<T> OrderBy<TProperty>(Expression<Func<T, TProperty>> orderby)
 		{
-            return OrderBy(GetPropertyName(orderby));
+            return OrderBy(TransformExpressionToODataFormat(orderby));
 		}
 
 		/// <summary>
@@ -289,46 +289,70 @@ namespace ExactOnline.Client.Sdk.Helpers
 		}
 
         /// <summary>
+        /// Returns the name for the given property expression.
+        /// </summary>
+        string TransformExpressionToODataFormat<T, TProperty>(Expression<Func<T, TProperty>> expression)
+        {
+            if (expression == null) throw new ArgumentException("Get Property Name: Expression cannot be null");
+            return TransformExpressionToODataFormat(expression.Body);
+        }
+
+        /// <summary>
+        /// Transforms a given C# expression to an OData-compliant expression
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns></returns>
+        string TransformExpressionToODataFormat(Expression e)
+        {
+            MemberExpression me = null;
+
+            if (e is MemberExpression)
+                me = e as MemberExpression;
+            else if (e is UnaryExpression)
+                me = ((UnaryExpression)e).Operand as MemberExpression;
+
+            if (me != null) return me.Member.Name;
+
+            var listArguments = new List<string>();
+            var mce = e as MethodCallExpression;
+            foreach (var argument in mce.Arguments)
+            {
+                if (argument is ConstantExpression)
+                {
+                    var ce = argument as ConstantExpression;
+                    listArguments.Add(ToODataParameter(ce.Value));
+                }
+            }
+
+            string arguments = null;
+            if (listArguments.Count > 0) arguments = "," + String.Join(",", listArguments);
+
+            return $"{mce.Method.Name.ToLower()}({TransformExpressionToODataFormat(mce.Object)}{arguments})";
+        }
+
+        /// <summary>
         /// Formats any given value to it's OData-compliant string representation.
         /// </summary>
-        string ToODataFormat<T>(T value)
+        string ToODataParameter(object value)
         {
             string _value = null;
 
             if (value != null)
             {
-                var type = Nullable.GetUnderlyingType(typeof(T)) ?? typeof(T);
+                var type = value.GetType();
+                type = Nullable.GetUnderlyingType(type) ?? type;
 
-                if (type == typeof(string))
+                if (type == typeof(string) || type == typeof(char))
                     _value = $"'{value}'";
                 else if (type == typeof(Guid))
                     _value = $"guid'{value}'";
                 else if (type == typeof(DateTime))
                     _value = $"datetime'{value:s}'";
                 else
-                    _value = _value.ToString();
+                    _value = value.ToString();
             }
 
             return _value;
         }
-
-        /// <summary>
-        /// Returns the name for the given property expression.
-        /// </summary>
-        string GetPropertyName<TProperty>(Expression<Func<T, TProperty>> expression)
-        {
-            if (expression == null) throw new ArgumentException("Get Property Name: Expression cannot be null");
-            var me = expression.Body as MemberExpression;
-            if (me == null)
-            {
-                var ue = expression.Body as UnaryExpression;
-                if (ue != null)
-                    me = ue.Operand as MemberExpression;
-                
-            }
-            if (me == null)
-                throw new InvalidOperationException("Get Property Name: Invalid expression '" + expression.ToString() + "'");
-            return me.Member.Name;
-        }
-	}
+    }
 }
