@@ -34,16 +34,7 @@ namespace ExactOnline.Client.Sdk.Helpers
         /// </summary>
         public ExactOnlineQuery<T> Where<TProperty>(Expression<Func<T, TProperty>> property, TProperty value, OperatorEnum @operator = OperatorEnum.eq)
         {
-            string _value = value?.ToString();
-
-            if (value is string)
-                _value = $"'{value}'";
-            else if (value is Guid)
-                _value = $"guid'{value}'";
-            else if (value is DateTime)
-                _value = $"datetime'{value:s}'";
-
-            return Where($"{GetPropertyName(property)}+{@operator}+{_value}");
+            return Where($"{GetPropertyName(property)}+{@operator}+{ToODataFormat(value)}");
         }
 
         /// <summary>
@@ -61,7 +52,7 @@ namespace ExactOnline.Client.Sdk.Helpers
         /// </summary>
         public ExactOnlineQuery<T> And<TProperty>(Expression<Func<T, TProperty>> property, TProperty value, OperatorEnum @operator = OperatorEnum.eq)
         {
-            return And($"{GetPropertyName(property)}+{@operator}+'{value}'");
+            return And($"{GetPropertyName(property)}+{@operator}+{ToODataFormat(value)}");
         }
 
         /// <summary>
@@ -143,9 +134,9 @@ namespace ExactOnline.Client.Sdk.Helpers
 		}
 
 		/// <summary>
-		/// Specify the fields to get from the API
+		/// Specify the field(s) to get from the API
 		/// </summary>
-		/// <param name="fields">Name of fields</param>
+		/// <param name="fields">The field(s) to get</param>
 		/// <returns></returns>
 		public ExactOnlineQuery<T> Select(params string[] fields)
 		{
@@ -194,7 +185,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 		}
 
 		/// <summary>
-		/// Specify the fields to order by
+		/// Specify the field(s) to order by
 		/// </summary>
 		/// <param name="orderby"></param>
 		/// <returns></returns>
@@ -296,6 +287,23 @@ namespace ExactOnline.Client.Sdk.Helpers
 			if (entity == null) throw new ArgumentException("Insert entity: Entity cannot be null");
 			return _controller.Create(ref entity);
 		}
+
+        /// <summary>
+        /// Formats any given value to it's OData-compliant string representation.
+        /// </summary>
+        string ToODataFormat<T>(T value)
+        {
+            string _value = value?.ToString();
+
+            if (value is string)
+                _value = $"'{value}'";
+            else if (value is Guid)
+                _value = $"guid'{value}'";
+            else if (value is DateTime)
+                _value = $"datetime'{value:s}'";
+
+            return _value;
+        }
 
         /// <summary>
         /// Returns the name for the given property expression.
