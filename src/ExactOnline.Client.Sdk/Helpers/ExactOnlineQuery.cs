@@ -293,14 +293,21 @@ namespace ExactOnline.Client.Sdk.Helpers
         /// </summary>
         string ToODataFormat<T>(T value)
         {
-            string _value = value?.ToString();
+            string _value = null;
 
-            if (value is string)
-                _value = $"'{value}'";
-            else if (value is Guid)
-                _value = $"guid'{value}'";
-            else if (value is DateTime)
-                _value = $"datetime'{value:s}'";
+            if (value != null)
+            {
+                var type = Nullable.GetUnderlyingType(typeof(T)) ?? typeof(T);
+
+                if (type == typeof(string))
+                    _value = $"'{value}'";
+                else if (type == typeof(Guid))
+                    _value = $"guid'{value}'";
+                else if (type == typeof(DateTime))
+                    _value = $"datetime'{value:s}'";
+                else
+                    _value = _value.ToString();
+            }
 
             return _value;
         }
