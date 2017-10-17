@@ -4,6 +4,7 @@ using System.Globalization;
 using ExactOnline.Client.Sdk.Interfaces;
 using System.Linq.Expressions;
 using ExactOnline.Client.Sdk.Enums;
+using System.Linq;
 
 namespace ExactOnline.Client.Sdk.Helpers
 {
@@ -128,9 +129,9 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// </summary>
         /// <param name="property">The property to select</param>
 		/// <returns></returns>
-        public ExactOnlineQuery<T> Select<TProperty>(Expression<Func<T, TProperty>> property)
+        public ExactOnlineQuery<T> Select<TProperty>(params Expression<Func<T, TProperty>>[] property)
 		{
-            return Select(fields: TransformExpressionToODataFormat(property));
+            return Select(fields: property.Select(x => TransformExpressionToODataFormat(x)).ToArray());
 		}
 
 		/// <summary>
