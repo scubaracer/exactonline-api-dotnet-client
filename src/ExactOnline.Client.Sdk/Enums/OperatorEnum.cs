@@ -6,7 +6,7 @@ namespace ExactOnline.Client.Sdk.Enums
         /// <summary>
         /// Equal
         /// </summary>
-        eq,
+        Eq,
         /// <summary>
         /// Not equal
         /// </summary>

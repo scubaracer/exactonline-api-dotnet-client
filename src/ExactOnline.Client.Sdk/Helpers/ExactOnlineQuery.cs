@@ -33,9 +33,9 @@ namespace ExactOnline.Client.Sdk.Helpers
         /// <summary>
         /// Creates a 'where' clause for the query
         /// </summary>
-        public ExactOnlineQuery<T> Where<TProperty>(Expression<Func<T, TProperty>> property, TProperty value, OperatorEnum @operator = OperatorEnum.eq)
+        public ExactOnlineQuery<T> Where<TProperty>(Expression<Func<T, TProperty>> property, TProperty value, OperatorEnum @operator = OperatorEnum.Eq)
         {
-            return Where($"{TransformExpressionToODataFormat(property)}+{@operator}+{ToODataParameter(value)}");
+            return Where($"{TransformExpressionToODataFormat(property.Body)}+{@operator.ToString().ToLower()}+{ToODataParameter(value)}");
         }
 
         /// <summary>
@@ -51,9 +51,9 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// <summary>
         /// Appends an 'and' clause to the query. This method can't be called before a where clause is set.
         /// </summary>
-        public ExactOnlineQuery<T> And<TProperty>(Expression<Func<T, TProperty>> property, TProperty value, OperatorEnum @operator = OperatorEnum.eq)
+        public ExactOnlineQuery<T> And<TProperty>(Expression<Func<T, TProperty>> property, TProperty value, OperatorEnum @operator = OperatorEnum.Eq)
         {
-            return And($"{TransformExpressionToODataFormat(property)}+{@operator}+{ToODataParameter(value)}");
+            return And($"{TransformExpressionToODataFormat(property)}+{@operator.ToString().ToLower()}+{ToODataParameter(value)}");
         }
 
         /// <summary>
@@ -129,9 +129,9 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// </summary>
         /// <param name="property">The property to select</param>
 		/// <returns></returns>
-        public ExactOnlineQuery<T> Select<TProperty>(params Expression<Func<T, TProperty>>[] property)
+        public ExactOnlineQuery<T> Select(params Expression<Func<T, object>>[] property)
 		{
-            return Select(fields: property.Select(x => TransformExpressionToODataFormat(x)).ToArray());
+            return Select(fields: property.Select(x => TransformExpressionToODataFormat(x.Body)).ToArray());
 		}
 
 		/// <summary>
@@ -180,9 +180,9 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// </summary>
 		/// <param name="orderby"></param>
 		/// <returns></returns>
-        public ExactOnlineQuery<T> OrderBy<TProperty>(Expression<Func<T, TProperty>> orderby)
+        public ExactOnlineQuery<T> OrderBy(Expression<Func<T, object>> orderby)
 		{
-            return OrderBy(TransformExpressionToODataFormat(orderby));
+            return OrderBy(TransformExpressionToODataFormat(orderby.Body));
 		}
 
 		/// <summary>
@@ -290,15 +290,6 @@ namespace ExactOnline.Client.Sdk.Helpers
 		}
 
         /// <summary>
-        /// Returns the name for the given property expression.
-        /// </summary>
-        string TransformExpressionToODataFormat<T, TProperty>(Expression<Func<T, TProperty>> expression)
-        {
-            if (expression == null) throw new ArgumentException("Get Property Name: Expression cannot be null");
-            return TransformExpressionToODataFormat(expression.Body);
-        }
-
-        /// <summary>
         /// Transforms a given C# expression to an OData-compliant expression
         /// </summary>
         /// <param name="e"></param>
@@ -316,6 +307,9 @@ namespace ExactOnline.Client.Sdk.Helpers
 
             var listArguments = new List<string>();
             var mce = e as MethodCallExpression;
+
+            if (mce == null) throw new ArgumentException($"Invalid expression '{e}': Lambda expression should resolve a property on model type '{nameof(T)}' (with optional extension method calls)." , nameof(e));
+
             foreach (var argument in mce.Arguments)
             {
                 if (argument is ConstantExpression)
