@@ -349,6 +349,8 @@ namespace ExactOnline.Client.Sdk.Helpers
                     _value = $"guid'{value}'";
                 else if (type == typeof(DateTime))
                     _value = $"datetime'{value:s}'";
+                else if (type == typeof(bool))
+                    _value = value.ToString().ToLower();
                 else
                     _value = value.ToString();
             }
