@@ -45,6 +45,7 @@
     <Compile Include="Controllers\SimpleController.cs" />
     <Compile Include="Delegates\AccessTokenManagerDelegate.cs" />
     <Compile Include="Delegates\GetEntityControllerDelegate.cs" />
+    <Compile Include="Enums\OperatorEnum.cs" />
     <Compile Include="Helpers\ApiConnection.cs" />
     <Compile Include="Helpers\ApiConnector.cs" />
     <Compile Include="Helpers\ApiResponseCleaner.cs" />
@@ -66,6 +67,9 @@
     <Compile Include="Interfaces\IApiConnector.cs" />
     <Compile Include="Interfaces\IController.cs" />
     <Compile Include="Interfaces\IEntityManager.cs" />
+    <Compile Include="Models\ServerMessage.cs" />
+    <Compile Include="Models\ServerMessageError.cs" />
+    <Compile Include="Models\ServerMessageErrorMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
