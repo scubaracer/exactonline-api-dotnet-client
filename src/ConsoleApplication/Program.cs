@@ -1,4 +1,4 @@
-﻿using ExactOnline.Client.Models;
+﻿using ExactOnline.Client.Models.CRM;
 using ExactOnline.Client.Sdk.Controllers;
 using System;
 using System.Diagnostics;
@@ -17,7 +17,7 @@ namespace ConsoleApplication
 			const string clientSecret = "...";
 
 			// This can be any url as long as it is identical to the callback url you specified for your app in the App Center.
-			var callbackUrl = new Uri("http://www.exact.com"); 
+			var callbackUrl = new Uri("http://www.exact.com");
 
 			var connector = new Connector(clientId, clientSecret, callbackUrl);
 			var client = new ExactOnlineClient(connector.EndPoint, connector.GetAccessToken);

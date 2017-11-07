@@ -1,114 +1,114 @@
-' Last generated on 2017-05-05 12:58:35Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace Subscription
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("EntryID")>
 	Public Class [Subscription]
-		'''<![CDATA[Indicates if subscription is blocked for time cost entry]]>
+		'''<summary>Indicates if subscription is blocked for time cost entry</summary>
 		Public Property [BlockEntry] As Boolean?
-		'''<![CDATA[Date of cancellation]]>
+		'''<summary>Date of cancellation</summary>
 		Public Property [CancellationDate] As DateTime?
-		'''<![CDATA[Reference to Classification]]>
+		'''<summary>Reference to Classification</summary>
 		Public Property [Classification] As Guid?
-		'''<![CDATA[Code of Classification]]>
+		'''<summary>Code of Classification</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ClassificationCode] As String
-		'''<![CDATA[Description of Classification]]>
+		'''<summary>Description of Classification</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ClassificationDescription] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Currency code]]>
+		'''<summary>Currency code</summary>
 		Public Property [Currency] As String
-		'''<![CDATA[Purchase order number of customer]]>
+		'''<summary>Purchase order number of customer</summary>
 		Public Property [CustomerPONumber] As String
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32
-		'''<![CDATA[End date]]>
+		'''<summary>End date</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [EntryID] As Guid
-		'''<![CDATA[Invoice Day]]>
+		'''<summary>Invoice Day</summary>
 		Public Property [InvoiceDay] As Byte?
-		'''<![CDATA[Invoice date]]>
+		'''<summary>Invoice date</summary>
 		Public Property [InvoicedTo] As DateTime?
-		'''<![CDATA[Reference to invoice account]]>
+		'''<summary>Reference to invoice account</summary>
 		Public Property [InvoiceTo] As Guid?
-		'''<![CDATA[Reference to contact person of invoice account]]>
+		'''<summary>Reference to contact person of invoice account</summary>
 		Public Property [InvoiceToContactPerson] As Guid?
-		'''<![CDATA[Name of contact person of invoice account]]>
+		'''<summary>Name of contact person of invoice account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [InvoiceToContactPersonFullName] As String
-		'''<![CDATA[Name of invoice account]]>
+		'''<summary>Name of invoice account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [InvoiceToName] As String
-		'''<![CDATA[Invoicing start date]]>
+		'''<summary>Invoicing start date</summary>
 		Public Property [InvoicingStartDate] As DateTime?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Remarks]]>
+		'''<summary>Remarks</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Number]]>
+		'''<summary>Number</summary>
 		Public Property [Number] As Int32
-		'''<![CDATA[Reference to order account]]>
+		'''<summary>Reference to order account</summary>
 		Public Property [OrderedBy] As Guid?
-		'''<![CDATA[Reference of contact person of order account]]>
+		'''<summary>Reference of contact person of order account</summary>
 		Public Property [OrderedByContactPerson] As Guid?
-		'''<![CDATA[Name of contact person of order account]]>
+		'''<summary>Name of contact person of order account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [OrderedByContactPersonFullName] As String
-		'''<![CDATA[Name of order account]]>
+		'''<summary>Name of order account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [OrderedByName] As String
-		'''<![CDATA[Payment condition]]>
+		'''<summary>Payment condition</summary>
 		Public Property [PaymentCondition] As String
-		'''<![CDATA[Description of PaymentCondition]]>
+		'''<summary>Description of PaymentCondition</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [PaymentConditionDescription] As String
-		'''<![CDATA[Indicates if subscription is printed]]>
+		'''<summary>Indicates if subscription is printed</summary>
 		Public Property [Printed] As Boolean
-		'''<![CDATA[Reference to reason cancelled]]>
+		'''<summary>Reference to reason cancelled</summary>
 		Public Property [ReasonCancelled] As Guid?
-		'''<![CDATA[Code of ReasonCancelled]]>
+		'''<summary>Code of ReasonCancelled</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ReasonCancelledCode] As String
-		'''<![CDATA[Description of ReasonCancelled]]>
+		'''<summary>Description of ReasonCancelled</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ReasonCancelledDescription] As String
-		'''<![CDATA[Start date]]>
+		'''<summary>Start date</summary>
 		Public Property [StartDate] As DateTime
-		'''<![CDATA[Collection of subscription lines]]>
+		'''<summary>Collection of subscription lines</summary>
 		Public Property [SubscriptionLines] As IEnumerable(Of Models.Subscription.SubscriptionLine)
-		'''<![CDATA[Collection of restriction employees]]>
+		'''<summary>Collection of restriction employees</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubscriptionRestrictionEmployees] As IEnumerable(Of Models.Subscription.SubscriptionRestrictionEmployee)
-		'''<![CDATA[Collection of restriction items]]>
+		'''<summary>Collection of restriction items</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubscriptionRestrictionItems] As IEnumerable(Of Models.Subscription.SubscriptionRestrictionItem)
-		'''<![CDATA[Reference to subscription type]]>
+		'''<summary>Reference to subscription type</summary>
 		Public Property [SubscriptionType] As Guid
-		'''<![CDATA[Code of SubscriptionType]]>
+		'''<summary>Code of SubscriptionType</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubscriptionTypeCode] As String
-		'''<![CDATA[Description of SubscriptionType]]>
+		'''<summary>Description of SubscriptionType</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubscriptionTypeDescription] As String
 	End Class
@@ -116,59 +116,59 @@ Namespace Subscription
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [SubscriptionLine]
-		'''<![CDATA[Amount in the default currency of the company]]>
+		'''<summary>Amount in the default currency of the company</summary>
 		Public Property [AmountDC] As Double
-		'''<![CDATA[Amount in the currency of the transaction]]>
+		'''<summary>Amount in the currency of the transaction</summary>
 		Public Property [AmountFC] As Double
-		'''<![CDATA[Cost center]]>
+		'''<summary>Cost center</summary>
 		Public Property [Costcenter] As String
-		'''<![CDATA[Cost unit]]>
+		'''<summary>Cost unit</summary>
 		Public Property [Costunit] As String
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Discount percentage]]>
+		'''<summary>Discount percentage</summary>
 		Public Property [Discount] As Double?
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32
-		'''<![CDATA[Entry ID]]>
+		'''<summary>Entry ID</summary>
 		Public Property [EntryID] As Guid
-		'''<![CDATA[From date]]>
+		'''<summary>From date</summary>
 		Public Property [FromDate] As DateTime
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Reference to Item]]>
+		'''<summary>Reference to Item</summary>
 		Public Property [Item] As Guid
-		'''<![CDATA[Description of Item]]>
+		'''<summary>Description of Item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Line number]]>
+		'''<summary>Line number</summary>
 		Public Property [LineNumber] As Int32
-		'''<![CDATA[Reference to LineType]]>
+		'''<summary>Reference to LineType</summary>
 		Public Property [LineType] As Int16?
-		'''<![CDATA[Description of LineType]]>
+		'''<summary>Description of LineType</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [LineTypeDescription] As String
-		'''<![CDATA[Net price in the currency of the transaction]]>
+		'''<summary>Net price in the currency of the transaction</summary>
 		Public Property [NetPrice] As Double
-		'''<![CDATA[Remarks]]>
+		'''<summary>Remarks</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Quantity]]>
+		'''<summary>Quantity</summary>
 		Public Property [Quantity] As Double
-		'''<![CDATA[To date]]>
+		'''<summary>To date</summary>
 		Public Property [ToDate] As DateTime?
-		'''<![CDATA[Unit code]]>
+		'''<summary>Unit code</summary>
 		Public Property [UnitCode] As String
-		'''<![CDATA[Description of Unit]]>
+		'''<summary>Description of Unit</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [UnitDescription] As String
-		'''<![CDATA[Unit price in the currency of the transaction (price * unit factor)]]>
+		'''<summary>Unit price in the currency of the transaction (price * unit factor)</summary>
 		Public Property [UnitPrice] As Double
-		'''<![CDATA[Vat Amount in the currency of the transaction]]>
+		'''<summary>Vat Amount in the currency of the transaction</summary>
 		Public Property [VATAmountFC] As Double?
-		'''<![CDATA[VATCode]]>
+		'''<summary>VATCode</summary>
 		Public Property [VATCode] As String
-		'''<![CDATA[Description of VATCode]]>
+		'''<summary>Description of VATCode</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [VATCodeDescription] As String
 	End Class
@@ -176,89 +176,89 @@ Namespace Subscription
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [SubscriptionLineType]
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Description] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Int16
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [SubscriptionReasonCode]
-		'''<![CDATA[Indicates if the reason code is active]]>
+		'''<summary>Indicates if the reason code is active</summary>
 		Public Property [Active] As Boolean
-		'''<![CDATA[Subscription reason code]]>
+		'''<summary>Subscription reason code</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Remarks]]>
+		'''<summary>Remarks</summary>
 		Public Property [Notes] As String
 	End Class
 
 	<SupportedActionsSDK(True, True, False, True)>
 	<DataServiceKey("ID")>
 	Public Class [SubscriptionRestrictionEmployee]
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of the creator]]>
+		'''<summary>User ID of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of the creator]]>
+		'''<summary>Name of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32
-		'''<![CDATA[Employee linked to the restriction]]>
+		'''<summary>Employee linked to the restriction</summary>
 		Public Property [Employee] As Guid?
-		'''<![CDATA[Name of employee]]>
+		'''<summary>Name of employee</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [EmployeeFullName] As String
-		'''<![CDATA[Readable ID of employee]]>
+		'''<summary>Readable ID of employee</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [EmployeeHID] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of the last modifier]]>
+		'''<summary>User ID of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of the last modifier]]>
+		'''<summary>Name of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Reference to subscription]]>
+		'''<summary>Reference to subscription</summary>
 		Public Property [Subscription] As Guid
-		'''<![CDATA[Description of subscription]]>
+		'''<summary>Description of subscription</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubscriptionDescription] As String
-		'''<![CDATA[Number of subscription]]>
+		'''<summary>Number of subscription</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubscriptionNumber] As Int32
 	End Class
@@ -266,43 +266,43 @@ Namespace Subscription
 	<SupportedActionsSDK(True, True, False, True)>
 	<DataServiceKey("ID")>
 	Public Class [SubscriptionRestrictionItem]
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of the creator]]>
+		'''<summary>User ID of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of the creator]]>
+		'''<summary>Name of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Item linked to the restriction]]>
+		'''<summary>Item linked to the restriction</summary>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Code of item]]>
+		'''<summary>Code of item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemCode] As String
-		'''<![CDATA[Description of item]]>
+		'''<summary>Description of item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of the last modifier]]>
+		'''<summary>User ID of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of the last modifier]]>
+		'''<summary>Name of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Reference to subscription]]>
+		'''<summary>Reference to subscription</summary>
 		Public Property [Subscription] As Guid
-		'''<![CDATA[Description of subscription]]>
+		'''<summary>Description of subscription</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubscriptionDescription] As String
-		'''<![CDATA[Number of subscription]]>
+		'''<summary>Number of subscription</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubscriptionNumber] As Int32
 	End Class
@@ -310,31 +310,31 @@ Namespace Subscription
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [SubscriptionType]
-		'''<![CDATA[Code]]>
+		'''<summary>Code</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of the creator]]>
+		'''<summary>User ID of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of the creator]]>
+		'''<summary>Name of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of the last modifier]]>
+		'''<summary>User ID of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of the last modifier]]>
+		'''<summary>Name of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
 	End Class

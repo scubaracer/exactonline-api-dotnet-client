@@ -1,125 +1,125 @@
-' Last generated on 2017-05-05 12:58:34Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace HRM
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [AbsenceRegistration]
-		'''<![CDATA[Collection of absence registration transactions]]>
+		'''<summary>Collection of absence registration transactions</summary>
 		Public Property [AbsenceRegistrationTransactions] As IEnumerable(Of Models.HRM.AbsenceRegistrationTransaction)
-		'''<![CDATA[Absence cause, only supported for the Netherland legislation]]>
+		'''<summary>Absence cause, only supported for the Netherland legislation</summary>
 		Public Property [Cause] As Int16?
-		'''<![CDATA[Code for the absence cause, only supported for the Netherland legislation]]>
+		'''<summary>Code for the absence cause, only supported for the Netherland legislation</summary>
 		Public Property [CauseCode] As String
-		'''<![CDATA[Description for the absence cause, only supported for the Netherland legislation]]>
+		'''<summary>Description for the absence cause, only supported for the Netherland legislation</summary>
 		Public Property [CauseDescription] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		Public Property [Division] As Int32
-		'''<![CDATA[Employee linked to the absence]]>
+		'''<summary>Employee linked to the absence</summary>
 		Public Property [Employee] As Guid
-		'''<![CDATA[Employee full name]]>
+		'''<summary>Employee full name</summary>
 		Public Property [EmployeeFullName] As String
-		'''<![CDATA[Numeric ID of the employee]]>
+		'''<summary>Numeric ID of the employee</summary>
 		Public Property [EmployeeHID] As Int32
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Absence kind, only supported for the Netherland legislation]]>
+		'''<summary>Absence kind, only supported for the Netherland legislation</summary>
 		Public Property [Kind] As Int16?
-		'''<![CDATA[Code for the absence kind, only supported for the Netherland legislation]]>
+		'''<summary>Code for the absence kind, only supported for the Netherland legislation</summary>
 		Public Property [KindCode] As String
-		'''<![CDATA[Description for the absence kind, only supported for the Netherland legislation]]>
+		'''<summary>Description for the absence kind, only supported for the Netherland legislation</summary>
 		Public Property [KindDescription] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Extra information for absence]]>
+		'''<summary>Extra information for absence</summary>
 		Public Property [Notes] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [AbsenceRegistrationTransaction]
-		'''<![CDATA[Reference key to Absence Registration]]>
+		'''<summary>Reference key to Absence Registration</summary>
 		Public Property [AbsenceRegistration] As Guid
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		Public Property [Division] As Int32
-		'''<![CDATA[End time on the last day of absence stored as DateTime, and the date should be ignored]]>
+		'''<summary>End time on the last day of absence stored as DateTime, and the date should be ignored</summary>
 		Public Property [EndTime] As DateTime?
-		'''<![CDATA[Expected end date of absence]]>
+		'''<summary>Expected end date of absence</summary>
 		Public Property [ExpectedEndDate] As DateTime?
-		'''<![CDATA[Total number of absence hours]]>
+		'''<summary>Total number of absence hours</summary>
 		Public Property [Hours] As Double
-		'''<![CDATA[Hours of absence on the first day]]>
+		'''<summary>Hours of absence on the first day</summary>
 		Public Property [HoursFirstDay] As Double?
-		'''<![CDATA[Hours of absence on the last day]]>
+		'''<summary>Hours of absence on the last day</summary>
 		Public Property [HoursLastDay] As Double?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Extra information for absence]]>
+		'''<summary>Extra information for absence</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Notification moment of absence]]>
+		'''<summary>Notification moment of absence</summary>
 		Public Property [NotificationMoment] As DateTime
-		'''<![CDATA[Percentage disablement]]>
+		'''<summary>Percentage disablement</summary>
 		Public Property [PercentageDisablement] As Double
-		'''<![CDATA[Start date of absence]]>
+		'''<summary>Start date of absence</summary>
 		Public Property [StartDate] As DateTime
-		'''<![CDATA[Start time on the first day of absence stored as DateTime, and the date should be ignored]]>
+		'''<summary>Start time on the first day of absence stored as DateTime, and the date should be ignored</summary>
 		Public Property [StartTime] As DateTime?
-		'''<![CDATA[Status of absence, 0 = Open, 1 = Recovered]]>
+		'''<summary>Status of absence, 0 = Open, 1 = Recovered</summary>
 		Public Property [Status] As Int16
 	End Class
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [Costcenter]
-		'''<![CDATA[Indicates if the cost center is active: 0 = inactive 1 = active]]>
+		'''<summary>Indicates if the cost center is active: 0 = inactive 1 = active</summary>
 		Public Property [Active] As Boolean?
-		'''<![CDATA[Code (user-defined ID)]]>
+		'''<summary>Code (user-defined ID)</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description (text)]]>
+		'''<summary>Description (text)</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
 	End Class
@@ -127,31 +127,31 @@ Namespace HRM
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [Costunit]
-		'''<![CDATA[Code (user-defined)]]>
+		'''<summary>Code (user-defined)</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description (text)]]>
+		'''<summary>Description (text)</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
 	End Class
@@ -159,266 +159,424 @@ Namespace HRM
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [Department]
-		'''<![CDATA[Department Code]]>
+		'''<summary>Department Code</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Cost center Code]]>
+		'''<summary>Cost center Code</summary>
 		Public Property [Costcenter] As String
-		'''<![CDATA[Cost center description]]>
+		'''<summary>Cost center description</summary>
 		Public Property [CostcenterDescription] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Department description]]>
+		'''<summary>Department description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Explanation or extra information can be stored in the notes]]>
+		'''<summary>Explanation or extra information can be stored in the notes</summary>
 		Public Property [Notes] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("Code")>
 	Public Class [Division]
-		'''<![CDATA[Values: 0 = Not blocked 1 = Backup 2 = Conversion busy 3 = Conversion shadow 4 = Conversion waiting 5 = Copy data waiting 6 = Copy data buzy 100 = Wait for deletion 101 = Deleted 102 = Deletion failed]]>
+		'''<summary>Values: 0 = Not blocked 1 = Backup 2 = Conversion busy 3 = Conversion shadow 4 = Conversion waiting 5 = Copy data waiting 6 = Copy data buzy 100 = Wait for deletion 101 = Deleted 102 = Deletion failed</summary>
 		Public Property [BlockingStatus] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>First division classification. User should have access rights to view division classifications.</summary>
+		Public Property [Class_01] As DivisionClass
+		'''<summary>Second division classification. User should have access rights to view division classifications.</summary>
+		Public Property [Class_02] As DivisionClass
+		'''<summary>Third division classification. User should have access rights to view division classifications.</summary>
+		Public Property [Class_03] As DivisionClass
+		'''<summary>Fourth division classification. User should have access rights to view division classifications.</summary>
+		Public Property [Class_04] As DivisionClass
+		'''<summary>Fifth division classification. User should have access rights to view division classifications.</summary>
+		Public Property [Class_05] As DivisionClass
+		'''<summary>Primary key</summary>
 		Public Property [Code] As Int32
-		'''<![CDATA[Country of the division. Is used for determination of legislation]]>
+		'''<summary>Country of the division. Is used for determination of legislation</summary>
 		Public Property [Country] As String
-		'''<![CDATA[Description of Country]]>
+		'''<summary>Description of Country</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CountryDescription] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of the creator]]>
+		'''<summary>Name of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Default currency of the division]]>
+		'''<summary>Default currency of the division</summary>
 		Public Property [Currency] As String
-		'''<![CDATA[Description of Currency]]>
+		'''<summary>Description of Currency</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CurrencyDescription] As String
-		'''<![CDATA[Owner account of the division]]>
+		'''<summary>Owner account of the division</summary>
 		Public Property [Customer] As Guid?
-		'''<![CDATA[Owner account code of the division]]>
+		'''<summary>Owner account code of the division</summary>
 		Public Property [CustomerCode] As String
-		'''<![CDATA[Owner account name of the division]]>
+		'''<summary>Owner account name of the division</summary>
 		Public Property [CustomerName] As String
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Number that customers give to the division]]>
+		'''<summary>Number that customers give to the division</summary>
 		Public Property [HID] As Int64?
-		'''<![CDATA[True for the main (hosting) division]]>
+		'''<summary>True for the main (hosting) division</summary>
 		Public Property [Main] As Boolean?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of the last modifier]]>
+		'''<summary>Name of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Siret Number of the division (France)]]>
+		'''<summary>Siret Number of the division (France)</summary>
 		Public Property [SiretNumber] As String
-		'''<![CDATA[Date on which the division becomes active]]>
+		'''<summary>Date on which the division becomes active</summary>
 		Public Property [StartDate] As DateTime?
-		'''<![CDATA[Regular administrations will have status 0.  Currently, the only other possibility is 'archived' (1), which means the administration is not actively used, but still needs to be accessible for the customer/accountant to meet legal obligations]]>
+		'''<summary>Regular administrations will have status 0.  Currently, the only other possibility is &apos;archived&apos; (1), which means the administration is not actively used, but still needs to be accessible for the customer/accountant to meet legal obligations</summary>
 		Public Property [Status] As Int16?
-		'''<![CDATA[Number of your local tax authority (Germany)]]>
+		'''<summary>Number of your local tax authority (Germany)</summary>
 		Public Property [TaxOfficeNumber] As String
-		'''<![CDATA[Local tax reference number (Germany)]]>
+		'''<summary>Local tax reference number (Germany)</summary>
 		Public Property [TaxReferenceNumber] As String
-		'''<![CDATA[VAT number]]>
+		'''<summary>VAT number</summary>
 		Public Property [VATNumber] As String
-		'''<![CDATA[Customer value, hyperlink to external website]]>
+		'''<summary>Customer value, hyperlink to external website</summary>
 		Public Property [Website] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
-	Public Class [JobGroup]
-		'''<![CDATA[Job group code]]>
+	Public Class [DivisionClass]
+		'''<summary>Classification customer ID</summary>
+		Public Property [ClassNameCustomer] As Guid
+		'''<summary>Related classification description</summary>
+		Public Property [ClassNameDescription] As String
+		'''<summary>Related classification ID</summary>
+		Public Property [ClassNameID] As Guid
+		'''<summary>Property code</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Creation date]]>
-		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>Creation date</summary>
+		Public Property [Created] As DateTime
+		'''<summary>User ID of creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Job group description]]>
+		'''<summary>Property description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
-		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Property description term ID</summary>
+		Public Property [DescriptionTermID] As Int32?
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
-		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>Last modified date</summary>
+		Public Property [Modified] As DateTime
+		'''<summary>User ID of modifier</summary>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Explanation or extra information can be stored in the notes]]>
+		'''<summary>Related classification sequence number </summary>
+		Public Property [SequenceNr] As Int32
+	End Class
+
+	<SupportedActionsSDK(False, True, False, False)>
+	<DataServiceKey("ID")>
+	Public Class [DivisionClassName]
+		'''<summary>Creation date</summary>
+		Public Property [Created] As DateTime
+		'''<summary>User ID of creator</summary>
+		Public Property [Creator] As Guid?
+		'''<summary>Name of creator</summary>
+		Public Property [CreatorFullName] As String
+		'''<summary>ID of customer</summary>
+		Public Property [Customer] As Guid
+		'''<summary>Description of classification</summary>
+		Public Property [Description] As String
+		'''<summary>Term ID of the classification</summary>
+		Public Property [DescriptionTermID] As Int32?
+		'''<summary>Collection of classification properties</summary>
+		Public Property [DivisionClasses] As IEnumerable(Of Models.HRM.DivisionClass)
+		'''<summary>Primary key</summary>
+		Public Property [ID] As Guid
+		'''<summary>Last modified date</summary>
+		Public Property [Modified] As DateTime
+		'''<summary>User ID of modifier</summary>
+		Public Property [Modifier] As Guid?
+		'''<summary>Name of modifier</summary>
+		Public Property [ModifierFullName] As String
+		'''<summary>Sequence number</summary>
+		Public Property [SequenceNr] As Int32
+	End Class
+
+	<SupportedActionsSDK(False, True, False, False)>
+	<DataServiceKey("ID")>
+	Public Class [DivisionClassValue]
+		'''<summary>First classification</summary>
+		Public Property [Class_01] As DivisionClass
+		'''<summary>First classification ID</summary>
+		Public Property [Class_01_ID] As Guid?
+		'''<summary>Second classification</summary>
+		Public Property [Class_02] As DivisionClass
+		'''<summary>Second classification ID</summary>
+		Public Property [Class_02_ID] As Guid?
+		'''<summary>Third classification</summary>
+		Public Property [Class_03] As DivisionClass
+		'''<summary>Third classification ID</summary>
+		Public Property [Class_03_ID] As Guid?
+		'''<summary>Fourth classification</summary>
+		Public Property [Class_04] As DivisionClass
+		'''<summary>Fourth classification ID</summary>
+		Public Property [Class_04_ID] As Guid?
+		'''<summary>Fifth classification</summary>
+		Public Property [Class_05] As DivisionClass
+		'''<summary>Fifth classification ID</summary>
+		Public Property [Class_05_ID] As Guid?
+		'''<summary>Creation date</summary>
+		Public Property [Created] As DateTime
+		'''<summary>User ID of creator</summary>
+		Public Property [Creator] As Guid?
+		'''<summary>Name of creator</summary>
+		Public Property [CreatorFullName] As String
+		'''<summary>ID of customer</summary>
+		Public Property [Customer] As Guid
+		'''<summary>Division code</summary>
+		Public Property [Division] As Int32
+		'''<summary>Primary key</summary>
+		Public Property [ID] As Guid
+		'''<summary>Last modified date</summary>
+		Public Property [Modified] As DateTime
+		'''<summary>User ID of modifier</summary>
+		Public Property [Modifier] As Guid?
+		'''<summary>Name of modifier</summary>
+		Public Property [ModifierFullName] As String
+	End Class
+
+	<SupportedActionsSDK(False, True, False, False)>
+	<DataServiceKey("ID")>
+	Public Class [JobGroup]
+		'''<summary>Job group code</summary>
+		Public Property [Code] As String
+		'''<summary>Creation date</summary>
+		Public Property [Created] As DateTime?
+		'''<summary>User ID of creator</summary>
+		Public Property [Creator] As Guid?
+		'''<summary>Name of creator</summary>
+		Public Property [CreatorFullName] As String
+		'''<summary>Job group description</summary>
+		Public Property [Description] As String
+		'''<summary>Division code</summary>
+		Public Property [Division] As Int32?
+		'''<summary>Primary key</summary>
+		Public Property [ID] As Guid
+		'''<summary>Last modified date</summary>
+		Public Property [Modified] As DateTime?
+		'''<summary>User ID of modifier</summary>
+		Public Property [Modifier] As Guid?
+		'''<summary>Name of modifier</summary>
+		Public Property [ModifierFullName] As String
+		'''<summary>Explanation or extra information can be stored in the notes</summary>
 		Public Property [Notes] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [JobTitle]
-		'''<![CDATA[Job title code]]>
+		'''<summary>Job title code</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Job title description]]>
+		'''<summary>Job title description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Reference job code]]>
+		'''<summary>Reference job code</summary>
 		Public Property [JobCode] As String
-		'''<![CDATA[Group this job title belongs to]]>
+		'''<summary>Group this job title belongs to</summary>
 		Public Property [JobGroup] As Guid?
-		'''<![CDATA[Job group code]]>
+		'''<summary>Job group code</summary>
 		Public Property [JobGroupCode] As String
-		'''<![CDATA[Job group description]]>
+		'''<summary>Job group description</summary>
 		Public Property [JobGroupDescription] As String
-		'''<![CDATA[Job title represents job level from]]>
+		'''<summary>Job title represents job level from</summary>
 		Public Property [JobLevelFrom] As Int32?
-		'''<![CDATA[Job title represents job level to]]>
+		'''<summary>Job title represents job level to</summary>
 		Public Property [JobLevelTo] As Int32?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Explanation or extra information can be stored in the notes]]>
+		'''<summary>Explanation or extra information can be stored in the notes</summary>
 		Public Property [Notes] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
-	Public Class [LeaveRegistration]
-		'''<![CDATA[Creation date]]>
+	Public Class [LeaveBuildUpRegistration]
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description of leave]]>
+		'''<summary>Date of leave build up</summary>
+		Public Property [Date] As DateTime
+		'''<summary>Description of leave build up</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Employee linked to the leave]]>
+		'''<summary>Employee linked to the leave build up</summary>
 		Public Property [Employee] As Guid
-		'''<![CDATA[Employee full name]]>
+		'''<summary>Employee full name</summary>
 		Public Property [EmployeeFullName] As String
-		'''<![CDATA[Numeric ID of the employee]]>
+		'''<summary>Numeric ID of the employee</summary>
 		Public Property [EmployeeHID] As Int32
-		'''<![CDATA[End date of leave]]>
-		Public Property [EndDate] As DateTime
-		'''<![CDATA[End time on the last day of leave stored as DateTime, and the date should be ignored]]>
-		Public Property [EndTime] As DateTime?
-		'''<![CDATA[Total number of leave hours]]>
+		'''<summary>Total number of leave build up hours</summary>
 		Public Property [Hours] As Double
-		'''<![CDATA[Hours of leave on the first day]]>
-		Public Property [HoursFirstDay] As Double?
-		'''<![CDATA[Hours of leave on the last day]]>
-		Public Property [HoursLastDay] As Double?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Type of leave]]>
+		'''<summary>Type of leave</summary>
 		Public Property [LeaveType] As Guid
-		'''<![CDATA[Code for type of leave]]>
+		'''<summary>Code for type of leave</summary>
 		Public Property [LeaveTypeCode] As String
-		'''<![CDATA[Description for type of leave]]>
+		'''<summary>Description for type of leave</summary>
 		Public Property [LeaveTypeDescription] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Extra information for leave]]>
+		'''<summary>Extra information for leave build up</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Start date of leave]]>
+		'''<summary>Status of leave build up, 1 = Submitted, 2 = Approved, 3 = Rejected</summary>
+		Public Property [Status] As Int16
+	End Class
+
+	<SupportedActionsSDK(False, True, False, False)>
+	<DataServiceKey("ID")>
+	Public Class [LeaveRegistration]
+		'''<summary>Creation date</summary>
+		Public Property [Created] As DateTime
+		'''<summary>User ID of creator</summary>
+		Public Property [Creator] As Guid?
+		'''<summary>Name of creator</summary>
+		Public Property [CreatorFullName] As String
+		'''<summary>Description of leave</summary>
+		Public Property [Description] As String
+		'''<summary>Division code</summary>
+		Public Property [Division] As Int32?
+		'''<summary>Employee linked to the leave</summary>
+		Public Property [Employee] As Guid
+		'''<summary>Employee full name</summary>
+		Public Property [EmployeeFullName] As String
+		'''<summary>Numeric ID of the employee</summary>
+		Public Property [EmployeeHID] As Int32
+		'''<summary>End date of leave</summary>
+		Public Property [EndDate] As DateTime
+		'''<summary>End time on the last day of leave stored as DateTime, and the date should be ignored</summary>
+		Public Property [EndTime] As DateTime?
+		'''<summary>Total number of leave hours</summary>
+		Public Property [Hours] As Double
+		'''<summary>Hours of leave on the first day</summary>
+		Public Property [HoursFirstDay] As Double?
+		'''<summary>Hours of leave on the last day</summary>
+		Public Property [HoursLastDay] As Double?
+		'''<summary>Primary key</summary>
+		Public Property [ID] As Guid
+		'''<summary>Type of leave</summary>
+		Public Property [LeaveType] As Guid
+		'''<summary>Code for type of leave</summary>
+		Public Property [LeaveTypeCode] As String
+		'''<summary>Description for type of leave</summary>
+		Public Property [LeaveTypeDescription] As String
+		'''<summary>Last modified date</summary>
+		Public Property [Modified] As DateTime
+		'''<summary>User ID of modifier</summary>
+		Public Property [Modifier] As Guid?
+		'''<summary>Name of modifier</summary>
+		Public Property [ModifierFullName] As String
+		'''<summary>Extra information for leave</summary>
+		Public Property [Notes] As String
+		'''<summary>Start date of leave</summary>
 		Public Property [StartDate] As DateTime
-		'''<![CDATA[Start time on the first day of leave stored as DateTime, and the date should be ignored]]>
+		'''<summary>Start time on the first day of leave stored as DateTime, and the date should be ignored</summary>
 		Public Property [StartTime] As DateTime?
-		'''<![CDATA[Status of leave, 1 = Submitted, 2 = Approved, 3 = Rejected]]>
+		'''<summary>Status of leave, 1 = Submitted, 2 = Approved, 3 = Rejected</summary>
 		Public Property [Status] As Int16
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [Schedule]
-		'''<![CDATA[Obsolete]]>
+		'''<summary>Obsolete</summary>
 		Public Property [Active] As Byte?
-		'''<![CDATA[Average hours per week in a schedule]]>
+		'''<summary>Average hours per week in a schedule</summary>
 		Public Property [AverageHours] As Double?
-		'''<![CDATA[Schedule code]]>
+		'''<summary>Schedule code</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[ID of creator]]>
+		'''<summary>ID of creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of the creator]]>
+		'''<summary>Name of the creator</summary>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Average days per week in the schedule]]>
+		'''<summary>Average days per week in the schedule</summary>
 		Public Property [Days] As Double?
-		'''<![CDATA[Description of the schedule]]>
+		'''<summary>Description of the schedule</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Employment ID for schedule]]>
+		'''<summary>Employment ID for schedule</summary>
 		Public Property [Employment] As Guid?
-		'''<![CDATA[Employment number]]>
+		'''<summary>Employment number</summary>
 		Public Property [EmploymentHID] As Int32?
-		'''<![CDATA[End date of the schedule]]>
+		'''<summary>End date of the schedule</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[Number of hours per week in a CLA for which the schedule is built]]>
+		'''<summary>Number of hours per week in a CLA for which the schedule is built</summary>
 		Public Property [Hours] As Double?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Number of hours which are built up each week for later leave]]>
+		'''<summary>Number of hours which are built up each week for later leave</summary>
 		Public Property [LeaveHoursCompensation] As Double?
-		'''<![CDATA[Indication if the schedule is a main schedule for a CLA. 1 = Yes, 0 = No]]>
+		'''<summary>Indication if the schedule is a main schedule for a CLA. 1 = Yes, 0 = No</summary>
 		Public Property [Main] As Byte?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[ID of modifier]]>
+		'''<summary>ID of modifier</summary>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of the modifier]]>
+		'''<summary>Name of the modifier</summary>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Part-time factor for payroll calculation. Value between 0 and 1]]>
+		'''<summary>Part-time factor for payroll calculation. Value between 0 and 1</summary>
 		Public Property [PaymentParttimeFactor] As Double?
-		'''<![CDATA[Type of schedule. 1 = Hours and average days, 2 = Hours and specific days, 3 = Hours per day, 4 = Time frames per day]]>
+		'''<summary>Type of schedule. 1 = Hours and average days, 2 = Hours and specific days, 3 = Hours per day, 4 = Time frames per day</summary>
 		Public Property [ScheduleType] As Int32?
-		'''<![CDATA[Description of the schedule type]]>
+		'''<summary>Description of the schedule type</summary>
 		Public Property [ScheduleTypeDescription] As String
-		'''<![CDATA[Week in the schedule which is used to start with. By default the number will be 1.]]>
+		'''<summary>Week in the schedule which is used to start with. By default the number will be 1.</summary>
 		Public Property [StartDate] As DateTime?
-		'''<![CDATA[Week to start the schedule from for an employee]]>
+		'''<summary>Week to start the schedule from for an employee</summary>
 		Public Property [StartWeek] As Int32?
 	End Class
 

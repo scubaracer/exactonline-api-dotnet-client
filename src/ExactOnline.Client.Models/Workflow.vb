@@ -1,24 +1,24 @@
-' Last generated on 2017-05-05 12:58:35Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace Workflow
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [RequestAttachment]
-		'''<![CDATA[The division]]>
+		'''<summary>The division</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[To get the file in its original format (xml, jpg, pdf, etc.) append <b>&Download=1</b> to the url.]]>
+		'''<summary>To get the file in its original format (xml, jpg, pdf, etc.) append &lt;b&gt;&amp;Download=1&lt;/b&gt; to the url.</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DownloadUrl] As String
-		'''<![CDATA[Filename of the attachment]]>
+		'''<summary>Filename of the attachment</summary>
 		Public Property [FileName] As String
-		'''<![CDATA[File size of the attachment]]>
+		'''<summary>File size of the attachment</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [FileSize] As Double
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[The request this attachment is linked to]]>
+		'''<summary>The request this attachment is linked to</summary>
 		Public Property [Request] As Guid?
 	End Class
 

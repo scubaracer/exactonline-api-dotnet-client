@@ -1,84 +1,228 @@
-' Last generated on 2017-05-05 12:58:35Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace Manufacturing
+
+	<SupportedActionsSDK(True, True, True, True)>
+	<DataServiceKey("ID")>
+	Public Class [BillOfMaterialMaterial]
+		'''<summary>Item average cost available when average cost method is used</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [AverageCost] As Double?
+		'''<summary>Indicates if this is a backflush item</summary>
+		Public Property [Backflush] As Byte?
+		'''<summary>Calculator type</summary>
+		Public Property [CalculatorType] As Int32?
+		'''<summary>Cost batch</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [CostBatch] As Double?
+		'''<summary>Cost center</summary>
+		Public Property [CostCenter] As String
+		'''<summary>Cost center description</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [CostCenterDescription] As String
+		'''<summary>Cost unit</summary>
+		Public Property [CostUnit] As String
+		'''<summary>Cost unit description</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [CostUnitDescription] As String
+		'''<summary>Name of creator</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [CreatorFullName] As String
+		'''<summary>Description of the material</summary>
+		Public Property [Description] As String
+		'''<summary>Detail drawing reference</summary>
+		Public Property [DetailDrawing] As String
+		'''<summary>Division code</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [Division] As Int32?
+		'''<summary>Primary key</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ID] As Guid
+		'''<summary>Key of item version</summary>
+		Public Property [ItemVersion] As Guid?
+		'''<summary>Line number</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [LineNumber] As Int32?
+		'''<summary>Net weight</summary>
+		Public Property [NetWeight] As Double?
+		'''<summary>Net weight unit of measure</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [NetWeightUnit] As String
+		'''<summary>Notes</summary>
+		Public Property [Notes] As String
+		'''<summary>Key of part item</summary>
+		Public Property [PartItem] As Guid?
+		'''<summary>Part item code</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [PartItemCode] As String
+		'''<summary>Item standard cost available when standard cost method is used</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [PartItemCostPriceStandard] As Double?
+		'''<summary>Part item description</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [PartItemDescription] As String
+		'''<summary>Quantity</summary>
+		Public Property [Quantity] As Double?
+		'''<summary>Quantity batch</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [QuantityBatch] As Double?
+		'''<summary>Creation date</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [syscreated] As DateTime?
+		'''<summary>User ID of creator</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [syscreator] As Guid?
+		'''<summary>Modified date</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [sysmodified] As DateTime?
+		'''<summary>User ID of modifier</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [sysmodifier] As Guid?
+		'''<summary>Material type 1 indicates material, 2 indicates byproduct</summary>
+		Public Property [Type] As Int32?
+	End Class
+
+	<SupportedActionsSDK(True, True, True, True)>
+	<DataServiceKey("ID")>
+	Public Class [BillOfMaterialVersion]
+		'''<summary>Batch Quantity of Item Version</summary>
+		Public Property [BatchQuantity] As Double?
+		'''<summary>Cad drawing URL</summary>
+		Public Property [CadDrawingUrl] As String
+		'''<summary>Calculated Cost Price of Item Version</summary>
+		Public Property [CalculatedCostPrice] As Double?
+		'''<summary>Creation date</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [Created] As DateTime?
+		'''<summary>User ID of creator</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [Creator] As Guid?
+		'''<summary>Name of creator</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [CreatorFullName] As String
+		'''<summary>Description of the item version</summary>
+		Public Property [Description] As String
+		'''<summary>Division code</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [Division] As Int32?
+		'''<summary>Primary key</summary>
+		Public Property [ID] As Guid
+		'''<summary>Indicates if this is the default item version that will be assigned when a item is selected</summary>
+		Public Property [IsDefault] As Byte
+		'''<summary>Reference to Items table</summary>
+		Public Property [Item] As Guid
+		'''<summary>Description of Item</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ItemDescription] As String
+		'''<summary>Last modified date</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [Modified] As DateTime?
+		'''<summary>User ID of modifier</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [Modifier] As Guid?
+		'''<summary>Name of modifier</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ModifierFullName] As String
+		'''<summary>Line notes</summary>
+		Public Property [Notes] As String
+		'''<summary>Order lead days for item</summary>
+		Public Property [OrderLeadDays] As Int32?
+		'''<summary>Production lead time in days of Item version</summary>
+		Public Property [ProductionLeadDays] As Int32?
+		'''<summary>Statuses of Item version: 10-Engineering change pending, 20-Engineering change approved, 30-Active &amp; 40-Historic</summary>
+		Public Property [Status] As Int16?
+		'''<summary>Description of Status</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [StatusDescription] As String
+		'''<summary>Type of Item version: 10-Sales bill of material, 20-Manufacturing recipe</summary>
+		Public Property [Type] As Int16?
+		'''<summary>Description of Type</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [TypeDescription] As String
+		'''<summary>Version date</summary>
+		Public Property [VersionDate] As DateTime?
+		'''<summary>Version Number</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [VersionNumber] As Int32?
+	End Class
 
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("StockTransactionId")>
 	Public Class [ByProductReceipt]
-		'''<![CDATA[ID of creating user]]>
+		'''<summary>ID of creating user</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedBy] As Guid?
-		'''<![CDATA[Name of the creating user]]>
+		'''<summary>Name of the creating user</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedByFullName] As String
-		'''<![CDATA[Date this by-product finish was created]]>
+		'''<summary>Date this by-product finish was created</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedDate] As DateTime?
-		'''<![CDATA[Serial or batch numbers are reserved prior to a POST to ByProductReceipts. This DraftStockTransactionID represents the group of serial or batch numbers to be used in this transaction.]]>
+		'''<summary>Serial or batch numbers are reserved prior to a POST to ByProductReceipts. This DraftStockTransactionID represents the group of serial or batch numbers to be used in this transaction.</summary>
 		Public Property [DraftStockTransactionID] As Guid?
-		'''<![CDATA[Indicates if this ByProductReceipt has a quantity eligible to be reversed via ByProductReversals]]>
+		'''<summary>Indicates if this ByProductReceipt has a quantity eligible to be reversed via ByProductReversals</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [HasReversibleQuantity] As Boolean
-		'''<![CDATA[Boolean indicating if this by-product finish was the result of shop order backflushing]]>
+		'''<summary>Boolean indicating if this by-product finish was the result of shop order backflushing</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsBackflush] As Boolean
-		'''<![CDATA[Does the ByProductReceipt's item use batch numbers]]>
+		'''<summary>Does the ByProductReceipt&apos;s item use batch numbers</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsBatch] As Byte?
-		'''<![CDATA[Indicates if fractions (for example 0.35) are allowed for quantities of the ByProductReceipt's item]]>
+		'''<summary>Indicates if fractions (for example 0.35) are allowed for quantities of the ByProductReceipt&apos;s item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsFractionAllowedItem] As Byte?
-		'''<![CDATA[Does the ByProductReceipt's item use serial numbers]]>
+		'''<summary>Does the ByProductReceipt&apos;s item use serial numbers</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsSerial] As Byte?
-		'''<![CDATA[ID of by-product item]]>
+		'''<summary>ID of by-product item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Code of by-product item]]>
+		'''<summary>Code of by-product item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemCode] As String
-		'''<![CDATA[Description of by-product item]]>
+		'''<summary>Description of by-product item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Picture url of by-product item]]>
+		'''<summary>Picture url of by-product item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemPictureUrl] As String
-		'''<![CDATA[Quantity of this by-product finish]]>
+		'''<summary>Quantity of this by-product finish</summary>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[ID of shop order, which produced the by-product]]>
+		'''<summary>ID of shop order, which produced the by-product</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrder] As Guid?
-		'''<![CDATA[ID of the shop order material plan for this by-product]]>
+		'''<summary>ID of the shop order material plan for this by-product</summary>
 		Public Property [ShopOrderMaterialPlan] As Guid?
-		'''<![CDATA[Number of shop order, which produced the by-product]]>
+		'''<summary>Number of shop order, which produced the by-product</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderNumber] As Int32?
-		'''<![CDATA[ID of stock transaction related to this by-product finish]]>
+		'''<summary>ID of stock transaction related to this by-product finish</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StockTransactionId] As Guid
-		'''<![CDATA[ID of storage location finished to]]>
+		'''<summary>ID of storage location finished to</summary>
 		Public Property [StorageLocation] As Guid?
-		'''<![CDATA[Code of storage location finished to]]>
+		'''<summary>Code of storage location finished to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StorageLocationCode] As String
-		'''<![CDATA[Description of storage location finished to]]>
+		'''<summary>Description of storage location finished to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StorageLocationDescription] As String
-		'''<![CDATA[Effective date of this by-product finish]]>
+		'''<summary>Effective date of this by-product finish</summary>
 		Public Property [TransactionDate] As DateTime?
-		'''<![CDATA[Unit of measurement abbreviation of by-product item]]>
+		'''<summary>Unit of measurement abbreviation of by-product item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Unit] As String
-		'''<![CDATA[Unit of measurement of by-product item]]>
+		'''<summary>Unit of measurement of by-product item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [UnitDescription] As String
-		'''<![CDATA[ID of warehouse finished to]]>
+		'''<summary>ID of warehouse finished to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Warehouse] As Guid?
-		'''<![CDATA[Code of warehouse finished to]]>
+		'''<summary>Code of warehouse finished to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseCode] As String
-		'''<![CDATA[Description of warehouse finished to]]>
+		'''<summary>Description of warehouse finished to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseDescription] As String
 	End Class
@@ -86,82 +230,82 @@ Namespace Manufacturing
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("ReversalStockTransactionId")>
 	Public Class [ByProductReversal]
-		'''<![CDATA[ID of creating user]]>
+		'''<summary>ID of creating user</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedBy] As Guid?
-		'''<![CDATA[Name of the creating user]]>
+		'''<summary>Name of the creating user</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedByFullName] As String
-		'''<![CDATA[Date of this reversal]]>
+		'''<summary>Date of this reversal</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedDate] As DateTime?
-		'''<![CDATA[Boolean indicating if this reversal was the result of shop order backflushing, processed during a ShopOrderReversal]]>
+		'''<summary>Boolean indicating if this reversal was the result of shop order backflushing, processed during a ShopOrderReversal</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsBackflush] As Boolean
-		'''<![CDATA[Does the ByProductReversal's item use batch numbers]]>
+		'''<summary>Does the ByProductReversal&apos;s item use batch numbers</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsBatch] As Byte?
-		'''<![CDATA[Indicates if fractions (for example 0.35) are allowed for quantities of the ByProductReversal's item]]>
+		'''<summary>Indicates if fractions (for example 0.35) are allowed for quantities of the ByProductReversal&apos;s item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsFractionAllowedItem] As Byte?
-		'''<![CDATA[Does the ByProductReversal's item use serial numbers]]>
+		'''<summary>Does the ByProductReversal&apos;s item use serial numbers</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsSerial] As Byte?
-		'''<![CDATA[Item reversed]]>
+		'''<summary>Item reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Code of item reversed]]>
+		'''<summary>Code of item reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemCode] As String
-		'''<![CDATA[Description of item reversed]]>
+		'''<summary>Description of item reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Picture url of by-product item]]>
+		'''<summary>Picture url of by-product item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemPictureUrl] As String
-		'''<![CDATA[Notes associated with this reversal]]>
+		'''<summary>Notes associated with this reversal</summary>
 		Public Property [Note] As String
-		'''<![CDATA[ID of the original stock transaction, which was reversed]]>
+		'''<summary>ID of the original stock transaction, which was reversed</summary>
 		Public Property [OriginalStockTransactionId] As Guid?
-		'''<![CDATA[Quantity reversed]]>
+		'''<summary>Quantity reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[ID of stock transaction related to this ByProductReversal]]>
+		'''<summary>ID of stock transaction related to this ByProductReversal</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ReversalStockTransactionId] As Guid
-		'''<![CDATA[Shop order being reversed to]]>
+		'''<summary>Shop order being reversed to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrder] As Guid?
-		'''<![CDATA[ID of shop order material plan]]>
+		'''<summary>ID of shop order material plan</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderMaterialPlan] As Guid?
-		'''<![CDATA[Number of shop order being reversed to]]>
+		'''<summary>Number of shop order being reversed to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderNumber] As Int32?
-		'''<![CDATA[ID of storage location reversed from]]>
+		'''<summary>ID of storage location reversed from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StorageLocation] As Guid?
-		'''<![CDATA[Code of storage location reversed from]]>
+		'''<summary>Code of storage location reversed from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StorageLocationCode] As String
-		'''<![CDATA[Description of storage location reversed from]]>
+		'''<summary>Description of storage location reversed from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StorageLocationDescription] As String
-		'''<![CDATA[Effective date of this ByProductReversal]]>
+		'''<summary>Effective date of this ByProductReversal</summary>
 		Public Property [TransactionDate] As DateTime?
-		'''<![CDATA[Unit of measurement abbreviation of item reversed]]>
+		'''<summary>Unit of measurement abbreviation of item reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Unit] As String
-		'''<![CDATA[Unit of measurement of item reversed]]>
+		'''<summary>Unit of measurement of item reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [UnitDescription] As String
-		'''<![CDATA[ID of warehouse reversed from]]>
+		'''<summary>ID of warehouse reversed from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Warehouse] As Guid?
-		'''<![CDATA[Code of warehouse reversed from]]>
+		'''<summary>Code of warehouse reversed from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseCode] As String
-		'''<![CDATA[Description of warehouse reversed from]]>
+		'''<summary>Description of warehouse reversed from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseDescription] As String
 	End Class
@@ -169,88 +313,88 @@ Namespace Manufacturing
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("StockTransactionId")>
 	Public Class [MaterialIssue]
-		'''<![CDATA[ID of creating user]]>
+		'''<summary>ID of creating user</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedBy] As Guid?
-		'''<![CDATA[Name of the creating user]]>
+		'''<summary>Name of the creating user</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedByFullName] As String
-		'''<![CDATA[Date this material issue was created]]>
+		'''<summary>Date this material issue was created</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedDate] As DateTime?
-		'''<![CDATA[Serial or batch numbers are reserved prior to a POST to MaterialIssues. This DraftStockTransactionID represents the group of serial or batch numbers to be used in this transaction.]]>
+		'''<summary>Serial or batch numbers are reserved prior to a POST to MaterialIssues. This DraftStockTransactionID represents the group of serial or batch numbers to be used in this transaction.</summary>
 		Public Property [DraftStockTransactionID] As Guid?
-		'''<![CDATA[Indicates if this MaterialIssue has a quantity eligible to be reversed via MaterialReversals]]>
+		'''<summary>Indicates if this MaterialIssue has a quantity eligible to be reversed via MaterialReversals</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [HasReversibleQuantity] As Boolean
-		'''<![CDATA[Boolean indicating if this material issue was the result of shop order backflushing]]>
+		'''<summary>Boolean indicating if this material issue was the result of shop order backflushing</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsBackflush] As Byte?
-		'''<![CDATA[Does the material issue's item use batch numbers]]>
+		'''<summary>Does the material issue&apos;s item use batch numbers</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsBatch] As Byte?
-		'''<![CDATA[Indicates if fractions (for example 0.35) are allowed for quantities of the material issue's item]]>
+		'''<summary>Indicates if fractions (for example 0.35) are allowed for quantities of the material issue&apos;s item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsFractionAllowedItem] As Byte?
-		'''<![CDATA[Boolean indicating if this material issue was an issue to a parent shop order]]>
+		'''<summary>Boolean indicating if this material issue was an issue to a parent shop order</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsIssueFromChild] As Byte?
-		'''<![CDATA[Does the material issue's item use serial numbers]]>
+		'''<summary>Does the material issue&apos;s item use serial numbers</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsSerial] As Byte?
-		'''<![CDATA[Item issued]]>
+		'''<summary>Item issued</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Code of item issued]]>
+		'''<summary>Code of item issued</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemCode] As String
-		'''<![CDATA[Description of item issued]]>
+		'''<summary>Description of item issued</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Picture url of item issued]]>
+		'''<summary>Picture url of item issued</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemPictureUrl] As String
-		'''<![CDATA[Notes logged with this material issue]]>
+		'''<summary>Notes logged with this material issue</summary>
 		Public Property [Note] As String
-		'''<![CDATA[Quantity of this material issue]]>
+		'''<summary>Quantity of this material issue</summary>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[If this transaction was part of a SubOrderReceipt, this ID is the related ShopOrderReceipt.StockTransactionID.]]>
+		'''<summary>If this transaction was part of a SubOrderReceipt, this ID is the related ShopOrderReceipt.StockTransactionID.</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [RelatedStockTransaction] As Guid?
-		'''<![CDATA[ID of shop order issued to]]>
+		'''<summary>ID of shop order issued to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrder] As Guid?
-		'''<![CDATA[ID of shop order material plan]]>
+		'''<summary>ID of shop order material plan</summary>
 		Public Property [ShopOrderMaterialPlan] As Guid?
-		'''<![CDATA[Number of shop order issued to]]>
+		'''<summary>Number of shop order issued to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderNumber] As Int32?
-		'''<![CDATA[ID of stock transaction related to this material issue]]>
+		'''<summary>ID of stock transaction related to this material issue</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StockTransactionId] As Guid
-		'''<![CDATA[ID of storage location issued from]]>
+		'''<summary>ID of storage location issued from</summary>
 		Public Property [StorageLocation] As Guid?
-		'''<![CDATA[Code of storage location issued from]]>
+		'''<summary>Code of storage location issued from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StorageLocationCode] As String
-		'''<![CDATA[Description of storage location issued from]]>
+		'''<summary>Description of storage location issued from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StorageLocationDescription] As String
-		'''<![CDATA[Effective date of this material issue]]>
+		'''<summary>Effective date of this material issue</summary>
 		Public Property [TransactionDate] As DateTime?
-		'''<![CDATA[Unit of measurement abbreviation of item issued]]>
+		'''<summary>Unit of measurement abbreviation of item issued</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Unit] As String
-		'''<![CDATA[Unit of measurement of item issued]]>
+		'''<summary>Unit of measurement of item issued</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [UnitDescription] As String
-		'''<![CDATA[ID of warehouse issued from]]>
+		'''<summary>ID of warehouse issued from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Warehouse] As Guid?
-		'''<![CDATA[Code of warehouse issued from]]>
+		'''<summary>Code of warehouse issued from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseCode] As String
-		'''<![CDATA[Description of warehouse issued from]]>
+		'''<summary>Description of warehouse issued from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseDescription] As String
 	End Class
@@ -258,82 +402,82 @@ Namespace Manufacturing
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("ReversalStockTransactionId")>
 	Public Class [MaterialReversal]
-		'''<![CDATA[ID of creating user]]>
+		'''<summary>ID of creating user</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedBy] As Guid?
-		'''<![CDATA[Name of the creating user]]>
+		'''<summary>Name of the creating user</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedByFullName] As String
-		'''<![CDATA[Date this reversal was created]]>
+		'''<summary>Date this reversal was created</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedDate] As DateTime?
-		'''<![CDATA[Boolean indicating if this reversal was the result of shop order backflushing, processed during a ShopOrderReversal]]>
+		'''<summary>Boolean indicating if this reversal was the result of shop order backflushing, processed during a ShopOrderReversal</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsBackflush] As Boolean
-		'''<![CDATA[Does the issue reversal's item use batch numbers]]>
+		'''<summary>Does the issue reversal&apos;s item use batch numbers</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsBatch] As Byte?
-		'''<![CDATA[Indicates if fractions (for example 0.35) are allowed for quantities of the material reversal's item]]>
+		'''<summary>Indicates if fractions (for example 0.35) are allowed for quantities of the material reversal&apos;s item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsFractionAllowedItem] As Byte?
-		'''<![CDATA[Does the issue reversal's item use serial numbers]]>
+		'''<summary>Does the issue reversal&apos;s item use serial numbers</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsSerial] As Byte?
-		'''<![CDATA[Item reversed]]>
+		'''<summary>Item reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Code of item reversed]]>
+		'''<summary>Code of item reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemCode] As String
-		'''<![CDATA[Description of item reversed]]>
+		'''<summary>Description of item reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Picture url of item issued]]>
+		'''<summary>Picture url of item issued</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemPictureUrl] As String
-		'''<![CDATA[Notes logged with this reversal]]>
+		'''<summary>Notes logged with this reversal</summary>
 		Public Property [Note] As String
-		'''<![CDATA[ID of the original stock transaction, which was reversed]]>
+		'''<summary>ID of the original stock transaction, which was reversed</summary>
 		Public Property [OriginalStockTransactionId] As Guid?
-		'''<![CDATA[Quantity of this reversal]]>
+		'''<summary>Quantity of this reversal</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[ID of stock transaction related to this material issue]]>
+		'''<summary>ID of stock transaction related to this material issue</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ReversalStockTransactionId] As Guid
-		'''<![CDATA[ID of shop order reversed from]]>
+		'''<summary>ID of shop order reversed from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrder] As Guid?
-		'''<![CDATA[ID of shop order material plan]]>
+		'''<summary>ID of shop order material plan</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderMaterialPlan] As Guid?
-		'''<![CDATA[Number of shop order reversed from]]>
+		'''<summary>Number of shop order reversed from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderNumber] As Int32?
-		'''<![CDATA[ID of storage location reversed to]]>
+		'''<summary>ID of storage location reversed to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StorageLocation] As Guid?
-		'''<![CDATA[Code of storage location reversed to]]>
+		'''<summary>Code of storage location reversed to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StorageLocationCode] As String
-		'''<![CDATA[Description of storage location reversed to]]>
+		'''<summary>Description of storage location reversed to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StorageLocationDescription] As String
-		'''<![CDATA[Effective date of this reversal]]>
+		'''<summary>Effective date of this reversal</summary>
 		Public Property [TransactionDate] As DateTime?
-		'''<![CDATA[Unit of measurement abbreviation of item reversed]]>
+		'''<summary>Unit of measurement abbreviation of item reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Unit] As String
-		'''<![CDATA[Unit of measurement of item reversed]]>
+		'''<summary>Unit of measurement of item reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [UnitDescription] As String
-		'''<![CDATA[ID of warehouse reversed to]]>
+		'''<summary>ID of warehouse reversed to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Warehouse] As Guid?
-		'''<![CDATA[Code of warehouse reversed to]]>
+		'''<summary>Code of warehouse reversed to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseCode] As String
-		'''<![CDATA[Description of warehouse reversed to]]>
+		'''<summary>Description of warehouse reversed to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseDescription] As String
 	End Class
@@ -341,108 +485,108 @@ Namespace Manufacturing
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [Operation]
-		'''<![CDATA[Code of the operation]]>
+		'''<summary>Code of the operation</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description of the operation]]>
+		'''<summary>Description of the operation</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Indicates if the operation has suppliers associated with it]]>
+		'''<summary>Indicates if the operation has suppliers associated with it</summary>
 		Public Property [HasSuppliers] As Byte?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Reference to Items table]]>
+		'''<summary>Reference to Items table</summary>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Description of Item]]>
+		'''<summary>Description of Item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Extra remarks]]>
+		'''<summary>Extra remarks</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Search code for the operation]]>
+		'''<summary>Search code for the operation</summary>
 		Public Property [Searchcode] As String
-		'''<![CDATA[Status of the operation]]>
+		'''<summary>Status of the operation</summary>
 		Public Property [Status] As Int32?
 	End Class
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [OperationResource]
-		'''<![CDATA[Reference to Accounts]]>
+		'''<summary>Reference to Accounts</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[Attended percentage]]>
+		'''<summary>Attended percentage</summary>
 		Public Property [AttendedPercentage] As Double?
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Reference to Currencies]]>
+		'''<summary>Reference to Currencies</summary>
 		Public Property [Currency] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Efficiency percentage]]>
+		'''<summary>Efficiency percentage</summary>
 		Public Property [EfficiencyPercentage] As Double?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Indicates if this is the primary operation of the workcenter]]>
+		'''<summary>Indicates if this is the primary operation of the workcenter</summary>
 		Public Property [IsPrimary] As Byte?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Reference to Operations]]>
+		'''<summary>Reference to Operations</summary>
 		Public Property [Operation] As Guid?
-		'''<![CDATA[Description of Operation]]>
+		'''<summary>Description of Operation</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [OperationDescription] As String
-		'''<![CDATA[Lead days from purchase]]>
+		'''<summary>Lead days from purchase</summary>
 		Public Property [PurchaseLeadDays] As Int32?
-		'''<![CDATA[Unit of purchased item from supplier]]>
+		'''<summary>Unit of purchased item from supplier</summary>
 		Public Property [PurchaseUnit] As String
-		'''<![CDATA[VAT code used for purchased item from supplier]]>
+		'''<summary>VAT code used for purchased item from supplier</summary>
 		Public Property [PurchaseVATCode] As String
-		'''<![CDATA[Used in conjuction with RunMethod and EfficiencyPercentage to determine PlannedRunHours]]>
+		'''<summary>Used in conjuction with RunMethod and EfficiencyPercentage to determine PlannedRunHours</summary>
 		Public Property [Run] As Double?
-		'''<![CDATA[Reference to OperationRunMethods]]>
+		'''<summary>Reference to OperationRunMethods</summary>
 		Public Property [RunMethod] As Int32?
-		'''<![CDATA[Used in conjunction with SetupCount and SetupUnit to determine PlannedSetupHours]]>
+		'''<summary>Used in conjunction with SetupCount and SetupUnit to determine PlannedSetupHours</summary>
 		Public Property [Setup] As Double?
-		'''<![CDATA[Reference to TimeUnits]]>
+		'''<summary>Reference to TimeUnits</summary>
 		Public Property [SetupUnit] As String
-		'''<![CDATA[Reference to RoutingStepTypes]]>
+		'''<summary>Reference to RoutingStepTypes</summary>
 		Public Property [Type] As Int32?
-		'''<![CDATA[Reference to Workcenter]]>
+		'''<summary>Reference to Workcenter</summary>
 		Public Property [Workcenter] As Guid?
-		'''<![CDATA[Description of Workcenter]]>
+		'''<summary>Description of Workcenter</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WorkcenterDescription] As String
 	End Class
@@ -450,252 +594,279 @@ Namespace Manufacturing
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [ProductionArea]
-		'''<![CDATA[Code of the production area group]]>
+		'''<summary>Code of the production area group</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Reference to Cost center]]>
+		'''<summary>Reference to Cost center</summary>
 		Public Property [Costcenter] As String
-		'''<![CDATA[Description of Costcenter]]>
+		'''<summary>Description of Costcenter</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostcenterDescription] As String
-		'''<![CDATA[Reference to Cost unit]]>
+		'''<summary>Reference to Cost unit</summary>
 		Public Property [Costunit] As String
-		'''<![CDATA[Description of Costunit]]>
+		'''<summary>Description of Costunit</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostunitDescription] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description of the production area]]>
+		'''<summary>Description of the production area</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Indicates if this is the default production area. This will be used when creating a new production area]]>
+		'''<summary>Indicates if this is the default production area. This will be used when creating a new production area</summary>
 		Public Property [IsDefault] As Byte
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Production area notes]]>
+		'''<summary>Production area notes</summary>
 		Public Property [Notes] As String
 	End Class
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [ShopOrder]
-		'''<![CDATA[URL to CAD Drawing Specified on Manufacturing Bill of Material]]>
-		<SDKFieldType(FieldType.ReadOnly)>
+		'''<summary>URL to CAD Drawing Specified on Manufacturing Bill of Material</summary>
 		Public Property [CADDrawingURL] As String
-		'''<![CDATA[The cost center linked to the shop order]]>
+		'''<summary>The cost center linked to the shop order</summary>
 		Public Property [Costcenter] As String
-		'''<![CDATA[Description of Costcenter]]>
+		'''<summary>Description of Costcenter</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostcenterDescription] As String
-		'''<![CDATA[The cost unit linked to the shop order]]>
+		'''<summary>The cost unit linked to the shop order</summary>
 		Public Property [Costunit] As String
-		'''<![CDATA[Description of Costunit]]>
+		'''<summary>Description of Costunit</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostunitDescription] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description]]>
+		'''<summary>Description of the shop order</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Date on which the shop order was placed]]>
+		'''<summary>Date on which the shop order was placed</summary>
 		Public Property [EntryDate] As DateTime?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Does the material plan's item use batch numbers]]>
+		'''<summary>Does the material plan&apos;s item use batch numbers</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsBatch] As Byte
-		'''<![CDATA[Indicates if fractions (for example 0.35) are allowed for quantities of the material plan's item]]>
+		'''<summary>Indicates if fractions (for example 0.35) are allowed for quantities of the material plan&apos;s item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsFractionAllowedItem] As Byte
-		'''<![CDATA[Indicator that Shop order is in planning]]>
+		'''<summary>Indicator that Shop order is in planning</summary>
 		Public Property [IsInPlanning] As Byte
-		'''<![CDATA[Indicator if the Shop order is on hold]]>
+		'''<summary>Indicator if the Shop order is on hold</summary>
 		Public Property [IsOnHold] As Byte
-		'''<![CDATA[Indicator that the Shop order has been released to production]]>
+		'''<summary>Indicator that the Shop order has been released to production</summary>
 		Public Property [IsReleased] As Byte
-		'''<![CDATA[Does the material plan's item use serial numbers]]>
+		'''<summary>Does the material plan&apos;s item use serial numbers</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsSerial] As Byte
-		'''<![CDATA[Reference to the item]]>
+		'''<summary>Reference to the item</summary>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Code of the item created by this shop order]]>
+		'''<summary>Code of the item created by this shop order</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemCode] As String
-		'''<![CDATA[Description of the item created by this shop order]]>
+		'''<summary>Description of the item created by this shop order</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[URL of the item created by this shop order]]>
+		'''<summary>URL of the item created by this shop order</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemPictureUrl] As String
-		'''<![CDATA[Reference to ItemVersion]]>
+		'''<summary>Reference to ItemVersion</summary>
 		Public Property [ItemVersion] As Guid?
-		'''<![CDATA[Description of Item Version]]>
+		'''<summary>Description of Item Version</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemVersionDescription] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Notes - only viewed internally]]>
+		'''<summary>Notes - only viewed internally</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Planned end date of this shop order]]>
+		'''<summary>Planned end date of this shop order</summary>
 		Public Property [PlannedDate] As DateTime?
-		'''<![CDATA[Planned quantity]]>
+		'''<summary>Planned quantity</summary>
 		Public Property [PlannedQuantity] As Double?
-		'''<![CDATA[Planned start date of this shop order]]>
+		'''<summary>Planned start date of this shop order</summary>
 		Public Property [PlannedStartDate] As DateTime?
-		'''<![CDATA[Produced quantity]]>
+		'''<summary>Produced quantity</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProducedQuantity] As Double?
-		'''<![CDATA[Production lead days]]>
+		'''<summary>Production lead days</summary>
 		Public Property [ProductionLeadDays] As Int32
-		'''<![CDATA[Reference to Project]]>
+		'''<summary>Reference to Project</summary>
 		Public Property [Project] As Guid?
-		'''<![CDATA[Description of Project]]>
+		'''<summary>Description of Project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA[Quantity ready to ship]]>
+		'''<summary>Quantity ready to ship</summary>
 		Public Property [ReadyToShipQuantity] As Double?
-		'''<![CDATA[Number of sales orders linked to this shop order]]>
+		'''<summary>Number of sales orders linked to this shop order</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SalesOrderLineCount] As Int32
-		'''<![CDATA[Collection of Sales order lines]]>
+		'''<summary>Collection of Sales order lines</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SalesOrderLines] As IEnumerable(Of Models.SalesOrder.SalesOrderLine)
-		'''<![CDATA[Number of shop order by-product plans for this shop order]]>
+		'''<summary>Number of shop order by-product plans, which are backflushed, for this shop order</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ShopOrderByProductPlanBackflushCount] As Int32
+		'''<summary>Number of shop order by-product plans for this shop order</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderByProductPlanCount] As Int32
-		'''<![CDATA[Shop order main]]>
+		'''<summary>Shop order main</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderMain] As Guid?
-		'''<![CDATA[Shop order main number]]>
+		'''<summary>Shop order main number</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderMainNumber] As Int32?
-		'''<![CDATA[Number of shop order material plans for this shop order]]>
+		'''<summary>Number of shop order material plans, which are backflushed, for this shop order</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ShopOrderMaterialPlanBackflushCount] As Int32
+		'''<summary>Number of shop order material plans for this shop order</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderMaterialPlanCount] As Int32
-		'''<![CDATA[Collection of Shop order Material plans]]>
+		'''<summary>Collection of Shop order Material plans</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderMaterialPlans] As IEnumerable(Of Models.Manufacturing.ShopOrderMaterialPlan)
-		'''<![CDATA[Unique number to indentify the shop order]]>
+		'''<summary>Unique number to indentify the shop order</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderNumber] As Int32?
-		'''<![CDATA[Unique number to indentify the shop order (as a string to allow OData filtering, e.g. $filter=substringof('123',ShopOrderNumberString) eq true]]>
+		'''<summary>Unique number to indentify the shop order (as a string to allow OData filtering, e.g. $filter=substringof(&apos;123&apos;,ShopOrderNumberString) eq true</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderNumberString] As String
-		'''<![CDATA[Shop order parent]]>
+		'''<summary>Shop order parent</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderParent] As Guid?
-		'''<![CDATA[Shop order parent number]]>
+		'''<summary>Shop order parent number</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderParentNumber] As Int32?
-		'''<![CDATA[Number of shop order routing step plans for this shop order]]>
+		'''<summary>Number of shop order routing step plans for this shop order</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderRoutingStepPlanCount] As Int32
-		'''<![CDATA[Collection of Shop order Routing step plans]]>
+		'''<summary>Collection of Shop order Routing step plans</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderRoutingStepPlans] As IEnumerable(Of Models.Manufacturing.ShopOrderRoutingStepPlan)
-		'''<![CDATA[Indicates the type of Shop Order: 10 Open, 20 In process, 30 Finished, 40 Completed]]>
+		'''<summary>Indicates the type of Shop Order: 10 Open, 20 In process, 30 Finished, 40 Completed</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Status] As Int32?
-		'''<![CDATA[The count of material lines of this shop order, which have been linked to a sub order]]>
+		'''<summary>The count of material lines of this shop order, which have been linked to a sub order</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubShopOrderCount] As Int32
-		'''<![CDATA[Overall status of the line: 9040 Regular]]>
+		'''<summary>Overall status of the line: 9040 Regular</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Type] As Int32?
-		'''<![CDATA[Unit of the item created by this shop order]]>
+		'''<summary>Unit of the item created by this shop order</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Unit] As String
-		'''<![CDATA[Unit description of the unit of the item created by this shop order]]>
+		'''<summary>Unit description of the unit of the item created by this shop order</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [UnitDescription] As String
-		'''<![CDATA[Reference to the Warehouse associated with the Shop order]]>
+		'''<summary>Reference to the Warehouse associated with the Shop order</summary>
 		Public Property [Warehouse] As Guid?
-		'''<![CDATA[Your reference (of the customer)]]>
+		'''<summary>Your reference (of the customer)</summary>
 		Public Property [YourRef] As String
 	End Class
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [ShopOrderMaterialPlan]
-		'''<![CDATA[Indicates if this is a backflush step]]>
+		'''<summary>Indicates if this is a backflush step</summary>
 		Public Property [Backflush] As Byte?
-		'''<![CDATA[Calculator type]]>
+		'''<summary>Calculator type</summary>
 		Public Property [CalculatorType] As Int32?
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description of the material]]>
+		'''<summary>Description of the material</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Detail drawing reference]]>
+		'''<summary>Detail drawing reference</summary>
 		Public Property [DetailDrawing] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Reference to Items table]]>
+		'''<summary>Reference to Items table</summary>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Item Code]]>
+		'''<summary>Item Code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemCode] As String
-		'''<![CDATA[Description of Item]]>
+		'''<summary>Description of Item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[URL of the material item's picture]]>
+		'''<summary>URL of the material item&apos;s picture</summary>
 		Public Property [ItemPictureUrl] As String
-		'''<![CDATA[Line number]]>
+		'''<summary>Line number</summary>
 		Public Property [LineNumber] As Int32?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Line notes]]>
+		'''<summary>Line notes</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Planned amount in the currency of the transaction]]>
+		'''<summary>Planned amount in the currency of the transaction</summary>
 		Public Property [PlannedAmountFC] As Double?
-		'''<![CDATA[Date that the material is required.]]>
+		'''<summary>Date that the material is required.</summary>
 		Public Property [PlannedDate] As DateTime?
-		'''<![CDATA[Planned price of the material]]>
+		'''<summary>Planned price of the material</summary>
 		Public Property [PlannedPriceFC] As Double?
-		'''<![CDATA[Intended quantity]]>
+		'''<summary>Intended quantity</summary>
 		Public Property [PlannedQuantity] As Double?
-		'''<![CDATA[Intended quantity unit factor]]>
+		'''<summary>Intended quantity unit factor</summary>
 		Public Property [PlannedQuantityFactor] As Double?
-		'''<![CDATA[Reference to ShopOrders table]]>
+		'''<summary>Reference to ShopOrders table</summary>
 		Public Property [ShopOrder] As Guid?
-		'''<![CDATA[Line status]]>
+		'''<summary>Line status</summary>
 		Public Property [Status] As Int32?
-		'''<![CDATA[Description of Status]]>
+		'''<summary>Description of Status</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StatusDescription] As String
-		'''<![CDATA[Type]]>
+		'''<summary>Type</summary>
 		Public Property [Type] As Int32?
-		'''<![CDATA[Unit]]>
+		'''<summary>Unit</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Unit] As String
-		'''<![CDATA[Unit description]]>
+		'''<summary>Unit description</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [UnitDescription] As String
 	End Class
@@ -703,86 +874,86 @@ Namespace Manufacturing
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("StockTransactionId")>
 	Public Class [ShopOrderReceipt]
-		'''<![CDATA[ID of creating user]]>
+		'''<summary>ID of creating user</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedBy] As Guid?
-		'''<![CDATA[Name of the creating user]]>
+		'''<summary>Name of the creating user</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedByFullName] As String
-		'''<![CDATA[Date of this ShopOrderReceipt]]>
+		'''<summary>Date of this ShopOrderReceipt</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedDate] As DateTime?
-		'''<![CDATA[Serial or batch numbers are reserved prior to a POST to ShopOrderReceipts. This DraftStockTransactionID represents the group of serial or batch numbers to be used in this transaction.]]>
+		'''<summary>Serial or batch numbers are reserved prior to a POST to ShopOrderReceipts. This DraftStockTransactionID represents the group of serial or batch numbers to be used in this transaction.</summary>
 		Public Property [DraftStockTransactionID] As Guid?
-		'''<![CDATA[Indicates if this ShopOrderReceipt has a quantity eligible to be reversed via ShopOrderReversals]]>
+		'''<summary>Indicates if this ShopOrderReceipt has a quantity eligible to be reversed via ShopOrderReversals</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [HasReversibleQuantity] As Boolean
-		'''<![CDATA[Does the shop order receipt's item use batch numbers]]>
+		'''<summary>Does the shop order receipt&apos;s item use batch numbers</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsBatch] As Byte?
-		'''<![CDATA[Indicates if fractions (for example 0.35) are allowed for quantities of the shop order receipt's item]]>
+		'''<summary>Indicates if fractions (for example 0.35) are allowed for quantities of the shop order receipt&apos;s item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsFractionAllowedItem] As Byte?
-		'''<![CDATA[Boolean indicating if this ShopOrderReceipt was part of an SubOrderReceipt]]>
+		'''<summary>Boolean indicating if this ShopOrderReceipt was part of an SubOrderReceipt</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsIssueToParent] As Boolean
-		'''<![CDATA[Does the shop order receipt's item use serial numbers]]>
+		'''<summary>Does the shop order receipt&apos;s item use serial numbers</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsSerial] As Byte?
-		'''<![CDATA[Item finished]]>
+		'''<summary>Item finished</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Code of item finished]]>
+		'''<summary>Code of item finished</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemCode] As String
-		'''<![CDATA[Description of item finished]]>
+		'''<summary>Description of item finished</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Picture url of shop order item]]>
+		'''<summary>Picture url of shop order item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemPictureUrl] As String
-		'''<![CDATA[Parent shop order if this ShopOrderReceipt is part of a SubOrderReceipt]]>
+		'''<summary>Parent shop order if this ShopOrderReceipt is part of a SubOrderReceipt</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ParentShopOrder] As Guid?
-		'''<![CDATA[Parent shop order number if this ShopOrderReceipt is part of a SubOrderReceipt]]>
+		'''<summary>Parent shop order number if this ShopOrderReceipt is part of a SubOrderReceipt</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ParentShopOrderNumber] As Int32?
-		'''<![CDATA[Quantity of this ShopOrderReceipt]]>
+		'''<summary>Quantity of this ShopOrderReceipt</summary>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[If this transaction was part of a SubOrderReceipt, this ID is the related MaterialIssue.StockTransactionID.]]>
+		'''<summary>If this transaction was part of a SubOrderReceipt, this ID is the related MaterialIssue.StockTransactionID.</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [RelatedStockTransaction] As Guid?
-		'''<![CDATA[Shop order finished]]>
+		'''<summary>Shop order finished</summary>
 		Public Property [ShopOrder] As Guid?
-		'''<![CDATA[Number of shop order finished]]>
+		'''<summary>Number of shop order finished</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderNumber] As Int32?
-		'''<![CDATA[ID of stock transaction of this ShopOrderReceipt]]>
+		'''<summary>ID of stock transaction of this ShopOrderReceipt</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StockTransactionId] As Guid
-		'''<![CDATA[ID of storage location finished to]]>
+		'''<summary>ID of storage location finished to</summary>
 		Public Property [StorageLocation] As Guid?
-		'''<![CDATA[Code of storage location finished to]]>
+		'''<summary>Code of storage location finished to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StorageLocationCode] As String
-		'''<![CDATA[Description of storage location finished to]]>
+		'''<summary>Description of storage location finished to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StorageLocationDescription] As String
-		'''<![CDATA[Effective date of this ShopOrderReceipt]]>
+		'''<summary>Effective date of this ShopOrderReceipt</summary>
 		Public Property [TransactionDate] As DateTime?
-		'''<![CDATA[Unit of measurement abbreviation of item finished]]>
+		'''<summary>Unit of measurement abbreviation of item finished</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Unit] As String
-		'''<![CDATA[Unit of measurement of item finished]]>
+		'''<summary>Unit of measurement of item finished</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [UnitDescription] As String
-		'''<![CDATA[ID of warehouse finished to]]>
+		'''<summary>ID of warehouse finished to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Warehouse] As Guid?
-		'''<![CDATA[Code of warehouse finished to]]>
+		'''<summary>Code of warehouse finished to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseCode] As String
-		'''<![CDATA[Description of warehouse finished to]]>
+		'''<summary>Description of warehouse finished to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseDescription] As String
 	End Class
@@ -790,76 +961,76 @@ Namespace Manufacturing
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("ReversalStockTransactionId")>
 	Public Class [ShopOrderReversal]
-		'''<![CDATA[ID of creating user]]>
+		'''<summary>ID of creating user</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedBy] As Guid?
-		'''<![CDATA[Name of the creating user]]>
+		'''<summary>Name of the creating user</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedByFullName] As String
-		'''<![CDATA[Date of this reversal]]>
+		'''<summary>Date of this reversal</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedDate] As DateTime?
-		'''<![CDATA[Does the ShopOrderReversal's item use batch numbers]]>
+		'''<summary>Does the ShopOrderReversal&apos;s item use batch numbers</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsBatch] As Byte?
-		'''<![CDATA[Indicates if fractions (for example 0.35) are allowed for quantities of the ShopOrderReversal's item]]>
+		'''<summary>Indicates if fractions (for example 0.35) are allowed for quantities of the ShopOrderReversal&apos;s item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsFractionAllowedItem] As Byte?
-		'''<![CDATA[Does the ShopOrderReversal's item use serial numbers]]>
+		'''<summary>Does the ShopOrderReversal&apos;s item use serial numbers</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsSerial] As Byte?
-		'''<![CDATA[Item reversed]]>
+		'''<summary>Item reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Code of item reversed]]>
+		'''<summary>Code of item reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemCode] As String
-		'''<![CDATA[Description of item reversed]]>
+		'''<summary>Description of item reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Picture url of shop order item]]>
+		'''<summary>Picture url of shop order item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemPictureUrl] As String
-		'''<![CDATA[Notes associated with this reversal]]>
+		'''<summary>Notes associated with this reversal</summary>
 		Public Property [Note] As String
-		'''<![CDATA[ID of the original stock transaction, which was reversed]]>
+		'''<summary>ID of the original stock transaction, which was reversed</summary>
 		Public Property [OriginalStockTransactionId] As Guid?
-		'''<![CDATA[Quantity reversed]]>
+		'''<summary>Quantity reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[ID of stock transaction related to this ShopOrderReversal]]>
+		'''<summary>ID of stock transaction related to this ShopOrderReversal</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ReversalStockTransactionId] As Guid
-		'''<![CDATA[Shop order being reversed]]>
+		'''<summary>Shop order being reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrder] As Guid?
-		'''<![CDATA[Number of shop order being reversed]]>
+		'''<summary>Number of shop order being reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderNumber] As Int32?
-		'''<![CDATA[ID of storage location reversed from]]>
+		'''<summary>ID of storage location reversed from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StorageLocation] As Guid?
-		'''<![CDATA[Code of storage location reversed from]]>
+		'''<summary>Code of storage location reversed from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StorageLocationCode] As String
-		'''<![CDATA[Description of storage location reversed from]]>
+		'''<summary>Description of storage location reversed from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StorageLocationDescription] As String
-		'''<![CDATA[Effective date of this ShopOrderReversal]]>
+		'''<summary>Effective date of this ShopOrderReversal</summary>
 		Public Property [TransactionDate] As DateTime?
-		'''<![CDATA[Unit of measurement abbreviation of item reversed]]>
+		'''<summary>Unit of measurement abbreviation of item reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Unit] As String
-		'''<![CDATA[Unit of measurement of item reversed]]>
+		'''<summary>Unit of measurement of item reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [UnitDescription] As String
-		'''<![CDATA[ID of warehouse reversed from]]>
+		'''<summary>ID of warehouse reversed from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Warehouse] As Guid?
-		'''<![CDATA[Code of warehouse reversed from]]>
+		'''<summary>Code of warehouse reversed from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseCode] As String
-		'''<![CDATA[Description of warehouse reversed from]]>
+		'''<summary>Description of warehouse reversed from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseDescription] As String
 	End Class
@@ -867,192 +1038,326 @@ Namespace Manufacturing
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [ShopOrderRoutingStepPlan]
-		'''<![CDATA[Reference to Account providing the Outsourced item]]>
+		'''<summary>Reference to Account providing the Outsourced item</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[Account name]]>
+		'''<summary>Account name</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[Account number]]>
+		'''<summary>Account number</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountNumber] As String
-		'''<![CDATA[Attended Percentage]]>
+		'''<summary>Attended Percentage</summary>
 		Public Property [AttendedPercentage] As Double?
-		'''<![CDATA[Indicates if this is a backflush step]]>
+		'''<summary>Indicates if this is a backflush step</summary>
 		Public Property [Backflush] As Byte?
-		'''<![CDATA[Total cost / Shop order planned quantity]]>
+		'''<summary>Total cost / Shop order planned quantity</summary>
 		Public Property [CostPerItem] As Double?
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description of the operation]]>
+		'''<summary>Description of the operation</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Efficiency Percentage]]>
+		'''<summary>Efficiency Percentage</summary>
 		Public Property [EfficiencyPercentage] As Double?
-		'''<![CDATA[Conversion factor type between Shop order Item and Subcontract purchase Unit]]>
+		'''<summary>Conversion factor type between Shop order Item and Subcontract purchase Unit</summary>
 		Public Property [FactorType] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Sequential order of the operation]]>
+		'''<summary>Sequential order of the operation</summary>
 		Public Property [LineNumber] As Int32?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Notes]]>
+		'''<summary>Notes</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Reference to Operations]]>
+		'''<summary>Reference to Operations</summary>
 		Public Property [Operation] As Guid?
-		'''<![CDATA[Code of the routing step operation]]>
+		'''<summary>Code of the routing step operation</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [OperationCode] As String
-		'''<![CDATA[Description of the operation step]]>
+		'''<summary>Description of the operation step</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [OperationDescription] As String
-		'''<![CDATA[Reference to OperationResources]]>
+		'''<summary>Reference to OperationResources</summary>
 		Public Property [OperationResource] As Guid?
-		'''<![CDATA[Planned end date]]>
+		'''<summary>Planned end date</summary>
 		Public Property [PlannedEndDate] As DateTime?
-		'''<![CDATA[Planned run hours]]>
+		'''<summary>Planned run hours</summary>
 		Public Property [PlannedRunHours] As Double?
-		'''<![CDATA[Planned setup hours]]>
+		'''<summary>Planned setup hours</summary>
 		Public Property [PlannedSetupHours] As Double?
-		'''<![CDATA[Planned start date]]>
+		'''<summary>Planned start date</summary>
 		Public Property [PlannedStartDate] As DateTime?
-		'''<![CDATA[Setup hours + Run hours]]>
+		'''<summary>Setup hours + Run hours</summary>
 		Public Property [PlannedTotalHours] As Double?
-		'''<![CDATA[Reference to Units]]>
+		'''<summary>Reference to Units</summary>
 		Public Property [PurchaseUnit] As String
-		'''<![CDATA[Purchase Unit Factor]]>
+		'''<summary>Purchase Unit Factor</summary>
 		Public Property [PurchaseUnitFactor] As Double?
-		'''<![CDATA[Purchase Unit Price in the currency of the transaction]]>
+		'''<summary>Purchase Unit Price in the currency of the transaction</summary>
 		Public Property [PurchaseUnitPriceFC] As Double?
-		'''<![CDATA[Purchase unit quantity of the plan]]>
+		'''<summary>Purchase unit quantity of the plan</summary>
 		Public Property [PurchaseUnitQuantity] As Double?
-		'''<![CDATA[Reference to RoutingStepTypes]]>
+		'''<summary>Reference to RoutingStepTypes</summary>
 		Public Property [RoutingStepType] As Int32?
-		'''<![CDATA[Used in conjunction with RunMethod, and EfficiencyPercentage to determine PlannedRunHours]]>
+		'''<summary>Used in conjunction with RunMethod, and EfficiencyPercentage to determine PlannedRunHours</summary>
 		Public Property [Run] As Double?
-		'''<![CDATA[Reference to OperationMethod]]>
+		'''<summary>Reference to OperationMethod</summary>
 		Public Property [RunMethod] As Int32?
-		'''<![CDATA[Description of RunMethod]]>
+		'''<summary>Description of RunMethod</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [RunMethodDescription] As String
-		'''<![CDATA[Used in conjunction with SetupCount and Setup Unit to determine PlannedSetupHours]]>
+		'''<summary>Used in conjunction with SetupCount and Setup Unit to determine PlannedSetupHours</summary>
 		Public Property [Setup] As Double?
-		'''<![CDATA[Reference to TimeUnits]]>
+		'''<summary>Reference to TimeUnits</summary>
 		Public Property [SetupUnit] As String
-		'''<![CDATA[Reference to Shop orders]]>
+		'''<summary>Reference to Shop orders</summary>
 		Public Property [ShopOrder] As Guid?
-		'''<![CDATA[Reference to OperationStatus]]>
+		'''<summary>Reference to OperationStatus</summary>
 		Public Property [Status] As Int32?
-		'''<![CDATA[Description of Status]]>
+		'''<summary>Description of Status</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StatusDescription] As String
-		'''<![CDATA[Subcontracted lead days]]>
+		'''<summary>Subcontracted lead days</summary>
 		Public Property [SubcontractedLeadDays] As Int32?
-		'''<![CDATA[Collection of TimeTransactions]]>
+		'''<summary>Collection of TimeTransactions</summary>
 		Public Property [TimeTransactions] As IEnumerable(Of Models.Manufacturing.TimeTransaction)
-		'''<![CDATA[Total cost of the routing line]]>
+		'''<summary>Total cost of the routing line</summary>
 		Public Property [TotalCostDC] As Double?
-		'''<![CDATA[Reference to Workcenters]]>
+		'''<summary>Reference to Workcenters</summary>
 		Public Property [Workcenter] As Guid?
-		'''<![CDATA[Workcenter code]]>
+		'''<summary>Workcenter code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WorkcenterCode] As String
-		'''<![CDATA[Workcenter description]]>
+		'''<summary>Workcenter description</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WorkcenterDescription] As String
 	End Class
 
 	<SupportedActionsSDK(True, True, False, False)>
-	<DataServiceKey("ShopOrderReceiptStockTransactionId")>
-	Public Class [SubOrderReceipt]
-		'''<![CDATA[ID of creating user]]>
+	<DataServiceKey("Id")>
+	Public Class [StageForDeliveryReceipt]
+		'''<summary>ID of creating user</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedBy] As Guid?
-		'''<![CDATA[Name of the creating user]]>
+		'''<summary>Name of the creating user</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedByFullName] As String
-		'''<![CDATA[Creation date of this SubOrderReceipt]]>
+		'''<summary>Date this Stage for delivery wa created</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedDate] As DateTime?
-		'''<![CDATA[Serial or batch numbers are reserved prior to a POST to SubOrderReceipt. This DraftStockTransactionID represents the group of serial or batch numbers to be used in this transaction.]]>
-		Public Property [DraftStockTransactionID] As Guid?
-		'''<![CDATA[Indicates if this SubOrderReceipt has a quantity eligible to be reversed via SubOrderReversals]]>
+		'''<summary>Indicates if this StageForDeliveryReceipt has a quantity eligible to be reversed via StageForDeliveryReversals</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [HasReversibleQuantity] As Boolean
-		'''<![CDATA[Does the SubOrderReceipt's item use batch numbers]]>
+		'''<summary>ID of staged for delivery entry</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
-		Public Property [IsBatch] As Byte?
-		'''<![CDATA[Indicates if fractions (for example 0.35) are allowed for quantities of the SubOrderReceipt's item]]>
+		Public Property [Id] As Guid
+		'''<summary>Does the shop order receipt&apos;s item use batch numbers</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
-		Public Property [IsFractionAllowedItem] As Byte?
-		'''<![CDATA[Does the SubOrderReceipt's item use serial numbers]]>
+		Public Property [IsBatch] As Byte
+		'''<summary>Indicates if fractions (for example 0.35) are allowed for quantities of the stage for delivery receipt&apos;s item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
-		Public Property [IsSerial] As Byte?
-		'''<![CDATA[Item of this SubOrderReceipt]]>
+		Public Property [IsFractionAllowedItem] As Byte
+		'''<summary>Does the shop order receipt&apos;s item use serial numbers</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [IsSerial] As Byte
+		'''<summary>Item staged for delivery</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Code of this SubOrderReceipt's item]]>
+		'''<summary>Code of item staged for delivery</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemCode] As String
-		'''<![CDATA[Description of this SubOrderReceipt's item]]>
+		'''<summary>Description of item staged for delivery</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Picture url of shop order item]]>
+		'''<summary>Picture url of shop order item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemPictureUrl] As String
-		'''<![CDATA[MaterialIssue.StockTransactionId related to this SubOrderReceipt]]>
-		<SDKFieldType(FieldType.ReadOnly)>
-		Public Property [MaterialIssueStockTransactionId] As Guid?
-		'''<![CDATA[Shop order issued to]]>
-		<SDKFieldType(FieldType.ReadOnly)>
-		Public Property [ParentShopOrder] As Guid?
-		'''<![CDATA[Shop order material plan issued to]]>
-		<SDKFieldType(FieldType.ReadOnly)>
-		Public Property [ParentShopOrderMaterialPlan] As Guid?
-		'''<![CDATA[Number of shop order issued to]]>
-		<SDKFieldType(FieldType.ReadOnly)>
-		Public Property [ParentShopOrderNumber] As Int32?
-		'''<![CDATA[Quantity of this SubOrderReceipt]]>
+		'''<summary>Quantity of this StageForDeliveryReceipt</summary>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[ShopOrderReceipt.StockTransactionId related to this SubOrderReceipt]]>
+		'''<summary>ID of the original stage for delivery entry</summary>
+		Public Property [RelatedId] As Guid?
+		'''<summary>Shop order staged for delivery</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
-		Public Property [ShopOrderReceiptStockTransactionId] As Guid
-		'''<![CDATA[Shop order issued from]]>
-		Public Property [SubShopOrder] As Guid?
-		'''<![CDATA[Number of shop order issued from]]>
+		Public Property [ShopOrder] As Guid
+		'''<summary>Number of shop order staged for delivery</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
-		Public Property [SubShopOrderNumber] As Int32?
-		'''<![CDATA[Effective date of this SubOrderReceipt]]>
+		Public Property [ShopOrderNumber] As Int32?
+		'''<summary>Effective date of this stage for delivery receipt</summary>
 		Public Property [TransactionDate] As DateTime?
-		'''<![CDATA[Unit of measurement abbreviation of this SubOrderReceipt's item]]>
+		'''<summary>Unit of measurement abbreviation of item finished</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Unit] As String
-		'''<![CDATA[Unit of measurement of this SubOrderReceipt's item]]>
+		'''<summary>Unit of measurement of item finished</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [UnitDescription] As String
-		'''<![CDATA[ID of warehouse SubOrderReceipt]]>
+		'''<summary>ID of the shop order warehouse</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Warehouse] As Guid?
-		'''<![CDATA[Code of warehouse SubOrderReceipt]]>
+		'''<summary>Code of the shop order warehouse</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseCode] As String
-		'''<![CDATA[Description of warehouse SubOrderReceipt]]>
+		'''<summary>Description of the shop order warehouse</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [WarehouseDescription] As String
+	End Class
+
+	<SupportedActionsSDK(True, True, False, False)>
+	<DataServiceKey("Id")>
+	Public Class [StageForDeliveryReversal]
+		'''<summary>ID of creating user</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [CreatedBy] As Guid?
+		'''<summary>Name of the creating user</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [CreatedByFullName] As String
+		'''<summary>Date of this reversal</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [CreatedDate] As DateTime?
+		'''<summary>ID of this StageForDeliveryReversal</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [Id] As Guid
+		'''<summary>Does the shop order receipt&apos;s item use batch numbers</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [IsBatch] As Byte
+		'''<summary>Indicates if fractions (for example 0.35) are allowed for quantities of the StageForDeliveryReversal&apos;s item</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [IsFractionAllowedItem] As Byte
+		'''<summary>Does the shop order receipt&apos;s item use serial numbers</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [IsSerial] As Byte
+		'''<summary>Item reversed</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [Item] As Guid?
+		'''<summary>Code of item reversed</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ItemCode] As String
+		'''<summary>Description of item reversed</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ItemDescription] As String
+		'''<summary>Picture url of by-product item</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ItemPictureUrl] As String
+		'''<summary>Quantity reversed</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [Quantity] As Double?
+		'''<summary>ID of the original stage for delivery entry, which is being reversed</summary>
+		Public Property [RelatedId] As Guid?
+		'''<summary>Shop order being reversed to</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ShopOrder] As Guid?
+		'''<summary>Number of shop order being reversed to</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ShopOrderNumber] As Int32?
+		'''<summary>Effective date of this StageForDeliveryReversal</summary>
+		Public Property [TransactionDate] As DateTime?
+		'''<summary>Unit of measurement abbreviation of item reversed</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [Unit] As String
+		'''<summary>Unit of measurement of item reversed</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [UnitDescription] As String
+		'''<summary>ID of the shop order warehouse</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [Warehouse] As Guid?
+		'''<summary>Code of the shop order warehouse</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [WarehouseCode] As String
+		'''<summary>Description of the shop order warehouse</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [WarehouseDescription] As String
+	End Class
+
+	<SupportedActionsSDK(True, True, False, False)>
+	<DataServiceKey("ShopOrderReceiptStockTransactionId")>
+	Public Class [SubOrderReceipt]
+		'''<summary>ID of creating user</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [CreatedBy] As Guid?
+		'''<summary>Name of the creating user</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [CreatedByFullName] As String
+		'''<summary>Creation date of this SubOrderReceipt</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [CreatedDate] As DateTime?
+		'''<summary>Serial or batch numbers are reserved prior to a POST to SubOrderReceipt. This DraftStockTransactionID represents the group of serial or batch numbers to be used in this transaction.</summary>
+		Public Property [DraftStockTransactionID] As Guid?
+		'''<summary>Indicates if this SubOrderReceipt has a quantity eligible to be reversed via SubOrderReversals</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [HasReversibleQuantity] As Boolean
+		'''<summary>Does the SubOrderReceipt&apos;s item use batch numbers</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [IsBatch] As Byte?
+		'''<summary>Indicates if fractions (for example 0.35) are allowed for quantities of the SubOrderReceipt&apos;s item</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [IsFractionAllowedItem] As Byte?
+		'''<summary>Does the SubOrderReceipt&apos;s item use serial numbers</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [IsSerial] As Byte?
+		'''<summary>Item of this SubOrderReceipt</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [Item] As Guid?
+		'''<summary>Code of this SubOrderReceipt&apos;s item</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ItemCode] As String
+		'''<summary>Description of this SubOrderReceipt&apos;s item</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ItemDescription] As String
+		'''<summary>Picture url of shop order item</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ItemPictureUrl] As String
+		'''<summary>MaterialIssue.StockTransactionId related to this SubOrderReceipt</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [MaterialIssueStockTransactionId] As Guid?
+		'''<summary>Shop order issued to</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ParentShopOrder] As Guid?
+		'''<summary>Shop order material plan issued to</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ParentShopOrderMaterialPlan] As Guid?
+		'''<summary>Number of shop order issued to</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ParentShopOrderNumber] As Int32?
+		'''<summary>Quantity of this SubOrderReceipt</summary>
+		Public Property [Quantity] As Double?
+		'''<summary>ShopOrderReceipt.StockTransactionId related to this SubOrderReceipt</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ShopOrderReceiptStockTransactionId] As Guid
+		'''<summary>Shop order issued from</summary>
+		Public Property [SubShopOrder] As Guid?
+		'''<summary>Number of shop order issued from</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [SubShopOrderNumber] As Int32?
+		'''<summary>Effective date of this SubOrderReceipt</summary>
+		Public Property [TransactionDate] As DateTime?
+		'''<summary>Unit of measurement abbreviation of this SubOrderReceipt&apos;s item</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [Unit] As String
+		'''<summary>Unit of measurement of this SubOrderReceipt&apos;s item</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [UnitDescription] As String
+		'''<summary>ID of warehouse SubOrderReceipt</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [Warehouse] As Guid?
+		'''<summary>Code of warehouse SubOrderReceipt</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [WarehouseCode] As String
+		'''<summary>Description of warehouse SubOrderReceipt</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseDescription] As String
 	End Class
@@ -1060,79 +1365,79 @@ Namespace Manufacturing
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("MaterialReversalStockTransactionId")>
 	Public Class [SubOrderReversal]
-		'''<![CDATA[ID of creating user]]>
+		'''<summary>ID of creating user</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedBy] As Guid?
-		'''<![CDATA[Name of the creating user]]>
+		'''<summary>Name of the creating user</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedByFullName] As String
-		'''<![CDATA[Creation date of this SubOrderReversal]]>
+		'''<summary>Creation date of this SubOrderReversal</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatedDate] As DateTime?
-		'''<![CDATA[Does the SubOrderReversal's item use batch numbers]]>
+		'''<summary>Does the SubOrderReversal&apos;s item use batch numbers</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsBatch] As Byte?
-		'''<![CDATA[Indicates if fractions (for example 0.35) are allowed for quantities of the SubOrderReversal's item]]>
+		'''<summary>Indicates if fractions (for example 0.35) are allowed for quantities of the SubOrderReversal&apos;s item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsFractionAllowedItem] As Byte?
-		'''<![CDATA[Does the SubOrderReversal's item use serial numbers]]>
+		'''<summary>Does the SubOrderReversal&apos;s item use serial numbers</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsSerial] As Byte?
-		'''<![CDATA[Item reversed]]>
+		'''<summary>Item reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Code of item reversed]]>
+		'''<summary>Code of item reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemCode] As String
-		'''<![CDATA[Description of item reversed]]>
+		'''<summary>Description of item reversed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Picture url of shop order item]]>
+		'''<summary>Picture url of shop order item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemPictureUrl] As String
-		'''<![CDATA[MaterialReversal.StockTransactionId related to this SubOrderReversal's MaterialReversal]]>
+		'''<summary>MaterialReversal.StockTransactionId related to this SubOrderReversal&apos;s MaterialReversal</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [MaterialReversalStockTransactionId] As Guid
-		'''<![CDATA[Notes logged with this reversal]]>
+		'''<summary>Notes logged with this reversal</summary>
 		Public Property [Note] As String
-		'''<![CDATA[MaterialIssue.StockTransactionId related to this SubOrderReceipt's original MaterialIssue]]>
+		'''<summary>MaterialIssue.StockTransactionId related to this SubOrderReceipt&apos;s original MaterialIssue</summary>
 		Public Property [OriginalMaterialIssueStockTransactionId] As Guid?
-		'''<![CDATA[ShopOrderReceipt.StockTransactionId related to this SubOrderReceipt's original ShopOrderReceipt]]>
+		'''<summary>ShopOrderReceipt.StockTransactionId related to this SubOrderReceipt&apos;s original ShopOrderReceipt</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [OriginalShopOrderReceiptStockTransactionId] As Guid?
-		'''<![CDATA[Shop order reversed from]]>
+		'''<summary>Shop order reversed from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ParentShopOrder] As Guid?
-		'''<![CDATA[Number of shop order reversed from]]>
+		'''<summary>Number of shop order reversed from</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ParentShopOrderNumber] As Int32?
-		'''<![CDATA[Quantity of this SubOrderReversal]]>
+		'''<summary>Quantity of this SubOrderReversal</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[ShopOrderReversal.StockTransactionId related to this SubOrderReversal's ShopOrderReversal]]>
+		'''<summary>ShopOrderReversal.StockTransactionId related to this SubOrderReversal&apos;s ShopOrderReversal</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ShopOrderReversalStockTransactionId] As Guid?
-		'''<![CDATA[Shop order reversed to]]>
+		'''<summary>Shop order reversed to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubShopOrder] As Guid?
-		'''<![CDATA[Number of shop order reversed to]]>
+		'''<summary>Number of shop order reversed to</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubShopOrderNumber] As Int32?
-		'''<![CDATA[Effective date of this SubOrderReversal]]>
+		'''<summary>Effective date of this SubOrderReversal</summary>
 		Public Property [TransactionDate] As DateTime?
-		'''<![CDATA[Unit of measurement abbreviation of this SubOrderReversal's item]]>
+		'''<summary>Unit of measurement abbreviation of this SubOrderReversal&apos;s item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Unit] As String
-		'''<![CDATA[Unit of measurement of this SubOrderReversal's item]]>
+		'''<summary>Unit of measurement of this SubOrderReversal&apos;s item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [UnitDescription] As String
-		'''<![CDATA[ID of warehouse of this SubOrderReversal]]>
+		'''<summary>ID of warehouse of this SubOrderReversal</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Warehouse] As Guid?
-		'''<![CDATA[Code of warehouse of this SubOrderReversal]]>
+		'''<summary>Code of warehouse of this SubOrderReversal</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseCode] As String
-		'''<![CDATA[Description of warehouse of this SubOrderReversal]]>
+		'''<summary>Description of warehouse of this SubOrderReversal</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseDescription] As String
 	End Class
@@ -1140,120 +1445,120 @@ Namespace Manufacturing
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [TimeTransaction]
-		'''<![CDATA[Manufacturing time type: Setup = 10, Run = 20]]>
+		'''<summary>Manufacturing time type: Setup = 10, Run = 20</summary>
 		Public Property [Activity] As Int32?
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Date]]>
+		'''<summary>Date</summary>
 		Public Property [Date] As DateTime?
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Employee linked to the transaction]]>
+		'''<summary>Employee linked to the transaction</summary>
 		Public Property [Employee] As Guid?
-		'''<![CDATA[Machine hours]]>
+		'''<summary>Machine hours</summary>
 		Public Property [Hours] As Double?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Is the operation finished?]]>
+		'''<summary>Is the operation finished?</summary>
 		Public Property [IsOperationFinished] As Byte?
-		'''<![CDATA[Labor Hours on the operation]]>
+		'''<summary>Labor Hours on the operation</summary>
 		Public Property [LaborHours] As Double?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Notes linked to the time transaction]]>
+		'''<summary>Notes linked to the time transaction</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Percentage of the operation that is complete]]>
+		'''<summary>Percentage of the operation that is complete</summary>
 		Public Property [PercentComplete] As Double?
-		'''<![CDATA[Quantity]]>
+		'''<summary>Quantity</summary>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[Routing step linked to the transaction]]>
+		'''<summary>Routing step linked to the transaction</summary>
 		Public Property [RoutingStepPlan] As Guid?
-		'''<![CDATA[Shop order linked to the transaction]]>
+		'''<summary>Shop order linked to the transaction</summary>
 		Public Property [ShopOrder] As Guid?
-		'''<![CDATA[Status of the transaction: Draft = 1, Rejected = 2, Submitted = 10, Final = 20]]>
+		'''<summary>Status of the transaction: Draft = 1, Rejected = 2, Submitted = 10, Final = 20</summary>
 		Public Property [Status] As Int32?
-		'''<![CDATA[Timed time transaction linked to the transaction]]>
+		'''<summary>Timed time transaction linked to the transaction</summary>
 		Public Property [TimedTimeTransaction] As Guid?
-		'''<![CDATA[Workcenter linked to the transaction]]>
+		'''<summary>Workcenter linked to the transaction</summary>
 		Public Property [WorkCenter] As Guid?
 	End Class
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [Workcenter]
-		'''<![CDATA[Code of the work center]]>
+		'''<summary>Code of the work center</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Reference to CostCenters]]>
+		'''<summary>Reference to CostCenters</summary>
 		Public Property [Costcenter] As String
-		'''<![CDATA[Description of Costcenter]]>
+		'''<summary>Description of Costcenter</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostcenterDescription] As String
-		'''<![CDATA[Reference to CostUnits]]>
+		'''<summary>Reference to CostUnits</summary>
 		Public Property [Costunit] As String
-		'''<![CDATA[Description of Costunit]]>
+		'''<summary>Description of Costunit</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostunitDescription] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description of the work center]]>
+		'''<summary>Description of the work center</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[General burden rate]]>
+		'''<summary>General burden rate</summary>
 		Public Property [GeneralBurdenRate] As Double?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Indicates if labor burden is calculated as a percentage or amount]]>
+		'''<summary>Indicates if labor burden is calculated as a percentage or amount</summary>
 		Public Property [IsLaborBurdenPercent] As Byte
-		'''<![CDATA[Labor burden rate]]>
+		'''<summary>Labor burden rate</summary>
 		Public Property [LaborBurdenRate] As Double?
-		'''<![CDATA[Machine burden rate]]>
+		'''<summary>Machine burden rate</summary>
 		Public Property [MachineBurdenRate] As Double?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Remarks]]>
+		'''<summary>Remarks</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Area to which the work center belongs.]]>
+		'''<summary>Area to which the work center belongs.</summary>
 		Public Property [ProductionArea] As Guid?
-		'''<![CDATA[Run labor rate]]>
+		'''<summary>Run labor rate</summary>
 		Public Property [RunLaborRate] As Double?
-		'''<![CDATA[Search code of the work center]]>
+		'''<summary>Search code of the work center</summary>
 		Public Property [SearchCode] As String
-		'''<![CDATA[Setup labor rate]]>
+		'''<summary>Setup labor rate</summary>
 		Public Property [SetupLaborRate] As Double?
-		'''<![CDATA[Reference to WorkcenterStatus]]>
+		'''<summary>Reference to WorkcenterStatus</summary>
 		Public Property [Status] As Int32?
-		'''<![CDATA[Reference to WorkcenterTypes]]>
+		'''<summary>Reference to WorkcenterTypes</summary>
 		Public Property [Type] As Int32?
 	End Class
 

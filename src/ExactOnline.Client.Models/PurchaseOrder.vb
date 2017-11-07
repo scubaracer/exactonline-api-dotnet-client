@@ -1,167 +1,167 @@
-' Last generated on 2017-05-05 12:58:35Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace PurchaseOrder
 
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [GoodsReceipt]
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime
-		'''<![CDATA[User ID of the creator]]>
+		'''<summary>User ID of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of the creator]]>
+		'''<summary>Name of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description of the goods receipt]]>
+		'''<summary>Description of the goods receipt</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32
-		'''<![CDATA[Document that is linked to the goods receipt]]>
+		'''<summary>Document that is linked to the goods receipt</summary>
 		Public Property [Document] As Guid?
-		'''<![CDATA[Document subject]]>
+		'''<summary>Document subject</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DocumentSubject] As String
-		'''<![CDATA[Entry number of the resulting stock entry]]>
+		'''<summary>Entry number of the resulting stock entry</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [EntryNumber] As Int32?
-		'''<![CDATA[Collection of receipt lines]]>
+		'''<summary>Collection of receipt lines</summary>
 		Public Property [GoodsReceiptLines] As IEnumerable(Of Models.PurchaseOrder.GoodsReceiptLine)
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime
-		'''<![CDATA[User ID of the last modifier]]>
+		'''<summary>User ID of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of the last modifier]]>
+		'''<summary>Name of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Date of the goods receipt]]>
+		'''<summary>Date of the goods receipt</summary>
 		Public Property [ReceiptDate] As DateTime?
-		'''<![CDATA[Receipt number]]>
+		'''<summary>Receipt number</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ReceiptNumber] As Int32?
-		'''<![CDATA[Receipt note]]>
+		'''<summary>Receipt note</summary>
 		Public Property [Remarks] As String
-		'''<![CDATA[Account ID of the supplier]]>
+		'''<summary>Account ID of the supplier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Supplier] As Guid?
-		'''<![CDATA[Supplier code]]>
+		'''<summary>Supplier code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SupplierCode] As String
-		'''<![CDATA[ID of the contact person at the supplier]]>
+		'''<summary>ID of the contact person at the supplier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SupplierContact] As Guid?
-		'''<![CDATA[Name of the contact person at the supplier]]>
+		'''<summary>Name of the contact person at the supplier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SupplierContactFullName] As String
-		'''<![CDATA[Supplier name]]>
+		'''<summary>Supplier name</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SupplierName] As String
-		'''<![CDATA[Warehouse ID]]>
+		'''<summary>Warehouse ID</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Warehouse] As Guid?
-		'''<![CDATA[Warehouse code]]>
+		'''<summary>Warehouse code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseCode] As String
-		'''<![CDATA[Description of the warehouse]]>
+		'''<summary>Description of the warehouse</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseDescription] As String
-		'''<![CDATA[The purchase invoice number provided by the supplier]]>
+		'''<summary>The purchase invoice number provided by the supplier</summary>
 		Public Property [YourRef] As String
 	End Class
 
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [GoodsReceiptLine]
-		'''<![CDATA[Collection of batch numbers]]>
+		'''<summary>Collection of batch numbers</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [BatchNumbers] As IEnumerable(Of Models.Inventory.StockBatchNumber)
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime
-		'''<![CDATA[User ID of the creator]]>
+		'''<summary>User ID of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of the creator]]>
+		'''<summary>Name of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Goods receipt line description]]>
+		'''<summary>Goods receipt line description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32
-		'''<![CDATA[All the lines of a goods receipt have the same GoodsReceiptID]]>
+		'''<summary>All the lines of a goods receipt have the same GoodsReceiptID</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GoodsReceiptID] As Guid?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[ID of the received item]]>
+		'''<summary>ID of the received item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Code of the received item]]>
+		'''<summary>Code of the received item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemCode] As String
-		'''<![CDATA[Item description]]>
+		'''<summary>Item description</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Unit code of the purchase]]>
+		'''<summary>Unit code of the purchase</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemUnitCode] As String
-		'''<![CDATA[Line number]]>
+		'''<summary>Line number</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [LineNumber] As Int32
-		'''<![CDATA[ID of the storage location in the warehouse where the item is received]]>
+		'''<summary>ID of the storage location in the warehouse where the item is received</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Location] As Guid?
-		'''<![CDATA[Code of the storage location in the warehouse where the item is received]]>
+		'''<summary>Code of the storage location in the warehouse where the item is received</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [LocationCode] As String
-		'''<![CDATA[Description of the storage location in the warehouse where the item is received]]>
+		'''<summary>Description of the storage location in the warehouse where the item is received</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [LocationDescription] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime
-		'''<![CDATA[User ID of the last modifier]]>
+		'''<summary>User ID of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of the last modifier]]>
+		'''<summary>Name of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Notes]]>
+		'''<summary>Notes</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Reference to project]]>
+		'''<summary>Reference to project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Project] As Guid?
-		'''<![CDATA[Project code]]>
+		'''<summary>Project code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectCode] As String
-		'''<![CDATA[Project description]]>
+		'''<summary>Project description</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA[Reference to purchase order]]>
+		'''<summary>Reference to purchase order</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [PurchaseOrderID] As Guid
-		'''<![CDATA[ID of the purchase order line that is received]]>
+		'''<summary>ID of the purchase order line that is received</summary>
 		Public Property [PurchaseOrderLineID] As Guid?
-		'''<![CDATA[Order number of the purchase order that is received]]>
+		'''<summary>Order number of the purchase order that is received</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [PurchaseOrderNumber] As Int32
-		'''<![CDATA[Quantity ordered]]>
+		'''<summary>Quantity ordered</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [QuantityOrdered] As Double?
-		'''<![CDATA[Quantity received]]>
+		'''<summary>Quantity received</summary>
 		Public Property [QuantityReceived] As Double?
-		'''<![CDATA[Collection of serial numbers]]>
+		'''<summary>Collection of serial numbers</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SerialNumbers] As IEnumerable(Of Models.Inventory.StockSerialNumber)
-		'''<![CDATA[Supplier item code]]>
+		'''<summary>Supplier item code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SupplierItemCode] As String
 	End Class
@@ -169,258 +169,268 @@ Namespace PurchaseOrder
 	<SupportedActionsSDK(True, True, False, True)>
 	<DataServiceKey("PurchaseOrderID")>
 	Public Class [PurchaseOrder]
-		'''<![CDATA[Total amount in the default currency of the company]]>
+		'''<summary>Total amount in the default currency of the company</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AmountDC] As Double?
-		'''<![CDATA[Total amount in the currency of the transaction]]>
+		'''<summary>Total amount in the currency of the transaction</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AmountFC] As Double?
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Currency code]]>
+		'''<summary>Currency code</summary>
 		Public Property [Currency] As String
-		'''<![CDATA[Reference to account for delivery]]>
+		'''<summary>Reference to account for delivery</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DeliveryAccount] As Guid?
-		'''<![CDATA[Delivery account code]]>
+		'''<summary>Delivery account code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DeliveryAccountCode] As String
-		'''<![CDATA[Account name]]>
+		'''<summary>Account name</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DeliveryAccountName] As String
-		'''<![CDATA[Reference to shipping address]]>
+		'''<summary>Reference to shipping address</summary>
 		Public Property [DeliveryAddress] As Guid?
-		'''<![CDATA[Reference to contact for delivery]]>
+		'''<summary>Reference to contact for delivery</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DeliveryContact] As Guid?
-		'''<![CDATA[Name of the contact person of the customer who will receive delivered goods]]>
+		'''<summary>Name of the contact person of the customer who will receive delivered goods</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DeliveryContactPersonFullName] As String
-		'''<![CDATA[Description of the purchase order]]>
+		'''<summary>Description of the purchase order</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Document that is manually linked to the purchase order]]>
+		'''<summary>Document that is manually linked to the purchase order</summary>
 		Public Property [Document] As Guid?
-		'''<![CDATA[Subject of the document]]>
+		'''<summary>Subject of the document</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DocumentSubject] As String
-		'''<![CDATA[Shows if it is a drop shipment purchase order]]>
+		'''<summary>Shows if it is a drop shipment purchase order</summary>
 		Public Property [DropShipment] As Boolean?
-		'''<![CDATA[Allows you to set the currency for the invoice. You can only do this if you have checked the Variable: Currency and Variable: Exchange rate fields in the sales journal settings. Once a line has been created in the invoice, the currency can no longer be changed.]]>
+		'''<summary>Allows you to set the currency for the invoice. You can only do this if you have checked the Variable: Currency and Variable: Exchange rate fields in the sales journal settings. Once a line has been created in the invoice, the currency can no longer be changed.</summary>
 		Public Property [ExchangeRate] As Double?
-		'''<![CDATA[Invoice status of purchase order: 10-Open, 20-Partial, 30-Complete, 40-Canceled]]>
+		'''<summary>Invoice status of purchase order: 10-Open, 20-Partial, 30-Complete, 40-Canceled</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [InvoiceStatus] As Int32?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Order date]]>
+		'''<summary>Order date</summary>
 		Public Property [OrderDate] As DateTime?
-		'''<![CDATA[Human readable id of the purchase order]]>
+		'''<summary>Human readable id of the purchase order</summary>
 		Public Property [OrderNumber] As Int32?
-		'''<![CDATA[Purchase order status: 10-Open, 20-Partial, 30-Complete, 40-Canceled]]>
+		'''<summary>Purchase order status: 10-Open, 20-Partial, 30-Complete, 40-Canceled</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [OrderStatus] As Int32?
-		'''<![CDATA[The payment condition code used for due date and discount calculation]]>
+		'''<summary>The payment condition code used for due date and discount calculation</summary>
 		Public Property [PaymentCondition] As String
-		'''<![CDATA[Description of payment condition]]>
+		'''<summary>Description of payment condition</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [PaymentConditionDescription] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Purchase agent</summary>
+		Public Property [PurchaseAgent] As Guid?
+		'''<summary>Name of purchase agent</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [PurchaseAgentFullName] As String
+		'''<summary>Primary key</summary>
 		Public Property [PurchaseOrderID] As Guid
-		'''<![CDATA[Collection of lines]]>
+		'''<summary>Collection of lines</summary>
 		Public Property [PurchaseOrderLines] As IEnumerable(Of Models.PurchaseOrder.PurchaseOrderLine)
-		'''<![CDATA[This field shows the date the goods are expected to be received.]]>
+		'''<summary>This field shows the date the goods are expected to be received.</summary>
 		Public Property [ReceiptDate] As DateTime?
-		'''<![CDATA[Receipt status of purchase order: 10-Open, 20-Partial, 30-Complete, 40-Canceled]]>
+		'''<summary>Receipt status of purchase order: 10-Open, 20-Partial, 30-Complete, 40-Canceled</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ReceiptStatus] As Int32?
-		'''<![CDATA[Include any relevant remarks regarding the purchase order.]]>
+		'''<summary>Include any relevant remarks regarding the purchase order.</summary>
 		Public Property [Remarks] As String
-		'''<![CDATA[Reference to sales order when purchase order generated via back to back sales order]]>
+		'''<summary>Reference to sales order when purchase order generated via back to back sales order</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SalesOrder] As Guid?
-		'''<![CDATA[Number of the sales order]]>
+		'''<summary>Number of the sales order</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SalesOrderNumber] As Int32?
-		'''<![CDATA[This shows how the purchase order was created: 1-Manual entry, 2-Import, 3-Other, 4-Purchase order, 5-Sales order, 6-Supplier's items, 7-Subcontract, 8-Purchase order advice, 9-Shop order, 10-MRP calculation]]>
+		'''<summary>ShippingMethod</summary>
+		Public Property [ShippingMethod] As Guid?
+		'''<summary>Description of ShippingMethod</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ShippingMethodDescription] As String
+		'''<summary>This shows how the purchase order was created: 1-Manual entry, 2-Import, 3-Other, 4-Purchase order, 5-Sales order, 6-Supplier&apos;s items, 7-Subcontract, 8-Purchase order advice, 9-Shop order, 10-MRP calculation</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Source] As Int16?
-		'''<![CDATA[Reference to supplier account]]>
+		'''<summary>Reference to supplier account</summary>
 		Public Property [Supplier] As Guid?
-		'''<![CDATA[Code of supplier]]>
+		'''<summary>Code of supplier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SupplierCode] As String
-		'''<![CDATA[Contact of supplier]]>
+		'''<summary>Contact of supplier</summary>
 		Public Property [SupplierContact] As Guid?
-		'''<![CDATA[Contact person full name of supplier]]>
+		'''<summary>Contact person full name of supplier</summary>
 		Public Property [SupplierContactPersonFullName] As String
-		'''<![CDATA[Name of supplier]]>
+		'''<summary>Name of supplier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SupplierName] As String
-		'''<![CDATA[Total VAT amount in the currency of the transaction]]>
+		'''<summary>Total VAT amount in the currency of the transaction</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [VATAmount] As Double?
-		'''<![CDATA[Warehouse]]>
+		'''<summary>Warehouse</summary>
 		Public Property [Warehouse] As Guid?
-		'''<![CDATA[Code of Warehouse]]>
+		'''<summary>Code of Warehouse</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseCode] As String
-		'''<![CDATA[Description of Warehouse]]>
+		'''<summary>Description of Warehouse</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WarehouseDescription] As String
-		'''<![CDATA[Shows the reference number associated with the purchase order. Enter a description and reference to make the purchase order easier to identify.]]>
+		'''<summary>Shows the reference number associated with the purchase order. Enter a description and reference to make the purchase order easier to identify.</summary>
 		Public Property [YourRef] As String
 	End Class
 
 	<SupportedActionsSDK(True, True, False, True)>
 	<DataServiceKey("ID")>
 	Public Class [PurchaseOrderLine]
-		'''<![CDATA[Amount in the default currency of the company]]>
+		'''<summary>Amount in the default currency of the company</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AmountDC] As Double?
-		'''<![CDATA[Amount in the currency of the transaction]]>
+		'''<summary>Amount in the currency of the transaction</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AmountFC] As Double?
-		'''<![CDATA[Reference to Cost center]]>
+		'''<summary>Reference to Cost center</summary>
 		Public Property [CostCenter] As String
-		'''<![CDATA[Description of CostCenter]]>
+		'''<summary>Description of CostCenter</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostCenterDescription] As String
-		'''<![CDATA[Reference to Cost unit]]>
+		'''<summary>Reference to Cost unit</summary>
 		Public Property [CostUnit] As String
-		'''<![CDATA[Description of CostUnit]]>
+		'''<summary>Description of CostUnit</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostUnitDescription] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description of the purchase order line]]>
+		'''<summary>Description of the purchase order line</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Discount in percentage for item]]>
+		'''<summary>Discount in percentage for item</summary>
 		Public Property [Discount] As Double?
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Expense related to the Work Breakdown Structure of the selected project. Only available with a professional service license]]>
+		'''<summary>Expense related to the Work Breakdown Structure of the selected project. Only available with a professional service license</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Expense] As Guid?
-		'''<![CDATA[Description of expense. Only available with a professional service license]]>
+		'''<summary>Description of expense. Only available with a professional service license</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ExpenseDescription] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[The current stock level of items shown in stock unit. The information is displayed only for items with the stock property selected.]]>
+		'''<summary>The current stock level of items shown in stock unit. The information is displayed only for items with the stock property selected.</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [InStock] As Double?
-		'''<![CDATA[Quantity of item that has been invoiced]]>
+		'''<summary>Quantity of item that has been invoiced</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [InvoicedQuantity] As Double?
-		'''<![CDATA[Reference to the item for purchase order]]>
+		'''<summary>Reference to the item for purchase order</summary>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Item code]]>
+		'''<summary>Item code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemCode] As String
-		'''<![CDATA[Description of item]]>
+		'''<summary>Description of item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Indicates if fractional quantities of the item can be used, for example quantity = 0.4]]>
+		'''<summary>Indicates if fractional quantities of the item can be used, for example quantity = 0.4</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDivisable] As Boolean?
-		'''<![CDATA[Line number]]>
+		'''<summary>Line number</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [LineNumber] As Int32?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[The net price is the unit price (VAT code taken into account) with any discount applied]]>
+		'''<summary>The net price is the unit price (VAT code taken into account) with any discount applied</summary>
 		Public Property [NetPrice] As Double?
-		'''<![CDATA[Notes]]>
+		'''<summary>Notes</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Reference to project. Only available with a professional service license]]>
+		'''<summary>Reference to project. Only available with a professional service license</summary>
 		Public Property [Project] As Guid?
-		'''<![CDATA[Project code. Only available with a professional service license]]>
+		'''<summary>Project code. Only available with a professional service license</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectCode] As String
-		'''<![CDATA[Description of the project. Only available with a professional service license]]>
+		'''<summary>Description of the project. Only available with a professional service license</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA[The current stock level + the planned quantity to be received - the planned quantity to deliver shown in stock unit.]]>
+		'''<summary>The current stock level + the planned quantity to be received - the planned quantity to deliver shown in stock unit.</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectedStock] As Double?
-		'''<![CDATA[Identifies the purchase order. All the lines of a purchase order have the same PurchaseOrderID]]>
+		'''<summary>Identifies the purchase order. All the lines of a purchase order have the same PurchaseOrderID</summary>
 		Public Property [PurchaseOrderID] As Guid
-		'''<![CDATA[Quantity in item units]]>
+		'''<summary>Quantity in item units</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[Quantity in purchase units. Use this field when creating a purchase order]]>
+		'''<summary>Quantity in purchase units. Use this field when creating a purchase order</summary>
 		Public Property [QuantityInPurchaseUnits] As Double?
-		'''<![CDATA[Indicates whether the purchase order line needs to be rebilled. Only available with a professional service license]]>
+		'''<summary>Indicates whether the purchase order line needs to be rebilled. Only available with a professional service license</summary>
 		Public Property [Rebill] As Boolean?
-		'''<![CDATA[Date the goods are expected to be received]]>
+		'''<summary>Date the goods are expected to be received</summary>
 		Public Property [ReceiptDate] As DateTime?
-		'''<![CDATA[Quantity of goods received]]>
+		'''<summary>Quantity of goods received</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ReceivedQuantity] As Double?
-		'''<![CDATA[Sales order that is linked to a back to back sales order in purchase order]]>
+		'''<summary>Sales order that is linked to a back to back sales order in purchase order</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SalesOrder] As Guid?
-		'''<![CDATA[Sales order line of the sales order that is linked to a back to back sales order in purchase order]]>
+		'''<summary>Sales order line of the sales order that is linked to a back to back sales order in purchase order</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SalesOrderLine] As Guid?
-		'''<![CDATA[Number of the sales order line]]>
+		'''<summary>Number of the sales order line</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SalesOrderLineNumber] As Int32?
-		'''<![CDATA[Number of the sales order]]>
+		'''<summary>Number of the sales order</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SalesOrderNumber] As Int32?
-		'''<![CDATA[Code the supplier uses for this item]]>
+		'''<summary>Code the supplier uses for this item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SupplierItemCode] As String
-		'''<![CDATA[Code of item unit]]>
+		'''<summary>Code of item unit</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Unit] As String
-		'''<![CDATA[Description of unit]]>
+		'''<summary>Description of unit</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [UnitDescription] As String
-		'''<![CDATA[Item price per purchase unit]]>
+		'''<summary>Item price per purchase unit</summary>
 		Public Property [UnitPrice] As Double?
-		'''<![CDATA[Amount of VAT charges calculated from total amount and vat percentage]]>
+		'''<summary>Amount of VAT charges calculated from total amount and vat percentage</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [VATAmount] As Double?
-		'''<![CDATA[The VAT code used when the invoice was registered]]>
+		'''<summary>The VAT code used when the invoice was registered</summary>
 		Public Property [VATCode] As String
-		'''<![CDATA[Description of vat code]]>
+		'''<summary>Description of vat code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [VATDescription] As String
-		'''<![CDATA[The VAT percentage of the VAT code. This is the percentage at the moment the invoice is created. It's also used by the default calculation of VAT amounts and VAT base amounts]]>
+		'''<summary>The VAT percentage of the VAT code. This is the percentage at the moment the invoice is created. It&apos;s also used by the default calculation of VAT amounts and VAT base amounts</summary>
 		Public Property [VATPercentage] As Double?
 	End Class
 

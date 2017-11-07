@@ -1,110 +1,110 @@
-' Last generated on 2017-05-05 12:58:35Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace Project
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [CostTransaction]
-		'''<![CDATA[Account linked to the transaction]]>
+		'''<summary>Account linked to the transaction</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[Name of Account]]>
+		'''<summary>Name of Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[This property is obsolete. Use property 'AmountFC' instead.]]>
+		'''<summary>This property is obsolete. Use property &apos;AmountFC&apos; instead.</summary>
 		Public Property [Amount] As Double?
-		'''<![CDATA[Amount of the transaction in the currency of the transaction]]>
+		'''<summary>Amount of the transaction in the currency of the transaction</summary>
 		Public Property [AmountFC] As Double?
-		'''<![CDATA[Attachment linked to the transaction (not mandatory)]]>
+		'''<summary>Attachment linked to the transaction (not mandatory)</summary>
 		Public Property [Attachment] As Guid?
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Currency of the amount]]>
+		'''<summary>Currency of the amount</summary>
 		Public Property [Currency] As String
-		'''<![CDATA[Date]]>
+		'''<summary>Date</summary>
 		Public Property [Date] As DateTime?
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Description of Division]]>
+		'''<summary>Description of Division</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DivisionDescription] As String
-		'''<![CDATA[Employee linked to the transaction]]>
+		'''<summary>Employee linked to the transaction</summary>
 		Public Property [Employee] As Guid?
-		'''<![CDATA[Entrynumber]]>
+		'''<summary>Entrynumber</summary>
 		Public Property [EntryNumber] As Int32?
-		'''<![CDATA[Errortext, used for the backgroundjobs]]>
+		'''<summary>Errortext, used for the backgroundjobs</summary>
 		Public Property [ErrorText] As String
-		'''<![CDATA[Reference to ProjectWBS (work breakdown structure)]]>
+		'''<summary>Reference to ProjectWBS (work breakdown structure)</summary>
 		Public Property [Expense] As Guid?
-		'''<![CDATA[Description of ProjectWBS]]>
+		'''<summary>Description of ProjectWBS</summary>
 		Public Property [ExpenseDescription] As String
-		'''<![CDATA[Status of the transaction]]>
+		'''<summary>Status of the transaction</summary>
 		Public Property [HourStatus] As Int16?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Item linked to the transaction. Items of type 'time' are linked to time transactionsItems of other types are linked to costtransactions]]>
+		'''<summary>Item linked to the transaction. Items of type &apos;time&apos; are linked to time transactionsItems of other types are linked to costtransactions</summary>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Description of Item]]>
+		'''<summary>Description of Item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Indicates if fractional quantities of the item can be used, for example quantity = 0.4]]>
+		'''<summary>Indicates if fractional quantities of the item can be used, for example quantity = 0.4</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDivisable] As Boolean?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Notes linked to the transaction (not mandatory)]]>
+		'''<summary>Notes linked to the transaction (not mandatory)</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[This property is obsolete. Use property 'PriceFC' instead.]]>
+		'''<summary>This property is obsolete. Use property &apos;PriceFC&apos; instead.</summary>
 		Public Property [Price] As Double?
-		'''<![CDATA[PriceFC (AmountFC = Quantity * PriceFC)]]>
+		'''<summary>PriceFC (AmountFC = Quantity * PriceFC)</summary>
 		Public Property [PriceFC] As Double?
-		'''<![CDATA[Project linked to the transaction]]>
+		'''<summary>Project linked to the transaction</summary>
 		Public Property [Project] As Guid?
-		'''<![CDATA[Project account linked to the transaction (not mandatory)]]>
+		'''<summary>Project account linked to the transaction (not mandatory)</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectAccount] As Guid?
-		'''<![CDATA[Project account code]]>
+		'''<summary>Project account code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectAccountCode] As String
-		'''<![CDATA[Project account name]]>
+		'''<summary>Project account name</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectAccountName] As String
-		'''<![CDATA[Description of Project]]>
+		'''<summary>Description of Project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA[Quantity of the transaction]]>
+		'''<summary>Quantity of the transaction</summary>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[Subscription linked to the transaction]]>
+		'''<summary>Subscription linked to the transaction</summary>
 		Public Property [Subscription] As Guid?
-		'''<![CDATA[Account linked to the subscription]]>
+		'''<summary>Account linked to the subscription</summary>
 		Public Property [SubscriptionAccount] As Guid?
-		'''<![CDATA[Subscription account code]]>
+		'''<summary>Subscription account code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubscriptionAccountCode] As String
-		'''<![CDATA[Subscription account name]]>
+		'''<summary>Subscription account name</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubscriptionAccountName] As String
-		'''<![CDATA[Description of the subscription]]>
+		'''<summary>Description of the subscription</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubscriptionDescription] As String
-		'''<![CDATA[Subscription number]]>
+		'''<summary>Subscription number</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubscriptionNumber] As Int32?
-		'''<![CDATA[Type of the transaction]]>
+		'''<summary>Type of the transaction</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Type] As Int16?
 	End Class
@@ -112,64 +112,73 @@ Namespace Project
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ItemId")>
 	Public Class [HourCostType]
-		'''<![CDATA[Description of Item]]>
+		'''<summary>Description of Item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ItemId] As Guid
 	End Class
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [InvoiceTerm]
-		'''<![CDATA[Amount in the currency of the transaction]]>
+		'''<summary>Amount in the currency of the transaction</summary>
 		Public Property [Amount] As Double?
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[WBS's deliverable linked to invoice term]]>
+		'''<summary>WBS&apos;s deliverable linked to invoice term</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Deliverable] As String
-		'''<![CDATA[Description of invoice term]]>
+		'''<summary>Description of invoice term</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division number]]>
+		'''<summary>Division number</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Execution date: From</summary>
+		Public Property [ExecutionFromDate] As DateTime?
+		'''<summary>Execution date: To</summary>
+		Public Property [ExecutionToDate] As DateTime?
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Invoice date]]>
+		'''<summary>Invoice date</summary>
 		Public Property [InvoiceDate] As DateTime?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Reference to item</summary>
+		Public Property [Item] As Guid?
+		'''<summary>Description of item</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ItemDescription] As String
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Notes]]>
+		'''<summary>Notes</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Percentage of amount per project's budgeted amount]]>
+		'''<summary>Percentage of amount per project&apos;s budgeted amount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Percentage] As Double?
-		'''<![CDATA[Reference to project]]>
+		'''<summary>Reference to project</summary>
 		Public Property [Project] As Guid?
-		'''<![CDATA[Description of project]]>
+		'''<summary>Description of project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA[Reference to VATCode]]>
+		'''<summary>Reference to VATCode</summary>
 		Public Property [VATCode] As String
-		'''<![CDATA[Description of VATCode]]>
+		'''<summary>Description of VATCode</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [VATCodeDescription] As String
-		'''<![CDATA[VATCode percentage]]>
+		'''<summary>VATCode percentage</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [VATPercentage] As Double?
 	End Class
@@ -177,186 +186,187 @@ Namespace Project
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [Project]
-		'''<![CDATA[The account for this project]]>
+		'''<summary>The account for this project</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[Code of Account]]>
+		'''<summary>Code of Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountCode] As String
-		'''<![CDATA[Contact person of Account]]>
+		'''<summary>Contact person of Account</summary>
 		Public Property [AccountContact] As Guid?
-		'''<![CDATA[Name of Account]]>
+		'''<summary>Name of Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[Is additional invoice is allowed for project]]>
+		'''<summary>Is additional invoice is allowed for project</summary>
 		Public Property [AllowAdditionalInvoicing] As Boolean?
-		'''<![CDATA[Block time and cost entries]]>
+		'''<summary>Block time and cost entries</summary>
 		Public Property [BlockEntry] As Boolean?
-		'''<![CDATA[Block rebilling]]>
+		'''<summary>Block rebilling</summary>
 		Public Property [BlockRebilling] As Boolean?
-		'''<![CDATA[Budgeted amount of sales in the default currency of the company]]>
+		'''<summary>Budgeted amount of sales in the default currency of the company</summary>
 		Public Property [BudgetedAmount] As Double?
-		'''<![CDATA[Budgeted amount of costs in the default currency of the company]]>
+		'''<summary>Budgeted amount of costs in the default currency of the company</summary>
 		Public Property [BudgetedCosts] As Double?
-		'''<![CDATA[Collection of budgeted hours]]>
+		'''<summary>Collection of budgeted hours</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [BudgetedHoursPerHourType] As IEnumerable(Of Models.Project.ProjectHourBudget)
-		'''<![CDATA[Budgeted amount of revenue in the default currency of the company]]>
+		'''<summary>Budgeted amount of revenue in the default currency of the company</summary>
 		Public Property [BudgetedRevenue] As Double?
-		'''<![CDATA[Budget type]]>
+		'''<summary>Budget type</summary>
 		Public Property [BudgetType] As Int16?
-		'''<![CDATA[Budget type description]]>
+		'''<summary>Budget type description</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [BudgetTypeDescription] As String
-		'''<![CDATA[Used only for PSA to link a project classification to the project]]>
+		'''<summary>Used only for PSA to link a project classification to the project</summary>
 		Public Property [Classification] As Guid?
-		'''<![CDATA[Description of Classification]]>
+		'''<summary>Description of Classification</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ClassificationDescription] As String
-		'''<![CDATA[Code]]>
+		'''<summary>Code</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Used only for PSA to store the budgetted costs of a project (except for project type Campaign and Non-billable). Positive quantities only]]>
+		'''<summary>Used only for PSA to store the budgetted costs of a project (except for project type Campaign and Non-billable). Positive quantities only</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostsAmountFC] As Double?
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Used only for PSA to store the customer's PO number]]>
+		'''<summary>Used only for PSA to store the customer&apos;s PO number</summary>
 		Public Property [CustomerPOnumber] As String
-		'''<![CDATA[Description of the project]]>
+		'''<summary>Description of the project</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Name of Division]]>
+		'''<summary>Name of Division</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DivisionName] As String
-		'''<![CDATA[End date of the project. In combination with the start date the status is determined]]>
+		'''<summary>End date of the project. In combination with the start date the status is determined</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[Item used for fixed price invoicing. To be defined per project. If empty the functionality relies on the setting]]>
+		'''<summary>Item used for fixed price invoicing. To be defined per project. If empty the functionality relies on the setting</summary>
 		Public Property [FixedPriceItem] As Guid?
-		'''<![CDATA[Description of FixedPriceItem]]>
+		'''<summary>Description of FixedPriceItem</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [FixedPriceItemDescription] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Is invoice as quoted]]>
+		'''<summary>Is invoice as quoted</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [InvoiceAsQuoted] As Boolean
-		'''<![CDATA[Collection of invoice terms]]>
+		'''<summary>Collection of invoice terms</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [InvoiceTerms] As IEnumerable(Of Models.Project.InvoiceTerm)
-		'''<![CDATA[Responsible person for this project]]>
+		'''<summary>Responsible person for this project</summary>
 		Public Property [Manager] As Guid?
-		'''<![CDATA[Name of Manager]]>
+		'''<summary>Name of Manager</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ManagerFullname] As String
-		'''<![CDATA[Purchase markup percentage]]>
+		'''<summary>Purchase markup percentage</summary>
 		Public Property [MarkupPercentage] As Double?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[For additional information about projects]]>
+		'''<summary>For additional information about projects</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Used only for PSA. This item is used for prepaid invoicing. If left empty, the functionality relies on a setting]]>
+		'''<summary>Used only for PSA. This item is used for prepaid invoicing. If left empty, the functionality relies on a setting</summary>
 		Public Property [PrepaidItem] As Guid?
-		'''<![CDATA[Description of PrepaidItem]]>
+		'''<summary>Description of PrepaidItem</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [PrepaidItemDescription] As String
-		'''<![CDATA[PrepaidType: 1-Retainer, 2-Hour type bundle]]>
+		'''<summary>PrepaidType: 1-Retainer, 2-Hour type bundle</summary>
 		Public Property [PrepaidType] As Int16?
-		'''<![CDATA[Description of PrepaidType]]>
+		'''<summary>Description of PrepaidType</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [PrepaidTypeDescription] As String
-		'''<![CDATA[Collection of employee restrictions]]>
+		'''<summary>Collection of employee restrictions</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectRestrictionEmployees] As IEnumerable(Of Models.Project.ProjectRestrictionEmployee)
-		'''<![CDATA[Collection of item restrictions]]>
+		'''<summary>Collection of item restrictions</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectRestrictionItems] As IEnumerable(Of Models.Project.ProjectRestrictionItem)
-		'''<![CDATA[Collection of rebilling restrictions]]>
+		'''<summary>Collection of rebilling restrictions</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectRestrictionRebillings] As IEnumerable(Of Models.Project.ProjectRestrictionRebilling)
-		'''<![CDATA[Budgeted time. Total number of hours estimated for the fixed price project]]>
+		'''<summary>Budgeted time. Total number of hours estimated for the fixed price project</summary>
 		Public Property [SalesTimeQuantity] As Double?
-		'''<![CDATA[Source quotation]]>
+		'''<summary>Source quotation</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SourceQuotation] As Guid?
-		'''<![CDATA[Start date of a project. In combination with the end date the status is determined]]>
+		'''<summary>Start date of a project. In combination with the end date the status is determined</summary>
 		Public Property [StartDate] As DateTime?
+		'''<summary>Alert when exceeding (Hours)</summary>
 		Public Property [TimeQuantityToAlert] As Double?
-		'''<![CDATA[Reference to ProjectTypes]]>
+		'''<summary>Reference to ProjectTypes</summary>
 		Public Property [Type] As Int32?
-		'''<![CDATA[Description of Type]]>
+		'''<summary>Description of Type</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [TypeDescription] As String
-		'''<![CDATA[Using billing milestones]]>
+		'''<summary>Using billing milestones</summary>
 		Public Property [UseBillingMilestones] As Boolean?
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [ProjectBudgetType]
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Description] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Int16
 	End Class
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [ProjectHourBudget]
-		'''<![CDATA[Number of hours]]>
+		'''<summary>Number of hours</summary>
 		Public Property [Budget] As Double?
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Division number]]>
+		'''<summary>Division number</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Hour type of budget]]>
+		'''<summary>Hour type of budget</summary>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Code of hour type]]>
+		'''<summary>Code of hour type</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemCode] As String
-		'''<![CDATA[Description of hour type]]>
+		'''<summary>Description of hour type</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Reference to project]]>
+		'''<summary>Reference to project</summary>
 		Public Property [Project] As Guid
-		'''<![CDATA[Code of project]]>
+		'''<summary>Code of project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectCode] As String
-		'''<![CDATA[Description of project]]>
+		'''<summary>Description of project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectDescription] As String
 	End Class
@@ -364,93 +374,93 @@ Namespace Project
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [ProjectPlanning]
-		'''<![CDATA[Account linked to the project planning]]>
+		'''<summary>Account linked to the project planning</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[Code of Account]]>
+		'''<summary>Code of Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountCode] As String
-		'''<![CDATA[Name of Account]]>
+		'''<summary>Name of Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[Status of the project planning process, 1 = To be processed, 2 = Processed, 3 = Failed]]>
+		'''<summary>Status of the project planning process, 1 = To be processed, 2 = Processed, 3 = Failed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [BGTStatus] As Int16?
-		'''<![CDATA[Status of the external calendar, 0 = No error, 1 = Credentials error, 2 = Technical error, 3 = Both credentials & technical errors, 4 = In progress]]>
+		'''<summary>Status of the external calendar, 0 = No error, 1 = Credentials error, 2 = Technical error, 3 = Both credentials &amp; technical errors, 4 = In progress</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CommunicationErrorStatus] As Int16?
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description of project planning]]>
+		'''<summary>Description of project planning</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Employee linked to the project planning]]>
+		'''<summary>Employee linked to the project planning</summary>
 		Public Property [Employee] As Guid?
-		'''<![CDATA[Code of employee]]>
+		'''<summary>Code of employee</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [EmployeeCode] As String
-		'''<![CDATA[Numeric ID of the employee]]>
+		'''<summary>Numeric ID of the employee</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [EmployeeHID] As Int32?
-		'''<![CDATA[End date of the project planning]]>
+		'''<summary>End date of the project planning</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[Hours of the project planning]]>
+		'''<summary>Hours of the project planning</summary>
 		Public Property [Hours] As Double?
-		'''<![CDATA[The type of hour for the project planning, item with 'Time' type]]>
+		'''<summary>The type of hour for the project planning, item with &apos;Time&apos; type</summary>
 		Public Property [HourType] As Guid?
-		'''<![CDATA[Code of the hour type]]>
+		'''<summary>Code of the hour type</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [HourTypeCode] As String
-		'''<![CDATA[Description of the hour type]]>
+		'''<summary>Description of the hour type</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [HourTypeDescription] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Indicates whether the project planning is separated from the recurring planning]]>
+		'''<summary>Indicates whether the project planning is separated from the recurring planning</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsBrokenRecurrence] As Boolean?
-		'''<![CDATA[Date modified]]>
+		'''<summary>Date modified</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[Modifier user ID]]>
+		'''<summary>Modifier user ID</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Modifier name]]>
+		'''<summary>Modifier name</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[For additional information about project planning]]>
+		'''<summary>For additional information about project planning</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Indicates whether the entries can have over allocated planning hours]]>
+		'''<summary>Indicates whether the entries can have over allocated planning hours</summary>
 		Public Property [OverAllocate] As Boolean?
-		'''<![CDATA[Project linked to the planning]]>
+		'''<summary>Project linked to the planning</summary>
 		Public Property [Project] As Guid?
-		'''<![CDATA[Code of project]]>
+		'''<summary>Code of project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectCode] As String
-		'''<![CDATA[Description of project]]>
+		'''<summary>Description of project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA[Recurring planning linked to the project planning]]>
+		'''<summary>Recurring planning linked to the project planning</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectPlanningRecurring] As Guid?
-		'''<![CDATA[WBS linked to the project planning]]>
+		'''<summary>WBS linked to the project planning</summary>
 		Public Property [ProjectWBS] As Guid?
-		'''<![CDATA[Description of WBS]]>
+		'''<summary>Description of WBS</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectWBSDescription] As String
-		'''<![CDATA[Start date of the project planning]]>
+		'''<summary>Start date of the project planning</summary>
 		Public Property [StartDate] As DateTime?
-		'''<![CDATA[Status of the project planning, 1 = Reserved, 2 = Planned]]>
+		'''<summary>Status of the project planning, 1 = Reserved, 2 = Planned</summary>
 		Public Property [Status] As Int16?
-		'''<![CDATA[Type of the project planning, it will always is 4 (employee)]]>
+		'''<summary>Type of the project planning, it will always is 4 (employee)</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Type] As Int16?
 	End Class
@@ -458,164 +468,164 @@ Namespace Project
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [ProjectPlanningRecurring]
-		'''<![CDATA[Account linked to the recurring planning]]>
+		'''<summary>Account linked to the recurring planning</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[Code of Account]]>
+		'''<summary>Code of Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountCode] As String
-		'''<![CDATA[Name of Account]]>
+		'''<summary>Name of Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[Status of the project planning process, 1 = To be processed, 2 = Processed, 3 = Failed]]>
+		'''<summary>Status of the project planning process, 1 = To be processed, 2 = Processed, 3 = Failed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [BGTStatus] As Int16?
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Indicates whether the recurring planning is day of the month or weekday of the month]]>
+		'''<summary>Indicates whether the recurring planning is day of the month or weekday of the month</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DayOrThe] As Int32?
-		'''<![CDATA[Description of recurring planning]]>
+		'''<summary>Description of recurring planning</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Employee linked to the recurring planning]]>
+		'''<summary>Employee linked to the recurring planning</summary>
 		Public Property [Employee] As Guid?
-		'''<![CDATA[Code of employee]]>
+		'''<summary>Code of employee</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [EmployeeCode] As String
-		'''<![CDATA[Numeric ID of the employee]]>
+		'''<summary>Numeric ID of the employee</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [EmployeeHID] As Int32?
-		'''<![CDATA[End date of the recurring planning]]>
+		'''<summary>End date of the recurring planning</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[Indicates whether the recurring planning is end on end date or end after number of times]]>
+		'''<summary>Indicates whether the recurring planning is end on end date or end after number of times</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [EndDateOrAfter] As Int32?
-		'''<![CDATA[End time for the recurring planning to be active]]>
+		'''<summary>End time for the recurring planning to be active</summary>
 		Public Property [EndTime] As DateTime?
-		'''<![CDATA[Number of hours for the recurring planning]]>
+		'''<summary>Number of hours for the recurring planning</summary>
 		Public Property [Hours] As Double?
-		'''<![CDATA[Hour type of the recurring planning, item with 'Time' type]]>
+		'''<summary>Hour type of the recurring planning, item with &apos;Time&apos; type</summary>
 		Public Property [HourType] As Guid?
-		'''<![CDATA[Code of the hour type]]>
+		'''<summary>Code of the hour type</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [HourTypeCode] As String
-		'''<![CDATA[Description of the hour type]]>
+		'''<summary>Description of the hour type</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [HourTypeDescription] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Date modified]]>
+		'''<summary>Date modified</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[Modifier user ID]]>
+		'''<summary>Modifier user ID</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Modifier name]]>
+		'''<summary>Modifier name</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Day of the monthly recurring]]>
+		'''<summary>Day of the monthly recurring</summary>
 		Public Property [MonthPatternDay] As Byte?
-		'''<![CDATA[Ordinal number of week day for the monthly recurring planning, 1 = first, 2 = second, 3 = third, 4 = fourth, 31 = last]]>
+		'''<summary>Ordinal number of week day for the monthly recurring planning, 1 = first, 2 = second, 3 = third, 4 = fourth, 31 = last</summary>
 		Public Property [MonthPatternOrdinalDay] As Byte?
-		'''<![CDATA[Ordinal week day of the monthly recurring planning, 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday, 7 = Sunday]]>
+		'''<summary>Ordinal week day of the monthly recurring planning, 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday, 7 = Sunday</summary>
 		Public Property [MonthPatternOrdinalWeek] As Byte?
-		'''<![CDATA[For additional information about recurring planning]]>
+		'''<summary>For additional information about recurring planning</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Number of times the planning recurs]]>
-		Public Property [NumberOfRecurrences] As Byte?
-		'''<![CDATA[Indicates whether the entries can have over allocated planning hours]]>
+		'''<summary>Number of times the planning recurs</summary>
+		Public Property [NumberOfRecurrences] As Int16?
+		'''<summary>Indicates whether the entries can have over allocated planning hours</summary>
 		Public Property [OverAllocate] As Boolean?
-		'''<![CDATA[Number of planning times for weekly or monthly recurring planning]]>
+		'''<summary>Number of planning times for weekly or monthly recurring planning</summary>
 		Public Property [PatternFrequency] As Byte?
-		'''<![CDATA[Project linked to the recurring planning]]>
+		'''<summary>Project linked to the recurring planning</summary>
 		Public Property [Project] As Guid?
-		'''<![CDATA[Code of project]]>
+		'''<summary>Code of project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectCode] As String
-		'''<![CDATA[Description of project]]>
+		'''<summary>Description of project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA[Type of the recurring planning, 1 = weekly, 2 = monthly]]>
+		'''<summary>Type of the recurring planning, 1 = weekly, 2 = monthly</summary>
 		Public Property [ProjectPlanningRecurringType] As Byte?
-		'''<![CDATA[WBS linked to the recurring planning]]>
+		'''<summary>WBS linked to the recurring planning</summary>
 		Public Property [ProjectWBS] As Guid?
-		'''<![CDATA[Description of WBS]]>
+		'''<summary>Description of WBS</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectWBSDescription] As String
-		'''<![CDATA[Start date of the recurring planning]]>
+		'''<summary>Start date of the recurring planning</summary>
 		Public Property [StartDate] As DateTime?
-		'''<![CDATA[Start time for the recurring planning to be active]]>
+		'''<summary>Start time for the recurring planning to be active</summary>
 		Public Property [StartTime] As DateTime?
-		'''<![CDATA[Status of the project planning, 1 = Reserved, 2 = Planned]]>
+		'''<summary>Status of the project planning, 1 = Reserved, 2 = Planned</summary>
 		Public Property [Status] As Int16?
-		'''<![CDATA[Week day for the weekly recurring planning]]>
+		'''<summary>Week day for the weekly recurring planning</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [WeekPatternDay] As Byte?
-		'''<![CDATA[Create planning on Friday, apply to weekly pattern recurring planning only]]>
+		'''<summary>Create planning on Friday, apply to weekly pattern recurring planning only</summary>
 		Public Property [WeekPatternFriday] As Boolean?
-		'''<![CDATA[Create planning on Monday, apply to weekly pattern recurring planning only]]>
+		'''<summary>Create planning on Monday, apply to weekly pattern recurring planning only</summary>
 		Public Property [WeekPatternMonday] As Boolean?
-		'''<![CDATA[Create planning on Saturday, apply to weekly pattern recurring planning only]]>
+		'''<summary>Create planning on Saturday, apply to weekly pattern recurring planning only</summary>
 		Public Property [WeekPatternSaturday] As Boolean?
-		'''<![CDATA[Create planning on Sunday, apply to weekly pattern recurring planning only]]>
+		'''<summary>Create planning on Sunday, apply to weekly pattern recurring planning only</summary>
 		Public Property [WeekPatternSunday] As Boolean?
-		'''<![CDATA[Create planning on Thursday, apply to weekly pattern recurring planning only]]>
+		'''<summary>Create planning on Thursday, apply to weekly pattern recurring planning only</summary>
 		Public Property [WeekPatternThursday] As Boolean?
-		'''<![CDATA[Create planning on Tuesday, apply to weekly pattern recurring planning only]]>
+		'''<summary>Create planning on Tuesday, apply to weekly pattern recurring planning only</summary>
 		Public Property [WeekPatternTuesday] As Boolean?
-		'''<![CDATA[Create planning on Wednesday, apply to weekly pattern recurring planning only]]>
+		'''<summary>Create planning on Wednesday, apply to weekly pattern recurring planning only</summary>
 		Public Property [WeekPatternWednesday] As Boolean?
 	End Class
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [ProjectRestrictionEmployee]
-		'''<![CDATA[Date created]]>
+		'''<summary>Date created</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[Creator user ID]]>
+		'''<summary>Creator user ID</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Creator name]]>
+		'''<summary>Creator name</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Employee linked to the restriction]]>
+		'''<summary>Employee linked to the restriction</summary>
 		Public Property [Employee] As Guid?
-		'''<![CDATA[Name of employee]]>
+		'''<summary>Name of employee</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [EmployeeFullName] As String
-		'''<![CDATA[Readable ID of the employee]]>
+		'''<summary>Readable ID of the employee</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [EmployeeHID] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Date modified]]>
+		'''<summary>Date modified</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[Modifier user ID]]>
+		'''<summary>Modifier user ID</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Modifier name]]>
+		'''<summary>Modifier name</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Project linked to the restriction]]>
+		'''<summary>Project linked to the restriction</summary>
 		Public Property [Project] As Guid?
-		'''<![CDATA[Project code]]>
+		'''<summary>Project code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectCode] As String
-		'''<![CDATA[Project description]]>
+		'''<summary>Project description</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectDescription] As String
 	End Class
@@ -623,46 +633,46 @@ Namespace Project
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [ProjectRestrictionItem]
-		'''<![CDATA[Date created]]>
+		'''<summary>Date created</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[Creator user ID]]>
+		'''<summary>Creator user ID</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Creator name]]>
+		'''<summary>Creator name</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Item linked to the restriction]]>
+		'''<summary>Item linked to the restriction</summary>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Item code]]>
+		'''<summary>Item code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemCode] As String
-		'''<![CDATA[Description of the item]]>
+		'''<summary>Description of the item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Indicates if the item is a time unit item]]>
+		'''<summary>Indicates if the item is a time unit item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemIsTime] As Byte?
-		'''<![CDATA[Date modified]]>
+		'''<summary>Date modified</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[Modifier user ID]]>
+		'''<summary>Modifier user ID</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Modifier name]]>
+		'''<summary>Modifier name</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Project linked to the restriction]]>
+		'''<summary>Project linked to the restriction</summary>
 		Public Property [Project] As Guid?
-		'''<![CDATA[Project code]]>
+		'''<summary>Project code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectCode] As String
-		'''<![CDATA[Project description]]>
+		'''<summary>Project description</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectDescription] As String
 	End Class
@@ -670,43 +680,43 @@ Namespace Project
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [ProjectRestrictionRebilling]
-		'''<![CDATA[Cost type reference]]>
+		'''<summary>Cost type reference</summary>
 		Public Property [CostTypeRebill] As Guid?
-		'''<![CDATA[Cost type code]]>
+		'''<summary>Cost type code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostTypeRebillCode] As String
-		'''<![CDATA[Cost type description]]>
+		'''<summary>Cost type description</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostTypeRebillDescription] As String
-		'''<![CDATA[Date created]]>
+		'''<summary>Date created</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[Creator user ID]]>
+		'''<summary>Creator user ID</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Creator name]]>
+		'''<summary>Creator name</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Date modified]]>
+		'''<summary>Date modified</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[Modifier user ID]]>
+		'''<summary>Modifier user ID</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Modifier name]]>
+		'''<summary>Modifier name</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Project linked to the restriction]]>
+		'''<summary>Project linked to the restriction</summary>
 		Public Property [Project] As Guid?
-		'''<![CDATA[Project code]]>
+		'''<summary>Project code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectCode] As String
-		'''<![CDATA[Project description]]>
+		'''<summary>Project description</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectDescription] As String
 	End Class
@@ -714,379 +724,379 @@ Namespace Project
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("Id")>
 	Public Class [RecentCost]
-		'''<![CDATA[Code of Account]]>
+		'''<summary>Code of Account</summary>
 		Public Property [AccountCode] As String
-		'''<![CDATA[Reference to Account]]>
+		'''<summary>Reference to Account</summary>
 		Public Property [AccountId] As Guid?
-		'''<![CDATA[Name of Account]]>
+		'''<summary>Name of Account</summary>
 		Public Property [AccountName] As String
-		'''<![CDATA[Amount approved]]>
+		'''<summary>Amount approved</summary>
 		Public Property [AmountApproved] As Double
-		'''<![CDATA[Amount draft]]>
+		'''<summary>Amount draft</summary>
 		Public Property [AmountDraft] As Double
-		'''<![CDATA[Amount rejected]]>
+		'''<summary>Amount rejected</summary>
 		Public Property [AmountRejected] As Double
-		'''<![CDATA[Amount submitted]]>
+		'''<summary>Amount submitted</summary>
 		Public Property [AmountSubmitted] As Double
-		'''<![CDATA[Code of Currency]]>
+		'''<summary>Code of Currency</summary>
 		Public Property [CurrencyCode] As String
-		'''<![CDATA[Date]]>
+		'''<summary>Date</summary>
 		Public Property [Date] As DateTime
-		'''<![CDATA[Entry ID]]>
+		'''<summary>Entry ID</summary>
 		Public Property [EntryId] As Guid?
-		'''<![CDATA[Reference to Expense]]>
+		'''<summary>Reference to Expense</summary>
 		Public Property [Expense] As Guid?
-		'''<![CDATA[Description of Expense]]>
+		'''<summary>Description of Expense</summary>
 		Public Property [ExpenseDescription] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [Id] As Int32
-		'''<![CDATA[Code of Item]]>
+		'''<summary>Code of Item</summary>
 		Public Property [ItemCode] As String
-		'''<![CDATA[Description of Item]]>
+		'''<summary>Description of Item</summary>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Reference to Item]]>
+		'''<summary>Reference to Item</summary>
 		Public Property [ItemId] As Guid?
-		'''<![CDATA[Remarks]]>
+		'''<summary>Remarks</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Code of Project]]>
+		'''<summary>Code of Project</summary>
 		Public Property [ProjectCode] As String
-		'''<![CDATA[Description of Project]]>
+		'''<summary>Description of Project</summary>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA[Reference to Project]]>
+		'''<summary>Reference to Project</summary>
 		Public Property [ProjectId] As Guid?
-		'''<![CDATA[Quantity approved]]>
+		'''<summary>Quantity approved</summary>
 		Public Property [QuantityApproved] As Double
-		'''<![CDATA[Quantity draft]]>
+		'''<summary>Quantity draft</summary>
 		Public Property [QuantityDraft] As Double
-		'''<![CDATA[Quantity rejected]]>
+		'''<summary>Quantity rejected</summary>
 		Public Property [QuantityRejected] As Double
-		'''<![CDATA[Quantity submitted]]>
+		'''<summary>Quantity submitted</summary>
 		Public Property [QuantitySubmitted] As Double
-		'''<![CDATA[Week number]]>
+		'''<summary>Week number</summary>
 		Public Property [WeekNumber] As Int32
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("Id")>
 	Public Class [RecentHour]
-		'''<![CDATA[Code of Account]]>
+		'''<summary>Code of Account</summary>
 		Public Property [AccountCode] As String
-		'''<![CDATA[Reference to Account]]>
+		'''<summary>Reference to Account</summary>
 		Public Property [AccountId] As Guid?
-		'''<![CDATA[Name of Account]]>
+		'''<summary>Name of Account</summary>
 		Public Property [AccountName] As String
-		'''<![CDATA[Reference to Activity]]>
+		'''<summary>Reference to Activity</summary>
 		Public Property [Activity] As Guid?
-		'''<![CDATA[Description of Activity]]>
+		'''<summary>Description of Activity</summary>
 		Public Property [ActivityDescription] As String
-		'''<![CDATA[Date]]>
+		'''<summary>Date</summary>
 		Public Property [Date] As DateTime
-		'''<![CDATA[Entry ID]]>
+		'''<summary>Entry ID</summary>
 		Public Property [EntryId] As Guid?
-		'''<![CDATA[Hours approved]]>
+		'''<summary>Hours approved</summary>
 		Public Property [HoursApproved] As Double
-		'''<![CDATA[Billable hours approved]]>
+		'''<summary>Billable hours approved</summary>
 		Public Property [HoursApprovedBillable] As Double
-		'''<![CDATA[Hours draft]]>
+		'''<summary>Hours draft</summary>
 		Public Property [HoursDraft] As Double
-		'''<![CDATA[Billable hours draft]]>
+		'''<summary>Billable hours draft</summary>
 		Public Property [HoursDraftBillable] As Double
-		'''<![CDATA[Hours rejected]]>
+		'''<summary>Hours rejected</summary>
 		Public Property [HoursRejected] As Double
-		'''<![CDATA[Billable hours rejected]]>
+		'''<summary>Billable hours rejected</summary>
 		Public Property [HoursRejectedBillable] As Double
-		'''<![CDATA[Hours submitted]]>
+		'''<summary>Hours submitted</summary>
 		Public Property [HoursSubmitted] As Double
-		'''<![CDATA[Billable hours submitted]]>
+		'''<summary>Billable hours submitted</summary>
 		Public Property [HoursSubmittedBillable] As Double
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [Id] As Int32
-		'''<![CDATA[Code of Item]]>
+		'''<summary>Code of Item</summary>
 		Public Property [ItemCode] As String
-		'''<![CDATA[Description of Item]]>
+		'''<summary>Description of Item</summary>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Reference to Item]]>
+		'''<summary>Reference to Item</summary>
 		Public Property [ItemId] As Guid?
-		'''<![CDATA[Remarks]]>
+		'''<summary>Remarks</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Code of Project]]>
+		'''<summary>Code of Project</summary>
 		Public Property [ProjectCode] As String
-		'''<![CDATA[Description of Project]]>
+		'''<summary>Description of Project</summary>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA[Reference to Project]]>
+		'''<summary>Reference to Project</summary>
 		Public Property [ProjectId] As Guid?
-		'''<![CDATA[Week number]]>
+		'''<summary>Week number</summary>
 		Public Property [WeekNumber] As Int32
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [TimeAndBillingAccountDetail]
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Name]]>
+		'''<summary>Name</summary>
 		Public Property [Name] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [TimeAndBillingActivitiesAndExpens]
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Description of Parent]]>
+		'''<summary>Description of Parent</summary>
 		Public Property [ParentDescription] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("AccountId")>
 	Public Class [TimeAndBillingEntryAccount]
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [AccountId] As Guid
-		'''<![CDATA[Name of account]]>
+		'''<summary>Name of account</summary>
 		Public Property [AccountName] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ProjectId")>
 	Public Class [TimeAndBillingEntryProject]
-		'''<![CDATA[Code]]>
+		'''<summary>Code</summary>
 		Public Property [ProjectCode] As String
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ProjectId] As Guid
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("AccountId")>
 	Public Class [TimeAndBillingEntryRecentAccount]
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [AccountId] As Guid
-		'''<![CDATA[Name of account]]>
+		'''<summary>Name of account</summary>
 		Public Property [AccountName] As String
-		'''<![CDATA[Date last used]]>
+		'''<summary>Date last used</summary>
 		Public Property [DateLastUsed] As DateTime
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [TimeAndBillingEntryRecentActivitiesAndExpens]
-		'''<![CDATA[Date last used]]>
+		'''<summary>Date last used</summary>
 		Public Property [DateLastUsed] As DateTime
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Description of Parent]]>
+		'''<summary>Description of Parent</summary>
 		Public Property [ParentDescription] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ItemId")>
 	Public Class [TimeAndBillingEntryRecentHourCostType]
-		'''<![CDATA[Date last used]]>
+		'''<summary>Date last used</summary>
 		Public Property [DateLastUsed] As DateTime
-		'''<![CDATA[Description of item]]>
+		'''<summary>Description of item</summary>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ItemId] As Guid
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ProjectId")>
 	Public Class [TimeAndBillingEntryRecentProject]
-		'''<![CDATA[Date last used]]>
+		'''<summary>Date last used</summary>
 		Public Property [DateLastUsed] As DateTime
-		'''<![CDATA[Code of project]]>
+		'''<summary>Code of project</summary>
 		Public Property [ProjectCode] As String
-		'''<![CDATA[Description of project]]>
+		'''<summary>Description of project</summary>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ProjectId] As Guid
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [TimeAndBillingItemDetail]
-		'''<![CDATA[Item code]]>
+		'''<summary>Item code</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Description of the item code]]>
+		'''<summary>Description of the item code</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Indicates if fractions are allowed for quantities of this item]]>
+		'''<summary>Indicates if fractions are allowed for quantities of this item</summary>
 		Public Property [IsFractionAllowedItem] As Boolean
-		'''<![CDATA[Indicates if the item can be sold]]>
+		'''<summary>Indicates if the item can be sold</summary>
 		Public Property [IsSalesItem] As Boolean
-		'''<![CDATA[Sales currency code]]>
+		'''<summary>Sales currency code</summary>
 		Public Property [SalesCurrency] As String
-		'''<![CDATA[Sales price]]>
+		'''<summary>Sales price</summary>
 		Public Property [SalesPrice] As Double
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [TimeAndBillingProjectDetail]
-		'''<![CDATA[The account for this project]]>
+		'''<summary>The account for this project</summary>
 		Public Property [Account] As Guid?
 		Public Property [AccountName] As String
-		'''<![CDATA[Code of project]]>
+		'''<summary>Code of project</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Description of the project]]>
+		'''<summary>Description of the project</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Reference to ProjectTypes]]>
+		'''<summary>Reference to ProjectTypes</summary>
 		Public Property [Type] As Int32
 	End Class
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [TimeCorrection]
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Id]]>
+		'''<summary>Id</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Notes]]>
+		'''<summary>Notes</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Reference to the time entry that this corrects for]]>
+		'''<summary>Reference to the time entry that this corrects for</summary>
 		Public Property [OriginalEntryId] As Guid?
-		'''<![CDATA[Quantity has to be negative value. E.g.: If original quantity is 10 and the correct quantity is 4, this quantity is -6]]>
+		'''<summary>Quantity has to be negative value. E.g.: If original quantity is 10 and the correct quantity is 4, this quantity is -6</summary>
 		Public Property [Quantity] As Double?
 	End Class
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [TimeTransaction]
-		'''<![CDATA[Account linked to the transaction]]>
+		'''<summary>Account linked to the transaction</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[Name of Account]]>
+		'''<summary>Name of Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[Reference to ProjectWBS (work breakdown structure)]]>
+		'''<summary>Reference to ProjectWBS (work breakdown structure)</summary>
 		Public Property [Activity] As Guid?
-		'''<![CDATA[Description of ProjectWBS]]>
+		'''<summary>Description of ProjectWBS</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ActivityDescription] As String
-		'''<![CDATA[This property is obsolete. Use property 'AmountFC' instead.]]>
+		'''<summary>This property is obsolete. Use property &apos;AmountFC&apos; instead.</summary>
 		Public Property [Amount] As Double?
-		'''<![CDATA[Amount in the currency of the transaction of the transaction]]>
+		'''<summary>Amount in the currency of the transaction of the transaction</summary>
 		Public Property [AmountFC] As Double?
-		'''<![CDATA[Attachment linked to the transaction]]>
+		'''<summary>Attachment linked to the transaction</summary>
 		Public Property [Attachment] As Guid?
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Currency of the amount]]>
+		'''<summary>Currency of the amount</summary>
 		Public Property [Currency] As String
-		'''<![CDATA[Date]]>
+		'''<summary>Date</summary>
 		Public Property [Date] As DateTime?
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Description of Division]]>
+		'''<summary>Description of Division</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DivisionDescription] As String
-		'''<![CDATA[Employee linked to the transaction]]>
+		'''<summary>Employee linked to the transaction</summary>
 		Public Property [Employee] As Guid?
-		'''<![CDATA[End time of the transaction]]>
+		'''<summary>End time of the transaction</summary>
 		Public Property [EndTime] As DateTime?
-		'''<![CDATA[Entrynumber]]>
+		'''<summary>Entrynumber</summary>
 		Public Property [EntryNumber] As Int32?
-		'''<![CDATA[Errortext, used for the backgroundjobs]]>
+		'''<summary>Errortext, used for the backgroundjobs</summary>
 		Public Property [ErrorText] As String
-		'''<![CDATA[Status of the transaction]]>
+		'''<summary>Status of the transaction</summary>
 		Public Property [HourStatus] As Int16?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Item linked to the transaction. Items of type 'time' are linked to time transactions. Items of other types are linked to cost transactions]]>
+		'''<summary>Item linked to the transaction. Items of type &apos;time&apos; are linked to time transactions. Items of other types are linked to cost transactions</summary>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Description of Item]]>
+		'''<summary>Description of Item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[True if you can use decimals for item quantity]]>
+		'''<summary>True if you can use decimals for item quantity</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDivisable] As Boolean?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Notes linked to the transaction]]>
+		'''<summary>Notes linked to the transaction</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[This property is obsolete. Use property 'PriceFC' instead.]]>
+		'''<summary>This property is obsolete. Use property &apos;PriceFC&apos; instead.</summary>
 		Public Property [Price] As Double?
-		'''<![CDATA[PriceFC (AmountFC = Quantity * PriceFC)]]>
+		'''<summary>PriceFC (AmountFC = Quantity * PriceFC)</summary>
 		Public Property [PriceFC] As Double?
-		'''<![CDATA[Project linked to the transaction]]>
+		'''<summary>Project linked to the transaction</summary>
 		Public Property [Project] As Guid?
-		'''<![CDATA[Reference to project account]]>
+		'''<summary>Reference to project account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectAccount] As Guid?
-		'''<![CDATA[Project account code]]>
+		'''<summary>Project account code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectAccountCode] As String
-		'''<![CDATA[Project account name]]>
+		'''<summary>Project account name</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectAccountName] As String
-		'''<![CDATA[Code of Project]]>
+		'''<summary>Code of Project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectCode] As String
-		'''<![CDATA[Description of Project]]>
+		'''<summary>Description of Project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA[Quantity of the transaction]]>
+		'''<summary>Quantity of the transaction</summary>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[Start time of the transaction]]>
+		'''<summary>Start time of the transaction</summary>
 		Public Property [StartTime] As DateTime?
-		'''<![CDATA[Subscription linked to the transaction]]>
+		'''<summary>Subscription linked to the transaction</summary>
 		Public Property [Subscription] As Guid?
-		'''<![CDATA[Account linked to the subscription]]>
+		'''<summary>Account linked to the subscription</summary>
 		Public Property [SubscriptionAccount] As Guid?
-		'''<![CDATA[Subscription account code]]>
+		'''<summary>Subscription account code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubscriptionAccountCode] As String
-		'''<![CDATA[Subscription account name]]>
+		'''<summary>Subscription account name</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubscriptionAccountName] As String
-		'''<![CDATA[Description of the subscription]]>
+		'''<summary>Description of the subscription</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubscriptionDescription] As String
-		'''<![CDATA[Subscription number]]>
+		'''<summary>Subscription number</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubscriptionNumber] As Int32?
-		'''<![CDATA[Type of the transaction]]>
+		'''<summary>Type of the transaction</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Type] As Int16?
 	End Class

@@ -1,139 +1,139 @@
-' Last generated on 2017-05-05 12:58:34Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace Financial
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("AgeGroup")>
 	Public Class [AgingOverview]
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [AgeGroup] As Int32
-		'''<![CDATA[Description of AgeGroup]]>
+		'''<summary>Description of AgeGroup</summary>
 		Public Property [AgeGroupDescription] As String
-		'''<![CDATA[Amount payable]]>
+		'''<summary>Amount payable</summary>
 		Public Property [AmountPayable] As Double
-		'''<![CDATA[Amount receivable]]>
+		'''<summary>Amount receivable</summary>
 		Public Property [AmountReceivable] As Double
-		'''<![CDATA[Code of Currency]]>
+		'''<summary>Code of Currency</summary>
 		Public Property [CurrencyCode] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("AccountId")>
 	Public Class [AgingPayablesList]
-		'''<![CDATA[Code of Account]]>
+		'''<summary>Code of Account</summary>
 		Public Property [AccountCode] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [AccountId] As Guid
-		'''<![CDATA[Name of Account]]>
+		'''<summary>Name of Account</summary>
 		Public Property [AccountName] As String
-		'''<![CDATA[Age group 1]]>
+		'''<summary>Age group 1</summary>
 		Public Property [AgeGroup1] As Int32
-		'''<![CDATA[Amount of age group 1]]>
+		'''<summary>Amount of age group 1</summary>
 		Public Property [AgeGroup1Amount] As Double
-		'''<![CDATA[Description of AgeGroup1]]>
+		'''<summary>Description of AgeGroup1</summary>
 		Public Property [AgeGroup1Description] As String
-		'''<![CDATA[Age group 2]]>
+		'''<summary>Age group 2</summary>
 		Public Property [AgeGroup2] As Int32
-		'''<![CDATA[Amount of age group 2]]>
+		'''<summary>Amount of age group 2</summary>
 		Public Property [AgeGroup2Amount] As Double
-		'''<![CDATA[Description of AgeGroup2]]>
+		'''<summary>Description of AgeGroup2</summary>
 		Public Property [AgeGroup2Description] As String
-		'''<![CDATA[Age group 3]]>
+		'''<summary>Age group 3</summary>
 		Public Property [AgeGroup3] As Int32
-		'''<![CDATA[Amount of age group 3]]>
+		'''<summary>Amount of age group 3</summary>
 		Public Property [AgeGroup3Amount] As Double
-		'''<![CDATA[Description of AgeGroup3]]>
+		'''<summary>Description of AgeGroup3</summary>
 		Public Property [AgeGroup3Description] As String
-		'''<![CDATA[Age group 4]]>
+		'''<summary>Age group 4</summary>
 		Public Property [AgeGroup4] As Int32
-		'''<![CDATA[Amount of age group 4]]>
+		'''<summary>Amount of age group 4</summary>
 		Public Property [AgeGroup4Amount] As Double
-		'''<![CDATA[Description of AgeGroup4]]>
+		'''<summary>Description of AgeGroup4</summary>
 		Public Property [AgeGroup4Description] As String
-		'''<![CDATA[Code of Currency]]>
+		'''<summary>Code of Currency</summary>
 		Public Property [CurrencyCode] As String
-		'''<![CDATA[Total amount of all age groups]]>
+		'''<summary>Total amount of all age groups</summary>
 		Public Property [TotalAmount] As Double
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("AccountId")>
 	Public Class [AgingReceivablesList]
-		'''<![CDATA[Code of Account]]>
+		'''<summary>Code of Account</summary>
 		Public Property [AccountCode] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [AccountId] As Guid
-		'''<![CDATA[Name of Account]]>
+		'''<summary>Name of Account</summary>
 		Public Property [AccountName] As String
-		'''<![CDATA[Age group 1]]>
+		'''<summary>Age group 1</summary>
 		Public Property [AgeGroup1] As Int32
-		'''<![CDATA[Amount of age group 1]]>
+		'''<summary>Amount of age group 1</summary>
 		Public Property [AgeGroup1Amount] As Double
-		'''<![CDATA[Description of AgeGroup1]]>
+		'''<summary>Description of AgeGroup1</summary>
 		Public Property [AgeGroup1Description] As String
-		'''<![CDATA[Age group 2]]>
+		'''<summary>Age group 2</summary>
 		Public Property [AgeGroup2] As Int32
-		'''<![CDATA[Amount of age group 2]]>
+		'''<summary>Amount of age group 2</summary>
 		Public Property [AgeGroup2Amount] As Double
-		'''<![CDATA[Description of AgeGroup2]]>
+		'''<summary>Description of AgeGroup2</summary>
 		Public Property [AgeGroup2Description] As String
-		'''<![CDATA[Age group 3]]>
+		'''<summary>Age group 3</summary>
 		Public Property [AgeGroup3] As Int32
-		'''<![CDATA[Amount of age group 3]]>
+		'''<summary>Amount of age group 3</summary>
 		Public Property [AgeGroup3Amount] As Double
-		'''<![CDATA[Description of AgeGroup3]]>
+		'''<summary>Description of AgeGroup3</summary>
 		Public Property [AgeGroup3Description] As String
-		'''<![CDATA[Age group 4]]>
+		'''<summary>Age group 4</summary>
 		Public Property [AgeGroup4] As Int32
-		'''<![CDATA[Amount of age group 4]]>
+		'''<summary>Amount of age group 4</summary>
 		Public Property [AgeGroup4Amount] As Double
-		'''<![CDATA[Description of AgeGroup4]]>
+		'''<summary>Description of AgeGroup4</summary>
 		Public Property [AgeGroup4Description] As String
-		'''<![CDATA[Code of Currency]]>
+		'''<summary>Code of Currency</summary>
 		Public Property [CurrencyCode] As String
-		'''<![CDATA[Total amount of all age groups]]>
+		'''<summary>Total amount of all age groups</summary>
 		Public Property [TotalAmount] As Double
 	End Class
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [ExchangeRate]
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[The exchange rate is stored as 1 TARGET CURRENCY = x SOURCE CURRENCY]]>
+		'''<summary>The exchange rate is stored as 1 TARGET CURRENCY = x SOURCE CURRENCY</summary>
 		Public Property [Rate] As Double?
-		'''<![CDATA[The foreign currency]]>
+		'''<summary>The foreign currency</summary>
 		Public Property [SourceCurrency] As String
-		'''<![CDATA[Description of SourceCurrency]]>
+		'''<summary>Description of SourceCurrency</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SourceCurrencyDescription] As String
-		'''<![CDATA[The date as of which the rate is valid. The rate is valid until a next rate is defined]]>
+		'''<summary>The date as of which the rate is valid. The rate is valid until a next rate is defined</summary>
 		Public Property [StartDate] As DateTime?
-		'''<![CDATA[The default currency of the division]]>
+		'''<summary>The default currency of the division</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [TargetCurrency] As String
-		'''<![CDATA[Description of TargetCurrency]]>
+		'''<summary>Description of TargetCurrency</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [TargetCurrencyDescription] As String
 	End Class
@@ -141,187 +141,187 @@ Namespace Financial
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [FinancialPeriod]
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[The end date of the period]]>
+		'''<summary>The end date of the period</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[The financial period. Usually the period is a month or quarter with period 1 starting on the first of January.]]>
+		'''<summary>The financial period. Usually the period is a month or quarter with period 1 starting on the first of January.</summary>
 		Public Property [FinPeriod] As Int16?
-		'''<![CDATA[The financial year. The financial year and calendar year are not always aligned.]]>
+		'''<summary>The financial year. The financial year and calendar year are not always aligned.</summary>
 		Public Property [FinYear] As Int16?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[The start date of a period. A start date should always succeed a previous end date. Except for the first year/period combination]]>
+		'''<summary>The start date of a period. A start date should always succeed a previous end date. Except for the first year/period combination</summary>
 		Public Property [StartDate] As DateTime?
 	End Class
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [GLAccount]
-		'''<![CDATA[AssimilatedVATBox (France)]]>
+		'''<summary>AssimilatedVATBox (France)</summary>
 		Public Property [AssimilatedVATBox] As Int16?
-		'''<![CDATA[The following values are supported: D (Debit) C (Credit)]]>
+		'''<summary>The following values are supported: D (Debit) C (Credit)</summary>
 		Public Property [BalanceSide] As String
-		'''<![CDATA[The following values are supported: B (Balance Sheet) W (Profit & Loss)]]>
+		'''<summary>The following values are supported: B (Balance Sheet) W (Profit &amp; Loss)</summary>
 		Public Property [BalanceType] As String
-		'''<![CDATA[Indentify the kind of rewarding for the G/L account. This is used in the official document for the fiscal fiches Belcotax]]>
+		'''<summary>Indentify the kind of rewarding for the G/L account. This is used in the official document for the fiscal fiches Belcotax</summary>
 		Public Property [BelcotaxType] As Int32?
-		'''<![CDATA[Unique Code of the G/L account]]>
+		'''<summary>Unique Code of the G/L account</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Indicate if this G/L account should be shown as compressed without the details in the CRW report of G/L history]]>
+		'''<summary>Indicate if this G/L account should be shown as compressed without the details in the CRW report of G/L history</summary>
 		Public Property [Compress] As Boolean?
-		'''<![CDATA[Cost Center linked to the G/L account]]>
+		'''<summary>Cost Center linked to the G/L account</summary>
 		Public Property [Costcenter] As String
-		'''<![CDATA[Description of Costcenter]]>
+		'''<summary>Description of Costcenter</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostcenterDescription] As String
-		'''<![CDATA[Cost Unit linked to the G/L account]]>
+		'''<summary>Cost Unit linked to the G/L account</summary>
 		Public Property [Costunit] As String
-		'''<![CDATA[Description of Costunit]]>
+		'''<summary>Description of Costunit</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostunitDescription] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Name of the G/L account]]>
+		'''<summary>Name of the G/L account</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32
-		'''<![CDATA[General ledger transactions on this G/L account should not appear on the VAT listing]]>
+		'''<summary>General ledger transactions on this G/L account should not appear on the VAT listing</summary>
 		Public Property [ExcludeVATListing] As Byte
-		'''<![CDATA[Expenses on this G/L account can not be used to reduce the incomes]]>
+		'''<summary>Expenses on this G/L account can not be used to reduce the incomes</summary>
 		Public Property [ExpenseNonDeductiblePercentage] As Double?
-		'''<![CDATA[Primary Key]]>
+		'''<summary>Primary Key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[When blocked you can't use this general ledger account anymore for new entries]]>
+		'''<summary>When blocked you can&apos;t use this general ledger account anymore for new entries</summary>
 		Public Property [IsBlocked] As Boolean?
-		'''<![CDATA[Allow entries on this general ledger account to be matched via the G/L account card]]>
+		'''<summary>Allow entries on this general ledger account to be matched via the G/L account card</summary>
 		Public Property [Matching] As Boolean?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[If a private use percentage is defined, you need to specify the G/L account used for the re-invoice of the private use to the owner of the company]]>
+		'''<summary>If a private use percentage is defined, you need to specify the G/L account used for the re-invoice of the private use to the owner of the company</summary>
 		Public Property [PrivateGLAccount] As Guid?
-		'''<![CDATA[Specify the percentage of the cost that should be re-invoiced to the owner of the company as private use of the costs]]>
+		'''<summary>Specify the percentage of the cost that should be re-invoiced to the owner of the company as private use of the costs</summary>
 		Public Property [PrivatePercentage] As Double?
-		'''<![CDATA[Used in the export of yearly report]]>
+		'''<summary>Used in the export of yearly report</summary>
 		Public Property [ReportingCode] As String
-		'''<![CDATA[Indicates if the amounts booked on this general ledger account will be recalculated when currency revaluation is done]]>
+		'''<summary>Indicates if the amounts booked on this general ledger account will be recalculated when currency revaluation is done</summary>
 		Public Property [RevalueCurrency] As Boolean?
-		'''<![CDATA[Search Code]]>
+		'''<summary>Search Code</summary>
 		Public Property [SearchCode] As String
-		'''<![CDATA[The type of the G/L account. Supported values are:<br>10 = Cash<br>12 = Bank<br>14 = Credit card<br>16 = Payment services<br>20 = Accounts receivable<br>21 = Prepayment accounts receivable<br>22 = Accounts payable<br>24 = VAT<br>25 = Employees payable<br>26 = Prepaid expenses<br>27 = Accrued expenses<br>29 = Income taxes payable<br>30 = Fixed assets<br>32 = Other assets<br>35 = Accumulated depreciation<br>40 = Inventory<br>50 = Capital stock<br>52 = Retained earnings<br>55 = Long term debt<br>60 = Current portion of debt<br>90 = General<br>100 = Tax payable<br>110 = Revenue<br>111 = Cost of goods<br>120 = Other costs<br>121 = Sales, general administrative expenses<br>122 = Depreciation costs<br>123 = Research and development<br>125 = Employee costs<br>126 = Employment costs<br>130 = Exceptional costs<br>140 = Exceptional income<br>150 = Income taxes<br>160 = Interest income<br>300 = Year end reflection<br>301 = Indirect year end costing<br>302 = Direct year end costing<br>]]>
+		'''<summary>The type of the G/L account. Supported values are:&lt;br&gt;10 = Cash&lt;br&gt;12 = Bank&lt;br&gt;14 = Credit card&lt;br&gt;16 = Payment services&lt;br&gt;20 = Accounts receivable&lt;br&gt;21 = Prepayment accounts receivable&lt;br&gt;22 = Accounts payable&lt;br&gt;24 = VAT&lt;br&gt;25 = Employees payable&lt;br&gt;26 = Prepaid expenses&lt;br&gt;27 = Accrued expenses&lt;br&gt;29 = Income taxes payable&lt;br&gt;30 = Fixed assets&lt;br&gt;32 = Other assets&lt;br&gt;35 = Accumulated depreciation&lt;br&gt;40 = Inventory&lt;br&gt;50 = Capital stock&lt;br&gt;52 = Retained earnings&lt;br&gt;55 = Long term debt&lt;br&gt;60 = Current portion of debt&lt;br&gt;90 = General&lt;br&gt;100 = Tax payable&lt;br&gt;110 = Revenue&lt;br&gt;111 = Cost of goods&lt;br&gt;120 = Other costs&lt;br&gt;121 = Sales, general administrative expenses&lt;br&gt;122 = Depreciation costs&lt;br&gt;123 = Research and development&lt;br&gt;125 = Employee costs&lt;br&gt;126 = Employment costs&lt;br&gt;130 = Exceptional costs&lt;br&gt;140 = Exceptional income&lt;br&gt;150 = Income taxes&lt;br&gt;160 = Interest income&lt;br&gt;300 = Year end reflection&lt;br&gt;301 = Indirect year end costing&lt;br&gt;302 = Direct year end costing&lt;br&gt;</summary>
 		Public Property [Type] As Int32?
-		'''<![CDATA[Description of Type]]>
+		'''<summary>Description of Type</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [TypeDescription] As String
-		'''<![CDATA[Indicates if cost centers can be used when using this general ledger account. The following values are supported: 0 (Optional) 1 (Mandatory) 2 (No)]]>
+		'''<summary>Indicates if cost centers can be used when using this general ledger account. The following values are supported: 0 (Optional) 1 (Mandatory) 2 (No)</summary>
 		Public Property [UseCostcenter] As Byte?
-		'''<![CDATA[Indicates if cost units can be used when using this general ledger account. The following values are supported: 0 (Optional) 1 (Mandatory) 2 (No)]]>
+		'''<summary>Indicates if cost units can be used when using this general ledger account. The following values are supported: 0 (Optional) 1 (Mandatory) 2 (No)</summary>
 		Public Property [UseCostunit] As Byte?
-		'''<![CDATA[VAT Code linked to the G/L account]]>
+		'''<summary>VAT Code linked to the G/L account</summary>
 		Public Property [VATCode] As String
-		'''<![CDATA[Description of VAT]]>
+		'''<summary>Description of VAT</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [VATDescription] As String
-		'''<![CDATA[Specify the kind of purchase this G/L account is used for. This is important for the Belgian VAT return to indicate in which VAT box the base amount of purchase should go]]>
+		'''<summary>Specify the kind of purchase this G/L account is used for. This is important for the Belgian VAT return to indicate in which VAT box the base amount of purchase should go</summary>
 		Public Property [VATGLAccountType] As String
-		'''<![CDATA[If you use a percentage of non deductible VAT, you can specify another G/L account that will be used for the non deductible part of the VAT amount. This is used directly in the entry application of purchase invoices.]]>
+		'''<summary>If you use a percentage of non deductible VAT, you can specify another G/L account that will be used for the non deductible part of the VAT amount. This is used directly in the entry application of purchase invoices.</summary>
 		Public Property [VATNonDeductibleGLAccount] As Guid?
-		'''<![CDATA[If not the full amount of the VAT is deductible, you can indicate a percentage for the non decuctible part. This is used during the entry of purchase invoices]]>
+		'''<summary>If not the full amount of the VAT is deductible, you can indicate a percentage for the non decuctible part. This is used during the entry of purchase invoices</summary>
 		Public Property [VATNonDeductiblePercentage] As Double?
-		'''<![CDATA[The following values are supported: I (Invoice) C (Cash) (France)]]>
+		'''<summary>The following values are supported: I (Invoice) C (Cash) (France)</summary>
 		Public Property [VATSystem] As String
-		'''<![CDATA[Indicates the costing account for year end calculations]]>
+		'''<summary>Indicates the costing account for year end calculations</summary>
 		Public Property [YearEndCostGLAccount] As Guid?
-		'''<![CDATA[Indicates the reflection account that is used by year end application]]>
+		'''<summary>Indicates the reflection account that is used by year end application</summary>
 		Public Property [YearEndReflectionGLAccount] As Guid?
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [GLClassification]
-		'''<![CDATA[Abstract elements are only used in presentation linkbases to group other elements. They are not supposed to be used in instance documents]]>
+		'''<summary>Abstract elements are only used in presentation linkbases to group other elements. They are not supposed to be used in instance documents</summary>
 		Public Property [Abstract] As Boolean?
-		'''<![CDATA[Only used for amount concepts: in that case either 'debit' or 'credit']]>
+		'''<summary>Only used for amount concepts: in that case either &apos;debit&apos; or &apos;credit&apos;</summary>
 		Public Property [Balance] As String
-		'''<![CDATA[The Code is unique]]>
+		'''<summary>The Code is unique</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description of the element. Note that this description is only used for division-specific taxonomies (or reporting schemes). For general taxonomies, the descriptions are stored in the TaxonomyLabels table]]>
+		'''<summary>Description of the element. Note that this description is only used for division-specific taxonomies (or reporting schemes). For general taxonomies, the descriptions are stored in the TaxonomyLabels table</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division is optional. For taxonomies of Taxonomies.Type = 0 (general taxonomies), the Division is empty. For division specific taxonomies it is mandatory]]>
+		'''<summary>Division is optional. For taxonomies of Taxonomies.Type = 0 (general taxonomies), the Division is empty. For division specific taxonomies it is mandatory</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Obsolete]]>
+		'''<summary>Obsolete</summary>
 		Public Property [IsTupleSubElement] As Boolean?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[The Name is unique in the namespace]]>
+		'''<summary>The Name is unique in the namespace</summary>
 		Public Property [Name] As String
-		'''<![CDATA[Determines whether usage of the element is mandatory in an instance document]]>
+		'''<summary>Determines whether usage of the element is mandatory in an instance document</summary>
 		Public Property [Nillable] As Boolean?
-		'''<![CDATA[Parent element for reporting schemes. In a reporting scheme, an element can have only one parent. This column is only used for reporting schemes. Note that in a real taxonomy, elements can have multiple parents.]]>
+		'''<summary>Parent element for reporting schemes. In a reporting scheme, an element can have only one parent. This column is only used for reporting schemes. Note that in a real taxonomy, elements can have multiple parents.</summary>
 		Public Property [Parent] As Guid?
-		'''<![CDATA[Only used for item concepts: either 'instant' or 'duration'. 'instant' is used for balance types of concepts, 'duration' is used for P&L types of concepts]]>
+		'''<summary>Only used for item concepts: either &apos;instant&apos; or &apos;duration&apos;. &apos;instant&apos; is used for balance types of concepts, &apos;duration&apos; is used for P&amp;L types of concepts</summary>
 		Public Property [PeriodType] As String
-		'''<![CDATA[Mostly import sutstitutiongroup is xbrli:tuple, which makes the element a tuple concept. The default substitutiongroup for item concepts is xbrli:item]]>
+		'''<summary>Mostly import sutstitutiongroup is xbrli:tuple, which makes the element a tuple concept. The default substitutiongroup for item concepts is xbrli:item</summary>
 		Public Property [SubstitutionGroup] As String
-		'''<![CDATA[Namespace of the element]]>
+		'''<summary>Namespace of the element</summary>
 		Public Property [TaxonomyNamespace] As Guid?
-		'''<![CDATA[Description of TaxonomyNamespace]]>
+		'''<summary>Description of TaxonomyNamespace</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [TaxonomyNamespaceDescription] As String
-		'''<![CDATA[Type of the element]]>
+		'''<summary>Type of the element</summary>
 		Public Property [Type] As Guid?
 	End Class
 
@@ -329,34 +329,34 @@ Namespace Financial
 	<DataServiceKey("ID")>
 	Public Class [GLScheme]
 		Public Property [Code] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description text]]>
+		'''<summary>Description text</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division is optional for this table. For taxonomies of Taxonomies.Type = 0 (general taxonomies), the Division is empty. For division specific taxonomies it is mandatory]]>
+		'''<summary>Division is optional for this table. For taxonomies of Taxonomies.Type = 0 (general taxonomies), the Division is empty. For division specific taxonomies it is mandatory</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Only used for reporting schemes = division specific taxonomynamespaces. In this case, main = 1 denotes the main or default reporting scheme]]>
+		'''<summary>Only used for reporting schemes = division specific taxonomynamespaces. In this case, main = 1 denotes the main or default reporting scheme</summary>
 		Public Property [Main] As Byte
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[URI, which is the unique identifier of the namespace]]>
+		'''<summary>URI, which is the unique identifier of the namespace</summary>
 		Public Property [TargetNamespace] As String
 	End Class
 
@@ -371,338 +371,338 @@ Namespace Financial
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [Journal]
-		'''<![CDATA[Indicates if the journal allows variable currency]]>
+		'''<summary>Indicates if the journal allows variable currency</summary>
 		Public Property [AllowVariableCurrency] As Boolean?
-		'''<![CDATA[Indicates if the journal allows the exchange rate of the currency of the amounts in the journal entry to be changed]]>
+		'''<summary>Indicates if the journal allows the exchange rate of the currency of the amounts in the journal entry to be changed</summary>
 		Public Property [AllowVariableExchangeRate] As Boolean?
-		'''<![CDATA[Indicates if the journal allows the use of VAT in the financial entry. Especially true for general journals]]>
+		'''<summary>Indicates if the journal allows the use of VAT in the financial entry. Especially true for general journals</summary>
 		Public Property [AllowVAT] As Boolean?
-		'''<![CDATA[Indicates if the journal automatically saves the entries when the amount is in balance with the entry lines]]>
+		'''<summary>Indicates if the journal automatically saves the entries when the amount is in balance with the entry lines</summary>
 		Public Property [AutoSave] As Boolean?
-		'''<![CDATA[Reference to bank account]]>
+		'''<summary>Reference to bank account</summary>
 		Public Property [Bank] As Guid?
-		'''<![CDATA[BIC code of the bank where the bank account is held]]>
+		'''<summary>BIC code of the bank where the bank account is held</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [BankAccountBICCode] As String
-		'''<![CDATA[Country of bank account]]>
+		'''<summary>Country of bank account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [BankAccountCountry] As String
-		'''<![CDATA[Description of BankAccount]]>
+		'''<summary>Description of BankAccount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [BankAccountDescription] As String
-		'''<![CDATA[IBAN of the bank account]]>
+		'''<summary>IBAN of the bank account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [BankAccountIBAN] As String
-		'''<![CDATA[Reference to the Bank Account linked to the Journal]]>
+		'''<summary>Reference to the Bank Account linked to the Journal</summary>
 		Public Property [BankAccountID] As Guid?
-		'''<![CDATA[Bank account number. Is mandatory for Journals that have Type = Bank]]>
+		'''<summary>Bank account number. Is mandatory for Journals that have Type = Bank</summary>
 		Public Property [BankAccountIncludingMask] As String
-		'''<![CDATA[Obsolete. Whether or not use SEPA for the bank account]]>
+		'''<summary>Obsolete. Whether or not use SEPA for the bank account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [BankAccountUseSEPA] As Boolean?
-		'''<![CDATA[Obsolete. Whether or not use SEPA direct debit for the bank account]]>
+		'''<summary>Obsolete. Whether or not use SEPA direct debit for the bank account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [BankAccountUseSepaDirectDebit] As Boolean?
-		'''<![CDATA[Name of bank account]]>
+		'''<summary>Name of bank account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [BankName] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Default Currency of the Journal. If AllowVariableCurrency is false this is the only currency that can be used]]>
+		'''<summary>Default Currency of the Journal. If AllowVariableCurrency is false this is the only currency that can be used</summary>
 		Public Property [Currency] As String
-		'''<![CDATA[Description of Currency]]>
+		'''<summary>Description of Currency</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CurrencyDescription] As String
-		'''<![CDATA[Name of the Journal]]>
+		'''<summary>Name of the Journal</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Suspense general ledger account]]>
+		'''<summary>Suspense general ledger account</summary>
 		Public Property [GLAccount] As Guid?
-		'''<![CDATA[Code of GLAccount]]>
+		'''<summary>Code of GLAccount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLAccountCode] As String
-		'''<![CDATA[Description of GLAccount]]>
+		'''<summary>Description of GLAccount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLAccountDescription] As String
-		'''<![CDATA[Type of GLAccount]]>
+		'''<summary>Type of GLAccount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLAccountType] As Int32?
-		'''<![CDATA[Primary Key]]>
+		'''<summary>Primary Key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[General ledger account for payment in transit]]>
+		'''<summary>General ledger account for payment in transit</summary>
 		Public Property [PaymentInTransitAccount] As Guid?
-		'''<![CDATA[Identifier detail of the Payment service account. Ex. EmailID for Paypal type of Payment service account]]>
+		'''<summary>Identifier detail of the Payment service account. Ex. EmailID for Paypal type of Payment service account</summary>
 		Public Property [PaymentServiceAccountIdentifier] As String
-		'''<![CDATA[Type of Payment service provider. The following values are supported: 1 (Adyen), 2 (Paypal), 3 (Stripe). Is mandatory for Journals of Type 16 (Payment service)]]>
+		'''<summary>Type of Payment service provider. The following values are supported: 1 (Adyen), 2 (Paypal), 3 (Stripe). Is mandatory for Journals of Type 16 (Payment service)</summary>
 		Public Property [PaymentServiceProvider] As Int32?
-		'''<![CDATA[Name of the Payment service provider]]>
+		'''<summary>Name of the Payment service provider</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [PaymentServiceProviderName] As String
-		'''<![CDATA[Type of Journal. The following values are supported: 10 (Cash) 12 (Bank) 16 (Payment service) 20 (Sales) 21 (Return invoice) 22 (Purchase) 23 (Received return invoice) 90 (General journal)]]>
+		'''<summary>Type of Journal. The following values are supported: 10 (Cash) 12 (Bank) 16 (Payment service) 20 (Sales) 21 (Return invoice) 22 (Purchase) 23 (Received return invoice) 90 (General journal)</summary>
 		Public Property [Type] As Int32?
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("Year,Period,Journal")>
 	Public Class [JournalStatusList]
-		'''<![CDATA[Reference to Journal]]>
+		'''<summary>Reference to Journal</summary>
 		Public Property [Journal] As String
-		'''<![CDATA[Description of Journal]]>
+		'''<summary>Description of Journal</summary>
 		Public Property [JournalDescription] As String
-		'''<![CDATA[Type of Journal 10=Cash, 12=Bank, 20=Sales, 21=Return invoice, 22=Purchase, 23=Received return invoice, 90=General journal]]>
+		'''<summary>Type of Journal 10=Cash, 12=Bank, 20=Sales, 21=Return invoice, 22=Purchase, 23=Received return invoice, 90=General journal</summary>
 		Public Property [JournalType] As Int32
-		'''<![CDATA[Description of JournalType]]>
+		'''<summary>Description of JournalType</summary>
 		Public Property [JournalTypeDescription] As String
-		'''<![CDATA[Financial period]]>
+		'''<summary>Financial period</summary>
 		Public Property [Period] As Int32
-		'''<![CDATA[Journal status for this year and period 0=open, 1=closed]]>
+		'''<summary>Journal status for this year and period 0=open, 1=closed</summary>
 		Public Property [Status] As Int32
-		'''<![CDATA[Description of Status]]>
+		'''<summary>Description of Status</summary>
 		Public Property [StatusDescription] As String
-		'''<![CDATA[Financial year]]>
+		'''<summary>Financial year</summary>
 		Public Property [Year] As Int32
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("CurrencyCode")>
 	Public Class [OutstandingInvoicesOverview]
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [CurrencyCode] As String
-		'''<![CDATA[Total invoice amount to be paid]]>
+		'''<summary>Total invoice amount to be paid</summary>
 		Public Property [OutstandingPayableInvoiceAmount] As Double
-		'''<![CDATA[Number of invoices to be paid]]>
+		'''<summary>Number of invoices to be paid</summary>
 		Public Property [OutstandingPayableInvoiceCount] As Double
-		'''<![CDATA[Total invoice amount to be received]]>
+		'''<summary>Total invoice amount to be received</summary>
 		Public Property [OutstandingReceivableInvoiceAmount] As Double
-		'''<![CDATA[Number of invoices to be received]]>
+		'''<summary>Number of invoices to be received</summary>
 		Public Property [OutstandingReceivableInvoiceCount] As Double
-		'''<![CDATA[Total payable invoice amount that is overdue]]>
+		'''<summary>Total payable invoice amount that is overdue</summary>
 		Public Property [OverduePayableInvoiceAmount] As Double
-		'''<![CDATA[Number of payable invoices that are overdue]]>
+		'''<summary>Number of payable invoices that are overdue</summary>
 		Public Property [OverduePayableInvoiceCount] As Double
-		'''<![CDATA[Total receivable invoice amount that is overdue]]>
+		'''<summary>Total receivable invoice amount that is overdue</summary>
 		Public Property [OverdueReceivableInvoiceAmount] As Double
-		'''<![CDATA[Number of receivable invoices that are overdue]]>
+		'''<summary>Number of receivable invoices that are overdue</summary>
 		Public Property [OverdueReceivableInvoiceCount] As Double
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("HID")>
 	Public Class [PayablesList]
-		'''<![CDATA[Code of Account]]>
+		'''<summary>Code of Account</summary>
 		Public Property [AccountCode] As String
-		'''<![CDATA[Reference to the account]]>
+		'''<summary>Reference to the account</summary>
 		Public Property [AccountId] As Guid
-		'''<![CDATA[Name of Account]]>
+		'''<summary>Name of Account</summary>
 		Public Property [AccountName] As String
-		'''<![CDATA[Amount]]>
+		'''<summary>Amount</summary>
 		Public Property [Amount] As Double
-		'''<![CDATA[Amount in transit]]>
+		'''<summary>Amount in transit</summary>
 		Public Property [AmountInTransit] As Double
-		'''<![CDATA[Code of Currency]]>
+		'''<summary>Code of Currency</summary>
 		Public Property [CurrencyCode] As String
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Date the invoice should be paid]]>
+		'''<summary>Date the invoice should be paid</summary>
 		Public Property [DueDate] As DateTime
-		'''<![CDATA[Entry number]]>
+		'''<summary>Entry number</summary>
 		Public Property [EntryNumber] As Int32
-		'''<![CDATA[Primary key, human readable ID]]>
+		'''<summary>Primary key, human readable ID</summary>
 		Public Property [HID] As Int64
-		'''<![CDATA[Obsolete]]>
+		'''<summary>Obsolete</summary>
 		Public Property [Id] As Guid
-		'''<![CDATA[Invoice date]]>
+		'''<summary>Invoice date</summary>
 		Public Property [InvoiceDate] As DateTime
-		'''<![CDATA[Invoice number]]>
+		'''<summary>Invoice number. The value is 0 when the invoice number of the linked transaction is empty.</summary>
 		Public Property [InvoiceNumber] As Int32
-		'''<![CDATA[Code of Journal]]>
+		'''<summary>Code of Journal</summary>
 		Public Property [JournalCode] As String
-		'''<![CDATA[Description of Journal]]>
+		'''<summary>Description of Journal</summary>
 		Public Property [JournalDescription] As String
-		'''<![CDATA[Your reference]]>
+		'''<summary>Your reference</summary>
 		Public Property [YourRef] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("CurrentYear")>
 	Public Class [ProfitLossOverview]
-		'''<![CDATA[Costs in current period]]>
+		'''<summary>Costs in current period</summary>
 		Public Property [CostsCurrentPeriod] As Double
-		'''<![CDATA[Costs in current year]]>
+		'''<summary>Costs in current year</summary>
 		Public Property [CostsCurrentYear] As Double
-		'''<![CDATA[Costs in previous year]]>
+		'''<summary>Costs in previous year</summary>
 		Public Property [CostsPreviousYear] As Double
-		'''<![CDATA[Costs in period of previous year]]>
+		'''<summary>Costs in period of previous year</summary>
 		Public Property [CostsPreviousYearPeriod] As Double
-		'''<![CDATA[Currency code]]>
+		'''<summary>Currency code</summary>
 		Public Property [CurrencyCode] As String
-		'''<![CDATA[Current period]]>
+		'''<summary>Current period</summary>
 		Public Property [CurrentPeriod] As Int32
-		'''<![CDATA[Primary key, Current year]]>
+		'''<summary>Primary key, Current year</summary>
 		Public Property [CurrentYear] As Int32
-		'''<![CDATA[Previous year]]>
+		'''<summary>Previous year</summary>
 		Public Property [PreviousYear] As Int32
-		'''<![CDATA[Period in previous year]]>
+		'''<summary>Period in previous year</summary>
 		Public Property [PreviousYearPeriod] As Int32
-		'''<![CDATA[Results of current period]]>
+		'''<summary>Results of current period</summary>
 		Public Property [ResultCurrentPeriod] As Double
 		Public Property [ResultCurrentYear] As Double
 		Public Property [ResultPreviousYear] As Double
-		'''<![CDATA[Results of period in previous year]]>
+		'''<summary>Results of period in previous year</summary>
 		Public Property [ResultPreviousYearPeriod] As Double
-		'''<![CDATA[Revenue in current period]]>
+		'''<summary>Revenue in current period</summary>
 		Public Property [RevenueCurrentPeriod] As Double
-		'''<![CDATA[Revenue in current year]]>
+		'''<summary>Revenue in current year</summary>
 		Public Property [RevenueCurrentYear] As Double
-		'''<![CDATA[Revenue in previous year]]>
+		'''<summary>Revenue in previous year</summary>
 		Public Property [RevenuePreviousYear] As Double
-		'''<![CDATA[Revenue in period of previous year]]>
+		'''<summary>Revenue in period of previous year</summary>
 		Public Property [RevenuePreviousYearPeriod] As Double
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("HID")>
 	Public Class [ReceivablesList]
-		'''<![CDATA[Code of Account]]>
+		'''<summary>Code of Account</summary>
 		Public Property [AccountCode] As String
-		'''<![CDATA[Reference to the account]]>
+		'''<summary>Reference to the account</summary>
 		Public Property [AccountId] As Guid
-		'''<![CDATA[Name of Account]]>
+		'''<summary>Name of Account</summary>
 		Public Property [AccountName] As String
-		'''<![CDATA[Amount]]>
+		'''<summary>Amount</summary>
 		Public Property [Amount] As Double
-		'''<![CDATA[Amount in transit]]>
+		'''<summary>Amount in transit</summary>
 		Public Property [AmountInTransit] As Double
-		'''<![CDATA[Code of Currency]]>
+		'''<summary>Code of Currency</summary>
 		Public Property [CurrencyCode] As String
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Date the invoice should be paid]]>
+		'''<summary>Date the invoice should be paid</summary>
 		Public Property [DueDate] As DateTime
-		'''<![CDATA[Entry number]]>
+		'''<summary>Entry number</summary>
 		Public Property [EntryNumber] As Int32
-		'''<![CDATA[Primary key, human readable ID]]>
+		'''<summary>Primary key, human readable ID</summary>
 		Public Property [HID] As Int64
-		'''<![CDATA[Obsolete]]>
+		'''<summary>Obsolete</summary>
 		Public Property [Id] As Guid
-		'''<![CDATA[Invoice date]]>
+		'''<summary>Invoice date</summary>
 		Public Property [InvoiceDate] As DateTime
-		'''<![CDATA[Invoice number]]>
+		'''<summary>Invoice number. The value is 0 when the invoice number of the linked transaction is empty.</summary>
 		Public Property [InvoiceNumber] As Int32
-		'''<![CDATA[Code of Journal]]>
+		'''<summary>Code of Journal</summary>
 		Public Property [JournalCode] As String
-		'''<![CDATA[Description of Journal]]>
+		'''<summary>Description of Journal</summary>
 		Public Property [JournalDescription] As String
-		'''<![CDATA[Your reference]]>
+		'''<summary>Your reference</summary>
 		Public Property [YourRef] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [ReportingBalance]
-		'''<![CDATA[The sum of the amounts of all transactions in the grouping.]]>
+		'''<summary>The sum of the amounts of all transactions in the grouping.</summary>
 		Public Property [Amount] As Double?
-		'''<![CDATA[The sum of the amounts of all credit transactions in the grouping.]]>
+		'''<summary>The sum of the amounts of all credit transactions in the grouping.</summary>
 		Public Property [AmountCredit] As Double?
-		'''<![CDATA[The sum of the amounts of all debit transactions in the grouping.]]>
+		'''<summary>The sum of the amounts of all debit transactions in the grouping.</summary>
 		Public Property [AmountDebit] As Double?
-		'''<![CDATA[Balance type of the G/L account: B = Balance Sheet, W = Profit & Loss.]]>
+		'''<summary>Balance type of the G/L account: B = Balance Sheet, W = Profit &amp; Loss.</summary>
 		Public Property [BalanceType] As String
-		'''<![CDATA[The code of the cost center.]]>
+		'''<summary>The code of the cost center.</summary>
 		Public Property [CostCenterCode] As String
-		'''<![CDATA[The description of the cost center.]]>
+		'''<summary>The description of the cost center.</summary>
 		Public Property [CostCenterDescription] As String
-		'''<![CDATA[The code of the cost unit.]]>
+		'''<summary>The code of the cost unit.</summary>
 		Public Property [CostUnitCode] As String
-		'''<![CDATA[The description of the cost unit.]]>
+		'''<summary>The description of the cost unit.</summary>
 		Public Property [CostUnitDescription] As String
-		'''<![CDATA[The number of transactions in the grouping.]]>
+		'''<summary>The number of transactions in the grouping.</summary>
 		Public Property [Count] As Int32?
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		Public Property [Division] As Int32?
-		'''<![CDATA[G/L account]]>
+		'''<summary>G/L account</summary>
 		Public Property [GLAccount] As Guid?
-		'''<![CDATA[The code of the G/L account.]]>
+		'''<summary>The code of the G/L account.</summary>
 		Public Property [GLAccountCode] As String
-		'''<![CDATA[The description of the G/L account.]]>
+		'''<summary>The description of the G/L account.</summary>
 		Public Property [GLAccountDescription] As String
-		'''<![CDATA[Record ID]]>
+		'''<summary>Record ID</summary>
 		Public Property [ID] As Int64
-		'''<![CDATA[The reporting period of the transactions in the grouping.]]>
+		'''<summary>The reporting period of the transactions in the grouping.</summary>
 		Public Property [ReportingPeriod] As Int32?
-		'''<![CDATA[The reporting year of the transactions in the grouping.]]>
+		'''<summary>The reporting year of the transactions in the grouping.</summary>
 		Public Property [ReportingYear] As Int32?
-		'''<![CDATA[Status: 20 = Open, 50 = Processed. To get 'after entry' results, both Open and Processed amounts have to be included. This is by default, so it requires no extra filtering.]]>
+		'''<summary>Status: 20 = Open, 50 = Processed. To get &apos;after entry&apos; results, both Open and Processed amounts have to be included. This is by default, so it requires no extra filtering.</summary>
 		Public Property [Status] As Int32?
-		'''<![CDATA[The type of the transactions in the grouping.]]>
+		'''<summary>The type of the transactions in the grouping.</summary>
 		Public Property [Type] As Int32?
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("DocumentID")>
 	Public Class [Return]
-		'''<![CDATA[Amount in the currency of the transaction]]>
+		'''<summary>Amount in the currency of the transaction</summary>
 		Public Property [Amount] As Double?
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime
-		'''<![CDATA[Currency]]>
+		'''<summary>Currency</summary>
 		Public Property [Currency] As String
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Primary key, document ID]]>
+		'''<summary>Primary key, document ID</summary>
 		Public Property [DocumentID] As Guid
-		'''<![CDATA[Url to view the document]]>
+		'''<summary>Url to view the document</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DocumentViewUrl] As String
-		'''<![CDATA[Due date]]>
+		'''<summary>Due date</summary>
 		Public Property [DueDate] As DateTime?
-		'''<![CDATA[Frequency]]>
+		'''<summary>Frequency</summary>
 		Public Property [Frequency] As String
-		'''<![CDATA[Payroll declaration type]]>
+		'''<summary>Payroll declaration type</summary>
 		Public Property [PayrollDeclarationType] As String
-		'''<![CDATA[Period]]>
+		'''<summary>Period</summary>
 		Public Property [Period] As Int32
-		'''<![CDATA[Description of Period]]>
+		'''<summary>Description of Period</summary>
 		Public Property [PeriodDescription] As String
-		'''<![CDATA[Reference to request]]>
+		'''<summary>Reference to request</summary>
 		Public Property [Request] As Guid?
-		'''<![CDATA[Status]]>
+		'''<summary>Status</summary>
 		Public Property [Status] As Int32
-		'''<![CDATA[Type]]>
+		'''<summary>Type</summary>
 		Public Property [Type] As Int32
-		'''<![CDATA[Year]]>
+		'''<summary>Year</summary>
 		Public Property [Year] As Int32
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("Year,Period")>
 	Public Class [RevenueList]
-		'''<![CDATA[Total amount in the default currency of the company]]>
+		'''<summary>Total amount in the default currency of the company</summary>
 		Public Property [Amount] As Double
-		'''<![CDATA[Reporting period]]>
+		'''<summary>Reporting period</summary>
 		Public Property [Period] As Int32
-		'''<![CDATA[Reporting year]]>
+		'''<summary>Current Reporting year</summary>
 		Public Property [Year] As Int32
 	End Class
 

@@ -1,110 +1,110 @@
-' Last generated on 2017-05-05 12:58:35Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace Mailbox
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [DefaultMailbox]
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Extra description of the mailbox]]>
+		'''<summary>Extra description of the mailbox</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Only used when this mailbox is used for one specific administration, for example invoices to this mailbox will only be booked in this administration]]>
+		'''<summary>Only used when this mailbox is used for one specific administration, for example invoices to this mailbox will only be booked in this administration</summary>
 		Public Property [ForDivision] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Indicates whether this service is used for messages returned by the scanning service]]>
+		'''<summary>Indicates whether this service is used for messages returned by the scanning service</summary>
 		Public Property [IsScanServiceMailbox] As Boolean
-		'''<![CDATA[E-mail address-like format, for example johndoe@exactonline.nl]]>
+		'''<summary>E-mail address-like format, for example johndoe@exactonline.nl</summary>
 		Public Property [Mailbox] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Date that this mailbox became valid]]>
+		'''<summary>Date that this mailbox became valid</summary>
 		Public Property [ValidFrom] As DateTime?
-		'''<![CDATA[Date that this mailbox will not be valid anymore]]>
+		'''<summary>Date that this mailbox will not be valid anymore</summary>
 		Public Property [ValidTo] As DateTime?
 	End Class
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [Mailbox]
-		'''<![CDATA[The account this mailbox belongs to. Can be empty if the owner of the mailbox isn't an Exact Online customer yet]]>
+		'''<summary>The account this mailbox belongs to. Can be empty if the owner of the mailbox isn&apos;t an Exact Online customer yet</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[Name of Account]]>
+		'''<summary>Name of Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Extra description of the mailbox]]>
+		'''<summary>Extra description of the mailbox</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Only used when this mailbox is used for one specific administration, for example invoices to this mailbox will only be booked in this administration]]>
+		'''<summary>Only used when this mailbox is used for one specific administration, for example invoices to this mailbox will only be booked in this administration</summary>
 		Public Property [ForDivision] As Int32?
-		'''<![CDATA[Description of ForDivision]]>
+		'''<summary>Description of ForDivision</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ForDivisionDescription] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[E-mail address-like format, for example johndoe@exactonline.nl]]>
+		'''<summary>E-mail address-like format, for example johndoe@exactonline.nl</summary>
 		Public Property [Mailbox] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Customers can decide if they want this mailbox to be visible by all. i.e. some other customer can see this in address maintenance for digital postbox of type Exact]]>
+		'''<summary>Customers can decide if they want this mailbox to be visible by all. i.e. some other customer can see this in address maintenance for digital postbox of type Exact</summary>
 		Public Property [Publish] As Byte
-		'''<![CDATA[Type of mailbox. Exact / Government / Manual]]>
+		'''<summary>Type of mailbox. Exact / Government / Manual</summary>
 		Public Property [Type] As Int16?
-		'''<![CDATA[Date that this mailbox became valid]]>
+		'''<summary>Date that this mailbox became valid</summary>
 		Public Property [ValidFrom] As DateTime?
-		'''<![CDATA[Date that this mailbox will not be valid anymore]]>
+		'''<summary>Date that this mailbox will not be valid anymore</summary>
 		Public Property [ValidTo] As DateTime?
 	End Class
 
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [MailMessageAttachment]
-		'''<![CDATA[For performance reasons Attachment is Write-Only. The blob can be downloaded using the supplied Url]]>
+		'''<summary>For performance reasons Attachment is Write-Only. The blob can be downloaded using the supplied Url</summary>
 		Public Property [Attachment] As Byte()
-		'''<![CDATA[File extension of attachment]]>
+		'''<summary>File extension of attachment</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AttachmentFileExtension] As String
-		'''<![CDATA[File name of attachment]]>
+		'''<summary>File name of attachment</summary>
 		Public Property [AttachmentFileName] As String
-		'''<![CDATA[File size]]>
+		'''<summary>File size</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [FileSize] As Int64
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Reference to Mail message]]>
+		'''<summary>Reference to Mail message</summary>
 		Public Property [MailMessageID] As Guid
-		'''<![CDATA[Reference to recipient account]]>
+		'''<summary>Reference to recipient account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [RecipientAccount] As Guid?
-		'''<![CDATA[Reference to sender account]]>
+		'''<summary>Reference to sender account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SenderAccount] As Guid?
-		'''<![CDATA[Type of mail message attachment]]>
+		'''<summary>Type of mail message attachment</summary>
 		Public Property [Type] As Int32
-		'''<![CDATA[Description of Type]]>
+		'''<summary>Description of Type</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [TypeDescription] As String
-		'''<![CDATA[To get the file in its original format (xml, jpg, pdf, etc.) append <b>&Download=1</b> to the url.]]>
+		'''<summary>To get the file in its original format (xml, jpg, pdf, etc.) append &lt;b&gt;&amp;Download=1&lt;/b&gt; to the url.</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Url] As String
 	End Class
@@ -112,193 +112,193 @@ Namespace Mailbox
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [MailMessagesReceived]
-		'''<![CDATA[Bank to/from which the mail message is sent/received. This is used for mail messages of type Bank only. It has an attachment containing the bank file. When used for a mail message of type bank, the value is reserved for internal use and will then be ignored.]]>
+		'''<summary>Bank to/from which the mail message is sent/received. This is used for mail messages of type Bank only. It has an attachment containing the bank file. When used for a mail message of type bank, the value is reserved for internal use and will then be ignored.</summary>
 		Public Property [Bank] As Guid?
-		'''<![CDATA[Bank account for which the mail message is sent. This is used for mail messages of type Bank only. It has an attachment containing the bank export file. When used for a mail message of type bank, the value is reserved for internal use and will then be ignored.]]>
+		'''<summary>Bank account for which the mail message is sent. This is used for mail messages of type Bank only. It has an attachment containing the bank export file. When used for a mail message of type bank, the value is reserved for internal use and will then be ignored.</summary>
 		Public Property [BankAccount] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Administration from which the mail message is sent. This is used for mail messages of type Bank only. When used for a mail message of type bank, the value is reserved for internal use and will then be ignored.]]>
+		'''<summary>Administration from which the mail message is sent. This is used for mail messages of type Bank only. When used for a mail message of type bank, the value is reserved for internal use and will then be ignored.</summary>
 		Public Property [ForDivision] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Specifies the operation upon dealing with the mailmessage (Kirean scan service)]]>
+		'''<summary>Specifies the operation upon dealing with the mailmessage (Kirean scan service)</summary>
 		Public Property [Operation] As Int16?
-		'''<![CDATA[Provides a link to another MailMessage (Kirean scan service)]]>
+		'''<summary>Provides a link to another MailMessage (Kirean scan service)</summary>
 		Public Property [OriginalMessage] As Guid?
-		'''<![CDATA[Subject of the OriginalMessage]]>
+		'''<summary>Subject of the OriginalMessage</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [OriginalMessageSubject] As String
-		'''<![CDATA[The partner key that was used: this refers to the application from which the message is originating. It is filled with a fixed partnerkey when created from within Exact Online]]>
+		'''<summary>The partner key that was used: this refers to the application from which the message is originating. It is filled with a fixed partnerkey when created from within Exact Online</summary>
 		Public Property [PartnerKey] As Guid?
-		'''<![CDATA[Specifies the number of lines of the returned MailMessage attachment (Kirean scan service)]]>
+		'''<summary>Specifies the number of lines of the returned MailMessage attachment (Kirean scan service)</summary>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[Reference to the account that is receiving this mailmessage]]>
+		'''<summary>Reference to the account that is receiving this mailmessage</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [RecipientAccount] As Guid?
-		'''<![CDATA[Indiciates if the recipient deleted this message. If this is the case the recipient can't see it anymore and the sender can actually delete it]]>
+		'''<summary>Indiciates if the recipient deleted this message. If this is the case the recipient can&apos;t see it anymore and the sender can actually delete it</summary>
 		Public Property [RecipientDeleted] As Byte
-		'''<![CDATA[Mailbox of recipient]]>
+		'''<summary>Mailbox of recipient</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [RecipientMailbox] As String
-		'''<![CDATA[Mailbox description of recipient]]>
+		'''<summary>Mailbox description of recipient</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [RecipientMailboxDescription] As String
-		'''<![CDATA[Mailbox ID of the recipient. The owner of this mailbox will see the message in the inbox]]>
+		'''<summary>Mailbox ID of the recipient. The owner of this mailbox will see the message in the inbox</summary>
 		Public Property [RecipientMailboxID] As Guid?
-		'''<![CDATA[Status of the mail message, only the recipient can update this]]>
+		'''<summary>Status of the mail message, only the recipient can update this</summary>
 		Public Property [RecipientStatus] As Int16?
-		'''<![CDATA[Description of RecipientStatus]]>
+		'''<summary>Description of RecipientStatus</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [RecipientStatusDescription] As String
-		'''<![CDATA[Reference to Account of Sender]]>
+		'''<summary>Reference to Account of Sender</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SenderAccount] As Guid?
-		'''<![CDATA[Date the message was sent. Default the date the message is created, can be an earlier date when imported from xml (the date the xml was sent)]]>
+		'''<summary>Date the message was sent. Default the date the message is created, can be an earlier date when imported from xml (the date the xml was sent)</summary>
 		Public Property [SenderDateSent] As DateTime?
-		'''<![CDATA[Indicates if the sender deleted the message. This means the sender can't see it anymore and the recipient can actually delete it]]>
+		'''<summary>Indicates if the sender deleted the message. This means the sender can&apos;t see it anymore and the recipient can actually delete it</summary>
 		Public Property [SenderDeleted] As Byte
-		'''<![CDATA[IP address of the sender]]>
+		'''<summary>IP address of the sender</summary>
 		Public Property [SenderIPAddress] As String
-		'''<![CDATA[Mailbox of sender]]>
+		'''<summary>Mailbox of sender</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SenderMailbox] As String
-		'''<![CDATA[Description of SenderMailbox]]>
+		'''<summary>Description of SenderMailbox</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SenderMailboxDescription] As String
-		'''<![CDATA[Mailbox ID of the sender. The owner of this mailbox will see the message in the sent items]]>
+		'''<summary>Mailbox ID of the sender. The owner of this mailbox will see the message in the sent items</summary>
 		Public Property [SenderMailboxID] As Guid?
-		'''<![CDATA[Subject of the mail message]]>
+		'''<summary>Subject of the mail message</summary>
 		Public Property [Subject] As String
-		'''<![CDATA[Provides a link between Exact Online and the banks]]>
+		'''<summary>Provides a link between Exact Online and the banks</summary>
 		Public Property [SynchronizationCode] As String
-		'''<![CDATA[Type of the mail message]]>
+		'''<summary>Type of the mail message</summary>
 		Public Property [Type] As Int32?
 	End Class
 
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [MailMessagesSent]
-		'''<![CDATA[Bank to/from which the mail message is sent/received. This is used for mail messages of type Bank only. It has an attachment containing the bank file. When used for a mail message of type bank, the value is reserved for internal use and will then be ignored.]]>
+		'''<summary>Bank to/from which the mail message is sent/received. This is used for mail messages of type Bank only. It has an attachment containing the bank file. When used for a mail message of type bank, the value is reserved for internal use and will then be ignored.</summary>
 		Public Property [Bank] As Guid?
-		'''<![CDATA[Bank account for which the mail message is sent. This is used for mail messages of type Bank only. It has an attachment containing the bank export file. When used for a mail message of type bank, the value is reserved for internal use and will then be ignored.]]>
+		'''<summary>Bank account for which the mail message is sent. This is used for mail messages of type Bank only. It has an attachment containing the bank export file. When used for a mail message of type bank, the value is reserved for internal use and will then be ignored.</summary>
 		Public Property [BankAccount] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Administration from which the mail message is sent. This is used for mail messages of type Bank only. When used for a mail message of type bank, the value is reserved for internal use and will then be ignored.]]>
+		'''<summary>Administration from which the mail message is sent. This is used for mail messages of type Bank only. When used for a mail message of type bank, the value is reserved for internal use and will then be ignored.</summary>
 		Public Property [ForDivision] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Specifies the operation upon dealing with the mailmessage (Kirean scan service)]]>
+		'''<summary>Specifies the operation upon dealing with the mailmessage (Kirean scan service)</summary>
 		Public Property [Operation] As Int16?
-		'''<![CDATA[Provides a link to another MailMessage (Kirean scan service)]]>
+		'''<summary>Provides a link to another MailMessage (Kirean scan service)</summary>
 		Public Property [OriginalMessage] As Guid?
-		'''<![CDATA[Subject of the OriginalMessage]]>
+		'''<summary>Subject of the OriginalMessage</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [OriginalMessageSubject] As String
-		'''<![CDATA[The partner key that was used: this refers to the application from which the message is originating. It is filled with a fixed partnerkey when created from within Exact Online]]>
+		'''<summary>The partner key that was used: this refers to the application from which the message is originating. It is filled with a fixed partnerkey when created from within Exact Online</summary>
 		Public Property [PartnerKey] As Guid?
-		'''<![CDATA[Specifies the number of lines of the returned MailMessage attachment (Kirean scan service)]]>
+		'''<summary>Specifies the number of lines of the returned MailMessage attachment (Kirean scan service)</summary>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[Reference to the account that is receiving this mailmessage]]>
+		'''<summary>Reference to the account that is receiving this mailmessage</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [RecipientAccount] As Guid?
-		'''<![CDATA[Indiciates if the recipient deleted this message. If this is the case the recipient can't see it anymore and the sender can actually delete it]]>
+		'''<summary>Indiciates if the recipient deleted this message. If this is the case the recipient can&apos;t see it anymore and the sender can actually delete it</summary>
 		Public Property [RecipientDeleted] As Byte
-		'''<![CDATA[Mailbox of recipient]]>
+		'''<summary>Mailbox of recipient</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [RecipientMailbox] As String
-		'''<![CDATA[Mailbox description of recipient]]>
+		'''<summary>Mailbox description of recipient</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [RecipientMailboxDescription] As String
-		'''<![CDATA[Mailbox ID of the recipient. The owner of this mailbox will see the message in the inbox]]>
+		'''<summary>Mailbox ID of the recipient. The owner of this mailbox will see the message in the inbox</summary>
 		Public Property [RecipientMailboxID] As Guid?
-		'''<![CDATA[Status of the mail message, only the recipient can update this]]>
+		'''<summary>Status of the mail message, only the recipient can update this</summary>
 		Public Property [RecipientStatus] As Int16?
-		'''<![CDATA[Description of RecipientStatus]]>
+		'''<summary>Description of RecipientStatus</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [RecipientStatusDescription] As String
-		'''<![CDATA[Reference to Account of Sender]]>
+		'''<summary>Reference to Account of Sender</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SenderAccount] As Guid?
-		'''<![CDATA[Date the message was sent. Default the date the message is created, can be an earlier date when imported from xml (the date the xml was sent)]]>
+		'''<summary>Date the message was sent. Default the date the message is created, can be an earlier date when imported from xml (the date the xml was sent)</summary>
 		Public Property [SenderDateSent] As DateTime?
-		'''<![CDATA[Indicates if the sender deleted the message. This means the sender can't see it anymore and the recipient can actually delete it]]>
+		'''<summary>Indicates if the sender deleted the message. This means the sender can&apos;t see it anymore and the recipient can actually delete it</summary>
 		Public Property [SenderDeleted] As Byte
-		'''<![CDATA[IP address of the sender]]>
+		'''<summary>IP address of the sender</summary>
 		Public Property [SenderIPAddress] As String
-		'''<![CDATA[Mailbox of sender]]>
+		'''<summary>Mailbox of sender</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SenderMailbox] As String
-		'''<![CDATA[Description of SenderMailbox]]>
+		'''<summary>Description of SenderMailbox</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SenderMailboxDescription] As String
-		'''<![CDATA[Mailbox ID of the sender. The owner of this mailbox will see the message in the sent items]]>
+		'''<summary>Mailbox ID of the sender. The owner of this mailbox will see the message in the sent items</summary>
 		Public Property [SenderMailboxID] As Guid?
-		'''<![CDATA[Subject of the mail message]]>
+		'''<summary>Subject of the mail message</summary>
 		Public Property [Subject] As String
-		'''<![CDATA[Provides a link between Exact Online and the banks]]>
+		'''<summary>Provides a link between Exact Online and the banks</summary>
 		Public Property [SynchronizationCode] As String
-		'''<![CDATA[Type of the mail message]]>
+		'''<summary>Type of the mail message</summary>
 		Public Property [Type] As Int32?
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [PreferredMailbox]
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Extra description of the mailbox]]>
+		'''<summary>Extra description of the mailbox</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Only used when this mailbox is used for one specific administration, for example invoices to this mailbox will only be booked in this administration]]>
+		'''<summary>Only used when this mailbox is used for one specific administration, for example invoices to this mailbox will only be booked in this administration</summary>
 		Public Property [ForDivision] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Indicates whether this service is used for messages returned by the scanning service]]>
+		'''<summary>Indicates whether this service is used for messages returned by the scanning service</summary>
 		Public Property [IsScanServiceMailbox] As Boolean
-		'''<![CDATA[E-mail address-like format, for example johndoe@exactonline.nl]]>
+		'''<summary>E-mail address-like format, for example johndoe@exactonline.nl</summary>
 		Public Property [Mailbox] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Date that this mailbox became valid]]>
+		'''<summary>Date that this mailbox became valid</summary>
 		Public Property [ValidFrom] As DateTime?
-		'''<![CDATA[Date that this mailbox will not be valid anymore]]>
+		'''<summary>Date that this mailbox will not be valid anymore</summary>
 		Public Property [ValidTo] As DateTime?
 	End Class
 

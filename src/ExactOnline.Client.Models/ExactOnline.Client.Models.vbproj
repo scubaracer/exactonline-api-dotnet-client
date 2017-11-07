@@ -99,6 +99,7 @@
     <Compile Include="OpeningBalance.vb" />
     <Compile Include="Payroll.vb" />
     <Compile Include="Project.vb" />
+    <Compile Include="Purchase.vb" />
     <Compile Include="PurchaseEntry.vb" />
     <Compile Include="PurchaseOrder.vb" />
     <Compile Include="Sales.vb" />

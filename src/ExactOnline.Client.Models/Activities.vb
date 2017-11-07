@@ -1,140 +1,140 @@
-' Last generated on 2017-05-05 12:58:34Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace Activities
 
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [CommunicationNote]
-		'''<![CDATA[The account that is related to the communication note]]>
+		'''<summary>The account that is related to the communication note</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[The name of the account]]>
+		'''<summary>The name of the account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[Attachments linked to the communication note]]>
+		'''<summary>Attachments linked to the communication note</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Attachments] As IEnumerable(Of Models.Workflow.RequestAttachment)
-		'''<![CDATA[The campaign linked to the communication note]]>
+		'''<summary>The campaign linked to the communication note</summary>
 		Public Property [Campaign] As Guid?
-		'''<![CDATA[Description of the campaign]]>
+		'''<summary>Description of the campaign</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CampaignDescription] As String
-		'''<![CDATA[The contact person that is related to the communication note]]>
+		'''<summary>The contact person that is related to the communication note</summary>
 		Public Property [Contact] As Guid?
-		'''<![CDATA[The name of the contact person]]>
+		'''<summary>The name of the contact person</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ContactFullName] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of the creator]]>
+		'''<summary>User ID of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of the creator]]>
+		'''<summary>Name of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[The date]]>
+		'''<summary>The date</summary>
 		Public Property [Date] As DateTime?
-		'''<![CDATA[The division]]>
+		'''<summary>The division</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[The document that is linked to the communication note]]>
+		'''<summary>The document that is linked to the communication note</summary>
 		Public Property [Document] As Guid?
-		'''<![CDATA[The subject of the document]]>
+		'''<summary>The subject of the document</summary>
 		Public Property [DocumentSubject] As String
-		'''<![CDATA[The human readable key]]>
+		'''<summary>The human readable key</summary>
 		Public Property [HID] As Int32?
-		'''<![CDATA[The Primary key]]>
+		'''<summary>The Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of the last modifier]]>
+		'''<summary>User ID of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of the last modifier]]>
+		'''<summary>Name of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[The notes of the communication note]]>
+		'''<summary>The notes of the communication note</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[The opportunity linked to the communication note]]>
+		'''<summary>The opportunity linked to the communication note</summary>
 		Public Property [Opportunity] As Guid?
-		'''<![CDATA[The name of the opportunity]]>
+		'''<summary>The name of the opportunity</summary>
 		Public Property [OpportunityName] As String
-		'''<![CDATA[Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed ]]>
+		'''<summary>Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed </summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Status] As Int32?
-		'''<![CDATA[The description of the status]]>
+		'''<summary>The description of the status</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StatusDescription] As String
-		'''<![CDATA[A short description of the communication note]]>
+		'''<summary>A short description of the communication note</summary>
 		Public Property [Subject] As String
-		'''<![CDATA[The user that the communication note is assigned to]]>
+		'''<summary>The user that the communication note is assigned to</summary>
 		Public Property [User] As Guid?
-		'''<![CDATA[The user name]]>
+		'''<summary>The user name</summary>
 		Public Property [UserFullName] As String
 	End Class
 
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [Complaint]
-		'''<![CDATA[The account that is related to the complaint]]>
+		'''<summary>The account that is related to the complaint</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[The name of the account]]>
+		'''<summary>The name of the account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[The user that the complaint is assigned to]]>
+		'''<summary>The user that the complaint is assigned to</summary>
 		Public Property [AssignedTo] As Guid?
-		'''<![CDATA[The user name]]>
+		'''<summary>The user name</summary>
 		Public Property [AssignedToFullName] As String
-		'''<![CDATA[Attachments linked to the complaint]]>
+		'''<summary>Attachments linked to the complaint</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Attachments] As IEnumerable(Of Models.Workflow.RequestAttachment)
-		'''<![CDATA[A short description of the complaint]]>
+		'''<summary>A short description of the complaint</summary>
 		Public Property [Complaint] As String
-		'''<![CDATA[The contact person that is related to the complaint]]>
+		'''<summary>The contact person that is related to the complaint</summary>
 		Public Property [Contact] As Guid?
-		'''<![CDATA[The name of the contact person]]>
+		'''<summary>The name of the contact person</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ContactFullName] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of the creator]]>
+		'''<summary>User ID of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of the creator]]>
+		'''<summary>Name of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[The division]]>
+		'''<summary>The division</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[The document that is linked to the complaint]]>
+		'''<summary>The document that is linked to the complaint</summary>
 		Public Property [Document] As Guid?
-		'''<![CDATA[The subject of the document]]>
+		'''<summary>The subject of the document</summary>
 		Public Property [DocumentSubject] As String
-		'''<![CDATA[The human readable key]]>
+		'''<summary>The human readable key</summary>
 		Public Property [HID] As Int32?
-		'''<![CDATA[The Primary key]]>
+		'''<summary>The Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of the last modifier]]>
+		'''<summary>User ID of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of the last modifier]]>
+		'''<summary>Name of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[The date indicating by when the next action has to be taken]]>
+		'''<summary>The date indicating by when the next action has to be taken</summary>
 		Public Property [NextAction] As DateTime?
-		'''<![CDATA[The notes of the complaint]]>
+		'''<summary>The notes of the complaint</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[The date the complaint was received]]>
+		'''<summary>The date the complaint was received</summary>
 		Public Property [ReceiptDate] As DateTime?
-		'''<![CDATA[Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed ]]>
+		'''<summary>Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed </summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Status] As Int32?
-		'''<![CDATA[The description of the status]]>
+		'''<summary>The description of the status</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StatusDescription] As String
 	End Class
@@ -142,142 +142,142 @@ Namespace Activities
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [Event]
-		'''<![CDATA[The account that is related to the event]]>
+		'''<summary>The account that is related to the event</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[The name of the account]]>
+		'''<summary>The name of the account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[Attachments linked to the event]]>
+		'''<summary>Attachments linked to the event</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Attachments] As IEnumerable(Of Models.Workflow.RequestAttachment)
-		'''<![CDATA[The campaign linked to the event]]>
+		'''<summary>The campaign linked to the event</summary>
 		Public Property [Campaign] As Guid?
-		'''<![CDATA[Description of the campaign]]>
+		'''<summary>Description of the campaign</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CampaignDescription] As String
-		'''<![CDATA[The contact person that is related to the event]]>
+		'''<summary>The contact person that is related to the event</summary>
 		Public Property [Contact] As Guid?
-		'''<![CDATA[The name of the contact person]]>
+		'''<summary>The name of the contact person</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ContactFullName] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of the creator]]>
+		'''<summary>User ID of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of the creator]]>
+		'''<summary>Name of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[The description]]>
+		'''<summary>The description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[The division]]>
+		'''<summary>The division</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[The document that is linked to the event]]>
+		'''<summary>The document that is linked to the event</summary>
 		Public Property [Document] As Guid?
-		'''<![CDATA[The subject of the document]]>
+		'''<summary>The subject of the document</summary>
 		Public Property [DocumentSubject] As String
-		'''<![CDATA[The end date and time]]>
+		'''<summary>The end date and time</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[The human readable key]]>
+		'''<summary>The human readable key</summary>
 		Public Property [HID] As Int32?
-		'''<![CDATA[The Primary key]]>
+		'''<summary>The Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of the last modifier]]>
+		'''<summary>User ID of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of the last modifier]]>
+		'''<summary>Name of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[The notes of the event]]>
+		'''<summary>The notes of the event</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[The opportunity linked to the event]]>
+		'''<summary>The opportunity linked to the event</summary>
 		Public Property [Opportunity] As Guid?
-		'''<![CDATA[The name of the opportunity]]>
+		'''<summary>The name of the opportunity</summary>
 		Public Property [OpportunityName] As String
-		'''<![CDATA[The project linked to the event]]>
+		'''<summary>The project linked to the event</summary>
 		Public Property [Project] As Guid?
-		'''<![CDATA[The description of the project]]>
+		'''<summary>The description of the project</summary>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA[The start date and time]]>
+		'''<summary>The start date and time</summary>
 		Public Property [StartDate] As DateTime?
-		'''<![CDATA[Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed ]]>
+		'''<summary>Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed </summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Status] As Int32?
-		'''<![CDATA[The description of the status]]>
+		'''<summary>The description of the status</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StatusDescription] As String
-		'''<![CDATA[The user that has the event]]>
+		'''<summary>The user that has the event</summary>
 		Public Property [User] As Guid?
-		'''<![CDATA[The user name]]>
+		'''<summary>The user name</summary>
 		Public Property [UserFullName] As String
 	End Class
 
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [ServiceRequest]
-		'''<![CDATA[The account that is related to the service request]]>
+		'''<summary>The account that is related to the service request</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[The name of the account]]>
+		'''<summary>The name of the account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[The user that the service request is assigned to]]>
+		'''<summary>The user that the service request is assigned to</summary>
 		Public Property [AssignedTo] As Guid?
-		'''<![CDATA[The user name]]>
+		'''<summary>The user name</summary>
 		Public Property [AssignedToFullName] As String
-		'''<![CDATA[Attachments linked to the service request]]>
+		'''<summary>Attachments linked to the service request</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Attachments] As IEnumerable(Of Models.Workflow.RequestAttachment)
-		'''<![CDATA[The contact person that is related to the service request]]>
+		'''<summary>The contact person that is related to the service request</summary>
 		Public Property [Contact] As Guid?
-		'''<![CDATA[The name of the contact person]]>
+		'''<summary>The name of the contact person</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ContactFullName] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of the creator]]>
+		'''<summary>User ID of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of the creator]]>
+		'''<summary>Name of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[The description]]>
+		'''<summary>The description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[The division]]>
+		'''<summary>The division</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[The document that is linked to the service request]]>
+		'''<summary>The document that is linked to the service request</summary>
 		Public Property [Document] As Guid?
-		'''<![CDATA[The subject of the document]]>
+		'''<summary>The subject of the document</summary>
 		Public Property [DocumentSubject] As String
-		'''<![CDATA[The human readable key]]>
+		'''<summary>The human readable key</summary>
 		Public Property [HID] As Int32?
-		'''<![CDATA[The Primary key]]>
+		'''<summary>The Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of the last modifier]]>
+		'''<summary>User ID of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of the last modifier]]>
+		'''<summary>Name of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[The date indicating by when the next action has to be taken]]>
+		'''<summary>The date indicating by when the next action has to be taken</summary>
 		Public Property [NextAction] As DateTime?
-		'''<![CDATA[The notes of the service request]]>
+		'''<summary>The notes of the service request</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[The date the service request was received]]>
+		'''<summary>The date the service request was received</summary>
 		Public Property [ReceiptDate] As DateTime?
-		'''<![CDATA[Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed ]]>
+		'''<summary>Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed </summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Status] As Int32?
-		'''<![CDATA[The description of the status]]>
+		'''<summary>The description of the status</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StatusDescription] As String
 	End Class
@@ -285,78 +285,78 @@ Namespace Activities
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [Task]
-		'''<![CDATA[The account that is related to the task]]>
+		'''<summary>The account that is related to the task</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[The name of the account]]>
+		'''<summary>The name of the account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[The end date by which the task has to be realized]]>
+		'''<summary>The end date by which the task has to be realized</summary>
 		Public Property [ActionDate] As DateTime?
-		'''<![CDATA[Attachments linked to the task]]>
+		'''<summary>Attachments linked to the task</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Attachments] As IEnumerable(Of Models.Workflow.RequestAttachment)
-		'''<![CDATA[The contact person that is related to the task]]>
+		'''<summary>The contact person that is related to the task</summary>
 		Public Property [Contact] As Guid?
-		'''<![CDATA[The name of the contact person]]>
+		'''<summary>The name of the contact person</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ContactFullName] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of the creator]]>
+		'''<summary>User ID of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of the creator]]>
+		'''<summary>Name of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Custom type of the task. If both TaskType and CustomTaskType are specified then TaskType is preferred. This value is write-only.]]>
+		'''<summary>Custom type of the task. If both TaskType and CustomTaskType are specified then TaskType is preferred. This value is write-only.</summary>
 		Public Property [CustomTaskType] As Guid?
-		'''<![CDATA[The description of the task]]>
+		'''<summary>The description of the task</summary>
 		Public Property [Description] As String
-		'''<![CDATA[The division of the task]]>
+		'''<summary>The division of the task</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[The document that is linked to the task]]>
+		'''<summary>The document that is linked to the task</summary>
 		Public Property [Document] As Guid?
-		'''<![CDATA[The subject of the document]]>
+		'''<summary>The subject of the document</summary>
 		Public Property [DocumentSubject] As String
-		'''<![CDATA[The human readable key]]>
+		'''<summary>The human readable key</summary>
 		Public Property [HID] As Int32?
-		'''<![CDATA[The Primary key]]>
+		'''<summary>The Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of the last modifier]]>
+		'''<summary>User ID of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of the last modifier]]>
+		'''<summary>Name of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[The notes of the task]]>
+		'''<summary>The notes of the task</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[The opportunity linked to the task]]>
+		'''<summary>The opportunity linked to the task</summary>
 		Public Property [Opportunity] As Guid?
-		'''<![CDATA[The name of the opportunity]]>
+		'''<summary>The name of the opportunity</summary>
 		Public Property [OpportunityName] As String
-		'''<![CDATA[The project linked to the task]]>
+		'''<summary>The project linked to the task</summary>
 		Public Property [Project] As Guid?
-		'''<![CDATA[The description of the project]]>
+		'''<summary>The description of the project</summary>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA[Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed]]>
+		'''<summary>Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Status] As Int32?
-		'''<![CDATA[The description of the status]]>
+		'''<summary>The description of the status</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StatusDescription] As String
-		'''<![CDATA[The type of the task. This value is write-only.0 = Other (default), 1 = Call, 2 = Request for information, 3 = Investigate, 4 = Correspondence, 5 = Create an appointment, 6 = Create a quotation]]>
+		'''<summary>The type of the task. This value is write-only.0 = Other (default), 1 = Call, 2 = Request for information, 3 = Investigate, 4 = Correspondence, 5 = Create an appointment, 6 = Create a quotation</summary>
 		Public Property [TaskType] As Int32?
-		'''<![CDATA[The description of the type of the task]]>
+		'''<summary>The description of the type of the task</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [TaskTypeDescription] As String
-		'''<![CDATA[The user that has to realize the task]]>
+		'''<summary>The user that has to realize the task</summary>
 		Public Property [User] As Guid?
-		'''<![CDATA[The user name]]>
+		'''<summary>The user name</summary>
 		Public Property [UserFullName] As String
 	End Class
 

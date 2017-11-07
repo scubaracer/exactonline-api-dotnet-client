@@ -1,21 +1,21 @@
-' Last generated on 2017-05-05 12:58:34Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace General
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("Code")>
 	Public Class [Currency]
-		'''<![CDATA[Amount precision]]>
+		'''<summary>Amount precision</summary>
 		Public Property [AmountPrecision] As Double
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[Description of the currency]]>
+		'''<summary>Description of the currency</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[Price precision]]>
+		'''<summary>Price precision</summary>
 		Public Property [PricePrecision] As Double
 	End Class
 

@@ -1,150 +1,150 @@
-' Last generated on 2017-05-05 12:58:35Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace VAT
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [VATCode]
-		'''<![CDATA[Tax account]]>
+		'''<summary>Tax account</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[Code of Account]]>
+		'''<summary>Code of Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountCode] As String
-		'''<![CDATA[Name of Account]]>
+		'''<summary>Name of Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[Indicates how to calculate the tax. 0 = based on the gross amount, 1 = based on the gross amount + another tax]]>
+		'''<summary>Indicates how to calculate the tax. 0 = based on the gross amount, 1 = based on the gross amount + another tax</summary>
 		Public Property [CalculationBasis] As Byte?
-		'''<![CDATA[Indicates if transactions using the VAT code are transactions of the domestic VAT charging regulation (such as those for subcontractors) or transactions that are registered within the EU. If Charged=1 and linked to a purchase invoice, both a line for the VAT to pay and a line for the VAT to claim are being created]]>
+		'''<summary>Indicates if transactions using the VAT code are transactions of the domestic VAT charging regulation (such as those for subcontractors) or transactions that are registered within the EU. If Charged=1 and linked to a purchase invoice, both a line for the VAT to pay and a line for the VAT to claim are being created</summary>
 		Public Property [Charged] As Boolean?
-		'''<![CDATA[VAT code]]>
+		'''<summary>VAT code</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Obsolete]]>
+		'''<summary>Obsolete</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Country] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description of the VAT code]]>
+		'''<summary>Description of the VAT code</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Used in all legislations except France. Indicates if and how transactions using the VAT code appear on the ICT return (EU sales list). L = Listing goods, N = No listing, S = Listing services, T = Triangulation]]>
+		'''<summary>Used in all legislations except France. Indicates if and how transactions using the VAT code appear on the ICT return (EU sales list). L = Listing goods, N = No listing, S = Listing services, T = Triangulation</summary>
 		Public Property [EUSalesListing] As String
-		'''<![CDATA[Indicates the purchase discount GL account linked to the VAT codes for German legislation]]>
+		'''<summary>Indicates the purchase discount GL account linked to the VAT codes for German legislation</summary>
 		Public Property [GLDiscountPurchase] As Guid?
-		'''<![CDATA[Code of GLDiscountPurchase]]>
+		'''<summary>Code of GLDiscountPurchase</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLDiscountPurchaseCode] As String
-		'''<![CDATA[Description of GLDiscountPurchase]]>
+		'''<summary>Description of GLDiscountPurchase</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLDiscountPurchaseDescription] As String
-		'''<![CDATA[Indicates the sales discount GL account linked to the VAT codes for German legislation]]>
+		'''<summary>Indicates the sales discount GL account linked to the VAT codes for German legislation</summary>
 		Public Property [GLDiscountSales] As Guid?
-		'''<![CDATA[Code of GLDiscountSales]]>
+		'''<summary>Code of GLDiscountSales</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLDiscountSalesCode] As String
-		'''<![CDATA[Description of GLDiscountSales]]>
+		'''<summary>Description of GLDiscountSales</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLDiscountSalesDescription] As String
-		'''<![CDATA[G/L account that is used to book the VAT to claim. If you enter purchases with a VAT code, the VAT amount to be claimed is entered to this VAT account. Must be of type VAT]]>
+		'''<summary>G/L account that is used to book the VAT to claim. If you enter purchases with a VAT code, the VAT amount to be claimed is entered to this VAT account. Must be of type VAT</summary>
 		Public Property [GLToClaim] As Guid?
-		'''<![CDATA[Code of GLToClaim]]>
+		'''<summary>Code of GLToClaim</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLToClaimCode] As String
-		'''<![CDATA[Description of GLToClaim]]>
+		'''<summary>Description of GLToClaim</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLToClaimDescription] As String
-		'''<![CDATA[G/L account that is used to book the VAT to pay. If you enter sales with a VAT code, the VAT amount to be paid is entered to this VAT account. Must be of type VAT]]>
+		'''<summary>G/L account that is used to book the VAT to pay. If you enter sales with a VAT code, the VAT amount to be paid is entered to this VAT account. Must be of type VAT</summary>
 		Public Property [GLToPay] As Guid?
-		'''<![CDATA[Code of GLToPay]]>
+		'''<summary>Code of GLToPay</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLToPayCode] As String
-		'''<![CDATA[Description of GLToPay]]>
+		'''<summary>Description of GLToPay</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLToPayDescription] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Used in all legislations except France. Indicates if intrastat is used]]>
+		'''<summary>Used in all legislations except France. Indicates if intrastat is used</summary>
 		Public Property [IntraStat] As Boolean?
-		'''<![CDATA[Used in France legislation only. Indicates if and how transactions using the VAT code appear on the DEB/DES return. L = Goods, N = Empty, S = Services]]>
+		'''<summary>Used in France legislation only. Indicates if and how transactions using the VAT code appear on the DEB/DES return. L = Goods, N = Empty, S = Services</summary>
 		Public Property [IntrastatType] As String
-		'''<![CDATA[Indicates if the VAT code may still be used]]>
+		'''<summary>Indicates if the VAT code may still be used</summary>
 		Public Property [IsBlocked] As Boolean?
-		'''<![CDATA[Legal description for VAT code to print in the total block of the invoice]]>
+		'''<summary>Legal description for VAT code to print in the total block of the invoice</summary>
 		Public Property [LegalText] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[User name of modifier]]>
+		'''<summary>User name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Percentage of the VAT code]]>
+		'''<summary>Percentage of the VAT code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Percentage] As Double?
-		'''<![CDATA[Indicates what type of Taxcode it is: can be VAT, IncomeTax]]>
+		'''<summary>Indicates what type of Taxcode it is: can be VAT, IncomeTax</summary>
 		Public Property [TaxReturnType] As Int16?
-		'''<![CDATA[Indicates how the VAT amount should be calculated in relation to the invoice amount. B = VAT 0% (Only base amount), E = Excluding, I = Including, N = No VAT]]>
+		'''<summary>Indicates how the VAT amount should be calculated in relation to the invoice amount. B = VAT 0% (Only base amount), E = Excluding, I = Including, N = No VAT</summary>
 		Public Property [Type] As String
-		'''<![CDATA[Field in VAT code maintenance to calculate different VATs depending on the selected document type. P = purchase invoice, F = freelance invoice, E = expense voucher. The field is valid for witholding tax type]]>
+		'''<summary>Field in VAT code maintenance to calculate different VATs depending on the selected document type. P = purchase invoice, F = freelance invoice, E = expense voucher. The field is valid for witholding tax type</summary>
 		Public Property [VatDocType] As String
-		'''<![CDATA[The VAT margin scheme is used for the trade of secondhand goods which are purchased without VAT (for example when a company buys a secondhand good from a private person). In the VAT margin scheme, the VAT is not calculated based on the sales price. Instead of that, the VAT is calculated based on the margin (gross sales price minus the gross purchase price)]]>
+		'''<summary>The VAT margin scheme is used for the trade of secondhand goods which are purchased without VAT (for example when a company buys a secondhand good from a private person). In the VAT margin scheme, the VAT is not calculated based on the sales price. Instead of that, the VAT is calculated based on the margin (gross sales price minus the gross purchase price)</summary>
 		Public Property [VatMargin] As Byte
-		'''<![CDATA[Partial ratio explains which part of the VAT the company has to pay. Used in some branches where the sellers have a bad reputation, so the buyers have to take over the VAT-liability]]>
+		'''<summary>Partial ratio explains which part of the VAT the company has to pay. Used in some branches where the sellers have a bad reputation, so the buyers have to take over the VAT-liability</summary>
 		Public Property [VATPartialRatio] As Int16?
-		'''<![CDATA[VAT percentages. You can have several VAT percentages, with start and end dates]]>
+		'''<summary>VAT percentages. You can have several VAT percentages, with start and end dates</summary>
 		Public Property [VATPercentages] As IEnumerable(Of Models.VAT.VatPercentage)
-		'''<![CDATA[Indicates the type of transactions for which the VAT code may be used. B = Both, P = Purchase, S = Sales]]>
+		'''<summary>Indicates the type of transactions for which the VAT code may be used. B = Both, P = Purchase, S = Sales</summary>
 		Public Property [VATTransactionType] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [VatPercentage]
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[End date of the date range during which this percentage is valid]]>
+		'''<summary>End date of the date range during which this percentage is valid</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Line number]]>
+		'''<summary>Line number</summary>
 		Public Property [LineNumber] As Int32?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Percentage]]>
+		'''<summary>Percentage</summary>
 		Public Property [Percentage] As Double?
-		'''<![CDATA[Start date of the date range during which this percentage is valid]]>
+		'''<summary>Start date of the date range during which this percentage is valid</summary>
 		Public Property [StartDate] As DateTime?
-		'''<![CDATA[0 = Normal, 1 = Extra duty]]>
+		'''<summary>0 = Normal, 1 = Extra duty</summary>
 		Public Property [Type] As Int16
-		'''<![CDATA[VAT code]]>
+		'''<summary>VAT code</summary>
 		Public Property [VATCodeID] As Guid
 	End Class
 

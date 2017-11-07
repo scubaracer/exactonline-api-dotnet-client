@@ -1,53 +1,53 @@
-' Last generated on 2017-05-05 12:58:34Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace FinancialTransaction
 
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("EntryID")>
 	Public Class [BankEntry]
-		'''<![CDATA[Collection of lines]]>
+		'''<summary>Collection of lines</summary>
 		Public Property [BankEntryLines] As IEnumerable(Of Models.FinancialTransaction.BankEntryLine)
-		'''<![CDATA[Reference to document with bank statement]]>
+		'''<summary>Reference to document with bank statement</summary>
 		Public Property [BankStatementDocument] As Guid?
-		'''<![CDATA[Document number of document with bank statement]]>
+		'''<summary>Document number of document with bank statement</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [BankStatementDocumentNumber] As Int32?
-		'''<![CDATA[Subject of document with bank statement]]>
+		'''<summary>Subject of document with bank statement</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [BankStatementDocumentSubject] As String
-		'''<![CDATA[Closing balance in the currency of the transaction]]>
+		'''<summary>Closing balance in the currency of the transaction</summary>
 		Public Property [ClosingBalanceFC] As Double?
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[Currency code]]>
+		'''<summary>Currency code</summary>
 		Public Property [Currency] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [EntryID] As Guid
-		'''<![CDATA[Entry number]]>
+		'''<summary>Entry number</summary>
 		Public Property [EntryNumber] As Int32?
-		'''<![CDATA[Fiancial period]]>
+		'''<summary>Fiancial period</summary>
 		Public Property [FinancialPeriod] As Int16?
-		'''<![CDATA[Fiancial year]]>
+		'''<summary>Fiancial year</summary>
 		Public Property [FinancialYear] As Int16?
-		'''<![CDATA[Code of Journal]]>
+		'''<summary>Code of Journal</summary>
 		Public Property [JournalCode] As String
-		'''<![CDATA[Description of Journal]]>
+		'''<summary>Description of Journal</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [JournalDescription] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[Opening balance in the currency of the transaction]]>
+		'''<summary>Opening balance in the currency of the transaction</summary>
 		Public Property [OpeningBalanceFC] As Double?
-		'''<![CDATA[Status: 5 = Rejected, 20 = Open, 50 = Processed]]>
+		'''<summary>Status: 5 = Rejected, 20 = Open, 50 = Processed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Status] As Int16?
-		'''<![CDATA[Description of Status]]>
+		'''<summary>Description of Status</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StatusDescription] As String
 	End Class
@@ -55,157 +55,157 @@ Namespace FinancialTransaction
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [BankEntryLine]
-		'''<![CDATA[Reference to Account]]>
+		'''<summary>Reference to Account</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[Code of Account]]>
+		'''<summary>Code of Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountCode] As String
-		'''<![CDATA[Name of Account]]>
+		'''<summary>Name of Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[Amount in the default currency of the company]]>
+		'''<summary>Amount in the default currency of the company</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AmountDC] As Double?
-		'''<![CDATA[Amount in the currency of the transaction]]>
+		'''<summary>Amount in the currency of the transaction</summary>
 		Public Property [AmountFC] As Double?
-		'''<![CDATA[Vat amount in the currency of the transaction]]>
+		'''<summary>Vat amount in the currency of the transaction</summary>
 		Public Property [AmountVATFC] As Double?
-		'''<![CDATA[Reference to an asset]]>
+		'''<summary>Reference to an asset</summary>
 		Public Property [Asset] As Guid?
-		'''<![CDATA[Code of Asset]]>
+		'''<summary>Code of Asset</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AssetCode] As String
-		'''<![CDATA[Description of Asset]]>
+		'''<summary>Description of Asset</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AssetDescription] As String
-		'''<![CDATA[Reference to a cost center]]>
+		'''<summary>Reference to a cost center</summary>
 		Public Property [CostCenter] As String
-		'''<![CDATA[Description of CostCenter]]>
+		'''<summary>Description of CostCenter</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostCenterDescription] As String
-		'''<![CDATA[Reference to a cost unit]]>
+		'''<summary>Reference to a cost unit</summary>
 		Public Property [CostUnit] As String
-		'''<![CDATA[Description of CostUnit]]>
+		'''<summary>Description of CostUnit</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostUnitDescription] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
 		Public Property [Date] As DateTime?
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Reference to a document]]>
+		'''<summary>Reference to a document</summary>
 		Public Property [Document] As Guid?
-		'''<![CDATA[Number of Document]]>
+		'''<summary>Number of Document</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DocumentNumber] As Int32?
-		'''<![CDATA[Subject of Document]]>
+		'''<summary>Subject of Document</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DocumentSubject] As String
-		'''<![CDATA[Reference to the header]]>
+		'''<summary>Reference to the header</summary>
 		Public Property [EntryID] As Guid?
-		'''<![CDATA[Entry number of the header]]>
+		'''<summary>Entry number of the header</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [EntryNumber] As Int32?
-		'''<![CDATA[Exchange rate]]>
+		'''<summary>Exchange rate</summary>
 		Public Property [ExchangeRate] As Double?
-		'''<![CDATA[General ledger account]]>
+		'''<summary>General ledger account</summary>
 		Public Property [GLAccount] As Guid?
-		'''<![CDATA[Code of GLAccount]]>
+		'''<summary>Code of GLAccount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLAccountCode] As String
-		'''<![CDATA[Description of GLAccount]]>
+		'''<summary>Description of GLAccount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLAccountDescription] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ID] As Guid
-		'''<![CDATA[Line number]]>
+		'''<summary>Line number</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [LineNumber] As Int32?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Extra remarks]]>
+		'''<summary>Extra remarks</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Reference to offset line]]>
+		'''<summary>Reference to offset line</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [OffsetID] As Guid?
 		Public Property [OurRef] As Int32?
-		'''<![CDATA[Reference to a project]]>
+		'''<summary>Reference to a project</summary>
 		Public Property [Project] As Guid?
-		'''<![CDATA[Code of Project]]>
+		'''<summary>Code of Project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectCode] As String
-		'''<![CDATA[Description of Project]]>
+		'''<summary>Description of Project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA[Quantity]]>
+		'''<summary>Quantity</summary>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[Reference to vat code]]>
+		'''<summary>Reference to vat code</summary>
 		Public Property [VATCode] As String
-		'''<![CDATA[Description of VATCode]]>
+		'''<summary>Description of VATCode</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [VATCodeDescription] As String
-		'''<![CDATA[Vat code percentage]]>
+		'''<summary>Vat code percentage</summary>
 		Public Property [VATPercentage] As Double?
-		'''<![CDATA[Type of vat code]]>
+		'''<summary>Type of vat code</summary>
 		Public Property [VATType] As String
 	End Class
 
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("EntryID")>
 	Public Class [CashEntry]
-		'''<![CDATA[Collection of lines]]>
+		'''<summary>Collection of lines</summary>
 		Public Property [CashEntryLines] As IEnumerable(Of Models.FinancialTransaction.CashEntryLine)
-		'''<![CDATA[Closing balance in the currency of the transaction]]>
+		'''<summary>Closing balance in the currency of the transaction</summary>
 		Public Property [ClosingBalanceFC] As Double?
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[Currency code]]>
+		'''<summary>Currency code</summary>
 		Public Property [Currency] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [EntryID] As Guid
-		'''<![CDATA[Entry number]]>
+		'''<summary>Entry number</summary>
 		Public Property [EntryNumber] As Int32?
-		'''<![CDATA[Fiancial period]]>
+		'''<summary>Fiancial period</summary>
 		Public Property [FinancialPeriod] As Int16?
-		'''<![CDATA[Fiancial year]]>
+		'''<summary>Fiancial year</summary>
 		Public Property [FinancialYear] As Int16?
-		'''<![CDATA[Code of Journal]]>
+		'''<summary>Code of Journal</summary>
 		Public Property [JournalCode] As String
-		'''<![CDATA[Description of Journal]]>
+		'''<summary>Description of Journal</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [JournalDescription] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[Opening balance in the currency of the transaction]]>
+		'''<summary>Opening balance in the currency of the transaction</summary>
 		Public Property [OpeningBalanceFC] As Double?
-		'''<![CDATA[Status: 5 = Rejected, 20 = Open, 50 = Processed]]>
+		'''<summary>Status: 5 = Rejected, 20 = Open, 50 = Processed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Status] As Int16?
-		'''<![CDATA[Description of Status]]>
+		'''<summary>Description of Status</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StatusDescription] As String
 	End Class
@@ -213,184 +213,184 @@ Namespace FinancialTransaction
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [CashEntryLine]
-		'''<![CDATA[Reference to Account]]>
+		'''<summary>Reference to Account</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[Code of Account]]>
+		'''<summary>Code of Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountCode] As String
-		'''<![CDATA[Name of Account]]>
+		'''<summary>Name of Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[Amount in the default currency of the company]]>
+		'''<summary>Amount in the default currency of the company</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AmountDC] As Double?
-		'''<![CDATA[Amount in the currency of the transaction]]>
+		'''<summary>Amount in the currency of the transaction</summary>
 		Public Property [AmountFC] As Double?
-		'''<![CDATA[Vat amount in the currency of the transaction]]>
+		'''<summary>Vat amount in the currency of the transaction</summary>
 		Public Property [AmountVATFC] As Double?
-		'''<![CDATA[Reference to an asset]]>
+		'''<summary>Reference to an asset</summary>
 		Public Property [Asset] As Guid?
-		'''<![CDATA[Code of Asset]]>
+		'''<summary>Code of Asset</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AssetCode] As String
-		'''<![CDATA[Description of Asset]]>
+		'''<summary>Description of Asset</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AssetDescription] As String
-		'''<![CDATA[Reference to a cost center]]>
+		'''<summary>Reference to a cost center</summary>
 		Public Property [CostCenter] As String
-		'''<![CDATA[Description of CostCenter]]>
+		'''<summary>Description of CostCenter</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostCenterDescription] As String
-		'''<![CDATA[Reference to a cost unit]]>
+		'''<summary>Reference to a cost unit</summary>
 		Public Property [CostUnit] As String
-		'''<![CDATA[Description of CostUnit]]>
+		'''<summary>Description of CostUnit</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostUnitDescription] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
 		Public Property [Date] As DateTime?
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Reference to a document]]>
+		'''<summary>Reference to a document</summary>
 		Public Property [Document] As Guid?
-		'''<![CDATA[Number of Document]]>
+		'''<summary>Number of Document</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DocumentNumber] As Int32?
-		'''<![CDATA[Subject of Document]]>
+		'''<summary>Subject of Document</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DocumentSubject] As String
-		'''<![CDATA[Reference to the header]]>
+		'''<summary>Reference to the header</summary>
 		Public Property [EntryID] As Guid?
-		'''<![CDATA[Entry number of the header]]>
+		'''<summary>Entry number of the header</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [EntryNumber] As Int32?
-		'''<![CDATA[Exchange rate]]>
+		'''<summary>Exchange rate</summary>
 		Public Property [ExchangeRate] As Double?
-		'''<![CDATA[General ledger account]]>
+		'''<summary>General ledger account</summary>
 		Public Property [GLAccount] As Guid?
-		'''<![CDATA[Code of GLAccount]]>
+		'''<summary>Code of GLAccount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLAccountCode] As String
-		'''<![CDATA[Description of GLAccount]]>
+		'''<summary>Description of GLAccount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLAccountDescription] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ID] As Guid
-		'''<![CDATA[Line number]]>
+		'''<summary>Line number</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [LineNumber] As Int32?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Extra remarks]]>
+		'''<summary>Extra remarks</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Reference to offset line]]>
+		'''<summary>Reference to offset line</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [OffsetID] As Guid?
 		Public Property [OurRef] As Int32?
-		'''<![CDATA[Reference to a project]]>
+		'''<summary>Reference to a project</summary>
 		Public Property [Project] As Guid?
-		'''<![CDATA[Code of Project]]>
+		'''<summary>Code of Project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectCode] As String
-		'''<![CDATA[Description of Project]]>
+		'''<summary>Description of Project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA[Quantity]]>
+		'''<summary>Quantity</summary>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[Reference to vat code]]>
+		'''<summary>Reference to vat code</summary>
 		Public Property [VATCode] As String
-		'''<![CDATA[Description of VATCode]]>
+		'''<summary>Description of VATCode</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [VATCodeDescription] As String
-		'''<![CDATA[Vat code percentage]]>
+		'''<summary>Vat code percentage</summary>
 		Public Property [VATPercentage] As Double?
-		'''<![CDATA[Type of vat code]]>
+		'''<summary>Type of vat code</summary>
 		Public Property [VATType] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("EntryID")>
 	Public Class [Transaction]
-		'''<![CDATA[Closing balance in the currency of the transaction]]>
+		'''<summary>Closing balance in the currency of the transaction</summary>
 		Public Property [ClosingBalanceFC] As Double?
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[Date]]>
+		'''<summary>Date</summary>
 		Public Property [Date] As DateTime?
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32
-		'''<![CDATA[Document linked to the sales or purchase transaction.]]>
+		'''<summary>Document linked to the sales or purchase transaction.</summary>
 		Public Property [Document] As Guid?
-		'''<![CDATA[Number of the document.]]>
+		'''<summary>Number of the document.</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DocumentNumber] As Int32?
-		'''<![CDATA[Subject of the document.]]>
+		'''<summary>Subject of the document.</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DocumentSubject] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [EntryID] As Guid
-		'''<![CDATA[Entry number]]>
+		'''<summary>Entry number</summary>
 		Public Property [EntryNumber] As Int32?
-		'''<![CDATA[Description of the external link.]]>
+		'''<summary>Description of the external link.</summary>
 		Public Property [ExternalLinkDescription] As String
-		'''<![CDATA[External link in a sales or purchase transaction.]]>
+		'''<summary>External link in a sales or purchase transaction.</summary>
 		Public Property [ExternalLinkReference] As String
-		'''<![CDATA[Financial period]]>
+		'''<summary>Financial period</summary>
 		Public Property [FinancialPeriod] As Int16?
-		'''<![CDATA[Financial year]]>
+		'''<summary>Financial year</summary>
 		Public Property [FinancialYear] As Int16?
-		'''<![CDATA[0 =  Financial entry without extra duty, 1 = Financial entry with extra duty]]>
+		'''<summary>0 =  Financial entry without extra duty, 1 = Financial entry with extra duty</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [IsExtraDuty] As Boolean?
-		'''<![CDATA[Code of Journal]]>
+		'''<summary>Code of Journal</summary>
 		Public Property [JournalCode] As String
-		'''<![CDATA[Description of Journal]]>
+		'''<summary>Description of Journal</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [JournalDescription] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[Opening balance in the currency of the transaction]]>
+		'''<summary>Opening balance in the currency of the transaction</summary>
 		Public Property [OpeningBalanceFC] As Double?
-		'''<![CDATA[Code of PaymentCondition]]>
+		'''<summary>Code of PaymentCondition</summary>
 		Public Property [PaymentConditionCode] As String
-		'''<![CDATA[Description of PaymentCondition]]>
+		'''<summary>Description of PaymentCondition</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [PaymentConditionDescription] As String
-		'''<![CDATA[The payment reference used for bank imports, VAT return and Tax reference]]>
+		'''<summary>The payment reference used for bank imports, VAT return and Tax reference</summary>
 		Public Property [PaymentReference] As String
-		'''<![CDATA[Status: 5 = Rejected, 20 = Open, 50 = Processed]]>
+		'''<summary>Status: 5 = Rejected, 20 = Open, 50 = Processed</summary>
 		Public Property [Status] As Int16?
-		'''<![CDATA[Description of Status]]>
+		'''<summary>Description of Status</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StatusDescription] As String
-		'''<![CDATA[Collection of lines]]>
+		'''<summary>Collection of lines</summary>
 		Public Property [TransactionLines] As IEnumerable(Of Models.FinancialTransaction.TransactionLine)
-		'''<![CDATA[The transaction type.</br><table class="enum"><tr><td>10 = Opening balance</td><td>142 = Issue to parent</td></tr><tr><td>20 = Sales entry</td><td>145 = Shop order time entry</td></tr><tr><td>21 = Sales credit note</td><td>146 = Shop order time entry reversal</td></tr><tr><td>30 = Purchase entry</td><td>147 = Shop order by-product receipt</td></tr><tr><td>31 = Purchase credit note</td><td>148 = Shop order by-product reversal</td></tr><tr><td>40 = Cash flow</td><td>150 = Requirement issue</td></tr><tr><td>50 = VAT return</td><td>151 = Requirement reversal</td></tr><tr><td>70 = Asset - Depreciation</td><td>152 = Returned from parent</td></tr><tr><td>71 = Asset - Investment</td><td>155 = Subcontract Issue</td></tr><tr><td>72 = Asset - Revaluation</td><td>156 = Subcontract reversal</td></tr><tr><td>73 = Asset - Transfer</td><td>158 = Shop order completed</td></tr><tr><td>74 = Asset - Split</td><td>162 = Finish assembly</td></tr><tr><td>75 = Asset - Discontinue</td><td>170 = Payroll</td></tr><tr><td>76 = Asset - Sales</td><td>180 = Stock revaluation</td></tr><tr><td>80 = Revaluation</td><td>181 = Financial revaluation</td></tr><tr><td>82 = Exchange rate difference</td><td>195 = Stock count</td></tr><tr><td>83 = Payment difference</td><td>290 = Correction entry</td></tr><tr><td>84 = Deferred revenue</td><td>310 = Period closing</td></tr><tr><td>85 = Tracking number:Revaluation</td><td>320 = Year end reflection</td></tr><tr><td>86 = Deferred cost</td><td>321 = Year end costing</td></tr><tr><td>87 = VAT on prepayment</td><td>322 = Year end profits to gross profit</td></tr><tr><td>90 = Other</td><td>323 = Year end costs to gross profit</td></tr><tr><td>120 = Delivery</td><td>324 = Year end tax</td></tr><tr><td>121 = Sales return</td><td>325 = Year end gross profit to net p/l</td></tr><tr><td>130 = Receipt</td><td>326 = Year end net p/l to balance sheet</td></tr><tr><td>131 = Purchase return</td><td>327 = Year end closing balance</td></tr><tr><td>140 = Shop order stock receipt</td><td>328 = Year start opening balance</td></tr><tr><td>141 = Shop order stock reversal</td><td>3000 = Budget</td></tr></table>]]>
+		'''<summary>The transaction type.&lt;/br&gt;&lt;table class=&quot;enum&quot;&gt;&lt;tr&gt;&lt;td&gt;10 = Opening balance&lt;/td&gt;&lt;td&gt;142 = Issue to parent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;20 = Sales entry&lt;/td&gt;&lt;td&gt;145 = Shop order time entry&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;21 = Sales credit note&lt;/td&gt;&lt;td&gt;146 = Shop order time entry reversal&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;30 = Purchase entry&lt;/td&gt;&lt;td&gt;147 = Shop order by-product receipt&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;31 = Purchase credit note&lt;/td&gt;&lt;td&gt;148 = Shop order by-product reversal&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;40 = Cash flow&lt;/td&gt;&lt;td&gt;150 = Requirement issue&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;50 = VAT return&lt;/td&gt;&lt;td&gt;151 = Requirement reversal&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;70 = Asset - Depreciation&lt;/td&gt;&lt;td&gt;152 = Returned from parent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;71 = Asset - Investment&lt;/td&gt;&lt;td&gt;155 = Subcontract Issue&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;72 = Asset - Revaluation&lt;/td&gt;&lt;td&gt;156 = Subcontract reversal&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;73 = Asset - Transfer&lt;/td&gt;&lt;td&gt;158 = Shop order completed&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;74 = Asset - Split&lt;/td&gt;&lt;td&gt;162 = Finish assembly&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;75 = Asset - Discontinue&lt;/td&gt;&lt;td&gt;170 = Payroll&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;76 = Asset - Sales&lt;/td&gt;&lt;td&gt;180 = Stock revaluation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;80 = Revaluation&lt;/td&gt;&lt;td&gt;181 = Financial revaluation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;82 = Exchange rate difference&lt;/td&gt;&lt;td&gt;195 = Stock count&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;83 = Payment difference&lt;/td&gt;&lt;td&gt;290 = Correction entry&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;84 = Deferred revenue&lt;/td&gt;&lt;td&gt;310 = Period closing&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;85 = Tracking number:Revaluation&lt;/td&gt;&lt;td&gt;320 = Year end reflection&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;86 = Deferred cost&lt;/td&gt;&lt;td&gt;321 = Year end costing&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;87 = VAT on prepayment&lt;/td&gt;&lt;td&gt;322 = Year end profits to gross profit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;90 = Other&lt;/td&gt;&lt;td&gt;323 = Year end costs to gross profit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;120 = Delivery&lt;/td&gt;&lt;td&gt;324 = Year end tax&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;121 = Sales return&lt;/td&gt;&lt;td&gt;325 = Year end gross profit to net p/l&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;130 = Receipt&lt;/td&gt;&lt;td&gt;326 = Year end net p/l to balance sheet&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;131 = Purchase return&lt;/td&gt;&lt;td&gt;327 = Year end closing balance&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;140 = Shop order stock receipt&lt;/td&gt;&lt;td&gt;328 = Year start opening balance&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;141 = Shop order stock reversal&lt;/td&gt;&lt;td&gt;3000 = Budget&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary>
 		Public Property [Type] As Int32
-		'''<![CDATA[The description of the transaction type]]>
+		'''<summary>The description of the transaction type</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [TypeDescription] As String
 	End Class
@@ -398,170 +398,170 @@ Namespace FinancialTransaction
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [TransactionLine]
-		'''<![CDATA[Reference to account]]>
+		'''<summary>Reference to account</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[Code of the Account]]>
+		'''<summary>Code of the Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountCode] As String
-		'''<![CDATA[Name of the Account]]>
+		'''<summary>Name of the Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[Amount in the default currency of the company]]>
+		'''<summary>Amount in the default currency of the company</summary>
 		Public Property [AmountDC] As Double
-		'''<![CDATA[Amount in the currency of the transaction]]>
+		'''<summary>Amount in the currency of the transaction</summary>
 		Public Property [AmountFC] As Double
-		'''<![CDATA[Vat base amount in the currency of the transaction]]>
+		'''<summary>Vat base amount in the currency of the transaction</summary>
 		Public Property [AmountVATBaseFC] As Double?
-		'''<![CDATA[Vat amount in the currency of the transaction]]>
+		'''<summary>Vat amount in the currency of the transaction</summary>
 		Public Property [AmountVATFC] As Double?
-		'''<![CDATA[Reference to asset]]>
+		'''<summary>Reference to asset</summary>
 		Public Property [Asset] As Guid?
-		'''<![CDATA[Code of Asset]]>
+		'''<summary>Code of Asset</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AssetCode] As String
-		'''<![CDATA[Description of Asset]]>
+		'''<summary>Description of Asset</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AssetDescription] As String
-		'''<![CDATA[Reference to cost center]]>
+		'''<summary>Reference to cost center</summary>
 		Public Property [CostCenter] As String
-		'''<![CDATA[Description of CostCenter]]>
+		'''<summary>Description of CostCenter</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostCenterDescription] As String
-		'''<![CDATA[Reference to cost unit]]>
+		'''<summary>Reference to cost unit</summary>
 		Public Property [CostUnit] As String
-		'''<![CDATA[Description of CostUnit]]>
+		'''<summary>Description of CostUnit</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostUnitDescription] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Currency]]>
+		'''<summary>Currency</summary>
 		Public Property [Currency] As String
-		'''<![CDATA[Date]]>
+		'''<summary>Date</summary>
 		Public Property [Date] As DateTime?
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32
-		'''<![CDATA[Reference to document]]>
+		'''<summary>Reference to document</summary>
 		Public Property [Document] As Guid?
-		'''<![CDATA[Number of the document]]>
+		'''<summary>Number of the document</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DocumentNumber] As Int32?
-		'''<![CDATA[Subject of the document]]>
+		'''<summary>Subject of the document</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DocumentSubject] As String
-		'''<![CDATA[Date that payment should be done]]>
+		'''<summary>Date that payment should be done</summary>
 		Public Property [DueDate] As DateTime?
-		'''<![CDATA[Reference to header of the entry]]>
+		'''<summary>Reference to header of the entry</summary>
 		Public Property [EntryID] As Guid?
-		'''<![CDATA[Entry number of the header]]>
+		'''<summary>Entry number of the header</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [EntryNumber] As Int32?
-		'''<![CDATA[Exchange rate]]>
+		'''<summary>Exchange rate</summary>
 		Public Property [ExchangeRate] As Double?
-		'''<![CDATA[Extra duty amount]]>
+		'''<summary>Extra duty amount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ExtraDutyAmountFC] As Double?
-		'''<![CDATA[Extra duty percentage]]>
+		'''<summary>Extra duty percentage</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ExtraDutyPercentage] As Double?
-		'''<![CDATA[Financial period]]>
+		'''<summary>Financial period</summary>
 		Public Property [FinancialPeriod] As Int16?
-		'''<![CDATA[Financial year]]>
+		'''<summary>Financial year</summary>
 		Public Property [FinancialYear] As Int16?
-		'''<![CDATA[General ledger account]]>
+		'''<summary>General ledger account</summary>
 		Public Property [GLAccount] As Guid?
-		'''<![CDATA[Code of GLAccount]]>
+		'''<summary>Code of GLAccount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLAccountCode] As String
-		'''<![CDATA[Description of GLAccount]]>
+		'''<summary>Description of GLAccount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLAccountDescription] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Invoice number]]>
+		'''<summary>Invoice number</summary>
 		Public Property [InvoiceNumber] As Int32?
-		'''<![CDATA[Reference to item]]>
+		'''<summary>Reference to item</summary>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Code of Item]]>
+		'''<summary>Code of Item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemCode] As String
-		'''<![CDATA[Description of Item]]>
+		'''<summary>Description of Item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[The journal code]]>
+		'''<summary>The journal code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [JournalCode] As String
-		'''<![CDATA[The journal description]]>
+		'''<summary>The journal description</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [JournalDescription] As String
-		'''<![CDATA[Line number]]>
+		'''<summary>Line number</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [LineNumber] As Int32?
-		'''<![CDATA[Line type]]>
+		'''<summary>Line type</summary>
 		Public Property [LineType] As Int16
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Extra remarks]]>
+		'''<summary>Extra remarks</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[OffsetID]]>
+		'''<summary>OffsetID</summary>
 		Public Property [OffsetID] As Guid?
-		'''<![CDATA[Order number]]>
+		'''<summary>Order number</summary>
 		Public Property [OrderNumber] As Int32?
-		'''<![CDATA[Discount amount when paid in time]]>
+		'''<summary>Discount amount when paid in time</summary>
 		Public Property [PaymentDiscountAmount] As Double?
-		'''<![CDATA[Payment reference]]>
+		'''<summary>Payment reference</summary>
 		Public Property [PaymentReference] As String
-		'''<![CDATA[Reference to project]]>
+		'''<summary>Reference to project</summary>
 		Public Property [Project] As Guid?
-		'''<![CDATA[Code of Project]]>
+		'''<summary>Code of Project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectCode] As String
-		'''<![CDATA[Description of Project]]>
+		'''<summary>Description of Project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA[Quantity]]>
+		'''<summary>Quantity</summary>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[Serial number of item]]>
+		'''<summary>Serial number of item</summary>
 		Public Property [SerialNumber] As String
-		'''<![CDATA[20 = Open, 50 = Processed]]>
+		'''<summary>20 = Open, 50 = Processed</summary>
 		Public Property [Status] As Int16?
-		'''<![CDATA[Reference to subscription]]>
+		'''<summary>Reference to subscription line</summary>
 		Public Property [Subscription] As Guid?
-		'''<![CDATA[Description of Subscription]]>
+		'''<summary>Description of subscription line</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubscriptionDescription] As String
-		'''<![CDATA[Tracking number of item]]>
+		'''<summary>Tracking number of item</summary>
 		Public Property [TrackingNumber] As String
-		'''<![CDATA[Tracking number description]]>
+		'''<summary>Tracking number description</summary>
 		Public Property [TrackingNumberDescription] As String
-		'''<![CDATA[The transaction type.</br><table class="enum"><tr><td>10 = Opening balance</td><td>142 = Issue to parent</td></tr><tr><td>20 = Sales entry</td><td>145 = Shop order time entry</td></tr><tr><td>21 = Sales credit note</td><td>146 = Shop order time entry reversal</td></tr><tr><td>30 = Purchase entry</td><td>147 = Shop order by-product receipt</td></tr><tr><td>31 = Purchase credit note</td><td>148 = Shop order by-product reversal</td></tr><tr><td>40 = Cash flow</td><td>150 = Requirement issue</td></tr><tr><td>50 = VAT return</td><td>151 = Requirement reversal</td></tr><tr><td>70 = Asset - Depreciation</td><td>152 = Returned from parent</td></tr><tr><td>71 = Asset - Investment</td><td>155 = Subcontract Issue</td></tr><tr><td>72 = Asset - Revaluation</td><td>156 = Subcontract reversal</td></tr><tr><td>73 = Asset - Transfer</td><td>158 = Shop order completed</td></tr><tr><td>74 = Asset - Split</td><td>162 = Finish assembly</td></tr><tr><td>75 = Asset - Discontinue</td><td>170 = Payroll</td></tr><tr><td>76 = Asset - Sales</td><td>180 = Stock revaluation</td></tr><tr><td>80 = Revaluation</td><td>181 = Financial revaluation</td></tr><tr><td>82 = Exchange rate difference</td><td>195 = Stock count</td></tr><tr><td>83 = Payment difference</td><td>290 = Correction entry</td></tr><tr><td>84 = Deferred revenue</td><td>310 = Period closing</td></tr><tr><td>85 = Tracking number:Revaluation</td><td>320 = Year end reflection</td></tr><tr><td>86 = Deferred cost</td><td>321 = Year end costing</td></tr><tr><td>87 = VAT on prepayment</td><td>322 = Year end profits to gross profit</td></tr><tr><td>90 = Other</td><td>323 = Year end costs to gross profit</td></tr><tr><td>120 = Delivery</td><td>324 = Year end tax</td></tr><tr><td>121 = Sales return</td><td>325 = Year end gross profit to net p/l</td></tr><tr><td>130 = Receipt</td><td>326 = Year end net p/l to balance sheet</td></tr><tr><td>131 = Purchase return</td><td>327 = Year end closing balance</td></tr><tr><td>140 = Shop order stock receipt</td><td>328 = Year start opening balance</td></tr><tr><td>141 = Shop order stock reversal</td><td>3000 = Budget</td></tr></table>]]>
+		'''<summary>The transaction type.&lt;/br&gt;&lt;table class=&quot;enum&quot;&gt;&lt;tr&gt;&lt;td&gt;10 = Opening balance&lt;/td&gt;&lt;td&gt;142 = Issue to parent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;20 = Sales entry&lt;/td&gt;&lt;td&gt;145 = Shop order time entry&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;21 = Sales credit note&lt;/td&gt;&lt;td&gt;146 = Shop order time entry reversal&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;30 = Purchase entry&lt;/td&gt;&lt;td&gt;147 = Shop order by-product receipt&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;31 = Purchase credit note&lt;/td&gt;&lt;td&gt;148 = Shop order by-product reversal&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;40 = Cash flow&lt;/td&gt;&lt;td&gt;150 = Requirement issue&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;50 = VAT return&lt;/td&gt;&lt;td&gt;151 = Requirement reversal&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;70 = Asset - Depreciation&lt;/td&gt;&lt;td&gt;152 = Returned from parent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;71 = Asset - Investment&lt;/td&gt;&lt;td&gt;155 = Subcontract Issue&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;72 = Asset - Revaluation&lt;/td&gt;&lt;td&gt;156 = Subcontract reversal&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;73 = Asset - Transfer&lt;/td&gt;&lt;td&gt;158 = Shop order completed&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;74 = Asset - Split&lt;/td&gt;&lt;td&gt;162 = Finish assembly&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;75 = Asset - Discontinue&lt;/td&gt;&lt;td&gt;170 = Payroll&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;76 = Asset - Sales&lt;/td&gt;&lt;td&gt;180 = Stock revaluation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;80 = Revaluation&lt;/td&gt;&lt;td&gt;181 = Financial revaluation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;82 = Exchange rate difference&lt;/td&gt;&lt;td&gt;195 = Stock count&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;83 = Payment difference&lt;/td&gt;&lt;td&gt;290 = Correction entry&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;84 = Deferred revenue&lt;/td&gt;&lt;td&gt;310 = Period closing&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;85 = Tracking number:Revaluation&lt;/td&gt;&lt;td&gt;320 = Year end reflection&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;86 = Deferred cost&lt;/td&gt;&lt;td&gt;321 = Year end costing&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;87 = VAT on prepayment&lt;/td&gt;&lt;td&gt;322 = Year end profits to gross profit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;90 = Other&lt;/td&gt;&lt;td&gt;323 = Year end costs to gross profit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;120 = Delivery&lt;/td&gt;&lt;td&gt;324 = Year end tax&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;121 = Sales return&lt;/td&gt;&lt;td&gt;325 = Year end gross profit to net p/l&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;130 = Receipt&lt;/td&gt;&lt;td&gt;326 = Year end net p/l to balance sheet&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;131 = Purchase return&lt;/td&gt;&lt;td&gt;327 = Year end closing balance&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;140 = Shop order stock receipt&lt;/td&gt;&lt;td&gt;328 = Year start opening balance&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;141 = Shop order stock reversal&lt;/td&gt;&lt;td&gt;3000 = Budget&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary>
 		Public Property [Type] As Int32
-		'''<![CDATA[Vat code]]>
+		'''<summary>Vat code</summary>
 		Public Property [VATCode] As String
-		'''<![CDATA[Description of VATCode]]>
+		'''<summary>Description of VATCode</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [VATCodeDescription] As String
-		'''<![CDATA[Vat percentage]]>
+		'''<summary>Vat percentage</summary>
 		Public Property [VATPercentage] As Double?
-		'''<![CDATA[Vat type]]>
+		'''<summary>Vat type</summary>
 		Public Property [VATType] As String
-		'''<![CDATA[Your reference (of customer)]]>
+		'''<summary>Your reference (of customer)</summary>
 		Public Property [YourRef] As String
 	End Class
 

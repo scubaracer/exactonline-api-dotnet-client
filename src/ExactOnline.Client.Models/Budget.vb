@@ -1,74 +1,74 @@
-' Last generated on 2017-05-05 12:58:34Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace Budget
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [Budget]
-		'''<![CDATA[Budget amount (always in the default currency of the company)]]>
+		'''<summary>Budget amount (always in the default currency of the company)</summary>
 		Public Property [AmountDC] As Double?
-		'''<![CDATA[Budget scenario]]>
+		'''<summary>Budget scenario</summary>
 		Public Property [BudgetScenario] As Guid?
-		'''<![CDATA[Code of BudgetScenario]]>
+		'''<summary>Code of BudgetScenario</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [BudgetScenarioCode] As String
-		'''<![CDATA[Description of BudgetScenario]]>
+		'''<summary>Description of BudgetScenario</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [BudgetScenarioDescription] As String
-		'''<![CDATA[Used for cost center-specific budgets - NULL otherwise]]>
+		'''<summary>Used for cost center-specific budgets - NULL otherwise</summary>
 		Public Property [Costcenter] As String
-		'''<![CDATA[Description of Costcenter]]>
+		'''<summary>Description of Costcenter</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostcenterDescription] As String
-		'''<![CDATA[Used for cost unit-specific budgets - NULL otherwise]]>
+		'''<summary>Used for cost unit-specific budgets - NULL otherwise</summary>
 		Public Property [Costunit] As String
-		'''<![CDATA[Description of Costunit]]>
+		'''<summary>Description of Costunit</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostunitDescription] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[G/L account]]>
+		'''<summary>G/L account</summary>
 		Public Property [GLAccount] As Guid?
-		'''<![CDATA[Code of GLAccount]]>
+		'''<summary>Code of GLAccount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLAccountCode] As String
-		'''<![CDATA[Description of GLAccount]]>
+		'''<summary>Description of GLAccount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLAccountDescription] As String
-		'''<![CDATA[Numerical ID. Never displayed to the user, but it may have its use for performance reasons]]>
+		'''<summary>Numerical ID. Never displayed to the user, but it may have its use for performance reasons</summary>
 		Public Property [HID] As Int64?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Used for item-specific budgets - NULL otherwise]]>
+		'''<summary>Used for item-specific budgets - NULL otherwise</summary>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Code of Item]]>
+		'''<summary>Code of Item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemCode] As String
-		'''<![CDATA[Description of Item]]>
+		'''<summary>Description of Item</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Period (combined with financial year)]]>
+		'''<summary>Period (combined with financial year)</summary>
 		Public Property [ReportingPeriod] As Int16?
-		'''<![CDATA[Financial year]]>
+		'''<summary>Financial year</summary>
 		Public Property [ReportingYear] As Int16?
 	End Class
 
