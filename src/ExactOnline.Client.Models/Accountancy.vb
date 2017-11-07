@@ -1,153 +1,153 @@
-' Last generated on 2017-05-05 12:58:34Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace Accountancy
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [AccountInvolvedAccount]
-		'''<![CDATA[ID of account]]>
+		'''<summary>ID of account</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[Name of account]]>
+		'''<summary>Name of account</summary>
 		Public Property [AccountName] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[ID of involved account]]>
+		'''<summary>ID of involved account</summary>
 		Public Property [InvolvedAccount] As Guid?
-		'''<![CDATA[Description of relation type]]>
+		'''<summary>Description of relation type</summary>
 		Public Property [InvolvedAccountRelationTypeDescription] As String
-		'''<![CDATA[TermId of description of relation type]]>
+		'''<summary>TermId of description of relation type</summary>
 		Public Property [InvolvedAccountRelationTypeDescriptionTermId] As Int32?
-		'''<![CDATA[ID of relation type]]>
+		'''<summary>ID of relation type</summary>
 		Public Property [InvolvedAccountRelationTypeId] As Int16?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Use to record details of important information]]>
+		'''<summary>Use to record details of important information</summary>
 		Public Property [Notes] As String
 	End Class
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [AccountOwner]
-		'''<![CDATA[ID of the account that is owned]]>
+		'''<summary>ID of the account that is owned</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[Code of the account that is owned]]>
+		'''<summary>Code of the account that is owned</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountCode] As String
-		'''<![CDATA[Name of the account that is owned]]>
+		'''<summary>Name of the account that is owned</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of the creator]]>
+		'''<summary>User ID of the creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of the creator]]>
+		'''<summary>Name of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of the modifier]]>
+		'''<summary>User ID of the modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of the modifier]]>
+		'''<summary>Name of the modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[ID of the account who owns specified account]]>
+		'''<summary>ID of the account who owns specified account</summary>
 		Public Property [OwnerAccount] As Guid?
-		'''<![CDATA[Code of the account who owns specified account]]>
+		'''<summary>Code of the account who owns specified account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [OwnerAccountCode] As String
-		'''<![CDATA[Name of the account who owns specified account]]>
+		'''<summary>Name of the account who owns specified account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [OwnerAccountName] As String
-		'''<![CDATA[Percentage of shares that is owned. 1 is 100%, 0.5 is 50%]]>
+		'''<summary>Percentage of shares that is owned. 1 is 100%, 0.5 is 50%</summary>
 		Public Property [Shares] As Double?
 	End Class
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [InvolvedUser]
-		'''<![CDATA[ID of the account the user is involved with]]>
+		'''<summary>ID of the account the user is involved with</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[City of the account]]>
+		'''<summary>City of the account</summary>
 		Public Property [AccountCity] As String
-		'''<![CDATA[Code of the account]]>
+		'''<summary>Code of the account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountCode] As String
-		'''<![CDATA[Supplier flag of the account]]>
+		'''<summary>Supplier flag of the account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountIsSupplier] As Boolean?
-		'''<![CDATA[Logo thumbnail url of the account]]>
+		'''<summary>Logo thumbnail url of the account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountLogoThumbnailUrl] As String
-		'''<![CDATA[Name of the account]]>
+		'''<summary>Name of the account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[Status of the account]]>
+		'''<summary>Status of the account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountStatus] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[ID of the user role]]>
+		'''<summary>ID of the user role</summary>
 		Public Property [InvolvedUserRole] As Guid?
-		'''<![CDATA[Description of the user role]]>
+		'''<summary>Description of the user role</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [InvolvedUserRoleDescription] As String
-		'''<![CDATA[Main contact flag of the involved user]]>
+		'''<summary>Main contact flag of the involved user</summary>
 		Public Property [IsMainContact] As Boolean?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Email of a person]]>
+		'''<summary>Email of a person</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [PersonEmail] As String
-		'''<![CDATA[Phone of a person]]>
+		'''<summary>Phone of a person</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [PersonPhone] As String
-		'''<![CDATA[Phone extension of a person]]>
+		'''<summary>Phone extension of a person</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [PersonPhoneExtension] As String
-		'''<![CDATA[Picture thumbnail url of a person]]>
+		'''<summary>Picture thumbnail url of a person</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [PersonPictureThumbnailUrl] As String
-		'''<![CDATA[ID of the involved user]]>
+		'''<summary>ID of the involved user</summary>
 		Public Property [User] As Guid?
-		'''<![CDATA[User name of creator]]>
+		'''<summary>User name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [UserFullName] As String
 	End Class
@@ -155,33 +155,33 @@ Namespace Accountancy
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [InvolvedUserRole]
-		'''<![CDATA[Code of the involved user role]]>
+		'''<summary>Code of the involved user role</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description of role]]>
+		'''<summary>Description of role</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Description term code of role]]>
+		'''<summary>Description term code of role</summary>
 		Public Property [DescriptionTermID] As Int32?
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
 	End Class
@@ -189,42 +189,42 @@ Namespace Accountancy
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [SolutionLink]
-		'''<![CDATA[ID of account to which solution is linked]]>
+		'''<summary>ID of account to which solution is linked</summary>
 		Public Property [Account] As Guid
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Accountant main division]]>
+		'''<summary>Accountant main division</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32
-		'''<![CDATA[If type is external predefined, represents ID of PracticeManagementExternalSolutions (mandatory for External solution)]]>
+		'''<summary>If type is external predefined, represents ID of PracticeManagementExternalSolutions (mandatory for External solution)</summary>
 		Public Property [ExternalSolutionCode] As Int32?
-		'''<![CDATA[Name of the external solution]]>
+		'''<summary>Name of the external solution</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ExternalSolutionName] As String
-		'''<![CDATA[Customer URl in external solution, like solution.com/id123 (mandatory for External and ExternalOther solution)]]>
+		'''<summary>Customer URl in external solution, like solution.com/id123 (mandatory for External and ExternalOther solution)</summary>
 		Public Property [ExternalSolutionUrl] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ID] As Guid
-		'''<![CDATA[Division code of linked internal solution (mandatory for Internal solution)]]>
+		'''<summary>Division code of linked internal solution (mandatory for Internal solution)</summary>
 		Public Property [InternalSolutionDivision] As Int32?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of the solution link]]>
+		'''<summary>Name of the solution link</summary>
 		Public Property [Name] As String
-		'''<![CDATA[Name of the custom external solution (mandatory for ExternalOther solution)]]>
+		'''<summary>Name of the custom external solution (mandatory for ExternalOther solution)</summary>
 		Public Property [OtherExternalSolutionName] As String
-		'''<![CDATA[Type of solution: 0 - Internal(EOL), 1 - External(Wellknown solution), 2 - ExternalOther]]>
+		'''<summary>Type of solution: 0 - Internal(EOL), 1 - External(Wellknown solution), 2 - ExternalOther</summary>
 		Public Property [SolutionType] As Int32
-		'''<![CDATA[Link status: 0 - Active, 1 - Inactive, 2 -Archived]]>
+		'''<summary>Link status: 0 - Active, 1 - Inactive, 2 -Archived</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Status] As Int32
 	End Class
@@ -232,29 +232,29 @@ Namespace Accountancy
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [TaskType]
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of the creator]]>
+		'''<summary>User ID of the creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of the creator]]>
+		'''<summary>Name of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Name of the task type]]>
+		'''<summary>Name of the task type</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Term ID of the task type]]>
+		'''<summary>Term ID of the task type</summary>
 		Public Property [DescriptionTermID] As Int32?
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of the modifier]]>
+		'''<summary>User ID of the modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of the modifier]]>
+		'''<summary>Name of the modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
 	End Class

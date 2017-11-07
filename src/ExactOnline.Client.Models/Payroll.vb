@@ -1,500 +1,500 @@
-' Last generated on 2017-05-05 12:58:35Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace Payroll
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [ActiveEmployment]
-		'''<![CDATA[The average number of contract days that an employee works per week]]>
+		'''<summary>The average number of contract days that an employee works per week</summary>
 		Public Property [AverageDaysPerWeek] As Double?
-		'''<![CDATA[The average number of contract hours that an employee works per week]]>
+		'''<summary>The average number of contract hours that an employee works per week</summary>
 		Public Property [AverageHoursPerWeek] As Double?
-		'''<![CDATA[Employment contract ID]]>
+		'''<summary>Employment contract ID</summary>
 		Public Property [Contract] As Guid?
-		'''<![CDATA[Document ID of the employment contract]]>
+		'''<summary>Document ID of the employment contract</summary>
 		Public Property [ContractDocument] As Guid?
-		'''<![CDATA[End date of employment contract]]>
+		'''<summary>End date of employment contract</summary>
 		Public Property [ContractEndDate] As DateTime?
-		'''<![CDATA[Employment probation end date]]>
+		'''<summary>Employment probation end date</summary>
 		Public Property [ContractProbationEndDate] As DateTime?
-		'''<![CDATA[Employment probation period]]>
+		'''<summary>Employment probation period</summary>
 		Public Property [ContractProbationPeriod] As Int32?
-		'''<![CDATA[Start date of employment contract]]>
+		'''<summary>Start date of employment contract</summary>
 		Public Property [ContractStartDate] As DateTime?
-		'''<![CDATA[Type of employment contract. 1 - Definite, 2 - Indefinite, 3 - External]]>
+		'''<summary>Type of employment contract. 1 - Definite, 2 - Indefinite, 3 - External</summary>
 		Public Property [ContractType] As Int32?
-		'''<![CDATA[Description of employment contract type]]>
+		'''<summary>Description of employment contract type</summary>
 		Public Property [ContractTypeDescription] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Department of employee]]>
+		'''<summary>Department of employee</summary>
 		Public Property [Department] As Guid?
-		'''<![CDATA[Department code of employee]]>
+		'''<summary>Department code of employee</summary>
 		Public Property [DepartmentCode] As String
-		'''<![CDATA[Description of department]]>
+		'''<summary>Description of department</summary>
 		Public Property [DepartmentDescription] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Employee ID]]>
+		'''<summary>Employee ID</summary>
 		Public Property [Employee] As Guid?
-		'''<![CDATA[Name of employee]]>
+		'''<summary>Name of employee</summary>
 		Public Property [EmployeeFullName] As String
-		'''<![CDATA[Numeric number of Employee]]>
+		'''<summary>Numeric number of Employee</summary>
 		Public Property [EmployeeHID] As Int32?
-		'''<![CDATA[Organization of employment]]>
+		'''<summary>Organization of employment</summary>
 		Public Property [EmploymentOrganization] As Guid?
-		'''<![CDATA[End date of employment]]>
+		'''<summary>End date of employment</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[Numeric ID of the employment]]>
+		'''<summary>Numeric ID of the employment</summary>
 		Public Property [HID] As Int32?
-		'''<![CDATA[Hourly wage]]>
+		'''<summary>Hourly wage</summary>
 		Public Property [HourlyWage] As Double?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Internal rate for time & billing or professional service user]]>
+		'''<summary>Internal rate for time &amp; billing or professional service user</summary>
 		Public Property [InternalRate] As Double?
-		'''<![CDATA[Job title of employee]]>
+		'''<summary>Job title of employee</summary>
 		Public Property [Jobtitle] As Guid?
-		'''<![CDATA[Description of job title]]>
+		'''<summary>Description of job title</summary>
 		Public Property [JobtitleDescription] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[ID of employment ended]]>
+		'''<summary>ID of employment ended</summary>
 		Public Property [ReasonEnd] As Int32?
-		'''<![CDATA[Reason of end of employment]]>
+		'''<summary>Reason of end of employment</summary>
 		Public Property [ReasonEndDescription] As String
-		'''<![CDATA[Reason of ended flexible employment]]>
+		'''<summary>Reason of ended flexible employment</summary>
 		Public Property [ReasonEndFlex] As Int32?
-		'''<![CDATA[Other reason for end of employment]]>
+		'''<summary>Other reason for end of employment</summary>
 		Public Property [ReasonEndFlexDescription] As String
-		'''<![CDATA[Employment salary]]>
+		'''<summary>Employment salary</summary>
 		Public Property [Salary] As Guid?
-		'''<![CDATA[Work schedule]]>
+		'''<summary>Work schedule</summary>
 		Public Property [Schedule] As Guid?
-		'''<![CDATA[Average hours per week in a schedule.]]>
+		'''<summary>Average hours per week in a schedule.</summary>
 		Public Property [ScheduleAverageHours] As Double?
-		'''<![CDATA[Work schedule code]]>
+		'''<summary>Work schedule code</summary>
 		Public Property [ScheduleCode] As String
-		'''<![CDATA[Number of days of work per week]]>
+		'''<summary>Number of days of work per week</summary>
 		Public Property [ScheduleDays] As Double?
-		'''<![CDATA[Description of work schedule]]>
+		'''<summary>Description of work schedule</summary>
 		Public Property [ScheduleDescription] As String
-		'''<![CDATA[Number of work hours per week.]]>
+		'''<summary>Number of work hours per week.</summary>
 		Public Property [ScheduleHours] As Double?
-		'''<![CDATA[Start date of employment]]>
+		'''<summary>Start date of employment</summary>
 		Public Property [StartDate] As DateTime?
-		'''<![CDATA[Start date of the employee in the organization. This field is used to count the years in service.]]>
+		'''<summary>Start date of the employee in the organization. This field is used to count the years in service.</summary>
 		Public Property [StartDateOrganization] As DateTime?
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [Employee]
-		'''<![CDATA[Obsolete]]>
+		'''<summary>Obsolete</summary>
 		Public Property [ActiveEmployment] As Byte?
-		'''<![CDATA[Second address line]]>
+		'''<summary>Second address line</summary>
 		Public Property [AddressLine2] As String
-		'''<![CDATA[Third address line]]>
+		'''<summary>Third address line</summary>
 		Public Property [AddressLine3] As String
-		'''<![CDATA[Street of address]]>
+		'''<summary>Street of address</summary>
 		Public Property [AddressStreet] As String
-		'''<![CDATA[Street number of address]]>
+		'''<summary>Street number of address</summary>
 		Public Property [AddressStreetNumber] As String
-		'''<![CDATA[Street number suffix of address]]>
+		'''<summary>Street number suffix of address</summary>
 		Public Property [AddressStreetNumberSuffix] As String
-		'''<![CDATA[Birth date]]>
+		'''<summary>Birth date</summary>
 		Public Property [BirthDate] As DateTime?
-		'''<![CDATA[Birth name]]>
+		'''<summary>Birth name</summary>
 		Public Property [BirthName] As String
-		'''<![CDATA[Birth middle name]]>
+		'''<summary>Birth middle name</summary>
 		Public Property [BirthNamePrefix] As String
-		'''<![CDATA[Birth place]]>
+		'''<summary>Birth place</summary>
 		Public Property [BirthPlace] As String
-		'''<![CDATA[Email of the employee at the office]]>
+		'''<summary>Email of the employee at the office</summary>
 		Public Property [BusinessEmail] As String
-		'''<![CDATA[Fax number of the employee at the office]]>
+		'''<summary>Fax number of the employee at the office</summary>
 		Public Property [BusinessFax] As String
-		'''<![CDATA[Office mobile number of the employee]]>
+		'''<summary>Office mobile number of the employee</summary>
 		Public Property [BusinessMobile] As String
-		'''<![CDATA[Phone number of the employee at the office]]>
+		'''<summary>Phone number of the employee at the office</summary>
 		Public Property [BusinessPhone] As String
-		'''<![CDATA[Phone extension of the employee at the office]]>
+		'''<summary>Phone extension of the employee at the office</summary>
 		Public Property [BusinessPhoneExtension] As String
-		'''<![CDATA[Obsolete]]>
+		'''<summary>Obsolete</summary>
 		Public Property [CASONumber] As String
-		'''<![CDATA[City]]>
+		'''<summary>City</summary>
 		Public Property [City] As String
-		'''<![CDATA[Code of the employee]]>
+		'''<summary>Code of the employee</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Country code]]>
+		'''<summary>Country code</summary>
 		Public Property [Country] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Customer ID]]>
+		'''<summary>Customer ID</summary>
 		Public Property [Customer] As Guid?
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Email address]]>
+		'''<summary>Email address</summary>
 		Public Property [Email] As String
-		'''<![CDATA[Employee number]]>
+		'''<summary>Employee number</summary>
 		Public Property [EmployeeHID] As Int32?
-		'''<![CDATA[End date of the employee]]>
+		'''<summary>End date of the employee</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[First name of the employee]]>
+		'''<summary>First name of the employee</summary>
 		Public Property [FirstName] As String
-		'''<![CDATA[Full name of the employee]]>
+		'''<summary>Full name of the employee</summary>
 		Public Property [FullName] As String
-		'''<![CDATA[Gender]]>
+		'''<summary>Gender</summary>
 		Public Property [Gender] As String
-		'''<![CDATA[Numeric ID of the employee]]>
+		'''<summary>Numeric ID of the employee</summary>
 		Public Property [HID] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Initials]]>
+		'''<summary>Initials</summary>
 		Public Property [Initials] As String
-		'''<![CDATA[IsActive]]>
+		'''<summary>IsActive</summary>
 		Public Property [IsActive] As Boolean
-		'''<![CDATA[Language code]]>
+		'''<summary>Language code</summary>
 		Public Property [Language] As String
-		'''<![CDATA[Last name]]>
+		'''<summary>Last name</summary>
 		Public Property [LastName] As String
-		'''<![CDATA[Description of the location of the employee (where am I?)]]>
+		'''<summary>Description of the location of the employee (where am I?)</summary>
 		Public Property [LocationDescription] As String
-		'''<![CDATA[Direct manager of the employee]]>
+		'''<summary>Direct manager of the employee</summary>
 		Public Property [Manager] As Guid?
-		'''<![CDATA[Date of marriage]]>
+		'''<summary>Date of marriage</summary>
 		Public Property [MaritalDate] As DateTime?
-		'''<![CDATA[Marital status]]>
+		'''<summary>Marital status</summary>
 		Public Property [MaritalStatus] As Int16?
-		'''<![CDATA[Middle name]]>
+		'''<summary>Middle name</summary>
 		Public Property [MiddleName] As String
-		'''<![CDATA[Mobile phone]]>
+		'''<summary>Mobile phone</summary>
 		Public Property [Mobile] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Municipality]]>
+		'''<summary>Municipality</summary>
 		Public Property [Municipality] As String
 		Public Property [NameComposition] As Int16?
-		'''<![CDATA[Nationality]]>
+		'''<summary>Nationality</summary>
 		Public Property [Nationality] As String
-		'''<![CDATA[Nick name]]>
+		'''<summary>Nick name</summary>
 		Public Property [NickName] As String
-		'''<![CDATA[Additional notes]]>
+		'''<summary>Additional notes</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Name of partner]]>
+		'''<summary>Name of partner</summary>
 		Public Property [PartnerName] As String
-		'''<![CDATA[Middle name of partner]]>
+		'''<summary>Middle name of partner</summary>
 		Public Property [PartnerNamePrefix] As String
-		'''<![CDATA[Reference to the persons table in which the personal data of the employee is stored]]>
+		'''<summary>Reference to the persons table in which the personal data of the employee is stored</summary>
 		Public Property [Person] As Guid?
-		'''<![CDATA[Phone number]]>
+		'''<summary>Phone number</summary>
 		Public Property [Phone] As String
-		'''<![CDATA[Phone number extension]]>
+		'''<summary>Phone number extension</summary>
 		Public Property [PhoneExtension] As String
-		'''<![CDATA[Filename of picture]]>
+		'''<summary>Filename of picture</summary>
 		Public Property [PictureFileName] As String
-		'''<![CDATA[Url of picture]]>
+		'''<summary>Url of picture</summary>
 		Public Property [PictureUrl] As String
-		'''<![CDATA[Postcode]]>
+		'''<summary>Postcode</summary>
 		Public Property [Postcode] As String
-		'''<![CDATA[Private email address]]>
+		'''<summary>Private email address</summary>
 		Public Property [PrivateEmail] As String
-		'''<![CDATA[Social security number]]>
+		'''<summary>Social security number</summary>
 		Public Property [SocialSecurityNumber] As String
-		'''<![CDATA[Start date of the employee]]>
+		'''<summary>Start date of the employee</summary>
 		Public Property [StartDate] As DateTime?
-		'''<![CDATA[State]]>
+		'''<summary>State</summary>
 		Public Property [State] As String
-		'''<![CDATA[Title]]>
+		'''<summary>Title</summary>
 		Public Property [Title] As String
-		'''<![CDATA[User ID of employee]]>
+		'''<summary>User ID of employee</summary>
 		Public Property [User] As Guid?
-		'''<![CDATA[Name of user]]>
+		'''<summary>Name of user</summary>
 		Public Property [UserFullName] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [Employment]
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Employee ID]]>
+		'''<summary>Employee ID</summary>
 		Public Property [Employee] As Guid?
-		'''<![CDATA[Name of employee]]>
+		'''<summary>Name of employee</summary>
 		Public Property [EmployeeFullName] As String
-		'''<![CDATA[Numeric number of Employee]]>
+		'''<summary>Numeric number of Employee</summary>
 		Public Property [EmployeeHID] As Int32?
-		'''<![CDATA[End date of employment]]>
+		'''<summary>End date of employment</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[Numeric ID of the employment]]>
+		'''<summary>Numeric ID of the employment</summary>
 		Public Property [HID] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[ID of employment ended]]>
+		'''<summary>ID of employment ended</summary>
 		Public Property [ReasonEnd] As Int32?
-		'''<![CDATA[Reason of end of employment]]>
+		'''<summary>Reason of end of employment</summary>
 		Public Property [ReasonEndDescription] As String
-		'''<![CDATA[Reason of ended flexible employment]]>
+		'''<summary>Reason of ended flexible employment</summary>
 		Public Property [ReasonEndFlex] As Int32?
-		'''<![CDATA[Other reason for end of employment]]>
+		'''<summary>Other reason for end of employment</summary>
 		Public Property [ReasonEndFlexDescription] As String
-		'''<![CDATA[Start date of employment]]>
+		'''<summary>Start date of employment</summary>
 		Public Property [StartDate] As DateTime?
-		'''<![CDATA[Start date of the employee in the organization. This field is used to count the years in service.]]>
+		'''<summary>Start date of the employee in the organization. This field is used to count the years in service.</summary>
 		Public Property [StartDateOrganization] As DateTime?
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [EmploymentContract]
-		'''<![CDATA[Flexible employment contract phase]]>
+		'''<summary>Flexible employment contract phase</summary>
 		Public Property [ContractFlexPhase] As Int32?
-		'''<![CDATA[Flexible employment contract phase description.]]>
+		'''<summary>Flexible employment contract phase description.</summary>
 		Public Property [ContractFlexPhaseDescription] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Document ID of the employment contract]]>
+		'''<summary>Document ID of the employment contract</summary>
 		Public Property [Document] As Guid?
-		'''<![CDATA[ID of employee]]>
+		'''<summary>ID of employee</summary>
 		Public Property [Employee] As Guid?
-		'''<![CDATA[Name of employee]]>
+		'''<summary>Name of employee</summary>
 		Public Property [EmployeeFullName] As String
-		'''<![CDATA[Numeric ID of the employee]]>
+		'''<summary>Numeric ID of the employee</summary>
 		Public Property [EmployeeHID] As Int32?
-		'''<![CDATA[Type of employee. 1 - Employee, 2 - Contractor, 3 - Temporary, 4 - Student, 5 - Flexworker]]>
+		'''<summary>Type of employee. 1 - Employee, 2 - Contractor, 3 - Temporary, 4 - Student, 5 - Flexworker</summary>
 		Public Property [EmployeeType] As Int32?
-		'''<![CDATA[Employee type description]]>
+		'''<summary>Employee type description</summary>
 		Public Property [EmployeeTypeDescription] As String
-		'''<![CDATA[Employment ID]]>
+		'''<summary>Employment ID</summary>
 		Public Property [Employment] As Guid?
-		'''<![CDATA[Numeric ID of the employment]]>
+		'''<summary>Numeric ID of the employment</summary>
 		Public Property [EmploymentHID] As Int32?
-		'''<![CDATA[End date of employment contract]]>
+		'''<summary>End date of employment contract</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Notes of employment contract]]>
+		'''<summary>Notes of employment contract</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Employment probation end date]]>
+		'''<summary>Employment probation end date</summary>
 		Public Property [ProbationEndDate] As DateTime?
-		'''<![CDATA[Employment probation period]]>
+		'''<summary>Employment probation period</summary>
 		Public Property [ProbationPeriod] As Int32?
-		'''<![CDATA[Employment contract reason code. 1 - New employment, 2 - Employment change, 3 - New legal employer, 4 - Acquisition 5 - Previous contract expired, 6 - Other]]>
+		'''<summary>Employment contract reason code. 1 - New employment, 2 - Employment change, 3 - New legal employer, 4 - Acquisition 5 - Previous contract expired, 6 - Other</summary>
 		Public Property [ReasonContract] As Int32?
-		'''<![CDATA[Employment contract reason description]]>
+		'''<summary>Employment contract reason description</summary>
 		Public Property [ReasonContractDescription] As String
-		'''<![CDATA[Sequence number]]>
+		'''<summary>Sequence number</summary>
 		Public Property [Sequence] As Int32?
-		'''<![CDATA[Start date of employment contract]]>
+		'''<summary>Start date of employment contract</summary>
 		Public Property [StartDate] As DateTime?
-		'''<![CDATA[Type of employment contract. 1 - Definite, 2 - Indefinite, 3 - External]]>
+		'''<summary>Type of employment contract. 1 - Definite, 2 - Indefinite, 3 - External</summary>
 		Public Property [Type] As Int32?
-		'''<![CDATA[Description of employment contract type]]>
+		'''<summary>Description of employment contract type</summary>
 		Public Property [TypeDescription] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [EmploymentContractFlexPhas]
-		'''<![CDATA[Flexible employment contract phase description]]>
+		'''<summary>Flexible employment contract phase description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Int32
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [EmploymentEndReason]
-		'''<![CDATA[Employment end reason description]]>
+		'''<summary>Employment end reason description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Int32
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [EmploymentOrganization]
-		'''<![CDATA[Cost center code]]>
+		'''<summary>Cost center code</summary>
 		Public Property [CostCenter] As String
-		'''<![CDATA[Description of cost center]]>
+		'''<summary>Description of cost center</summary>
 		Public Property [CostCenterDescription] As String
-		'''<![CDATA[Cost unit code]]>
+		'''<summary>Cost unit code</summary>
 		Public Property [CostUnit] As String
-		'''<![CDATA[Description of cost unit]]>
+		'''<summary>Description of cost unit</summary>
 		Public Property [CostUnitDescription] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[ID of department]]>
+		'''<summary>ID of department</summary>
 		Public Property [Department] As Guid?
-		'''<![CDATA[Department code]]>
+		'''<summary>Department code</summary>
 		Public Property [DepartmentCode] As String
-		'''<![CDATA[Department description for organization]]>
+		'''<summary>Department description for organization</summary>
 		Public Property [DepartmentDescription] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		Public Property [Division] As Int32?
-		'''<![CDATA[ID of employee]]>
+		'''<summary>ID of employee</summary>
 		Public Property [Employee] As Guid?
-		'''<![CDATA[Name of employee]]>
+		'''<summary>Name of employee</summary>
 		Public Property [EmployeeFullName] As String
-		'''<![CDATA[Numeric ID of the employee]]>
+		'''<summary>Numeric ID of the employee</summary>
 		Public Property [EmployeeHID] As Int32?
-		'''<![CDATA[Employement ID]]>
+		'''<summary>Employement ID</summary>
 		Public Property [Employment] As Guid?
-		'''<![CDATA[Numeric ID of the employment]]>
+		'''<summary>Numeric ID of the employment</summary>
 		Public Property [EmploymentHID] As Int32?
-		'''<![CDATA[Organization end date]]>
+		'''<summary>Organization end date</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[ID of job title]]>
+		'''<summary>ID of job title</summary>
 		Public Property [JobTitle] As Guid?
-		'''<![CDATA[Job title code]]>
+		'''<summary>Job title code</summary>
 		Public Property [JobTitleCode] As String
-		'''<![CDATA[Job title description]]>
+		'''<summary>Job title description</summary>
 		Public Property [JobTitleDescription] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Explanation or extra information can be stored in the notes]]>
+		'''<summary>Explanation or extra information can be stored in the notes</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Organization start date]]>
+		'''<summary>Organization start date</summary>
 		Public Property [StartDate] As DateTime?
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [EmploymentSalary]
-		'''<![CDATA[The average number of contract days that an employee works per week]]>
+		'''<summary>The average number of contract days that an employee works per week</summary>
 		Public Property [AverageDaysPerWeek] As Double?
-		'''<![CDATA[The average number of contract hours that an employee works per week]]>
+		'''<summary>The average number of contract hours that an employee works per week</summary>
 		Public Property [AverageHoursPerWeek] As Double?
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Employee ID]]>
+		'''<summary>Employee ID</summary>
 		Public Property [Employee] As Guid?
-		'''<![CDATA[Name of employee]]>
+		'''<summary>Name of employee</summary>
 		Public Property [EmployeeFullName] As String
-		'''<![CDATA[Employee number]]>
+		'''<summary>Employee number</summary>
 		Public Property [EmployeeHID] As Int32?
-		'''<![CDATA[Employment]]>
+		'''<summary>Employment</summary>
 		Public Property [Employment] As Guid?
-		'''<![CDATA[Employment number]]>
+		'''<summary>Employment number</summary>
 		Public Property [EmploymentHID] As Int32?
-		'''<![CDATA[Salary type of employment. 1 - Periodical (fixed), 2 - Per hour (variable)]]>
+		'''<summary>Salary type of employment. 1 - Periodical (fixed), 2 - Per hour (variable)</summary>
 		Public Property [EmploymentSalaryType] As Int32?
-		'''<![CDATA[Salary type description]]>
+		'''<summary>Salary type description</summary>
 		Public Property [EmploymentSalaryTypeDescription] As String
-		'''<![CDATA[Salary record end date]]>
+		'''<summary>Salary record end date</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[Salary when working fulltime]]>
+		'''<summary>Salary when working fulltime</summary>
 		Public Property [FulltimeAmount] As Double?
-		'''<![CDATA[Hourly wage]]>
+		'''<summary>Hourly wage</summary>
 		Public Property [HourlyWage] As Double?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Internal rate for time & billing or professional service user]]>
+		'''<summary>Internal rate for time &amp; billing or professional service user</summary>
 		Public Property [InternalRate] As Double?
-		'''<![CDATA[Employee job level in context of a wage scale]]>
+		'''<summary>Employee job level in context of a wage scale</summary>
 		Public Property [JobLevel] As Int32?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Salary when working parttime]]>
+		'''<summary>Salary when working parttime</summary>
 		Public Property [ParttimeAmount] As Double?
-		'''<![CDATA[Contract hours / Fulltime contract hours]]>
+		'''<summary>Contract hours / Fulltime contract hours</summary>
 		Public Property [ParttimeFactor] As Double?
-		'''<![CDATA[Employee wage scale]]>
+		'''<summary>Employee wage scale</summary>
 		Public Property [Scale] As String
-		'''<![CDATA[Employment schedule]]>
+		'''<summary>Employment schedule</summary>
 		Public Property [Schedule] As Guid?
-		'''<![CDATA[Employment schedule code]]>
+		'''<summary>Employment schedule code</summary>
 		Public Property [ScheduleCode] As String
-		'''<![CDATA[Description of employment schedule]]>
+		'''<summary>Description of employment schedule</summary>
 		Public Property [ScheduleDescription] As String
-		'''<![CDATA[Salary record start date]]>
+		'''<summary>Salary record start date</summary>
 		Public Property [StartDate] As DateTime?
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [TaxEmploymentEndFlexCode]
-		'''<![CDATA[Code of flexible employment contract phase]]>
+		'''<summary>Code of flexible employment contract phase</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description of flexible employment contract phase]]>
+		'''<summary>Description of flexible employment contract phase</summary>
 		Public Property [Description] As String
-		'''<![CDATA[End date of flexible employment contract]]>
+		'''<summary>End date of flexible employment contract</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Start date of flexible employment contract phase]]>
+		'''<summary>Start date of flexible employment contract phase</summary>
 		Public Property [StartDate] As DateTime?
 	End Class
 

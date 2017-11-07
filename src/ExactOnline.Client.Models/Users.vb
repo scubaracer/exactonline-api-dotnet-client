@@ -1,162 +1,168 @@
-' Last generated on 2017-05-05 12:58:35Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace Users
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("UserID")>
 	Public Class [User]
-		'''<![CDATA[Birth date]]>
+		'''<summary>Birth date</summary>
 		Public Property [BirthDate] As DateTime?
-		'''<![CDATA[Birth name]]>
+		'''<summary>Birth name</summary>
 		Public Property [BirthName] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of the creator]]>
+		'''<summary>User ID of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of the creator]]>
+		'''<summary>Name of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Customer the user belongs to]]>
+		'''<summary>Customer the user belongs to</summary>
 		Public Property [Customer] As Guid
-		'''<![CDATA[Name of Customer]]>
+		'''<summary>Name of Customer</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CustomerName] As String
-		'''<![CDATA[Email address of the user]]>
+		'''<summary>Email address of the user</summary>
 		Public Property [Email] As String
-		'''<![CDATA[Date after which the user login is disabled. NULL means no enddate]]>
+		'''<summary>Date after which the user login is disabled. NULL means no enddate</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[First name]]>
+		'''<summary>First name</summary>
 		Public Property [FirstName] As String
-		'''<![CDATA[Full name of the user]]>
+		'''<summary>Full name of the user</summary>
 		Public Property [FullName] As String
-		'''<![CDATA[Gender: M=Male, V=Female, O=Unknown]]>
+		'''<summary>Gender: M=Male, V=Female, O=Unknown</summary>
 		Public Property [Gender] As String
-		'''<![CDATA[Initials]]>
+		'''<summary>User has completed registration of Two-Step verification</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [HasRegisteredForTwoStepVerification] As Boolean
+		'''<summary>User must use Two-Step verification to log in</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [HasTwoStepVerification] As Boolean
+		'''<summary>Initials</summary>
 		Public Property [Initials] As String
-		'''<![CDATA[Language (culture) that is used in Exact Online]]>
+		'''<summary>Language (culture) that is used in Exact Online</summary>
 		Public Property [Language] As String
-		'''<![CDATA[The last time this user logged in]]>
+		'''<summary>The last time this user logged in</summary>
 		Public Property [LastLogin] As DateTime?
-		'''<![CDATA[Last name]]>
+		'''<summary>Last name</summary>
 		Public Property [LastName] As String
-		'''<![CDATA[Middle name]]>
+		'''<summary>Middle name</summary>
 		Public Property [MiddleName] As String
-		'''<![CDATA[Mobile phone]]>
+		'''<summary>Mobile phone</summary>
 		Public Property [Mobile] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of the last modifier]]>
+		'''<summary>User ID of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of the last modifier]]>
+		'''<summary>Name of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Nationality]]>
+		'''<summary>Nationality</summary>
 		Public Property [Nationality] As String
-		'''<![CDATA[Remarks]]>
+		'''<summary>Remarks</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Phone number]]>
+		'''<summary>Phone number</summary>
 		Public Property [Phone] As String
-		'''<![CDATA[Phone number extension]]>
+		'''<summary>Phone number extension</summary>
 		Public Property [PhoneExtension] As String
-		'''<![CDATA[Profile code]]>
+		'''<summary>Profile code</summary>
 		Public Property [ProfileCode] As String
-		'''<![CDATA[Startdate after which the login is allowed. If the start date is NULL the login is allowed as well]]>
+		'''<summary>Startdate after which the login is allowed. If the start date is NULL the login is allowed as well</summary>
 		Public Property [StartDate] As DateTime?
-		'''<![CDATA[Start Division]]>
+		'''<summary>Start Division</summary>
 		Public Property [StartDivision] As Int32
-		'''<![CDATA[Title]]>
+		'''<summary>Title</summary>
 		Public Property [Title] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [UserID] As Guid
-		'''<![CDATA[Login name of the user]]>
+		'''<summary>Login name of the user</summary>
 		Public Property [UserName] As String
-		'''<![CDATA[Collection of user roles]]>
+		'''<summary>Collection of user roles</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [UserRoles] As IEnumerable(Of Models.Accountancy.InvolvedUserRole)
-		'''<![CDATA[Collection of user roles per division]]>
+		'''<summary>Collection of user roles per division</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [UserRolesPerDivision] As IEnumerable(Of Models.Users.UserRolesPerDivision)
-		'''<![CDATA[Obsolete]]>
+		'''<summary>Obsolete</summary>
 		Public Property [UserTypesList] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [UserRole]
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of the creator]]>
+		'''<summary>User ID of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of the creator]]>
+		'''<summary>Name of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Indicates the date and time when te role becomes inactive for the user]]>
+		'''<summary>Indicates the date and time when te role becomes inactive for the user</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of the last modifier]]>
+		'''<summary>User ID of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of the last modifier]]>
+		'''<summary>Name of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[The role that the user is linked to]]>
+		'''<summary>The role that the user is linked to</summary>
 		Public Property [Role] As Int32
-		'''<![CDATA[Rolelevel sets the level on which a role for a user is active. This can be: 1 = Database, 2 = Customer, 3 = Division, 100 = Transferred to accountant]]>
+		'''<summary>Rolelevel sets the level on which a role for a user is active. This can be: 1 = Database, 2 = Customer, 3 = Division, 100 = Transferred to accountant</summary>
 		Public Property [RoleLevel] As Int32
-		'''<![CDATA[Indicates the date when the role becomes active for the user]]>
+		'''<summary>Indicates the date when the role becomes active for the user</summary>
 		Public Property [StartDate] As DateTime
-		'''<![CDATA[The user that is linked to the role]]>
+		'''<summary>The user that is linked to the role</summary>
 		Public Property [UserID] As Guid?
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [UserRolesPerDivision]
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of the creator]]>
+		'''<summary>User ID of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of the creator]]>
+		'''<summary>Name of the creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		Public Property [Division] As Int32
-		'''<![CDATA[Indicates the date and time when te role becomes inactive for the user]]>
+		'''<summary>Indicates the date and time when te role becomes inactive for the user</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of the last modifier]]>
+		'''<summary>User ID of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of the last modifier]]>
+		'''<summary>Name of the last modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[The role that the user is linked to]]>
+		'''<summary>The role that the user is linked to</summary>
 		Public Property [Role] As Int32
-		'''<![CDATA[Rolelevel sets the level on which a role for a user is active. This can be: 1 = Database, 2 = Customer, 3 = Division, 100 = Transferred to accountant]]>
+		'''<summary>Rolelevel sets the level on which a role for a user is active. This can be: 1 = Database, 2 = Customer, 3 = Division, 100 = Transferred to accountant</summary>
 		Public Property [RoleLevel] As Int32
-		'''<![CDATA[Indicates the date when the role becomes active for the user]]>
+		'''<summary>Indicates the date when the role becomes active for the user</summary>
 		Public Property [StartDate] As DateTime
-		'''<![CDATA[The user that is linked to the role]]>
+		'''<summary>The user that is linked to the role</summary>
 		Public Property [UserID] As Guid?
 	End Class
 

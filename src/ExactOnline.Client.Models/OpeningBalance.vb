@@ -1,80 +1,80 @@
-' Last generated on 2017-05-05 12:58:35Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace OpeningBalance
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("Division,ReportingYear,GLAccount")>
 	Public Class [OpeningBalanceAfterEntry]
-		'''<![CDATA[The opening balance amount of the G/L account.]]>
+		'''<summary>The opening balance amount of the G/L account.</summary>
 		Public Property [Amount] As Double?
-		'''<![CDATA[Indicates whether the G/L account is a debit or credit account. D = Debit, C = Credit.]]>
+		'''<summary>Indicates whether the G/L account is a debit or credit account. D = Debit, C = Credit.</summary>
 		Public Property [BalanceSide] As String
-		'''<![CDATA[Division code.]]>
+		'''<summary>Division code.</summary>
 		Public Property [Division] As Int32
-		'''<![CDATA[The balance sheet account.]]>
+		'''<summary>The balance sheet account.</summary>
 		Public Property [GLAccount] As Guid
-		'''<![CDATA[The code of the G/L account.]]>
+		'''<summary>The code of the G/L account.</summary>
 		Public Property [GLAccountCode] As String
-		'''<![CDATA[The description of the G/L account.]]>
+		'''<summary>The description of the G/L account.</summary>
 		Public Property [GLAccountDescription] As String
-		'''<![CDATA[The reporting year of the opening balance.]]>
+		'''<summary>The reporting year of the opening balance.</summary>
 		Public Property [ReportingYear] As Int32
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("Division,ReportingYear,GLAccount")>
 	Public Class [OpeningBalancePreviousYearAfterEntry]
-		'''<![CDATA[The opening balance amount of the G/L account.]]>
+		'''<summary>The opening balance amount of the G/L account.</summary>
 		Public Property [Amount] As Double?
-		'''<![CDATA[Indicates whether the G/L account is a debit or credit account. D = Debit, C = Credit.]]>
+		'''<summary>Indicates whether the G/L account is a debit or credit account. D = Debit, C = Credit.</summary>
 		Public Property [BalanceSide] As String
-		'''<![CDATA[Division code.]]>
+		'''<summary>Division code.</summary>
 		Public Property [Division] As Int32
-		'''<![CDATA[The balance sheet account.]]>
+		'''<summary>The balance sheet account.</summary>
 		Public Property [GLAccount] As Guid
-		'''<![CDATA[The code of the G/L account.]]>
+		'''<summary>The code of the G/L account.</summary>
 		Public Property [GLAccountCode] As String
-		'''<![CDATA[The description of the G/L account.]]>
+		'''<summary>The description of the G/L account.</summary>
 		Public Property [GLAccountDescription] As String
-		'''<![CDATA[The reporting year of the opening balance.]]>
+		'''<summary>The reporting year of the opening balance.</summary>
 		Public Property [ReportingYear] As Int32
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("Division,ReportingYear,GLAccount")>
 	Public Class [OpeningBalancePreviousYearProcessed]
-		'''<![CDATA[The opening balance amount of the G/L account.]]>
+		'''<summary>The opening balance amount of the G/L account.</summary>
 		Public Property [Amount] As Double?
-		'''<![CDATA[Indicates whether the G/L account is a debit or credit account. D = Debit, C = Credit.]]>
+		'''<summary>Indicates whether the G/L account is a debit or credit account. D = Debit, C = Credit.</summary>
 		Public Property [BalanceSide] As String
-		'''<![CDATA[Division code.]]>
+		'''<summary>Division code.</summary>
 		Public Property [Division] As Int32
-		'''<![CDATA[The balance sheet account.]]>
+		'''<summary>The balance sheet account.</summary>
 		Public Property [GLAccount] As Guid
-		'''<![CDATA[The code of the G/L account.]]>
+		'''<summary>The code of the G/L account.</summary>
 		Public Property [GLAccountCode] As String
-		'''<![CDATA[The description of the G/L account.]]>
+		'''<summary>The description of the G/L account.</summary>
 		Public Property [GLAccountDescription] As String
-		'''<![CDATA[The reporting year of the opening balance.]]>
+		'''<summary>The reporting year of the opening balance.</summary>
 		Public Property [ReportingYear] As Int32
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("Division,ReportingYear,GLAccount")>
 	Public Class [OpeningBalanceProcessed]
-		'''<![CDATA[The opening balance amount of the G/L account.]]>
+		'''<summary>The opening balance amount of the G/L account.</summary>
 		Public Property [Amount] As Double?
-		'''<![CDATA[Indicates whether the G/L account is a debit or credit account. D = Debit, C = Credit.]]>
+		'''<summary>Indicates whether the G/L account is a debit or credit account. D = Debit, C = Credit.</summary>
 		Public Property [BalanceSide] As String
-		'''<![CDATA[Division code.]]>
+		'''<summary>Division code.</summary>
 		Public Property [Division] As Int32
-		'''<![CDATA[The balance sheet account.]]>
+		'''<summary>The balance sheet account.</summary>
 		Public Property [GLAccount] As Guid
-		'''<![CDATA[The code of the G/L account.]]>
+		'''<summary>The code of the G/L account.</summary>
 		Public Property [GLAccountCode] As String
-		'''<![CDATA[The description of the G/L account.]]>
+		'''<summary>The description of the G/L account.</summary>
 		Public Property [GLAccountDescription] As String
-		'''<![CDATA[The reporting year of the opening balance.]]>
+		'''<summary>The reporting year of the opening balance.</summary>
 		Public Property [ReportingYear] As Int32
 	End Class
 

@@ -1,95 +1,95 @@
-' Last generated on 2017-05-05 12:58:35Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace System
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [AccountantInfo]
-		'''<![CDATA[First address line.]]>
+		'''<summary>First address line.</summary>
 		Public Property [AddressLine1] As String
-		'''<![CDATA[Second address line.]]>
+		'''<summary>Second address line.</summary>
 		Public Property [AddressLine2] As String
-		'''<![CDATA[Third address line.]]>
+		'''<summary>Third address line.</summary>
 		Public Property [AddressLine3] As String
-		'''<![CDATA[City.]]>
+		'''<summary>City.</summary>
 		Public Property [City] As String
-		'''<![CDATA[Email.]]>
+		'''<summary>Email.</summary>
 		Public Property [Email] As String
-		'''<![CDATA[The account ID of the accountant.]]>
+		'''<summary>The account ID of the accountant.</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Indicates if the customer is an accountant himself.]]>
+		'''<summary>Indicates if the customer is an accountant himself.</summary>
 		Public Property [IsAccountant] As Boolean
-		'''<![CDATA[Logo.]]>
+		'''<summary>Logo.</summary>
 		Public Property [Logo] As Byte()
-		'''<![CDATA[Url to retrieve the logo of the accountant.]]>
+		'''<summary>Url to retrieve the logo of the accountant.</summary>
 		Public Property [MenuLogoUrl] As String
-		'''<![CDATA[The name of the accountant.]]>
+		'''<summary>The name of the accountant.</summary>
 		Public Property [Name] As String
-		'''<![CDATA[Phone.]]>
+		'''<summary>Phone.</summary>
 		Public Property [Phone] As String
-		'''<![CDATA[Postcode.]]>
+		'''<summary>Postcode.</summary>
 		Public Property [Postcode] As String
-		'''<![CDATA[Website.]]>
+		'''<summary>Website.</summary>
 		Public Property [Website] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [AvailableFeature]
-		'''<![CDATA[The description of the feature.]]>
+		'''<summary>The description of the feature.</summary>
 		Public Property [Description] As String
-		'''<![CDATA[The ID of the feature.]]>
+		'''<summary>The ID of the feature.</summary>
 		Public Property [ID] As Int32
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("Code")>
 	Public Class [Division]
-		'''<![CDATA[Address line 1]]>
+		'''<summary>Address line 1</summary>
 		Public Property [AddressLine1] As String
-		'''<![CDATA[Address line 2]]>
+		'''<summary>Address line 2</summary>
 		Public Property [AddressLine2] As String
-		'''<![CDATA[Address line 3]]>
+		'''<summary>Address line 3</summary>
 		Public Property [AddressLine3] As String
-		'''<![CDATA[Chamber of commerce number]]>
+		'''<summary>Chamber of commerce number</summary>
 		Public Property [ChamberOfCommerceNumber] As String
-		'''<![CDATA[City]]>
+		'''<summary>City</summary>
 		Public Property [City] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [Code] As Int32
-		'''<![CDATA[Country of the division. Is used for determination of legislation]]>
+		'''<summary>Country of the division. Is used for determination of legislation</summary>
 		Public Property [Country] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime
-		'''<![CDATA[Default currency]]>
+		'''<summary>Default currency</summary>
 		Public Property [Currency] As String
-		'''<![CDATA[True when this division is most recently used by the API]]>
+		'''<summary>True when this division is most recently used by the API</summary>
 		Public Property [Current] As Boolean
-		'''<![CDATA[Owner account of the division]]>
+		'''<summary>Owner account of the division</summary>
 		Public Property [Customer] As Guid?
-		'''<![CDATA[Owner account code of the division]]>
+		'''<summary>Owner account code of the division</summary>
 		Public Property [CustomerCode] As String
-		'''<![CDATA[Owner account name of the division]]>
+		'''<summary>Owner account name of the division</summary>
 		Public Property [CustomerName] As String
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Email address]]>
+		'''<summary>Email address</summary>
 		Public Property [Email] As String
-		'''<![CDATA[Company number that is assigned by the customer]]>
+		'''<summary>Company number that is assigned by the customer</summary>
 		Public Property [Hid] As Int64
-		'''<![CDATA[True if the division is the main division]]>
+		'''<summary>True if the division is the main division</summary>
 		Public Property [IsMainDivision] As Boolean
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime
-		'''<![CDATA[Phone number]]>
+		'''<summary>Phone number</summary>
 		Public Property [Phone] As String
-		'''<![CDATA[Postcode]]>
+		'''<summary>Postcode</summary>
 		Public Property [Postcode] As String
-		'''<![CDATA[State/Province code]]>
+		'''<summary>State/Province code</summary>
 		Public Property [State] As String
-		'''<![CDATA[Follow the Division Status 0 for Inactive, 1 for Active and 2 for Archived Divisions]]>
+		'''<summary>Follow the Division Status 0 for Inactive, 1 for Active and 2 for Archived Divisions</summary>
 		Public Property [Status] As Int32
-		'''<![CDATA[The number under which the account is known at the Value Added Tax collection agency]]>
+		'''<summary>The number under which the account is known at the Value Added Tax collection agency</summary>
 		Public Property [VATNumber] As String
 	End Class
 

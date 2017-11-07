@@ -49,7 +49,7 @@ namespace ExactOnline.Client.Sdk.UserAcceptanceTests.UserLevel
 			var costTransactionCollection = client.For<CostTransaction>().Select("ID").Get();
 			var costunitCollection = client.For<Costunit>().Select("ID").Get();
 			var divisionCollection = client.For<Division>().Select("HID").Get();
-			var documentCollection = client.For<Models.Documents.Document>().Select("ID").Get();
+			var documentCollection = client.For<Client.Models.Documents.Document>().Select("ID").Get();
 			var documentAttachmentCollection = client.For<DocumentAttachment>().Select("ID").Get();
 			var documentCategoryCollection = client.For<DocumentCategory>().Select("ID").Get();
 			var documentTypeCollection = client.For<DocumentType>().Select("ID").Get();
@@ -83,7 +83,7 @@ namespace ExactOnline.Client.Sdk.UserAcceptanceTests.UserLevel
 			var shopOrderMaterialPlanCollection = client.For<ShopOrderMaterialPlan>().Select("ID").Get();
 			var shopOrderRoutingStepPlanCollection = client.For<ShopOrderRoutingStepPlan>().Select("ID").Get();
 			var taxDocumentCollection = client.For<Return>().Select("DocumentID").Get();
-			var timeTransactionCollection = client.For<Models.Project.TimeTransaction>().Select("ID").Get();
+			var timeTransactionCollection = client.For<Client.Models.Project.TimeTransaction>().Select("ID").Get();
 			var unitCollection = client.For<Unit>().Select("ID").Get();
 			var userCollection = client.For<User>().Select("UserID").Get();
 			var userRoleCollection = client.For<UserRole>().Select("ID").Get();

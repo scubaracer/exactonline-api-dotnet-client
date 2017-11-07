@@ -1,63 +1,63 @@
-' Last generated on 2017-05-05 12:58:35Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace Current
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("UserID")>
 	Public Class [Me]
-		'''<![CDATA[Division number that is currently used in the API. You should use a division number in the url]]>
+		'''<summary>Division number that is currently used in the API. You should use a division number in the url</summary>
 		Public Property [CurrentDivision] As Int32
-		'''<![CDATA[Owner account of the division]]>
+		'''<summary>Owner account of the division</summary>
 		Public Property [DivisionCustomer] As Guid?
-		'''<![CDATA[Owner account code of the division]]>
+		'''<summary>Owner account code of the division</summary>
 		Public Property [DivisionCustomerCode] As String
-		'''<![CDATA[Owner account name of the division]]>
+		'''<summary>Owner account name of the division</summary>
 		Public Property [DivisionCustomerName] As String
-		'''<![CDATA[Email address of the user]]>
+		'''<summary>Email address of the user</summary>
 		Public Property [Email] As String
-		'''<![CDATA[Employee ID]]>
+		'''<summary>Employee ID</summary>
 		Public Property [EmployeeID] As Guid
-		'''<![CDATA[First name]]>
+		'''<summary>First name</summary>
 		Public Property [FirstName] As String
-		'''<![CDATA[Full name of the user]]>
+		'''<summary>Full name of the user</summary>
 		Public Property [FullName] As String
-		'''<![CDATA[Gender: M=Male, V=Female, O=Unknown]]>
+		'''<summary>Gender: M=Male, V=Female, O=Unknown</summary>
 		Public Property [Gender] As String
-		'''<![CDATA[Initials]]>
+		'''<summary>Initials</summary>
 		Public Property [Initials] As String
-		'''<![CDATA[Language spoken by this user]]>
+		'''<summary>Language spoken by this user</summary>
 		Public Property [Language] As String
-		'''<![CDATA[Language (culture) that is used in Exact Online]]>
+		'''<summary>Language (culture) that is used in Exact Online</summary>
 		Public Property [LanguageCode] As String
-		'''<![CDATA[Last name]]>
+		'''<summary>Last name</summary>
 		Public Property [LastName] As String
-		'''<![CDATA[Legislation]]>
+		'''<summary>Legislation</summary>
 		Public Property [Legislation] As Int64
-		'''<![CDATA[Middle name]]>
+		'''<summary>Middle name</summary>
 		Public Property [MiddleName] As String
-		'''<![CDATA[Mobile phone]]>
+		'''<summary>Mobile phone</summary>
 		Public Property [Mobile] As String
-		'''<![CDATA[Nationality]]>
+		'''<summary>Nationality</summary>
 		Public Property [Nationality] As String
-		'''<![CDATA[Phone number]]>
+		'''<summary>Phone number</summary>
 		Public Property [Phone] As String
-		'''<![CDATA[Phone number extension]]>
+		'''<summary>Phone number extension</summary>
 		Public Property [PhoneExtension] As String
-		'''<![CDATA[Url that can be used to retrieve the picture of the user]]>
+		'''<summary>Url that can be used to retrieve the picture of the user</summary>
 		Public Property [PictureUrl] As String
-		'''<![CDATA[The current date and time in Exact Online]]>
+		'''<summary>The current date and time in Exact Online</summary>
 		Public Property [ServerTime] As String
-		'''<![CDATA[The time difference with UTC in seconds]]>
+		'''<summary>The time difference with UTC in seconds</summary>
 		Public Property [ServerUtcOffset] As Double
-		'''<![CDATA[Binary thumbnail picture of this user]]>
+		'''<summary>Binary thumbnail picture of this user</summary>
 		Public Property [ThumbnailPicture] As Byte()
-		'''<![CDATA[File type of the picture]]>
+		'''<summary>File type of the picture</summary>
 		Public Property [ThumbnailPictureFormat] As String
-		'''<![CDATA[Title]]>
+		'''<summary>Title</summary>
 		Public Property [Title] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [UserID] As Guid
-		'''<![CDATA[Login name of the user]]>
+		'''<summary>Login name of the user</summary>
 		Public Property [UserName] As String
 	End Class
 

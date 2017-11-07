@@ -1,50 +1,50 @@
-' Last generated on 2017-05-05 12:58:34Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace GeneralJournalEntry
 
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("EntryID")>
 	Public Class [GeneralJournalEntry]
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[Currency code]]>
+		'''<summary>Currency code</summary>
 		Public Property [Currency] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [EntryID] As Guid
-		'''<![CDATA[Entry number]]>
+		'''<summary>Entry number</summary>
 		Public Property [EntryNumber] As Int32?
-		'''<![CDATA[Exchange rate]]>
+		'''<summary>Exchange rate</summary>
 		Public Property [ExchangeRate] As Double?
-		'''<![CDATA[Financial period]]>
+		'''<summary>Financial period</summary>
 		Public Property [FinancialPeriod] As Int16?
-		'''<![CDATA[Financial year]]>
+		'''<summary>Financial year</summary>
 		Public Property [FinancialYear] As Int16?
-		'''<![CDATA[Collection of lines]]>
+		'''<summary>Collection of lines</summary>
 		Public Property [GeneralJournalEntryLines] As IEnumerable(Of Models.GeneralJournalEntry.GeneralJournalEntryLine)
-		'''<![CDATA[Code of Journal]]>
+		'''<summary>Code of Journal</summary>
 		Public Property [JournalCode] As String
-		'''<![CDATA[Description of Journal]]>
+		'''<summary>Description of Journal</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [JournalDescription] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[Indicates that amounts are reversed]]>
+		'''<summary>Indicates that amounts are reversed</summary>
 		Public Property [Reversal] As Boolean?
-		'''<![CDATA[Status: 5 = Rejected, 20 = Open, 50 = Processed]]>
+		'''<summary>Status: 5 = Rejected, 20 = Open, 50 = Processed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Status] As Int16?
-		'''<![CDATA[Description of Status]]>
+		'''<summary>Description of Status</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StatusDescription] As String
-		'''<![CDATA[Type: 10 = Opening balance, 90 = Other]]>
+		'''<summary>Type: 10 = Opening balance, 90 = Other</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Type] As Int32?
-		'''<![CDATA[Description of Type]]>
+		'''<summary>Description of Type</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [TypeDescription] As String
 	End Class
@@ -52,122 +52,122 @@ Namespace GeneralJournalEntry
 	<SupportedActionsSDK(True, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [GeneralJournalEntryLine]
-		'''<![CDATA[Reference to account]]>
+		'''<summary>Reference to account</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[Code of Account]]>
+		'''<summary>Code of Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountCode] As String
-		'''<![CDATA[Name of Account]]>
+		'''<summary>Name of Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[Amount in the default currency of the company, If an 'Including' VAT code is used this amount includes the VAT amount.]]>
+		'''<summary>Amount in the default currency of the company, If an &apos;Including&apos; VAT code is used this amount includes the VAT amount.</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AmountDC] As Double?
-		'''<![CDATA[Amount in the currency of the transaction. If an 'Including' VAT code is used this amount includes the VAT amount.]]>
+		'''<summary>Amount in the currency of the transaction. If an &apos;Including&apos; VAT code is used this amount includes the VAT amount.</summary>
 		Public Property [AmountFC] As Double?
-		'''<![CDATA[Vat amount in the default currency of the company.]]>
+		'''<summary>Vat amount in the default currency of the company.</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AmountVATDC] As Double?
-		'''<![CDATA[Vat amount in the currency of the transaction. If you want to set this in a POST you have to specify VATCode as well.]]>
+		'''<summary>Vat amount in the currency of the transaction. If you want to set this in a POST you have to specify VATCode as well.</summary>
 		Public Property [AmountVATFC] As Double?
-		'''<![CDATA[Reference to asset]]>
+		'''<summary>Reference to asset</summary>
 		Public Property [Asset] As Guid?
-		'''<![CDATA[Code of Asset]]>
+		'''<summary>Code of Asset</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AssetCode] As String
-		'''<![CDATA[Description of Asset]]>
+		'''<summary>Description of Asset</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AssetDescription] As String
-		'''<![CDATA[Reference to cost center]]>
+		'''<summary>Reference to cost center</summary>
 		Public Property [CostCenter] As String
-		'''<![CDATA[Description of CostCenter]]>
+		'''<summary>Description of CostCenter</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostCenterDescription] As String
-		'''<![CDATA[Reference to cost unit]]>
+		'''<summary>Reference to cost unit</summary>
 		Public Property [CostUnit] As String
-		'''<![CDATA[Description of CostUnit]]>
+		'''<summary>Description of CostUnit</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostUnitDescription] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Entry date]]>
+		'''<summary>Entry date</summary>
 		Public Property [Date] As DateTime?
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Reference to document]]>
+		'''<summary>Reference to document</summary>
 		Public Property [Document] As Guid?
-		'''<![CDATA[Document number]]>
+		'''<summary>Document number</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DocumentNumber] As Int32?
-		'''<![CDATA[Document subject]]>
+		'''<summary>Document subject</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DocumentSubject] As String
-		'''<![CDATA[Reference to header of the entry]]>
+		'''<summary>Reference to header of the entry</summary>
 		Public Property [EntryID] As Guid?
-		'''<![CDATA[Entry number of the header]]>
+		'''<summary>Entry number of the header</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [EntryNumber] As Int32?
-		'''<![CDATA[General ledger account]]>
+		'''<summary>General ledger account</summary>
 		Public Property [GLAccount] As Guid?
-		'''<![CDATA[Code of GLAccount]]>
+		'''<summary>Code of GLAccount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLAccountCode] As String
-		'''<![CDATA[Description of GLAccount]]>
+		'''<summary>Description of GLAccount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLAccountDescription] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Line number]]>
+		'''<summary>Line number</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [LineNumber] As Int32?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Extra remarks]]>
+		'''<summary>Extra remarks</summary>
 		Public Property [Notes] As String
 		Public Property [OffsetID] As Guid?
-		'''<![CDATA[Our ref of general journal entry]]>
+		'''<summary>Our ref of general journal entry</summary>
 		Public Property [OurRef] As Int32?
-		'''<![CDATA[Reference to project]]>
+		'''<summary>Reference to project</summary>
 		Public Property [Project] As Guid?
-		'''<![CDATA[Code of Project]]>
+		'''<summary>Code of Project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectCode] As String
-		'''<![CDATA[Description of Project]]>
+		'''<summary>Description of Project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA[Quantity]]>
+		'''<summary>Quantity</summary>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[VAT base amount in the default currency of the company]]>
+		'''<summary>VAT base amount in the default currency of the company</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [VATBaseAmountDC] As Double?
-		'''<![CDATA[VAT base amount in the currency of the transaction]]>
+		'''<summary>VAT base amount in the currency of the transaction</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [VATBaseAmountFC] As Double?
-		'''<![CDATA[VATCode can only be used if the general journal has VAT enabled. VAT Lines will be automatically created if the VATCode is specified when creating a new general journal entry.]]>
+		'''<summary>VATCode can only be used if the general journal has VAT enabled. VAT Lines will be automatically created if the VATCode is specified when creating a new general journal entry.</summary>
 		Public Property [VATCode] As String
-		'''<![CDATA[Description of VATCode]]>
+		'''<summary>Description of VATCode</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [VATCodeDescription] As String
-		'''<![CDATA[Vat percentage]]>
+		'''<summary>Vat percentage</summary>
 		Public Property [VATPercentage] As Double?
-		'''<![CDATA[The VAT type determines what the values are in relation to VAT returns. The following values are supported:<br>A Sales VAT to pay,<br>D Credit note extra duty to claim,<br>I Purchase basis,<br>M Credit note purchase non-deductible,<br>N Purchase non-deductible,<br>O Purchase VAT to claim,<br>P Purchase VAT to pay,<br>Q Credit note purchase VAT to claim,<br>R Extra duty to pay,<br>S No VAT,<br>V Sales basis,<br>W Credit note purchase basis,<br>X Credit note sales basis,<br>Y Credit note purchase VAT to pay,<br>Z Credit note sales VAT to claim]]>
+		'''<summary>The VAT type determines what the values are in relation to VAT returns. The following values are supported:&lt;br&gt;A Sales VAT to pay,&lt;br&gt;D Credit note extra duty to claim,&lt;br&gt;I Purchase basis,&lt;br&gt;M Credit note purchase non-deductible,&lt;br&gt;N Purchase non-deductible,&lt;br&gt;O Purchase VAT to claim,&lt;br&gt;P Purchase VAT to pay,&lt;br&gt;Q Credit note purchase VAT to claim,&lt;br&gt;R Extra duty to pay,&lt;br&gt;S No VAT,&lt;br&gt;V Sales basis,&lt;br&gt;W Credit note purchase basis,&lt;br&gt;X Credit note sales basis,&lt;br&gt;Y Credit note purchase VAT to pay,&lt;br&gt;Z Credit note sales VAT to claim</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [VATType] As String
 	End Class

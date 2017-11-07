@@ -1,208 +1,232 @@
-' Last generated on 2017-05-05 12:58:35Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace SalesEntry
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("EntryID")>
 	Public Class [SalesEntry]
-		'''<![CDATA[Amount in the default currency of the company. For the header lines (LineNumber = 0) of an entry this is the SUM(AmountDC) of all lines]]>
+		'''<summary>Amount in the default currency of the company. For the header lines (LineNumber = 0) of an entry this is the SUM(AmountDC) of all lines</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
-		Public Property [AmountDC] As Double?
-		'''<![CDATA[Amount in the currency of the transaction. For the header this is the sum of all lines, including VAT]]>
+		Public Property [AmountDC] As Double
+		'''<summary>Amount in the currency of the transaction. For the header this is the sum of all lines, including VAT</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
-		Public Property [AmountFC] As Double?
-		'''<![CDATA[The number of the batch of entries. Normally a batch consists of multiple entries. Batchnumbers are filled for invoices created by: - Fixed entries - Prolongation (only available with module hosting)]]>
+		Public Property [AmountFC] As Double
+		'''<summary>The number of the batch of entries. Normally a batch consists of multiple entries. Batchnumbers are filled for invoices created by: - Fixed entries - Prolongation (only available with module hosting)</summary>
 		Public Property [BatchNumber] As Int32?
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
-		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		Public Property [Created] As DateTime
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Currency for the invoice. By default this is the currency of the administration]]>
+		'''<summary>Currency for the invoice. By default this is the currency of the administration</summary>
 		Public Property [Currency] As String
-		'''<![CDATA[Reference to customer (account)]]>
+		'''<summary>Reference to customer (account)</summary>
 		Public Property [Customer] As Guid?
-		'''<![CDATA[Name of customer]]>
+		'''<summary>Name of customer</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CustomerName] As String
-		'''<![CDATA[Description. Can be different for header and lines]]>
+		'''<summary>Description. Can be different for header and lines</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
-		Public Property [Division] As Int32?
-		'''<![CDATA[Document that is manually linked to the invoice]]>
+		Public Property [Division] As Int32
+		'''<summary>Document that is manually linked to the invoice</summary>
 		Public Property [Document] As Guid?
-		'''<![CDATA[Number of the document]]>
+		'''<summary>Number of the document</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DocumentNumber] As Int32?
-		'''<![CDATA[Subject of the document]]>
+		'''<summary>Subject of the document</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DocumentSubject] As String
-		'''<![CDATA[The due date for payments. This date is calculated based on the EntryDate and the Paymentcondition]]>
+		'''<summary>The due date for payments. This date is calculated based on the EntryDate and the Paymentcondition</summary>
 		Public Property [DueDate] As DateTime?
-		'''<![CDATA[The date when the invoice is entered]]>
+		'''<summary>The date when the invoice is entered</summary>
 		Public Property [EntryDate] As DateTime?
-		'''<![CDATA[The unique ID of the entry. Via this ID all transaction lines of a single entry can be retrieved]]>
+		'''<summary>The unique ID of the entry. Via this ID all transaction lines of a single entry can be retrieved</summary>
 		Public Property [EntryID] As Guid
-		'''<![CDATA[Entry number]]>
+		'''<summary>Entry number</summary>
 		Public Property [EntryNumber] As Int32?
-		'''<![CDATA[Description of ExternalLink]]>
+		'''<summary>Description of ExternalLink</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ExternalLinkDescription] As String
-		'''<![CDATA[Reference of ExternalLink]]>
+		'''<summary>Reference of ExternalLink</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ExternalLinkReference] As String
-		'''<![CDATA[Assigned at entry or at printing depending on setting. The number assigned is based on the freenumbers as defined for the Journal. When printing the field InvoiceNumber is copied to the fields EntryNumber and InvoiceNumber of the sales entry]]>
+		'''<summary>A positive value of the amount indicates that the amount is to be paid by the customer to your G bank account.In case of a credit invoice the amount should have negative value when retrieved or posted to Exact.</summary>
+		Public Property [GAccountAmountFC] As Double?
+		'''<summary>Assigned at entry or at printing depending on setting. The number assigned is based on the freenumbers as defined for the Journal. When printing the field InvoiceNumber is copied to the fields EntryNumber and InvoiceNumber of the sales entry</summary>
 		Public Property [InvoiceNumber] As Int32?
-		'''<![CDATA[Indicates whether the invoice has extra duty]]>
+		'''<summary>Indicates whether the invoice has extra duty</summary>
 		Public Property [IsExtraDuty] As Boolean?
-		'''<![CDATA[The journal code. Every invoice should be linked to a sales journal]]>
+		'''<summary>The journal code. Every invoice should be linked to a sales journal</summary>
 		Public Property [Journal] As String
-		'''<![CDATA[Description of Journal]]>
+		'''<summary>Description of Journal</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [JournalDescription] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
-		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		Public Property [Modified] As DateTime
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Number to indentify the invoice. Order numbers are not unique. Default the number is based on a setting for the first free number]]>
+		'''<summary>Number to indentify the invoice. Order numbers are not unique. Default the number is based on a setting for the first free number</summary>
 		Public Property [OrderNumber] As Int32?
-		'''<![CDATA[The payment condition used for due date and discount calculation]]>
+		'''<summary>The payment condition used for due date and discount calculation</summary>
 		Public Property [PaymentCondition] As String
-		'''<![CDATA[Description of PaymentCondition]]>
+		'''<summary>Description of PaymentCondition</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [PaymentConditionDescription] As String
-		'''<![CDATA[The payment reference used for bank imports, VAT return and Tax reference]]>
+		'''<summary>The payment reference used for bank imports, VAT return and Tax reference</summary>
 		Public Property [PaymentReference] As String
 		Public Property [ProcessNumber] As Int32?
-		'''<![CDATA[Foreign currency rate]]>
+		'''<summary>Foreign currency rate</summary>
 		Public Property [Rate] As Double?
-		'''<![CDATA[The period of the transaction lines. The period should exist in the period date table]]>
+		'''<summary>The period of the transaction lines. The period should exist in the period date table</summary>
 		Public Property [ReportingPeriod] As Int16?
-		'''<![CDATA[The financial year to which the entry belongs. The financial year should exist in the period date table]]>
+		'''<summary>The financial year to which the entry belongs. The financial year should exist in the period date table</summary>
 		Public Property [ReportingYear] As Int16?
-		'''<![CDATA[Indicates if amounts are reversed]]>
-		Public Property [Reversal] As Boolean?
-		'''<![CDATA[Collection of lines]]>
+		'''<summary>Indicates if amounts are reversed</summary>
+		Public Property [Reversal] As Boolean
+		'''<summary>Collection of lines</summary>
 		Public Property [SalesEntryLines] As IEnumerable(Of Models.SalesEntry.SalesEntryLine)
-		'''<![CDATA[Status: 5 = Rejected, 20 = Open, 50 = Processed]]>
+		'''<summary>Status: 5 = Rejected, 20 = Open, 50 = Processed</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Status] As Int16?
-		'''<![CDATA[Description of Status]]>
+		'''<summary>Description of Status</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StatusDescription] As String
-		'''<![CDATA[Type: 20 = Sales entry, 21 = Sales credit note]]>
+		'''<summary>Type: 20 = Sales entry, 21 = Sales credit note</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
-		Public Property [Type] As Int32?
-		'''<![CDATA[Description of Type]]>
+		Public Property [Type] As Int32
+		'''<summary>Description of Type</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [TypeDescription] As String
-		'''<![CDATA[Vat amount in the default currency of the company]]>
+		'''<summary>Vat amount in the default currency of the company</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [VATAmountDC] As Double?
-		'''<![CDATA[Vat amount in the currency of the transaction]]>
+		'''<summary>Vat amount in the currency of the transaction</summary>
 		Public Property [VATAmountFC] As Double?
-		'''<![CDATA[The invoice number of the customer]]>
+		'''<summary>The invoice number of the customer</summary>
 		Public Property [YourRef] As String
 	End Class
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [SalesEntryLine]
-		'''<![CDATA[Amount in the default currency of the company. For almost all lines this can be calculated like: AmountDC = AmountFC * RateFC.]]>
+		'''<summary>Amount in the default currency of the company. For almost all lines this can be calculated like: AmountDC = AmountFC * RateFC.</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
-		Public Property [AmountDC] As Double?
-		'''<![CDATA[For normal lines it's the amount excluding VAT]]>
-		Public Property [AmountFC] As Double?
-		'''<![CDATA[Reference to Asset]]>
+		Public Property [AmountDC] As Double
+		'''<summary>For normal lines it&apos;s the amount excluding VAT</summary>
+		Public Property [AmountFC] As Double
+		'''<summary>Reference to Asset</summary>
 		Public Property [Asset] As Guid?
-		'''<![CDATA[Description of Asset]]>
+		'''<summary>Description of Asset</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AssetDescription] As String
-		'''<![CDATA[Reference to Cost center]]>
+		'''<summary>Reference to Cost center</summary>
 		Public Property [CostCenter] As String
-		'''<![CDATA[Description of CostCenter]]>
+		'''<summary>Description of CostCenter</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostCenterDescription] As String
-		'''<![CDATA[Reference to Cost unit]]>
+		'''<summary>Reference to Cost unit</summary>
 		Public Property [CostUnit] As String
-		'''<![CDATA[Description of CostUnit]]>
+		'''<summary>Description of CostUnit</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostUnitDescription] As String
-		'''<![CDATA[Description. Can be different for header and lines]]>
+		'''<summary>Description. Can be different for header and lines</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
-		Public Property [Division] As Int32?
-		'''<![CDATA[The unique ID of the entry. Via this ID all transaction lines of a single entry can be retrieved]]>
+		Public Property [Division] As Int32
+		'''<summary>The unique ID of the entry. Via this ID all transaction lines of a single entry can be retrieved</summary>
 		Public Property [EntryID] As Guid
-		'''<![CDATA[Extra duty amount in the currency of the transaction. Both extra duty amount and VAT amount need to be specified in order to differ this property from automatically calculated.]]>
+		'''<summary>Extra duty amount in the currency of the transaction. Both extra duty amount and VAT amount need to be specified in order to differ this property from automatically calculated.</summary>
 		Public Property [ExtraDutyAmountFC] As Double?
-		'''<![CDATA[Extra duty percentage for the item]]>
+		'''<summary>Extra duty percentage for the item</summary>
 		Public Property [ExtraDutyPercentage] As Double?
-		'''<![CDATA[The GL Account of the invoice line. This field is generated based on the revenue account of the item (or the related item group). G/L Account is also used to determine whether the costcenter / costunit is mandatory]]>
+		'''<summary>From date for deferred revenue</summary>
+		Public Property [From] As DateTime?
+		'''<summary>The GL Account of the invoice line. This field is generated based on the revenue account of the item (or the related item group). G/L Account is also used to determine whether the costcenter / costunit is mandatory</summary>
 		Public Property [GLAccount] As Guid?
-		'''<![CDATA[Code of GLAccount]]>
+		'''<summary>Code of GLAccount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLAccountCode] As String
-		'''<![CDATA[Description of GLAccount]]>
+		'''<summary>Description of GLAccount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLAccountDescription] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Indicates the sequence of the lines within one entry]]>
+		'''<summary>IntraStat area</summary>
+		Public Property [IntraStatArea] As String
+		'''<summary>IntraStatCountry</summary>
+		Public Property [IntraStatCountry] As String
+		'''<summary>IntraStat delivery term</summary>
+		Public Property [IntraStatDeliveryTerm] As String
+		'''<summary>IntraStat transaction a</summary>
+		Public Property [IntraStatTransactionA] As String
+		'''<summary>IntraStat transport method</summary>
+		Public Property [IntraStatTransportMethod] As String
+		'''<summary>Indicates the sequence of the lines within one entry</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [LineNumber] As Int32?
-		'''<![CDATA[Extra notes]]>
+		'''<summary>Extra notes</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[The project to which the sales transaction line is linked. The project can be different per line. Sometimes also the project in the header is filled although this is not really used]]>
+		'''<summary>The project to which the sales transaction line is linked. The project can be different per line. Sometimes also the project in the header is filled although this is not really used</summary>
 		Public Property [Project] As Guid?
-		'''<![CDATA[Description of Project]]>
+		'''<summary>Description of Project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA[The number of items sold in default units. The quantity shown in the entry screen is Quantity * UnitFactor]]>
+		'''<summary>The number of items sold in default units. The quantity shown in the entry screen is Quantity * UnitFactor</summary>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[Serial number]]>
+		'''<summary>Serial number</summary>
 		Public Property [SerialNumber] As String
-		'''<![CDATA[When generating invoices from subscriptions, this field records the link between invoice lines and subscription lines]]>
+		'''<summary>Statistical NetWeight</summary>
+		Public Property [StatisticalNetWeight] As Double?
+		'''<summary>Statistical Number</summary>
+		Public Property [StatisticalNumber] As String
+		'''<summary>Statistical Quantity</summary>
+		Public Property [StatisticalQuantity] As Double?
+		'''<summary>Statistical Value</summary>
+		Public Property [StatisticalValue] As Double?
+		'''<summary>When generating invoices from subscriptions, this field records the link between invoice lines and subscription lines</summary>
 		Public Property [Subscription] As Guid?
-		'''<![CDATA[Description of Subscription]]>
+		'''<summary>Description of Subscription</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SubscriptionDescription] As String
-		'''<![CDATA[Obsolete]]>
+		'''<summary>Obsolete</summary>
 		Public Property [TaxSchedule] As Guid?
-		'''<![CDATA[Reference to TrackingNumber]]>
+		'''<summary>To date for deferred revenue</summary>
+		Public Property [To] As DateTime?
+		'''<summary>Reference to TrackingNumber</summary>
 		Public Property [TrackingNumber] As Guid?
-		'''<![CDATA[Description of TrackingNumber]]>
+		'''<summary>Description of TrackingNumber</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [TrackingNumberDescription] As String
-		'''<![CDATA[Type: 20 = Sales entry, 21 = Sales credit note]]>
+		'''<summary>Type: 20 = Sales entry, 21 = Sales credit note</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Type] As Int32?
-		'''<![CDATA[VAT amount in the default currency of the company]]>
+		'''<summary>VAT amount in the default currency of the company</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [VATAmountDC] As Double?
-		'''<![CDATA[VAT amount in the currency of the transaction. Use this property to specify a VAT amount that differs from the VAT amount that is automatically calculated. However if the transaction uses extra duty, extra duty amount also needs to be specified. ]]>
+		'''<summary>VAT amount in the currency of the transaction. Use this property to specify a VAT amount that differs from the VAT amount that is automatically calculated. However if the transaction uses extra duty, extra duty amount also needs to be specified. </summary>
 		Public Property [VATAmountFC] As Double?
-		'''<![CDATA[The VAT base amount in the default currency of the company. This is calculated based on the VATBaseAmountFC]]>
+		'''<summary>The VAT base amount in the default currency of the company. This is calculated based on the VATBaseAmountFC</summary>
 		Public Property [VATBaseAmountDC] As Double?
-		'''<![CDATA[The VAT base amount in invoice currency. This is calculated with the use of VAT codes. It's an internal value]]>
+		'''<summary>The VAT base amount in invoice currency. This is calculated with the use of VAT codes. It&apos;s an internal value</summary>
 		Public Property [VATBaseAmountFC] As Double?
-		'''<![CDATA[The VAT code used when the invoice was registered]]>
+		'''<summary>The VAT code used when the invoice was registered</summary>
 		Public Property [VATCode] As String
-		'''<![CDATA[Description of VATCode]]>
+		'''<summary>Description of VATCode</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [VATCodeDescription] As String
-		'''<![CDATA[The VAT percentage of the VAT code. This is the percentage at the moment the invoice is created. It's also used by the default calculation of VAT amounts and VAT base amounts]]>
+		'''<summary>The VAT percentage of the VAT code. This is the percentage at the moment the invoice is created. It&apos;s also used by the default calculation of VAT amounts and VAT base amounts</summary>
 		Public Property [VATPercentage] As Double?
 	End Class
 

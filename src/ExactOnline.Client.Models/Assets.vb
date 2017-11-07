@@ -1,136 +1,136 @@
-' Last generated on 2017-05-05 12:58:34Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace Assets
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [Asset]
-		'''<![CDATA[Indicates if an asset was already depreciated before registering it in Exact Online]]>
+		'''<summary>Indicates if an asset was already depreciated before registering it in Exact Online</summary>
 		Public Property [AlreadyDepreciated] As Byte
-		'''<![CDATA[In case of a transfer or a split, the original asset ID is saved in this field. This is done to provide tracability of the Asset]]>
+		'''<summary>In case of a transfer or a split, the original asset ID is saved in this field. This is done to provide tracability of the Asset</summary>
 		Public Property [AssetFrom] As Guid?
-		'''<![CDATA[Description of AssetFrom]]>
+		'''<summary>Description of AssetFrom</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AssetFromDescription] As String
-		'''<![CDATA[Asset group identifies GLAccounts to be used for Asset transactions]]>
+		'''<summary>Asset group identifies GLAccounts to be used for Asset transactions</summary>
 		Public Property [AssetGroup] As Guid?
-		'''<![CDATA[Code of the asset group]]>
+		'''<summary>Code of the asset group</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AssetGroupCode] As String
-		'''<![CDATA[Description of the asset group]]>
+		'''<summary>Description of the asset group</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AssetGroupDescription] As String
-		'''<![CDATA[The catalogue value of the asset]]>
+		'''<summary>The catalogue value of the asset</summary>
 		Public Property [CatalogueValue] As Double?
-		'''<![CDATA[Code of the asset]]>
+		'''<summary>Code of the asset</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Assets can be linked to a cost center]]>
+		'''<summary>Assets can be linked to a cost center</summary>
 		Public Property [Costcenter] As String
-		'''<![CDATA[Description of Costcenter]]>
+		'''<summary>Description of Costcenter</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostcenterDescription] As String
-		'''<![CDATA[Assets can be linked to a cost unit]]>
+		'''<summary>Assets can be linked to a cost unit</summary>
 		Public Property [Costunit] As String
-		'''<![CDATA[Description of Costunit]]>
+		'''<summary>Description of Costunit</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CostunitDescription] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Used for Belgium legislation. Used to produce the official 'Investment deduction' report]]>
+		'''<summary>Used for Belgium legislation. Used to produce the official &apos;Investment deduction&apos; report</summary>
 		Public Property [DeductionPercentage] As Double?
-		'''<![CDATA[Amount that is already depreciated when adding an existing asset. Can only be filled when 'Alreadydepreciated' is on]]>
+		'''<summary>Amount that is already depreciated when adding an existing asset. Can only be filled when &apos;Alreadydepreciated&apos; is on</summary>
 		Public Property [DepreciatedAmount] As Double?
-		'''<![CDATA[Number of periods that already have been depreciated for the asset. Can only be filled when 'Alreadydepreciated' is on]]>
+		'''<summary>Number of periods that already have been depreciated for the asset. Can only be filled when &apos;Alreadydepreciated&apos; is on</summary>
 		Public Property [DepreciatedPeriods] As Int32?
-		'''<![CDATA[StartDate of depreciating. Can only be filled when 'Alreadydepreciated' is on]]>
+		'''<summary>StartDate of depreciating. Can only be filled when &apos;Alreadydepreciated&apos; is on</summary>
 		Public Property [DepreciatedStartDate] As DateTime?
-		'''<![CDATA[This is the description of the Asset]]>
+		'''<summary>This is the description of the Asset</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Asset EndDate is filled when asset is Sold or Inactive]]>
+		'''<summary>Asset EndDate is filled when asset is Sold or Inactive</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[Engine emission of the asset, needed to calculate the co² report]]>
+		'''<summary>Engine emission of the asset, needed to calculate the co² report</summary>
 		Public Property [EngineEmission] As Int16?
-		'''<![CDATA[Engine type of the asset, Needed to generate a co² report]]>
+		'''<summary>Engine type of the asset, Needed to generate a co² report</summary>
 		Public Property [EngineType] As Int16?
-		'''<![CDATA[Links to the gltransactions.id. GL transaction line based on which the asset is created]]>
+		'''<summary>Links to the gltransactions.id. GL transaction line based on which the asset is created</summary>
 		Public Property [GLTransactionLine] As Guid?
-		'''<![CDATA[Description of GLTransactionLine]]>
+		'''<summary>Description of GLTransactionLine</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [GLTransactionLineDescription] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Supplier of the asset]]>
+		'''<summary>Supplier of the asset</summary>
 		Public Property [InvestmentAccount] As Guid?
-		'''<![CDATA[Code of InvestmentAccount]]>
+		'''<summary>Code of InvestmentAccount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [InvestmentAccountCode] As String
-		'''<![CDATA[Name of InvestmentAccount]]>
+		'''<summary>Name of InvestmentAccount</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [InvestmentAccountName] As String
-		'''<![CDATA[Investment amount in the default currency of the company]]>
+		'''<summary>Investment amount in the default currency of the company</summary>
 		Public Property [InvestmentAmountDC] As Double?
-		'''<![CDATA[Investment value of the asset. Currently the field is filled with the PurchasePriceLocal. Can be status 'Not used' after sources have been cleaned]]>
+		'''<summary>Investment value of the asset. Currently the field is filled with the PurchasePriceLocal. Can be status &apos;Not used&apos; after sources have been cleaned</summary>
 		Public Property [InvestmentAmountFC] As Double?
-		'''<![CDATA[Indicates the currency of the investment amount]]>
+		'''<summary>Indicates the currency of the investment amount</summary>
 		Public Property [InvestmentCurrency] As String
-		'''<![CDATA[Description of InvestmentCurrency]]>
+		'''<summary>Description of InvestmentCurrency</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [InvestmentCurrencyDescription] As String
-		'''<![CDATA[Refers to the original date when the asset was bought]]>
+		'''<summary>Refers to the original date when the asset was bought</summary>
 		Public Property [InvestmentDate] As DateTime?
-		'''<![CDATA[Belgian functionality, to determine how a local legal report regarding investment deduction must be created]]>
+		'''<summary>Belgian functionality, to determine how a local legal report regarding investment deduction must be created</summary>
 		Public Property [InvestmentDeduction] As Int16?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Extra remarks for the asset]]>
+		'''<summary>Extra remarks for the asset</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Parent asset]]>
+		'''<summary>Parent asset</summary>
 		Public Property [Parent] As Guid?
-		'''<![CDATA[Code of Parent]]>
+		'''<summary>Code of Parent</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ParentCode] As String
-		'''<![CDATA[Description of Parent]]>
+		'''<summary>Description of Parent</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ParentDescription] As String
-		'''<![CDATA[Image for an asset]]>
+		'''<summary>Image for an asset</summary>
 		Public Property [Picture] As Byte()
-		'''<![CDATA[Filename of the image]]>
+		'''<summary>Filename of the image</summary>
 		Public Property [PictureFileName] As String
-		'''<![CDATA[First method of depreciation. Currently, it is the only one used]]>
+		'''<summary>First method of depreciation. Currently, it is the only one used</summary>
 		Public Property [PrimaryMethod] As Guid?
-		'''<![CDATA[Code of PrimaryMethod]]>
+		'''<summary>Code of PrimaryMethod</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [PrimaryMethodCode] As String
-		'''<![CDATA[Description of PrimaryMethod]]>
+		'''<summary>Description of PrimaryMethod</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [PrimaryMethodDescription] As String
-		'''<![CDATA[Indicates the residual value of the asset at the end of the depreciation]]>
+		'''<summary>Indicates the residual value of the asset at the end of the depreciation</summary>
 		Public Property [ResidualValue] As Double?
-		'''<![CDATA[Asset Depreciation StartDate]]>
+		'''<summary>Asset Depreciation StartDate</summary>
 		Public Property [StartDate] As DateTime?
-		'''<![CDATA[Identifies the status of the Asset. (see AssetStatus table to see the possibilities)]]>
+		'''<summary>Identifies the status of the Asset. (see AssetStatus table to see the possibilities)</summary>
 		Public Property [Status] As Int16?
-		'''<![CDATA[Reference to Transaction]]>
+		'''<summary>Reference to Transaction</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [TransactionEntryID] As Guid?
-		'''<![CDATA[Entry number of transaction]]>
+		'''<summary>Entry number of transaction</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [TransactionEntryNo] As Int32?
 	End Class
@@ -138,114 +138,114 @@ Namespace Assets
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [AssetGroup]
-		'''<![CDATA[Code of the asset group]]>
+		'''<summary>Code of the asset group</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Default depreciation method of the assets in this asset group]]>
+		'''<summary>Default depreciation method of the assets in this asset group</summary>
 		Public Property [DepreciationMethod] As Guid?
-		'''<![CDATA[Code of the depreciation method]]>
+		'''<summary>Code of the depreciation method</summary>
 		Public Property [DepreciationMethodCode] As String
-		'''<![CDATA[Description of the depreciation method]]>
+		'''<summary>Description of the depreciation method</summary>
 		Public Property [DepreciationMethodDescription] As String
-		'''<![CDATA[Description of the asset group]]>
+		'''<summary>Description of the asset group</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		Public Property [Division] As Int32?
-		'''<![CDATA[GLAccount for the assets]]>
+		'''<summary>GLAccount for the assets</summary>
 		Public Property [GLAccountAssets] As Guid?
-		'''<![CDATA[Code of the GLAccount for the assets]]>
+		'''<summary>Code of the GLAccount for the assets</summary>
 		Public Property [GLAccountAssetsCode] As String
-		'''<![CDATA[Description of the GLAccount for the assets]]>
+		'''<summary>Description of the GLAccount for the assets</summary>
 		Public Property [GLAccountAssetsDescription] As String
-		'''<![CDATA[GLAccount for depreciation (Balance sheet)]]>
+		'''<summary>GLAccount for depreciation (Balance sheet)</summary>
 		Public Property [GLAccountDepreciationBS] As Guid?
-		'''<![CDATA[Code of the GLAccount for depreciation (Balance sheet)]]>
+		'''<summary>Code of the GLAccount for depreciation (Balance sheet)</summary>
 		Public Property [GLAccountDepreciationBSCode] As String
-		'''<![CDATA[Description of the GLAccount for depreciation (Balance sheet)]]>
+		'''<summary>Description of the GLAccount for depreciation (Balance sheet)</summary>
 		Public Property [GLAccountDepreciationBSDescription] As String
-		'''<![CDATA[GLAccount for depreciation (Profit & Loss)]]>
+		'''<summary>GLAccount for depreciation (Profit &amp; Loss)</summary>
 		Public Property [GLAccountDepreciationPL] As Guid?
-		'''<![CDATA[Code of the GLAccount for depreciation (Profit & Loss)]]>
+		'''<summary>Code of the GLAccount for depreciation (Profit &amp; Loss)</summary>
 		Public Property [GLAccountDepreciationPLCode] As String
-		'''<![CDATA[Description of the GLAccount for depreciation (Profit & Loss)]]>
+		'''<summary>Description of the GLAccount for depreciation (Profit &amp; Loss)</summary>
 		Public Property [GLAccountDepreciationPLDescription] As String
-		'''<![CDATA[GLAccount for revaluation (Balance sheet)]]>
+		'''<summary>GLAccount for revaluation (Balance sheet)</summary>
 		Public Property [GLAccountRevaluationBS] As Guid?
-		'''<![CDATA[Code of the GLAccount for revaluation (Balance sheet)]]>
+		'''<summary>Code of the GLAccount for revaluation (Balance sheet)</summary>
 		Public Property [GLAccountRevaluationBSCode] As String
-		'''<![CDATA[Description of the GLAccount for revaluation (Balance sheet)]]>
+		'''<summary>Description of the GLAccount for revaluation (Balance sheet)</summary>
 		Public Property [GLAccountRevaluationBSDescription] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Notes]]>
+		'''<summary>Notes</summary>
 		Public Property [Notes] As String
 	End Class
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [DepreciationMethod]
-		'''<![CDATA[When the method is fixed amount, this is the periodic depreciation amount]]>
+		'''<summary>When the method is fixed amount, this is the periodic depreciation amount</summary>
 		Public Property [Amount] As Double?
-		'''<![CDATA[Code of the depreciation method]]>
+		'''<summary>Code of the depreciation method</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Describes the periodic interval]]>
+		'''<summary>Describes the periodic interval</summary>
 		Public Property [DepreciationInterval] As String
-		'''<![CDATA[Description of the method]]>
+		'''<summary>Description of the method</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Indicates the maximum value when using depreciation type degressive to linear]]>
+		'''<summary>Indicates the maximum value when using depreciation type degressive to linear</summary>
 		Public Property [MaxPercentage] As Double?
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Degressive percentage for methods: 10 - Degressive to linear, 11 - Degressive (fixed perc. of book value), 12 - Degressive to linear (Belgium & Luxembourg only). And interest percentage for method: 40 - Normal annuity method. On import: Can not be modified if depreciation method is already linked to an asset. For Belgium & Luxembourg the degressive percentage is calculated as double of the linear percentage]]>
+		'''<summary>Degressive percentage for methods: 10 - Degressive to linear, 11 - Degressive (fixed perc. of book value), 12 - Degressive to linear (Belgium &amp; Luxembourg only). And interest percentage for method: 40 - Normal annuity method. On import: Can not be modified if depreciation method is already linked to an asset. For Belgium &amp; Luxembourg the degressive percentage is calculated as double of the linear percentage</summary>
 		Public Property [Percentage] As Double?
-		'''<![CDATA[Linear percentage for methods: 10 - Degressive to linear, 3 - Linear depreciation (Belgium & Luxembourg only), 12 - Degressive to linear (Belgium & Luxembourg only). On import: Can not be modified if depreciation method is already linked to an asset]]>
+		'''<summary>Linear percentage for methods: 10 - Degressive to linear, 3 - Linear depreciation (Belgium &amp; Luxembourg only), 12 - Degressive to linear (Belgium &amp; Luxembourg only). On import: Can not be modified if depreciation method is already linked to an asset</summary>
 		Public Property [Percentage2] As Double?
-		'''<![CDATA[The total number of periods for the depreciation method. Used in combination with depreciation interval: only used when interval is periodic]]>
+		'''<summary>The total number of periods for the depreciation method. Used in combination with depreciation interval: only used when interval is periodic</summary>
 		Public Property [Periods] As Int16?
-		'''<![CDATA[The actual type of deprecation, such as lineair or degressive. The periodic amounts are based on this type, in combination with other fields, such as the interval and the periods]]>
+		'''<summary>The actual type of deprecation, such as lineair or degressive. The periodic amounts are based on this type, in combination with other fields, such as the interval and the periods</summary>
 		Public Property [Type] As Int32?
-		'''<![CDATA[Description of Type]]>
+		'''<summary>Description of Type</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [TypeDescription] As String
-		'''<![CDATA[Determines the total number of years for the depreciation method. Used in combination with depreciation interval: only used when interval is yearly]]>
+		'''<summary>Determines the total number of years for the depreciation method. Used in combination with depreciation interval: only used when interval is yearly</summary>
 		Public Property [Years] As Int16?
 	End Class
 

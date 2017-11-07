@@ -1,147 +1,149 @@
-' Last generated on 2017-05-05 12:58:35Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace Sales
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [PriceList]
-		'''<![CDATA[Code to indicate the price list]]>
+		'''<summary>Code to indicate the price list</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[All prices in the price list are stored in this currency]]>
+		'''<summary>All prices in the price list are stored in this currency</summary>
 		Public Property [Currency] As String
-		'''<![CDATA[Description]]>
+		'''<summary>Description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Description of Division]]>
+		'''<summary>Description of Division</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DivisionDescription] As String
-		'''<![CDATA[Indicates the entity (Item, Item group, ..) on which this price list is based]]>
+		'''<summary>Indicates the entity (Item, Item group, ..) on which this price list is based</summary>
 		Public Property [Entity] As Int16?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Explanation or extra information can be stored in the notes]]>
+		'''<summary>Explanation or extra information can be stored in the notes</summary>
 		Public Property [Notes] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [SalesPriceListDetail]
-		'''<![CDATA[Customer account Id]]>
+		'''<summary>Customer account Id</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[Customer account name]]>
+		'''<summary>Customer account name</summary>
 		Public Property [AccountName] As String
-		'''<![CDATA[Standard price]]>
+		'''<summary>Standard price</summary>
 		Public Property [BasePrice] As Guid?
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Currency]]>
+		'''<summary>Currency</summary>
 		Public Property [Currency] As String
-		'''<![CDATA[Discount]]>
+		'''<summary>Discount</summary>
 		Public Property [Discount] As Double?
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[End date]]>
+		'''<summary>End date</summary>
 		Public Property [EndDate] As DateTime?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Indicates whether discount or the new price is leading : 1-Discount, 2-New price. &lt;br&gt;&lt;br&gt; Scenario &lt;br&gt;&lt;br&gt; 1. When entry method is Discount and use base price, Discounted price = (1- SalesPriceListDetails.Discount) * SalesPriceListDetails.BasePrice &lt;br&gt;&lt;br&gt; 2. When entry method is Discount and use Item&apos;s standard sales price, Discounted price = (1- SalesPriceListDetails.Discount) * SalesItemPrices.Price &lt;br&gt;&lt;br&gt; 3. When entry method is New price, Discounted price = SalesPriceListDetails.NewPrice</summary>
+		Public Property [EntryMethod] As Int16
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Item]]>
+		'''<summary>Item</summary>
 		Public Property [Item] As Guid?
-		'''<![CDATA[Description of the item]]>
+		'''<summary>Description of the item</summary>
 		Public Property [ItemDescription] As String
-		'''<![CDATA[ItemGroup]]>
+		'''<summary>ItemGroup</summary>
 		Public Property [ItemGroup] As Guid?
-		'''<![CDATA[Default sales unit of the item]]>
+		'''<summary>Default sales unit of the item</summary>
 		Public Property [ItemUnit] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[New price after discount]]>
+		'''<summary>New price after discount</summary>
 		Public Property [NewPrice] As Double?
-		'''<![CDATA[Number of the item per unit]]>
+		'''<summary>Number of the item per unit</summary>
 		Public Property [NumberOfItemsPerUnit] As Double?
-		'''<![CDATA[Code of the PriceList]]>
+		'''<summary>Code of the PriceList</summary>
 		Public Property [PriceListCode] As String
-		'''<![CDATA[Id of the PriceList]]>
+		'''<summary>Id of the PriceList</summary>
 		Public Property [PriceListId] As Guid?
-		'''<![CDATA[Quantity]]>
+		'''<summary>Quantity</summary>
 		Public Property [Quantity] As Double?
-		'''<![CDATA[Start date]]>
+		'''<summary>Start date</summary>
 		Public Property [StartDate] As DateTime?
-		'''<![CDATA[Unit]]>
+		'''<summary>Unit</summary>
 		Public Property [Unit] As String
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [ShippingMethod]
-		'''<![CDATA[Active]]>
+		'''<summary>Active</summary>
 		Public Property [Active] As Boolean?
-		'''<![CDATA[Code of the shipping method]]>
+		'''<summary>Code of the shipping method</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Description of shipping method]]>
+		'''<summary>Description of shipping method</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Notes]]>
+		'''<summary>Notes</summary>
 		Public Property [Notes] As String
-		'''<![CDATA[Shipping method rates URL]]>
+		'''<summary>Shipping method rates URL</summary>
 		Public Property [ShippingRatesURL] As String
-		'''<![CDATA[Tracking URL]]>
+		'''<summary>Tracking URL</summary>
 		Public Property [TrackingURL] As String
 	End Class
 

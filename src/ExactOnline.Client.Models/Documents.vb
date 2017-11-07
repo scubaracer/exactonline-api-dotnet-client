@@ -1,101 +1,101 @@
-' Last generated on 2017-05-05 12:58:34Z
+' Last generated on 2017-11-07 10:05:59Z
 
 Namespace Documents
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [Document]
-		'''<![CDATA[ID of the related account of this document]]>
+		'''<summary>ID of the related account of this document</summary>
 		Public Property [Account] As Guid?
-		'''<![CDATA[Code of Account]]>
+		'''<summary>Code of Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountCode] As String
-		'''<![CDATA[Name of Account]]>
+		'''<summary>Name of Account</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [AccountName] As String
-		'''<![CDATA[Amount in the currency of the transaction]]>
+		'''<summary>Amount in the currency of the transaction</summary>
 		Public Property [AmountFC] As Double?
-		'''<![CDATA[Body of this document]]>
+		'''<summary>Body of this document</summary>
 		Public Property [Body] As String
-		'''<![CDATA[ID of the category of this document]]>
+		'''<summary>ID of the category of this document</summary>
 		Public Property [Category] As Guid?
-		'''<![CDATA[Description of Category]]>
+		'''<summary>Description of Category</summary>
 		Public Property [CategoryDescription] As String
-		'''<![CDATA[ID of the related contact of this document]]>
+		'''<summary>ID of the related contact of this document</summary>
 		Public Property [Contact] As Guid?
-		'''<![CDATA[Contact full name]]>
+		'''<summary>Contact full name</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ContactFullName] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Currency code]]>
+		'''<summary>Currency code</summary>
 		Public Property [Currency] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32
-		'''<![CDATA[Entry date of the incoming document]]>
+		'''<summary>Entry date of the incoming document</summary>
 		Public Property [DocumentDate] As DateTime?
-		'''<![CDATA[The Id of document folder]]>
+		'''<summary>The Id of document folder</summary>
 		Public Property [DocumentFolder] As Guid?
-		'''<![CDATA[The Code of document folder]]>
+		'''<summary>The Code of document folder</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DocumentFolderCode] As String
-		'''<![CDATA[The Decsription of document folder]]>
+		'''<summary>The Decsription of document folder</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DocumentFolderDescription] As String
-		'''<![CDATA[Url to view the document]]>
+		'''<summary>Url to view the document</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [DocumentViewUrl] As String
-		'''<![CDATA[Reference to the financial transaction]]>
+		'''<summary>Reference to the financial transaction</summary>
 		Public Property [FinancialTransactionEntryID] As Guid?
-		'''<![CDATA[Indicates that the document body is empty]]>
+		'''<summary>Indicates that the document body is empty</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [HasEmptyBody] As Boolean
-		'''<![CDATA[Human-readable ID, formatted as xx.xxx.xxx. Unique. May not be equal to zero]]>
+		'''<summary>Human-readable ID, formatted as xx.xxx.xxx. Unique. May not be equal to zero</summary>
 		Public Property [HID] As Int32?
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[The language code of the document]]>
+		'''<summary>The language code of the document</summary>
 		Public Property [Language] As String
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[The opportunity linked to the document]]>
+		'''<summary>The opportunity linked to the document</summary>
 		Public Property [Opportunity] As Guid?
-		'''<![CDATA[The project linked to the document]]>
+		'''<summary>The project linked to the document</summary>
 		Public Property [Project] As Guid?
-		'''<![CDATA[Code of project]]>
+		'''<summary>Code of project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectCode] As String
-		'''<![CDATA[Description of project]]>
+		'''<summary>Description of project</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ProjectDescription] As String
-		'''<![CDATA['Our reference' of the transaction that belongs to this document]]>
+		'''<summary>&apos;Our reference&apos; of the transaction that belongs to this document</summary>
 		Public Property [SalesInvoiceNumber] As Int32?
-		'''<![CDATA[Number of the sales order]]>
+		'''<summary>Number of the sales order</summary>
 		Public Property [SalesOrderNumber] As Int32?
-		'''<![CDATA[Send method]]>
+		'''<summary>Send method</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SendMethod] As Int32?
-		'''<![CDATA[Number of the shop order]]>
+		'''<summary>Number of the shop order</summary>
 		Public Property [ShopOrderNumber] As Int32?
-		'''<![CDATA[Subject of this document]]>
+		'''<summary>Subject of this document</summary>
 		Public Property [Subject] As String
-		'''<![CDATA[ID of the type of this document]]>
+		'''<summary>ID of the type of this document</summary>
 		Public Property [Type] As Int32?
-		'''<![CDATA[Description of Type]]>
+		'''<summary>Description of Type</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [TypeDescription] As String
 	End Class
@@ -103,18 +103,18 @@ Namespace Documents
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [DocumentAttachment]
-		'''<![CDATA[Contains the attachment]]>
+		'''<summary>Contains the attachment</summary>
 		Public Property [Attachment] As Byte()
-		'''<![CDATA[Reference to the Document]]>
+		'''<summary>Reference to the Document</summary>
 		Public Property [Document] As Guid
-		'''<![CDATA[Filename of the attachment]]>
+		'''<summary>Filename of the attachment</summary>
 		Public Property [FileName] As String
-		'''<![CDATA[File size of the attachment]]>
+		'''<summary>File size of the attachment</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [FileSize] As Double
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Url of the attachment. To get the file in its original format (xml, jpg, pdf, etc.) append <b>&Download=1</b> to the url.]]>
+		'''<summary>Url of the attachment. To get the file in its original format (xml, jpg, pdf, etc.) append &lt;b&gt;&amp;Download=1&lt;/b&gt; to the url.</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Url] As String
 	End Class
@@ -122,104 +122,104 @@ Namespace Documents
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [DocumentCategory]
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[Document category description]]>
+		'''<summary>Document category description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime?
 	End Class
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [DocumentFolder]
-		'''<![CDATA[Document folder code]]>
+		'''<summary>Document folder code</summary>
 		Public Property [Code] As String
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[User ID of creator]]>
+		'''<summary>User ID of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Name of creator]]>
+		'''<summary>Name of creator</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [CreatorFullName] As String
-		'''<![CDATA[Document folder description]]>
+		'''<summary>Document folder description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Guid
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User ID of modifier]]>
+		'''<summary>User ID of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Modifier] As Guid?
-		'''<![CDATA[Name of modifier]]>
+		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<![CDATA[Document folder parent folder ID]]>
+		'''<summary>Document folder parent folder ID</summary>
 		Public Property [ParentFolder] As Guid?
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [DocumentType]
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[Document type description]]>
+		'''<summary>Document type description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Indicates if documents of this type can be created]]>
+		'''<summary>Indicates if documents of this type can be created</summary>
 		Public Property [DocumentIsCreatable] As Boolean
-		'''<![CDATA[Indicates if documents of this type can be deleted]]>
+		'''<summary>Indicates if documents of this type can be deleted</summary>
 		Public Property [DocumentIsDeletable] As Boolean
-		'''<![CDATA[Indicates if documents of this type can be updated]]>
+		'''<summary>Indicates if documents of this type can be updated</summary>
 		Public Property [DocumentIsUpdatable] As Boolean
-		'''<![CDATA[Indicates if documents of this type can be retrieved]]>
+		'''<summary>Indicates if documents of this type can be retrieved</summary>
 		Public Property [DocumentIsViewable] As Boolean
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Int32
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[ID of the document type category]]>
+		'''<summary>ID of the document type category</summary>
 		Public Property [TypeCategory] As Int32?
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
 	<DataServiceKey("ID")>
 	Public Class [DocumentTypeCategory]
-		'''<![CDATA[Creation date]]>
+		'''<summary>Creation date</summary>
 		Public Property [Created] As DateTime?
-		'''<![CDATA[Document category type description]]>
+		'''<summary>Document category type description</summary>
 		Public Property [Description] As String
-		'''<![CDATA[Primary key]]>
+		'''<summary>Primary key</summary>
 		Public Property [ID] As Int32
-		'''<![CDATA[Last modified date]]>
+		'''<summary>Last modified date</summary>
 		Public Property [Modified] As DateTime?
 	End Class
 
 	<SupportedActionsSDK(True, True, True, True)>
 	<DataServiceKey("ID")>
 	Public Class [DocumentTypeFolder]
-		'''<![CDATA[Date created]]>
+		'''<summary>Date created</summary>
 		Public Property [Created] As DateTime
-		'''<![CDATA[User id of creator]]>
+		'''<summary>User id of creator</summary>
 		Public Property [Creator] As Guid?
-		'''<![CDATA[Division code]]>
+		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32
-		'''<![CDATA[Folder to which document type is linked]]>
+		'''<summary>Folder to which document type is linked</summary>
 		Public Property [DocumentFolder] As Guid
-		'''<![CDATA[Code of document type which is linked to folder]]>
+		'''<summary>Code of document type which is linked to folder</summary>
 		Public Property [DocumentType] As Int32
 		Public Property [ID] As Guid
-		'''<![CDATA[Date Modified]]>
+		'''<summary>Date Modified</summary>
 		Public Property [Modified] As DateTime?
-		'''<![CDATA[User id of modifier]]>
+		'''<summary>User id of modifier</summary>
 		Public Property [Modifier] As Guid?
 	End Class
 
