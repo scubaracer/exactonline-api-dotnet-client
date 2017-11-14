@@ -1,5 +1,3 @@
-' Last generated on 2017-11-07 10:05:59Z
-
 Namespace Purchase
 
 	<SupportedActionsSDK(True, True, True, True)>
@@ -86,6 +84,9 @@ Namespace Purchase
 		Public Property [InvoiceID] As Guid?
 		'''<summary>Guid that identifies the purchase item. In a POST request either the Item or the PurchaseOrderLine has to be supplied.</summary>
 		Public Property [Item] As Guid?
+		'''<summary>The default unit of the purchased item.</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [ItemUnit] As String
 		'''<summary>The sequence number of the line.</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [LineNumber] As Int32
@@ -100,9 +101,13 @@ Namespace Purchase
 		Public Property [Project] As Guid?
 		'''<summary>Guid that identifies the purchase order line that is being invoiced. When doing a POST either the Item or the PurchaseOrderLine has to be supplied.&lt;br/&gt;The values of the purchase order line such as Quantity, Item and Amount will be copied to the purchase invoice line.</summary>
 		Public Property [PurchaseOrderLine] As Guid?
-		'''<summary>The number of items that is purchased in units. For divisible items this can be a fractional number, otherwise it is an integer.</summary>
+		'''<summary>The number of purchased items in purchase units. The purchase unit is defined on the item card and it can also be found using the logistics/SupplierItem api endpoint.For divisible items the quantity can be a fractional number, otherwise it is an integer.</summary>
 		Public Property [Quantity] As Double?
+		'''<summary>The number of purchased items in default units. An item has both a default unit and a purchase unit, for example piece and box with a box containing 12 pieces. The multiplication factor (12 in this example) between the default unit and purchase unit is maintained on the item card. When you GET a purchase invoice line for 1 box of items the field Quantity = 1 and QuantityInDefaultUnits = 12. </summary>
+		<SDKFieldType(FieldType.ReadOnly)>
+		Public Property [QuantityInDefaultUnits] As Double?
 		'''<summary>The code of the unit in which the item is purchased. For example piece, box or kg. The value is taken from the purchase unit in the item card.</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Unit] As String
 		'''<summary>The default purchase price per unit.&lt;br&gt;Depending on the type of the VAT code the unit price is including or excluding VAT.</summary>
 		Public Property [UnitPrice] As Double?

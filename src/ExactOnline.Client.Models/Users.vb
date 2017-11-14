@@ -1,5 +1,3 @@
-' Last generated on 2017-11-07 10:05:59Z
-
 Namespace Users
 
 	<SupportedActionsSDK(False, True, False, False)>
