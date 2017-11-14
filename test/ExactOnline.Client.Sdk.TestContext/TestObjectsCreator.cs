@@ -9,25 +9,6 @@ namespace ExactOnline.Client.Sdk.TestContext
 	{
 		private const string Website = "https://start.exactonline.nl";
 
-		#region "TODO: Specify these app-specific values"
-
-		/// <summary>
-		/// The client id of the app that is used to run the test.
-		/// </summary>
-		private const string ExactOnlineClientId = "00000000-0000-0000-0000-000000000000";
-
-		/// <summary>
-		/// The client secret of the app that is used to run the test.
-		/// </summary>
-		private const string ExactOnlineClientSecret = "xxxxxxxxxxxx";
-
-		/// <summary>
-		/// This uri has to be the same as the callback url of the app.
-		/// </summary>
-		private readonly Uri _redirectUri = new Uri("https://www.exact.com");
-
-		#endregion
-
 		private readonly static UserAuthorization Authorization = new UserAuthorization();
 
 		private IApiConnector _connector;
@@ -44,7 +25,8 @@ namespace ExactOnline.Client.Sdk.TestContext
 
 		public string GetOAuthAuthenticationToken()
 		{
-			UserAuthorizations.Authorize(Authorization, EndPoint, ExactOnlineClientId, ExactOnlineClientSecret, _redirectUri);
+			var testApp = new TestApp();
+			UserAuthorizations.Authorize(Authorization, EndPoint, testApp.ClientId.ToString(), testApp.ClientSecret, testApp.CallbackUrl);
 
 			return Authorization.AccessToken;
 		}
