@@ -1,5 +1,3 @@
-' Last generated on 2017-11-07 10:05:59Z
-
 Namespace SalesEntry
 
 	<SupportedActionsSDK(True, True, True, True)>
@@ -54,7 +52,6 @@ Namespace SalesEntry
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ExternalLinkDescription] As String
 		'''<summary>Reference of ExternalLink</summary>
-		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ExternalLinkReference] As String
 		'''<summary>A positive value of the amount indicates that the amount is to be paid by the customer to your G bank account.In case of a credit invoice the amount should have negative value when retrieved or posted to Exact.</summary>
 		Public Property [GAccountAmountFC] As Double?

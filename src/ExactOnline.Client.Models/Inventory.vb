@@ -1,5 +1,3 @@
-' Last generated on 2017-11-07 10:05:59Z
-
 Namespace Inventory
 
 	<SupportedActionsSDK(False, True, False, False)>
@@ -29,6 +27,8 @@ Namespace Inventory
 		Public Property [OrderNumber] As Int32
 		'''<summary>Assembly order status: 20 = Open, 30 = Partial, 50 = Complete</summary>
 		Public Property [OrderStatus] As Int32
+		'''<summary>Collection of part items for assembly order</summary>
+		
 		'''<summary>Planned quantity of the item to be assembled</summary>
 		Public Property [PlannedQuantity] As Double
 		'''<summary>Reference to storage location</summary>
@@ -257,8 +257,10 @@ Namespace Inventory
 	End Class
 
 	<SupportedActionsSDK(False, True, False, False)>
-	<DataServiceKey("Item")>
+	<DataServiceKey("ID")>
 	Public Class [ItemWarehouseStorageLocation]
+		'''<summary>Uniquely identifies the item, warehouse, storage location combination</summary>
+		Public Property [ID] As Guid
 		'''<summary>Does the item allow partial quantities (1.75 meters)</summary>
 		Public Property [IsFractionAllowedItem] As Byte
 		'''<summary>Item</summary>

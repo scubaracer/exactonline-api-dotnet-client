@@ -1,13 +1,12 @@
-﻿using System;
+﻿using ExactOnline.Client.Models;
+using ExactOnline.Client.Sdk.Delegates;
+using ExactOnline.Client.Sdk.Helpers;
+using ExactOnline.Client.Sdk.Interfaces;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
-using ExactOnline.Client.Models;
-using ExactOnline.Client.Sdk.Delegates;
-using ExactOnline.Client.Sdk.Helpers;
-using ExactOnline.Client.Sdk.Interfaces;
 
 namespace ExactOnline.Client.Sdk.Controllers
 {
@@ -114,16 +113,6 @@ namespace ExactOnline.Client.Sdk.Controllers
 			return entity;
 		}
 
-		private Boolean IsCreateable(T entity)
-		{
-			var actions = (SupportedActionsSDK)entity.GetType().GetCustomAttribute(typeof(SupportedActionsSDK));
-			if (actions != null)
-			{
-				return actions.CanCreate;
-			}
-			return false;
-		}
-
 		/// <summary>
 		/// Creates an entity in Exact Online
 		/// </summary>
@@ -131,7 +120,11 @@ namespace ExactOnline.Client.Sdk.Controllers
 		/// <returns>True if succeed</returns>
 		public Boolean Create(ref T entity)
 		{
-			if (!IsCreateable(entity)) throw new Exception("Cannot create entity. Entity does not support creation. Please see the Reference Documentation.");
+			var supportedActions = GetSupportedActions(entity);
+			if (!supportedActions.CanCreate)
+			{
+				throw new Exception("Cannot create entity. Entity does not support creation. Please see the Reference Documentation.");
+			}
 
 			// Get Json code
 			var created = false;
@@ -156,20 +149,14 @@ namespace ExactOnline.Client.Sdk.Controllers
 					throw new Exception("This entity already exists");
 				}
 
-				// Get entity with linked entities (API Response for creating does not return the linked entities)
-				entity = GetEntity(GetIdentifierValue(entity), _expandfield);
+				// Check if the endpoint supports a read action. Some endpoints such as PrintQuotation only support create (POST).
+				if (supportedActions.CanRead)
+				{
+					// Get entity with linked entities (API Response for creating does not return the linked entities)
+					entity = GetEntity(GetIdentifierValue(entity), _expandfield);
+				}
 			}
 			return created;
-		}
-
-		private Boolean IsUpdateable(T entity)
-		{
-			var actions = (SupportedActionsSDK)entity.GetType().GetCustomAttribute(typeof(SupportedActionsSDK));
-			if (actions != null)
-			{
-				return actions.CanUpdate;
-			}
-			return false;
 		}
 
 		/// <summary>
@@ -189,18 +176,13 @@ namespace ExactOnline.Client.Sdk.Controllers
 
 			var associatedController = (EntityController)_entityControllers[GetIdentifierValue(entity)];
 			if (associatedController == null) throw new Exception("Entity identifier value not found");
-			
+
 			return associatedController.Update(entity);
 		}
 
-		private Boolean IsDeleteable(T entity)
+		private Boolean IsUpdateable(T entity)
 		{
-			var actions = (SupportedActionsSDK)entity.GetType().GetCustomAttribute(typeof(SupportedActionsSDK));
-			if (actions != null)
-			{
-				return actions.CanDelete;
-			}
-			return false;
+			return GetSupportedActions(entity).CanUpdate;
 		}
 
 		/// <summary>
@@ -214,7 +196,7 @@ namespace ExactOnline.Client.Sdk.Controllers
 			{
 				throw new ArgumentException("Controller Delete: Entity cannot be null");
 			}
-	
+
 			// Check if entity can be deleted
 			if (!IsDeleteable(entity)) throw new Exception("Cannot delete entity. Entity does not support deleting. Please see the Reference Documentation.");
 
@@ -231,6 +213,21 @@ namespace ExactOnline.Client.Sdk.Controllers
 			return returnValue;
 		}
 
+		private Boolean IsDeleteable(T entity)
+		{
+			return GetSupportedActions(entity).CanDelete;
+		}
+
+		private SupportedActionsSDK GetSupportedActions(T entity)
+		{
+			var actions = (SupportedActionsSDK)entity.GetType().GetCustomAttribute(typeof(SupportedActionsSDK));
+			if (actions == null)
+			{
+				actions = new SupportedActionsSDK(false, false, false, false);
+			}
+			return actions;
+		}
+
 		/// <summary>
 		/// Get the unique value of the entity
 		/// </summary>
@@ -238,11 +235,11 @@ namespace ExactOnline.Client.Sdk.Controllers
 		{
 			if (_keyname.Contains(","))
 			{
-				throw new Exception("Currently the SDK doesn't support entities with a compound key.");				
+				throw new Exception("Currently the SDK doesn't support entities with a compound key.");
 			}
 
 			return entity.GetType().GetProperty(_keyname).GetValue(entity).ToString();
-		}		
+		}
 
 		/// <summary>
 		/// Adds an associated intance of the EntityController class to the _controllers if the entity is not yet managed 
@@ -260,8 +257,8 @@ namespace ExactOnline.Client.Sdk.Controllers
 
 				// Get linked entity fields
 				var linkedEntityFields = from property in entity.GetType().GetProperties()
-				                         let ns = property.GetValue(entity) == null ? null : property.GetValue(entity).GetType().Namespace
-				                         where ns != null && ((property.GetValue(entity) != null)
+										 let ns = property.GetValue(entity) == null ? null : property.GetValue(entity).GetType().Namespace
+										 where ns != null && ((property.GetValue(entity) != null)
 										 && (ns.Contains("System.Collections.Generic")))
 										 select property.GetValue(entity);
 

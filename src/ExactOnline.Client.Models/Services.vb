@@ -1,5 +1,3 @@
-' Last generated on 2017-11-07 10:05:59Z
-
 Public Class [Services]
 	Public Services As Dictionary(Of String, String) = New Dictionary(Of String, String)
 

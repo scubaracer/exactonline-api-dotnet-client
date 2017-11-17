@@ -1,5 +1,6 @@
 ﻿using ExactOnline.Client.Models.CRM;
 using ExactOnline.Client.Sdk.Controllers;
+using ExactOnline.Client.Sdk.Helpers;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -11,15 +12,10 @@ namespace ConsoleApplication
 		[STAThread]
 		static void Main(string[] args)
 		{
-			// These are the authorisation properties of your app.
-			// You can find the values in the App Center when you are maintaining the app.
-			const string clientId = "00000000-0000-0000-0000-000000000000";
-			const string clientSecret = "...";
+			// To make this work set the authorisation properties of your test app in the testapp.config.
+			var testApp = new TestApp();
 
-			// This can be any url as long as it is identical to the callback url you specified for your app in the App Center.
-			var callbackUrl = new Uri("http://www.exact.com");
-
-			var connector = new Connector(clientId, clientSecret, callbackUrl);
+			var connector = new Connector(testApp.ClientId.ToString(), testApp.ClientSecret, testApp.CallbackUrl);
 			var client = new ExactOnlineClient(connector.EndPoint, connector.GetAccessToken);
 
 			// Get the Code and Name of a random account in the administration

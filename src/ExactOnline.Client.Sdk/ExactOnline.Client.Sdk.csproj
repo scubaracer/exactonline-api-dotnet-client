@@ -63,6 +63,7 @@
     <Compile Include="Helpers\JsDateTimeConverter.cs" />
     <Compile Include="Delegates\ManagerForEntitiesDelegate.cs" />
     <Compile Include="Enums\RequestTypeEnum.cs" />
+    <Compile Include="Helpers\TestApp.cs" />
     <Compile Include="Interfaces\IApiConnection.cs" />
     <Compile Include="Interfaces\IApiConnector.cs" />
     <Compile Include="Interfaces\IController.cs" />
