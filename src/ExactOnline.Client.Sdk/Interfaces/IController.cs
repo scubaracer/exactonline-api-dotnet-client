@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace ExactOnline.Client.Sdk.Interfaces
 {
@@ -19,5 +18,7 @@ namespace ExactOnline.Client.Sdk.Interfaces
 		int Count(string query); // For $count function API
 
 		void RegistrateLinkedEntityField(string fieldname);
+
+		List<T> Get(string query, out string skipToken);
 	}
 }

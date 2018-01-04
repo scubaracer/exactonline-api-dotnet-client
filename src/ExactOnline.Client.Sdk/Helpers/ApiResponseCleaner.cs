@@ -1,12 +1,13 @@
-﻿using System;
+﻿using ExactOnline.Client.Sdk.Exceptions;
+using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web.Script.Serialization;
-using ExactOnline.Client.Sdk.Exceptions;
-using Newtonsoft.Json;
 using System.Globalization;
+using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
+using System.Web.Script.Serialization;
 
 namespace ExactOnline.Client.Sdk.Helpers
 {
@@ -27,20 +28,57 @@ namespace ExactOnline.Client.Sdk.Helpers
 			var serializer = new JavaScriptSerializer();
 			serializer.RegisterConverters(new JavaScriptConverter[] { new JssDateTimeConverter() });
 			var oldCulture = Thread.CurrentThread.CurrentCulture;
-					Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+			Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 
-				string output;
-				try
-				{
-					var dict = (Dictionary<string, object>)serializer.Deserialize<object>(response);
-					var d = (Dictionary<string, object>)dict["d"];
-					output = GetJsonFromDictionary(d);
-				}
-				finally
-				{
-						Thread.CurrentThread.CurrentCulture = oldCulture;
-				}
+			string output;
+			try
+			{
+				var dict = (Dictionary<string, object>)serializer.Deserialize<object>(response);
+				var d = (Dictionary<string, object>)dict["d"];
+				output = GetJsonFromDictionary(d);
+			}
+			finally
+			{
+				Thread.CurrentThread.CurrentCulture = oldCulture;
+			}
 			return output;
+		}
+
+		public static string GetSkipToken(string response)
+		{
+			var serializer = new JavaScriptSerializer();
+			serializer.RegisterConverters(new JavaScriptConverter[] { new JssDateTimeConverter() });
+			var oldCulture = Thread.CurrentThread.CurrentCulture;
+			Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+			string token = string.Empty;
+			try
+			{
+				var dict = (Dictionary<string, object>)serializer.Deserialize<object>(response);
+				var innerPart = dict["d"];
+				if (innerPart.GetType() == typeof(Dictionary<string, object>))
+				{
+					var d = (Dictionary<string, object>)dict["d"];
+					if (d.ContainsKey("__next"))
+					{
+						var next = (string)d["__next"];
+
+						// Skiptoken has format "$skiptoken=xyz" in the url and we want to extract xyz.
+						var match = Regex.Match(next ?? "", @"\$skiptoken=([^&#]*)");
+
+						// Extract the skip token
+						token = match.Success ? match.Groups[1].Value : null;
+					}
+				}
+			}
+			catch (Exception e)
+			{
+				throw new IncorrectJsonException(e.Message);
+			}
+			finally
+			{
+				Thread.CurrentThread.CurrentCulture = oldCulture;
+			}
+			return token;
 		}
 
 		/// <summary>
@@ -50,9 +88,9 @@ namespace ExactOnline.Client.Sdk.Helpers
 		{
 			var serializer = new JavaScriptSerializer();
 			serializer.RegisterConverters(new JavaScriptConverter[] { new JssDateTimeConverter() });
-			
+
 			var oldCulture = Thread.CurrentThread.CurrentCulture;
-			Thread.CurrentThread.CurrentCulture =CultureInfo.InvariantCulture;
+			Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 			try
 			{
 				ArrayList results;

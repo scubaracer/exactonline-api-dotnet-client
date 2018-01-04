@@ -65,14 +65,30 @@ namespace ExactOnline.Client.Sdk.Controllers
 		}
 
 		/// <summary>
-		/// Gets specific collection of entities
+		/// Gets specific collection of entities.
+		/// Please notice that this method will return at max 60 entities. 
 		/// </summary>
 		/// <param name="query">oData query</param>
 		/// <returns>List of entity Objects</returns>
 		public List<T> Get(string query)
 		{
+			string skipToken;
+			return Get(query, out skipToken);
+		}
+
+		/// <summary>
+		/// Gets specific collection of entities and return a skipToken if there are more than
+		/// 60 entities to be returned.
+		/// </summary>
+		/// <param name="query">oData query</param>
+		/// <param name="skipToken">The skip token to be used to get the next page of data.</param>
+		/// <returns>List of entity Objects</returns>
+		public List<T> Get(string query, out string skipToken)
+		{
 			// Get the response and convert it to a list of entities of the specific type
-			var response = _conn.Get(query);
+			string response = _conn.Get(query);
+
+			skipToken = ApiResponseCleaner.GetSkipToken(response);
 			response = ApiResponseCleaner.GetJsonArray(response);
 
 			var rc = new EntityConverter();
@@ -85,8 +101,7 @@ namespace ExactOnline.Client.Sdk.Controllers
 			}
 
 			// Convert list
-			var returnList = entities.ConvertAll(x => x);
-			return returnList;
+			return entities.ConvertAll(x => x);
 		}
 
 		/// <summary>
