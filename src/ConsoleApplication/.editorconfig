@@ -1,0 +1,8 @@
+﻿# Top-most EditorConfig file
+root = true
+
+trim_trailing_whitespace = true
+
+# Tab indentation
+indent_style = space
+indent_size = 4

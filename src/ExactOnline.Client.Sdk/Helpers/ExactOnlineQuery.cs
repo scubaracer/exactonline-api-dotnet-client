@@ -1,10 +1,10 @@
-﻿using System;
+﻿using ExactOnline.Client.Sdk.Enums;
+using ExactOnline.Client.Sdk.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
-using ExactOnline.Client.Sdk.Interfaces;
-using System.Linq.Expressions;
-using ExactOnline.Client.Sdk.Enums;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace ExactOnline.Client.Sdk.Helpers
 {
@@ -19,6 +19,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 		private string _top;
 		private string _orderby;
 		private string _where;
+		private string _skipToken;
 
 		/// <summary>
 		/// Private constructor, can only be called by static For()
@@ -30,16 +31,16 @@ namespace ExactOnline.Client.Sdk.Helpers
 			_controller = controller;
 		}
 
-        /// <summary>
-        /// Creates a 'where' clause for the query
-        /// </summary>
-        public ExactOnlineQuery<T> Where<TProperty>(Expression<Func<T, TProperty>> property, TProperty value, OperatorEnum @operator = OperatorEnum.Eq)
-        {
-            return Where($"{TransformExpressionToODataFormat(property.Body)}+{@operator.ToString().ToLower()}+{ToODataParameter(value)}");
-        }
+		/// <summary>
+		/// Creates a 'where' clause for the query
+		/// </summary>
+		public ExactOnlineQuery<T> Where<TProperty>(Expression<Func<T, TProperty>> property, TProperty value, OperatorEnum @operator = OperatorEnum.Eq)
+		{
+			return Where($"{TransformExpressionToODataFormat(property.Body)}+{@operator.ToString().ToLower()}+{ToODataParameter(value)}");
+		}
 
-        /// <summary>
-        /// Creates a 'where' clause for the query
+		/// <summary>
+		/// Creates a 'where' clause for the query
 		/// </summary>
 		public ExactOnlineQuery<T> Where(string filter)
 		{
@@ -49,15 +50,15 @@ namespace ExactOnline.Client.Sdk.Helpers
 		}
 
 		/// <summary>
-        /// Appends an 'and' clause to the query. This method can't be called before a where clause is set.
-        /// </summary>
-        public ExactOnlineQuery<T> And<TProperty>(Expression<Func<T, TProperty>> property, TProperty value, OperatorEnum @operator = OperatorEnum.Eq)
-        {
-            return And($"{TransformExpressionToODataFormat(property)}+{@operator.ToString().ToLower()}+{ToODataParameter(value)}");
-        }
+		/// Appends an 'and' clause to the query. This method can't be called before a where clause is set.
+		/// </summary>
+		public ExactOnlineQuery<T> And<TProperty>(Expression<Func<T, TProperty>> property, TProperty value, OperatorEnum @operator = OperatorEnum.Eq)
+		{
+			return And($"{TransformExpressionToODataFormat(property)}+{@operator.ToString().ToLower()}+{ToODataParameter(value)}");
+		}
 
-        /// <summary>
-        /// Appends an 'and' clause to the query. This method can't be called before a where clause is set.
+		/// <summary>
+		/// Appends an 'and' clause to the query. This method can't be called before a where clause is set.
 		/// </summary>
 		public ExactOnlineQuery<T> And(string and)
 		{
@@ -71,17 +72,16 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// <summary>
 		/// Builds query using the _where and _and properties
 		/// </summary>
-		/// <returns></returns>
 		private string CreateODataQuery(bool selectIsMandatory)
 		{
 			var queryParts = new List<string>();
 
 			if (!string.IsNullOrEmpty(_where))
 			{
-				if (_and != null && _and.Count > 0) 
+				if (_and != null && _and.Count > 0)
 				{
 					_where += string.Format("+and+{0}", string.Join("+and+", _and));
-				}				
+				}
 				queryParts.Add(_where);
 			}
 
@@ -113,6 +113,12 @@ namespace ExactOnline.Client.Sdk.Helpers
 				queryParts.Add(_top);
 			}
 
+			// Add $skipToken
+			if (!string.IsNullOrEmpty(_skipToken))
+			{
+				queryParts.Add(_skipToken);
+			}
+
 			// Add orderby
 			if (!string.IsNullOrEmpty(_orderby))
 			{
@@ -127,28 +133,26 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// <summary>
 		/// Specify the fields to get from the API
 		/// </summary>
-        /// <param name="property">The property to select</param>
-		/// <returns></returns>
-        public ExactOnlineQuery<T> Select(params Expression<Func<T, object>>[] property)
+		/// <param name="property">The property to select</param>
+		public ExactOnlineQuery<T> Select(params Expression<Func<T, object>>[] property)
 		{
-            return Select(fields: property.Select(x => TransformExpressionToODataFormat(x.Body)).ToArray());
+			return Select(fields: property.Select(x => TransformExpressionToODataFormat(x.Body)).ToArray());
 		}
 
 		/// <summary>
 		/// Specify the field(s) to get from the API
 		/// </summary>
 		/// <param name="fields">The field(s) to get</param>
-		/// <returns></returns>
 		public ExactOnlineQuery<T> Select(params string[] fields)
 		{
 			if (fields != null && fields.Length > 0)
 			{
-                string select = String.Join(",", fields);
+				string select = String.Join(",", fields);
 
-                if (String.IsNullOrEmpty(_select))
-                    _select = "$select=" + select;
-                else
-                    _select += ',' + select;
+				if (String.IsNullOrEmpty(_select))
+					_select = "$select=" + select;
+				else
+					_select += ',' + select;
 			}
 			return this;
 		}
@@ -157,7 +161,6 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// Specify the number of records to get from the API
 		/// </summary>
 		/// <param name="top"></param>
-		/// <returns></returns>
 		public ExactOnlineQuery<T> Top(int top)
 		{
 			_top = string.Format("$top={0}", top);
@@ -168,7 +171,6 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// Paging: Specify the number of records that must be skipped
 		/// </summary>
 		/// <param name="skip"></param>
-		/// <returns></returns>
 		public ExactOnlineQuery<T> Skip(int skip)
 		{
 			_skip = string.Format("$skip={0}", skip);
@@ -176,31 +178,43 @@ namespace ExactOnline.Client.Sdk.Helpers
 		}
 
 		/// <summary>
+		/// Paging: Specify the skip token
+		/// </summary>
+		/// <param name="skipToken"></param>
+		private ExactOnlineQuery<T> FormulateSkipToken(string skipToken)
+		{
+			if (!string.IsNullOrEmpty(skipToken))
+			{
+				_skipToken = string.Format("$skiptoken={0}", skipToken);
+			}
+			return this;
+		}
+
+
+		/// <summary>
 		/// Specify the field to order by
 		/// </summary>
 		/// <param name="orderby"></param>
-		/// <returns></returns>
-        public ExactOnlineQuery<T> OrderBy(Expression<Func<T, object>> orderby)
+		public ExactOnlineQuery<T> OrderBy(Expression<Func<T, object>> orderby)
 		{
-            return OrderBy(TransformExpressionToODataFormat(orderby.Body));
+			return OrderBy(TransformExpressionToODataFormat(orderby.Body));
 		}
 
 		/// <summary>
 		/// Specify the field(s) to order by
 		/// </summary>
 		/// <param name="orderby"></param>
-		/// <returns></returns>
 		public ExactOnlineQuery<T> OrderBy(params string[] orderby)
 		{
-            if (orderby != null && orderby.Length > 0)
-		{
-                string orderbyclause = String.Join(",", orderby);
+			if (orderby != null && orderby.Length > 0)
+			{
+				string orderbyclause = String.Join(",", orderby);
 
-                if (String.IsNullOrEmpty(_orderby))
-                    _orderby = "$orderby=" + orderbyclause;
-                else
-                    _orderby += ',' + orderbyclause;
-            }
+				if (String.IsNullOrEmpty(_orderby))
+					_orderby = "$orderby=" + orderbyclause;
+				else
+					_orderby += ',' + orderbyclause;
+			}
 			return this;
 		}
 
@@ -217,7 +231,6 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// <summary>
 		/// Count the amount of entities in the the entity
 		/// </summary>
-		/// <returns></returns>
 		public int Count()
 		{
 			return _controller.Count(CreateODataQuery(false));
@@ -227,10 +240,20 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// <summary>
 		/// Returns a List of entities using the specified query
 		/// </summary>
-		/// <returns></returns>
 		public List<T> Get()
 		{
-			return _controller.Get(CreateODataQuery(true));
+			string skipToken = string.Empty;
+			return Get(ref skipToken);
+		}
+
+		/// <summary>
+		/// Returns a List of entities using the specified query.
+		/// </summary>
+		/// <param name="skipToken">The variable to store the skiptoken in</param>
+		public List<T> Get(ref string skiptoken)
+		{
+			FormulateSkipToken(skiptoken);
+			return _controller.Get(CreateODataQuery(true), ref skiptoken);
 		}
 
 		/// <summary>
@@ -289,67 +312,65 @@ namespace ExactOnline.Client.Sdk.Helpers
 			return _controller.Create(ref entity);
 		}
 
-        /// <summary>
-        /// Transforms a given C# expression to an OData-compliant expression
-        /// </summary>
-        /// <param name="e"></param>
-        /// <returns></returns>
-        string TransformExpressionToODataFormat(Expression e)
-        {
-            MemberExpression me = null;
+		/// <summary>
+		/// Transforms a given C# expression to an OData-compliant expression
+		/// </summary>
+		string TransformExpressionToODataFormat(Expression e)
+		{
+			MemberExpression me = null;
 
-            if (e is MemberExpression)
-                me = e as MemberExpression;
-            else if (e is UnaryExpression)
-                me = ((UnaryExpression)e).Operand as MemberExpression;
+			if (e is MemberExpression)
+				me = e as MemberExpression;
+			else if (e is UnaryExpression)
+				me = ((UnaryExpression)e).Operand as MemberExpression;
 
-            if (me != null) return me.Member.Name;
+			if (me != null) return me.Member.Name;
 
-            var listArguments = new List<string>();
-            var mce = e as MethodCallExpression;
+			var listArguments = new List<string>();
+			var mce = e as MethodCallExpression;
 
-            if (mce == null) throw new ArgumentException($"Invalid expression '{e}': Lambda expression should resolve a property on model type '{nameof(T)}' (with optional extension method calls)." , nameof(e));
+			if (mce == null) throw new ArgumentException($"Invalid expression '{e}': Lambda expression should resolve a property on model type '{nameof(T)}' (with optional extension method calls).", nameof(e));
 
-            foreach (var argument in mce.Arguments)
-            {
-                if (argument is ConstantExpression)
-                {
-                    var ce = argument as ConstantExpression;
-                    listArguments.Add(ToODataParameter(ce.Value));
-                }
-            }
+			foreach (var argument in mce.Arguments)
+			{
+				if (argument is ConstantExpression)
+				{
+					var ce = argument as ConstantExpression;
+					listArguments.Add(ToODataParameter(ce.Value));
+				}
+			}
 
-            string arguments = null;
-            if (listArguments.Count > 0) arguments = "," + String.Join(",", listArguments);
+			string arguments = null;
+			if (listArguments.Count > 0) arguments = "," + String.Join(",", listArguments);
 
-            return $"{mce.Method.Name.ToLower()}({TransformExpressionToODataFormat(mce.Object)}{arguments})";
-        }
+			return $"{mce.Method.Name.ToLower()}({TransformExpressionToODataFormat(mce.Object)}{arguments})";
+		}
 
-        /// <summary>
-        /// Formats any given value to it's OData-compliant string representation.
-        /// </summary>
-        string ToODataParameter(object value)
-        {
-            string _value = null;
+		/// <summary>
+		/// Formats any given value to it's OData-compliant string representation.
+		/// </summary>
+		string ToODataParameter(object value)
+		{
+			string _value = null;
 
-            if (value != null)
-            {
-                var type = value.GetType();
-                type = Nullable.GetUnderlyingType(type) ?? type;
+			if (value != null)
+			{
+				var type = value.GetType();
+				type = Nullable.GetUnderlyingType(type) ?? type;
 
-                if (type == typeof(string) || type == typeof(char))
-                    _value = $"'{value}'";
-                else if (type == typeof(Guid))
-                    _value = $"guid'{value}'";
-                else if (type == typeof(DateTime))
-                    _value = $"datetime'{value:s}'";
-                else if (type == typeof(bool))
-                    _value = value.ToString().ToLower();
-                else
-                    _value = value.ToString();
-            }
+				if (type == typeof(string) || type == typeof(char))
+					_value = $"'{value}'";
+				else if (type == typeof(Guid))
+					_value = $"guid'{value}'";
+				else if (type == typeof(DateTime))
+					_value = $"datetime'{value:s}'";
+				else if (type == typeof(bool))
+					_value = value.ToString().ToLower();
+				else
+					_value = value.ToString();
+			}
 
-            return _value;
-        }
-    }
+			return _value;
+		}
+	}
 }

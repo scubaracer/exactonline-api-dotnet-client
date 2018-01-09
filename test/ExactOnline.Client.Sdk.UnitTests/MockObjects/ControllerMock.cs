@@ -1,7 +1,7 @@
-﻿using System;
+﻿using ExactOnline.Client.Sdk.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ExactOnline.Client.Sdk.Interfaces;
 
 namespace ExactOnline.Client.Sdk.UnitTests.MockObjects
 {
@@ -17,6 +17,13 @@ namespace ExactOnline.Client.Sdk.UnitTests.MockObjects
 
 		List<T> IController<T>.Get(string query)
 		{
+			ODataQuery = query;
+			return null;
+		}
+
+		public List<T> Get(string query, ref string skipToken)
+		{
+			skipToken = null;
 			ODataQuery = query;
 			return null;
 		}
