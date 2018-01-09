@@ -72,8 +72,8 @@ namespace ExactOnline.Client.Sdk.Controllers
 		/// <returns>List of entity Objects</returns>
 		public List<T> Get(string query)
 		{
-			string skipToken;
-			return Get(query, out skipToken);
+			string skipToken = string.Empty;
+			return Get(query, ref skipToken);
 		}
 
 		/// <summary>
@@ -83,7 +83,7 @@ namespace ExactOnline.Client.Sdk.Controllers
 		/// <param name="query">oData query</param>
 		/// <param name="skipToken">The skip token to be used to get the next page of data.</param>
 		/// <returns>List of entity Objects</returns>
-		public List<T> Get(string query, out string skipToken)
+		public List<T> Get(string query, ref string skipToken)
 		{
 			// Get the response and convert it to a list of entities of the specific type
 			string response = _conn.Get(query);

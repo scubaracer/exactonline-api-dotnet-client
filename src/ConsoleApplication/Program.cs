@@ -24,10 +24,12 @@ namespace ConsoleApplication
 			Debug.WriteLine("Account {0} - {1}", account.Code.TrimStart(), account.Name);
 
 			//This is an example of how to use skipToken for paging.
-			string skipToken;
-			var accounts = client.For<Account>().Select(fields).Get(out skipToken);
+			string skipToken = string.Empty;
+			var accounts = client.For<Account>().Select(fields).Get(ref skipToken);
 			Debug.WriteLine("skipToken {0}", skipToken);
-			var nextAccount = client.For<Account>().SkipToken(skipToken).Top(1).Select(fields).Get().FirstOrDefault();
+
+			//Now I can use the skip token to get the first record from the next page.
+			var nextAccount = client.For<Account>().Top(1).Select(fields).Get(ref skipToken).FirstOrDefault();
 			Debug.WriteLine("Account {0} - {1}", nextAccount.Code.TrimStart(), nextAccount.Name);
 		}
 	}

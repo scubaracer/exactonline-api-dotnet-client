@@ -181,7 +181,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// Paging: Specify the skip token
 		/// </summary>
 		/// <param name="skipToken"></param>
-		public ExactOnlineQuery<T> SkipToken(string skipToken)
+		private ExactOnlineQuery<T> FormulateSkipToken(string skipToken)
 		{
 			if (!string.IsNullOrEmpty(skipToken))
 			{
@@ -242,17 +242,18 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// </summary>
 		public List<T> Get()
 		{
-			string token;
-			return Get(out token);
+			string skipToken = string.Empty;
+			return Get(ref skipToken);
 		}
 
 		/// <summary>
 		/// Returns a List of entities using the specified query.
 		/// </summary>
 		/// <param name="skipToken">The variable to store the skiptoken in</param>
-		public List<T> Get(out string skiptoken)
+		public List<T> Get(ref string skiptoken)
 		{
-			return _controller.Get(CreateODataQuery(true), out skiptoken);
+			FormulateSkipToken(skiptoken);
+			return _controller.Get(CreateODataQuery(true), ref skiptoken);
 		}
 
 		/// <summary>

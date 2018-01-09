@@ -19,6 +19,6 @@ namespace ExactOnline.Client.Sdk.Interfaces
 
 		void RegistrateLinkedEntityField(string fieldname);
 
-		List<T> Get(string query, out string skipToken);
+		List<T> Get(string query, ref string skipToken);
 	}
 }
