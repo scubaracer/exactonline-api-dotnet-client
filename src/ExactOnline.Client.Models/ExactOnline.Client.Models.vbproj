@@ -111,6 +111,7 @@
     <Compile Include="System.vb" />
     <Compile Include="Users.vb" />
     <Compile Include="VAT.vb" />
+    <Compile Include="Webhooks.vb" />
     <Compile Include="Workflow.vb" />
   </ItemGroup>
   <ItemGroup>
