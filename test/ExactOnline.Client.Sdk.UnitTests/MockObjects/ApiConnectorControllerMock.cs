@@ -1,4 +1,5 @@
-﻿using ExactOnline.Client.Sdk.Interfaces;
+﻿using System.IO;
+using ExactOnline.Client.Sdk.Interfaces;
 
 namespace ExactOnline.Client.Sdk.UnitTests.MockObjects
 {
@@ -143,5 +144,10 @@ namespace ExactOnline.Client.Sdk.UnitTests.MockObjects
 		{
 			return -1;
 		}
+
+	    public Stream DoGetFileRequest(string endpoint)
+	    {
+	        return Stream.Null;
+	    }
 	}
 }

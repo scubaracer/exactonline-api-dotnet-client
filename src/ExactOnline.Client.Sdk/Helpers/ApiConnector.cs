@@ -2,7 +2,6 @@
 using ExactOnline.Client.Sdk.Enums;
 using ExactOnline.Client.Sdk.Exceptions;
 using ExactOnline.Client.Sdk.Interfaces;
-using ExactOnline.Client.Sdk.Models;
 using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
@@ -51,15 +50,32 @@ namespace ExactOnline.Client.Sdk.Helpers
 			Debug.WriteLine(request.RequestUri);
 
 			return GetResponse(request);
-		}
+        }
 
-		/// <summary>
-		/// Create Data: Perform a POST Request on the API
-		/// </summary>
-		/// <param name="endpoint">{URI}/{Division}/{Resource}/{Entity}</param>
-		/// <param name="postdata">String containing data of new entity in Json format</param>
-		/// <returns>String with API Response in Json Format</returns>
-		public string DoPostRequest(string endpoint, string postdata)
+        /// <summary>
+        /// Read Data: Perform a GET Request on the API
+        /// </summary>
+        /// <param name="endpoint">full url</param>
+        /// <returns>Stream </returns>
+        public Stream DoGetFileRequest(string endpoint)
+        {
+            if (string.IsNullOrEmpty(endpoint)) throw new ArgumentException("Cannot perform request with empty endpoint");
+
+            var request = CreateRequest(endpoint, null, RequestTypeEnum.GET);
+
+            Debug.Write("GET ");
+            Debug.WriteLine(request.RequestUri);
+
+            return GetResponseFile(request);
+        }
+
+        /// <summary>
+        /// Create Data: Perform a POST Request on the API
+        /// </summary>
+        /// <param name="endpoint">{URI}/{Division}/{Resource}/{Entity}</param>
+        /// <param name="postdata">String containing data of new entity in Json format</param>
+        /// <returns>String with API Response in Json Format</returns>
+        public string DoPostRequest(string endpoint, string postdata)
 		{
 			if (string.IsNullOrEmpty(endpoint) || string.IsNullOrEmpty(postdata)) throw new ArgumentException("Cannot perform request with empty endpoint or postdata");
 
@@ -216,31 +232,27 @@ namespace ExactOnline.Client.Sdk.Helpers
 				var statusCode = (((HttpWebResponse)ex.Response).StatusCode);
 				Debug.WriteLine(ex.Message);
 
-				var messageFromServerJSON = new StreamReader(ex.Response.GetResponseStream()).ReadToEnd();
-                Debug.WriteLine(messageFromServerJSON);
+				var messageFromServer = new StreamReader(ex.Response.GetResponseStream()).ReadToEnd();
+				Debug.WriteLine(messageFromServer);
 				Debug.WriteLine("");
-
-                var messageFromServer = JsonConvert.DeserializeObject<ServerMessage>(messageFromServerJSON);
-
-                var errorMessage = messageFromServer?.Error?.Message?.Value ?? ex.Message;
 
 				switch (statusCode)
 				{
 					case HttpStatusCode.BadRequest: // 400
 					case HttpStatusCode.MethodNotAllowed: // 405
-						throw new BadRequestException(errorMessage, ex);
+						throw new BadRequestException(ex.Message, ex);
 
 					case HttpStatusCode.Unauthorized: //401
-						throw new UnauthorizedException(errorMessage, ex); // 401
+						throw new UnauthorizedException(ex.Message, ex); // 401
 
 					case HttpStatusCode.Forbidden:
-						throw new ForbiddenException(errorMessage, ex); // 403
+						throw new ForbiddenException(ex.Message, ex); // 403
 
 					case HttpStatusCode.NotFound:
-						throw new NotFoundException(errorMessage, ex); // 404
+						throw new NotFoundException(ex.Message, ex); // 404
 
 					case HttpStatusCode.InternalServerError: // 500
-						throw new InternalServerErrorException(errorMessage, ex);
+						throw new InternalServerErrorException(messageFromServer, ex);
 				}
 
 				throw;
@@ -250,16 +262,58 @@ namespace ExactOnline.Client.Sdk.Helpers
 			Debug.WriteLine("");
 
 			return responseValue;
-		}
+        }
+
+        private Stream GetResponseFile(HttpWebRequest request)
+        {
+            Debug.WriteLine("RESPONSE");
+
+            // Get response. If this fails: Throw the correct Exception (for testability)
+            try
+            {
+                WebResponse response = request.GetResponse();
+                return response.GetResponseStream();
+            }
+            catch (WebException ex)
+            {
+                var statusCode = (((HttpWebResponse)ex.Response).StatusCode);
+                Debug.WriteLine(ex.Message);
+
+                var messageFromServer = new StreamReader(ex.Response.GetResponseStream()).ReadToEnd();
+                Debug.WriteLine(messageFromServer);
+                Debug.WriteLine("");
+
+                switch (statusCode)
+                {
+                    case HttpStatusCode.BadRequest: // 400
+                    case HttpStatusCode.MethodNotAllowed: // 405
+                        throw new BadRequestException(ex.Message, ex);
+
+                    case HttpStatusCode.Unauthorized: //401
+                        throw new UnauthorizedException(ex.Message, ex); // 401
+
+                    case HttpStatusCode.Forbidden:
+                        throw new ForbiddenException(ex.Message, ex); // 403
+
+                    case HttpStatusCode.NotFound:
+                        throw new NotFoundException(ex.Message, ex); // 404
+
+                    case HttpStatusCode.InternalServerError: // 500
+                        throw new InternalServerErrorException(messageFromServer, ex);
+                }
+
+                throw;
+            }
+        }
 
 
-		/// <summary>
-		/// Request without 'Accept' Header, including parameters
-		/// </summary>
-		/// <param name="uri"></param>
-		/// <param name="oDataQuery"></param>
-		/// <returns></returns>
-		public string DoCleanRequest(string uri, string oDataQuery)
+        /// <summary>
+        /// Request without 'Accept' Header, including parameters
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <param name="oDataQuery"></param>
+        /// <returns></returns>
+        public string DoCleanRequest(string uri, string oDataQuery)
 		{
 			if (string.IsNullOrEmpty(uri)) throw new ArgumentException("Cannot perform request with empty endpoint");
 

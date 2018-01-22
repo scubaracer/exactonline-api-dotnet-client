@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using ExactOnline.Client.Sdk.Interfaces;
 
 namespace ExactOnline.Client.Sdk.Helpers
@@ -47,16 +48,26 @@ namespace ExactOnline.Client.Sdk.Helpers
 				throw new Exception("Invalid Access Token");
 			}
 			return response;
-		}
+        }
 
-		/// <summary>
-		/// Performs a GET (Read) request on the API for one specific entity
-		/// </summary>
-		/// <param name="keyname">Name of the field that is the unique identifier</param>
-		/// <param name="guid">Global Unique Identifier of the entity</param>
-		/// <param name="parameters">Parameters</param>
-		/// <returns>Json String</returns>
-		public string GetEntity(string keyname, string guid, string parameters)
+        /// <summary>
+        /// Perform a GET (Read) request on the API
+        /// </summary>
+        /// <returns>Stream</returns>
+        public Stream GetFile()
+        {
+            Stream response = _conn.DoGetFileRequest(EndPoint);
+            return response;
+        }
+
+        /// <summary>
+        /// Performs a GET (Read) request on the API for one specific entity
+        /// </summary>
+        /// <param name="keyname">Name of the field that is the unique identifier</param>
+        /// <param name="guid">Global Unique Identifier of the entity</param>
+        /// <param name="parameters">Parameters</param>
+        /// <returns>Json String</returns>
+        public string GetEntity(string keyname, string guid, string parameters)
 		{
 			if (guid == string.Empty || keyname == string.Empty)
 			{
