@@ -1,6 +1,8 @@
 ﻿# Top-most EditorConfig file
 root = true
 
+# Apply to all files
+[*]
 trim_trailing_whitespace = true
 
 # Tab indentation
