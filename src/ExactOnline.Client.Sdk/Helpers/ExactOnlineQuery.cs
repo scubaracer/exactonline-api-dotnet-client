@@ -54,7 +54,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// </summary>
 		public ExactOnlineQuery<T> And<TProperty>(Expression<Func<T, TProperty>> property, TProperty value, OperatorEnum @operator = OperatorEnum.Eq)
 		{
-			return And($"{TransformExpressionToODataFormat(property)}+{@operator.ToString().ToLower()}+{ToODataParameter(value)}");
+			return And($"{TransformExpressionToODataFormat(property.Body)}+{@operator.ToString().ToLower()}+{ToODataParameter(value)}");
 		}
 
 		/// <summary>
