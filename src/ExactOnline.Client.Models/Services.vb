@@ -219,8 +219,9 @@ Public Class [Services]
 		Services.Add(GetType(Users.UserRole).FullName, "Users/UserRoles")
 		Services.Add(GetType(Users.UserRolesPerDivision).FullName, "Users/UserRolesPerDivision")
 		Services.Add(GetType(VAT.VATCode).FullName, "VAT/VATCodes")
-		Services.Add(GetType(VAT.VatPercentage).FullName, "VAT/VatPercentages")
-		Services.Add(GetType(Workflow.RequestAttachment).FullName, "Workflow/RequestAttachments")
+        Services.Add(GetType(VAT.VatPercentage).FullName, "VAT/VatPercentages")
+        Services.Add(GetType(Webhooks.WebhookSubscription).FullName, "Webhooks/WebhookSubscriptions")
+        Services.Add(GetType(Workflow.RequestAttachment).FullName, "Workflow/RequestAttachments")
 
 	End Sub
 End Class
