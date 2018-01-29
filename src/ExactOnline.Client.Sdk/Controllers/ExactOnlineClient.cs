@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using ExactOnline.Client.Models.Current;
 using ExactOnline.Client.Sdk.Delegates;
@@ -68,13 +69,23 @@ namespace ExactOnline.Client.Sdk.Controllers
 			var converter = new EntityConverter();
 			var currentMe = converter.ConvertJsonArrayToObjectList<Me>(response);
 			return currentMe.FirstOrDefault();
-		}
+        }
 
-		/// <summary>
-		/// return the division number of the current user
-		/// </summary>
-		/// <returns>Division number</returns>
-		public int GetDivision()
+        /// <summary>
+        /// returns the attachment for the given url
+        /// </summary>
+        /// <returns>Stream</returns>
+        public Stream GetAttachment(string url)
+        {
+            var conn = new ApiConnection(_apiConnector, url);
+            return conn.GetFile();
+        }
+
+        /// <summary>
+        /// return the division number of the current user
+        /// </summary>
+        /// <returns>Division number</returns>
+        public int GetDivision()
 		{
 			if (_division > 0)
 			{

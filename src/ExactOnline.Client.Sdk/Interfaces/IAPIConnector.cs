@@ -1,10 +1,14 @@
-﻿namespace ExactOnline.Client.Sdk.Interfaces
+﻿using System.IO;
+
+namespace ExactOnline.Client.Sdk.Interfaces
 {
 	public interface IApiConnector
 	{
 		string DoGetRequest(string endpoint, string parameters);
+	    Stream DoGetFileRequest(string endpoint);
 
-		string DoPostRequest(string endpoint, string postdata);
+
+        string DoPostRequest(string endpoint, string postdata);
 
 		string DoPutRequest(string endpoint, string putData);
 
