@@ -1,7 +1,7 @@
-﻿using System;
-using ExactOnline.Client.Sdk.Helpers;
+﻿using ExactOnline.Client.Sdk.Helpers;
 using ExactOnline.Client.Sdk.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace ExactOnline.Client.Sdk.UnitTests
 {
@@ -9,30 +9,31 @@ namespace ExactOnline.Client.Sdk.UnitTests
 	public class ApiConnectorTest
 	{
 		IApiConnector _connector;
-
+		
 		private static string GetAccessToken()
 		{
 			return "accessToken";
 		}
-
+		
 		[TestInitialize]
 		public void Setup()
 		{
-			_connector = new ApiConnector(GetAccessToken);
+			_connector = new ApiConnector(GetAccessToken, null);
 		}
 
+		
 		[TestMethod]
 		[TestCategory("Unit Test"), ExpectedException(typeof(ArgumentException))]
 		public void ApiConnector_Constructor_WithoutDelegate_Fails()
 		{
-			var connector = new ApiConnector(null);
+			var connector = new ApiConnector(null, null);
 		}
 
 		[TestMethod]
 		[TestCategory("Unit Test")]
 		public void ApiConnector_Constructor_WithDelegate_Succeeds()
 		{
-			var connector = new ApiConnector(GetAccessToken);
+			var connector = new ApiConnector(GetAccessToken, null);
 		}
 
 		[TestMethod]

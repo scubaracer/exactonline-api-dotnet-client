@@ -57,6 +57,7 @@
     <Compile Include="ControllerTest.cs" />
     <Compile Include="EntityControllerTest.cs" />
     <Compile Include="EntityConverterTest.cs" />
+    <Compile Include="ExactOnlineCLient.cs" />
     <Compile Include="ExactOnlineQueryTest.cs" />
     <Compile Include="MockObjects\ApiConnectionEntityControllerMock.cs" />
     <Compile Include="MockObjects\ApiConnectionMock.cs" />

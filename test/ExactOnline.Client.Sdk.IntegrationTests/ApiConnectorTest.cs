@@ -55,7 +55,7 @@ namespace ExactOnline.Client.Sdk.IntegrationTests
 		public void DoGetRequest_WithWrongDivisionNumber_ThrowsException()
 		{
 			const string endpoint = "https://start.exactonline.nl/api/v1/999/crm/Accounts";
-			var connector = new ApiConnector(_toc.GetOAuthAuthenticationToken);
+			var connector = new ApiConnector(_toc.GetOAuthAuthenticationToken, _toc.GetClient());
 			connector.DoGetRequest(endpoint, string.Empty);
 		}
 		#endregion
