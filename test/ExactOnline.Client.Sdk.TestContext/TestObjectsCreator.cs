@@ -27,7 +27,7 @@ namespace ExactOnline.Client.Sdk.TestContext
 
 		public ExactOnlineClient GetClient()
 		{
-			return _client ?? new ExactOnlineClient(GetWebsite(), GetOAuthAuthenticationToken);
+			return _client ?? (_client = new ExactOnlineClient(GetWebsite(), GetOAuthAuthenticationToken));
 		}
 
 		public string GetOAuthAuthenticationToken()
