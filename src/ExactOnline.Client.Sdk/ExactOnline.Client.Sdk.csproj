@@ -46,6 +46,7 @@
     <Compile Include="Delegates\AccessTokenManagerDelegate.cs" />
     <Compile Include="Delegates\GetEntityControllerDelegate.cs" />
     <Compile Include="Enums\OperatorEnum.cs" />
+    <Compile Include="Exceptions\TooManyRequestsException.cs" />
     <Compile Include="Helpers\ApiConnection.cs" />
     <Compile Include="Helpers\ApiConnector.cs" />
     <Compile Include="Helpers\ApiResponseCleaner.cs" />
@@ -63,11 +64,14 @@
     <Compile Include="Helpers\JsDateTimeConverter.cs" />
     <Compile Include="Delegates\ManagerForEntitiesDelegate.cs" />
     <Compile Include="Enums\RequestTypeEnum.cs" />
+    <Compile Include="Helpers\StringExtensions.cs" />
     <Compile Include="Helpers\TestApp.cs" />
     <Compile Include="Interfaces\IApiConnection.cs" />
     <Compile Include="Interfaces\IApiConnector.cs" />
     <Compile Include="Interfaces\IController.cs" />
     <Compile Include="Interfaces\IEntityManager.cs" />
+    <Compile Include="Models\EolResponseHeader.cs" />
+    <Compile Include="Models\RateLimit.cs" />
     <Compile Include="Models\ServerMessage.cs" />
     <Compile Include="Models\ServerMessageError.cs" />
     <Compile Include="Models\ServerMessageErrorMessage.cs" />

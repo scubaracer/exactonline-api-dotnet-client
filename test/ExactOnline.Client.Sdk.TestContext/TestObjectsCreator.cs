@@ -1,4 +1,5 @@
 ﻿using ExactOnline.Client.OAuth;
+using ExactOnline.Client.Sdk.Controllers;
 using ExactOnline.Client.Sdk.Helpers;
 using ExactOnline.Client.Sdk.Interfaces;
 using System;
@@ -12,15 +13,21 @@ namespace ExactOnline.Client.Sdk.TestContext
 		private readonly static UserAuthorization Authorization = new UserAuthorization();
 
 		private IApiConnector _connector;
+		private ExactOnlineClient _client;
 
 		public IApiConnector ApiConnector()
 		{
-			return _connector ?? (_connector = new ApiConnector(GetOAuthAuthenticationToken));
+			return _connector ?? (_connector = new ApiConnector(GetOAuthAuthenticationToken, GetClient()));
 		}
 
 		public string GetWebsite()
 		{
 			return Website;
+		}
+
+		public ExactOnlineClient GetClient()
+		{
+			return _client ?? (_client = new ExactOnlineClient(GetWebsite(), GetOAuthAuthenticationToken));
 		}
 
 		public string GetOAuthAuthenticationToken()

@@ -4,6 +4,7 @@ using System.Linq;
 using ExactOnline.Client.Models.Current;
 using ExactOnline.Client.Sdk.Delegates;
 using ExactOnline.Client.Sdk.Helpers;
+using ExactOnline.Client.Sdk.Models;
 
 namespace ExactOnline.Client.Sdk.Controllers
 {
@@ -20,18 +21,20 @@ namespace ExactOnline.Client.Sdk.Controllers
 		private readonly ControllerList _controllers;
 		private int _division;
 
-		#region Constructors
+        public EolResponseHeader EolResponseHeader { get; internal set; }
 
-		/// <summary>
-		/// Create instance of ExactClient
-		/// </summary>
-		/// <param name="exactOnlineUrl">The Exact Online URL for your country</param>
-		/// <param name="division">Division number</param>
-		/// <param name="accesstokenDelegate">Delegate that will be executed the access token is expired</param>
-		public ExactOnlineClient(string exactOnlineUrl, int division, AccessTokenManagerDelegate accesstokenDelegate)
+        #region Constructors
+
+        /// <summary>
+        /// Create instance of ExactClient
+        /// </summary>
+        /// <param name="exactOnlineUrl">The Exact Online URL for your country</param>
+        /// <param name="division">Division number</param>
+        /// <param name="accesstokenDelegate">Delegate that will be executed the access token is expired</param>
+        public ExactOnlineClient(string exactOnlineUrl, int division, AccessTokenManagerDelegate accesstokenDelegate)
 		{
 			// Set culture for correct deserializing of API Response (comma and points)
-			_apiConnector = new ApiConnector(accesstokenDelegate);
+			_apiConnector = new ApiConnector(accesstokenDelegate, this);
 			//Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
 
 			if (!exactOnlineUrl.EndsWith("/")) exactOnlineUrl += "/";

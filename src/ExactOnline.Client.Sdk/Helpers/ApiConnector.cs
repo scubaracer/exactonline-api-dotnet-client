@@ -1,4 +1,5 @@
-﻿using ExactOnline.Client.Sdk.Delegates;
+﻿using ExactOnline.Client.Sdk.Controllers;
+using ExactOnline.Client.Sdk.Delegates;
 using ExactOnline.Client.Sdk.Enums;
 using ExactOnline.Client.Sdk.Exceptions;
 using ExactOnline.Client.Sdk.Interfaces;
@@ -17,6 +18,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 	public class ApiConnector : IApiConnector
 	{
 		private readonly AccessTokenManagerDelegate _accessTokenDelegate;
+        private readonly ExactOnlineClient _client;
 
 		#region Constructor
 
@@ -24,8 +26,9 @@ namespace ExactOnline.Client.Sdk.Helpers
 		/// Creates new instance of ApiConnector
 		/// </summary>
 		/// <param name="accessTokenDelegate">Valid oAuth Access Token</param>
-		public ApiConnector(AccessTokenManagerDelegate accessTokenDelegate)
+		public ApiConnector(AccessTokenManagerDelegate accessTokenDelegate, ExactOnlineClient client)
 		{
+            _client = client;
 			if (accessTokenDelegate == null) throw new ArgumentException("accessTokenDelegate");
 			_accessTokenDelegate = accessTokenDelegate;
 		}
@@ -214,10 +217,13 @@ namespace ExactOnline.Client.Sdk.Helpers
 
 			Debug.WriteLine("RESPONSE");
 
+            WebResponse response = null;
+
 			// Get response. If this fails: Throw the correct Exception (for testability)
 			try
 			{
-				WebResponse response = request.GetResponse();
+				response = request.GetResponse();
+                
 				using (Stream responseStream = response.GetResponseStream())
 				{
 					if (responseStream != null)
@@ -229,34 +235,15 @@ namespace ExactOnline.Client.Sdk.Helpers
 			}
 			catch (WebException ex)
 			{
-				var statusCode = (((HttpWebResponse)ex.Response).StatusCode);
-				Debug.WriteLine(ex.Message);
-
-				var messageFromServer = new StreamReader(ex.Response.GetResponseStream()).ReadToEnd();
-				Debug.WriteLine(messageFromServer);
-				Debug.WriteLine("");
-
-				switch (statusCode)
-				{
-					case HttpStatusCode.BadRequest: // 400
-					case HttpStatusCode.MethodNotAllowed: // 405
-						throw new BadRequestException(ex.Message, ex);
-
-					case HttpStatusCode.Unauthorized: //401
-						throw new UnauthorizedException(ex.Message, ex); // 401
-
-					case HttpStatusCode.Forbidden:
-						throw new ForbiddenException(ex.Message, ex); // 403
-
-					case HttpStatusCode.NotFound:
-						throw new NotFoundException(ex.Message, ex); // 404
-
-					case HttpStatusCode.InternalServerError: // 500
-						throw new InternalServerErrorException(messageFromServer, ex);
-				}
+                response = ex.Response;
+                ThrowSpecificException(ex);
 
 				throw;
 			}
+            finally
+            {
+                SetEolResponseHeaders(response);
+            }
 
 			Debug.WriteLine(responseValue);
 			Debug.WriteLine("");
@@ -264,45 +251,85 @@ namespace ExactOnline.Client.Sdk.Helpers
 			return responseValue;
         }
 
+        private void SetEolResponseHeaders(WebResponse response)
+        {
+            if (response == null)
+            {
+                return;
+            }
+
+            SetRateLimitHeaders(response);
+        }
+
+        private void SetRateLimitHeaders(WebResponse response)
+        {
+            _client.EolResponseHeader = new Models.EolResponseHeader
+            {
+                RateLimit = new Models.RateLimit
+                {
+                    Limit = response.Headers["X-RateLimit-Limit"].ToNullableInt(),
+                    Remaining = response.Headers["X-RateLimit-Remaining"].ToNullableInt(),
+                    Reset = response.Headers["X-RateLimit-Reset"].ToNullableLong()
+                }
+            };
+
+            
+        }
+        
         private Stream GetResponseFile(HttpWebRequest request)
         {
             Debug.WriteLine("RESPONSE");
+            WebResponse response = null;
 
             // Get response. If this fails: Throw the correct Exception (for testability)
             try
             {
-                WebResponse response = request.GetResponse();
+                response = request.GetResponse();
+                SetEolResponseHeaders(response);
                 return response.GetResponseStream();
             }
             catch (WebException ex)
             {
-                var statusCode = (((HttpWebResponse)ex.Response).StatusCode);
-                Debug.WriteLine(ex.Message);
-
-                var messageFromServer = new StreamReader(ex.Response.GetResponseStream()).ReadToEnd();
-                Debug.WriteLine(messageFromServer);
-                Debug.WriteLine("");
-
-                switch (statusCode)
-                {
-                    case HttpStatusCode.BadRequest: // 400
-                    case HttpStatusCode.MethodNotAllowed: // 405
-                        throw new BadRequestException(ex.Message, ex);
-
-                    case HttpStatusCode.Unauthorized: //401
-                        throw new UnauthorizedException(ex.Message, ex); // 401
-
-                    case HttpStatusCode.Forbidden:
-                        throw new ForbiddenException(ex.Message, ex); // 403
-
-                    case HttpStatusCode.NotFound:
-                        throw new NotFoundException(ex.Message, ex); // 404
-
-                    case HttpStatusCode.InternalServerError: // 500
-                        throw new InternalServerErrorException(messageFromServer, ex);
-                }
-
+                response = ex.Response;
+                ThrowSpecificException(ex);
                 throw;
+            }
+            finally
+            {
+                SetEolResponseHeaders(response);
+            }
+
+        }
+
+        private void ThrowSpecificException(WebException ex)
+        {
+            var statusCode = (((HttpWebResponse)ex.Response).StatusCode);
+            Debug.WriteLine(ex.Message);
+
+            var messageFromServer = new StreamReader(ex.Response.GetResponseStream()).ReadToEnd();
+            Debug.WriteLine(messageFromServer);
+            Debug.WriteLine("");
+
+            switch (statusCode)
+            {
+                case HttpStatusCode.BadRequest: // 400
+                case HttpStatusCode.MethodNotAllowed: // 405
+                    throw new BadRequestException(ex.Message, ex);
+
+                case HttpStatusCode.Unauthorized: //401
+                    throw new UnauthorizedException(ex.Message, ex); // 401
+
+                case HttpStatusCode.Forbidden:
+                    throw new ForbiddenException(ex.Message, ex); // 403
+
+                case HttpStatusCode.NotFound:
+                    throw new NotFoundException(ex.Message, ex); // 404
+
+                case HttpStatusCode.InternalServerError: // 500
+                    throw new InternalServerErrorException(messageFromServer, ex);
+
+                case (HttpStatusCode)429: // 429: too many requests
+                    throw new TooManyRequestsException(ex.Message, ex);
             }
         }
 
