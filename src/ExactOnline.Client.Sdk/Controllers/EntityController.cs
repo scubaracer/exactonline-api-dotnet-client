@@ -93,6 +93,12 @@ namespace ExactOnline.Client.Sdk.Controllers
 			var converter = new EntityConverter();
 			string json = converter.ConvertObjectToJson(OriginalEntity, entity, _entityControllerDelegate);
 
+            if (string.IsNullOrEmpty(json))
+            {
+                //Nothing to update
+                return true;
+            }
+
 			// Update entire object
 			Boolean returnValue = false;
 
