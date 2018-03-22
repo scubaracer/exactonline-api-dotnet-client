@@ -272,7 +272,7 @@ Namespace CRM
 		Public Property [ModifierFullName] As String
         '''<summary>Account name</summary>
         Public Property [Name] As String
-        ''' <summary>OIN number</summary>
+        ''' <summary>Dutch government identification number</summary>
         Public Property [OINNumber] As String
         '''<summary>ID of the parent account</summary>
         Public Property [Parent] As Guid?

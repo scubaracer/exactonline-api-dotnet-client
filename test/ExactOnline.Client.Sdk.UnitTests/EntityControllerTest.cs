@@ -82,7 +82,7 @@ namespace ExactOnline.Client.Sdk.UnitTests
 
 			entityController.Update(invoice);
 			string data = controllerMock.Data;
-			Assert.AreEqual("", data);
+			Assert.AreEqual(null, data);
 		}
 
 

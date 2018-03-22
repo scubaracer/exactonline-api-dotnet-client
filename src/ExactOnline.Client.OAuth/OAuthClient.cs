@@ -17,11 +17,16 @@ namespace ExactOnline.Client.OAuth
 			ClientCredentialApplicator = ClientCredentialApplicator.PostParameter(clientSecret);
 		}
 
-		#endregion
+        #endregion
 
-		#region Public methods
+        #region Public methods
 
-		public void Authorize(ref IAuthorizationState authorization, string refreshToken)
+        public void Authorize(ref IAuthorizationState authorization, string refreshToken)
+        {
+            Authorize(ref authorization, refreshToken, false);
+        }
+
+        public void Authorize(ref IAuthorizationState authorization, string refreshToken, bool throwExceptionIfNotAuthorized)
 		{
 			if ((authorization == null))
 			{
@@ -47,12 +52,19 @@ namespace ExactOnline.Client.OAuth
 
 			if (authorization.AccessToken == null || refreshFailed)
 			{
-				using (var loginDialog = new LoginForm(_redirectUri))
-				{					
-					loginDialog.AuthorizationUri = GetAuthorizationUri(authorization);
-					loginDialog.ShowDialog();
-					ProcessUserAuthorization(loginDialog.AuthorizationUri, authorization);
-				}
+                if (throwExceptionIfNotAuthorized)
+                {
+                    throw new UnauthorizedAccessException("Not authorized to use Exact Online API.");
+                }
+                else
+                {
+                    using (var loginDialog = new LoginForm(_redirectUri))
+                    {
+                        loginDialog.AuthorizationUri = GetAuthorizationUri(authorization);
+                        loginDialog.ShowDialog();
+                        ProcessUserAuthorization(loginDialog.AuthorizationUri, authorization);
+                    }
+                }
 			}
 		}
 
