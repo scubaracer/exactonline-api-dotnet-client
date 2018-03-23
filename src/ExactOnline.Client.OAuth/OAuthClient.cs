@@ -26,6 +26,13 @@ namespace ExactOnline.Client.OAuth
             Authorize(ref authorization, refreshToken, false);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="authorization"></param>
+        /// <param name="refreshToken"></param>
+        /// <param name="throwExceptionIfNotAuthorized">Indicates if an exception should be thrown when not authorized. When
+        /// this value is true an exception is thrown if not authorized, when false a login dialog is shown to allow a user to login.</param>
         public void Authorize(ref IAuthorizationState authorization, string refreshToken, bool throwExceptionIfNotAuthorized)
 		{
 			if ((authorization == null))
@@ -54,6 +61,9 @@ namespace ExactOnline.Client.OAuth
 			{
                 if (throwExceptionIfNotAuthorized)
                 {
+                    //Throw an exception if a login dialog cannot be shown, for example the client is used in server side
+                    //code and cannot show a dialog to the user. This way the calling code can handle the exception and implement
+                    //it's own login dialog
                     throw new UnauthorizedAccessException("Not authorized to use Exact Online API.");
                 }
                 else
