@@ -17,11 +17,23 @@ namespace ExactOnline.Client.OAuth
 			ClientCredentialApplicator = ClientCredentialApplicator.PostParameter(clientSecret);
 		}
 
-		#endregion
+        #endregion
 
-		#region Public methods
+        #region Public methods
 
-		public void Authorize(ref IAuthorizationState authorization, string refreshToken)
+        public void Authorize(ref IAuthorizationState authorization, string refreshToken)
+        {
+            Authorize(ref authorization, refreshToken, false);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="authorization"></param>
+        /// <param name="refreshToken"></param>
+        /// <param name="throwExceptionIfNotAuthorized">Indicates if an exception should be thrown when not authorized. When
+        /// this value is true an exception is thrown if not authorized, when false a login dialog is shown to allow a user to login.</param>
+        public void Authorize(ref IAuthorizationState authorization, string refreshToken, bool throwExceptionIfNotAuthorized)
 		{
 			if ((authorization == null))
 			{
@@ -47,12 +59,22 @@ namespace ExactOnline.Client.OAuth
 
 			if (authorization.AccessToken == null || refreshFailed)
 			{
-				using (var loginDialog = new LoginForm(_redirectUri))
-				{					
-					loginDialog.AuthorizationUri = GetAuthorizationUri(authorization);
-					loginDialog.ShowDialog();
-					ProcessUserAuthorization(loginDialog.AuthorizationUri, authorization);
-				}
+                if (throwExceptionIfNotAuthorized)
+                {
+                    //Throw an exception if a login dialog cannot be shown, for example the client is used in server side
+                    //code and cannot show a dialog to the user. This way the calling code can handle the exception and implement
+                    //it's own login dialog
+                    throw new UnauthorizedAccessException("Not authorized to use Exact Online API.");
+                }
+                else
+                {
+                    using (var loginDialog = new LoginForm(_redirectUri))
+                    {
+                        loginDialog.AuthorizationUri = GetAuthorizationUri(authorization);
+                        loginDialog.ShowDialog();
+                        ProcessUserAuthorization(loginDialog.AuthorizationUri, authorization);
+                    }
+                }
 			}
 		}
 

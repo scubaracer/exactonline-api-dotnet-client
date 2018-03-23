@@ -270,10 +270,12 @@ Namespace CRM
 		'''<summary>Name of modifier</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [ModifierFullName] As String
-		'''<summary>Account name</summary>
-		Public Property [Name] As String
-		'''<summary>ID of the parent account</summary>
-		Public Property [Parent] As Guid?
+        '''<summary>Account name</summary>
+        Public Property [Name] As String
+        ''' <summary>Dutch government identification number</summary>
+        Public Property [OINNumber] As String
+        '''<summary>ID of the parent account</summary>
+        Public Property [Parent] As Guid?
 		'''<summary>Indicates the loan repayment plan for UK legislation</summary>
 		Public Property [PayAsYouEarn] As String
 		'''<summary>Code of default payment condition for purchase</summary>
