@@ -37,14 +37,13 @@ namespace ExactOnline.Client.OAuth
 		{
 			if ((authorization == null))
 			{
-				authorization = new AuthorizationState
-				{
-					Callback = _redirectUri,
-					RefreshToken = refreshToken
-				};
+                authorization = new AuthorizationState();
 			}
 
-			bool refreshFailed = false;
+            authorization.Callback = _redirectUri;
+            authorization.RefreshToken = refreshToken;
+
+            bool refreshFailed = false;
 			if (AccessTokenHasToBeRefreshed(authorization))
 			{
 				try
