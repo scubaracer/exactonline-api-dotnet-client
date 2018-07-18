@@ -1,7 +1,4 @@
-﻿using ExactOnline.Client.Models.CRM;
-using ExactOnline.Client.Models.Financial;
-using ExactOnline.Client.Models.SalesInvoice;
-using ExactOnline.Client.Sdk.Controllers;
+﻿using ExactOnline.Client.Sdk.Controllers;
 using ExactOnline.Client.Sdk.Helpers;
 using ExactOnline.Client.Sdk.Interfaces;
 using ExactOnline.Client.Sdk.UnitTests.MockObjects;
@@ -11,8 +8,13 @@ using System.Collections.Generic;
 
 namespace ExactOnline.Client.Sdk.UnitTests
 {
+    using CRM;
 
-	[TestClass()]
+    using Financial;
+
+    using SalesInvoice;
+
+    [TestClass()]
 	public class ControllerTest
 	{
 		IApiConnection _mockConnection;

@@ -48,7 +48,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ExactOnline.Client.Models\ExactOnline.Client.Models.vbproj" />
+    <ProjectReference Include="..\..\src\ExactOnline.Client.Models\ExactOnline.Client.Models.csproj" />
     <ProjectReference Include="..\..\src\ExactOnline.Client.Sdk\ExactOnline.Client.Sdk.csproj" />
   </ItemGroup>
   <ItemGroup>
@@ -76,5 +76,6 @@
     <Content Include="Json\Response_Json_Object_SalesInvoice.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 </Project>

@@ -41,12 +41,13 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExactOnline.Client.Models\ExactOnline.Client.Models.vbproj" />
+    <ProjectReference Include="..\ExactOnline.Client.Models\ExactOnline.Client.Models.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.Extensions" />
   </ItemGroup>

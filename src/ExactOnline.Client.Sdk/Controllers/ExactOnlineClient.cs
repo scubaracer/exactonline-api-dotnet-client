@@ -1,14 +1,16 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using ExactOnline.Client.Models.Current;
+
 using ExactOnline.Client.Sdk.Delegates;
 using ExactOnline.Client.Sdk.Helpers;
 using ExactOnline.Client.Sdk.Models;
 
 namespace ExactOnline.Client.Sdk.Controllers
 {
-	/// <summary>
+    using Current;
+
+    /// <summary>
 	/// Front Controller for working with Exact Online Entities
 	/// </summary>
 	public class ExactOnlineClient

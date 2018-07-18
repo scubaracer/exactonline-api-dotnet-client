@@ -1,5 +1,4 @@
-﻿using ExactOnline.Client.Models.CRM;
-using ExactOnline.Client.Sdk.Controllers;
+﻿using ExactOnline.Client.Sdk.Controllers;
 using ExactOnline.Client.Sdk.Helpers;
 using ExactOnline.Client.Sdk.UnitTests.MockObjects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -7,7 +6,9 @@ using System;
 
 namespace ExactOnline.Client.Sdk.UnitTests
 {
-	[TestClass]
+    using CRM;
+
+    [TestClass]
 	public class ExactOnlineQueryTest
 	{
 		Controller<Account> _acccountController;

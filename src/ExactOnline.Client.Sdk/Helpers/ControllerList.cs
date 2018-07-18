@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using ExactOnline.Client.Models;
 using ExactOnline.Client.Sdk.Controllers;
 using ExactOnline.Client.Sdk.Interfaces;
 
@@ -22,7 +21,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 			_baseUrl = baseUrl;
 			_connector = connector;
 			_controllers = new Hashtable();
-			_services = new Services().Services;
+			_services = new Services().ServicesDictionary;
 		}
 
 		/// <summary>
@@ -49,7 +48,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 			{
 				ApiConnection conn;
 
-				if (typename == typeof(ExactOnline.Client.Models.Current.Me).FullName)
+				if (typename == typeof(Current.Me).FullName)
 				{
 					conn = new ApiConnection(_connector, _baseUrl + "system/Me");
 				}

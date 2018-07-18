@@ -1,6 +1,4 @@
-﻿using ExactOnline.Client.Models.CRM;
-using ExactOnline.Client.Models.SalesInvoice;
-using ExactOnline.Client.Sdk.Controllers;
+﻿using ExactOnline.Client.Sdk.Controllers;
 using ExactOnline.Client.Sdk.Delegates;
 using ExactOnline.Client.Sdk.Exceptions;
 using ExactOnline.Client.Sdk.Helpers;
@@ -11,8 +9,11 @@ using System.Collections.Generic;
 
 namespace ExactOnline.Client.Sdk.UnitTests
 {
+    using CRM;
 
-	/// <summary>
+    using SalesInvoice;
+
+    /// <summary>
 	///This is a test class for APIResponseConverter intended
 	///to contain all APIResponseConverter Unit Tests
 	///</summary>

@@ -1,5 +1,4 @@
-﻿using ExactOnline.Client.Models.SalesInvoice;
-using ExactOnline.Client.Sdk.Controllers;
+﻿using ExactOnline.Client.Sdk.Controllers;
 using ExactOnline.Client.Sdk.Helpers;
 using ExactOnline.Client.Sdk.UnitTests.MockObjects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -7,8 +6,9 @@ using System.Collections.Generic;
 
 namespace ExactOnline.Client.Sdk.UnitTests
 {
+    using SalesInvoice;
 
-	[TestClass]
+    [TestClass]
 	public class EntityControllerTest
 	{
 		#region Update
