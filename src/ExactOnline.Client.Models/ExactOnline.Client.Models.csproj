@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0FBE029A-DD5E-0A4A-3EE2-6F330EB60B7C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ExactOnline.Client.Models</RootNamespace>
+    <AssemblyName>ExactOnline.Client.Models</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ExactOnline.Client.Models.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41998,41999,42004,42016,42017,42018,42019,42020,42021,42022,42024,42025,42026,42029,42030,42031,42032,42036,42099,42104,42105,42106,42107,42108,42109,42353,42354,42355</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ExactOnline.Client.Models.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41998,41999,42004,42016,42017,42018,42019,42020,42021,42022,42024,42025,42026,42029,42030,42031,42032,42036,42099,42104,42105,42106,42107,42108,42109,42353,42354,42355</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>Off</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="System" />
+    <Import Include="System.Collections.Generic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accountancy.cs" />
+    <Compile Include="Activities.cs" />
+    <Compile Include="Assets.cs" />
+    <Compile Include="Attributes\DataServiceKey.cs" />
+    <Compile Include="Attributes\FieldType.cs" />
+    <Compile Include="Attributes\SupportedActionsSDK.cs" />
+    <Compile Include="Attributes\SDKFieldType.cs" />
+    <Compile Include="Budget.cs" />
+    <Compile Include="Bulk.cs" />
+    <Compile Include="Cashflow.cs" />
+    <Compile Include="CRM.cs" />
+    <Compile Include="Current.cs" />
+    <Compile Include="Documents.cs" />
+    <Compile Include="Financial.cs" />
+    <Compile Include="FinancialTransaction.cs" />
+    <Compile Include="General.cs" />
+    <Compile Include="GeneralJournalEntry.cs" />
+    <Compile Include="HRM.cs" />
+    <Compile Include="Inventory.cs" />
+    <Compile Include="Logistics.cs" />
+    <Compile Include="Mailbox.cs" />
+    <Compile Include="Manufacturing.cs" />
+    <Compile Include="OpeningBalance.cs" />
+    <Compile Include="Payroll.cs" />
+    <Compile Include="Project.cs" />
+    <Compile Include="Purchase.cs" />
+    <Compile Include="PurchaseEntry.cs" />
+    <Compile Include="PurchaseOrder.cs" />
+    <Compile Include="Sales.cs" />
+    <Compile Include="SalesEntry.cs" />
+    <Compile Include="SalesInvoice.cs" />
+    <Compile Include="SalesOrder.cs" />
+    <Compile Include="Services.cs" />
+    <Compile Include="Subscription.cs" />
+    <Compile Include="System.cs" />
+    <Compile Include="Users.cs" />
+    <Compile Include="VAT.cs" />
+    <Compile Include="Webhooks.cs" />
+    <Compile Include="Workflow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
