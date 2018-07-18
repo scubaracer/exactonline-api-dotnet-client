@@ -6,7 +6,7 @@ using System;
 
 namespace ExactOnline.Client.Sdk.UnitTests
 {
-    using CRM;
+    using ExactOnline.Client.Models.CRM;
 
     [TestClass]
 	public class ExactOnlineQueryTest

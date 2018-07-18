@@ -8,11 +8,9 @@ using System.Collections.Generic;
 
 namespace ExactOnline.Client.Sdk.UnitTests
 {
-    using CRM;
-
-    using Financial;
-
-    using SalesInvoice;
+    using ExactOnline.Client.Models.CRM;
+    using ExactOnline.Client.Models.Financial;
+    using ExactOnline.Client.Models.SalesInvoice;
 
     [TestClass()]
 	public class ControllerTest

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace ExactOnline.Client.Sdk.UnitTests
 {
-    using SalesInvoice;
+    using ExactOnline.Client.Models.SalesInvoice;
 
     [TestClass]
 	public class EntityControllerTest

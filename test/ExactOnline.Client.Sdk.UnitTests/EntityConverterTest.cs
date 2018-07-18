@@ -9,9 +9,8 @@ using System.Collections.Generic;
 
 namespace ExactOnline.Client.Sdk.UnitTests
 {
-    using CRM;
-
-    using SalesInvoice;
+    using ExactOnline.Client.Models.CRM;
+    using ExactOnline.Client.Models.SalesInvoice;
 
     /// <summary>
 	///This is a test class for APIResponseConverter intended
