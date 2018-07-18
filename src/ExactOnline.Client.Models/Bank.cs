@@ -1,6 +1,6 @@
 using System;
 
-namespace Cashflow
+namespace ExactOnline.Client.Models.Cashflow
 {
     [SupportedActionsSDK(false, true, false, false)]
     [DataServiceKey("ID")]

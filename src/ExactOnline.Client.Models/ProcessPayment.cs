@@ -1,4 +1,4 @@
-namespace Cashflow
+namespace ExactOnline.Client.Models.Cashflow
 {
     using System;
     using System.Collections.Generic;

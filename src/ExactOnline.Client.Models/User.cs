@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace Users
+namespace ExactOnline.Client.Models.Users
 {
     [SupportedActionsSDK(false, true, false, false)]
     [DataServiceKey("UserID")]

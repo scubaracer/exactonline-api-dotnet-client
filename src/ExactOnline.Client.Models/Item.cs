@@ -1,6 +1,6 @@
 using System;
 
-namespace Logistics
+namespace ExactOnline.Client.Models.Logistics
 {
     [SupportedActionsSDK(true, true, true, true)]
     [DataServiceKey("ID")]

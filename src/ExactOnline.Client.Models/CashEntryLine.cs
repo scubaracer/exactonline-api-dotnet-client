@@ -1,4 +1,4 @@
-namespace FinancialTransaction
+namespace ExactOnline.Client.Models.FinancialTransaction
 {
     using System;
 

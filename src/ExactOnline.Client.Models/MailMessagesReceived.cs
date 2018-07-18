@@ -1,4 +1,4 @@
-namespace Mailbox
+namespace ExactOnline.Client.Models.Mailbox
 {
     using System;
 

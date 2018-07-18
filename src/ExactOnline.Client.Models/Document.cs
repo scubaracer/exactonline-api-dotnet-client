@@ -1,6 +1,6 @@
 using System;
 
-namespace Bulk
+namespace ExactOnline.Client.Models.Bulk
 {
     [SupportedActionsSDK(false, true, false, false)]
     [DataServiceKey("ID")]

@@ -1,4 +1,4 @@
-namespace Project
+namespace ExactOnline.Client.Models.Project
 {
     using System;
 

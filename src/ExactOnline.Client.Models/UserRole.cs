@@ -1,4 +1,4 @@
-namespace Users
+namespace ExactOnline.Client.Models.Users
 {
     using System;
 

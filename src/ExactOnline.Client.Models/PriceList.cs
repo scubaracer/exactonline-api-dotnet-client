@@ -1,6 +1,6 @@
 using System;
 
-namespace Sales
+namespace ExactOnline.Client.Models.Sales
 {
     [SupportedActionsSDK(false, true, false, false)]
     [DataServiceKey("ID")]

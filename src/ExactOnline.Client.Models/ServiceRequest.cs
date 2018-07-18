@@ -1,4 +1,4 @@
-namespace Activities
+namespace ExactOnline.Client.Models.Activities
 {
     using System;
     using System.Collections.Generic;

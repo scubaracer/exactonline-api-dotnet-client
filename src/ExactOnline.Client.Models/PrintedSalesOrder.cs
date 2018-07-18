@@ -1,4 +1,4 @@
-namespace SalesOrder
+namespace ExactOnline.Client.Models.SalesOrder
 {
     using System;
 

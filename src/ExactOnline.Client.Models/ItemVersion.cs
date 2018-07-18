@@ -1,4 +1,4 @@
-namespace Logistics
+namespace ExactOnline.Client.Models.Logistics
 {
     using System;
 

@@ -1,4 +1,4 @@
-namespace OpeningBalance
+namespace ExactOnline.Client.Models.OpeningBalance
 {
     using System;
 

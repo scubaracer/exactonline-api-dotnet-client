@@ -1,5 +1,7 @@
-namespace System
+namespace ExactOnline.Client.Models.SystemBase
 {
+    using System;
+
     [SupportedActionsSDK(false, true, false, false)]
     [DataServiceKey("ID")]
     public class AccountantInfo

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace Activities
+namespace ExactOnline.Client.Models.Activities
 {
     [SupportedActionsSDK(true, true, false, false)]
     [DataServiceKey("ID")]

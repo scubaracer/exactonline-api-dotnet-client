@@ -1,6 +1,6 @@
 using System;
 
-namespace Manufacturing
+namespace ExactOnline.Client.Models.Manufacturing
 {
     [SupportedActionsSDK(true, true, true, true)]
     [DataServiceKey("ID")]

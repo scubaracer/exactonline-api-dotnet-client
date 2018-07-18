@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace HRM
+namespace ExactOnline.Client.Models.HRM
 {
     [SupportedActionsSDK(false, true, false, false)]
     [DataServiceKey("ID")]

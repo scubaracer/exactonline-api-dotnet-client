@@ -1,4 +1,4 @@
-namespace VAT
+namespace ExactOnline.Client.Models.VAT
 {
     using System;
 

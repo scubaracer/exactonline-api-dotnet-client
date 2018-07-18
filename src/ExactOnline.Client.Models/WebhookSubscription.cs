@@ -1,6 +1,6 @@
 using System;
 
-namespace Webhooks
+namespace ExactOnline.Client.Models.Webhooks
 {
     [SupportedActionsSDK(true, true, false, true)]
     [DataServiceKey("ID")]

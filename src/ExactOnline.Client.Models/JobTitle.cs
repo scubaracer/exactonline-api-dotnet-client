@@ -1,4 +1,4 @@
-namespace HRM
+namespace ExactOnline.Client.Models.HRM
 {
     using System;
 

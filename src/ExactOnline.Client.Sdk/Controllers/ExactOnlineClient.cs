@@ -8,7 +8,7 @@ using ExactOnline.Client.Sdk.Models;
 
 namespace ExactOnline.Client.Sdk.Controllers
 {
-    using Current;
+    using ExactOnline.Client.Models.Current;
 
     /// <summary>
 	/// Front Controller for working with Exact Online Entities

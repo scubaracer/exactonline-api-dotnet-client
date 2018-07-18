@@ -1,6 +1,6 @@
 using System;
 
-namespace General
+namespace ExactOnline.Client.Models.General
 {
     [SupportedActionsSDK(false, true, false, false)]
     [DataServiceKey("Code")]

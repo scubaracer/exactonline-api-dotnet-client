@@ -1,4 +1,4 @@
-namespace Payroll
+namespace ExactOnline.Client.Models.Payroll
 {
     using System;
 

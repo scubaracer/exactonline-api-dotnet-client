@@ -1,6 +1,6 @@
 using System;
 
-namespace Assets
+namespace ExactOnline.Client.Models.Assets
 {
     [SupportedActionsSDK(false, true, false, false)]
     [DataServiceKey("ID")]

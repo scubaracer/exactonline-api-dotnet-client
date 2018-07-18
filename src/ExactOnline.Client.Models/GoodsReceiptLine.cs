@@ -1,4 +1,4 @@
-namespace PurchaseOrder
+namespace ExactOnline.Client.Models.PurchaseOrder
 {
     using System;
     using System.Collections.Generic;

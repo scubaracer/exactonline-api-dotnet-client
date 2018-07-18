@@ -1,4 +1,4 @@
-namespace Inventory
+namespace ExactOnline.Client.Models.Inventory
 {
     using System;
     using System.Collections.Generic;

@@ -6,7 +6,9 @@ using ExactOnline.Client.Sdk.Interfaces;
 
 namespace ExactOnline.Client.Sdk.Helpers
 {
-	/// <summary>
+    using ExactOnline.Client.Models.Current;
+
+    /// <summary>
 	/// Manages instances of controllers
 	/// </summary>
 	public class ControllerList
@@ -48,7 +50,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 			{
 				ApiConnection conn;
 
-				if (typename == typeof(Current.Me).FullName)
+				if (typename == typeof(Me).FullName)
 				{
 					conn = new ApiConnection(_connector, _baseUrl + "system/Me");
 				}

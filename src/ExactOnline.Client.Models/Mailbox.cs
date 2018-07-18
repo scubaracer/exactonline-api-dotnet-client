@@ -1,6 +1,6 @@
 using System;
 
-namespace Mailbox
+namespace ExactOnline.Client.Models.Mailbox
 {
     using Newtonsoft.Json;
 

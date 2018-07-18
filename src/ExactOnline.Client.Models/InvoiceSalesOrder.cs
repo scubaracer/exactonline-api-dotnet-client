@@ -1,4 +1,4 @@
-namespace SalesInvoice
+namespace ExactOnline.Client.Models.SalesInvoice
 {
     using System;
     using System.Collections.Generic;

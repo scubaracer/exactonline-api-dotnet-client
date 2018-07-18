@@ -1,6 +1,6 @@
 using System;
 
-namespace Documents
+namespace ExactOnline.Client.Models.Documents
 {
     [SupportedActionsSDK(true, true, true, true)]
     [DataServiceKey("ID")]

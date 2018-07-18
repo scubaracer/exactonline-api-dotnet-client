@@ -1,6 +1,6 @@
 using System;
 
-namespace Workflow
+namespace ExactOnline.Client.Models.Workflow
 {
     [SupportedActionsSDK(false, true, false, false)]
     [DataServiceKey("ID")]

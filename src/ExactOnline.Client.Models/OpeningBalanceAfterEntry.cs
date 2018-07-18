@@ -1,6 +1,6 @@
 using System;
 
-namespace OpeningBalance
+namespace ExactOnline.Client.Models.OpeningBalance
 {
     [SupportedActionsSDK(false, true, false, false)]
     [DataServiceKey("Division,ReportingYear,GLAccount")]

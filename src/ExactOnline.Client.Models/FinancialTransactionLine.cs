@@ -1,4 +1,4 @@
-namespace Bulk
+namespace ExactOnline.Client.Models.Bulk
 {
     using System;
 

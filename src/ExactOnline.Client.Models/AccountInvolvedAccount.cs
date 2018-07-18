@@ -1,6 +1,6 @@
 using System;
 
-namespace Accountancy
+namespace ExactOnline.Client.Models.Accountancy
 {
     [SupportedActionsSDK(true, true, true, true)]
     [DataServiceKey("ID")]

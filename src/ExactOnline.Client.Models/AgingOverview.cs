@@ -1,6 +1,6 @@
 using System;
 
-namespace Financial
+namespace ExactOnline.Client.Models.Financial
 {
     [SupportedActionsSDK(false, true, false, false)]
     [DataServiceKey("AgeGroup")]

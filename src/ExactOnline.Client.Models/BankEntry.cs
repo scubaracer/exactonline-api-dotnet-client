@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace FinancialTransaction
+namespace ExactOnline.Client.Models.FinancialTransaction
 {
     [SupportedActionsSDK(true, true, false, false)]
     [DataServiceKey("EntryID")]

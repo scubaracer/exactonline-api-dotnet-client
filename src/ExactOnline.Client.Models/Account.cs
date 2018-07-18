@@ -1,4 +1,4 @@
-namespace CRM
+namespace ExactOnline.Client.Models.CRM
 {
     using System;
     using System.Collections.Generic;

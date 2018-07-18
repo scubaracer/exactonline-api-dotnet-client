@@ -1,4 +1,4 @@
-namespace Assets
+namespace ExactOnline.Client.Models.Assets
 {
     using System;
 

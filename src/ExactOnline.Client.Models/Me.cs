@@ -1,6 +1,6 @@
 using System;
 
-namespace Current
+namespace ExactOnline.Client.Models.Current
 {
     [SupportedActionsSDK(false, true, false, false)]
     [DataServiceKey("UserID")]

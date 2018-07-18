@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace PurchaseOrder
+namespace ExactOnline.Client.Models.PurchaseOrder
 {
     [SupportedActionsSDK(true, true, false, true)]
     [DataServiceKey("PurchaseOrderID")]

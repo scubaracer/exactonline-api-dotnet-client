@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace Project
+namespace ExactOnline.Client.Models.Project
 {
     [SupportedActionsSDK(true, true, true, true)]
     [DataServiceKey("ID")]

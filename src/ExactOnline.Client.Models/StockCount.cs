@@ -1,7 +1,7 @@
-namespace Inventory
+namespace ExactOnline.Client.Models.Inventory
 {
-    using System;
-    using System.Collections.Generic;
+    using global::System;
+    using global::System.Collections.Generic;
 
     [SupportedActionsSDK(true, true, true, true)]
     [DataServiceKey("StockCountID")]

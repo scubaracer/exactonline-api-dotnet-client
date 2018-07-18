@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace SalesInvoice
+namespace ExactOnline.Client.Models.SalesInvoice
 {
     [SupportedActionsSDK(true, true, true, true)]
     [DataServiceKey("InvoiceID")]

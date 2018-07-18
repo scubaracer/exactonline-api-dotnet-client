@@ -1,4 +1,4 @@
-namespace Subscription
+namespace ExactOnline.Client.Models.Subscription
 {
     using System;
 

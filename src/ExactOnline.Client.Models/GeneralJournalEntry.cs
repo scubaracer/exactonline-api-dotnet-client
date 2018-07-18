@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace GeneralJournalEntry
+namespace ExactOnline.Client.Models.GeneralJournalEntry
 {
     [SupportedActionsSDK(true, true, false, false)]
     [DataServiceKey("EntryID")]

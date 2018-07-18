@@ -1,4 +1,4 @@
-namespace PurchaseEntry
+namespace ExactOnline.Client.Models.PurchaseEntry
 {
     using System;
 

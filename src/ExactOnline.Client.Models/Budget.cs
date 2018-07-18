@@ -1,6 +1,6 @@
 using System;
 
-namespace Budget
+namespace ExactOnline.Client.Models.Budget
 {
     [SupportedActionsSDK(false, true, false, false)]
     [DataServiceKey("ID")]

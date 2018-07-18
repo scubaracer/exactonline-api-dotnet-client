@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace VAT
+namespace ExactOnline.Client.Models.VAT
 {
     [SupportedActionsSDK(true, true, true, true)]
     [DataServiceKey("ID")]

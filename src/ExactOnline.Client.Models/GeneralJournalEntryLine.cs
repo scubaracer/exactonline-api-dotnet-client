@@ -1,4 +1,4 @@
-namespace GeneralJournalEntry
+namespace ExactOnline.Client.Models.GeneralJournalEntry
 {
     using System;
 

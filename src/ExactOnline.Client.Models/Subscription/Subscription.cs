@@ -1,8 +1,8 @@
-using System.Collections.Generic;
-using System;
-
-namespace Subscription
+namespace ExactOnline.Client.Models.Subscription
 {
+    using global::System;
+    using global::System.Collections.Generic;
+
     [SupportedActionsSDK(true, true, true, true)]
     [DataServiceKey("EntryID")]
     public class Subscription

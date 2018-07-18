@@ -1,6 +1,6 @@
 using System;
 
-namespace Inventory
+namespace ExactOnline.Client.Models.Inventory
 {
     [SupportedActionsSDK(false, true, false, false)]
     [DataServiceKey("ID")]

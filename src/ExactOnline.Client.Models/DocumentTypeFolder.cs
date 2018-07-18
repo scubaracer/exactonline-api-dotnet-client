@@ -1,4 +1,4 @@
-namespace Documents
+namespace ExactOnline.Client.Models.Documents
 {
     using System;
 

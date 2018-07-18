@@ -1,4 +1,4 @@
-namespace Accountancy
+namespace ExactOnline.Client.Models.Accountancy
 {
     using System;
 

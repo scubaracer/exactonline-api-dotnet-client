@@ -1,4 +1,4 @@
-namespace Manufacturing
+namespace ExactOnline.Client.Models.Manufacturing
 {
     using System;
     using System.Collections.Generic;
