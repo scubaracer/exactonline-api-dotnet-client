@@ -1,7 +1,33 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <TargetFramework>net471</TargetFramework>
+    <Configurations>Debug;Release</Configurations>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ExactOnline.Client.Models.xml</DocumentationFile>
+    <NoWarn />
+    <WarningsAsErrors>41998,41999,42004,42016,42017,42018,42019,42020,42021,42022,42024,42025,42026,42029,42030,42031,42032,42036,42099,42104,42105,42106,42107,42108,42109,42353,42354,42355</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ExactOnline.Client.Models.xml</DocumentationFile>
+    <NoWarn />
+    <WarningsAsErrors>41998,41999,42004,42016,42017,42018,42019,42020,42021,42022,42024,42025,42026,42029,42030,42031,42032,42036,42099,42104,42105,42106,42107,42108,42109,42353,42354,42355</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0FBE029A-DD5E-0A4A-3EE2-6F330EB60B7C}</ProjectGuid>
@@ -16,286 +42,17 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <DefineDebug>true</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>ExactOnline.Client.Models.xml</DocumentationFile>
-    <NoWarn>
-    </NoWarn>
-    <WarningsAsErrors>41998,41999,42004,42016,42017,42018,42019,42020,42021,42022,42024,42025,42026,42029,42030,42031,42032,42036,42099,42104,42105,42106,42107,42108,42109,42353,42354,42355</WarningsAsErrors>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <DefineDebug>false</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>ExactOnline.Client.Models.xml</DocumentationFile>
-    <NoWarn>
-    </NoWarn>
-    <WarningsAsErrors>41998,41999,42004,42016,42017,42018,42019,42020,42021,42022,42024,42025,42026,42029,42030,42031,42032,42036,42099,42104,42105,42106,42107,42108,42109,42353,42354,42355</WarningsAsErrors>
-  </PropertyGroup>
-  <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
-  </PropertyGroup>
-  <PropertyGroup>
     <OptionCompare>Binary</OptionCompare>
-  </PropertyGroup>
-  <PropertyGroup>
     <OptionStrict>On</OptionStrict>
-  </PropertyGroup>
-  <PropertyGroup>
     <OptionInfer>Off</OptionInfer>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
   </ItemGroup>
-  <ItemGroup>
-    <Import Include="System" />
-    <Import Include="System.Collections.Generic" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AbsenceRegistrationTransaction.cs" />
-    <Compile Include="AcceptQuotation.cs" />
-    <Compile Include="Account.cs" />
-    <Compile Include="AccountInvolvedAccount.cs" />
-    <Compile Include="AccountantInfo.cs" />
-    <Compile Include="AccountClass.cs" />
-    <Compile Include="AccountClassification.cs" />
-    <Compile Include="AccountClassificationName.cs" />
-    <Compile Include="AccountOwner.cs" />
-    <Compile Include="CommunicationNote.cs" />
-    <Compile Include="Address.cs" />
-    <Compile Include="AddressState.cs" />
-    <Compile Include="AgingPayablesList.cs" />
-    <Compile Include="AgingReceivablesList.cs" />
-    <Compile Include="AssetGroup.cs" />
-    <Compile Include="Asset.cs" />
-    <Compile Include="Attributes\DataServiceKey.cs" />
-    <Compile Include="Attributes\FieldType.cs" />
-    <Compile Include="Attributes\SupportedActionsSDK.cs" />
-    <Compile Include="Attributes\SDKFieldType.cs" />
-    <Compile Include="AvailableFeature.cs" />
-    <Compile Include="BankAccount.cs" />
-    <Compile Include="BankEntryLine.cs" />
-    <Compile Include="BatchNumber.cs" />
-    <Compile Include="BatchQuantitiesPerLocation.cs" />
-    <Compile Include="BatchQuantitiesPerWarehouse.cs" />
-    <Compile Include="BillOfMaterialVersion.cs" />
-    <Compile Include="Budget.cs" />
-    <Compile Include="Document.cs" />
-    <Compile Include="ByProductReceipt.cs" />
-    <Compile Include="ByProductReversal.cs" />
-    <Compile Include="CashEntry.cs" />
-    <Compile Include="CashEntryLine.cs" />
-    <Compile Include="Bank.cs" />
-    <Compile Include="Complaint.cs" />
-    <Compile Include="Contact.cs" />
-    <Compile Include="Costcenter.cs" />
-    <Compile Include="CostTransaction.cs" />
-    <Compile Include="Costunit.cs" />
-    <Compile Include="CRM.cs" />
-    <Compile Include="Me.cs" />
-    <Compile Include="DefaultMailbox.cs" />
-    <Compile Include="Department.cs" />
-    <Compile Include="DepreciationMethod.cs" />
-    <Compile Include="DirectDebitMandate.cs" />
-    <Compile Include="Division.cs" />
-    <Compile Include="DivisionClass.cs" />
-    <Compile Include="DivisionClassName.cs" />
-    <Compile Include="DivisionClassValue.cs" />
-    <Compile Include="DocumentAttachment.cs" />
-    <Compile Include="DocumentCategory.cs" />
-    <Compile Include="DocumentFolder.cs" />
-    <Compile Include="Documents.cs" />
-    <Compile Include="DocumentsAttachment.cs" />
-    <Compile Include="DocumentType.cs" />
-    <Compile Include="DocumentTypeCategory.cs" />
-    <Compile Include="DocumentTypeFolder.cs" />
-    <Compile Include="Employee.cs" />
-    <Compile Include="Employment.cs" />
-    <Compile Include="EmploymentContract.cs" />
-    <Compile Include="EmploymentContractFlexPhas.cs" />
-    <Compile Include="EmploymentEndReason.cs" />
-    <Compile Include="EmploymentOrganization.cs" />
-    <Compile Include="EmploymentSalary.cs" />
-    <Compile Include="Event.cs" />
-    <Compile Include="ExchangeRate.cs" />
-    <Compile Include="AgingOverview.cs" />
-    <Compile Include="FinancialPeriod.cs" />
-    <Compile Include="BankEntry.cs" />
-    <Compile Include="FinancialTransactionLine.cs" />
-    <Compile Include="Currency.cs" />
-    <Compile Include="GeneralJournalEntry.cs" />
-    <Compile Include="GeneralJournalEntryLine.cs" />
-    <Compile Include="GLAccount.cs" />
-    <Compile Include="GLClassification.cs" />
-    <Compile Include="GLScheme.cs" />
-    <Compile Include="GLTransactionType.cs" />
-    <Compile Include="GoodsDelivery.cs" />
-    <Compile Include="GoodsDeliveryLine.cs" />
-    <Compile Include="GoodsReceipt.cs" />
-    <Compile Include="GoodsReceiptLine.cs" />
-    <Compile Include="HourCostType.cs" />
-    <Compile Include="AbsenceRegistration.cs" />
-    <Compile Include="AssemblyOrder.cs" />
-    <Compile Include="InvoiceSalesOrder.cs" />
-    <Compile Include="InvoiceTerm.cs" />
-    <Compile Include="InvolvedUser.cs" />
-    <Compile Include="InvolvedUserRole.cs" />
-    <Compile Include="ItemGroup.cs" />
-    <Compile Include="ItemVersion.cs" />
-    <Compile Include="ItemWarehous.cs" />
-    <Compile Include="ItemWarehousePlanningDetail.cs" />
-    <Compile Include="ItemWarehouseStorageLocation.cs" />
-    <Compile Include="JobGroup.cs" />
-    <Compile Include="JobTitle.cs" />
-    <Compile Include="Journal.cs" />
-    <Compile Include="JournalStatusList.cs" />
-    <Compile Include="Layout.cs" />
-    <Compile Include="LeaveBuildUpRegistration.cs" />
-    <Compile Include="LeaveRegistration.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="Mailbox.cs" />
-    <Compile Include="MailMessageAttachment.cs" />
-    <Compile Include="MailMessagesReceived.cs" />
-    <Compile Include="MailMessagesSent.cs" />
-    <Compile Include="BillOfMaterialMaterial.cs" />
-    <Compile Include="MaterialIssue.cs" />
-    <Compile Include="MaterialReversal.cs" />
-    <Compile Include="OpeningBalanceAfterEntry.cs" />
-    <Compile Include="OpeningBalancePreviousYearAfterEntry.cs" />
-    <Compile Include="OpeningBalancePreviousYearProcessed.cs" />
-    <Compile Include="OpeningBalanceProcessed.cs" />
-    <Compile Include="Operation.cs" />
-    <Compile Include="OperationResource.cs" />
-    <Compile Include="Opportunity.cs" />
-    <Compile Include="OpportunityContact.cs" />
-    <Compile Include="OutstandingInvoicesOverview.cs" />
-    <Compile Include="PayablesList.cs" />
-    <Compile Include="Payment.cs" />
-    <Compile Include="PaymentCondition.cs" />
-    <Compile Include="PaymentID.cs" />
-    <Compile Include="ActiveEmployment.cs" />
-    <Compile Include="PreferredMailbox.cs" />
-    <Compile Include="PrintedSalesInvoice.cs" />
-    <Compile Include="PrintedSalesOrder.cs" />
-    <Compile Include="PrintQuotation.cs" />
-    <Compile Include="ProcessPayment.cs" />
-    <Compile Include="ProcessStockCount.cs" />
-    <Compile Include="ProductionArea.cs" />
-    <Compile Include="ProfitLossOverview.cs" />
-    <Compile Include="Project.cs" />
-    <Compile Include="ProjectBudgetType.cs" />
-    <Compile Include="ProjectHourBudget.cs" />
-    <Compile Include="ProjectPlanning.cs" />
-    <Compile Include="ProjectPlanningRecurring.cs" />
-    <Compile Include="ProjectRestrictionEmployee.cs" />
-    <Compile Include="ProjectRestrictionItem.cs" />
-    <Compile Include="ProjectRestrictionRebilling.cs" />
-    <Compile Include="PurchaseInvoice.cs" />
-    <Compile Include="PurchaseEntry.cs" />
-    <Compile Include="PurchaseEntryLine.cs" />
-    <Compile Include="PurchaseInvoiceLine.cs" />
-    <Compile Include="PurchaseOrder.cs" />
-    <Compile Include="PurchaseOrderLine.cs" />
-    <Compile Include="Quotation.cs" />
-    <Compile Include="QuotationLine.cs" />
-    <Compile Include="ReasonCode.cs" />
-    <Compile Include="Receivable.cs" />
-    <Compile Include="ReceivablesList.cs" />
-    <Compile Include="RecentCost.cs" />
-    <Compile Include="RecentHour.cs" />
-    <Compile Include="RejectQuotation.cs" />
-    <Compile Include="ReopenQuotation.cs" />
-    <Compile Include="ReportingBalance.cs" />
-    <Compile Include="Return.cs" />
-    <Compile Include="RevenueList.cs" />
-    <Compile Include="ReviewQuotation.cs" />
-    <Compile Include="PriceList.cs" />
-    <Compile Include="SalesEntry.cs" />
-    <Compile Include="SalesEntryLine.cs" />
-    <Compile Include="SalesInvoice.cs" />
-    <Compile Include="SalesInvoiceLine.cs" />
-    <Compile Include="SalesItemPrice.cs" />
-    <Compile Include="SalesOrder.cs" />
-    <Compile Include="SalesOrderID.cs" />
-    <Compile Include="SalesOrderLine.cs" />
-    <Compile Include="SalesPriceListDetail.cs" />
-    <Compile Include="Schedule.cs" />
-    <Compile Include="SerialNumber.cs" />
-    <Compile Include="ServiceRequest.cs" />
-    <Compile Include="Services.cs" />
-    <Compile Include="ShippingMethod.cs" />
-    <Compile Include="ShopOrder.cs" />
-    <Compile Include="ShopOrderMaterialPlan.cs" />
-    <Compile Include="ShopOrderReceipt.cs" />
-    <Compile Include="ShopOrderReversal.cs" />
-    <Compile Include="ShopOrderRoutingStepPlan.cs" />
-    <Compile Include="SolutionLink.cs" />
-    <Compile Include="StageForDeliveryReceipt.cs" />
-    <Compile Include="StageForDeliveryReversal.cs" />
-    <Compile Include="StockBatchNumber.cs" />
-    <Compile Include="StockCount.cs" />
-    <Compile Include="StockCountLine.cs" />
-    <Compile Include="StockSerialNumber.cs" />
-    <Compile Include="StorageLocation.cs" />
-    <Compile Include="SubOrderReceipt.cs" />
-    <Compile Include="SubOrderReversal.cs" />
-    <Compile Include="Subscription\Subscription.cs" />
-    <Compile Include="SubscriptionLine.cs" />
-    <Compile Include="SubscriptionLineType.cs" />
-    <Compile Include="SubscriptionReasonCode.cs" />
-    <Compile Include="SubscriptionRestrictionEmployee.cs" />
-    <Compile Include="SubscriptionRestrictionItem.cs" />
-    <Compile Include="SubscriptionType.cs" />
-    <Compile Include="SupplierItem.cs" />
-    <Compile Include="System.cs" />
-    <Compile Include="Task.cs" />
-    <Compile Include="TaskType.cs" />
-    <Compile Include="TaxEmploymentEndFlexCode.cs" />
-    <Compile Include="TimeAndBillingAccountDetail.cs" />
-    <Compile Include="TimeAndBillingActivitiesAndExpens.cs" />
-    <Compile Include="TimeAndBillingEntryAccount.cs" />
-    <Compile Include="TimeAndBillingEntryProject.cs" />
-    <Compile Include="TimeAndBillingEntryRecentAccount.cs" />
-    <Compile Include="TimeAndBillingEntryRecentActivitiesAndExpens.cs" />
-    <Compile Include="TimeAndBillingEntryRecentHourCostType.cs" />
-    <Compile Include="TimeAndBillingEntryRecentProject.cs" />
-    <Compile Include="TimeAndBillingItemDetail.cs" />
-    <Compile Include="TimeAndBillingProjectDetail.cs" />
-    <Compile Include="TimeCorrection.cs" />
-    <Compile Include="TimeTransaction.cs" />
-    <Compile Include="Transaction.cs" />
-    <Compile Include="TransactionLine.cs" />
-    <Compile Include="Unit.cs" />
-    <Compile Include="UserRole.cs" />
-    <Compile Include="UserRolesPerDivision.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="VATCode.cs" />
-    <Compile Include="VatPercentage.cs" />
-    <Compile Include="Warehouse.cs" />
-    <Compile Include="WebhookSubscription.cs" />
-    <Compile Include="Workcenter.cs" />
-    <Compile Include="RequestAttachment.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
