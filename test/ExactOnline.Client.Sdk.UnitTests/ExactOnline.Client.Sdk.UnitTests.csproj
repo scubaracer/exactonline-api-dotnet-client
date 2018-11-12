@@ -67,23 +67,57 @@
     <Compile Include="Tools\JsonFileReader.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Json\APIResponse_Json_Array.txt" />
-    <Content Include="Json\APIResponse_Json_Array_WithEmptyLinkedEntities.txt" />
-    <Content Include="Json\APIResponse_Json_Array_WithoutDTag.txt" />
-    <Content Include="Json\APIResponse_Json_Array_WithoutResultsTag.txt" />
-    <Content Include="Json\APIResponse_Json_Object.txt" />
-    <Content Include="Json\APIResponse_Json_Object_WithoutD.txt" />
-    <Content Include="Json\Expected_Json_Object_ComplexEntity_WithEmptyLinkedEntities.txt" />
-    <Content Include="Json\Expected_Json_Object_ComplexEntity_WithLinkedEntity.txt" />
-    <Content Include="Json\Response_Json_Array_Account.txt" />
-    <Content Include="Json\Response_Json_Array_Account_Long.txt" />
-    <Content Include="Json\Response_Json_Array_Account_WithLinkedEntities.txt" />
-    <Content Include="Json\Response_Json_Array_GLAccount.txt" />
-    <Content Include="Json\Response_Json_Array_SalesInvoice_WithLinkedEntities.txt" />
-    <Content Include="Json\Response_Json_Object_Account.txt" />
-    <Content Include="Json\Response_Json_Object_GLAccount.txt" />
-    <Content Include="Json\Response_Json_Object_GLAccount_WithCorruptJson.txt" />
-    <Content Include="Json\Response_Json_Object_SalesInvoice.txt" />
+    <Content Include="Json\APIResponse_Json_Array.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\APIResponse_Json_Array_WithEmptyLinkedEntities.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\APIResponse_Json_Array_WithoutDTag.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\APIResponse_Json_Array_WithoutResultsTag.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\APIResponse_Json_Object.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\APIResponse_Json_Object_WithoutD.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\Expected_Json_Object_ComplexEntity_WithEmptyLinkedEntities.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\Expected_Json_Object_ComplexEntity_WithLinkedEntity.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\Response_Json_Array_Account.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\Response_Json_Array_Account_Long.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\Response_Json_Array_Account_WithLinkedEntities.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\Response_Json_Array_GLAccount.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\Response_Json_Array_SalesInvoice_WithLinkedEntities.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\Response_Json_Object_Account.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\Response_Json_Object_GLAccount.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\Response_Json_Object_GLAccount_WithCorruptJson.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\Response_Json_Object_SalesInvoice.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\ExactOnline.Client.Models\ExactOnline.Client.Models.vbproj">
