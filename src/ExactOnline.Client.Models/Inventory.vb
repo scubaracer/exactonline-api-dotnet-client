@@ -193,6 +193,7 @@ Namespace Inventory
 		'''<summary>Safety stock</summary>
 		Public Property [SafetyStock] As Double?
 		'''<summary>URL pointing to details of which storage locations this ItemWarehouse&apos;s stock is located</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [StorageLocationUrl] As String
 		'''<summary>Warehouse ID</summary>
 		Public Property [Warehouse] As Guid?
@@ -458,7 +459,7 @@ Namespace Inventory
 		'''<summary>Division code</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [Division] As Int32?
-		'''<summary>Entry number of the stock transactions</summary>
+		'''<summary>Entry number of the stock transaction</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [EntryNumber] As Int32?
 		'''<summary>Last modified date</summary>
@@ -623,9 +624,9 @@ Namespace Inventory
 		'''<summary>Remarks</summary>
 		Public Property [Remarks] As String
 		'''<summary>Human readable serial number</summary>
-		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SerialNumber] As String
 		'''<summary>Serial number ID</summary>
+		<SDKFieldType(FieldType.ReadOnly)>
 		Public Property [SerialNumberID] As Guid?
 		'''<summary>Start date of effective period for serial number</summary>
 		<SDKFieldType(FieldType.ReadOnly)>
