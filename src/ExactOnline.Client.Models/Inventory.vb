@@ -27,10 +27,8 @@ Namespace Inventory
 		Public Property [OrderNumber] As Int32
 		'''<summary>Assembly order status: 20 = Open, 30 = Partial, 50 = Complete</summary>
 		Public Property [OrderStatus] As Int32
-		'''<summary>Collection of part items for assembly order</summary>
-		
-		'''<summary>Planned quantity of the item to be assembled</summary>
-		Public Property [PlannedQuantity] As Double
+        '''<summary>Planned quantity of the item to be assembled</summary>
+        Public Property [PlannedQuantity] As Double
 		'''<summary>Reference to storage location</summary>
 		Public Property [StorageLocation] As Guid?
 		'''<summary>Storage location code</summary>
