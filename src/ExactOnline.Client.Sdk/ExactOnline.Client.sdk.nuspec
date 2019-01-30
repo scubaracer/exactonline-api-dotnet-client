@@ -33,8 +33,8 @@
 		</references>
 	</metadata>
 	<files>
-		<file src="bin\Release\ExactOnline.Client.Models.dll" target="lib\net45\ExactOnline.Client.Models.dll" />
-		<file src="bin\Release\ExactOnline.Client.OAuth.dll" target="lib\net45\ExactOnline.Client.OAuth.dll" />
-		<file src="bin\Release\ExactOnline.Client.Sdk.dll" target="lib\net45\ExactOnline.Client.Sdk.dll" />
+		<file src="..\..\Release\ExactOnline.Client.Models.dll" target="lib\net45\ExactOnline.Client.Models.dll" />
+		<file src="..\..\Release\ExactOnline.Client.OAuth.dll" target="lib\net45\ExactOnline.Client.OAuth.dll" />
+		<file src="..\..\Release\ExactOnline.Client.Sdk.dll" target="lib\net45\ExactOnline.Client.Sdk.dll" />
 	</files>
 </package>
