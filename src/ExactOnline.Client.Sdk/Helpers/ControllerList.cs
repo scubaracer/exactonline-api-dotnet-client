@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using ExactOnline.Client.Models;
 using ExactOnline.Client.Sdk.Controllers;
 using ExactOnline.Client.Sdk.Interfaces;
 
 namespace ExactOnline.Client.Sdk.Helpers
 {
-    using ExactOnline.Client.Models.Current;
-
-    /// <summary>
+	/// <summary>
 	/// Manages instances of controllers
 	/// </summary>
 	public class ControllerList
@@ -50,7 +49,7 @@ namespace ExactOnline.Client.Sdk.Helpers
 			{
 				ApiConnection conn;
 
-				if (typename == typeof(Me).FullName)
+				if (typename == typeof(ExactOnline.Client.Models.Current.Me).FullName)
 				{
 					conn = new ApiConnection(_connector, _baseUrl + "system/Me");
 				}

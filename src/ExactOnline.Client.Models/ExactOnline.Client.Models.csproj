@@ -48,11 +48,30 @@
     <OptionInfer>Off</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
+    <Folder Include="HRM\" />
+    <Folder Include="Accountancy\" />
+    <Folder Include="Assets\" />
+    <Folder Include="FinancialTransaction\" />
+    <Folder Include="Budget\" />
+    <Folder Include="Activities\" />
+    <Folder Include="General\" />
+    <Folder Include="Mailbox\" />
+    <Folder Include="GeneralJournalEntry\" />
+    <Folder Include="Current\" />
+    <Folder Include="Webhooks\" />
+    <Folder Include="VAT\" />
+    <Folder Include="Users\" />
+    <Folder Include="Workflow\" />
+    <Folder Include="SalesEntry\" />
+    <Folder Include="Purchase\" />
+    <Folder Include="PurchaseEntry\" />
+    <Folder Include="Sales\" />
+    <Folder Include="OpeningBalance\" />
+    <Folder Include="SalesInvoice\" />
+    <Folder Include="PurchaseOrder\" />
+    <Folder Include="SalesOrder\" />
   </ItemGroup>
 </Project>
