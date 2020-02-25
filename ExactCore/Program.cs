@@ -16,7 +16,7 @@ namespace ExactCore
             string token = null;
             refeshToken = GetTokensFromFile(refeshToken, ref token);
 
-            var connector = new Connector("4bb27c0f-1adf-4a3f-a60e-9938ff301126", "WrtSZyoyFtz0", new Uri("http://localhost"), refeshToken, token);
+            var connector = new Connector("xxxx", "xxx", new Uri("http://localhost"), refeshToken, token);
 
             var client = new ExactOnlineClient(connector.EndPoint, connector.GetAccessToken);
             System.IO.File.WriteAllText(@"C:\Test\refreshtoken.txt", connector.RefreshToken);
