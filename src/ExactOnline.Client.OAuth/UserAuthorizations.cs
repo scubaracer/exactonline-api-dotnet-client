@@ -1,5 +1,6 @@
 ﻿using DotNetOpenAuth.OAuth2;
 using System;
+using System.Drawing;
 
 namespace ExactOnline.Client.OAuth
 {
@@ -7,7 +8,7 @@ namespace ExactOnline.Client.OAuth
 	{
 		private static AuthorizationServerDescription _serverDescription;
 
-        public static void Authorize(UserAuthorization authorization, string website, string clientId, string clientSecret, Uri redirectUri)
+        public static void Authorize(UserAuthorization authorization, string website, string clientId, string clientSecret, Uri redirectUri )
         {
             Authorize(authorization, website, clientId, clientSecret, redirectUri, false);
         }
@@ -33,10 +34,12 @@ namespace ExactOnline.Client.OAuth
 					TokenEndpoint = new Uri(string.Format("{0}/api/oauth2/token", website))
 				};
 			}
-			var oAuthClient = new OAuthClient(_serverDescription, clientId, clientSecret, redirectUri);
-
+            
+            var oAuthClient = new OAuthClient(_serverDescription, clientId, clientSecret, redirectUri);
+            
 			var authorizationState = authorization.AuthorizationState;
-			oAuthClient.Authorize(ref authorizationState, authorization.RefreshToken, throwExceptionIfNotAuthorized);
+
+            oAuthClient.Authorize(ref authorizationState, authorization.RefreshToken, throwExceptionIfNotAuthorized);
 			authorization.AuthorizationState = authorizationState;
 		}
 	}

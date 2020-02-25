@@ -195,3 +195,4 @@ testapp.config
 
 *.lock
 /.vs
+/FunctionApp1

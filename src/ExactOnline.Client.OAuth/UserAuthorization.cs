@@ -12,6 +12,7 @@ namespace ExactOnline.Client.OAuth
 		public string AccessToken
 		{
 			get { return AuthorizationState.AccessToken; }
+            set { AuthorizationState.AccessToken = value; }
 		}
 
 		public string RefreshToken

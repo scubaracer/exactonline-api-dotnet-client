@@ -1,17 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.271
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Client.Sdk", "src\ExactOnline.Client.Sdk\ExactOnline.Client.Sdk.csproj", "{EE442AA1-C51A-4531-92DA-A7D9C7B73973}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactCore", "ExactCore\ExactCore.csproj", "{E834160E-CA69-49DD-AC77-09378AC23813}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3F1610DB-DF11-43C3-B024-427B17186896}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Client.Sdk.Core", "ExactOnline.Client.Sdk.Core\ExactOnline.Client.Sdk.Core.csproj", "{F1894C00-812E-40E5-A42D-5DA2CAD822EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Client.OAuth", "src\ExactOnline.Client.OAuth\ExactOnline.Client.OAuth.csproj", "{610FE8C1-F026-4567-8B47-8CB6338251F6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Client.Sdk.UnitTests", "test\ExactOnline.Client.Sdk.UnitTests\ExactOnline.Client.Sdk.UnitTests.csproj", "{866362D4-39CA-4FAA-99C0-2BE23530E881}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExactOnline.Client.Models", "src\ExactOnline.Client.Models\ExactOnline.Client.Models.csproj", "{0FBE029A-DD5E-0A4A-3EE2-6F330EB60B7C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Client.Models.Core", "ExactOnline.Client.Models.Core\ExactOnline.Client.Models.Core.csproj", "{4C1A9754-009D-4B50-9BCB-09CB6ED2E01C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,36 +16,27 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EE442AA1-C51A-4531-92DA-A7D9C7B73973}.Browser|Any CPU.ActiveCfg = Release|Any CPU
-		{EE442AA1-C51A-4531-92DA-A7D9C7B73973}.Browser|Any CPU.Build.0 = Release|Any CPU
-		{EE442AA1-C51A-4531-92DA-A7D9C7B73973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EE442AA1-C51A-4531-92DA-A7D9C7B73973}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EE442AA1-C51A-4531-92DA-A7D9C7B73973}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EE442AA1-C51A-4531-92DA-A7D9C7B73973}.Release|Any CPU.Build.0 = Release|Any CPU
-		{610FE8C1-F026-4567-8B47-8CB6338251F6}.Browser|Any CPU.ActiveCfg = Release|Any CPU
-		{610FE8C1-F026-4567-8B47-8CB6338251F6}.Browser|Any CPU.Build.0 = Release|Any CPU
-		{610FE8C1-F026-4567-8B47-8CB6338251F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{610FE8C1-F026-4567-8B47-8CB6338251F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{610FE8C1-F026-4567-8B47-8CB6338251F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{610FE8C1-F026-4567-8B47-8CB6338251F6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{866362D4-39CA-4FAA-99C0-2BE23530E881}.Browser|Any CPU.ActiveCfg = Release|Any CPU
-		{866362D4-39CA-4FAA-99C0-2BE23530E881}.Browser|Any CPU.Build.0 = Release|Any CPU
-		{866362D4-39CA-4FAA-99C0-2BE23530E881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{866362D4-39CA-4FAA-99C0-2BE23530E881}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{866362D4-39CA-4FAA-99C0-2BE23530E881}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{866362D4-39CA-4FAA-99C0-2BE23530E881}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0FBE029A-DD5E-0A4A-3EE2-6F330EB60B7C}.Browser|Any CPU.ActiveCfg = Debug|Any CPU
-		{0FBE029A-DD5E-0A4A-3EE2-6F330EB60B7C}.Browser|Any CPU.Build.0 = Debug|Any CPU
-		{0FBE029A-DD5E-0A4A-3EE2-6F330EB60B7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0FBE029A-DD5E-0A4A-3EE2-6F330EB60B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0FBE029A-DD5E-0A4A-3EE2-6F330EB60B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0FBE029A-DD5E-0A4A-3EE2-6F330EB60B7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E834160E-CA69-49DD-AC77-09378AC23813}.Browser|Any CPU.ActiveCfg = Debug|Any CPU
+		{E834160E-CA69-49DD-AC77-09378AC23813}.Browser|Any CPU.Build.0 = Debug|Any CPU
+		{E834160E-CA69-49DD-AC77-09378AC23813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E834160E-CA69-49DD-AC77-09378AC23813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E834160E-CA69-49DD-AC77-09378AC23813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E834160E-CA69-49DD-AC77-09378AC23813}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1894C00-812E-40E5-A42D-5DA2CAD822EB}.Browser|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1894C00-812E-40E5-A42D-5DA2CAD822EB}.Browser|Any CPU.Build.0 = Debug|Any CPU
+		{F1894C00-812E-40E5-A42D-5DA2CAD822EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1894C00-812E-40E5-A42D-5DA2CAD822EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1894C00-812E-40E5-A42D-5DA2CAD822EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1894C00-812E-40E5-A42D-5DA2CAD822EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C1A9754-009D-4B50-9BCB-09CB6ED2E01C}.Browser|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C1A9754-009D-4B50-9BCB-09CB6ED2E01C}.Browser|Any CPU.Build.0 = Debug|Any CPU
+		{4C1A9754-009D-4B50-9BCB-09CB6ED2E01C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C1A9754-009D-4B50-9BCB-09CB6ED2E01C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C1A9754-009D-4B50-9BCB-09CB6ED2E01C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C1A9754-009D-4B50-9BCB-09CB6ED2E01C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{866362D4-39CA-4FAA-99C0-2BE23530E881} = {3F1610DB-DF11-43C3-B024-427B17186896}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {196FED2E-FC3C-402C-8CF2-6B913287B70E}
