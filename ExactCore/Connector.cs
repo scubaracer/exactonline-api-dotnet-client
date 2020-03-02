@@ -80,7 +80,7 @@ namespace ExactCore
                     dynamic response = JsonConvert.DeserializeObject(responseResult.Content.ReadAsStringAsync().Result);
                     if (response.error != null)
                     {
-                        var errorDescription = response.error_description;
+                        var errorDescription = response.error_description.Value;
                         throw new Exception(errorDescription);
                     }
 

@@ -45,21 +45,46 @@ namespace ExactOnline.Client.Sdk.Helpers
             {
 				//var converter = new ExpandoObjectConverter();
 
-				JsonTextReader reader = new JsonTextReader(new StringReader(response));
-                var dict = serializer.Deserialize<Dictionary<string, object>>(reader);
+				//JsonTextReader reader = new JsonTextReader(new StringReader(response));
+                //var dict = serializer.Deserialize<Dictionary<string, object>>(reader);
 
                 //JsonTextReader reader2 = new JsonTextReader(new StringReader(dict["d"].ToString()));
-                return dict["d"].ToString();
-                //var innerPart = serializer.Deserialize<Dictionary<string, object>>(reader2);
+              //  return dict["d"].ToString();
 
-                //return innerPart["results"].ToString();
-                //var dict = (Dictionary<string, object>)serializer.Deserialize<object>(response); // < -HERE IS THE ERROR
-                //  var a = new JObject("json string");
-                //                Dictionary<string, object> d = a.ToObject<Dictionary<string, object>>();
+                var jobjects = JObject.Parse(response);
+                var d = jobjects["d"];
 
-                //var d = (Dictionary<string, object>)dict["d"];
-                //output = GetJsonFromDictionary(d);
-            }
+                var props = new Dictionary<string, object>();
+                foreach (JProperty child in d.Children())
+                {
+
+                    var x = child.Name;
+                    if (!child.Value.ToString().Contains("def"))
+                    {
+                        if (child.Value.Type.ToString() == "Null")
+                        {
+                            props.Add(child.Name, null);
+                        }
+                        else
+                        {
+                            props.Add(child.Name, child.Value.ToString());
+                        }
+
+                        //d.Children(). 
+                    }
+                }
+
+                output = JsonConvert.SerializeObject(props);
+				//var innerPart = serializer.Deserialize<Dictionary<string, object>>(reader2);
+
+				//return innerPart["results"].ToString();
+				//var dict = (Dictionary<string, object>)serializer.Deserialize<object>(response); // < -HERE IS THE ERROR
+				//  var a = new JObject("json string");
+				//                Dictionary<string, object> d = a.ToObject<Dictionary<string, object>>();
+
+				//var d = (Dictionary<string, object>)dict["d"];
+				//output = GetJsonFromDictionary(d);
+			}
             finally
             {
                 CultureInfo.CurrentCulture = oldCulture;
