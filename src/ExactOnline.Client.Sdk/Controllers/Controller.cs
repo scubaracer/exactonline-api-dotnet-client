@@ -1,5 +1,4 @@
-﻿using ExactOnline.Client.Models;
-using ExactOnline.Client.Sdk.Delegates;
+﻿using ExactOnline.Client.Sdk.Delegates;
 using ExactOnline.Client.Sdk.Helpers;
 using ExactOnline.Client.Sdk.Interfaces;
 using System;
