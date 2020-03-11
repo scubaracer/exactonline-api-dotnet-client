@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ExactOnline.Client.OAuth;
 
-namespace ConsoleApp1
+namespace ExactTokenGeneration
 {
     public class Connector
     {

@@ -5,7 +5,7 @@ using ExactOnline.Client.Sdk.Helpers;
 using ExactOnline.Client.Sdk.Interfaces;
 using System;
 
-namespace ConsoleApp1
+namespace ExactTokenGeneration
 {
 	public class TestObjectsCreator
 	{

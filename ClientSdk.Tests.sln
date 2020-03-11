@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnline.Client.Sdk.User
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExactOnline.Client.Models", "src\ExactOnline.Client.Models\ExactOnline.Client.Models.csproj", "{0FBE029A-DD5E-0A4A-3EE2-6F330EB60B7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{BD0930A3-1B8A-425D-9096-D3E9F1A31279}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactTokenGeneration", "ConsoleApp1\ExactTokenGeneration.csproj", "{BD0930A3-1B8A-425D-9096-D3E9F1A31279}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
